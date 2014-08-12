@@ -3,7 +3,12 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="766px" height="185px" viewBox="0 0 766 185" enable-background="new 0 0 766 185" xml:space="preserve">
-<path opacity="0.15" enable-background="new    " d="M766.334,52.137c0,0-272.2,34.666-312.895,35.333
-	c-40.695,0.667-42.323-10.001-83.019-11.667c-40.695-1.666-56.161,17.667-81.391,11.667c-25.23-6-102.552-91.333-158.71-87.333
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="383.3511" y1="174.8203" x2="382.7772" y2="-2.0112">
+	<stop  offset="0" style="stop-color:#000000;stop-opacity:0"/>
+	<stop  offset="0.2699" style="stop-color:#000000;stop-opacity:0.5031"/>
+	<stop  offset="1" style="stop-color:#000000"/>
+</linearGradient>
+<path opacity="0.15" fill="url(#SVGID_1_)" enable-background="new    " d="M766.334,52.137c0,0-272.2,34.666-312.895,35.333
+	c-40.695,0.667-42.323-10.001-83.02-11.667c-40.695-1.666-56.161,17.667-81.391,11.667c-25.23-6-102.552-91.333-158.71-87.333
 	C74.162,4.136,0,31.47,0,31.47v152.667h766.334V52.137z"/>
 </svg>
