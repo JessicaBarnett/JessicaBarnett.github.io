@@ -5,7 +5,9 @@ div#scene1 {
 	// background: -webkit-linear-gradient(to top, #ffffff 0%, #8682aa 20%, #001e78 80%); 
 	// background: linear-gradient(to top, #ffffff 0%, #8682aa 20%, #001e78 80%);
 
-	background: url('../images/parallax/bothTrees.svg') 70% -20% / 120% no-repeat,
+	background: /*url('../images/parallax/bothTrees.svg') 70% -20% / 120% no-repeat,*/
+				url('../images/parallax/bigBranch.svg') -45% -25% / 65% no-repeat,
+				url('../images/parallax/smallBranch.svg') 110% 50% / 45% no-repeat,
 				url('../images/parallax/groundLantern.svg') 5% 88% / 110% no-repeat,
 				url('../images/parallax/nearMountains.svg') 5% 100% / 110% no-repeat,
 				url('../images/parallax/midMountains.svg') 15% 83% / 120% no-repeat,
@@ -22,18 +24,21 @@ div#scene1 {
 	// 		linear-gradient(to top, #ffffff 0%, #8682aa 20%, #001e78 80%);	
 	// }
 
-	// @media screen and (max-width: 760px){
-	// 	background: url('../images/parallax/bothTrees.svg') 70% -20% / 120% no-repeat,
-	// 		url('../images/parallax/groundLantern.svg') 5% 88% / 110% no-repeat,
-	// 		url('../images/parallax/nearMountains.svg') 5% 100% / 110% no-repeat,
-	// 		url('../images/parallax/midMountains.svg') 15% 83% / 120% no-repeat,
-	// 		url('../images/parallax/farMountains.svg') 5% 85% / 110% no-repeat,
-	// 		linear-gradient(to top, #ffffff 0%, #8682aa 20%, #001e78 80%);	
-	// }
+	//tab portrait
+	@media screen and (max-width: 768px) and (min-width: 480px){
+		background: url('../images/parallax/bigBranch.svg') -180% 0% / 90% no-repeat,
+			url('../images/parallax/smallBranch.svg') 150% 50% / 60% no-repeat,
+			url('../images/parallax/groundLantern.svg') 40% 88% / 250% no-repeat,
+			url('../images/parallax/nearMountains.svg') 50% 100% / 250% no-repeat,
+			url('../images/parallax/midMountains.svg') 50% 85% / 250% no-repeat,
+			url('../images/parallax/farMountains.svg') 50% 80% / 250% no-repeat,
+			linear-gradient(to top, #ffffff 0%, #8682aa 20%, #001e78 80%);	
+	 }
 
 	//phone landscape
 	@media screen and (max-width: 480px) and (min-width: 200px){
-		background: url('../images/parallax/bothTrees.svg') 70% -20% / 120% no-repeat,
+		background: url('../images/parallax/bigBranch.svg') -45% -25% / 65% no-repeat,
+			url('../images/parallax/smallBranch.svg') 110% 50% / 45% no-repeat,
 			url('../images/parallax/groundLantern.svg') 5% 88% / 110% no-repeat,
 			url('../images/parallax/nearMountains.svg') 5% 100% / 110% no-repeat,
 			url('../images/parallax/midMountains.svg') 15% 83% / 120% no-repeat,
@@ -43,7 +48,8 @@ div#scene1 {
 
 	//phone Portrait
 	@media screen and (max-width: 320px) and (min-width: 200px){
-		background: url('../images/parallax/bothTreesPortrait.svg') 40% 0% / 160% no-repeat,
+		background: url('../images/parallax/bigBranch.svg') 500% -15% / 105% no-repeat,
+			url('../images/parallax/smallBranch.svg') 150% 50% / 70% no-repeat,
 			url('../images/parallax/groundLantern.svg') 40% 68% / 200% no-repeat,
 			url('../images/parallax/nearMountains.svg') 50% 80% / 250% no-repeat,
 			url('../images/parallax/midMountains.svg') 50% 70% / 250% no-repeat,

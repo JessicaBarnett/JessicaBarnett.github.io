@@ -1,7 +1,14 @@
 
-body{
+
+body, h1{
+	font-family: "Raleway";
 	font-size: 4rem;
 	color: white;
+}
+
+h2{
+	font-family: "Calligraffitti";
+	line-height: 2.3rem;
 }
 
 h1 {
@@ -27,8 +34,8 @@ nav {
 }
 
 
-//tab portrait and smaller
-@media screen and (max-width: 768px) and (min-width: 200px){
+//phone landscape and smaller
+@media screen and (max-width: 480px) and (min-width: 200px){
 	h1 {
 		font-size: 1.5rem; 
 	}
