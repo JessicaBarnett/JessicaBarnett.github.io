@@ -1,0 +1,58 @@
+
+body{
+	font-size: 4rem;
+	color: white;
+}
+
+h1 {
+	font-size: 3rem; 
+}
+
+h2 {
+	font-size: 1.5rem;
+}
+
+nav {
+	font-size: 2rem;
+
+	a{
+		color: white;
+		text-decoration: none;
+	}
+
+	a:hover{
+		color: black;
+		background-color: white;
+	}
+}
+
+
+@media screen and (max-width: 400px) and (min-width: 200px){
+	h1 {
+		font-size: 1.5rem; 
+	}
+	h2 {
+		font-size: .5rem;
+	}
+
+	nav {
+		li{
+			display: none;
+			height: 2rem;
+		}
+
+		#hamburger{
+			float: right;
+			margin: 5%;
+			background: url("../images/hamburger.svg") 0 0 / 100% no-repeat; 
+			display: block;
+		}
+
+		a{
+			width: 100%;
+			height: 100%;
+		}
+
+
+	}
+}

@@ -3,11 +3,6 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-.group {
-  content: "";
-  display: table;
-  clear: both; }
-
 body {
   font-size: 4rem;
   color: white; }
@@ -17,6 +12,62 @@ h1 {
 
 h2 {
   font-size: 1.5rem; }
+
+nav {
+  font-size: 2rem; }
+  nav a {
+    color: white;
+    text-decoration: none; }
+  nav a:hover {
+    color: black;
+    background-color: white; }
+
+@media screen and (max-width: 400px) and (min-width: 200px) {
+  h1 {
+    font-size: 1.5rem; }
+
+  h2 {
+    font-size: .5rem; }
+
+  nav li {
+    display: none;
+    height: 2rem; }
+  nav #hamburger {
+    float: right;
+    margin: 5%;
+    background: url("../images/hamburger.svg") 0 0/100% no-repeat;
+    display: block; }
+  nav a {
+    width: 100%;
+    height: 100%; } }
+div#scene1 {
+  width: 100%;
+  height: 100vh;
+  background: url("../images/parallax/bothTrees.svg") 70% -20%/120% no-repeat, url("../images/parallax/groundLantern.svg") 5% 88%/110% no-repeat, url("../images/parallax/nearMountains.svg") 5% 100%/110% no-repeat, url("../images/parallax/midMountains.svg") 15% 83%/120% no-repeat, url("../images/parallax/farMountains.svg") 5% 85%/110% no-repeat, linear-gradient(to top, white 0%, #8682aa 20%, #001e78 80%); }
+  @media screen and (max-width: 320px) and (min-width: 200px) {
+    div#scene1 {
+      background: url("../images/parallax/bothTreesPortrait.svg") 40% 20%/160% no-repeat, url("../images/parallax/groundLantern.svg") 40% 68%/200% no-repeat, url("../images/parallax/nearMountains.svg") 50% 80%/250% no-repeat, url("../images/parallax/midMountains.svg") 50% 70%/250% no-repeat, url("../images/parallax/farMountains.svg") 50% 70%/250% no-repeat, linear-gradient(to top, white 0%, #8682aa 20%, #001e78 80%); } }
+
+div#flatBlack1 {
+  margin: -10vh 0;
+  width: 100%;
+  height: 100vh;
+  background-color: black; }
+  @media screen and (max-width: 320px) and (min-width: 200px) {
+    div#flatBlack1 {
+      margin: -25vh 0; } }
+
+.group {
+  content: "";
+  display: table;
+  clear: both; }
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; }
+
+html {
+  overflow: hidden; }
 
 #nameContainer {
   position: relative;
@@ -28,33 +79,22 @@ nav {
   width: 100%;
   position: fixed;
   background-color: black;
-  font-size: 2rem;
   z-index: 10; }
 
 li {
   display: inline-block;
   float: left;
   width: 10%;
-  margin: 0 5%; }
+  margin: 0 2%; }
+
+.mobileNav {
+  display: none; }
 
 a {
-  color: white;
-  text-decoration: none;
   display: inline-block;
   padding: 1rem; }
-  a:hover {
-    color: black;
-    background-color: white; }
 
-div#scene1 {
-  width: 100%;
-  height: 100vh;
-  background: -webkit-linear-gradient(to top, white 0%, #8682aa 20%, #001e78 80%);
-  background: linear-gradient(to top, white 0%, #8682aa 20%, #001e78 80%);
-  background: url("../images/parallax/bothTrees.svg") 70% -20%/120% no-repeat, url("../images/parallax/groundLantern.svg") 5% 88%/110% no-repeat, url("../images/parallax/nearMountains.svg") 5% 100%/110% no-repeat, url("../images/parallax/midMountains.svg") 15% 83%/120% no-repeat, url("../images/parallax/farMountains.svg") 5% 85%/110% no-repeat, linear-gradient(to top, white 0%, #8682aa 20%, #001e78 80%); }
-
-div#flatBlack1 {
-  margin: -10vh 0;
-  width: 100%;
-  height: 100vh;
-  background-color: black; }
+@media screen and (max-width: 320px) and (min-width: 200px) {
+  #nameContainer {
+    top: 32%;
+    left: 38%; } }
