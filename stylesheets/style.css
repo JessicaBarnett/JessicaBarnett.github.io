@@ -149,8 +149,10 @@ a {
   #nameContainer {
     top: 36%;
     left: 10%; } }
-#about {
-  background-color: black; }
+#projects {
+  background-color: black;
+  width: 100%;
+  height: 200vh; }
 
 div.angle {
   width: 10%;
