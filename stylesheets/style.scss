@@ -8,6 +8,10 @@
 @import "nav";
 @import "textAndDetailLayout";
 
+.flipped {
+	transform: scaleX(-1);
+}
+
 .group {
 	content: "";
 	display: table;
@@ -25,14 +29,5 @@ html{
 img {
 	max-width: 100%;
 }
-
-
-// div.circular{
-// 	width: 12%;
-// 	height: 15%;
-// 	border-radius: 50%;
-// 	background: url('../images/detail/circular.svg') center / 110% no-repeat,
-// 				#001e78;
-// }
 
 

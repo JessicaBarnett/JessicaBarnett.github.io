@@ -9,7 +9,7 @@ div#scene1 {
 				url('../images/parallax/bigBranch.svg') -45% 0% / 65% no-repeat,
 				url('../images/parallax/smallBranch.svg') 110% 50% / 45% no-repeat,
 				url('../images/parallax/groundLantern.svg') 5% 88% / 110% no-repeat,
-				url('../images/parallax/nearMountains.svg') 5% 100% / 110% no-repeat,
+				url('../images/parallax/nearMountains.svg') 5% 85% / 110% no-repeat,
 				url('../images/parallax/midMountains.svg') 15% 83% / 120% no-repeat,
 				url('../images/parallax/farMountains.svg') 5% 85% / 110% no-repeat,
 				linear-gradient(to top, #ffffff 0%, #8682aa 20%, #001e78 80%);	
@@ -61,11 +61,14 @@ div#scene1 {
 
 }
 
+body {
+	background-color: black;
+}
 
-div#flatBlack1 {
+.patch {
 	margin: -10vh 0;
 	width: 100%;
-	height: 100vh;
+	height: 15vh;
 	background-color: black;
 
 	//phone portrait

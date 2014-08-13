@@ -36,7 +36,7 @@ nav {
 div#scene1 {
   width: 100%;
   height: 100vh;
-  background: url("../images/parallax/bigBranch.svg") -45% 0%/65% no-repeat, url("../images/parallax/smallBranch.svg") 110% 50%/45% no-repeat, url("../images/parallax/groundLantern.svg") 5% 88%/110% no-repeat, url("../images/parallax/nearMountains.svg") 5% 100%/110% no-repeat, url("../images/parallax/midMountains.svg") 15% 83%/120% no-repeat, url("../images/parallax/farMountains.svg") 5% 85%/110% no-repeat, linear-gradient(to top, white 0%, #8682aa 20%, #001e78 80%); }
+  background: url("../images/parallax/bigBranch.svg") -45% 0%/65% no-repeat, url("../images/parallax/smallBranch.svg") 110% 50%/45% no-repeat, url("../images/parallax/groundLantern.svg") 5% 88%/110% no-repeat, url("../images/parallax/nearMountains.svg") 5% 85%/110% no-repeat, url("../images/parallax/midMountains.svg") 15% 83%/120% no-repeat, url("../images/parallax/farMountains.svg") 5% 85%/110% no-repeat, linear-gradient(to top, white 0%, #8682aa 20%, #001e78 80%); }
   @media screen and (min-width: 1100px) {
     div#scene1 {
       background: url("../images/parallax/bigBranch.svg") -45% -65%/65% no-repeat, url("../images/parallax/smallBranch.svg") 110% 50%/45% no-repeat, url("../images/parallax/groundLantern.svg") 5% 88%/110% no-repeat, url("../images/parallax/nearMountains.svg") 5% 100%/110% no-repeat, url("../images/parallax/midMountains.svg") 15% 83%/120% no-repeat, url("../images/parallax/farMountains.svg") 5% 85%/110% no-repeat, linear-gradient(to top, white 0%, #8682aa 20%, #001e78 80%); } }
@@ -50,16 +50,19 @@ div#scene1 {
     div#scene1 {
       background: url("../images/parallax/bigBranch.svg") 500% -15%/105% no-repeat, url("../images/parallax/smallBranch.svg") 150% 60%/70% no-repeat, url("../images/parallax/groundLantern.svg") 40% 88%/200% no-repeat, url("../images/parallax/nearMountains.svg") 50% 100%/250% no-repeat, url("../images/parallax/midMountains.svg") 50% 90%/250% no-repeat, url("../images/parallax/farMountains.svg") 50% 90%/250% no-repeat, linear-gradient(to top, white 0%, #8682aa 20%, #001e78 80%); } }
 
-div#flatBlack1 {
+body {
+  background-color: black; }
+
+.patch {
   margin: -10vh 0;
   width: 100%;
-  height: 100vh;
+  height: 15vh;
   background-color: black; }
   @media screen and (max-width: 480px) and (min-width: 200px) and (orientation: portrait) {
-    div#flatBlack1 {
+    .patch {
       margin: -10vh 0; } }
   @media screen and (max-width: 768px) and (min-width: 480px) and (orientation: portrait) {
-    div#flatBlack1 {
+    .patch {
       margin: 0; } }
 
 nav {
@@ -146,6 +149,16 @@ a {
   #nameContainer {
     top: 36%;
     left: 10%; } }
+#about {
+  background-color: black; }
+
+div.angle {
+  width: 10%;
+  height: 5rem; }
+
+.flipped {
+  transform: scaleX(-1); }
+
 .group {
   content: "";
   display: table;
