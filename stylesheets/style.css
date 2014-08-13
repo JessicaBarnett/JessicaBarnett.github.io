@@ -10,12 +10,12 @@ body, h1 {
   line-height: 3rem; }
 
 h1 {
-  font-size: 5rem;
-  line-height: 5.3rem; }
+  font-size: 3.8rem;
+  line-height: 4.2rem; }
 
 h2, h3, h4 {
   font-family: "Calligraffitti";
-  line-height: 3.5rem;
+  line-height: 3rem;
   font-size: 2.5rem; }
 
 h3 {
@@ -155,6 +155,25 @@ a {
   #nameContainer {
     top: 36%;
     left: 10%; } }
+#headshot {
+  width: 30%; }
+
+#headshot img {
+  height: 100%;
+  width: 100%;
+  -webkit-filter: grayscale(0.3); }
+
+img#photo {
+  margin-top: 3px;
+  height: 99%;
+  width: 99%; }
+
+img#overlay {
+  position: absolute;
+  z-index: 1;
+  width: inherit;
+  height: inherit; }
+
 .titleWrap {
   width: 50%;
   margin: 3rem auto 6rem auto; }
@@ -177,6 +196,10 @@ div.angle {
 
 .projectWrap {
   margin-bottom: 4rem; }
+
+#skillDetails {
+  width: 80%;
+  margin: 0 auto; }
 
 .flipped {
   transform: scaleX(-1); }
