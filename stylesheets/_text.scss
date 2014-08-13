@@ -2,21 +2,29 @@
 
 body, h1{
 	font-family: "Raleway";
-	font-size: 4rem;
 	color: white;
+	font-size: 1.5rem;
+	line-height: 3rem;
 }
 
-h2{
-	font-family: "Calligraffitti";
-	line-height: 2.3rem;
-}
 
 h1 {
-	font-size: 3rem; 
+	font-size: 5rem; 
+	line-height: 5.3rem;
 }
 
-h2 {
-	font-size: 1.5rem;
+h2, h3, h4{
+	font-family: "Calligraffitti";
+	line-height: 3.5rem;
+	font-size: 2.5rem;
+}
+
+h3 {
+	font-size: 4rem;
+}
+
+h4{
+	font-size: 3rem;
 }
 
 nav {

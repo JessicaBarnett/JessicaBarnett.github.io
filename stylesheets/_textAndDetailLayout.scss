@@ -31,29 +31,66 @@
 
 }
 
+// #projects {
+// 	background-color: black;
+// 	width: 100%;
+// 	height: 200vh;
+// }
 
-#projects {
-	background-color: black;
-	width: 100%;
-	height: 200vh;
+// #about {
+// 	background-color: white;
+// }
+
+// #headshot {
+// 	width: 30%;
+// }
+
+// #headshot img {
+// 	height: 100%;
+// 	width: 100%;
+// 	-webkit-filter: grayscale(0.6);
+// }
+
+// #headshot img:first-of-type {
+// 	position: absolute;
+// 	z-index: 1;
+
+// }
+
+//Title details 
+
+.titleWrap{
+	width: 50%;
+	margin: 3rem auto 6rem auto;
+}
+
+.titleWrap .angle, .titleWrap h3{
+	float: left;
+	width: 20%;
+}
+
+.titleWrap h3 {
+	text-align: center;
+	width: 50%;
+	margin: 1rem 5% 0 5%;
 }
 
 div.angle {
-	width: 10%;
 	height: 5rem;
-	// border-radius: 0 100% 0 0;
-	// background: linear-gradient(to top, #3A30A3 20%, #001e78 80%);
 }
 
 
 
-// div.circular{
-// 	width: 12%;
-// 	height: 15%;
-// 	border-radius: 50%;
-// 	background: url('../images/detail/circular.svg') center / 110% no-repeat,
-// 				#001e78;
-// }
+//projects
+
+#projectDetails{
+	width: 80%;
+	margin: 0 auto;
+}
+
+.projectWrap {
+	margin-bottom: 4rem;
+}
 
 
 
