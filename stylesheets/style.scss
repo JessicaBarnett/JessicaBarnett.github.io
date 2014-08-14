@@ -8,6 +8,11 @@
 @import "nav";
 @import "textAndDetailLayout";
 
+
+.wideOnly{
+	display: none;
+}
+
 .flipped {
 	transform: scaleX(-1);
 }
