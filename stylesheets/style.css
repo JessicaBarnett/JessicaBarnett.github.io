@@ -38,6 +38,12 @@ nav {
 a:hover {
   font-weight: bolder; }
 
+h4 a {
+  text-decoration: none; }
+
+h4 a:visited {
+  color: white; }
+
 @media screen and (max-width: 480px) and (min-width: 200px) {
   h1 {
     font-size: 2.2rem;
@@ -163,12 +169,6 @@ a {
 div.angle {
   height: 5rem; }
 
-h4 a {
-  text-decoration: none; }
-
-h4 a:visited {
-  color: white; }
-
 #about {
   margin-top: 20rem; }
 
@@ -254,7 +254,11 @@ div#headshot img.overlay {
 .projectWrap {
   margin-bottom: 1rem; }
 
-.projectWrap img {
+.projectWrap a {
+  display: block;
+  width: 100%; }
+
+.projectWrap a img {
   margin-top: 10%; }
 
 p.sourceCode {
@@ -307,3 +311,6 @@ html, body {
 
 img {
   max-width: 100%; }
+
+a img:hover {
+  transform: scale(1.1, 1.1); }
