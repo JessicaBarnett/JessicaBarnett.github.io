@@ -1,64 +1,15 @@
-#nameContainer {
-	position: relative;
-	left: 40%;
-	top: 36%;
-	z-index: 0;
-}
-
-//tab portrait
-@media screen and (max-width: 768px) and (min-width: 400px) and (orientation: portrait){
-	#nameContainer {
-		top: 35%;
-		left: 20%;
-	}	
-}
-
-//phone landscape
-@media screen and (max-width: 480px) and (min-width: 320px) and (orientation: landscape){ 
-	#nameContainer {
-		top: 26%;
-		left: 18%;
-	}
-}
-
-//Phone portrait
-@media screen and (max-width: 320px) and (min-width: 100px) and (orientation: portrait){
-
-	#nameContainer {
-		top: 36%;
-		left: 10%;
-	}
-
-}
-
-#headshot {
-	width: 30%;
-}
-
-#headshot img {
-	height: 100%;
-	width: 100%;
-	-webkit-filter: grayscale(0.3);
-}
-
-img#photo{
-	margin-top: 3px;
-	height: 99%;
-	width: 99%;
-}
-
-img#overlay {
-	position: absolute;
-	z-index: 1;
-	width: inherit;
-	height: inherit;
-}
+/*********  Used-in-lots-of-places-stuff  **********/
 
 //Title details 
 
 .titleWrap{
 	width: 50%;
 	margin: 3rem auto 6rem auto;
+
+	//so, when a nav link is clicked
+	//the section heading won't be chopped off by the nav
+	height: 10rem;
+	padding-top: 5rem;
 }
 
 .titleWrap .angle, .titleWrap h3{
@@ -77,8 +28,117 @@ div.angle {
 }
 
 
+//header links
 
-//projects
+h4 a {
+	text-decoration: none;
+}
+
+h4 a:visited {
+	color: white;
+}
+
+
+#about{
+	margin-top: 20rem;
+}
+
+#projects, #skills, #contact {
+	margin-top: 25rem;
+}
+
+/*********  Home Page  **********/
+
+
+#nameContainer {
+	max-width: 90%;
+	position: relative;
+	left: 45%;
+	top: 36%;
+	z-index: 0;
+
+	//tab portrait
+	@media screen and (max-width: 768px) and (min-width: 400px) and (orientation: portrait){
+			top: 35%;
+			left: 20%;	
+	}
+
+	//phone landscape
+	@media screen and (max-width: 480px) and (min-width: 320px) and (orientation: landscape){ 
+			top: 26%;
+			left: 18%;
+	}
+
+	//Phone portrait
+	@media screen and (max-width: 320px) and (min-width: 100px) and (orientation: portrait){
+			top: 36%;
+			left: 10%;
+	}
+}
+
+#nameContainer h2{
+	margin-left: 6%;
+
+	//tab portrait
+	@media screen and (max-width: 768px) and (min-width: 200px){
+		max-width: 60%;
+	}
+}
+
+/*********  About Page  **********/
+
+//all img tags already have max-width: 100%!!
+
+#about{ //page container
+	width: 100%;
+}
+
+div.titleWrap:first-of-type{
+	position: relative;
+	z-index: 2;
+}
+
+#about .group { //contents
+	margin: 2rem auto 0 auto;
+	background-color: black; //to cover any gaps if the sizing/positioning goes awry on the photo/overlay
+	width: 80%;
+}
+
+div.caption, div#headshot{ //floated elements
+	width: 30%;
+	margin: 5%;
+	float: left;
+	position: relative; //so overlay will reference this as context
+}
+
+div.caption {
+	width: 50%;
+	margin: 5%;
+	z-index: 2; //so caption will rise over photo overlay
+}
+
+#headshot img {
+	max-width: 110%;
+	-webkit-filter: grayscale(0.3);
+}
+
+div#headshot img.overlay {
+	max-width: 160%;
+	position: absolute;
+	top: -4rem;
+	left: -4rem;
+}
+
+
+/*********  Projects Page  **********/
+
+// #projects{
+// 	margin-top: 30rem;
+// }
+
+#projects h4 {
+	margin-left: -3%; //don't know where this margin comes from.  it's not showing up in devTools...
+}
 
 #projectDetails{
 	width: 80%;
@@ -86,11 +146,38 @@ div.angle {
 }
 
 .projectWrap {
-	margin-bottom: 4rem;
+	margin-bottom: 1rem;
 }
 
 
-//skills
+.projectWrap img{
+	margin-top: 10%;
+}
+
+
+//Source code link + github logo
+
+p.sourceCode {
+	position: relative; //so before pseudo will use this as context
+}
+
+p.sourceCode a{
+	margin: -5rem 0 0 10%;
+}
+
+p.sourceCode a:before {
+	content: url("../images/skill_icons/githubSm.svg");
+	display: inline;
+	position: relative;
+	top: 2.8rem;
+	left: 1.5rem
+	//background-color: blue;
+	// width: 100%;
+	//margin: 0 0 0 -7rem;
+}
+
+
+/*********  Home Page  **********/
 
 #skillDetails {
 	width: 80%;

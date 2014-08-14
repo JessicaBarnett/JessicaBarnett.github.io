@@ -1,34 +1,35 @@
 
 
 body, h1{
-	font-family: "Raleway";
+	font-family: "Droid Sans", sans-serif;
 	color: white;
-	font-size: 1.5rem;
-	line-height: 3rem;
+	font-size: 1rem;
+	line-height: 1.5rem;
 }
 
 
-h1 {
-	font-size: 3.8rem; 
+h1 { //My Name
+	font-size: 4rem; 
 	line-height: 4.2rem;
 }
 
-h2, h3, h4{
-	font-family: "Calligraffitti";
-	line-height: 3rem;
-	font-size: 2.5rem;
+h2, h3{ //My tagline, Page Titles
+	font-family: "Calligraffitti", serif;
+	font-size: 1.8rem;
+	line-height: 2.4rem;
 }
 
-h3 {
-	font-size: 4rem;
-}
-
-h4{
+h3 {  //page titles
 	font-size: 3rem;
 }
 
-nav {
+h4{ //subheading titles
 	font-size: 2rem;
+	line-height: 3.4rem;
+}
+
+nav {
+	font-size: 1.3rem;
 
 	a{
 		color: white;
@@ -38,16 +39,23 @@ nav {
 	a:hover{
 		color: black;
 		background-color: white;
+		font-weight: normal;
 	}
 }
 
 
+a:hover{
+	font-weight: bolder;
+}
+
 //phone landscape and smaller
 @media screen and (max-width: 480px) and (min-width: 200px){
 	h1 {
-		font-size: 1.8rem; 
+		font-size: 2.2rem; 
+		line-height: 2.7rem;
 	}
 	h2 {
-		font-size: 1rem;
+		font-size: 1.5rem;
+		line-height: 2rem;
 	}
 }

@@ -4,41 +4,48 @@
   box-sizing: border-box; }
 
 body, h1 {
-  font-family: "Raleway";
+  font-family: "Droid Sans", sans-serif;
   color: white;
-  font-size: 1.5rem;
-  line-height: 3rem; }
+  font-size: 1rem;
+  line-height: 1.5rem; }
 
 h1 {
-  font-size: 3.8rem;
+  font-size: 4rem;
   line-height: 4.2rem; }
 
-h2, h3, h4 {
-  font-family: "Calligraffitti";
-  line-height: 3rem;
-  font-size: 2.5rem; }
+h2, h3 {
+  font-family: "Calligraffitti", serif;
+  font-size: 1.8rem;
+  line-height: 2.4rem; }
 
 h3 {
-  font-size: 4rem; }
-
-h4 {
   font-size: 3rem; }
 
+h4 {
+  font-size: 2rem;
+  line-height: 3.4rem; }
+
 nav {
-  font-size: 2rem; }
+  font-size: 1.3rem; }
   nav a {
     color: white;
     text-decoration: none; }
   nav a:hover {
     color: black;
-    background-color: white; }
+    background-color: white;
+    font-weight: normal; }
+
+a:hover {
+  font-weight: bolder; }
 
 @media screen and (max-width: 480px) and (min-width: 200px) {
   h1 {
-    font-size: 1.8rem; }
+    font-size: 2.2rem;
+    line-height: 2.7rem; }
 
   h2 {
-    font-size: 1rem; } }
+    font-size: 1.5rem;
+    line-height: 2rem; } }
 div#scene1 {
   width: 100%;
   height: 100vh;
@@ -137,46 +144,12 @@ a {
   li#hamburger {
     padding-top: 0;
     margin-top: -1rem; } }
-#nameContainer {
-  position: relative;
-  left: 40%;
-  top: 36%;
-  z-index: 0; }
-
-@media screen and (max-width: 768px) and (min-width: 400px) and (orientation: portrait) {
-  #nameContainer {
-    top: 35%;
-    left: 20%; } }
-@media screen and (max-width: 480px) and (min-width: 320px) and (orientation: landscape) {
-  #nameContainer {
-    top: 26%;
-    left: 18%; } }
-@media screen and (max-width: 320px) and (min-width: 100px) and (orientation: portrait) {
-  #nameContainer {
-    top: 36%;
-    left: 10%; } }
-#headshot {
-  width: 30%; }
-
-#headshot img {
-  height: 100%;
-  width: 100%;
-  -webkit-filter: grayscale(0.3); }
-
-img#photo {
-  margin-top: 3px;
-  height: 99%;
-  width: 99%; }
-
-img#overlay {
-  position: absolute;
-  z-index: 1;
-  width: inherit;
-  height: inherit; }
-
+/*********  Used-in-lots-of-places-stuff  **********/
 .titleWrap {
   width: 50%;
-  margin: 3rem auto 6rem auto; }
+  margin: 3rem auto 6rem auto;
+  height: 10rem;
+  padding-top: 5rem; }
 
 .titleWrap .angle, .titleWrap h3 {
   float: left;
@@ -190,13 +163,106 @@ img#overlay {
 div.angle {
   height: 5rem; }
 
+h4 a {
+  text-decoration: none; }
+
+h4 a:visited {
+  color: white; }
+
+#about {
+  margin-top: 20rem; }
+
+#projects, #skills, #contact {
+  margin-top: 25rem; }
+
+/*********  Home Page  **********/
+#nameContainer {
+  max-width: 90%;
+  position: relative;
+  left: 45%;
+  top: 36%;
+  z-index: 0; }
+  @media screen and (max-width: 768px) and (min-width: 400px) and (orientation: portrait) {
+    #nameContainer {
+      top: 35%;
+      left: 20%; } }
+  @media screen and (max-width: 480px) and (min-width: 320px) and (orientation: landscape) {
+    #nameContainer {
+      top: 26%;
+      left: 18%; } }
+  @media screen and (max-width: 320px) and (min-width: 100px) and (orientation: portrait) {
+    #nameContainer {
+      top: 36%;
+      left: 10%; } }
+
+#nameContainer h2 {
+  margin-left: 6%; }
+  @media screen and (max-width: 768px) and (min-width: 200px) {
+    #nameContainer h2 {
+      max-width: 60%; } }
+
+/*********  About Page  **********/
+#about {
+  width: 100%; }
+
+div.titleWrap:first-of-type {
+  position: relative;
+  z-index: 2; }
+
+#about .group {
+  margin: 2rem auto 0 auto;
+  background-color: black;
+  width: 80%; }
+
+div.caption, div#headshot {
+  width: 30%;
+  margin: 5%;
+  float: left;
+  position: relative; }
+
+div.caption {
+  width: 50%;
+  margin: 5%;
+  z-index: 2; }
+
+#headshot img {
+  max-width: 110%;
+  -webkit-filter: grayscale(0.3); }
+
+div#headshot img.overlay {
+  max-width: 160%;
+  position: absolute;
+  top: -4rem;
+  left: -4rem; }
+
+/*********  Projects Page  **********/
+#projects h4 {
+  margin-left: -3%; }
+
 #projectDetails {
   width: 80%;
   margin: 0 auto; }
 
 .projectWrap {
-  margin-bottom: 4rem; }
+  margin-bottom: 1rem; }
 
+.projectWrap img {
+  margin-top: 10%; }
+
+p.sourceCode {
+  position: relative; }
+
+p.sourceCode a {
+  margin: -5rem 0 0 10%; }
+
+p.sourceCode a:before {
+  content: url("../images/skill_icons/githubSm.svg");
+  display: inline;
+  position: relative;
+  top: 2.8rem;
+  left: 1.5rem; }
+
+/*********  Home Page  **********/
 #skillDetails {
   width: 80%;
   margin: 0 auto; }

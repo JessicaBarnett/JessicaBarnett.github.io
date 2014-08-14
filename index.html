@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<link href='http://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
 
 		<link rel="stylesheet" type="text/css" href="stylesheets/6grid.css">
 		<link rel="stylesheet" type="text/css" href="stylesheets/reset.css">
@@ -34,24 +34,38 @@
 		<div class="patch"></div> <!--Not the most elegant solution, but it'll do for now-->
 
 		<div id="about">
-			<div id="headshot">
-				<img id="overlay" src="images/detail/window.svg" alt="decoration">
-				<img id="photo" src="images/Headshot2013sm.jpg" alt="headshot">
-			</div>
-		<div>
+			<div class="titleWrap group">
+				<div class="angle flipped"><img src="images/detail/angleWhite.svg"></div>
+				<h3>Hello there!</h3>
+				<div class="angle"><img src="images/detail/angleWhite.svg"></div>
+			</div><!--end titleWrap-->
+			<div class="group"> <!-- extraneous html boo --> 
+				<div id="headshot"> 
+					<img class="photo" src="images/Headshot2013sm.jpg" alt="headshot">
+					<img class="overlay" src="images/detail/windowlg.svg" alt="decoration">
+				</div>
+				<div class="caption">
+					<p>I'm going to put</p>
+					<p>A few Lines of text here</p>
+					<p>To describe who I am as a designer/developer!</p>
+					<p>Cool, huh?</p>
+					</pre>
+				</div>
+			</div> <!--end group-->
+		</div>
 
 		<div id="projects">
 			<div class="titleWrap group">
 				<div class="angle flipped"><img src="images/detail/angleWhite.svg"></div>
 				<h3>Projects</h3>
 				<div class="angle"><img src="images/detail/angleWhite.svg"></div>
-			</div>
+			</div><!--end titleWrap-->
 			<div id="projectDetails">
 				<div class="projectWrap group">
 					<img class="smallColumn" src="images/project_icons/buildathing.svg" alt="digital pet icons">
 					<div class="largeColumn descriptionWrap">
 						<h4><a href="http://rawgit.com/jessicaBarnett/build-a-thing/master/index.html" target="_blank">Build A Thing</a></h4>
-						<p>A somewhat useless but still fun demo web app I've been working on as an example of what I can do with HTML/CSS/Javascript. It's still a work in progress at the moment. The site is fully functional and fully responsive. </p><p><a href="https://github.com/JessicaBarnett/Build-A-Thing" target="_blank">View the source code!</a></p>
+						<p>A somewhat useless but still fun demo web app I've been working on as an example of what I can do with HTML/CSS/Javascript. It's still a work in progress at the moment. The site is fully functional and fully responsive. </p><p class="sourceCode"><a href="https://github.com/JessicaBarnett/Build-A-Thing" target="_blank">View the source code!</a></p>
 					</div>
 				</div> <!--end projectWrap-->
 
@@ -62,7 +76,7 @@
 						<p>A game I made mainly to see how much I could do with just HTML and CSS, and as little javascript as possible. Animations are 100% CSS.</p><p>
 
 						This is still a work in progress. Please note that there are some usability restrictions right now. It is only functioning in Safari and Chrome, and though it scales well and looks good on mobile, it isn't playable yet because of the game's reliance on the hover state. 
-						</p><p><a href="https://github.com/JessicaBarnett/DangerousWaters" target="_blank">View the source code!</a></p>
+						</p><p class="sourceCode"><a href="https://github.com/JessicaBarnett/DangerousWaters" target="_blank">View the source code!</a></p>
 					</div>
 				</div> <!--end projectWrap-->
 
@@ -70,7 +84,7 @@
 					<img class="smallColumn" src="images/project_icons/schoolbudget.svg" alt="School data icon">
 					<div class="largeColumn">
 						<h4><a href="http://schoolbudget.phl.io/" target="_blank">School Budget Visualization</a></h4>
-						<p>I'm working with mentors and other fellow open-source newbies to contribute to projects that will benefit Philadelphia. I've been contributing to a website that converts Budget Data from Philadelphia's School District into a much more understandable graph, using the d3.js library. I've primarily been working with javascript, developing code that will parse csv files into usable json formats. </p><p><a href="https://github.com/summer-of-open-source/schoolbudget.phl.io" target="_blank">View the source code!</a></p>
+						<p>I'm working with mentors and other fellow open-source newbies to contribute to projects that will benefit Philadelphia. I've been contributing to a website that converts Budget Data from Philadelphia's School District into a much more understandable graph, using the d3.js library. I've primarily been working with javascript, developing code that will parse csv files into usable json formats. </p><p class="sourceCode" ><a href="https://github.com/summer-of-open-source/schoolbudget.phl.io" target="_blank">View the source code!</a></p>
 					</div>
 				</div> <!--end projectWrap-->
 
@@ -78,7 +92,7 @@
 					<img class="smallColumn" src="images/project_icons/bloomsburg.svg" alt="man and a turtle in a boat">
 					<div class="largeColumn descriptionWrap">
 						<h4><a href="https://dl.dropboxusercontent.com/u/95700218/Bloomsburg%20Children%27s%20Museum/index.html" target="_blank">Bloomsburg Children's Museum</a></h4>
-						<p>A site for a fictional Children's Museum in Bloomsburg PA. This demo is still a work in progress, with most work to be done on the Exhibits page. Please note that the "Music Room" exhibit page is currently only working in Firefox and Chrome. </p><p><a href="https://github.com/JessicaBarnett/BloomsburgChildrensMuseum" target="_blank">View the source code!</a></p>
+						<p>A site for a fictional Children's Museum in Bloomsburg PA. This demo is still a work in progress, with most work to be done on the Exhibits page. Please note that the "Music Room" exhibit page is currently only working in Firefox and Chrome. </p><p class="sourceCode"><a href="https://github.com/JessicaBarnett/BloomsburgChildrensMuseum" target="_blank">View the source code!</a></p>
 					</div>
 				</div> <!--end projectWrap-->
 			</div><!--end projectDetails-->
