@@ -22,7 +22,9 @@ nav{
 #mobileNav {
 	position: static;
 	height: 10rem;
-	margin: 27rem 0 20rem 0;
+	padding-top: 3rem; //to off-set width taken up by fixed-top-nav when hamburger is clicked
+	margin: 0 0 20rem 0;
+
 	 li {
 	 	width: 100%;
 	 	height: 5rem;
