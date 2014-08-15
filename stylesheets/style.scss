@@ -1,12 +1,18 @@
+@import "text";
+@import "backgroundLayout";
+@import "nav";
+@import "textAndDetailLayout";
+
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-@import "text";
-@import "backgroundLayout";
-@import "nav";
-@import "textAndDetailLayout";
+.group {
+	content: "";
+	display: table;
+	clear: both;
+}
 
 
 .wideOnly{
@@ -15,12 +21,6 @@
 
 .flipped {
 	transform: scaleX(-1);
-}
-
-.group {
-	content: "";
-	display: table;
-	clear: both;
 }
 
 .smallColumn{

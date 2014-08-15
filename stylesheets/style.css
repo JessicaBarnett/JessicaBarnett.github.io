@@ -1,8 +1,3 @@
-* {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
-
 body, h1 {
   font-family: "Droid Sans", sans-serif;
   color: white;
@@ -22,8 +17,8 @@ h3 {
   font-size: 3rem; }
 
 h4 {
-  font-size: 2rem;
-  line-height: 3.4rem; }
+  font-size: 1.5rem;
+  line-height: 2.5rem; }
 
 nav {
   font-size: 1.3rem; }
@@ -95,37 +90,47 @@ nav {
     text-align: center;
     width: 12%;
     margin: 0 3%; }
+  nav a {
+    display: inline-block;
+    padding: 1rem; }
 
-.mobileNav {
+#mobileNav {
+  position: static;
+  height: 10rem;
+  margin: 27rem 0 20rem 0; }
+  #mobileNav li {
+    width: 100%;
+    height: 5rem; }
+
+#mobileNav, #hamburger {
   display: none; }
 
-a {
-  display: inline-block;
-  padding: 1rem; }
-
 @media screen and (max-width: 768px) and (min-width: 200px) {
-  nav.webNav {
+  nav.webNav.webNav {
     margin-top: -0.5rem; }
-  nav li {
+  nav.webNav li {
     display: none;
     height: 2rem;
     width: auto;
     margin: 0 -1rem 0 -1rem; }
-  nav li#hamburger {
+  nav.webNav li#hamburger {
     float: right;
     display: block;
     height: 4.8rem;
     padding-top: 0;
     text-align: center; }
-  nav a:hover {
+  nav.webNav a:hover {
     background-color: transparent; }
-  nav a {
+  nav.webNav a {
     width: 100%;
     height: 100%; }
-  nav .svgContainer {
-    max-width: 70%; } }
+  nav.webNav .svgContainer {
+    max-width: 70%; }
+
+  #mobileNav, #hamburger {
+    display: block; } }
 @media screen and (max-width: 480px) and (min-width: 320px) {
-  nav.webNav {
+  nav#webNav {
     background-color: transparent; }
 
   .svgContainer {
@@ -252,20 +257,17 @@ div#headshot img.overlay {
   margin: 0 auto; }
 
 .projectWrap {
-  margin-bottom: 1rem; }
+  margin-bottom: 3rem; }
 
 .projectWrap a {
   display: block;
   width: 100%; }
 
-.projectWrap a img {
-  margin-top: 10%; }
-
 p.sourceCode {
   position: relative; }
 
 p.sourceCode a {
-  margin: -5rem 0 0 10%; }
+  margin: -4rem 0 0 3%; }
 
 p.sourceCode a:before {
   content: url("../images/skill_icons/githubSm.svg");
@@ -279,16 +281,21 @@ p.sourceCode a:before {
   width: 80%;
   margin: 0 auto; }
 
-.wideOnly {
-  display: none; }
-
-.flipped {
-  transform: scaleX(-1); }
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
 
 .group {
   content: "";
   display: table;
   clear: both; }
+
+.wideOnly {
+  display: none; }
+
+.flipped {
+  transform: scaleX(-1); }
 
 .smallColumn {
   width: 25%;
