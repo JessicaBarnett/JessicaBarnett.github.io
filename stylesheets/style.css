@@ -277,9 +277,9 @@ p.sourceCode a:before {
   top: 2.8rem;
   left: 1.5rem; }
 
-/*********  Home Page  **********/
+/*********  Skills Page  **********/
 #skillDetails {
-  width: 80%;
+  width: 60%;
   margin: 0 auto; }
 
 * {
@@ -322,3 +322,12 @@ img {
 
 a img:hover {
   transform: scale(1.1, 1.1); }
+
+#skills {
+  background-color: tomato; }
+
+#skillDetails {
+  background-color: magenta; }
+
+body {
+  background-color: dodgerBlue; }
