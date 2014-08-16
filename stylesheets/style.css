@@ -279,9 +279,31 @@ p.sourceCode a:before {
 
 /*********  Skills Page  **********/
 #skillDetails {
-  width: 60%;
+  width: 70%;
   margin: 0 auto; }
 
+.skillWrapper {
+  max-width: 100%; }
+
+.skillWrapper > img, .skillBar {
+  float: left;
+  margin-bottom: 1.5rem; }
+
+.skillWrapper > img {
+  max-width: 20%;
+  margin-right: 5%; }
+
+.skillBar {
+  width: 75%;
+  margin-top: 1rem; }
+
+.skillBar img {
+  max-width: 10%; }
+
+@media screen and (max-width: 768px) and (min-width: 200px) {
+  #skillDetails .halfColumn {
+    float: none;
+    width: 100%; } }
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -322,12 +344,3 @@ img {
 
 a img:hover {
   transform: scale(1.1, 1.1); }
-
-#skills {
-  background-color: tomato; }
-
-#skillDetails {
-  background-color: magenta; }
-
-body {
-  background-color: dodgerBlue; }

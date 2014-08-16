@@ -180,7 +180,38 @@ p.sourceCode a:before {
 /*********  Skills Page  **********/
 
 #skillDetails {
-	width: 60%;
+	width: 70%;
 	margin: 0 auto;
+}
+.skillWrapper {
+	max-width: 100%;
+}
+
+.skillWrapper > img, .skillBar{
+	float: left;
+	margin-bottom: 1.5rem;
+}
+
+.skillWrapper > img{
+	max-width: 20%;
+	margin-right: 5%;
+}
+
+.skillBar {
+	width: 75%;
+	margin-top: 1rem;
+}
+
+.skillBar img {
+	max-width: 10%;
+}
+
+//tab portrait and below
+@media screen and (max-width: 768px) and (min-width: 200px){
+	#skillDetails .halfColumn{
+		float: none;
+		width: 100%;
+	}
+
 }
 
