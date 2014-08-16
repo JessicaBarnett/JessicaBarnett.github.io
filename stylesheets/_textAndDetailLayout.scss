@@ -169,7 +169,7 @@ p.sourceCode a{
 }
 
 p.sourceCode a:before {
-	content: url("../images/skill_icons/githubSm.svg");
+	content: url("../images/social_icons/githubSm.svg");
 	display: inline;
 	position: relative;
 	top: 2.8rem;
@@ -214,4 +214,51 @@ p.sourceCode a:before {
 	}
 
 }
+
+
+
+/*********  contact Page  **********/
+
+#contactDetails{
+	float: right;
+	width: 80%;
+	margin: 0 auto;
+	margin-bottom: 20rem;
+}
+
+#contactDetails a{
+	display: inline-block;
+	width: 15%;
+}
+
+// #contactDetails a:hover{
+
+// }
+
+
+
+// #contactDetails img, #contactDetails p{
+// 	float: left;
+// }
+
+#contactDetails img {
+	max-width: 90%;
+	padding: 5%;
+}
+
+//tab portrait and below
+@media screen and (max-width: 768px) and (min-width: 200px){
+	#contactDetails{
+		float: none;
+		width: 100%;
+	}
+
+}
+
+
+
+
+
+
+
 
