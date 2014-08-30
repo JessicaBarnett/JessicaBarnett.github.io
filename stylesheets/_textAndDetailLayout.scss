@@ -28,12 +28,9 @@ div.angle {
 }
 
 
-#about{
+#about, #skills, #projects, #contact {
+	margin: 0 auto;
 	margin-top: 20rem;
-}
-
-#projects, #skills, #contact {
-	margin-top: 25rem;
 }
 
 /*********  Home Page  **********/
@@ -50,6 +47,7 @@ div.angle {
 	@media screen and (max-width: 768px) and (min-width: 400px) and (orientation: portrait){
 			top: 35%;
 			left: 20%;	
+			margin-left: 1%;
 	}
 
 	//phone landscape
@@ -67,25 +65,28 @@ div.angle {
 
 #nameContainer h2{
 	margin-left: 6%;
-	
-	&:nth-of-type(2){
-		margin-left: 30%;
-	}
+	width: 50%;
 
 	//tab portrait
-	@media screen and (max-width: 768px) and (min-width: 200px){
-		max-width: 60%;
+	@media screen and (max-width: 768px) and (min-width: 200px) and (orientation: portrait){
+		max-width: 70%;
+		margin-left: 10%;
+	}
+
+	//tab landscape
+	@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape){
+		max-width: 40%;
 	}
 }
 
 //wide screens
 @media screen and (min-width: 1000px){
-	#nameContainer h2{
-		display: none;
-	}
-	#nameContainer h2.wideOnly{
-		display: block;
-	}
+	// #nameContainer h2{
+	// 	display: none;
+	// }
+	// #nameContainer h2.wideOnly{
+	// 	display: block;
+	// }
 }
 
 /*********  About Page  **********/

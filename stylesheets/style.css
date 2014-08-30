@@ -8,6 +8,9 @@ h1 {
   font-size: 4rem;
   line-height: 4.2rem; }
 
+#nameContainer h2 {
+  text-align: right; }
+
 h2, h3 {
   font-family: "Calligraffitti", serif;
   font-size: 1.8rem;
@@ -39,14 +42,27 @@ h4 a {
 h4 a:visited {
   color: white; }
 
-@media screen and (max-width: 480px) and (min-width: 200px) {
+@media screen and (max-width: 900px) and (min-width: 480px) {
   h1 {
-    font-size: 2.2rem;
-    line-height: 2.7rem; }
+    font-size: 3rem;
+    line-height: 3.4rem; }
 
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     line-height: 2rem; } }
+@media screen and (max-width: 480px) and (min-width: 200px) {
+  #nameContainer {
+    width: 70%;
+    margin-left: -10%; }
+
+  h1 {
+    font-size: 2rem;
+    line-height: 2.3rem; }
+
+  h2 {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    min-width: 90%; } }
 div#top {
   width: 100%;
   height: 100vh;
@@ -79,6 +95,32 @@ body {
     .patch {
       margin: 0; } }
 
+#projects {
+  padding-top: 3rem;
+  height: 100rem; }
+  @media screen and (min-width: 1100px) {
+    #projects {
+      width: 70%;
+      margin: 0 auto; } }
+  @media screen and (max-width: 768px) and (min-width: 480px) and (orientation: portrait) {
+    #projects {
+      width: 100%; } }
+
+#contact {
+  padding-top: 5rem;
+  background-color: black; }
+
+#archBG {
+  margin-top: 40rem;
+  width: 100%;
+  background: url("../images/archParallax/arch.svg") -5px 0/110% no-repeat, url("../images/archParallax/doublePlant.svg") 0 -15rem/100% no-repeat, url("../images/archParallax/groundPlants.svg") -10rem 90rem/130% no-repeat, linear-gradient(to bottom, #001e78 57%, #6159a8 100%); }
+  @media screen and (max-width: 768px) and (min-width: 480px) and (orientation: portrait) {
+    #archBG {
+      background: url("../images/archParallax/arch.svg") -5rem 0/120% no-repeat, url("../images/archParallax/doublePlant.svg") 0 -15rem/100% no-repeat, url("../images/archParallax/groundPlants.svg") -10rem 90rem/130% no-repeat, linear-gradient(to bottom, #001e78 57%, #6159a8 100%); } }
+  @media screen and (max-width: 480px) and (min-width: 200px) and (orientation: landscape) {
+    #archBG {
+      background: black; } }
+
 nav {
   width: 100%;
   position: fixed;
@@ -88,7 +130,7 @@ nav {
     display: inline-block;
     float: left;
     text-align: center;
-    width: 10%;
+    width: 14%;
     margin: 0 3%; }
   nav a {
     display: inline-block;
@@ -130,32 +172,27 @@ nav {
 
   #mobileNav, #hamburger {
     display: block; } }
-@media screen and (max-width: 480px) and (min-width: 320px) {
-  nav#webNav {
+@media screen and (max-width: 480px) and (min-width: 100px) {
+  nav.webNav {
     background-color: transparent; }
 
   .svgContainer {
     max-width: 60%; }
 
-  li#hamburger {
-    padding-top: 0; }
-
   #nameContainer {
-    top: 26%; } }
+    top: 26%;
+    margin-left: 3%; } }
 @media screen and (max-width: 320px) and (min-width: 100px) {
-  nav.webNav {
-    margin-top: 0rem; }
-
   .svgContainer {
     max-width: 50%; }
 
   #nameContainer {
     top: 36%;
-    left: 10%; }
+    margin-left: 10%; }
 
   li#hamburger {
-    padding-top: 0;
-    margin-top: -1rem; } }
+    margin-right: -1.5rem;
+    margin-top: 0; } }
 /*********  Used-in-lots-of-places-stuff  **********/
 .titleWrap {
   width: 50%;
@@ -175,11 +212,9 @@ nav {
 div.angle {
   height: 5rem; }
 
-#about {
+#about, #skills, #projects, #contact {
+  margin: 0 auto;
   margin-top: 20rem; }
-
-#projects, #skills, #contact {
-  margin-top: 25rem; }
 
 /*********  Home Page  **********/
 #nameContainer {
@@ -191,7 +226,8 @@ div.angle {
   @media screen and (max-width: 768px) and (min-width: 400px) and (orientation: portrait) {
     #nameContainer {
       top: 35%;
-      left: 20%; } }
+      left: 20%;
+      margin-left: 1%; } }
   @media screen and (max-width: 480px) and (min-width: 320px) and (orientation: landscape) {
     #nameContainer {
       top: 26%;
@@ -202,19 +238,16 @@ div.angle {
       left: 10%; } }
 
 #nameContainer h2 {
-  margin-left: 6%; }
-  #nameContainer h2:nth-of-type(2) {
-    margin-left: 30%; }
-  @media screen and (max-width: 768px) and (min-width: 200px) {
+  margin-left: 6%;
+  width: 50%; }
+  @media screen and (max-width: 768px) and (min-width: 200px) and (orientation: portrait) {
     #nameContainer h2 {
-      max-width: 60%; } }
+      max-width: 70%;
+      margin-left: 10%; } }
+  @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    #nameContainer h2 {
+      max-width: 40%; } }
 
-@media screen and (min-width: 1000px) {
-  #nameContainer h2 {
-    display: none; }
-
-  #nameContainer h2.wideOnly {
-    display: block; } }
 /*********  About Page  **********/
 #about {
   width: 100%; }

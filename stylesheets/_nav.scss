@@ -9,8 +9,10 @@ nav{
 		float: left;
 		
 		text-align: center;
-		width: 10%;
+		width: 14%;
 		margin: 0 3%;
+		// width: 10%; //for an added nav item
+		// margin: 0 3%;
 	}
 
 	a{
@@ -86,28 +88,25 @@ nav{
 }
 
 //phone landscape
-@media screen and (max-width: 480px) and (min-width: 320px){
-	nav#webNav {
+@media screen and (max-width: 480px) and (min-width: 100px){
+
+	nav.webNav {
+		// height: 3rem;
 		background-color: rgba(0, 0, 0, 0);
 	}
 
 	.svgContainer {
 		max-width: 60%;
 	}
-	li#hamburger{
-		padding-top: 0;
-	}
+
 	#nameContainer {
 		top: 26%;
+		margin-left: 3%;
 	}
 }
 
 //Phone portrait
 @media screen and (max-width: 320px) and (min-width: 100px){
-
-	nav.webNav {
-		margin-top: 0rem;
-	}
 
 	.svgContainer {
 		max-width: 50%;
@@ -115,11 +114,11 @@ nav{
 
 	#nameContainer {
 		top: 36%;
-		left: 10%;
+		margin-left: 10%;
 	}
 
 	li#hamburger{
-		padding-top: 0;
-		margin-top: -1rem;
+		margin-right: -1.5rem;
+		margin-top: 0;
 	}
 }
