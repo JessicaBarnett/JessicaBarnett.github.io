@@ -4,6 +4,9 @@ body, h1 {
   font-size: 1rem;
   line-height: 1.5rem; }
 
+p {
+  margin-bottom: .5rem; }
+
 h1 {
   font-size: 4rem;
   line-height: 4.2rem; }
@@ -39,10 +42,13 @@ a:hover {
 h4 a {
   text-decoration: none; }
 
-h4 a:visited {
+a:visited {
   color: white; }
 
 @media screen and (max-width: 900px) and (min-width: 480px) {
+  .titleWrap .angle {
+    height: 5rem; }
+
   h1 {
     font-size: 3rem;
     line-height: 3.4rem; }
@@ -50,9 +56,19 @@ h4 a:visited {
   h2 {
     font-size: 1.4rem;
     line-height: 2rem; } }
-@media screen and (max-width: 480px) and (min-width: 200px) {
+@media screen and (max-width: 480px) {
+  .titleWrap .angle {
+    height: 5rem; }
+
+  .titleWrap h3 {
+    font-size: 2rem; }
+
   #nameContainer {
     width: 70%; }
+
+  body {
+    font-size: .8rem;
+    line-height: 1.2rem; }
 
   h1 {
     font-size: 2rem;
@@ -101,9 +117,9 @@ body {
     #projects {
       width: 70%;
       margin: 0 auto; } }
-  @media screen and (max-width: 768px) and (min-width: 480px) and (orientation: portrait) {
+  @media screen and (max-width: 768px) {
     #projects {
-      width: 100%; } }
+      height: 140rem; } }
 
 #contact {
   padding-top: 5rem;
@@ -111,12 +127,17 @@ body {
 
 #archBG {
   margin-top: 40rem;
-  width: 100%;
-  background: url("../images/archParallax/arch.svg") -4rem 0/110% no-repeat, url("../images/archParallax/doublePlant.svg") 0 -15rem/100% no-repeat, url("../images/archParallax/groundPlants.svg") -10rem 90rem/130% no-repeat, linear-gradient(to bottom, #001e78 57%, #6159a8 100%); }
-  @media screen and (max-width: 768px) and (min-width: 480px) and (orientation: portrait) {
+  width: 100%; }
+  @media screen and (min-width: 1200px) {
     #archBG {
-      background: url("../images/archParallax/arch.svg") -5rem 0/120% no-repeat, url("../images/archParallax/doublePlant.svg") 0 -15rem/100% no-repeat, url("../images/archParallax/groundPlants.svg") -10rem 90rem/130% no-repeat, linear-gradient(to bottom, #001e78 57%, #6159a8 100%); } }
-  @media screen and (max-width: 480px) and (min-width: 200px) and (orientation: landscape) {
+      background: url("../images/archParallax/arch.svg") -9rem 0/120% no-repeat, url("../images/archParallax/doublePlant.svg") 0 -15rem/100% no-repeat, url("../images/archParallax/groundPlants.svg") -10rem 90rem/130% no-repeat, linear-gradient(to bottom, #001e78 57%, #6159a8 100%); } }
+  @media screen and (max-width: 1200px) and (min-width: 768px) {
+    #archBG {
+      background: url("../images/archParallax/arch.svg") -7rem 0/120% no-repeat, url("../images/archParallax/doublePlant.svg") 0 -15rem/100% no-repeat, url("../images/archParallax/groundPlants.svg") -10rem 90rem/130% no-repeat, linear-gradient(to bottom, #001e78 57%, #6159a8 100%); } }
+  @media screen and (max-width: 768px) and (min-width: 480px) {
+    #archBG {
+      background: url("../images/archParallax/arch.svg") -8rem 0/140% no-repeat, url("../images/archParallax/doublePlant.svg") -3rem -5rem/130% no-repeat, url("../images/archParallax/groundPlants.svg") -10rem 130rem/150% no-repeat, linear-gradient(to bottom, #001e78 57%, #6159a8 100%); } }
+  @media screen and (max-width: 480px) and (min-width: 200px) {
     #archBG {
       background: black; } }
 
@@ -181,6 +202,9 @@ nav {
   #nameContainer {
     top: 26%;
     margin-left: 3%; } }
+@media screen and (max-width: 480px) and (min-width: 100px) and (orientation: landscape) {
+  #mobileNav li {
+    height: 3.2rem; } }
 @media screen and (max-width: 320px) and (min-width: 100px) {
   .svgContainer {
     max-width: 50%; }
@@ -199,6 +223,9 @@ nav {
   height: 10rem;
   padding-top: 5rem; }
 
+#contact, #projects {
+  padding-top: 0; }
+
 .titleWrap .angle, .titleWrap h3 {
   float: left;
   width: 20%; }
@@ -211,9 +238,19 @@ nav {
 div.angle {
   height: 5rem; }
 
+@media screen and (max-width: 480px) {
+  .titleWrap {
+    width: 90%;
+    margin: 0 auto; }
+
+  div.angle {
+    height: 8rem; } }
 #about, #skills, #projects, #contact {
   margin: 0 auto;
   margin-top: 20rem; }
+  @media screen and (max-width: 480px) {
+    #about, #skills, #projects, #contact {
+      margin-top: 5rem; } }
 
 /*********  Home Page  **********/
 #nameContainer {
@@ -281,34 +318,14 @@ div#headshot img.overlay {
   top: -4rem;
   left: -4rem; }
 
-/*********  Projects Page  **********/
-#projects h4 {
-  margin-left: -3%; }
+@media screen and (max-width: 768px) {
+  #headshot {
+    display: none; }
 
-#projectDetails {
-  width: 80%;
-  margin: 0 auto; }
-
-.projectWrap {
-  margin-bottom: 3rem; }
-
-.projectWrap a {
-  display: block;
-  width: 100%; }
-
-p.sourceCode {
-  position: relative; }
-
-p.sourceCode a {
-  margin: -4rem 0 0 3%; }
-
-p.sourceCode a:before {
-  content: url("../images/social_icons/githubSm.svg");
-  display: inline;
-  position: relative;
-  top: 2.8rem;
-  left: 1.5rem; }
-
+  div.caption {
+    float: none;
+    width: 85%;
+    margin: 0 auto; } }
 /*********  Skills Page  **********/
 #skillDetails {
   width: 70%;
@@ -332,16 +349,87 @@ p.sourceCode a:before {
 .skillBar img {
   max-width: 10%; }
 
-@media screen and (max-width: 768px) and (min-width: 200px) {
-  #skillDetails .halfColumn {
-    float: none;
+@media screen and (min-width: 1200px) {
+  #skillDetails {
+    width: 10%; } }
+@media screen and (max-width: 768px) {
+  #skillDetails {
+    padding-left: 8%;
     width: 100%; } }
+@media screen and (max-width: 480px) and (orientation: portrait) {
+  #skillDetails .halfColumn {
+    width: 80%;
+    margin: 0 auto;
+    float: none; } }
+/*********  Projects Page  **********/
+#projects h4 {
+  margin-left: -3%; }
+
+#projects .titleWrap {
+  margin-bottom: 10rem; }
+  @media screen and (max-width: 768px) {
+    #projects .titleWrap {
+      margin-bottom: 5rem; } }
+  @media screen and (max-width: 400px) {
+    #projects .titleWrap {
+      margin-bottom: 0; } }
+
+#projectDetails {
+  width: 70%;
+  margin: 0 auto; }
+
+.projectWrap {
+  margin-bottom: 3rem; }
+
+.projectWrap a {
+  text-decoration: underline;
+  display: block;
+  width: 100%; }
+
+.sourceCode {
+  position: relative; }
+
+.sourceCode a {
+  margin: -4rem 0 0 -5%;
+  width: 100%; }
+  @media screen and (max-width: 900px) {
+    .sourceCode a {
+      margin: -4rem 0 0 3%; } }
+  @media screen and (max-width: 768px) {
+    .sourceCode a {
+      margin: -4rem 0 0 10%; } }
+  @media screen and (max-width: 400px) {
+    .sourceCode a {
+      margin: -4rem 0 0 -4rem;
+      width: 120%; } }
+
+.sourceCode a:before {
+  content: url("../images/social_icons/githubSm.svg");
+  display: inline;
+  position: relative;
+  top: 2.8rem;
+  left: 1.5rem; }
+
+@media screen and (max-width: 768px) {
+  #projects .smallColumn, #projects .largeColumn {
+    float: none;
+    width: 100%; }
+  #projects .smallColumn {
+    width: 50%; }
+  #projects img.smallColumn {
+    margin: 0 25%; }
+  #projects h4 {
+    text-align: center; }
+  #projects p {
+    padding-left: 5%; } }
 /*********  contact Page  **********/
+#contact {
+  margin-bottom: 5rem; }
+
 #contactDetails {
-  float: right;
   width: 80%;
   margin: 0 auto;
-  margin-bottom: 20rem; }
+  text-align: center; }
 
 #contactDetails a {
   display: inline-block;
@@ -351,10 +439,12 @@ p.sourceCode a:before {
   max-width: 90%;
   padding: 5%; }
 
-@media screen and (max-width: 768px) and (min-width: 200px) {
-  #contactDetails {
-    float: none;
-    width: 100%; } }
+/********** page source  ************/
+#pageSource.sourceCode {
+  width: 100%;
+  text-align: center;
+  line-height: 3rem; }
+
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -370,6 +460,9 @@ p.sourceCode a:before {
 
 .flipped {
   transform: scaleX(-1); }
+
+.fullScreen {
+  width: 100%; }
 
 .smallColumn {
   width: 25%;

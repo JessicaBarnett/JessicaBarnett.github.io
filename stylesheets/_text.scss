@@ -6,6 +6,9 @@ body, h1{
 	font-size: 1rem;
 	line-height: 1.5rem;
 }
+p{
+	margin-bottom: .5rem;
+}
 
 
 h1 { //Name
@@ -58,11 +61,15 @@ h4 a {
 	text-decoration: none;
 }
 
-h4 a:visited {
+a:visited {
 	color: white;
 }
 
 @media screen and (max-width: 900px) and (min-width: 480px){
+	.titleWrap .angle {
+		height: 5rem;
+	}
+
 	h1 {
 		font-size: 3rem; 
 		line-height: 3.4rem;
@@ -74,11 +81,20 @@ h4 a:visited {
 }
 
 //phone landscape and smaller
-@media screen and (max-width: 480px) and (min-width: 200px){
-	
+@media screen and (max-width: 480px){
+	.titleWrap .angle {
+		height: 5rem;
+	}
+	.titleWrap h3{
+		font-size: 2rem;
+	}
 	#nameContainer{
 		width: 70%;
 	}
+	body{
+		font-size: .8rem;
+		line-height: 1.2rem;
+	}	
 	h1 {
 		font-size: 2rem; 
 		line-height: 2.3rem;

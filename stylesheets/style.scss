@@ -23,6 +23,10 @@
 	transform: scaleX(-1);
 }
 
+.fullScreen {
+	width: 100%;
+}
+
 .smallColumn{
 	width: 25%;
 	margin: 0 4%%;
@@ -45,9 +49,6 @@ html, body{
 	max-width: 100%;
 	overflow-x: hidden;
 }
-html{
-	//overflow: hidden;
-}
 
 img {
 	max-width: 100%;
@@ -58,19 +59,4 @@ a img:hover{
 }
 
 
-// #projects, #skills {
-// 	display: none;
-// }
 
-
-// #skills{
-// 	background-color: tomato;
-// }
-
-// #skillDetails{
-// 	background-color: magenta;
-// }
-
-// body{
-// 	background-color: dodgerBlue;
-// }

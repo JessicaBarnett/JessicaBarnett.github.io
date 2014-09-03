@@ -12,6 +12,11 @@
 	padding-top: 5rem;
 }
 
+#contact, #projects{
+	// height: 10rem;
+	padding-top: 0;
+}
+
 .titleWrap .angle, .titleWrap h3{
 	float: left;
 	width: 20%;
@@ -27,11 +32,26 @@ div.angle {
 	height: 5rem;
 }
 
+//tab portrait and smaller
+@media screen and (max-width: 480px){
+	.titleWrap{
+		width: 90%;
+		margin: 0 auto;
+	}
+	div.angle {
+		height: 8rem;
+	}	
+}
+
 
 #about, #skills, #projects, #contact {
 	margin: 0 auto;
 	margin-top: 20rem;
+	@media screen and (max-width: 480px){
+		margin-top: 5rem;		
+	}
 }
+
 
 /*********  Home Page  **********/
 
@@ -79,15 +99,6 @@ div.angle {
 	}
 }
 
-//wide screens
-@media screen and (min-width: 1000px){
-	// #nameContainer h2{
-	// 	display: none;
-	// }
-	// #nameContainer h2.wideOnly{
-	// 	display: block;
-	// }
-}
 
 /*********  About Page  **********/
 
@@ -133,50 +144,16 @@ div#headshot img.overlay {
 	left: -4rem;
 }
 
-
-/*********  Projects Page  **********/
-
-// #projects{
-// 	margin-top: 30rem;
-// }
-
-#projects h4 {
-	margin-left: -3%; //don't know where this margin comes from.  it's not showing up in devTools...
+@media screen and (max-width: 768px){
+	#headshot {
+		display: none;
+	}
+	div.caption {
+		float: none;
+		width: 85%;
+		margin: 0 auto;
+	}
 }
-
-#projectDetails{
-	width: 80%;
-	margin: 0 auto;
-}
-
-.projectWrap {
-	margin-bottom: 3rem;
-}
-
-
-.projectWrap a {
-	display: block;
-	width: 100%;
-}
-
-//Source code link + github logo
-
-p.sourceCode {
-	position: relative; //so before pseudo will use this as context
-}
-
-p.sourceCode a{
-	margin: -4rem 0 0 3%;
-}
-
-p.sourceCode a:before {
-	content: url("../images/social_icons/githubSm.svg");
-	display: inline;
-	position: relative;
-	top: 2.8rem;
-	left: 1.5rem
-}
-
 
 /*********  Skills Page  **********/
 
@@ -207,24 +184,132 @@ p.sourceCode a:before {
 	max-width: 10%;
 }
 
+//wide screen
+@media screen and (min-width: 1200px){
+	#skillDetails{
+		width: 10%;
+	}
+}
+
 //tab portrait and below
-@media screen and (max-width: 768px) and (min-width: 200px){
-	#skillDetails .halfColumn{
-		float: none;
+@media screen and (max-width: 768px){
+	#skillDetails{
+		padding-left: 8%;
 		width: 100%;
 	}
+}
 
+//tab portrait and below
+@media screen and (max-width: 480px) and (orientation: portrait){
+	#skillDetails{
+		.halfColumn{
+			width: 80%;
+			margin: 0 auto;
+			float: none;
+		}
+	}
+}
+
+
+
+/*********  Projects Page  **********/
+
+#projects h4 {
+	margin-left: -3%; //don't know where this margin comes from.  it's not showing up in devTools...
+}
+
+#projects .titleWrap{
+	margin-bottom: 10rem;
+	@media screen and (max-width: 768px){
+		margin-bottom: 5rem;
+	}
+	@media screen and (max-width: 400px){
+		margin-bottom: 0;
+	}
+}
+
+#projectDetails{
+	width: 70%;
+	margin: 0 auto;
+}
+
+.projectWrap {
+	margin-bottom: 3rem;
+}
+
+
+.projectWrap a {
+	text-decoration: underline;
+	display: block;
+	width: 100%;
+}
+
+
+//Source code link + github logo
+
+.sourceCode {
+	position: relative; //so before pseudo-class will use this as context
+}
+
+.sourceCode a{
+	margin: -4rem 0 0 -5%;
+	width: 100%;
+
+
+	@media screen and (max-width: 900px){
+		margin: -4rem 0 0 3%;
+	}
+	@media screen and (max-width: 768px){
+		margin: -4rem 0 0 10%;
+	}
+	@media screen and (max-width: 400px){
+		margin: -4rem 0 0 -4rem;
+		width: 120%;
+	}
+}
+
+.sourceCode a:before {
+	content: url("../images/social_icons/githubSm.svg");
+	display: inline;
+	position: relative;
+	top: 2.8rem;
+	left: 1.5rem
+}
+
+//tab portrait and smaller
+@media screen and (max-width: 768px){
+	#projects{
+		.smallColumn, .largeColumn{
+			float: none;
+			width: 100%;
+		}
+		.smallColumn{
+			width: 50%;
+		}
+		img.smallColumn{
+			margin: 0 25%;
+		}
+		h4{
+			text-align: center;
+		}
+		p{
+			padding-left: 5%;
+		}
+	}
 }
 
 
 
 /*********  contact Page  **********/
 
+#contact{
+	margin-bottom: 5rem;
+}
+
 #contactDetails{
-	float: right;
 	width: 80%;
 	margin: 0 auto;
-	margin-bottom: 20rem;
+	text-align: center;
 }
 
 #contactDetails a{
@@ -232,34 +317,20 @@ p.sourceCode a:before {
 	width: 15%;
 }
 
-// #contactDetails a:hover{
-
-// }
-
-
-
-// #contactDetails img, #contactDetails p{
-// 	float: left;
-// }
-
 #contactDetails img {
 	max-width: 90%;
 	padding: 5%;
 }
 
-//tab portrait and below
-@media screen and (max-width: 768px) and (min-width: 200px){
-	#contactDetails{
-		float: none;
-		width: 100%;
-	}
 
+
+/********** page source  ************/
+
+#pageSource.sourceCode{
+	width: 100%;
+	text-align: center;
+	line-height: 3rem;
 }
-
-
-
-
-
 
 
 

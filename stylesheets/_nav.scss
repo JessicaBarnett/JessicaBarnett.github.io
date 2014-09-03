@@ -11,8 +11,6 @@ nav{
 		text-align: center;
 		width: 14%;
 		margin: 0 3%;
-		// width: 10%; //for an added nav item
-		// margin: 0 3%;
 	}
 
 	a{
@@ -103,6 +101,14 @@ nav{
 		top: 26%;
 		margin-left: 3%;
 	}
+}
+
+@media screen and (max-width: 480px) and (min-width: 100px) and (orientation: landscape){
+
+	#mobileNav li{
+		height: 3.2rem;	
+	}
+
 }
 
 //Phone portrait
