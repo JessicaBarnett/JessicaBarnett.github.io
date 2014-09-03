@@ -52,8 +52,7 @@ h4 a:visited {
     line-height: 2rem; } }
 @media screen and (max-width: 480px) and (min-width: 200px) {
   #nameContainer {
-    width: 70%;
-    margin-left: -10%; }
+    width: 70%; }
 
   h1 {
     font-size: 2rem;
@@ -113,7 +112,7 @@ body {
 #archBG {
   margin-top: 40rem;
   width: 100%;
-  background: url("../images/archParallax/arch.svg") -5px 0/110% no-repeat, url("../images/archParallax/doublePlant.svg") 0 -15rem/100% no-repeat, url("../images/archParallax/groundPlants.svg") -10rem 90rem/130% no-repeat, linear-gradient(to bottom, #001e78 57%, #6159a8 100%); }
+  background: url("../images/archParallax/arch.svg") -4rem 0/110% no-repeat, url("../images/archParallax/doublePlant.svg") 0 -15rem/100% no-repeat, url("../images/archParallax/groundPlants.svg") -10rem 90rem/130% no-repeat, linear-gradient(to bottom, #001e78 57%, #6159a8 100%); }
   @media screen and (max-width: 768px) and (min-width: 480px) and (orientation: portrait) {
     #archBG {
       background: url("../images/archParallax/arch.svg") -5rem 0/120% no-repeat, url("../images/archParallax/doublePlant.svg") 0 -15rem/100% no-repeat, url("../images/archParallax/groundPlants.svg") -10rem 90rem/130% no-repeat, linear-gradient(to bottom, #001e78 57%, #6159a8 100%); } }
