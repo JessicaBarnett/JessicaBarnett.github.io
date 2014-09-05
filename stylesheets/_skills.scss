@@ -1,0 +1,121 @@
+/*********  Skills Page  **********/
+
+// .circle, .dot{
+// 	border-radius: 20px;
+// 	float: left;
+
+// 	width: .8rem;
+// 	height: .8rem;
+// 	margin: .3rem;
+// 	background-color: rgba(255, 255, 255, 1);
+// }
+// .dot {
+// 	background-color: rgba(255, 255, 255, .3);
+// }
+
+#skills{
+	.halfColumn{
+		margin: 0 2%;
+	}
+
+	.halfColumn:nth-of-type(2){
+		margin-left: 10%;
+	}
+}
+
+.full, .empty{
+	float: left;
+	height: 1rem;
+	width: 50%;
+	background-color: rgba(255, 255, 255, 1);
+}
+.empty {
+	background-color: rgba(255, 255, 255, .3);
+}
+
+//for "coming soon" text in progress Bars
+.empty p{
+	font-size: .8rem;
+	line-height: 1rem;
+	text-align: center;
+	width: 100%;
+}
+
+#skillHighlights{
+	border-bottom: 2px solid white;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.moreSkills{
+	width: 70%;
+	margin: 0 auto;
+}
+
+.skillWrapper {
+	width: 100%;
+}
+
+.skillWrapper > p {
+	margin-top: 1rem;
+	min-width: 30%;
+}
+
+.skillWrapper > img{
+
+	max-width: 25%;
+	margin-right: 5%;
+}
+
+.skillBar img {
+	max-width: 14%;
+}
+
+.moreSkills {
+	.skillBar {
+		width: 100%;
+		padding-left: 2rem;
+	}
+}
+
+#skillHighlights{
+	.skillWrapper{
+		margin-top: 1.5rem;
+	}
+
+	.skillWrapper > img, .skillBar{
+		float: left;
+	}
+	.skillBar{
+		margin-top: 1rem;
+		width: 70%;
+	}
+
+}
+
+//wide screen
+@media screen and (min-width: 1200px){
+	#skillDetails{
+		width: 10%;
+	}
+}
+
+//tab portrait and below
+@media screen and (max-width: 768px){
+	#skillDetails{
+		padding-left: 8%;
+		width: 100%;
+	}
+}
+
+//tab portrait and below
+@media screen and (max-width: 480px) and (orientation: portrait){
+	#skillDetails{
+		.halfColumn{
+			width: 80%;
+			margin: 0 auto;
+			float: none;
+		}
+	}
+}
+

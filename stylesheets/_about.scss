@@ -1,0 +1,56 @@
+
+
+/*********  About Page  **********/
+
+//all img tags already have max-width: 100%!!
+
+#about{ //page container
+	width: 100%;
+}
+
+div.titleWrap:first-of-type{
+	position: relative;
+	z-index: 2;
+}
+
+#about .group { //contents
+	margin: 2rem auto 0 auto;
+	background-color: black; //to cover any gaps if the sizing/positioning goes awry on the photo/overlay
+	width: 80%;
+}
+
+div.caption, div#headshot{ //floated elements
+	width: 30%;
+	margin: 5%;
+	float: left;
+	position: relative; //so overlay will reference this as context
+}
+
+div.caption {
+	width: 50%;
+	margin: 5%;
+	z-index: 2; //so caption will rise over photo overlay
+}
+
+#headshot img {
+	max-width: 110%;
+	-webkit-filter: grayscale(0.3);
+}
+
+div#headshot img.overlay {
+	max-width: 160%;
+	position: absolute;
+	top: -4rem;
+	left: -4rem;
+}
+
+@media screen and (max-width: 768px){
+	#headshot {
+		display: none;
+	}
+	div.caption {
+		float: none;
+		width: 85%;
+		margin: 0 auto;
+	}
+}

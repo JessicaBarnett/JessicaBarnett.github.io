@@ -1,7 +1,3 @@
-@import "text";
-@import "backgroundLayout";
-@import "nav";
-@import "textAndDetailLayout";
 
 * {
   -moz-box-sizing: border-box;
@@ -58,5 +54,10 @@ a img:hover{
 	transform: scale(1.1, 1.1);
 }
 
+@import "text";
+@import "backgroundLayout";
+@import "nav";
+@import "home", "about", "contact", "skills", "projects";
+@import "textAndDetailLayout";
 
 

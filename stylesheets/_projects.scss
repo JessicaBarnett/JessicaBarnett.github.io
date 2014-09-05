@@ -1,0 +1,87 @@
+/*********  Projects Page  **********/
+
+#projects h4 {
+	margin-left: -3%; //don't know where this margin comes from.  it's not showing up in devTools...
+}
+
+#projects .titleWrap{
+	margin-bottom: 10rem;
+	@media screen and (max-width: 768px){
+		margin-bottom: 5rem;
+	}
+	@media screen and (max-width: 400px){
+		margin-bottom: 0;
+	}
+}
+
+#projectDetails{
+	width: 70%;
+	margin: 0 auto;
+}
+
+.projectWrap {
+	margin-bottom: 3rem;
+}
+
+
+.projectWrap a {
+	text-decoration: underline;
+	display: block;
+	width: 100%;
+}
+
+
+//Source code link + github logo
+
+.sourceCode {
+	position: relative; //so before pseudo-class will use this as context
+}
+
+.sourceCode a{
+	margin: -4rem 0 0 -5%;
+	width: 100%;
+
+
+	@media screen and (max-width: 900px){
+		margin: -4rem 0 0 3%;
+	}
+	@media screen and (max-width: 768px){
+		margin: -4rem 0 0 10%;
+	}
+	@media screen and (max-width: 400px){
+		margin: -4rem 0 0 -4rem;
+		width: 120%;
+	}
+}
+
+.sourceCode a:before {
+	content: url("../images/social_icons/githubSm.svg");
+	display: inline;
+	position: relative;
+	top: 2.8rem;
+	left: 1.5rem
+}
+
+//tab portrait and smaller
+@media screen and (max-width: 768px){
+	#projects{
+		.smallColumn, .largeColumn{
+			float: none;
+			width: 100%;
+		}
+		.smallColumn{
+			width: 50%;
+		}
+		img.smallColumn{
+			margin: 0 25%;
+		}
+		h4{
+			text-align: center;
+		}
+		p{
+			padding-left: 5%;
+		}
+	}
+}
+
+
