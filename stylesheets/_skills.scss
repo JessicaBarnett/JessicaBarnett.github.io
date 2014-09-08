@@ -1,17 +1,5 @@
 /*********  Skills Page  **********/
-
-// .circle, .dot{
-// 	border-radius: 20px;
-// 	float: left;
-
-// 	width: .8rem;
-// 	height: .8rem;
-// 	margin: .3rem;
-// 	background-color: rgba(255, 255, 255, 1);
-// }
-// .dot {
-// 	background-color: rgba(255, 255, 255, .3);
-// }
+@import "skillVals";
 
 #skills{
 	.halfColumn{
@@ -19,7 +7,7 @@
 	}
 
 	.halfColumn:nth-of-type(2){
-		margin-left: 10%;
+		// margin-left: 7%;
 	}
 }
 
@@ -93,13 +81,6 @@
 
 }
 
-//wide screen
-@media screen and (min-width: 1200px){
-	#skillDetails{
-		width: 10%;
-	}
-}
-
 //tab portrait and below
 @media screen and (max-width: 768px){
 	#skillDetails{
@@ -109,7 +90,7 @@
 }
 
 //tab portrait and below
-@media screen and (max-width: 480px) and (orientation: portrait){
+@media screen and (max-width: 600px){
 	#skillDetails{
 		.halfColumn{
 			width: 80%;

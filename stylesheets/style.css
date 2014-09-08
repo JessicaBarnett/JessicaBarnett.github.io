@@ -358,10 +358,78 @@ div#headshot img.overlay {
   line-height: 3rem; }
 
 /*********  Skills Page  **********/
+#wordpress .full {
+  width: 10%; }
+#wordpress .empty {
+  width: 90%; }
+
+#frameworks .full {
+  width: 40%; }
+#frameworks .empty {
+  width: 60%; }
+
+#node .full {
+  width: 10%; }
+#node .empty {
+  width: 90%; }
+
+#angular .full {
+  width: 10%; }
+#angular .empty {
+  width: 90%; }
+
+#grunt .full {
+  width: 0%; }
+#grunt .empty {
+  width: 100%; }
+
+#hybridApps .full {
+  width: 10%; }
+#hybridApps .empty {
+  width: 90%; }
+
+#java .full {
+  width: 10%; }
+#java .empty {
+  width: 90%; }
+
+#photoshop .full {
+  width: 80%; }
+#photoshop .empty {
+  width: 20%; }
+
+#illustrator .full {
+  width: 80%; }
+#illustrator .empty {
+  width: 20%; }
+
+#flash .full {
+  width: 90%; }
+#flash .empty {
+  width: 10%; }
+
+#vectorIllustration .full {
+  width: 70%; }
+#vectorIllustration .empty {
+  width: 30%; }
+
+#animation .full {
+  width: 80%; }
+#animation .empty {
+  width: 20%; }
+
+#commandLine .full {
+  width: 80%; }
+#commandLine .empty {
+  width: 20%; }
+
+#phpMySql .full {
+  width: 0%; }
+#phpMySql .empty {
+  width: 100%; }
+
 #skills .halfColumn {
   margin: 0 2%; }
-#skills .halfColumn:nth-of-type(2) {
-  margin-left: 10%; }
 
 .full, .empty {
   float: left;
@@ -413,14 +481,11 @@ div#headshot img.overlay {
   margin-top: 1rem;
   width: 70%; }
 
-@media screen and (min-width: 1200px) {
-  #skillDetails {
-    width: 10%; } }
 @media screen and (max-width: 768px) {
   #skillDetails {
     padding-left: 8%;
     width: 100%; } }
-@media screen and (max-width: 480px) and (orientation: portrait) {
+@media screen and (max-width: 600px) {
   #skillDetails .halfColumn {
     width: 80%;
     margin: 0 auto;
@@ -486,6 +551,76 @@ div#headshot img.overlay {
     text-align: center; }
   #projects p {
     padding-left: 5%; } }
+#wordpress .full {
+  width: 10%; }
+#wordpress .empty {
+  width: 90%; }
+
+#frameworks .full {
+  width: 40%; }
+#frameworks .empty {
+  width: 60%; }
+
+#node .full {
+  width: 10%; }
+#node .empty {
+  width: 90%; }
+
+#angular .full {
+  width: 10%; }
+#angular .empty {
+  width: 90%; }
+
+#grunt .full {
+  width: 0%; }
+#grunt .empty {
+  width: 100%; }
+
+#hybridApps .full {
+  width: 10%; }
+#hybridApps .empty {
+  width: 90%; }
+
+#java .full {
+  width: 10%; }
+#java .empty {
+  width: 90%; }
+
+#photoshop .full {
+  width: 80%; }
+#photoshop .empty {
+  width: 20%; }
+
+#illustrator .full {
+  width: 80%; }
+#illustrator .empty {
+  width: 20%; }
+
+#flash .full {
+  width: 90%; }
+#flash .empty {
+  width: 10%; }
+
+#vectorIllustration .full {
+  width: 70%; }
+#vectorIllustration .empty {
+  width: 30%; }
+
+#animation .full {
+  width: 80%; }
+#animation .empty {
+  width: 20%; }
+
+#commandLine .full {
+  width: 80%; }
+#commandLine .empty {
+  width: 20%; }
+
+#phpMySql .full {
+  width: 0%; }
+#phpMySql .empty {
+  width: 100%; }
+
 /*********  Used-in-lots-of-places-stuff  **********/
 .titleWrap {
   width: 50%;

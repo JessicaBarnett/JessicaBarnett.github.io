@@ -1,0 +1,143 @@
+
+ $wordpress: 10%;
+ $frameworks: 40%;
+ $node: 10%;
+ $angular: 10%;
+ $grunt: 0%;
+ $hybridApps: 10%;
+ $java: 10%;
+ $photoshop: 80%;
+ $illustrator: 80%;
+ $flash: 90%;
+ $vectorIllustration: 70%;
+ $animation: 80%;
+ $commandLine: 80%;
+ $phpMySql: 0%;
+
+
+//widths of individual skills
+#wordpress{
+	.full{
+		width: $wordpress;
+	}	
+	.empty{
+		width: 100% - $wordpress;
+	}
+}
+
+#frameworks{
+	.full{
+		width: $frameworks;
+	}	
+	.empty{
+		width: 100% - $frameworks;
+	}
+}
+
+#node{
+	.full{
+		width: $node;
+	}	
+	.empty{
+		width: 100% - $node;
+	}
+}
+
+#angular{
+	.full{
+		width: $angular;
+	}	
+	.empty{
+		width: 100% - $angular;
+	}
+}
+
+#grunt{
+	.full{
+		width: $grunt;
+	}	
+	.empty{
+		width: 100% - $grunt;
+	}
+}
+
+#hybridApps{
+	.full{
+		width: $hybridApps;
+	}	
+	.empty{
+		width: 100% - $hybridApps;
+	}
+}
+
+#java{
+	.full{
+		width: $java;
+	}	
+	.empty{
+		width: 100% - $java;
+	}
+}
+
+#photoshop{
+	.full{
+		width: $photoshop;
+	}	
+	.empty{
+		width: 100% - $photoshop;
+	}
+}
+
+#illustrator{
+	.full{
+		width: $illustrator;
+	}	
+	.empty{
+		width: 100% - $illustrator;
+	}
+}
+
+#flash{
+	.full{
+		width: $flash;
+	}	
+	.empty{
+		width: 100% - $flash;
+	}
+}
+
+#vectorIllustration{
+	.full{
+		width: $vectorIllustration;
+	}	
+	.empty{
+		width: 100% - $vectorIllustration;
+	}
+}
+
+#animation{
+	.full{
+		width: $animation;
+	}	
+	.empty{
+		width: 100% - $animation;
+	}
+}
+
+#commandLine{
+	.full{
+		width: $commandLine;
+	}	
+	.empty{
+		width: 100% - $commandLine;
+	}
+}
+
+#phpMySql{
+	.full{
+		width: $phpMySql;
+	}	
+	.empty{
+		width: 100% - $phpMySql;
+	}
+}
