@@ -130,23 +130,23 @@ a:visited {
     min-width: 90%; } }
 div#skyBG {
   width: 100%;
-  background: linear-gradient(to top, #8282aa 0%, #001e78 100%) fixed; }
+  background: url("../images/parallax/starField.svg") 0 0/20% fixed repeat-x, linear-gradient(to top, #8282aa 0%, #001e78 100%) fixed; }
 
 div#mountainsBG {
   width: 100%;
-  background: url("../images/parallax/nearMountains.svg") 5% 85%/110% fixed no-repeat, url("../images/parallax/midMountains.svg") 15% 83%/120% fixed no-repeat, url("../images/parallax/farMountains.svg") 5% 85%/110% fixed no-repeat, url("../images/parallax/starField.svg") 0 0/20% fixed repeat-x; }
+  background: url("../images/parallax/nearMountains.svg") 5% 85%/110% fixed no-repeat, url("../images/parallax/midMountains.svg") 15% 83%/120% fixed no-repeat, url("../images/parallax/farMountains.svg") 5% 85%/110% fixed no-repeat; }
   @media screen and (min-width: 1100px) {
     div#mountainsBG {
-      background: url("../images/parallax/nearMountains.svg") 5% 100%/110% fixed no-repeat, url("../images/parallax/midMountains.svg") 15% 83%/120% fixed no-repeat, url("../images/parallax/farMountains.svg") 5% 85%/110% fixed no-repeat, url("../images/parallax/starField.svg") 100% fixed repeat-x; } }
+      background: url("../images/parallax/nearMountains.svg") 5% 100%/110% fixed no-repeat, url("../images/parallax/midMountains.svg") 15% 83%/120% fixed no-repeat, url("../images/parallax/farMountains.svg") 5% 85%/110% fixed no-repeat; } }
   @media screen and (max-width: 768px) and (min-width: 480px) and (orientation: portrait) {
     div#mountainsBG {
-      background: url("../images/parallax/nearMountains.svg") 50% 120%/250% fixed no-repeat, url("../images/parallax/midMountains.svg") 50% 105%/250% fixed no-repeat, url("../images/parallax/farMountains.svg") 50% 100%/250% fixed no-repeat, url("../images/parallax/starField.svg") 100% fixed repeat-x; } }
+      background: url("../images/parallax/nearMountains.svg") 50% 120%/250% fixed no-repeat, url("../images/parallax/midMountains.svg") 50% 105%/250% fixed no-repeat, url("../images/parallax/farMountains.svg") 50% 100%/250% fixed no-repeat; } }
   @media screen and (max-width: 480px) and (min-width: 200px) and (orientation: landscape) {
     div#mountainsBG {
-      background: url("../images/parallax/nearMountains.svg") 5% 100%/110% fixed no-repeat, url("../images/parallax/midMountains.svg") 15% 83%/120% fixed no-repeat, url("../images/parallax/farMountains.svg") 5% 85%/110% fixed no-repeat, url("../images/parallax/starField.svg") 100% fixed repeat-x; } }
+      background: url("../images/parallax/nearMountains.svg") 5% 100%/110% fixed no-repeat, url("../images/parallax/midMountains.svg") 15% 83%/120% fixed no-repeat, url("../images/parallax/farMountains.svg") 5% 85%/110% fixed no-repeat; } }
   @media screen and (max-width: 480px) and (min-width: 200px) and (orientation: portrait) {
     div#mountainsBG {
-      background: url("../images/parallax/nearMountains.svg") 50% 100%/250% fixed no-repeat, url("../images/parallax/midMountains.svg") 50% 90%/250% fixed no-repeat, url("../images/parallax/farMountains.svg") 50% 90%/250% fixed no-repeat, url("../images/parallax/starField.svg") 100% fixed repeat-x; } }
+      background: url("../images/parallax/nearMountains.svg") 50% 100%/250% fixed no-repeat, url("../images/parallax/midMountains.svg") 50% 90%/250% fixed no-repeat, url("../images/parallax/farMountains.svg") 50% 90%/250% fixed no-repeat; } }
 
 div#top {
   width: 100%;
