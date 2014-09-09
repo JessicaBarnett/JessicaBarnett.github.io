@@ -33,3 +33,9 @@
 	text-align: center;
 	line-height: 3rem;
 }
+
+@media screen and (max-width: 768px){
+	#contact{
+		padding-top: 8rem;
+	}
+}

@@ -125,18 +125,8 @@
 	 }	
 
 	//tab portrait
-	@media screen and (max-width: 768px) and (min-width: 480px){
-		background: url('../images/archParallax/arch.svg') -8rem 0 / 140% no-repeat,
-		url('../images/archParallax/doublePlant.svg') -3rem -5rem / 130% no-repeat,
-		url('../images/archParallax/groundPlants.svg') -10rem 130rem / 150% no-repeat;
-	 }
-	
-	// linear-gradient(to bottom, rgba(0,30,120,1) 57%, rgba(97,89,168,1) 100%)
-
-
-	//phone landscape
-	@media screen and (max-width: 480px) and (min-width: 200px){
-		background: black;
+	@media screen and (max-width: 768px){
+		background: url('../images/archParallax/groundPlants.svg') -3rem 85rem / 120% no-repeat;
 	}
 
 }

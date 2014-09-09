@@ -47,22 +47,36 @@ div.caption {
 }
 
 #headshot img {
+	display: block;
 	max-width: 80%;
 	margin-left: 40%;
 	border-radius: 50%;
     box-shadow:
-    0 0 0 3px rgba(0, 0, 0, 1),
-    0 0 0 7px rgba(0, 0, 0, .6);
+    0 0 0 3px rgba(255, 255, 255, .3),
+    0 0 0 7px rgba(255, 255, 255, .2);
 	-webkit-filter: grayscale(0.3);
 }
 
 @media screen and (max-width: 768px){
-	#headshot {
-		display: none;
-	}
-	div.caption {
-		float: none;
-		width: 85%;
+	#about .group{
+		width: 90%;
 		margin: 0 auto;
 	}
+	#headshot, div.caption {
+		width: 100%;
+		margin: 0 auto;
+	}
+	#headshot img{
+		max-width: 100%;
+		margin-left: 100%;
+		margin-bottom: 2rem;
+	}
+	#about .overlay{
+		display: none;
+	}
+
+	#about .fixed {
+		position: relative;
+	}
+
 }

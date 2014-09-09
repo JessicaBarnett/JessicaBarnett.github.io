@@ -10,6 +10,7 @@
 
 #projects .titleWrap{
 	padding-top: 8rem; //to adjust for nav links
+	padding-bottom: 4rem;
 }
 
 #projects h4 {
@@ -90,30 +91,15 @@
 #projects{
 	height: 120rem;
 
-	.titleWrap{
-		//padding-bottom: 5rem;
-	}
-
 	@media screen and (min-width: 1100px){
-		width: 70%;
 		margin: 0 auto;
 	}
 
 	//tab portrait
 	@media screen and (max-width: 768px){
-		height: 140rem;
+		height: 160rem;
+		padding-top: 0;
 	 }
-
-
-	//phone landscape
-	@media screen and (max-width: 480px) and (min-width: 200px) and (orientation: landscape){
-
-	}
-
-	//phone Portrait
-	@media screen and (max-width: 480px) and (min-width: 200px) and (orientation: portrait){
-
-	}
 
 }
 

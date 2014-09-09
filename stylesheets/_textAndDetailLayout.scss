@@ -1,5 +1,10 @@
 /*********  Used-in-lots-of-places-stuff  **********/
 
+#about, #skills, #projects, #contact {
+	margin: 0 auto;
+}
+
+
 //z-index setup: 10 is highest level, 0 is lowest, 5 is in-between
 //body positioned relative so all children will carry 10 as z-index
 *{
@@ -13,7 +18,7 @@
 //Title details 
 
 .titleWrap{
-	width: 50%;
+	width: 60%;
 	margin: 0 auto 6rem auto;
 }
 
@@ -34,17 +39,13 @@ div.angle {
 
 //tab portrait and smaller
 @media screen and (max-width: 480px){
-	.titleWrap{
-		width: 90%;
+	div div.titleWrap{
+		width: 100%;
 		margin: 0 auto;
 	}
 	div.angle {
 		height: 8rem;
 	}	
-}
-
-#about, #skills, #projects, #contact {
-	margin: 0 auto;
 }
 
 
