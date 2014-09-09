@@ -1,21 +1,36 @@
-
-
 /*********  About Page  **********/
 
 //all img tags already have max-width: 100%!!
 
 #about{ //page container
+	position: relative; //so absolutely-positioned children will reference this as context
 	width: 100%;
+	height: 50rem;
+	margin-top: 4rem;
+	margin-bottom: 0;
 }
 
-div.titleWrap:first-of-type{
-	position: relative;
-	z-index: 2;
+#about .titleWrap {
+	height: 10rem;
+	padding-top: 8rem;
+	margin-bottom: 0;
 }
 
-#about .group { //contents
-	margin: 2rem auto 0 auto;
-	background-color: black; //to cover any gaps if the sizing/positioning goes awry on the photo/overlay
+
+.overlay{
+	position: absolute;
+	width: 180%;
+	z-index: 10;
+}
+
+#about .fixed{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -10;
+}
+
+#about .group {
 	width: 80%;
 }
 
@@ -23,25 +38,21 @@ div.caption, div#headshot{ //floated elements
 	width: 30%;
 	margin: 5%;
 	float: left;
-	position: relative; //so overlay will reference this as context
 }
 
 div.caption {
 	width: 50%;
 	margin: 5%;
-	z-index: 2; //so caption will rise over photo overlay
 }
 
 #headshot img {
-	max-width: 110%;
+	max-width: 80%;
+	margin-left: 40%;
+	border-radius: 50%;
+    box-shadow:
+    0 0 0 3px rgba(0, 0, 0, 1),
+    0 0 0 7px rgba(0, 0, 0, .6);
 	-webkit-filter: grayscale(0.3);
-}
-
-div#headshot img.overlay {
-	max-width: 160%;
-	position: absolute;
-	top: -4rem;
-	left: -4rem;
 }
 
 @media screen and (max-width: 768px){

@@ -1,17 +1,19 @@
 /*********  Projects Page  **********/
 
-#projects h4 {
-	margin-left: -3%; //don't know where this margin comes from.  it's not showing up in devTools...
+#projects {
+	width: 100%;
+	background-color: black;
+	//to patch between background-transparent sections and this one
+	padding-top: 15rem;
+	padding-bottom: 40rem;
 }
 
 #projects .titleWrap{
-	margin-bottom: 10rem;
-	@media screen and (max-width: 768px){
-		margin-bottom: 5rem;
-	}
-	@media screen and (max-width: 400px){
-		margin-bottom: 0;
-	}
+	padding-top: 8rem; //to adjust for nav links
+}
+
+#projects h4 {
+	margin-left: -3%; //don't know where this margin comes from.  it's not showing up in devTools...
 }
 
 #projectDetails{
@@ -33,9 +35,9 @@
 
 //Source code link + github logo
 
-.sourceCode {
-	position: relative; //so before pseudo-class will use this as context
-}
+// .sourceCode {
+// 	position: relative; //so before pseudo-class will use this as context
+// }
 
 .sourceCode a{
 	margin: -4rem 0 0 -5%;
@@ -83,5 +85,37 @@
 		}
 	}
 }
+
+
+#projects{
+	height: 120rem;
+
+	.titleWrap{
+		//padding-bottom: 5rem;
+	}
+
+	@media screen and (min-width: 1100px){
+		width: 70%;
+		margin: 0 auto;
+	}
+
+	//tab portrait
+	@media screen and (max-width: 768px){
+		height: 140rem;
+	 }
+
+
+	//phone landscape
+	@media screen and (max-width: 480px) and (min-width: 200px) and (orientation: landscape){
+
+	}
+
+	//phone Portrait
+	@media screen and (max-width: 480px) and (min-width: 200px) and (orientation: portrait){
+
+	}
+
+}
+
 
 

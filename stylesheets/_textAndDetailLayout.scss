@@ -1,20 +1,20 @@
 /*********  Used-in-lots-of-places-stuff  **********/
 
+//z-index setup: 10 is highest level, 0 is lowest, 5 is in-between
+//body positioned relative so all children will carry 10 as z-index
+*{
+	position: relative;
+}
+
+#skyBG, #mountainsBG{
+	z-index: 1;
+}
+
 //Title details 
 
 .titleWrap{
 	width: 50%;
-	margin: 3rem auto 6rem auto;
-
-	//so, when a nav link is clicked
-	//the section heading won't be chopped off by the nav
-	height: 10rem;
-	padding-top: 5rem;
-}
-
-#contact, #projects{
-	// height: 10rem;
-	padding-top: 0;
+	margin: 0 auto 6rem auto;
 }
 
 .titleWrap .angle, .titleWrap h3{
@@ -43,13 +43,10 @@ div.angle {
 	}	
 }
 
-
 #about, #skills, #projects, #contact {
 	margin: 0 auto;
-	margin-top: 20rem;
-	@media screen and (max-width: 480px){
-		margin-top: 5rem;		
-	}
 }
+
+
 
 

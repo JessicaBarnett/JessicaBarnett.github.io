@@ -122,30 +122,47 @@ a:visited {
     font-size: 1.2rem;
     line-height: 1.5rem;
     min-width: 90%; } }
+div#skyBG {
+  width: 100%;
+  background: linear-gradient(to top, white 0%, #8682aa 10%, #001e78 80%) fixed; }
+
+div#mountainsBG {
+  width: 100%;
+  background: url("../images/parallax/nearMountains.svg") 5% 85%/110% fixed no-repeat, url("../images/parallax/midMountains.svg") 15% 83%/120% fixed no-repeat, url("../images/parallax/farMountains.svg") 5% 85%/110% fixed no-repeat; }
+  @media screen and (min-width: 1100px) {
+    div#mountainsBG {
+      background: url("../images/parallax/nearMountains.svg") 5% 100%/110% fixed no-repeat, url("../images/parallax/midMountains.svg") 15% 83%/120% fixed no-repeat, url("../images/parallax/farMountains.svg") 5% 85%/110% fixed no-repeat; } }
+  @media screen and (max-width: 768px) and (min-width: 480px) and (orientation: portrait) {
+    div#mountainsBG {
+      background: url("../images/parallax/nearMountains.svg") 50% 120%/250% fixed no-repeat, url("../images/parallax/midMountains.svg") 50% 105%/250% fixed no-repeat, url("../images/parallax/farMountains.svg") 50% 100%/250% fixed no-repeat; } }
+  @media screen and (max-width: 480px) and (min-width: 200px) and (orientation: landscape) {
+    div#mountainsBG {
+      background: url("../images/parallax/nearMountains.svg") 5% 100%/110% fixed no-repeat, url("../images/parallax/midMountains.svg") 15% 83%/120% fixed no-repeat, url("../images/parallax/farMountains.svg") 5% 85%/110% fixed no-repeat; } }
+  @media screen and (max-width: 480px) and (min-width: 200px) and (orientation: portrait) {
+    div#mountainsBG {
+      background: url("../images/parallax/nearMountains.svg") 50% 100%/250% fixed no-repeat, url("../images/parallax/midMountains.svg") 50% 90%/250% fixed no-repeat, url("../images/parallax/farMountains.svg") 50% 90%/250% fixed no-repeat; } }
+
 div#top {
   width: 100%;
   height: 100vh;
-  background: url("../images/parallax/bigBranch.svg") -45% 0%/65% no-repeat, url("../images/parallax/smallBranch.svg") 110% 50%/45% no-repeat, url("../images/parallax/groundLantern.svg") 5% 88%/110% no-repeat, url("../images/parallax/nearMountains.svg") 5% 85%/110% no-repeat, url("../images/parallax/midMountains.svg") 15% 83%/120% no-repeat, url("../images/parallax/farMountains.svg") 5% 85%/110% no-repeat, linear-gradient(to top, white 0%, #8682aa 20%, #001e78 80%); }
+  background: url("../images/parallax/bigBranch.svg") -45% 0%/65% no-repeat, url("../images/parallax/smallBranch.svg") 110% 50%/45% no-repeat, url("../images/parallax/groundLantern.svg") 5% 88%/110% no-repeat; }
   @media screen and (min-width: 1100px) {
     div#top {
-      background: url("../images/parallax/bigBranch.svg") -45% -65%/65% no-repeat, url("../images/parallax/smallBranch.svg") 110% 50%/45% no-repeat, url("../images/parallax/groundLantern.svg") 5% 88%/110% no-repeat, url("../images/parallax/nearMountains.svg") 5% 100%/110% no-repeat, url("../images/parallax/midMountains.svg") 15% 83%/120% no-repeat, url("../images/parallax/farMountains.svg") 5% 85%/110% no-repeat, linear-gradient(to top, white 0%, #8682aa 20%, #001e78 80%); } }
+      background: url("../images/parallax/bigBranch.svg") -45% -65%/65% no-repeat, url("../images/parallax/smallBranch.svg") 110% 50%/45% no-repeat, url("../images/parallax/groundLantern.svg") 5% 88%/110% no-repeat; } }
   @media screen and (max-width: 768px) and (min-width: 480px) and (orientation: portrait) {
     div#top {
-      background: url("../images/parallax/bigBranch.svg") -180% 0%/90% no-repeat, url("../images/parallax/smallBranch.svg") 150% 60%/70% no-repeat, url("../images/parallax/groundLantern.svg") 40% 108%/250% no-repeat, url("../images/parallax/nearMountains.svg") 50% 120%/250% no-repeat, url("../images/parallax/midMountains.svg") 50% 105%/250% no-repeat, url("../images/parallax/farMountains.svg") 50% 100%/250% no-repeat, linear-gradient(to top, white 0%, #8682aa 20%, #001e78 80%); } }
+      background: url("../images/parallax/bigBranch.svg") -180% 0%/90% no-repeat, url("../images/parallax/smallBranch.svg") 150% 60%/70% no-repeat, url("../images/parallax/groundLantern.svg") 40% 108%/250% no-repeat; } }
   @media screen and (max-width: 480px) and (min-width: 200px) and (orientation: landscape) {
     div#top {
-      background: url("../images/parallax/bigBranch.svg") -45% -25%/65% no-repeat, url("../images/parallax/smallBranch.svg") 110% 50%/45% no-repeat, url("../images/parallax/groundLantern.svg") 5% 88%/110% no-repeat, url("../images/parallax/nearMountains.svg") 5% 100%/110% no-repeat, url("../images/parallax/midMountains.svg") 15% 83%/120% no-repeat, url("../images/parallax/farMountains.svg") 5% 85%/110% no-repeat, linear-gradient(to top, white 0%, #8682aa 20%, #001e78 80%); } }
+      background: url("../images/parallax/bigBranch.svg") -45% -25%/65% no-repeat, url("../images/parallax/smallBranch.svg") 110% 50%/45% no-repeat, url("../images/parallax/groundLantern.svg") 5% 88%/110% no-repeat; } }
   @media screen and (max-width: 480px) and (min-width: 200px) and (orientation: portrait) {
     div#top {
-      background: url("../images/parallax/bigBranch.svg") 500% -15%/105% no-repeat, url("../images/parallax/smallBranch.svg") 150% 60%/70% no-repeat, url("../images/parallax/groundLantern.svg") 40% 88%/200% no-repeat, url("../images/parallax/nearMountains.svg") 50% 100%/250% no-repeat, url("../images/parallax/midMountains.svg") 50% 90%/250% no-repeat, url("../images/parallax/farMountains.svg") 50% 90%/250% no-repeat, linear-gradient(to top, white 0%, #8682aa 20%, #001e78 80%); } }
-
-body {
-  background-color: black; }
+      background: url("../images/parallax/bigBranch.svg") 500% -15%/105% no-repeat, url("../images/parallax/smallBranch.svg") 150% 60%/70% no-repeat, url("../images/parallax/groundLantern.svg") 40% 88%/200% no-repeat; } }
 
 .patch {
   margin: -10vh 0;
   width: 100%;
-  height: 15vh;
+  height: 30rem;
   background-color: black; }
   @media screen and (max-width: 480px) and (min-width: 200px) and (orientation: portrait) {
     .patch {
@@ -153,37 +170,6 @@ body {
   @media screen and (max-width: 768px) and (min-width: 480px) and (orientation: portrait) {
     .patch {
       margin: 0; } }
-
-#projects {
-  padding-top: 3rem;
-  height: 100rem; }
-  @media screen and (min-width: 1100px) {
-    #projects {
-      width: 70%;
-      margin: 0 auto; } }
-  @media screen and (max-width: 768px) {
-    #projects {
-      height: 140rem; } }
-
-#contact {
-  padding-top: 5rem;
-  background-color: black; }
-
-#archBG {
-  margin-top: 40rem;
-  width: 100%; }
-  @media screen and (min-width: 1200px) {
-    #archBG {
-      background: url("../images/archParallax/arch.svg") -9rem 0/120% no-repeat, url("../images/archParallax/doublePlant.svg") 0 -15rem/100% no-repeat, url("../images/archParallax/groundPlants.svg") -10rem 90rem/130% no-repeat, linear-gradient(to bottom, #001e78 57%, #6159a8 100%); } }
-  @media screen and (max-width: 1200px) and (min-width: 768px) {
-    #archBG {
-      background: url("../images/archParallax/arch.svg") -7rem 0/120% no-repeat, url("../images/archParallax/doublePlant.svg") 0 -15rem/100% no-repeat, url("../images/archParallax/groundPlants.svg") -10rem 90rem/130% no-repeat, linear-gradient(to bottom, #001e78 57%, #6159a8 100%); } }
-  @media screen and (max-width: 768px) and (min-width: 480px) {
-    #archBG {
-      background: url("../images/archParallax/arch.svg") -8rem 0/140% no-repeat, url("../images/archParallax/doublePlant.svg") -3rem -5rem/130% no-repeat, url("../images/archParallax/groundPlants.svg") -10rem 130rem/150% no-repeat, linear-gradient(to bottom, #001e78 57%, #6159a8 100%); } }
-  @media screen and (max-width: 480px) and (min-width: 200px) {
-    #archBG {
-      background: black; } }
 
 nav {
   width: 100%;
@@ -260,6 +246,39 @@ nav {
   li#hamburger {
     margin-right: -1.5rem;
     margin-top: 0; } }
+/*********  Used-in-lots-of-places-stuff  **********/
+* {
+  position: relative; }
+
+#skyBG, #mountainsBG {
+  z-index: 1; }
+
+.titleWrap {
+  width: 50%;
+  margin: 0 auto 6rem auto; }
+
+.titleWrap .angle, .titleWrap h3 {
+  float: left;
+  width: 20%; }
+
+.titleWrap h3 {
+  text-align: center;
+  width: 50%;
+  margin: 1rem 5% 0 5%; }
+
+div.angle {
+  height: 5rem; }
+
+@media screen and (max-width: 480px) {
+  .titleWrap {
+    width: 90%;
+    margin: 0 auto; }
+
+  div.angle {
+    height: 8rem; } }
+#about, #skills, #projects, #contact {
+  margin: 0 auto; }
+
 /*********  Home Page  **********/
 #nameContainer {
   max-width: 90%;
@@ -294,37 +313,46 @@ nav {
 
 /*********  About Page  **********/
 #about {
-  width: 100%; }
-
-div.titleWrap:first-of-type {
   position: relative;
-  z-index: 2; }
+  width: 100%;
+  height: 50rem;
+  margin-top: 4rem;
+  margin-bottom: 0; }
+
+#about .titleWrap {
+  height: 10rem;
+  padding-top: 8rem;
+  margin-bottom: 0; }
+
+.overlay {
+  position: absolute;
+  width: 180%;
+  z-index: 10; }
+
+#about .fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -10; }
 
 #about .group {
-  margin: 2rem auto 0 auto;
-  background-color: black;
   width: 80%; }
 
 div.caption, div#headshot {
   width: 30%;
   margin: 5%;
-  float: left;
-  position: relative; }
+  float: left; }
 
 div.caption {
   width: 50%;
-  margin: 5%;
-  z-index: 2; }
+  margin: 5%; }
 
 #headshot img {
-  max-width: 110%;
+  max-width: 80%;
+  margin-left: 40%;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px black, 0 0 0 7px rgba(0, 0, 0, 0.6);
   -webkit-filter: grayscale(0.3); }
-
-div#headshot img.overlay {
-  max-width: 160%;
-  position: absolute;
-  top: -4rem;
-  left: -4rem; }
 
 @media screen and (max-width: 768px) {
   #headshot {
@@ -336,7 +364,8 @@ div#headshot img.overlay {
     margin: 0 auto; } }
 /*********  contact Page  **********/
 #contact {
-  margin-bottom: 5rem; }
+  background-color: black;
+  padding-bottom: 10rem; }
 
 #contactDetails {
   width: 80%;
@@ -428,8 +457,15 @@ div#headshot img.overlay {
 #phpMySql .empty {
   width: 100%; }
 
-#skills .halfColumn {
-  margin: 0 2%; }
+#skills {
+  width: 80%;
+  height: 100rem; }
+  #skills .halfColumn {
+    margin: 0 2%; }
+
+#skills .titleWrap {
+  margin-top: 0;
+  padding-top: 8rem; }
 
 .full, .empty {
   float: left;
@@ -438,7 +474,7 @@ div#headshot img.overlay {
   background-color: white; }
 
 .empty {
-  background-color: rgba(255, 255, 255, 0.3); }
+  background-color: rgba(255, 255, 255, 0.5); }
 
 .empty p {
   font-size: .8rem;
@@ -490,18 +526,33 @@ div#headshot img.overlay {
     width: 80%;
     margin: 0 auto;
     float: none; } }
+#archBG {
+  width: 100%; }
+  @media screen and (min-width: 1200px) {
+    #archBG {
+      background: url("../images/archParallax/arch.svg") -9rem 0/100% no-repeat, url("../images/archParallax/doublePlant.svg") 0 -15rem/100% no-repeat, url("../images/archParallax/groundPlants.svg") -10rem 90rem/130% no-repeat; } }
+  @media screen and (max-width: 1200px) and (min-width: 768px) {
+    #archBG {
+      background: url("../images/archParallax/arch.svg") -18rem -5rem/150% no-repeat, url("../images/archParallax/doublePlant.svg") -4rem -20rem/110% no-repeat, url("../images/archParallax/groundPlants.svg") -10rem 60rem/130% no-repeat; } }
+  @media screen and (max-width: 768px) and (min-width: 480px) {
+    #archBG {
+      background: url("../images/archParallax/arch.svg") -8rem 0/140% no-repeat, url("../images/archParallax/doublePlant.svg") -3rem -5rem/130% no-repeat, url("../images/archParallax/groundPlants.svg") -10rem 130rem/150% no-repeat; } }
+  @media screen and (max-width: 480px) and (min-width: 200px) {
+    #archBG {
+      background: black; } }
+
 /*********  Projects Page  **********/
-#projects h4 {
-  margin-left: -3%; }
+#projects {
+  width: 100%;
+  background-color: black;
+  padding-top: 15rem;
+  padding-bottom: 40rem; }
 
 #projects .titleWrap {
-  margin-bottom: 10rem; }
-  @media screen and (max-width: 768px) {
-    #projects .titleWrap {
-      margin-bottom: 5rem; } }
-  @media screen and (max-width: 400px) {
-    #projects .titleWrap {
-      margin-bottom: 0; } }
+  padding-top: 8rem; }
+
+#projects h4 {
+  margin-left: -3%; }
 
 #projectDetails {
   width: 70%;
@@ -514,9 +565,6 @@ div#headshot img.overlay {
   text-decoration: underline;
   display: block;
   width: 100%; }
-
-.sourceCode {
-  position: relative; }
 
 .sourceCode a {
   margin: -4rem 0 0 -5%;
@@ -551,108 +599,12 @@ div#headshot img.overlay {
     text-align: center; }
   #projects p {
     padding-left: 5%; } }
-#wordpress .full {
-  width: 10%; }
-#wordpress .empty {
-  width: 90%; }
-
-#frameworks .full {
-  width: 40%; }
-#frameworks .empty {
-  width: 60%; }
-
-#node .full {
-  width: 10%; }
-#node .empty {
-  width: 90%; }
-
-#angular .full {
-  width: 10%; }
-#angular .empty {
-  width: 90%; }
-
-#grunt .full {
-  width: 0%; }
-#grunt .empty {
-  width: 100%; }
-
-#hybridApps .full {
-  width: 10%; }
-#hybridApps .empty {
-  width: 90%; }
-
-#java .full {
-  width: 10%; }
-#java .empty {
-  width: 90%; }
-
-#photoshop .full {
-  width: 80%; }
-#photoshop .empty {
-  width: 20%; }
-
-#illustrator .full {
-  width: 80%; }
-#illustrator .empty {
-  width: 20%; }
-
-#flash .full {
-  width: 90%; }
-#flash .empty {
-  width: 10%; }
-
-#vectorIllustration .full {
-  width: 70%; }
-#vectorIllustration .empty {
-  width: 30%; }
-
-#animation .full {
-  width: 80%; }
-#animation .empty {
-  width: 20%; }
-
-#commandLine .full {
-  width: 80%; }
-#commandLine .empty {
-  width: 20%; }
-
-#phpMySql .full {
-  width: 0%; }
-#phpMySql .empty {
-  width: 100%; }
-
-/*********  Used-in-lots-of-places-stuff  **********/
-.titleWrap {
-  width: 50%;
-  margin: 3rem auto 6rem auto;
-  height: 10rem;
-  padding-top: 5rem; }
-
-#contact, #projects {
-  padding-top: 0; }
-
-.titleWrap .angle, .titleWrap h3 {
-  float: left;
-  width: 20%; }
-
-.titleWrap h3 {
-  text-align: center;
-  width: 50%;
-  margin: 1rem 5% 0 5%; }
-
-div.angle {
-  height: 5rem; }
-
-@media screen and (max-width: 480px) {
-  .titleWrap {
-    width: 90%;
-    margin: 0 auto; }
-
-  div.angle {
-    height: 8rem; } }
-#about, #skills, #projects, #contact {
-  margin: 0 auto;
-  margin-top: 20rem; }
-  @media screen and (max-width: 480px) {
-    #about, #skills, #projects, #contact {
-      margin-top: 5rem; } }
+#projects {
+  height: 120rem; }
+  @media screen and (min-width: 1100px) {
+    #projects {
+      width: 70%;
+      margin: 0 auto; } }
+  @media screen and (max-width: 768px) {
+    #projects {
+      height: 140rem; } }

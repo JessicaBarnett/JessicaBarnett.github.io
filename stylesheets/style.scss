@@ -2,7 +2,8 @@
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box; 
+}
 
 .group {
 	content: "";
@@ -57,9 +58,10 @@ a img:hover{
 @import "text";
 @import "backgroundLayout";
 @import "nav";
-@import "home", "about", "contact", "skills", "projects";
-@import "skillVals";
 @import "textAndDetailLayout";
+@import "home", "about", "contact", "skills", "projects";
+
+
 
 
 
