@@ -2,7 +2,7 @@
 <!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="192px" height="157.335px" viewBox="0 -19.234 192 157.335" enable-background="new 0 -19.234 192 157.335"
+	 width="192px" height="280.325px" viewBox="0 -80.783 192 280.325" enable-background="new 0 -80.783 192 280.325"
 	 xml:space="preserve">
 <g id="Layer_1_1_">
 	<polyline fill="none" stroke="#000000" stroke-width="3" points="0.015,106.908 18.021,106.908 18.021,89.277 25.401,89.277 
@@ -10,7 +10,7 @@
 	<polyline fill="none" stroke="#000000" stroke-width="3" points="0.015,13.585 18.021,13.585 18.021,31.216 25.401,31.216 
 		25.401,13.585 166.374,13.585 166.374,31.216 173.55,31.216 173.55,13.585 192,13.585 	"/>
 	<polyline fill="none" stroke="#000000" stroke-width="3" points="179.32,118 179.089,101.057 161.047,101.001 161.066,93.789 
-		179.109,93.842 179.254,26.966 161.213,26.915 161.232,19.902 179.273,19.954 179.32,1.298 	"/>
+		179.109,93.841 179.254,26.966 161.213,26.915 161.232,19.902 179.273,19.954 179.32,1.298 	"/>
 	<polyline fill="none" stroke="#000000" stroke-width="3" points="11.768,117.867 11.768,100.898 29.81,100.898 29.81,93.684 
 		11.768,93.684 11.768,26.807 29.81,26.807 29.81,19.798 11.768,19.798 11.768,1.166 	"/>
 	<rect x="1.445" y="2.565" fill="none" stroke="#000000" stroke-width="4" width="189.504" height="114.298"/>
@@ -21,14 +21,14 @@
 	<polyline fill="none" stroke="#000000" stroke-width="2" points="91.166,111.855 31.128,111.855 31.128,115.818 	"/>
 	<polyline fill="none" stroke="#000000" stroke-width="2" points="100.962,111.855 160.051,111.855 160.051,115.818 	"/>
 	<ellipse fill="none" stroke="#000000" stroke-width="3" cx="7.256" cy="60.705" rx="4.511" ry="4.406"/>
-	<polyline fill="none" stroke="#000000" stroke-width="2" points="7.256,65.113 7.256,87.877 2.201,87.877 	"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" points="7.256,65.113 7.256,87.876 2.201,87.876 	"/>
 	<polyline fill="none" stroke="#000000" stroke-width="2" points="7.256,55.542 7.256,32.774 2.201,32.774 	"/>
 	<ellipse fill="none" stroke="#000000" stroke-width="3" cx="184.652" cy="58.122" rx="4.508" ry="4.407"/>
 	<polyline fill="none" stroke="#000000" stroke-width="2" points="184.652,53.714 184.652,32.955 189.71,32.955 	"/>
-	<polyline fill="none" stroke="#000000" stroke-width="2" points="184.652,63.289 184.652,88.053 189.71,88.053 	"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" points="184.652,63.289 184.652,88.052 189.71,88.052 	"/>
 </g>
 <g id="Layer_2">
 </g>
-<rect y="117.867" width="192" height="20.234"/>
-<rect y="-19.234" width="192" height="20.234"/>
+<rect y="118.542" width="192" height="81"/>
+<rect y="-80.783" width="192" height="81.783"/>
 </svg>

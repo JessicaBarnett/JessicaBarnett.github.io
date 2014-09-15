@@ -3,7 +3,7 @@ $(window).scroll(hideAbout);
 function hideAbout(e){
 	var position = $(window).scrollTop();
 
-	if 	(position > 490 && position < 1600) 
+	if 	(position > 400 && position < 1600) 
 		$("#about .fixed").css("opacity", 1);
 	else
 		$("#about .fixed").css("opacity", 0);

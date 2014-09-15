@@ -128,55 +128,6 @@ a:visited {
     font-size: 1.2rem;
     line-height: 1.5rem;
     min-width: 90%; } }
-div#skyBG {
-  width: 100%;
-  background: url("../images/parallax/starField.svg") 0 0/20% fixed repeat-x, linear-gradient(to top, #8282aa 0%, #001e78 100%) fixed; }
-
-div#mountainsBG {
-  width: 100%;
-  background: url("../images/parallax/nearMountains.svg") 5% 85%/110% fixed no-repeat, url("../images/parallax/midMountains.svg") 15% 83%/120% fixed no-repeat, url("../images/parallax/farMountains.svg") 5% 85%/110% fixed no-repeat; }
-  @media screen and (min-width: 1100px) {
-    div#mountainsBG {
-      background: url("../images/parallax/nearMountains.svg") 5% 100%/110% fixed no-repeat, url("../images/parallax/midMountains.svg") 15% 83%/120% fixed no-repeat, url("../images/parallax/farMountains.svg") 5% 85%/110% fixed no-repeat; } }
-  @media screen and (max-width: 768px) and (min-width: 480px) and (orientation: portrait) {
-    div#mountainsBG {
-      background: url("../images/parallax/nearMountains.svg") 50% 120%/250% fixed no-repeat, url("../images/parallax/midMountains.svg") 50% 105%/250% fixed no-repeat, url("../images/parallax/farMountains.svg") 50% 100%/250% fixed no-repeat; } }
-  @media screen and (max-width: 480px) and (min-width: 200px) and (orientation: landscape) {
-    div#mountainsBG {
-      background: url("../images/parallax/nearMountains.svg") 5% 100%/110% fixed no-repeat, url("../images/parallax/midMountains.svg") 15% 83%/120% fixed no-repeat, url("../images/parallax/farMountains.svg") 5% 85%/110% fixed no-repeat; } }
-  @media screen and (max-width: 480px) and (min-width: 200px) and (orientation: portrait) {
-    div#mountainsBG {
-      background: url("../images/parallax/nearMountains.svg") 50% 100%/250% fixed no-repeat, url("../images/parallax/midMountains.svg") 50% 90%/250% fixed no-repeat, url("../images/parallax/farMountains.svg") 50% 90%/250% fixed no-repeat; } }
-
-div#top {
-  width: 100%;
-  height: 100vh;
-  background: url("../images/parallax/bigBranch.svg") -45% 0%/65% no-repeat, url("../images/parallax/smallBranch.svg") 110% 50%/45% no-repeat, url("../images/parallax/groundLantern.svg") 5% 88%/110% no-repeat; }
-  @media screen and (min-width: 1100px) {
-    div#top {
-      background: url("../images/parallax/bigBranch.svg") -45% -65%/65% no-repeat, url("../images/parallax/smallBranch.svg") 110% 50%/45% no-repeat, url("../images/parallax/groundLantern.svg") 5% 88%/110% no-repeat; } }
-  @media screen and (max-width: 768px) and (min-width: 480px) and (orientation: portrait) {
-    div#top {
-      background: url("../images/parallax/bigBranch.svg") -180% 0%/90% no-repeat, url("../images/parallax/smallBranch.svg") 150% 60%/70% no-repeat, url("../images/parallax/groundLantern.svg") 40% 108%/250% no-repeat; } }
-  @media screen and (max-width: 480px) and (min-width: 200px) and (orientation: landscape) {
-    div#top {
-      background: url("../images/parallax/bigBranch.svg") -45% -25%/65% no-repeat, url("../images/parallax/smallBranch.svg") 110% 50%/45% no-repeat, url("../images/parallax/groundLantern.svg") 5% 88%/110% no-repeat; } }
-  @media screen and (max-width: 480px) and (min-width: 200px) and (orientation: portrait) {
-    div#top {
-      background: url("../images/parallax/bigBranch.svg") 500% -15%/105% no-repeat, url("../images/parallax/smallBranch.svg") 150% 60%/70% no-repeat, url("../images/parallax/groundLantern.svg") 40% 88%/200% no-repeat; } }
-
-.patch {
-  margin: -10vh 0;
-  width: 100%;
-  height: 30rem;
-  background-color: black; }
-  @media screen and (max-width: 480px) and (min-width: 200px) and (orientation: portrait) {
-    .patch {
-      margin: -10vh 0; } }
-  @media screen and (max-width: 768px) and (min-width: 480px) and (orientation: portrait) {
-    .patch {
-      margin: 0; } }
-
 nav {
   width: 100%;
   position: fixed;
@@ -286,6 +237,9 @@ div.angle {
   div.angle {
     height: 8rem; } }
 /*********  Home Page  **********/
+#top {
+  margin-bottom: 0; }
+
 #nameContainer {
   max-width: 90%;
   position: relative;
@@ -317,24 +271,63 @@ div.angle {
     #nameContainer h2 {
       max-width: 40%; } }
 
+/***********  Background Layout  ************/
+div#top {
+  width: 100%;
+  height: 100vh;
+  background: url("../images/parallax/bigBranch.svg") -45% 0%/65% no-repeat, url("../images/parallax/smallBranch.svg") 110% 50%/45% no-repeat, url("../images/parallax/groundLantern.svg") 5% 18rem/110% no-repeat; }
+  @media screen and (min-width: 1100px) {
+    div#top {
+      background: url("../images/parallax/bigBranch.svg") -45% -65%/65% no-repeat, url("../images/parallax/smallBranch.svg") 110% 50%/45% no-repeat, url("../images/parallax/groundLantern.svg") 5% 18rem/110% no-repeat; } }
+  @media screen and (max-width: 768px) and (min-width: 480px) and (orientation: portrait) {
+    div#top {
+      background: url("../images/parallax/bigBranch.svg") -180% 0%/90% no-repeat, url("../images/parallax/smallBranch.svg") 150% 60%/70% no-repeat, url("../images/parallax/groundLantern.svg") 40% 21rem/250% no-repeat; } }
+  @media screen and (max-width: 480px) and (min-width: 200px) and (orientation: landscape) {
+    div#top {
+      background: url("../images/parallax/bigBranch.svg") -45% -25%/65% no-repeat, url("../images/parallax/smallBranch.svg") 110% 50%/45% no-repeat, url("../images/parallax/groundLantern.svg") 5% 18rem/110% no-repeat; } }
+  @media screen and (max-width: 480px) and (min-width: 200px) and (orientation: portrait) {
+    div#top {
+      background: url("../images/parallax/bigBranch.svg") 500% -15%/105% no-repeat, url("../images/parallax/smallBranch.svg") 150% 60%/70% no-repeat, url("../images/parallax/groundLantern.svg") 40% 18rem/200% no-repeat; } }
+
+div#skyBG {
+  width: 100%;
+  background: url("../images/parallax/starField.svg") 0 0/20% fixed repeat-x, linear-gradient(to top, #8282aa 0%, #001e78 100%) fixed; }
+
+div#mountainsBG {
+  width: 100%;
+  background: url("../images/parallax/nearMountains.svg") 5% 85%/110% fixed no-repeat, url("../images/parallax/midMountains.svg") 15% 83%/120% fixed no-repeat, url("../images/parallax/farMountains.svg") 5% 85%/110% fixed no-repeat; }
+  @media screen and (min-width: 1100px) {
+    div#mountainsBG {
+      background: url("../images/parallax/nearMountains.svg") 5% 100%/110% fixed no-repeat, url("../images/parallax/midMountains.svg") 15% 83%/120% fixed no-repeat, url("../images/parallax/farMountains.svg") 5% 85%/110% fixed no-repeat; } }
+  @media screen and (max-width: 768px) and (min-width: 480px) and (orientation: portrait) {
+    div#mountainsBG {
+      background: url("../images/parallax/nearMountains.svg") 50% 120%/250% fixed no-repeat, url("../images/parallax/midMountains.svg") 50% 105%/250% fixed no-repeat, url("../images/parallax/farMountains.svg") 50% 100%/250% fixed no-repeat; } }
+  @media screen and (max-width: 480px) and (min-width: 200px) and (orientation: landscape) {
+    div#mountainsBG {
+      background: url("../images/parallax/nearMountains.svg") 5% 100%/110% fixed no-repeat, url("../images/parallax/midMountains.svg") 15% 83%/120% fixed no-repeat, url("../images/parallax/farMountains.svg") 5% 85%/110% fixed no-repeat; } }
+  @media screen and (max-width: 480px) and (min-width: 200px) and (orientation: portrait) {
+    div#mountainsBG {
+      background: url("../images/parallax/nearMountains.svg") 50% 100%/250% fixed no-repeat, url("../images/parallax/midMountains.svg") 50% 90%/250% fixed no-repeat, url("../images/parallax/farMountains.svg") 50% 90%/250% fixed no-repeat; } }
+
 /*********  About Page  **********/
 #about {
   position: relative;
   width: 100%;
-  height: 50rem;
-  margin-top: 4rem;
+  height: 80rem;
   margin-bottom: 0; }
 
 #about .titleWrap {
   height: 10rem;
-  padding-top: 8rem;
+  padding-top: 10rem;
   margin-bottom: 0; }
 
 .overlay {
   position: absolute;
-  margin-top: -5rem;
-  width: 180%;
-  z-index: 10; }
+  padding-top: 20rem;
+  z-index: 10;
+  height: 90rem;
+  width: 100%;
+  background: url("../images/detail/windowWide.svg") 0 -3rem/100% 100rem no-repeat; }
 
 #about .fixed {
   position: fixed;
@@ -386,6 +379,9 @@ div.caption {
 #contact {
   background-color: black;
   padding-bottom: 10rem; }
+
+#contact .titleWrap {
+  padding-top: 8rem; }
 
 #contactDetails {
   width: 80%;

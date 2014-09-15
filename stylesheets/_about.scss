@@ -5,23 +5,24 @@
 #about{ //page container
 	position: relative; //so absolutely-positioned children will reference this as context
 	width: 100%;
-	height: 50rem;
-	margin-top: 4rem;
+	height: 80rem;
 	margin-bottom: 0;
 }
 
 #about .titleWrap {
 	height: 10rem;
-	padding-top: 8rem;
+	padding-top: 10rem;
 	margin-bottom: 0;
 }
 
 
 .overlay{
 	position: absolute;
-	margin-top: -5rem;
-	width: 180%;
+	padding-top: 20rem;
 	z-index: 10;
+	height: 90rem;
+	width: 100%;
+	background: url('../images/detail/windowWide.svg') 0 -3rem / 100% 100rem no-repeat;
 }
 
 #about .fixed{
