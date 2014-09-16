@@ -147,7 +147,6 @@ nav {
     padding: 1rem; }
 
 #mobileNav {
-  z-index: 10;
   position: static;
   height: 35rem;
   padding-top: 3rem;
@@ -155,6 +154,8 @@ nav {
   #mobileNav li {
     width: 100%;
     height: 5rem; }
+  #mobileNav a {
+    z-index: 50; }
 
 #mobileNav, #hamburger {
   display: none; }
@@ -183,6 +184,9 @@ nav {
 
   #mobileNav, #hamburger {
     display: block; } }
+@media screen and (max-width: 768px) and (min-width: 480px) and (orientation: portrait) {
+  #mobileNav {
+    padding-bottom: 50rem; } }
 @media screen and (max-width: 480px) and (min-width: 100px) {
   nav.webNav {
     background-color: transparent; }
@@ -318,7 +322,6 @@ div#mountainsBG {
 #about {
   position: relative;
   width: 100%;
-  height: 55rem;
   margin-bottom: 0;
   overflow: hidden; }
 
@@ -367,9 +370,6 @@ div#mountainsBG {
   .overlay {
     background: url("../images/detail/windowTall.svg") 0 0/100% no-repeat; } }
 @media screen and (max-width: 768px) and (min-width: 600px) {
-  #about {
-    height: 48rem; }
-
   #about .titleWrap {
     padding-top: 20rem; } }
 @media screen and (max-width: 600px) and (orientation: landscape) {
@@ -383,7 +383,6 @@ div#mountainsBG {
     float: right; }
 
   #about {
-    height: 30rem;
     background-color: black; }
 
   #about .fixed {
@@ -398,7 +397,6 @@ div#mountainsBG {
     margin: 0 auto; } }
 @media screen and (max-width: 600px) and (orientation: portrait) {
   #about {
-    height: 40rem;
     background-color: black; }
 
   #about .group {
@@ -421,6 +419,15 @@ div#mountainsBG {
   #about .fixed {
     z-index: 10;
     position: relative; } }
+#about {
+  height: 55rem; }
+  @media screen and (max-width: 480px) and (min-width: 320px) and (orientation: landscape) {
+    #about {
+      height: 30rem; } }
+  @media screen and (max-width: 320px) and (orientation: portrait) {
+    #about {
+      height: 40rem; } }
+
 /*********  contact Page  **********/
 #contact {
   background-color: black;
@@ -704,9 +711,12 @@ div#mountainsBG {
 
   #projectDetails {
     width: 100%; } }
-@media screen and (max-width: 768px) and (orientation: portrait) {
-  #projects #projectDetails {
-    width: 100%; }
+@media screen and (max-width: 768px) and (min-width: 480px) and (orientation: portrait) {
+  #projects {
+    height: 50rem; }
+    #projects #projectDetails {
+      width: 100%; } }
+@media screen and (max-width: 480px) and (orientation: portrait) {
   #projects .smallColumn, #projects .largeColumn {
     float: none;
     width: 100%; }
@@ -727,9 +737,12 @@ div#mountainsBG {
   @media screen and (min-width: 1100px) {
     #projects {
       margin: 0 auto; } }
-  @media screen and (max-width: 768px) and (min-width: 480px) {
+  @media screen and (max-width: 1024px) and (min-width: 768px) and (orientation: landscape) {
     #projects {
-      height: 190rem; } }
+      height: 130rem; } }
+  @media screen and (max-width: 768px) and (min-width: 480px) and (orientation: portrait) {
+    #projects {
+      height: 130rem; } }
   @media screen and (max-width: 768px) and (orientation: landscape) {
     #projects {
       height: 160rem; } }
