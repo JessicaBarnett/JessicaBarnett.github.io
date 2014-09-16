@@ -371,7 +371,7 @@ div#mountainsBG {
     background: url("../images/detail/windowTall.svg") 0 0/100% no-repeat; } }
 @media screen and (max-width: 768px) and (min-width: 600px) {
   #about .titleWrap {
-    padding-top: 20rem; } }
+    padding-top: 15rem; } }
 @media screen and (max-width: 600px) and (orientation: landscape) {
   #headshot {
     width: 40%;
@@ -478,9 +478,9 @@ div#mountainsBG {
     width: 25%; } }
 /*********  Skills Page  **********/
 #wordpress .full {
-  width: 10%; }
+  width: 5%; }
 #wordpress .empty {
-  width: 90%; }
+  width: 95%; }
 
 #frameworks .full {
   width: 40%; }
@@ -488,24 +488,24 @@ div#mountainsBG {
   width: 60%; }
 
 #node .full {
-  width: 10%; }
+  width: 5%; }
 #node .empty {
-  width: 90%; }
+  width: 95%; }
 
 #angular .full {
-  width: 10%; }
+  width: 5%; }
 #angular .empty {
-  width: 90%; }
+  width: 95%; }
 
 #grunt .full {
-  width: 0%; }
+  width: 5%; }
 #grunt .empty {
-  width: 100%; }
+  width: 95%; }
 
 #hybridApps .full {
-  width: 10%; }
+  width: 5%; }
 #hybridApps .empty {
-  width: 90%; }
+  width: 95%; }
 
 #java .full {
   width: 10%; }
@@ -543,9 +543,9 @@ div#mountainsBG {
   width: 20%; }
 
 #phpMySql .full {
-  width: 0%; }
+  width: 5%; }
 #phpMySql .empty {
-  width: 100%; }
+  width: 95%; }
 
 #skills {
   width: 70%;
@@ -574,7 +574,6 @@ div#mountainsBG {
   width: 100%; }
 
 #skillHighlights {
-  border-bottom: 2px solid white;
   width: 80%;
   margin: 0 auto;
   background-color: rgba(255, 255, 255, 0.11);
@@ -582,7 +581,9 @@ div#mountainsBG {
 
 .moreSkills {
   width: 90%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  border-top: 3px solid white;
+  margin-top: 2rem; }
 
 .skillWrapper {
   width: 100%; }
@@ -774,12 +775,14 @@ div#mountainsBG {
       height: 120rem; } }
   @media screen and (max-width: 480px) and (orientation: portrait) {
     #projects {
-      height: 160rem; } }
+      height: 150rem; }
+      #projects .titleWrap {
+        margin-top: 10rem; } }
 
 @media screen and (max-width: 480px) {
   #about .titleWrap, #skills .titleWrap, #projects .titleWrap, #contact .titleWrap {
     padding: 2rem 0 2rem 10%;
-    min-width: 70%;
+    min-width: 80%;
     margin: 0 auto; }
   #about .titleWrap h3, #skills .titleWrap h3, #projects .titleWrap h3, #contact .titleWrap h3 {
     width: 30%;

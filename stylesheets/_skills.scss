@@ -34,7 +34,6 @@
 }
 
 #skillHighlights{
-	border-bottom: 2px solid white;
 	width: 80%;
 	margin: 0 auto;
 	background-color: rgba(255, 255, 255, .11);
@@ -43,8 +42,11 @@
 
 .moreSkills{
 	width: 90%;
-	margin: 0 auto;
+	margin: 0 auto;	
+	border-top: 3px solid white;
+	margin-top: 2rem;
 }
+
 
 .skillWrapper {
 	width: 100%;

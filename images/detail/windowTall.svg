@@ -5,30 +5,30 @@
 	 width="192px" height="252.662px" viewBox="0 -52.667 192 252.662" enable-background="new 0 -52.667 192 252.662"
 	 xml:space="preserve">
 <g id="Layer_1_1_">
-	<polyline fill="none" stroke="#000000" stroke-width="3" points="0.015,155.075 18.021,155.075 18.021,137.444 25.401,137.444 
-		25.401,155.075 166.374,155.075 166.374,137.444 173.55,137.444 173.55,155.075 192,155.075 	"/>
-	<polyline fill="none" stroke="#000000" stroke-width="3" points="0.015,-18.248 18.021,-18.248 18.021,-0.617 25.401,-0.617 
-		25.401,-18.248 166.374,-18.248 166.374,-0.617 173.55,-0.617 173.55,-18.248 192,-18.248 	"/>
-	<polyline fill="none" stroke="#000000" stroke-width="3" points="179.32,166.167 179.089,149.223 161.047,149.167 161.066,141.956 
-		179.109,142.006 179.254,-4.867 161.213,-4.918 161.232,-11.931 179.273,-11.879 179.32,-30.535 	"/>
-	<polyline fill="none" stroke="#000000" stroke-width="3" points="11.768,166.034 11.768,149.065 29.81,149.065 29.81,141.85 
-		11.768,141.85 11.768,-5.026 29.81,-5.026 29.81,-12.035 11.768,-12.035 11.768,-30.667 	"/>
-	<rect x="1.445" y="-29.268" fill="none" stroke="#000000" stroke-width="4" width="189.504" height="194.298"/>
-	<ellipse fill="none" stroke="#000000" stroke-width="3" cx="95.396" cy="-23.698" rx="4.512" ry="4.408"/>
-	<polyline fill="none" stroke="#000000" stroke-width="2" points="90.889,-23.698 30.849,-23.698 30.849,-28.663 	"/>
-	<polyline fill="none" stroke="#000000" stroke-width="2" points="100.686,-23.698 159.771,-23.698 159.771,-28.663 	"/>
-	<ellipse fill="none" stroke="#000000" stroke-width="3" cx="95.677" cy="160.021" rx="4.511" ry="4.405"/>
-	<polyline fill="none" stroke="#000000" stroke-width="2" points="91.166,160.022 31.128,160.022 31.128,163.985 	"/>
-	<polyline fill="none" stroke="#000000" stroke-width="2" points="100.962,160.022 160.051,160.022 160.051,163.985 	"/>
-	<ellipse fill="none" stroke="#000000" stroke-width="3" cx="7.256" cy="78.872" rx="4.511" ry="4.406"/>
-	<polyline fill="none" stroke="#000000" stroke-width="2" points="7.256,83.28 7.256,136.042 2.201,136.042 	"/>
-	<polyline fill="none" stroke="#000000" stroke-width="2" points="7.256,73.709 7.256,0.941 2.201,0.941 	"/>
-	<ellipse fill="none" stroke="#000000" stroke-width="3" cx="184.652" cy="76.289" rx="4.508" ry="4.407"/>
-	<polyline fill="none" stroke="#000000" stroke-width="2" points="184.652,71.881 184.652,1.122 189.71,1.122 	"/>
-	<polyline fill="none" stroke="#000000" stroke-width="2" points="184.652,81.456 184.652,136.218 189.71,136.218 	"/>
+	<polyline fill="none" stroke="#000000" stroke-width="3" points="0.258,155.075 18.264,155.075 18.264,137.444 25.644,137.444 
+		25.644,155.075 166.617,155.075 166.617,137.444 173.793,137.444 173.793,155.075 192.242,155.075 	"/>
+	<polyline fill="none" stroke="#000000" stroke-width="3" points="0.258,-18.248 18.264,-18.248 18.264,-0.617 25.644,-0.617 
+		25.644,-18.248 166.617,-18.248 166.617,-0.617 173.793,-0.617 173.793,-18.248 192.242,-18.248 	"/>
+	<polyline fill="none" stroke="#000000" stroke-width="3" points="179.562,166.167 179.332,149.224 161.289,149.167 
+		161.309,141.956 179.352,142.006 179.496,-4.867 161.455,-4.918 161.475,-11.931 179.516,-11.879 179.562,-30.535 	"/>
+	<polyline fill="none" stroke="#000000" stroke-width="3" points="12.011,166.034 12.011,149.065 30.053,149.065 30.053,141.851 
+		12.011,141.851 12.011,-5.026 30.053,-5.026 30.053,-12.035 12.011,-12.035 12.011,-30.667 	"/>
+	<rect x="1.688" y="-29.268" fill="none" stroke="#000000" stroke-width="4" width="189.503" height="194.298"/>
+	<ellipse fill="none" stroke="#000000" stroke-width="3" cx="95.639" cy="-23.698" rx="4.511" ry="4.408"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" points="91.132,-23.698 31.092,-23.698 31.092,-28.663 	"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" points="100.928,-23.698 160.014,-23.698 160.014,-28.663 	"/>
+	<ellipse fill="none" stroke="#000000" stroke-width="3" cx="95.919" cy="160.021" rx="4.511" ry="4.405"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" points="91.409,160.022 31.371,160.022 31.371,163.985 	"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" points="101.205,160.022 160.293,160.022 160.293,163.985 	"/>
+	<ellipse fill="none" stroke="#000000" stroke-width="3" cx="7.499" cy="78.872" rx="4.511" ry="4.406"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" points="7.499,83.28 7.499,136.042 2.444,136.042 	"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" points="7.499,73.709 7.499,0.941 2.444,0.941 	"/>
+	<ellipse fill="none" stroke="#000000" stroke-width="3" cx="184.895" cy="76.289" rx="4.508" ry="4.407"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" points="184.895,71.881 184.895,1.122 189.953,1.122 	"/>
+	<polyline fill="none" stroke="#000000" stroke-width="2" points="184.895,81.456 184.895,136.218 189.953,136.218 	"/>
 </g>
 <g id="Layer_2">
 </g>
-<rect x="0.015" y="-52.667" width="191.985" height="23.399"/>
-<rect x="-5.5" y="165.03" width="199.898" height="34.965"/>
+<rect x="-0.312" y="-52.667" width="193.5" height="23.399"/>
+<rect x="-0.312" y="165.03" width="193.398" height="34.965"/>
 </svg>
