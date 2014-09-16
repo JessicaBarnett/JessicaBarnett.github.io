@@ -82,7 +82,7 @@ section#top {
 
 	//phone Portrait
 	@media screen and (max-width: 480px) and (min-width: 200px) and (orientation: portrait){
-		height: 90vh;
+		height: 120vh;
 		background: url('../images/parallax/bigBranch.svg') 600% 0vh / 105% no-repeat,
 			url('../images/parallax/smallBranch.svg') 150% 40vh / 70% no-repeat,
 			url('../images/parallax/groundLantern.svg') 40% 60vh / 200% no-repeat;	

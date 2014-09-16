@@ -151,12 +151,17 @@
 	}
 }
 
+#skills {
 
-@media screen and (max-width: 480px) and (orientation: landscape){
-	#skills{
+
+	@media screen and (max-width: 480px) and (orientation: landscape){
 		height: 650vh;
 	}
+	@media screen and (max-width: 480px) and (orientation: portrait){
+		height: 360vh;
+	}
 }
+
 
 //Background
 
@@ -191,7 +196,7 @@
 
 	//phone portrait
 	@media screen and (max-width: 480px)and (orientation: portrait){
-		background: url('../images/archParallax/groundPlants.svg') -3rem 230vh / 140% no-repeat;
+		background: url('../images/archParallax/groundPlants.svg') -3rem 310vh / 140% no-repeat;
 	}
 
 }

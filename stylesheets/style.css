@@ -295,7 +295,7 @@ section#top {
       background: url("../images/parallax/bigBranch.svg") -45% 0vh/65% no-repeat, url("../images/parallax/smallBranch.svg") 110% 40vh/45% no-repeat, url("../images/parallax/groundLantern.svg") 5% 60vh/110% no-repeat; } }
   @media screen and (max-width: 480px) and (min-width: 200px) and (orientation: portrait) {
     section#top {
-      height: 90vh;
+      height: 120vh;
       background: url("../images/parallax/bigBranch.svg") 600% 0vh/105% no-repeat, url("../images/parallax/smallBranch.svg") 150% 40vh/70% no-repeat, url("../images/parallax/groundLantern.svg") 40% 60vh/200% no-repeat; } }
 
 div#skyBG {
@@ -426,7 +426,7 @@ div#mountainsBG {
       padding-top: 10rem; } }
   @media screen and (max-width: 480px) and (min-width: 320px) and (orientation: landscape) {
     #about {
-      height: 30rem; } }
+      height: 40rem; } }
   @media screen and (max-width: 320px) and (orientation: portrait) {
     #about {
       height: 40rem; } }
@@ -652,6 +652,10 @@ div#mountainsBG {
 @media screen and (max-width: 480px) and (orientation: landscape) {
   #skills {
     height: 650vh; } }
+@media screen and (max-width: 480px) and (orientation: portrait) {
+  #skills {
+    height: 360vh; } }
+
 #archBG {
   width: 100%; }
   @media screen and (min-width: 1200px) {
@@ -668,7 +672,7 @@ div#mountainsBG {
       background: url("../images/archParallax/groundPlants.svg") -3rem 500vh/140% no-repeat; } }
   @media screen and (max-width: 480px) and (orientation: portrait) {
     #archBG {
-      background: url("../images/archParallax/groundPlants.svg") -3rem 230vh/140% no-repeat; } }
+      background: url("../images/archParallax/groundPlants.svg") -3rem 310vh/140% no-repeat; } }
 
 @media screen and (max-width: 480px) and (orientation: portrait) {
   #skills {
@@ -770,7 +774,7 @@ div#mountainsBG {
       height: 120rem; } }
   @media screen and (max-width: 480px) and (orientation: portrait) {
     #projects {
-      height: 180rem; } }
+      height: 160rem; } }
 
 @media screen and (max-width: 480px) {
   #about .titleWrap, #skills .titleWrap, #projects .titleWrap, #contact .titleWrap {
