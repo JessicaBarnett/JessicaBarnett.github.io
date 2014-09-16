@@ -5,6 +5,7 @@
 }
 
 
+
 //z-index setup: 10 is highest level, 0 is lowest, 5 is in-between
 //body positioned relative so all children will carry 10 as z-index
 *{
@@ -38,7 +39,7 @@ div.angle {
 }
 
 //tab portrait and smaller
-@media screen and (max-width: 480px){
+@media screen and (max-width: 500px){
 	div div.titleWrap{
 		width: 100%;
 		margin: 0 auto;

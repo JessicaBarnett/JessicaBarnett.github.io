@@ -5,6 +5,10 @@
   box-sizing: border-box; 
 }
 
+body {
+	width: 100%;
+}
+
 .group {
 	content: "";
 	display: table;
@@ -61,6 +65,16 @@ a img:hover{
 @import "home", "about", "contact", "skills", "projects";
 
 
+@media screen and (max-width: 480px){
+	#about, #skills, #projects, #contact {
+		.titleWrap{
+			margin-top: 8rem;
+			padding-top: 1rem;
+		}
+	}
+}
 
-
-
+// @media screen and (max-width: 1024px) and (min-width: 768px) and (orientation: landscape){}
+// @media screen and (max-width: 768px) and (min-width: 500px) and (orientation: portrait){}
+// @media screen and (max-width: 480px) and (min-width: 320px) and (orientation: landscape){}
+// @media screen and (max-width: 320px) and (orientation: portrait){}

@@ -5,13 +5,14 @@
 #about{ //page container
 	position: relative; //so absolutely-positioned children will reference this as context
 	width: 100%;
-	height: 80rem;
+	height: 55rem;
 	margin-bottom: 0;
+	overflow: hidden;
 }
 
 #about .titleWrap {
 	height: 10rem;
-	padding-top: 10rem;
+	padding-top: 15rem;
 	margin-bottom: 0;
 }
 
@@ -22,7 +23,7 @@
 	z-index: 10;
 	height: 90rem;
 	width: 100%;
-	background: url('../images/detail/windowWide.svg') 0 -3rem / 100% 100rem no-repeat;
+	background: url('../images/detail/windowWide.svg') 0 0 / 100% no-repeat;
 }
 
 #about .fixed{
@@ -37,13 +38,13 @@
 	width: 80%;
 }
 
-div.caption, div#headshot{ //floated elements
+.caption, #headshot{ //floated elements
 	width: 30%;
 	margin: 5%;
 	float: left;
 }
 
-div.caption {
+.caption {
 	width: 50%;
 	margin: 5%;
 }
@@ -59,18 +60,72 @@ div.caption {
 	-webkit-filter: grayscale(0.3);
 }
 
-@media screen and (max-width: 768px){
+
+@media screen and (orientation: portrait){
+	.overlay{
+		background: url('../images/detail/windowTall.svg') 0 0 / 100% no-repeat;
+	}
+}
+
+@media screen and (max-width: 768px) and (min-width: 600px){
+	#about{
+		height: 48rem;
+	}
+
+	#about .titleWrap{
+		padding-top: 20rem;
+	}
+}
+
+@media screen and (max-width: 600px) and (orientation: landscape){
+	#headshot{
+		width: 40%;
+		padding: 0;
+		margin-left: -4rem;
+		margin-top: 3rem;
+	}
+
+	.caption{
+		float: right;
+	}
+
+	#about{
+		height: 30rem;
+		background-color: black;
+	}
+	#about .fixed {
+		z-index: 10;
+		position: relative;
+	}
+
+	#about .overlay{
+		display: none;
+	}
+
+	#about .group{
+		width: 90%;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width: 600px) and (orientation: portrait){
+	#about{
+		height: 40rem;
+		background-color: black;
+	}
+
 	#about .group{
 		width: 90%;
 		margin: 0 auto;
 	}
 	#headshot, div.caption {
-		width: 100%;
+		width: 90%;
 		margin: 0 auto;
+		float: none;
 	}
-	#headshot img{
-		max-width: 100%;
-		margin-left: 100%;
+	#headshot{
+		width: 70%;
+		margin-left: -1.5rem;
 		margin-bottom: 2rem;
 	}
 	#about .overlay{
@@ -78,7 +133,7 @@ div.caption {
 	}
 
 	#about .fixed {
+		z-index: 10;
 		position: relative;
 	}
-
 }

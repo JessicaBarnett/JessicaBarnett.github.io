@@ -25,17 +25,14 @@
 		<div id="skyBG">
 			<div id="mountainsBG">
 
-			<div id="top">
+			<section id="top">
 				<div id="nameContainer">
 					<h1>Jessica Barnett</h1>
 					<h2>Front-end Web Designer and Developer</h2>
 				</div>
-			</div>
+			</section>
 
-			<!-- <div class="patch"></div>  --><!-- Not the most elegant solution, but it'll do for now -->
-
-			<div id="about" class="group">
-<!-- 				<img class="overlay" src="images/detail/windowWide.svg" alt="decoration">--><!--overlay image-->
+			<section id="about" class="group">
 				<div class="overlay"></div>
 					<div class="fixed">
 						<div class="titleWrap group">
@@ -47,15 +44,15 @@
 							<div id="headshot"> 
 								<img class="photo" src="images/Headshot2013sm.jpg" alt="headshot">
 							</div>
-							<div class="caption">
+							<div class="caption" id="aboutHook">
 								<p>I'm a Junior Front-End Developer based in Philadelphia. </p>
 								<p>My ideal work-day is a day well spent on a challenging project that pushes me to the boundaries of my technical knowledge, and beyond.  I love coding in javascript, especially object-oriented javascript.  I'm at my best when working on responsive sites, game-like interactions based on javascript or CSS, CSS3 animations and transitions, and designing svg vector graphics. </p>
 							</div>
 						</div> <!--end group-->
 					</div>
-			</div>
+			</section>
 
-			<div id="projects">
+			<section id="projects">
 				<div id="projectsHook" class="titleWrap group">
 					<div class="angle flipped"><img src="images/detail/angleWhite.svg" alt="decoration"></div>
 					<h3>Projects</h3>
@@ -78,9 +75,8 @@
 						</a>
 						<div class="largeColumn">
 							<h4><a href="http://schoolbudget.phl.io/" target="_blank">School Budget Visualization</a></h4>
-							<p>As part of Girl Develop It and Code for Philly's Summer of Open Source fellowship program, I've been contributing to a fork of Code For Philly's schoolbudget.phl.io website, which converts budget data from Philadelphia's school system into graphs using d3.js.  My work on the project involves developing a json formatter to format raw csv data, and a suite of javascript functions for searching, comparing, and adjusting said json.  This will replace a back-end php solution that was removed from the site to simplify set-up.</p>
+							<p>As part of Girl Develop It and Code for Philly's Summer of Open Source fellowship program, I've been contributing to a fork of Code For Philly's schoolbudget.phl.io website, which converts budget data from Philadelphia's school system into graphs using d3.js.  My work on the project involves developing a json formatter to format raw csv data, and a suite of javascript functions for searching, comparing, and adjusting said json.  This will replace a back-end php solution that was removed from the site to simplify set-up.</p><p><a href="http://technical.ly/philly/2014/09/09/gdi-summer-open-source/">View an article about the program on Technical.ly Philly</a></p>
 							<p class="sourceCode" ><a href="https://github.com/summer-of-open-source/schoolbudget.phl.io/tree/parseCSV" target="_blank">View the source code!</a></p>
-							<p><a href="http://technical.ly/philly/2014/09/09/gdi-summer-open-source/">View an article about the program on Technical.ly Philly</a></p>
 						</div>
 					</div> <!--end projectWrap-->
 
@@ -106,10 +102,10 @@
 						</div>
 					</div> <!--end projectWrap-->
 				</div><!--end projectDetails-->
-			</div><!--end projects-->
+			</section><!--end projects-->
 
 			<div id="archBG">
-				<div id="skills">
+				<section id="skills">
 					<div class="titleWrap group">
 						<div class="angle flipped"><img src="images/detail/angleWhite.svg" alt="decoration"></div>
 						<h3>Skills</h3>
@@ -201,7 +197,7 @@
 									</div>
 								</div><!--end skillWrapper-->
 								<div id="frameworks" class="skillWrapper group">
-									<p>Front-End Responsive Frameworks</p>
+									<p>Responsive Frameworks</p>
 									<div class="skillBar">
 										<div class="full"></div>
 										<div class="empty"><p>More Coming Soon!!</p></div>
@@ -229,7 +225,7 @@
 									</div>
 								</div><!--end skillWrapper-->
 								<div id="hybridApps" class="skillWrapper group">
-									<p>Mobile Hybrid App Development</p>
+									<p>Hybrid App Development</p>
 									<div class="skillBar">
 										<div class="full"></div>
 										<div class="empty"><p>Coming August 2015</p></div>
@@ -296,11 +292,11 @@
 							</div><!--end halfColumn-->
 						</div> <!--end moreSkills-->
 					</div> <!--endSkillDetails-->
-				</div><!--End skills-->
+				</section><!--End skills-->
 			</div><!-- end archBG -->
 
 
-				<div id="contact">
+				<section id="contact">
 					<div class="titleWrap group">
 						<div class="angle flipped"><img src="images/detail/angleWhite.svg" alt="decoration"></div>
 						<h3>Get in touch</h3>
@@ -331,7 +327,7 @@
 					<p id="pageSource" class="sourceCode">
 						<a href="https://github.com/JessicaBarnett/JessicaBarnett.github.io">See this page's source on github!</a>
 					</p>
-				</div>
+				</section>
 			</div><!--end archBG-->
 		</div><!--end mountainsBG-->
 
@@ -341,7 +337,6 @@
 				<li><a href="#top">Top</a></li>
 				<li><a href="#about">About</a></li>
 				<li><a href="#projects">Projects</a></li>
-<!-- 				<li><a href="#contributions">Contributions</a></li> -->
 				<li><a href="#skills">Skills</a></li>
 				<li><a href="#contact">Contact</a></li>
 			</ul>

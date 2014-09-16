@@ -4,7 +4,7 @@
 	width: 100%;
 	background-color: black;
 	//to patch between background-transparent sections and this one
-	padding-top: 15rem;
+	padding-top: 8rem;
 	padding-bottom: 40rem;
 }
 
@@ -65,9 +65,37 @@
 	left: 1.5rem
 }
 
+@media screen and (max-width: 768px) and (orientation: landscape){
+	#projects{	
+		margin-top: 15rem;
+
+		img{
+			margin-top: 5rem;
+			margin-left: 5%;
+		}
+
+		.largeColumn {
+			width: 55%;
+		}
+
+		.sourceCode a {
+			margin-left: -3rem;
+		}
+	}
+
+	#projectDetails {
+		width: 100%;
+	}
+}
+
+
 //tab portrait and smaller
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) and (orientation: portrait){
 	#projects{
+		#projectDetails{
+			width: 100%;
+		}
+
 		.smallColumn, .largeColumn{
 			float: none;
 			width: 100%;
@@ -76,7 +104,8 @@
 			width: 50%;
 		}
 		img.smallColumn{
-			margin: 0 25%;
+			margin: 0 12%;
+			width: 65%;
 		}
 		h4{
 			text-align: center;
@@ -87,19 +116,33 @@
 	}
 }
 
+@media screen and (max-width: 600px) and (orientation: landscape){
+	#projects{	
+		margin-top: 0;
+	}
+}
 
 #projects{
-	height: 120rem;
+	height: 130rem;
 
 	@media screen and (min-width: 1100px){
 		margin: 0 auto;
 	}
 
 	//tab portrait
-	@media screen and (max-width: 768px){
-		height: 160rem;
-		padding-top: 0;
+	@media screen and (max-width: 768px) and (min-width: 480px){
+		height: 190rem;
 	 }
+
+	 @media screen and (max-width: 768px) and (orientation: landscape){
+	 	height: 160rem;
+	 }
+
+	//phone portrait
+	@media screen and (max-width: 480px) and (orientation: portrait){
+		height: 180rem;
+	 }
+
 
 }
 

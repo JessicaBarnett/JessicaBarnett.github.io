@@ -20,6 +20,7 @@ nav{
 } 
 
 #mobileNav {
+	z-index: 10;
 	position: static;
 	height: 35rem;
 	padding-top: 3rem; //to off-set width taken up by fixed-top-nav when hamburger is clicked

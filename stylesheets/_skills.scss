@@ -3,7 +3,7 @@
 
 #skills{
 	width: 80%;
-	height: 100rem;
+	height: 80rem;
 	.halfColumn{
 		margin: 0 2%;
 	}
@@ -11,7 +11,7 @@
 
 #skills .titleWrap{
 	margin-top: 0;
-	padding-top: 8rem;
+	padding-top: 4rem;
 }
 
 .full, .empty{
@@ -39,7 +39,7 @@
 }
 
 .moreSkills{
-	width: 70%;
+	width: 90%;
 	margin: 0 auto;
 }
 
@@ -90,15 +90,41 @@
 		padding-left: 8%;
 		width: 100%;
 	}
+	#skills {
+		width: 100%;
+	}
+
+	#skillHighlights {
+		width: 100%;
+	}
+
+	#skillHighlights .skillBar {
+		width: 70%;
+	}
+
+	#skillHighlights img{
+		width: 20%;
+	}
+
 }
 
-//tab portrait and below
-@media screen and (max-width: 600px){
+
+//phone portrait and below
+@media screen and (max-width: 480px)/* and (orientation: portrait)*/{
+	#skills{
+		height: 90rem;
+		margin-top: 5rem;
+	}
+
 	#skillDetails{
 		.halfColumn{
-			width: 80%;
+			width: 100%;
 			margin: 0 auto;
 			float: none;
+		}
+
+		.moreSkills{
+			width: 100%;
 		}
 	}
 }
@@ -112,24 +138,37 @@
 
 	//large width
 	@media screen and (min-width: 1200px){
-	background: url('../images/archParallax/arch.svg') -9rem 0 / 100% no-repeat,
+	background: url('../images/archParallax/arch.svg') -9rem -3rem / 120% no-repeat,
 	url('../images/archParallax/doublePlant.svg') 0 -15rem / 100% no-repeat,
-	url('../images/archParallax/groundPlants.svg') -10rem 90rem / 130% no-repeat;
+	url('../images/archParallax/groundPlants.svg') -10rem 60rem / 130% no-repeat;
 	}
 
 	//medium width
-	@media screen and (max-width: 1200px) and (min-width: 768px){
-	background: url('../images/archParallax/arch.svg') -18rem -5rem / 150% no-repeat,
+	@media screen and (max-width: 1200px) and (min-width: 480px){
+	background: url('../images/archParallax/arch.svg') -16rem -5rem / 150% no-repeat,
 	url('../images/archParallax/doublePlant.svg') -4rem -20rem / 110% no-repeat,
 	url('../images/archParallax/groundPlants.svg') -10rem 60rem / 130% no-repeat;
 	 }	
 
 	//tab portrait
 	@media screen and (max-width: 768px){
-		background: url('../images/archParallax/groundPlants.svg') -3rem 85rem / 120% no-repeat;
+		background: url('../images/archParallax/arch.svg') -10rem -5rem / 150% no-repeat,
+		url('../images/archParallax/doublePlant.svg') -4rem -20rem / 110% no-repeat,
+		url('../images/archParallax/groundPlants.svg') -10rem 60rem / 130% no-repeat;
+	}
+
+	//phone, tab portrait
+	@media screen and (max-width: 480px){
+		background: url('../images/archParallax/groundPlants.svg') -3rem 230vh / 140% no-repeat;
 	}
 
 }
 
 
 
+
+@media screen and (max-width: 480px) and (orientation: portrait){
+	#skills{
+		width: 100%;
+	}
+}
