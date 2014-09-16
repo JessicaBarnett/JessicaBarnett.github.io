@@ -7,6 +7,7 @@
 	.halfColumn{
 		margin: 0 2%;
 	}
+	overflow: hidden;
 }
 
 #skills .titleWrap{
@@ -143,9 +144,19 @@
 			width: 100%;
 		}
 	}
+
+	#skillHighlights{
+		background-color: rgba(255, 255, 255, 0);
+		border-radius: 0;
+	}
 }
 
 
+@media screen and (max-width: 480px) and (orientation: landscape){
+	#skills{
+		height: 650vh;
+	}
+}
 
 //Background
 
@@ -173,8 +184,13 @@
 		url('../images/archParallax/groundPlants.svg') -10rem 60rem / 130% no-repeat;
 	}
 
-	//phone, tab portrait
-	@media screen and (max-width: 480px){
+	//phone landscape
+	@media screen and (max-width: 480px) and (orientation: landscape){
+		background: url('../images/archParallax/groundPlants.svg') -3rem 500vh / 140% no-repeat;
+	}
+
+	//phone portrait
+	@media screen and (max-width: 480px)and (orientation: portrait){
 		background: url('../images/archParallax/groundPlants.svg') -3rem 230vh / 140% no-repeat;
 	}
 

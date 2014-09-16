@@ -421,6 +421,9 @@ div#mountainsBG {
     position: relative; } }
 #about {
   height: 55rem; }
+  @media screen and (max-width: 480px) {
+    #about .titleWrap {
+      padding-top: 10rem; } }
   @media screen and (max-width: 480px) and (min-width: 320px) and (orientation: landscape) {
     #about {
       height: 30rem; } }
@@ -546,7 +549,8 @@ div#mountainsBG {
 
 #skills {
   width: 70%;
-  height: 80rem; }
+  height: 80rem;
+  overflow: hidden; }
   #skills .halfColumn {
     margin: 0 2%; }
 
@@ -640,7 +644,14 @@ div#mountainsBG {
     margin: 0 auto;
     float: none; }
   #skillDetails .moreSkills {
-    width: 100%; } }
+    width: 100%; }
+
+  #skillHighlights {
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 0; } }
+@media screen and (max-width: 480px) and (orientation: landscape) {
+  #skills {
+    height: 650vh; } }
 #archBG {
   width: 100%; }
   @media screen and (min-width: 1200px) {
@@ -652,7 +663,10 @@ div#mountainsBG {
   @media screen and (max-width: 768px) {
     #archBG {
       background: url("../images/archParallax/arch.svg") center -5rem/150% no-repeat, url("../images/archParallax/doublePlant.svg") -4rem -20rem/110% no-repeat, url("../images/archParallax/groundPlants.svg") -10rem 60rem/130% no-repeat; } }
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 480px) and (orientation: landscape) {
+    #archBG {
+      background: url("../images/archParallax/groundPlants.svg") -3rem 500vh/140% no-repeat; } }
+  @media screen and (max-width: 480px) and (orientation: portrait) {
     #archBG {
       background: url("../images/archParallax/groundPlants.svg") -3rem 230vh/140% no-repeat; } }
 
@@ -664,7 +678,6 @@ div#mountainsBG {
 #projects {
   width: 100%;
   background-color: black;
-  padding-top: 8rem;
   padding-bottom: 40rem; }
 
 #projects .titleWrap {
@@ -710,7 +723,7 @@ div#mountainsBG {
 @media screen and (max-width: 768px) and (orientation: landscape) {
   #projects {
     margin-top: 15rem; }
-    #projects img {
+    #projects .projectWrap img {
       margin-top: 5rem;
       margin-left: 5%; }
     #projects .largeColumn {
@@ -754,12 +767,19 @@ div#mountainsBG {
       height: 130rem; } }
   @media screen and (max-width: 768px) and (orientation: landscape) {
     #projects {
-      height: 160rem; } }
+      height: 120rem; } }
   @media screen and (max-width: 480px) and (orientation: portrait) {
     #projects {
       height: 180rem; } }
 
 @media screen and (max-width: 480px) {
   #about .titleWrap, #skills .titleWrap, #projects .titleWrap, #contact .titleWrap {
-    margin-top: 8rem;
-    padding-top: 1rem; } }
+    padding: 2rem 0 2rem 10%;
+    min-width: 70%;
+    margin: 0 auto; }
+  #about .titleWrap h3, #skills .titleWrap h3, #projects .titleWrap h3, #contact .titleWrap h3 {
+    width: 30%;
+    line-height: 3rem; }
+
+  #about .titleWrap h3, #contact .titleWrap h3 {
+    margin-top: -1rem; } }

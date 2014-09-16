@@ -68,8 +68,20 @@ a img:hover{
 @media screen and (max-width: 480px){
 	#about, #skills, #projects, #contact {
 		.titleWrap{
-			margin-top: 8rem;
-			padding-top: 1rem;
+			padding: 2rem 0 2rem 10%;
+			min-width: 70%;
+
+			margin: 0 auto;
+		}
+		.titleWrap h3{
+			width: 30%;
+			line-height: 3rem;
+		}
+	}
+
+	#about, #contact{
+		.titleWrap h3{
+			margin-top: -1rem;
 		}
 	}
 }
