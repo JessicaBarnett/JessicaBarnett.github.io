@@ -605,17 +605,25 @@ div#mountainsBG {
 #skillHighlights .skillBar {
   margin-top: 1rem;
   width: 70%; }
+#skillHighlights .halfColumn:nth-of-type(2) {
+  float: right; }
 
 @media screen and (max-width: 768px) {
   #skillDetails {
-    padding-left: 8%;
+    padding: 0 5% 0 5%;
     width: 100%; }
 
   #skills {
     width: 100%; }
 
+  .halfColumn {
+    width: 45%; }
+
+  .titleWrap {
+    margin-bottom: 2rem; }
+
   #skillHighlights {
-    width: 100%; }
+    width: 90%; }
 
   #skillHighlights .skillBar {
     width: 70%; }
@@ -637,13 +645,13 @@ div#mountainsBG {
   width: 100%; }
   @media screen and (min-width: 1200px) {
     #archBG {
-      background: url("../images/archParallax/arch.svg") -9rem -3rem/120% no-repeat, url("../images/archParallax/doublePlant.svg") 0 -15rem/100% no-repeat, url("../images/archParallax/groundPlants.svg") -10rem 60rem/130% no-repeat; } }
+      background: url("../images/archParallax/arch.svg") center -3rem/120% no-repeat, url("../images/archParallax/doublePlant.svg") 0 -15rem/100% no-repeat, url("../images/archParallax/groundPlants.svg") -10rem 60rem/130% no-repeat; } }
   @media screen and (max-width: 1200px) and (min-width: 480px) {
     #archBG {
-      background: url("../images/archParallax/arch.svg") -16rem -5rem/150% no-repeat, url("../images/archParallax/doublePlant.svg") -4rem -20rem/110% no-repeat, url("../images/archParallax/groundPlants.svg") -10rem 60rem/130% no-repeat; } }
+      background: url("../images/archParallax/arch.svg") center -5rem/150% no-repeat, url("../images/archParallax/doublePlant.svg") -4rem -20rem/110% no-repeat, url("../images/archParallax/groundPlants.svg") -10rem 60rem/130% no-repeat; } }
   @media screen and (max-width: 768px) {
     #archBG {
-      background: url("../images/archParallax/arch.svg") -10rem -5rem/150% no-repeat, url("../images/archParallax/doublePlant.svg") -4rem -20rem/110% no-repeat, url("../images/archParallax/groundPlants.svg") -10rem 60rem/130% no-repeat; } }
+      background: url("../images/archParallax/arch.svg") center -5rem/150% no-repeat, url("../images/archParallax/doublePlant.svg") -4rem -20rem/110% no-repeat, url("../images/archParallax/groundPlants.svg") -10rem 60rem/130% no-repeat; } }
   @media screen and (max-width: 480px) {
     #archBG {
       background: url("../images/archParallax/groundPlants.svg") -3rem 230vh/140% no-repeat; } }
@@ -651,6 +659,7 @@ div#mountainsBG {
 @media screen and (max-width: 480px) and (orientation: portrait) {
   #skills {
     width: 100%; } }
+
 /*********  Projects Page  **********/
 #projects {
   width: 100%;

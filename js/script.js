@@ -5,10 +5,14 @@ var position;
 mqTab = window.matchMedia("(max-width: 768px) and (min-width: 600px)");
 mqPhone = window.matchMedia("(max-width: 600px)");
 
+
 hideAbout();
+// mobileNavColor();
+
 $(window).scroll(scrollHandler);
 
 function scrollHandler(e){
+	// mobileNavColor();
 	setHidePoints();
 	position = $(window).scrollTop();
 
@@ -34,5 +38,32 @@ function setHidePoints(){
 		hideAt = 2000;
 	}
 }
+
+//white nav is too distracting... 
+// function mobileNavColor(){
+// 	if (!mqPhone.matches){
+// 		if ($(window).scrollTop() > ($(window).height() + 20)){
+
+// 			$("nav").css("background-color", "white"); //changes both mobile and web navigation
+// 			$("nav a").css("color", "black");
+
+// 			if (mqTab.matches){
+// 				$("#hamburger img[src*='White']").show();
+// 				$("#hamburger img[src*='Black']").hide();
+// 			}
+
+// 		}
+// 		else{
+// 			$("nav").css("background-color", "black"); //changes both mobile and web navigation
+// 			$("nav a").css("color", "white");
+
+// 			if (mqTab.matches){
+// 				$("#hamburger img[src*='White']").hide();
+// 				$("#hamburger img[src*='Black']").show();
+// 			}
+// 		}
+// 	}
+// }
+
 
 // })(); 
