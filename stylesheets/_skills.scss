@@ -190,8 +190,7 @@
 		url('../images/archParallax/doublePlant.svg') -4rem -20rem / 110% no-repeat,
 		url('../images/archParallax/groundPlants.svg') -10rem 60rem / 130% no-repeat;
 	}
-
-	//phone landscape
+	//phone landscape;
 	@media screen and (max-width: 480px) and (orientation: landscape){
 		background: url('../images/archParallax/groundPlants.svg') -3rem 500vh / 140% no-repeat;
 	}
@@ -200,6 +199,23 @@
 	@media screen and (max-width: 480px)and (orientation: portrait){
 		background: url('../images/archParallax/groundPlants.svg') -3rem 310vh / 140% no-repeat;
 	}
+
+	//phone landscape (device only)
+	@media screen and (max-device-width: 480px) and (orientation: landscape){
+		background: url('../images/archParallax/groundPlants.svg') -3rem 500vh / 140% no-repeat,
+					url('../images/parallax/starField.svg') 0 0 / 20% fixed repeat-x,
+					linear-gradient(to top, rgba(130,130,170,1) 0%,rgba(0,30,120,1) 100%) 0 0 / 100% 100% fixed no-repeat,
+					#001e78; //because bg in mobile doesn't stretch whole way down
+	}
+
+	//phone portrait (device only)
+	@media screen and (max-device-width: 480px) and (orientation: portrait){
+		background: url('../images/archParallax/groundPlants.svg') -3rem 310vh / 140% no-repeat,
+					url('../images/parallax/starField.svg') 0 0 / 20% fixed repeat-x,
+					linear-gradient(to top, rgba(130,130,170,1) 0%,rgba(0,30,120,1) 100%) 0 0 / 100% 100% fixed no-repeat,
+					#001e78; //because bg in mobile doesn't stretch whole way down
+	}
+
 
 }
 
