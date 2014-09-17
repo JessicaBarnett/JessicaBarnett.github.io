@@ -1,87 +1,804 @@
-/*
-Syntax error: Invalid CSS after "					url": expected "{", was "('../images/par..."
-        on line 99 of _home.scss
-        from line 65 of ./style.scss
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
 
-94: 	background: url('../images/parallax/starField.svg') 0 0 / 20% fixed repeat-x,
-95: 				linear-gradient(to top, rgba(130,130,170,1) 0%,rgba(0,30,120,1) 100%) 0 0 / 100% 100vh fixed no-repeat,
-96: 				#001e78;
-97: 
-98: 				@media screen and (max-width: 500px){
-99: 					url('../images/parallax/starField.svg') 0 0 / 60% fixed repeat-x,
-100: 					linear-gradient(to top, rgba(130,130,170,1) 0%,rgba(0,30,120,1) 100%) 0 0 / 100% 100vh fixed no-repeat,
-101: 					#001e78;
-102: 				}
-103: }
-104: 
+body {
+  width: 100%; }
 
-Backtrace:
-_home.scss:99
-./style.scss:65
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:1312:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:1248:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:1243:in `tok!'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:640:in `block'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:634:in `ruleset'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:697:in `block in declaration_or_ruleset'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:1288:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:1288:in `rethrow'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:698:in `declaration_or_ruleset'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:660:in `block_child'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:649:in `block_contents'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:641:in `block'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:402:in `media_directive'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:221:in `special_directive'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:193:in `directive'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:660:in `block_child'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:652:in `block_contents'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:641:in `block'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:634:in `ruleset'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:659:in `block_child'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:652:in `block_contents'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:116:in `stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/scss/parser.rb:41:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/engine.rb:409:in `_to_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/engine.rb:305:in `to_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:295:in `block in visit_import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/stack.rb:88:in `block in with_import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/stack.rb:121:in `with_frame'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/stack.rb:88:in `with_import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:294:in `visit_import'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:152:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/stack.rb:79:in `block in with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/stack.rb:121:in `with_frame'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/stack.rb:79:in `with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:152:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/tree/visitors/base.rb:52:in `map'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:161:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:173:in `with_environment'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:160:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:180:in `visit_root'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:151:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/tree/visitors/perform.rb:8:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/tree/root_node.rb:36:in `css_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/tree/root_node.rb:20:in `render'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/engine.rb:274:in `render'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/plugin/compiler.rb:378:in `update_stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/plugin/compiler.rb:189:in `block in update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/plugin/compiler.rb:186:in `each'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/plugin/compiler.rb:186:in `update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/plugin/compiler.rb:357:in `on_file_changed'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/lib/sass/plugin/compiler.rb:250:in `block in watch'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/vendor/listen/lib/listen/listener.rb:252:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/vendor/listen/lib/listen/adapters/polling.rb:48:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.3.8/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"					url\": expected \"{\", was \"('../images/par...\"\A         on line 99 of _home.scss\A         from line 65 of ./style.scss\A \A 94: 	background: url('../images/parallax/starField.svg') 0 0 / 20% fixed repeat-x,\A 95: 				linear-gradient(to top, rgba(130,130,170,1) 0%,rgba(0,30,120,1) 100%) 0 0 / 100% 100vh fixed no-repeat,\A 96: 				#001e78;\A 97: \A 98: 				@media screen and (max-width: 500px){\A 99: 					url('../images/parallax/starField.svg') 0 0 / 60% fixed repeat-x,\A 100: 					linear-gradient(to top, rgba(130,130,170,1) 0%,rgba(0,30,120,1) 100%) 0 0 / 100% 100vh fixed no-repeat,\A 101: 					#001e78;\A 102: 				}\A 103: }\A 104: "; }
+.group {
+  content: "";
+  display: table;
+  clear: both; }
+
+.wideOnly {
+  display: none; }
+
+.flipped {
+  transform: scaleX(-1); }
+
+.fullScreen {
+  width: 100%; }
+
+.smallColumn {
+  width: 25%;
+  margin: 0 4%%;
+  float: left; }
+
+.largeColumn {
+  width: 58%;
+  margin: 0 4%;
+  float: left; }
+
+.halfColumn {
+  width: 42%;
+  margin: 0 4%;
+  float: left; }
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; }
+
+img {
+  max-width: 100%; }
+
+a img:hover {
+  transform: scale(1.1, 1.1); }
+
+body, h1 {
+  font-family: "Droid Sans", sans-serif;
+  color: white;
+  font-size: 1rem;
+  line-height: 1.5rem; }
+
+p {
+  margin-bottom: .5rem; }
+
+h1 {
+  font-size: 4rem;
+  line-height: 4.2rem; }
+
+#nameContainer h2 {
+  text-align: right; }
+
+h2, h3 {
+  font-family: "Calligraffitti", serif;
+  font-size: 1.8rem;
+  line-height: 2.4rem; }
+
+h3 {
+  font-size: 3rem; }
+
+h4 {
+  font-size: 1.5rem;
+  line-height: 2.5rem; }
+
+nav {
+  font-size: 1.3rem; }
+  nav a {
+    color: white;
+    text-decoration: none; }
+  nav a:hover {
+    color: black;
+    background-color: white;
+    font-weight: normal; }
+
+a:hover {
+  font-weight: bolder; }
+
+h4 a {
+  text-decoration: none; }
+
+a:visited {
+  color: white; }
+
+@media screen and (max-width: 900px) and (min-width: 480px) {
+  .titleWrap .angle {
+    height: 5rem; }
+
+  .titleWrap {
+    width: 100%; }
+
+  .titleWrap h3 {
+    font-size: 2.5rem; }
+
+  h1 {
+    font-size: 3rem;
+    line-height: 3.4rem; }
+
+  h2 {
+    font-size: 1.4rem;
+    line-height: 2rem; } }
+@media screen and (max-width: 480px) {
+  .titleWrap .angle {
+    height: 5rem; }
+
+  .titleWrap h3 {
+    font-size: 2rem; }
+
+  #nameContainer {
+    width: 70%; }
+
+  body {
+    font-size: .8rem;
+    line-height: 1.2rem; }
+
+  h1 {
+    font-size: 2rem;
+    line-height: 2.3rem; }
+
+  h2 {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    min-width: 90%; } }
+nav {
+  width: 100%;
+  position: fixed;
+  background-color: black;
+  z-index: 10; }
+  nav li {
+    display: inline-block;
+    float: left;
+    text-align: center;
+    width: 14%;
+    margin: 0 3%; }
+  nav a {
+    display: inline-block;
+    padding: 1rem; }
+
+#mobileNav {
+  position: static;
+  height: 35rem;
+  padding-top: 3rem;
+  margin: 0 0 0 0; }
+  #mobileNav li {
+    width: 100%;
+    height: 5rem; }
+  #mobileNav a {
+    z-index: 50; }
+
+#mobileNav, #hamburger {
+  display: none; }
+
+@media screen and (max-width: 768px) and (min-width: 200px) {
+  nav.webNav.webNav {
+    margin-top: -0.5rem; }
+  nav.webNav li {
+    display: none;
+    height: 2rem;
+    width: auto;
+    margin: 0 -1rem 0 -1rem; }
+  nav.webNav li#hamburger {
+    float: right;
+    display: block;
+    height: 4.8rem;
+    padding-top: 0;
+    text-align: center; }
+  nav.webNav a:hover {
+    background-color: transparent; }
+  nav.webNav a {
+    width: 100%;
+    height: 100%; }
+  nav.webNav .svgContainer {
+    max-width: 70%; }
+
+  #mobileNav, #hamburger {
+    display: block; } }
+@media screen and (max-width: 768px) and (min-width: 480px) and (orientation: portrait) {
+  #mobileNav {
+    padding-bottom: 50rem; } }
+@media screen and (max-width: 480px) and (min-width: 100px) {
+  nav.webNav {
+    background-color: transparent; }
+
+  .svgContainer {
+    max-width: 60%; }
+
+  #nameContainer {
+    top: 26%;
+    margin-left: 3%; } }
+@media screen and (max-width: 480px) and (min-width: 100px) and (orientation: landscape) {
+  #mobileNav li {
+    height: 3.2rem; } }
+@media screen and (max-width: 320px) and (min-width: 100px) {
+  .svgContainer {
+    max-width: 50%; }
+
+  #nameContainer {
+    top: 36%;
+    margin-left: 10%; }
+
+  li#hamburger {
+    margin-right: -1.5rem;
+    margin-top: 0; } }
+/*********  Used-in-lots-of-places-stuff  **********/
+#about, #skills, #projects, #contact {
+  margin: 0 auto; }
+
+* {
+  position: relative; }
+
+#skyBG, #mountainsBG {
+  z-index: 1; }
+
+.titleWrap {
+  width: 60%;
+  margin: 0 auto 6rem auto; }
+
+.titleWrap .angle, .titleWrap h3 {
+  float: left;
+  width: 20%; }
+
+.titleWrap h3 {
+  text-align: center;
+  width: 50%;
+  margin: 1rem 5% 0 5%; }
+
+div.angle {
+  height: 5rem; }
+
+@media screen and (max-width: 500px) {
+  div div.titleWrap {
+    width: 100%;
+    margin: 0 auto; }
+
+  div.angle {
+    height: 8rem; } }
+/*********  Home Page  **********/
+#top {
+  margin-bottom: 0; }
+
+#nameContainer {
+  max-width: 90%;
+  position: relative;
+  left: 45%;
+  top: 12rem;
+  z-index: 0; }
+  @media screen and (max-width: 768px) and (min-width: 500px) and (orientation: portrait) {
+    #nameContainer {
+      top: 45vh;
+      left: 30%; } }
+  @media screen and (max-width: 500px) and (min-width: 320px) {
+    #nameContainer {
+      top: 40vh;
+      left: 10%; } }
+  @media screen and (max-width: 320px) and (min-width: 100px) {
+    #nameContainer {
+      top: 30vh;
+      left: 10%; } }
+
+#nameContainer h2 {
+  margin-left: 6%;
+  width: 50%; }
+  @media screen and (max-width: 768px) and (min-width: 200px) and (orientation: portrait) {
+    #nameContainer h2 {
+      max-width: 70%;
+      margin-left: 10%; } }
+  @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    #nameContainer h2 {
+      max-width: 40%; } }
+
+/***********  Background Layout  ************/
+section#top {
+  width: 100%;
+  height: 140vh;
+  background: url("../images/parallax/bigBranch.svg") -45% 0vh/65% no-repeat, url("../images/parallax/smallBranch.svg") 110% 30vh/45% no-repeat, url("../images/parallax/groundLantern.svg") 5% 50vh/110% no-repeat; }
+  @media screen and (min-width: 1100px) {
+    section#top {
+      background: url("../images/parallax/bigBranch.svg") -30% 5vh/55% no-repeat, url("../images/parallax/smallBranch.svg") 110% 30vh/35% no-repeat, url("../images/parallax/groundLantern.svg") 5% 45vh/110% no-repeat; } }
+  @media screen and (max-width: 768px) and (min-width: 480px) and (orientation: portrait) {
+    section#top {
+      background: url("../images/parallax/bigBranch.svg") -45% 5vh/80% no-repeat, url("../images/parallax/smallBranch.svg") 110% 45vh/60% no-repeat, url("../images/parallax/groundLantern.svg") 40% 60vh/150% no-repeat; } }
+  @media screen and (max-width: 480px) and (min-width: 200px) and (orientation: landscape) {
+    section#top {
+      height: 120vh;
+      background: url("../images/parallax/bigBranch.svg") -45% 0vh/65% no-repeat, url("../images/parallax/smallBranch.svg") 110% 40vh/45% no-repeat, url("../images/parallax/groundLantern.svg") 5% 60vh/110% no-repeat; } }
+  @media screen and (max-width: 480px) and (min-width: 200px) and (orientation: portrait) {
+    section#top {
+      height: 120vh;
+      background: url("../images/parallax/bigBranch.svg") 600% 0vh/105% no-repeat, url("../images/parallax/smallBranch.svg") 150% 40vh/70% no-repeat, url("../images/parallax/groundLantern.svg") 40% 60vh/200% no-repeat; } }
+
+div#skyBG {
+  width: 100%;
+  background: url("../images/parallax/starField.svg") 0 0/20% fixed repeat-x, linear-gradient(to top, #8282aa 0%, #001e78 100%) 0 0/100% 100vh fixed no-repeat, #001e78; }
+  @media screen and (max-width: 500px) {
+    div#skyBG {
+      background: url("../images/parallax/starField.svg") 0 0/60% fixed repeat-x, linear-gradient(to top, #8282aa 0%, #001e78 100%) 0 0/100% 100vh fixed no-repeat, #001e78; } }
+
+div#mountainsBG {
+  width: 100%;
+  background: url("../images/parallax/nearMountains.svg") 5% 60vh/110% fixed no-repeat, url("../images/parallax/midMountains.svg") 15% 50vh/120% fixed no-repeat, url("../images/parallax/farMountains.svg") 5% 50vh/110% fixed no-repeat; }
+  @media screen and (min-width: 1100px) {
+    div#mountainsBG {
+      background: url("../images/parallax/nearMountains.svg") 5% 60vh/110% fixed no-repeat, url("../images/parallax/midMountains.svg") 15% 50vh/120% fixed no-repeat, url("../images/parallax/farMountains.svg") 5% 50vh/110% fixed no-repeat; } }
+  @media screen and (max-width: 768px) and (min-width: 480px) and (orientation: portrait) {
+    div#mountainsBG {
+      background: url("../images/parallax/nearMountains.svg") 50% 60vh/250% fixed no-repeat, url("../images/parallax/midMountains.svg") 50% 70vh/250% fixed no-repeat, url("../images/parallax/farMountains.svg") 50% 70vh/250% fixed no-repeat; } }
+  @media screen and (max-width: 480px) and (min-width: 200px) and (orientation: landscape) {
+    div#mountainsBG {
+      background: url("../images/parallax/nearMountains.svg") 5% 60vh/110% fixed no-repeat, url("../images/parallax/midMountains.svg") 15% 70vh/120% fixed no-repeat, url("../images/parallax/farMountains.svg") 5% 70vh/110% fixed no-repeat; } }
+  @media screen and (max-width: 480px) and (min-width: 200px) and (orientation: portrait) {
+    div#mountainsBG {
+      background: url("../images/parallax/nearMountains.svg") 50% 60vh/250% fixed no-repeat, url("../images/parallax/midMountains.svg") 50% 70vh/250% fixed no-repeat, url("../images/parallax/farMountains.svg") 50% 70vh/250% fixed no-repeat; } }
+
+/*********  About Page  **********/
+#about {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0;
+  overflow: hidden; }
+
+#about .titleWrap {
+  height: 10rem;
+  padding-top: 10rem;
+  margin-top: 5rem;
+  margin-bottom: 0; }
+
+.overlay {
+  position: absolute;
+  padding-top: 20rem;
+  z-index: 10;
+  height: 90rem;
+  width: 100%;
+  background: url("../images/detail/windowWide.svg") 0 0/100% no-repeat; }
+
+#about .fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -10;
+  opacity: 0; }
+
+#about .group {
+  width: 80%; }
+
+.caption, #headshot {
+  width: 30%;
+  margin: 5%;
+  float: left; }
+
+.caption {
+  width: 50%;
+  margin: 5%; }
+
+#headshot img {
+  display: block;
+  max-width: 80%;
+  margin-left: 40%;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3), 0 0 0 7px rgba(255, 255, 255, 0.2);
+  -webkit-filter: grayscale(0.3); }
+
+@media screen and (orientation: portrait) {
+  .overlay {
+    background: url("../images/detail/windowTall.svg") 0 0/100% no-repeat; } }
+@media screen and (max-width: 768px) and (min-width: 600px) {
+  #about .titleWrap {
+    padding-top: 15rem; } }
+@media screen and (max-width: 600px) and (orientation: landscape) {
+  #headshot {
+    width: 40%;
+    padding: 0;
+    margin-left: -4rem;
+    margin-top: 3rem; }
+
+  .caption {
+    float: right; }
+
+  #about {
+    background-color: black; }
+
+  #about .fixed {
+    z-index: 10;
+    position: relative; }
+
+  #about .overlay {
+    display: none; }
+
+  #about .group {
+    width: 90%;
+    margin: 0 auto; } }
+@media screen and (max-width: 600px) and (orientation: portrait) {
+  #about {
+    background-color: black; }
+
+  #about .group {
+    width: 90%;
+    margin: 0 auto; }
+
+  #headshot, div.caption {
+    width: 90%;
+    margin: 0 auto;
+    float: none; }
+
+  #headshot {
+    width: 70%;
+    margin-left: -1.5rem;
+    margin-bottom: 2rem; }
+
+  #about .overlay {
+    display: none; }
+
+  #about .fixed {
+    z-index: 10;
+    position: relative; } }
+#about {
+  height: 55rem; }
+  @media screen and (max-width: 480px) {
+    #about .titleWrap {
+      padding-top: 10rem; } }
+  @media screen and (max-width: 480px) and (min-width: 320px) and (orientation: landscape) {
+    #about {
+      height: 40rem; } }
+  @media screen and (max-width: 320px) and (orientation: portrait) {
+    #about {
+      height: 40rem; } }
+
+/*********  contact Page  **********/
+#contact {
+  background-color: black;
+  padding-bottom: 10rem;
+  height: 50rem; }
+
+#contact .titleWrap {
+  padding-top: 8rem; }
+
+#contactDetails {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center; }
+
+#contactDetails a {
+  display: inline-block;
+  width: 15%; }
+
+#contactDetails img {
+  max-width: 90%;
+  padding: 5%; }
+
+/********** page source  ************/
+#pageSource.sourceCode {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 3rem; }
+
+#contact #pageSource a {
+  margin-left: -2rem; }
+  @media screen and (max-width: 768px) {
+    #contact #pageSource a {
+      margin-left: -2rem; } }
+
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  #contact {
+    height: 40rem; }
+
+  #contact .titleWrap {
+    padding-top: 4rem; } }
+@media screen and (max-width: 480px) {
+  #contactDetails a {
+    display: inline-block;
+    width: 25%; } }
+/*********  Skills Page  **********/
+#wordpress .full {
+  width: 5%; }
+#wordpress .empty {
+  width: 95%; }
+
+#frameworks .full {
+  width: 40%; }
+#frameworks .empty {
+  width: 60%; }
+
+#node .full {
+  width: 5%; }
+#node .empty {
+  width: 95%; }
+
+#angular .full {
+  width: 5%; }
+#angular .empty {
+  width: 95%; }
+
+#grunt .full {
+  width: 5%; }
+#grunt .empty {
+  width: 95%; }
+
+#hybridApps .full {
+  width: 5%; }
+#hybridApps .empty {
+  width: 95%; }
+
+#java .full {
+  width: 10%; }
+#java .empty {
+  width: 90%; }
+
+#photoshop .full {
+  width: 80%; }
+#photoshop .empty {
+  width: 20%; }
+
+#illustrator .full {
+  width: 80%; }
+#illustrator .empty {
+  width: 20%; }
+
+#flash .full {
+  width: 90%; }
+#flash .empty {
+  width: 10%; }
+
+#vectorIllustration .full {
+  width: 70%; }
+#vectorIllustration .empty {
+  width: 30%; }
+
+#animation .full {
+  width: 80%; }
+#animation .empty {
+  width: 20%; }
+
+#commandLine .full {
+  width: 80%; }
+#commandLine .empty {
+  width: 20%; }
+
+#phpMySql .full {
+  width: 5%; }
+#phpMySql .empty {
+  width: 95%; }
+
+#skills {
+  width: 70%;
+  height: 80rem;
+  overflow: hidden; }
+  #skills .halfColumn {
+    margin: 0 2%; }
+
+#skills .titleWrap {
+  margin-top: 0;
+  padding-top: 4rem; }
+
+.full, .empty {
+  float: left;
+  height: 1rem;
+  width: 50%;
+  background-color: white; }
+
+.empty {
+  background-color: rgba(255, 255, 255, 0.5); }
+
+.empty p {
+  font-size: .8rem;
+  line-height: 1rem;
+  text-align: center;
+  width: 100%; }
+
+#skillHighlights {
+  width: 80%;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.11);
+  border-radius: 50px; }
+
+.moreSkills {
+  width: 90%;
+  margin: 0 auto;
+  border-top: 3px solid white;
+  margin-top: 2rem; }
+
+.skillWrapper {
+  width: 100%; }
+
+.skillWrapper > p {
+  margin-top: 1rem;
+  min-width: 30%; }
+
+.skillWrapper > img {
+  max-width: 25%;
+  margin-right: 5%; }
+
+.skillBar img {
+  max-width: 14%; }
+
+.moreSkills .skillBar {
+  width: 100%;
+  padding-left: 2rem; }
+
+#skillHighlights .skillWrapper {
+  margin-top: 1.5rem; }
+#skillHighlights .skillWrapper > img, #skillHighlights .skillBar {
+  float: left; }
+#skillHighlights .skillBar {
+  margin-top: 1rem;
+  width: 70%; }
+#skillHighlights .halfColumn:nth-of-type(2) {
+  float: right; }
+
+@media screen and (max-width: 768px) {
+  #skillDetails {
+    padding: 0 5% 0 5%;
+    width: 100%; }
+
+  #skills {
+    width: 100%; }
+
+  .halfColumn {
+    width: 45%; }
+
+  .titleWrap {
+    margin-bottom: 2rem; }
+
+  #skillHighlights {
+    width: 90%; }
+
+  #skillHighlights .skillBar {
+    width: 70%; }
+
+  #skillHighlights img {
+    width: 20%; } }
+@media screen and (max-width: 480px) {
+  #skills {
+    height: 90rem;
+    margin-top: 5rem; }
+
+  #skillDetails .halfColumn {
+    width: 100%;
+    margin: 0 auto;
+    float: none; }
+  #skillDetails .moreSkills {
+    width: 100%; }
+
+  #skillHighlights {
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 0; } }
+@media screen and (max-width: 480px) and (orientation: landscape) {
+  #skills {
+    height: 650vh; } }
+@media screen and (max-width: 480px) and (orientation: portrait) {
+  #skills {
+    height: 360vh; } }
+
+#archBG {
+  width: 100%; }
+  @media screen and (min-width: 1200px) {
+    #archBG {
+      background: url("../images/archParallax/arch.svg") center -3rem/120% no-repeat, url("../images/archParallax/doublePlant.svg") 0 -15rem/100% no-repeat, url("../images/archParallax/groundPlants.svg") -10rem 60rem/130% no-repeat; } }
+  @media screen and (max-width: 1200px) and (min-width: 480px) {
+    #archBG {
+      background: url("../images/archParallax/arch.svg") center -5rem/150% no-repeat, url("../images/archParallax/doublePlant.svg") -4rem -20rem/110% no-repeat, url("../images/archParallax/groundPlants.svg") -10rem 60rem/130% no-repeat; } }
+  @media screen and (max-width: 768px) {
+    #archBG {
+      background: url("../images/archParallax/arch.svg") center -5rem/150% no-repeat, url("../images/archParallax/doublePlant.svg") -4rem -20rem/110% no-repeat, url("../images/archParallax/groundPlants.svg") -10rem 60rem/130% no-repeat; } }
+  @media screen and (max-width: 480px) and (orientation: landscape) {
+    #archBG {
+      background: url("../images/archParallax/groundPlants.svg") -3rem 500vh/140% no-repeat; } }
+  @media screen and (max-width: 480px) and (orientation: portrait) {
+    #archBG {
+      background: url("../images/archParallax/groundPlants.svg") -3rem 310vh/140% no-repeat; } }
+  @media screen and (max-device-width: 480px) and (orientation: landscape) {
+    #archBG {
+      background: url("../images/archParallax/groundPlants.svg") -3rem 500vh/140% no-repeat, url("../images/parallax/starField.svg") 0 0/60% fixed repeat-x, linear-gradient(to top, #8282aa 0%, #001e78 100%) 0 0/100% 100% fixed no-repeat, #001e78; } }
+  @media screen and (max-device-width: 480px) and (orientation: portrait) {
+    #archBG {
+      background: url("../images/archParallax/groundPlants.svg") -3rem 310vh/140% no-repeat, url("../images/parallax/starField.svg") 0 0/60% fixed repeat-x, linear-gradient(to top, #8282aa 0%, #001e78 100%) 0 0/100% 100% fixed no-repeat, #001e78; } }
+
+@media screen and (max-width: 480px) and (orientation: portrait) {
+  #skills {
+    width: 100%; } }
+
+/*********  Projects Page  **********/
+#projects {
+  width: 100%;
+  background-color: black;
+  padding-bottom: 40rem;
+  z-index: 15; }
+
+#projects .titleWrap {
+  padding-top: 8rem;
+  padding-bottom: 4rem; }
+
+#projects h4 {
+  margin-left: -3%; }
+
+#projectDetails {
+  width: 70%;
+  margin: 0 auto; }
+
+.projectWrap {
+  margin-bottom: 3rem; }
+
+.projectWrap a {
+  text-decoration: underline;
+  display: block;
+  width: 100%;
+  color: white; }
+
+.sourceCode a {
+  margin: -4rem 0 0 -5%;
+  width: 100%;
+  color: white; }
+  @media screen and (max-width: 900px) {
+    .sourceCode a {
+      margin: -4rem 0 0 3%; } }
+  @media screen and (max-width: 768px) {
+    .sourceCode a {
+      margin: -4rem 0 0 10%; } }
+  @media screen and (max-width: 400px) {
+    .sourceCode a {
+      margin: -4rem 0 0 -4rem;
+      width: 120%; } }
+
+.sourceCode a:before {
+  content: url("../images/social_icons/githubSm.svg");
+  display: inline;
+  position: relative;
+  top: 2.8rem;
+  left: 1.5rem; }
+
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  #projects {
+    margin-top: 15rem; }
+    #projects .projectWrap img {
+      margin-top: 5rem;
+      margin-left: 5%; }
+    #projects .largeColumn {
+      width: 55%; }
+    #projects .sourceCode a {
+      margin-left: -3rem; }
+
+  #projectDetails {
+    width: 100%; } }
+@media screen and (max-width: 768px) and (min-width: 480px) and (orientation: portrait) {
+  #projects {
+    height: 50rem; }
+    #projects #projectDetails {
+      width: 100%; } }
+@media screen and (max-width: 480px) and (orientation: portrait) {
+  #projects .smallColumn, #projects .largeColumn {
+    float: none;
+    width: 100%; }
+  #projects .smallColumn {
+    width: 50%; }
+  #projects img.smallColumn {
+    margin: 0 12%;
+    width: 65%; }
+  #projects h4 {
+    text-align: center; }
+  #projects p {
+    padding-left: 5%; } }
+@media screen and (max-width: 600px) and (orientation: landscape) {
+  #projects {
+    margin-top: 0; } }
+#projects {
+  height: 130rem; }
+  @media screen and (min-width: 1100px) {
+    #projects {
+      margin: 0 auto; } }
+  @media screen and (max-width: 1024px) and (min-width: 768px) and (orientation: landscape) {
+    #projects {
+      height: 130rem; } }
+  @media screen and (max-width: 768px) and (min-width: 480px) and (orientation: portrait) {
+    #projects {
+      height: 130rem; } }
+  @media screen and (max-width: 768px) and (orientation: landscape) {
+    #projects {
+      height: 120rem; } }
+  @media screen and (max-width: 480px) and (orientation: portrait) {
+    #projects {
+      height: 150rem; }
+      #projects .titleWrap {
+        margin-top: 10rem; } }
+
+@media screen and (max-width: 480px) {
+  #about .titleWrap, #skills .titleWrap, #projects .titleWrap, #contact .titleWrap {
+    padding: 2rem 0 2rem 10%;
+    min-width: 80%;
+    margin: 0 auto; }
+  #about .titleWrap h3, #skills .titleWrap h3, #projects .titleWrap h3, #contact .titleWrap h3 {
+    width: 30%;
+    line-height: 3rem; }
+
+  #about .titleWrap h3, #contact .titleWrap h3 {
+    margin-top: -1rem; } }
