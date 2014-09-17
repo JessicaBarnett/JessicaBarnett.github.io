@@ -8,9 +8,11 @@ mqPhone = window.matchMedia("(max-width: 600px)");
 
 
 hideAbout();
+$(window).resize(scrollHandler);
 // mobileNavColor();
 
 $(window).scroll(scrollHandler);
+
 
 function scrollHandler(e){
 	// mobileNavColor();
@@ -31,7 +33,7 @@ function hideAbout(position){
 
 function setHidePoints(){
 	if (mqTallWindow.matches){
-		showAt = 300;
+		showAt = 400;
 		hideAt = 2000;
 	}
 	else if (mqTab.matches){
