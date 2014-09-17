@@ -8,7 +8,7 @@ mqPhone = window.matchMedia("(max-width: 600px)");
 
 
 hideAbout();
-// mobileNavColor();
+$(window).resize(scrollHandler);
 
 $(window).scroll(scrollHandler);
 
