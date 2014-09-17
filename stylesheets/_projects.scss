@@ -5,6 +5,7 @@
 	background-color: black;
 	//to patch between background-transparent sections and this one
 	padding-bottom: 40rem;
+	z-index: 15; //to make sure links are clickable if div.overlay is too big on user's window
 }
 
 #projects .titleWrap{

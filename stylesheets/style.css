@@ -683,7 +683,8 @@ div#mountainsBG {
 #projects {
   width: 100%;
   background-color: black;
-  padding-bottom: 40rem; }
+  padding-bottom: 40rem;
+  z-index: 15; }
 
 #projects .titleWrap {
   padding-top: 8rem;
