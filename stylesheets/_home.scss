@@ -92,7 +92,8 @@ section#top {
 div#skyBG{
 	width: 100%;
 	background: url('../images/parallax/starField.svg') 0 0 / 20% fixed repeat-x,
-				linear-gradient(to top, rgba(130,130,170,1) 0%,rgba(0,30,120,1) 100%) fixed;
+				linear-gradient(to top, rgba(130,130,170,1) 0%,rgba(0,30,120,1) 100%) 0 0 / 100% 100vh fixed no-repeat,
+				#001e78;
 }
 
 div#mountainsBG{
