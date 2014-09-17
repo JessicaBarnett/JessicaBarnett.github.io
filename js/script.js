@@ -2,18 +2,15 @@
 var showAt, hideAt;
 var position;
 
-// mqAlwaysShow = window.matchMedia("(device-max-width: 700px)");
 mqTallWindow = window.matchMedia("(max-width: 768px) and (max-height: 800px)"); 
 mqTab = window.matchMedia("(max-width: 768px) and (min-width: 600px)");
 mqPhone = window.matchMedia("(max-width: 600px)");
 
 
 hideAbout();
-$(window).resize(scrollHandler);
 // mobileNavColor();
 
 $(window).scroll(scrollHandler);
-
 
 function scrollHandler(e){
 	// mobileNavColor();
@@ -33,8 +30,12 @@ function hideAbout(position){
 }
 
 function setHidePoints(){
-	if (mqTab.matches){
-		showAt = 400;
+	if (mqTallWindow.matches){
+		showAt = 300;
+		hideAt = 2000;
+	}
+	else if (mqTab.matches){
+		showAt = 800;
 		hideAt = 3000;
 	}
 	else{
