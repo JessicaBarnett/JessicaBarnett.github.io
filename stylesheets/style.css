@@ -329,7 +329,7 @@ div#mountainsBG {
   overflow: hidden; }
   @media screen and (device-max-width: 700px) {
     #about {
-      background: url("../images/parallax/starField.svg") 0 0/20% fixed repeat-x, linear-gradient(to top, #8282aa 0%, #001e78 100%) 0 0/100% 100% fixed no-repeat, #001e78; } }
+      background: black; } }
 
 #about .titleWrap {
   height: 10rem;
@@ -375,6 +375,9 @@ div#mountainsBG {
   width: 100%;
   background: url("../images/detail/windowWide.svg") 0 0/100% no-repeat;
   background-size: cover; }
+  @media screen and (device-max-width: 700px) {
+    .overlay {
+      display: none; } }
   @media screen and (max-width: 800px) and (max-height: 800px) {
     .overlay {
       background: url("../images/detail/windowTall.svg") 0 0/100% no-repeat; } }
