@@ -676,10 +676,10 @@ div#mountainsBG {
       background: url("../images/archParallax/groundPlants.svg") -3rem 310vh/140% no-repeat; } }
   @media screen and (max-device-width: 480px) and (orientation: landscape) {
     #archBG {
-      background: url("../images/archParallax/groundPlants.svg") -3rem 500vh/140% no-repeat, url("../images/parallax/starField.svg") 0 0/20% fixed repeat-x, linear-gradient(to top, #8282aa 0%, #001e78 100%) 0 0/100% 100% fixed no-repeat, #001e78; } }
+      background: url("../images/archParallax/groundPlants.svg") -3rem 500vh/140% no-repeat, url("../images/parallax/starField.svg") 0 0/60% fixed repeat-x, linear-gradient(to top, #8282aa 0%, #001e78 100%) 0 0/100% 100% fixed no-repeat, #001e78; } }
   @media screen and (max-device-width: 480px) and (orientation: portrait) {
     #archBG {
-      background: url("../images/archParallax/groundPlants.svg") -3rem 310vh/140% no-repeat, url("../images/parallax/starField.svg") 0 0/20% fixed repeat-x, linear-gradient(to top, #8282aa 0%, #001e78 100%) 0 0/100% 100% fixed no-repeat, #001e78; } }
+      background: url("../images/archParallax/groundPlants.svg") -3rem 310vh/140% no-repeat, url("../images/parallax/starField.svg") 0 0/60% fixed repeat-x, linear-gradient(to top, #8282aa 0%, #001e78 100%) 0 0/100% 100% fixed no-repeat, #001e78; } }
 
 @media screen and (max-width: 480px) and (orientation: portrait) {
   #skills {
