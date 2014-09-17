@@ -703,11 +703,13 @@ div#mountainsBG {
 .projectWrap a {
   text-decoration: underline;
   display: block;
-  width: 100%; }
+  width: 100%;
+  color: white; }
 
 .sourceCode a {
   margin: -4rem 0 0 -5%;
-  width: 100%; }
+  width: 100%;
+  color: white; }
   @media screen and (max-width: 900px) {
     .sourceCode a {
       margin: -4rem 0 0 3%; } }
