@@ -2,7 +2,7 @@
 var showAt, hideAt;
 var position;
 
-mqAlwaysShow = window.matchMedia("(device-max-width: 700px)");
+// mqAlwaysShow = window.matchMedia("(device-max-width: 700px)");
 mqTallWindow = window.matchMedia("(max-width: 768px) and (max-height: 800px)"); 
 mqTab = window.matchMedia("(max-width: 768px) and (min-width: 600px)");
 mqPhone = window.matchMedia("(max-width: 600px)");
@@ -33,12 +33,8 @@ function hideAbout(position){
 }
 
 function setHidePoints(){
-	if (mqTallWindow.matches){
+	if (mqTab.matches){
 		showAt = 400;
-		hideAt = 2000;
-	}
-	else if (mqTab.matches){
-		showAt = 800;
 		hideAt = 3000;
 	}
 	else{
