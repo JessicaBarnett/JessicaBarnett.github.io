@@ -45,4 +45,15 @@
 	}
 
 
+	$("#contact a img").mouseover(showSocialDetails)
+	$("#contact a img").mouseout(removeSocialDetails);
+
+	function showSocialDetails(){
+		$("#socialDetails").text($(this).attr("alt"));
+	}
+
+	function removeSocialDetails(){
+		$("#socialDetails").empty();
+	}
+
 // })(); 

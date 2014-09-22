@@ -456,7 +456,8 @@ div#mountainsBG {
   height: 50rem; }
 
 #contact .titleWrap {
-  padding-top: 8rem; }
+  padding-top: 8rem;
+  margin-bottom: 4rem; }
 
 #contactDetails {
   width: 80%;
@@ -470,6 +471,12 @@ div#mountainsBG {
 #contactDetails img {
   max-width: 90%;
   padding: 5%; }
+
+#socialDetails {
+  width: 30%;
+  min-height: 1.5rem;
+  margin: 1rem auto;
+  text-align: center; }
 
 /********** page source  ************/
 #pageSource.sourceCode {

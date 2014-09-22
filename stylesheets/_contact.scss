@@ -10,6 +10,7 @@
 
 #contact .titleWrap {
 	padding-top: 8rem; //adjust for nav hooks
+	margin-bottom: 4rem;
 }
 
 #contactDetails{
@@ -26,6 +27,13 @@
 #contactDetails img {
 	max-width: 90%;
 	padding: 5%;
+}
+
+#socialDetails {
+	width: 30%;
+	min-height: 1.5rem;
+	margin: 1rem auto;
+	text-align: center;
 }
 
 
