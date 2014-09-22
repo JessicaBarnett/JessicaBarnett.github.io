@@ -541,9 +541,9 @@ div#mountainsBG {
   width: 20%; }
 
 #flash .full {
-  width: 90%; }
+  width: 80%; }
 #flash .empty {
-  width: 10%; }
+  width: 20%; }
 
 #vectorIllustration .full {
   width: 70%; }
@@ -551,14 +551,14 @@ div#mountainsBG {
   width: 30%; }
 
 #animation .full {
-  width: 80%; }
+  width: 70%; }
 #animation .empty {
-  width: 20%; }
+  width: 30%; }
 
 #commandLine .full {
-  width: 80%; }
+  width: 60%; }
 #commandLine .empty {
-  width: 20%; }
+  width: 40%; }
 
 #phpMySql .full {
   width: 5%; }
