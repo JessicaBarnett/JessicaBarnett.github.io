@@ -6,35 +6,6 @@
 body {
   width: 100%; }
 
-.group {
-  content: "";
-  display: table;
-  clear: both; }
-
-.wideOnly {
-  display: none; }
-
-.flipped {
-  transform: scaleX(-1); }
-
-.fullScreen {
-  width: 100%; }
-
-.smallColumn {
-  width: 25%;
-  margin: 0 4%%;
-  float: left; }
-
-.largeColumn {
-  width: 58%;
-  margin: 0 4%;
-  float: left; }
-
-.halfColumn {
-  width: 42%;
-  margin: 0 4%;
-  float: left; }
-
 html, body {
   max-width: 100%;
   overflow-x: hidden; }
