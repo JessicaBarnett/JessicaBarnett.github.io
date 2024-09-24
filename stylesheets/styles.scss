@@ -1,8 +1,8 @@
 
+@use "./reset.css";
+@use "./utilities.scss";
+
 * {
   box-sizing: border-box;
 }
 
-p {
-  width: 10%;
-}

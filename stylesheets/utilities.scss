@@ -1,0 +1,28 @@
+// referenced: https://css-tricks.com/snippets/sass/mixin-manage-breakpoints/
+//  usage:
+//      .rule {
+//          @include respond-to('medium') {
+//              // styles to apply
+//          }
+//      }
+
+$breakpoints: (
+    'small':      480px,
+    'medium':     769px,
+    'wide':       1280px,
+    'extra-wide': 1440px,
+    'hd':         1920px
+) !default;
+
+@mixin respond-to($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "No such breakpoint `#{$breakpoint}`!";
+    }
+}
+
