@@ -1,0 +1,265 @@
+
+/* Css variables!!  */
+:root {
+    --x: -8px;
+    --y: -8px;
+}
+
+body {
+    background: rgba(243,239,229,1);
+}
+
+.sg-layout-content {
+    max-width: 95vw;
+    margin: 0 auto;
+}
+
+.sg-block {
+    padding: 16px;
+    background: repeating-linear-gradient(
+        45deg,
+        #d3d3d3,
+        #d3d3d3 10px,
+        #e8e8e8 10px,
+        #e8e8e8 20px
+      );
+    margin-bottom: 24px;
+
+    position: relative;
+    z-index: 100;
+}
+
+[data-tab-target='*'] {
+    background-color: orange;
+}
+
+/*  Strictly Experimental lol  */
+
+
+@font-face {
+    font-family: 'VVDSMinorica-Sans';
+    src: url('../assets/fonts/VVDSMinorica-Sans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Minorica Serif Regular';
+    src: url('../assets/fonts/VVDSMinorica-SerifRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Suffer ScratchBold';
+    src: url('../assets/fonts/fVVDSSuffer-ScratchBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pacifica Shadow';
+    src: url('../assets/fonts/VVDS_Pacifica-Shadow.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pacifica Regular';
+    src: url('../assets/fonts/VVDS_Pacifica-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Halau regular';
+    src: url('../assets/fonts/VVDS_Halau-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Big Tickle Shadowlight';
+    src: url('../assets/fonts/VVDS_BigTickle-ShadowLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Big Tickle Black';
+    src: url('../assets/fonts/VVDS_BigTickle-Black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Country Blues Medium';
+    src: url('../assets/fonts/TheCountryBlues-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Surfbird SmoothCutRegular';
+    src: url('../assets/fonts/Surfbird-SmoothCutRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.surfbird {
+    font-family: 'Surfbird SmoothCutRegular';
+}
+
+.country-blues {
+    font-family: 'Country Blues Medium';
+}
+
+.tickle-black {
+    font-family: 'Big Tickle Black';
+}
+
+.tickle-light {
+    font-family: 'Big Tickle Shadowlight';
+}
+
+.halau-reg {
+    font-family: 'Halau regular';
+}
+
+.pacifica-reg {
+    font-family: 'Pacifica Regular';
+}
+
+.pacifica-shadow {
+    font-family: 'Pacifica Shadow';
+}
+
+.suffer-scratchbold {
+    font-family: 'Suffer ScratchBold';
+}
+
+.minorica-sans {
+    font-family: 'VVDSMinorica-Sans';
+}
+
+.minorica-reg {
+    font-family: 'Minorica Serif Regular';
+}
+
+.fonts-0 { font-family: 'Halau regular'; }
+
+.fonts-1 {  font-family: 'Minorica Serif Regular';  }
+
+.fonts-2 { font-family: 'VVDSMinorica-Sans'; }
+
+.fonts-3 {font-family: 'Pacifica Shadow';}
+
+.fonts-4 {font-family: 'Pacifica Regular';}
+
+.fonts-5 {font-family: 'Suffer ScratchBold';}
+
+.fonts-6 {font-family: 'Surfbird SmoothCutRegular';}
+
+.fonts-7 {font-family: 'Country Blues Medium';}
+
+.fonts-8 {font-family: 'Big Tickle Black';}
+
+.fonts-9 {font-family: 'Big Tickle Shadowlight';}
+
+.about-summary {
+    background-color: var(--coral)
+}
+
+.bubble-context {
+    width: 500px;
+    height: 500px;
+    margin: 8px;
+    background-color: white;
+}
+
+.bubble-context-small {
+    width: 250px;
+    height: 250px;
+    margin: 8px;
+    background-color: white;
+}
+
+.bubble-pear {
+    left: 61%;
+    top: 41%;
+    background-color: rgba(0, 255, 225, 0.3)
+}
+.bubble-banana {
+    left: 50%;
+    top: 0;
+    background-color: rgba(255, 255, 0, 0.3)
+}
+.bubble-apple {
+    left: 0;
+    top: 15%;
+    background-color: rgba(255, 0, 0, 0.3)
+}
+
+.bubble-h4 {
+    left: 30%;
+}
+
+.bubble-div {
+    left: 60%;
+}
+
+.bubble-fruits {
+}
+
+.bubble-veggies {
+    left: 50%;
+}
+
+.stripe-thing {
+    position: relative;
+    width: 320px;
+    height: 320px;
+}
+
+.stripe-thing::before {
+    position: relative;
+    content: "";
+    display: block;
+    width: 300px;
+    height: 300px;
+    z-index: 1;
+    background: #fffbaf;
+    border: 2px solid #111;
+  }
+
+.stripe-thing::after {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    content: "";
+    display: block;
+    width: 300px;
+    height: 300px;
+    z-index: 0;
+    background: #111;
+    background: repeating-linear-gradient(
+        45deg,
+        #111,
+        #111 2px,
+        transparent 2px,
+        transparent 6px
+    );
+}
+
+.shadowed-text {
+    color: #fff;
+    font-family: 'Glory', sans-serif;
+    font-size: 120px;
+    font-weight: 800;
+    letter-spacing: 4px;
+    text-shadow:
+        calc(var(--x) * -1) calc(var(--y) * -1) 0px #ff92ee,
+        calc(var(--x) * -2) calc(var(--y) * -2) 0px #fa6cff,
+        calc(var(--x) * -3) calc(var(--y) * -3) 0px #d81dc4;
+}

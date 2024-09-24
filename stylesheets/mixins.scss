@@ -1,0 +1,50 @@
+/******************************/
+/**     MIXINS + GLOBALS     **/
+/******************************/
+
+$bp-small: 600px;
+$bp-med: 1250px;
+$bp-wide: 1600px;
+
+@mixin clearfix {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@mixin styled-scrollbar {
+    scrollbar-color: $charcoal $tan;
+
+    &::-webkit-scrollbar-track {
+        border: 1px solid $charcoal;
+        background-color: $tan;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar {
+        width: 10px;
+        background-color: $tan;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: $charcoal;
+    }
+}
+
+@mixin pseudo-el {
+    content: '';
+    display: block;
+}
+
+@mixin respond-to($point) {
+    @if $point == wide {
+      @media (min-width: #{$bp-wide}) { @content; }
+    }
+    @else if $point == med {
+      @media (min-width: #{$bp-med}) { @content; }
+    }
+    @else if $point == small {
+      @media (min-width: #{$bp-small})  { @content; }
+    }
+  }

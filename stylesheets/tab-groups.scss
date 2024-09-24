@@ -1,0 +1,127 @@
+
+$tab-group-bg-color: $charcoal;
+
+@mixin vertical-tabs() {
+    display: flex;
+    flex-wrap: wrap;
+
+    .tab-buttons {
+        width: 30%;
+        transform: translateX(3px);
+    }
+
+        .tab-button {
+            width: 100%;
+            margin-bottom: 4px;
+            border-radius: 10px 0 0 10px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &.selected {
+                border-right-color: $tan;
+            }
+        }
+
+    .tab-content {
+        width: 70%;
+        height: 402px; // max 7 buttons
+        border-radius: 0 10px 10px 0;
+    }
+}
+
+@mixin horizontal-tabs() {
+    .tab-buttons {
+        display: flex;
+        flex-wrap: nowrap;
+        min-width: 750px; // max 7 buttons, matches tabs-content
+        width: 100%;
+        transform: translateY(3px);
+    }
+
+    .tab-button {
+        margin-right: 4px;
+        border-radius: 10px 10px 0 0;
+        min-width: 100px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &.selected {
+                border-bottom-color: $tan;
+        }
+    }
+
+    .tab-content {
+        width: 100%;
+        min-width: 750px; // max 7 buttons
+        border-radius: 0 10px 10px 10px;
+    }
+}
+
+.tabs {
+    width: 100%;
+
+    h4 {
+        color: $charcoal;
+    }
+}
+
+.tabs-r {
+    @media(max-width: #{$bp-small}) {
+        @include vertical-tabs();
+    }
+
+    @media(min-width: #{$bp-small}) {
+        @include horizontal-tabs();
+    }
+}
+
+.tabs-v {
+    @include vertical-tabs();
+}
+
+.tabs-h {
+    @include horizontal-tabs();
+}
+
+    .tab-button {
+        display: inline-block;
+        padding: 16px;
+        background-color: $charcoal;
+        border: 3px solid $charcoal;
+        color: $white;
+
+        &:hover {
+            background-color: lighten($charcoal, 20%);
+        }
+
+        &.selected {
+            background-color: transparent;
+            color: $charcoal;
+        }
+    }
+
+    .tab-content {
+        @include styled-scrollbar;
+        padding: 16px;
+        overflow-y: scroll;
+        height: 336px;
+        display: flex;
+        border: 3px solid rgb(61, 61, 61);
+    }
+
+    .tab-content-item {
+        display: none;
+
+        &.selected,
+        .view-all & {
+            display: block;
+        }
+    }
+
+    .tabs.view-all .hide-if-all {
+        display: none;
+    }

@@ -1,0 +1,18 @@
+/***************/
+/**   PILLS   **/
+/***************/
+
+.pill-link {
+    color: white;
+    padding: 4px 8px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 9999px;
+    background-color: $pill-color;
+    margin: 4px 4px 4px 0;
+    cursor: default; /* until I actually activate the links */
+}
+
+.pill-link:hover {
+    background-color: darken($pill-color, 80%);
+}

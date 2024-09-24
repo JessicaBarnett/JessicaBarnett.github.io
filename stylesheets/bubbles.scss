@@ -1,0 +1,115 @@
+/****************/
+/**   BUBBLES  **/
+/****************/
+
+
+/*
+    there's the bubble
+    then there's the zoomable stuff, which is separate
+    I should be able to @include bubble on just any element and it becomes a circle
+*/
+
+
+// wrapper with positioning context for absolute positioned buttons
+.bubble-context {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1;
+
+    .selected > & {
+        opacity: 1;
+        z-index: 100;
+    }
+}
+
+$bubble-max-width: 100%;
+$zoom-bubble-width: 30%;
+
+@mixin bubble($color, $size: 1) {
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: ease-in all;
+    border: 3px solid $tan;
+    background-color: $color;
+    height: calc($bubble-max-width * $size);
+    width: calc($bubble-max-width * $size);
+}
+
+.bubble-10 {  @include bubble($yellow, 0.1);   }
+.bubble-20 {  @include bubble($yellow-orange, 0.2); }
+.bubble-30 {  @include bubble($orange, 0.3); }
+.bubble-40 {  @include bubble($red-orange, 0.4);  }
+.bubble-50 {  @include bubble($pink, 0.5); }
+.bubble-60 {  @include bubble($purple-warm, 0.6); }
+.bubble-70 {  @include bubble($purple-cool, 0.7);   }
+.bubble-80 {  @include bubble($pink, 0.8);  }
+.bubble-90 {  @include bubble($yellow-orange, 0.9); }
+.bubble-100 { @include bubble($red-orange, 1);   }
+
+
+
+/*
+    This is all the code for the hide/show details mechanics
+*/
+
+.hidden-detail-bubble-group {
+    overflow: hidden;
+    padding: 16px;
+}
+
+    .bubble-details {
+        position: absolute;
+        transition: all;
+        opacity: 0;
+        z-index: -9999;
+        top: 0;
+        left: calc($zoom-bubble-width + 5%);
+
+        .selected > & {
+            z-index: 100;
+            opacity: 1;
+        }
+    }
+
+    .bubble-button {
+        .has-selected & {
+            opacity: .3;
+            z-index: 1
+        }
+
+        .has-selected .selected > & {
+            opacity: 1;
+            z-index: 10;
+            bottom: auto;
+            right: auto;
+            top: 0;
+            left: 0;
+            width: $zoom-bubble-width;
+            height: $zoom-bubble-width;
+        }
+    }
+
+/*
+    Specific instance Styling
+*/
+
+.venn-fe {
+    @include bubble(rgba($pink, 0.5), 0.8);
+    // background: radial-gradient($rainbow-gradient);
+    top: 18%;
+}
+
+.venn-be {
+    @include bubble(rgba($purple-warm, 0.5), 0.6);
+    // background: radial-gradient($reverse-rainbow-gradient);
+    left: 40%;
+}
+
+.venn-de {
+    @include bubble(rgba($orange, 0.5), 0.4);
+    left: 60%;
+    top: 40%;
+}

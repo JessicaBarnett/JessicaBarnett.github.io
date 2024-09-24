@@ -1,0 +1,55 @@
+/****************/
+/**   LAYOUT   **/
+/****************/
+
+.layout {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+}
+
+.layout-section-wide {
+    width: 100%;
+}
+
+.layout-section {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.skills-tabs {
+    @include respond-to('med') {
+        float: right;
+        width: 40%;
+    }
+}
+
+.skills-section {
+    @include clearfix;
+
+    h3, p {
+        // float: left;
+        width: 60%;
+    }
+
+    }
+        .skills-tabs {
+            // @include respond-to('small') {
+                // float: right;
+                display: inline-block;
+                width: 40%;
+            // }
+        }
+
+.header, .footer {
+    padding: 24px 16px;
+}
+
+.footer {
+    padding-bottom: 24px;
+}
+
+.footer p {
+    padding-bottom: 0;
+    text-align: center;
+}

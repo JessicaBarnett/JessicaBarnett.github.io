@@ -1,0 +1,28 @@
+<!-- <svg width="1200" height="800" viewBox="0 0 1200 800"  xmlns="http://www.w3.org/2000/svg">
+    <polygon id="mask-1-bg" points="0,0  0,800  1200,800   1200,0" fill="#dddddd" />
+
+    <polygon id="mask-1-tl" points="0,0 0,460 345,412 345,0" fill="#333333" />
+
+    <g transform="translate(355)">
+        <polygon id="mask-1-tm" points="0,0 0,412 490,345 490,0" fill="#444444" />
+    </g>
+
+    <g transform="translate(855)">
+        <polygon id="mask-1-tr" points="0,0 0,345 345,300 345,0"  fill="#555555" />
+    </g>
+
+     <g transform="translate(0,410)">
+        <polygon id="mask-1-bl" points="0,60 0,400 445,400 445,0" fill="#666666" />
+    </g>
+
+    <g transform="translate(460,410)">
+        <polygon id="mask-1-br" points="0,0 0,400 745,400 745,-100" fill="#777777" />
+    </g>
+</svg> -->
+<svg width="1200" height="800" viewBox="0 0 1200 800"  xmlns="http://www.w3.org/2000/svg">
+    <polygon id="mask-1-tl" points="0,0 0,460 345,412 345,0" fill="#000000" />
+    <polygon id="mask-1-tm" points="0,0 0,412 490,345 490,0" fill="#000000" />
+    <polygon id="mask-1-tr" points="0,0 0,345 345,300 345,0"  fill="#000000" />
+    <polygon id="mask-1-bl" points="0,60 0,400 445,400 445,0" fill="#000000" />
+    <polygon id="mask-1-br" points="0,0 0,400 745,400 745,-100" fill="#000000" />
+</svg>

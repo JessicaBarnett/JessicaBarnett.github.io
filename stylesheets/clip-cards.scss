@@ -1,0 +1,183 @@
+/*********************/
+/**   CLIP-CARDS    **/
+/*********************/
+
+$clip-path-1: polygon(0% 0%, 0% 99%, 96% 95%, 96% 0%);
+$clip-path-2: polygon(0% 0%, 0% 95%, 100% 89%, 100% 0%);
+$clip-path-3: polygon(4% 0%, 4% 89%, 100% 85%, 100% 0%);
+$clip-path-4: polygon(0% 14%, 0% 100%, 98% 100%, 98% 7%);
+$clip-path-5: polygon(2% 7%, 2% 100%, 100% 100%, 100% 0%);
+
+.clip-cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .clip-card {
+        position: relative;
+    }
+
+        .clip-card-detail {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            padding: 16px;
+            transition: all .3s ease-in-out;
+            transform: scale(1) translate(-50%,-50%);
+
+            .clip-card:hover & {
+                opacity: 0;
+                transform: translate(-50%,-50%) scale(2);
+            }
+        }
+
+            .clip-card-title {
+                text-align: center;
+                display: block;
+                opacity: 1;
+                color: white;
+                font-size: 26px;
+                line-height: 28px;
+                letter-spacing: 2px;
+            }
+
+            .clip-card-text {
+                text-align: center;
+                display: block;
+                opacity: 1;
+                color: white;
+            }
+
+        .clip-card-img {
+            background: $img-placeholder-color-1;
+            height: 400px;
+            overflow: hidden;
+            transform: scale(0.95);
+            transition: all 0.3s ease-in-out;
+
+            .clip-card:hover & {
+                transform: scale(1.01);
+            }
+
+            &:after {
+                @include pseudo-el;
+                position: absolute;
+                top: 0; left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 1;
+                transition: all 0.3s ease-in-out;
+
+                .clip-card:hover & {
+                    opacity: 0;
+                }
+            }
+        }
+
+        .clip-card-image-el {
+            filter: $image-filters;
+            transition: all 0.3s ease-in-out;
+
+            .clip-card:hover & {
+                filter: $filters-unset;
+                transform: scale(1.1) translateY(30px);
+            }
+        }
+
+    .clip-card:nth-child(1) {
+        width: 29%;
+        clip-path: $clip-path-1;
+        background-color: darken($pink, 30%);
+
+        .clip-card-img {
+            clip-path: $clip-path-1;
+        }
+
+        .clip-card-img:after {
+            background-color: rgba($pink, 80%);
+        }
+
+        .clip-card-detail {
+            background-color: darken($pink, 30%);
+        }
+    }
+
+    .clip-card:nth-child(2) {
+        width: 42%;
+        clip-path: $clip-path-2;
+        background-color: darken($purple-warm, 20%);
+
+        .clip-card-img {
+            clip-path: $clip-path-2;
+        }
+
+        .clip-card-img:after {
+            background-color: rgba($purple-warm, 80%);
+        }
+
+        img {
+            margin-left: -93px;
+        }
+
+        .clip-card-detail {
+            background-color: darken($purple-warm, 20%);
+        }
+    }
+
+    .clip-card:nth-child(3) {
+        width: 29%;
+        clip-path: $clip-path-3;
+        background-color: darken($yellow-orange, 40%);
+
+        .clip-card-img {
+            clip-path: $clip-path-3;
+        }
+
+        .clip-card-img:after {
+            background-color: rgba($yellow-orange, 80%);
+        }
+
+        .clip-card-detail {
+            background-color: darken($yellow-orange, 40%);
+        }
+    }
+
+    .clip-card:nth-child(4) {
+        width: 50%;
+        transform: translateY(-40px);
+        clip-path: $clip-path-4;
+
+        .clip-card-img {
+            clip-path: $clip-path-4;
+        }
+
+        .clip-card-img:after {
+            background-color: rgba($orange, 80%);
+        }
+
+        background-color: darken($orange, 35%);
+
+        .clip-card-detail {
+            background-color: darken($orange, 35%);
+        }
+    }
+
+    .clip-card:nth-child(5) {
+        width: 50%;
+        transform: translateY(-40px);
+        clip-path: $clip-path-5;
+        background-color: darken($purple-cool, 20%);
+
+        .clip-card-img {
+            clip-path: $clip-path-5;
+        }
+
+        .clip-card-img:after {
+            background-color: rgba($purple-cool, 80%);
+        }
+
+
+        .clip-card-detail {
+            background-color: darken($purple-cool, 20%);
+        }
+    }

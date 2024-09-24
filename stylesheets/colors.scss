@@ -1,0 +1,98 @@
+$white: #ffffff;
+$tan: #F6F5E2;
+
+$charcoal: #3D3D3D;
+$yellow: #F4D74D;
+$yellow-orange: #E39A3F;
+$orange: #E36B4F;
+$red-orange: #D54235;
+$pink: #DC3E81;
+$purple-warm: #823B83;
+$purple-cool: #512F82;
+$transparent: transparent;
+
+$background-color: $tan;
+$text-color: $charcoal;
+
+$title-color: $white;
+$title-shadow-color: darken($purple-cool, 80%);
+
+$section-heading-color: $orange;
+$section-heading-shadow-color: darken($orange, 80%);
+
+$nav-text-color: $orange;
+$nav-visited-text-color: $orange;
+$nav-bg-color: $tan;
+
+$pill-color: $purple-warm;
+$img-placeholder-color-1: $purple-warm;
+$img-placeholder-color-2: $purple-cool;
+
+$rainbow-map: (
+    $yellow,
+    $yellow-orange,
+    $orange,
+    $red-orange,
+    $pink,
+    $purple-warm,
+    $purple-cool,
+    $transparent
+);
+$reverse-rainbow-map: (
+    $purple-cool,
+    $purple-warm,
+    $pink,
+    $red-orange,
+    $orange,
+    $yellow-orange,
+    $yellow,
+    $transparent
+);
+
+// $stops: (0% 5%  8% 13% 21% 34% 55% 89% 100%);
+$stops: (0% 5% 11% 18% 24% 32% 44% 55% 89% 100%);
+
+// $reverse-stops: (0% 22% 34% 46% 58% 65% 70% 100%);
+$reverse-stops: (0% 18% 30% 42% 54% 60% 65% 70% 100%);
+
+
+@function striped-gradient($colors: $rainbow-map, $stops: $stops) {
+    $spacer: 2%;
+    $gradient-text: ();
+    $i: 0;
+    $stop: 0%;
+
+    @each $color in $colors {
+        $i: $i + 1;
+        $stop-1: nth($stops, $i);
+        $stop-2: nth($stops, ($i + 1));
+
+        $gradient-text: append($gradient-text, #{$color $stop-1}, comma);
+        $gradient-text: append($gradient-text,#{$color ($stop-2 - $spacer)}, comma);
+        @if $i != length($colors) {
+            $gradient-text: append($gradient-text, #{$tan ($stop-2 - $spacer)}, comma);
+            $gradient-text: append($gradient-text, #{$tan $stop-2}, comma);
+        }
+    }
+
+    @return $gradient-text;
+}
+
+$rainbow-lg-to-sm: striped-gradient($rainbow-map, $stops);
+$reverse-rainbow-lg-to-sm: striped-gradient($reverse-rainbow-map, $stops);
+$rainbow-sm-to-lg: striped-gradient($rainbow-map, $reverse-stops);
+$reverse-rainbow-sm-to-lg: striped-gradient($reverse-rainbow-map, $reverse-stops);
+$test-radial-gradient: striped-gradient(($pink, transparent), (0% 70% 100%));
+
+
+$image-filters: grayscale(100%) saturate(1.3) contrast(1.8) brightness(0.7);
+$filters-unset: grayscale(0%) saturate(1) contrast(1) brightness(1) hue-rotate(0) saturate(1) sepia(0) invert(0);
+
+//https://codepen.io/sosuke/pen/Pjoqqp
+$filters-yellow: invert(90%) sepia(93%) saturate(1069%) hue-rotate(320deg) brightness(109%) contrast(91%);
+$filters-yellow-orange: invert(47%) sepia(37%) saturate(854%) hue-rotate(324deg) brightness(101%) contrast(93%);
+$filters-orange: invert(71%) sepia(52%) saturate(5757%) hue-rotate(329deg) brightness(95%) contrast(86%);
+$filters-red-orange: invert(39%) sepia(75%) saturate(1094%) hue-rotate(330deg) brightness(82%) contrast(104%);
+$filters-pink: invert(38%) sepia(44%) saturate(4653%) hue-rotate(313deg) brightness(92%) contrast(86%);
+$filters-purple-warm: invert(26%) sepia(56%) saturate(1081%) hue-rotate(259deg) brightness(93%) contrast(85%);
+$filters-purple-cool: invert(22%) sepia(20%) saturate(3851%) hue-rotate(238deg) brightness(90%) contrast(96%);

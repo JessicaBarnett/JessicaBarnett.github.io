@@ -1,0 +1,96 @@
+
+/****************/
+/** TYPOGRAPHY **/
+/****************/
+
+/* Font styles only*/
+
+@font-face {
+    font-family: 'Big Tickle Black';
+    src: url('assets/fonts/VVDS_BigTickle-Black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Country Blues Medium';
+    src: url('assets/fonts/TheCountryBlues-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'American Typewriter';
+    src: url('assets/fonts/AmericanTypewriter.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: "Prompt", sans-serif;
+    color: $text-color;
+    font-weight: 100;
+}
+
+h1 {  font-size: 48px; }
+
+h2 { font-size: 32px; }
+
+h3 { font-size: 32px; font-weight: 400;}
+
+h4 { font-size: 24px; font-weight: 400;}
+
+h5 { font-size: 20px; font-weight: 200;}
+
+h6 { font-size: 16px; font-weight: 200;}
+
+.h-title-1 {
+    font-family: "Big Tickle Black", serif;
+    font-weight: 400;
+    font-style: normal;
+    // color: $title-color;
+    // text-shadow: 2px 2px darken($title-shadow-color, 80%);
+
+    color: $charcoal;
+    text-shadow: 2px 2px $tan;
+
+    font-size: 56px;
+    line-height: 56px;
+}
+
+.h-title-2 {
+    font-family: "Prompt", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: $title-color;
+    font-size: 36px;
+    line-height: 36px;
+    color: $charcoal;
+    text-shadow: 2px 2px $tan;
+}
+
+.h-section {
+    font-family: "Big Tickle Black", serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    position: relative; /*ctx for underline*/
+    margin-bottom: 8px;
+    font-size: 42px;
+    // text-shadow: 1px 1px $section-heading-shadow-color;
+    color: $section-heading-color;
+}
+
+/* Primary and Secondary Heading Sets */
+.h-primary {
+    font-family: "AmericanTypewriter", serif;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.h-secondary {
+    font-family: "Prompt", sans-serif;
+    font-weight: 400;
+    // font-size: 24px;
+    line-height: 24px;
+    /* letter-spacing: 1px; */
+}

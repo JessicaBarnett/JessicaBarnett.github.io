@@ -1,0 +1,115 @@
+/********************/
+/** GLOBAL CLASSES **/
+/********************/
+
+.sticky {
+    z-index: 1;
+    top: 0;
+    position: sticky;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fl-left {
+    float: left;
+    margin-right: 16px;
+}
+
+.flex-at-wide {
+    @include respond-to('wide') {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.flex-at-med {
+    @include respond-to('med') {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.fl-right {
+    float: right;
+    margin-left: 16px;
+}
+.w-100 {
+    width: 100%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-40 {
+    width: 40%;
+}
+
+.w-30 {
+    width: 30%;
+}
+
+.w-60 {
+    width: 60%;
+}
+
+.w-70 {
+    width: 70%;
+}
+
+.w-70-at-wide {
+    @include respond-to('wide') {
+        width: 70%;
+    }
+}
+
+.w-30-at-wide {
+    @include respond-to('wide') {
+        width: 30%;
+    }
+}
+
+.w-70-at-med {
+    @include respond-to('med') {
+        width: 70%;
+    }
+}
+
+.w-30-at-med {
+    @include respond-to('med') {
+        width: 30%;
+    }
+}
+
+.hidden {
+    position: absolute;
+    z-index: -9999;
+    opacity: 0;
+}
+
+.visible {
+    position: relative;
+    z-index: 1;
+    opacity: 1;
+}
+
+.two-col-list {
+    columns: 2;
+}
+
+.three-col-list {
+    columns: 3;
+}
+
+.img-wide {
+    height: 100%;
+    width: auto;
+}
+
+.img-tall {
+    width: 100%;
+    height: auto;
+}

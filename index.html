@@ -1,356 +1,529 @@
 <!DOCTYPE html>
-<html lang="en"> 
-	<head>
-		<title>Jessica Barnett</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
 
-		<link href='http://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jessica Barnett • Front End Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poetsen+One&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="build.css" />
+</head>
 
-		<link rel="stylesheet" type="text/css" href="stylesheets/reset.css">
-		<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
-	</head>
-	<body>
-		<nav class="group webNav">
-			<ul>
-				<li><a href="#top">Top</a></li>
-				<li><a href="#about">About</a></li>
-				<li><a href="#projectsHook">Projects</a></li>
-				<li><a href="#skills">Skills</a></li>
-				<li><a href="#contact">Contact</a></li>
-				<li id="hamburger"><a class="svgContainer" href="#mobileNav"><img src="images/hamburger.svg" alt="go to navigation"></a></li>
-			</ul>
-		</nav>
-		<div id="skyBG">
-			<div id="mountainsBG">
+<body>
+    <section class="layout-section-wide header" id="home">
+        <div class="layout-section title-wrapper">
+            <h1 class="h-title-1">Jessica Barnett</h1>
+            <h2 class="h-title-2">Full-Stack Software Engineer</h2>
+        </div>
+    </section>
 
-				<section id="top">
-					<div id="nameContainer">
-						<h1>Jessica Barnett</h1>
-						<h2>Front-end Web Designer and Developer</h2>
-					</div>
-				</section>
+    <div class="sticky">
+        <nav class="layout-section nav" id="nav">
+            <ol class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#experiments">Experiments</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#work">Work</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#articles">Articles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ol>
+        </nav>
+    </div>
 
-				<section id="about" class="group">
-					<div class="overlay"></div>
-						<div class="fixed">
-							<div class="titleWrap group">
-								<div class="angle flipped"><img src="images/detail/angleWhite.svg" alt="decoration"></div>
-								<h3>Hello there!</h3>
-								<div class="angle"><img src="images/detail/angleWhite.svg" alt="decoration"></div>
-							</div><!--end titleWrap-->
-							<div class="group"> <!-- extraneous html boo --> 
-								<div id="headshot"> 
-									<img class="photo" src="images/Headshot2013sm.jpg" alt="headshot">
-								</div>
-								<div class="caption">
-									<p>I'm a Junior Front-End Developer based in Philadelphia. </p>
-									<p>My ideal work-day is a day well spent on a challenging project that pushes me to the boundaries of my technical knowledge, and beyond.  I love coding in javascript, especially object-oriented javascript.  I'm at my best when working on responsive sites, game-like interactions based on javascript or CSS, CSS3 animations and transitions, and designing svg vector graphics. </p>
-								</div>
-							</div> <!--end group-->
-						</div>
-				</section>
+    <div class="layout">
 
-				<section id="projects">
-					<div id="projectsHook" class="titleWrap group">
-						<div class="angle flipped"><img src="images/detail/angleWhite.svg" alt="decoration"></div>
-						<h3>Projects</h3>
-						<div class="angle"><img src="images/detail/angleWhite.svg" alt="decoration"></div>
-					</div><!--end titleWrap-->
-					<div id="projectDetails">
-						<div class="projectWrap group">
-							<a href="http://jessicabarnett.github.io/Build-A-Thing/" target="_blank">
-								<img class="smallColumn" src="images/project_icons/buildathing.svg" alt="digital pet icons">
-							</a>
-							<div class="largeColumn descriptionWrap">
-								<h4><a href="http://jessicabarnett.github.io/Build-A-Thing/" target="_blank">Build A Thing</a></h4>
-								<p>A somewhat useless but still fun demo web app I've been working on as an example of what I can do with HTML/CSS/Javascript. The site is fully functional and fully responsive. It will ultimately be used as a prototype for a digital pet web/mobile app.</p><p class="sourceCode"><a href="https://github.com/JessicaBarnett/Build-A-Thing" target="_blank">View the source code!</a></p>
-							</div>
-						</div> <!--end projectWrap-->
+        <section class="layout-section flex" id="about">
+            <div class="w-40">
+                <div class="bubble-context">
+                    <div class="venn-de">
+                        <span>Design/UX</span>
+                    </div>
+                    <div class="venn-be">
+                        <span>Back End</span>
+                    </div>
+                    <div class="venn-fe">
+                        <span>Front End</span>
+                    </div>
+                </div>
+            </div>
 
-						<div class="projectWrap group">
-							<a href="https://summer-of-open-source.github.io/schoolbudget.phl.io/" target="_blank">
-								<img class="smallColumn" src="images/project_icons/schoolbudget.svg" alt="School data icon">
-							</a>
-							<div class="largeColumn">
-								<h4><a href="https://summer-of-open-source.github.io/schoolbudget.phl.io/" target="_blank">School Budget Visualization</a></h4>
-								<p>As part of Girl Develop It and Code for Philly's Summer of Open Source fellowship program, I've been contributing to a fork of Code For Philly's schoolbudget.phl.io website, which converts budget data from Philadelphia's school system into graphs using d3.js.  My work on the project involves developing a json formatter to format raw csv data, and a suite of javascript functions for searching, comparing, and adjusting said json.  This will replace a back-end php solution that was removed from the site to simplify set-up.</p><p><a href="http://technical.ly/philly/2014/09/09/gdi-summer-open-source/">View an article about the program on Technical.ly Philly</a></p>
-								<p class="sourceCode" ><a href="https://github.com/summer-of-open-source/schoolbudget.phl.io/tree/parseCSV" target="_blank">View the source code!</a></p>
-							</div>
-						</div> <!--end projectWrap-->
+            <div class="w-60">
+                <h3 class="h-section">Hello there!</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit at leo condimentum pretium.
+                    Maecenas vulputate orci leo. Vestibulum pellentesque diam ante, ut gravida augue porttitor sit amet.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit at leo condimentum pretium.
+                    Maecenas vulputate orci leo. Vestibulum pellentesque diam ante, ut gravida augue porttitor sit amet.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit at leo condimentum pretium.
+                    Maecenas vulputate orci leo. Vestibulum pellentesque diam ante, ut gravida augue porttitor sit amet.
+                </p>
+            </div>
+        </section>
 
-						<div class="projectWrap group">
-							<a href="http://codepen.io/GreatPumpkin/full/zrGlo" target="_blank">
-								<img class="smallColumn" src="images/project_icons/dangerouswaters.svg" alt="man and a turtle in a boat">
-							</a>
-							<div class="largeColumn descriptionWrap">
-								<!--http://jessicabarnett.github.io/DangerousWaters/-->
-								<h4><a href="http://codepen.io/GreatPumpkin/full/zrGlo" target="_blank">Dangerous Waters</a></h4>
-								<p>A game I made mainly to see how much can be done with vanilla HTML and CSS.  I used as little javascript as possible.  Animations are 100% CSS.
-								Please note that there are some usability restrictions right now. It is only functioning in Safari and Chrome, and though it scales well and looks good on mobile, it isn't playable yet because of the game's reliance on the hover state. 
-								</p><p class="sourceCode"><a href="https://github.com/JessicaBarnett/DangerousWaters" target="_blank">View the source code!</a></p>
-							</div>
-						</div> <!--end projectWrap-->
+        <section class="layout-section projects" id="projects">
+            <h3 class="h-section">Projects</h3>
+            <div class="clip-cards">
+                <div class="clip-card">
+                    <div class="clip-card-img"></div>
+                    <div class="clip-card-detail">
+                        <span class="clip-card-title">Relay Two-way chat v2</span>
+                        <span class="clip-card-text">React/Node</span>
+                    </div>
+                </div>
+                <div class="clip-card">
+                    <div class="clip-card-img">
+                        <!-- <img class="clip-card-image-el img-wide" src="./assets/images/projects/cx-builder.jpg"> -->
+                    </div>
+                    <div class="clip-card-detail">
+                        <span class="clip-card-title">Relay CxBuilder</span>
+                        <span class="clip-card-text">Angular</span>
+                    </div>
+                </div>
+                <div class="clip-card">
+                    <div class="clip-card-img">
+                        <!-- <img class="clip-card-image-el img-wide" src="./assets/images/projects/cxbuilder-2.png"> -->
+                    </div>
+                    <div class="clip-card-detail">
+                        <span class="clip-card-title">Relay Feed V2</span>
+                        <span class="clip-card-text">React/Node</span>
+                    </div>
+                </div>
+                <div class="clip-card">
+                    <div class="clip-card-img">
+                        <!-- <img class="clip-card-image-el img-wide" src="./assets/images/projects/woodcraft-1.png"> -->
+                    </div>
+                    <div class="clip-card-detail">
+                        <span class="clip-card-title">Woodcraft</span>
+                        <span class="clip-card-text">Javascript/Ruby on Rails</span>
+                    </div>
+                </div>
+                <div class="clip-card">
+                    <div class="clip-card-img">
+                        <!-- <img class="clip-card-image-el img-tall" src="./assets/images/projects/bouqs-1.png"> -->
+                    </div>
+                    <div class="clip-card-detail">
+                        <span class="clip-card-title">The Bouqs</span>
+                        <span class="clip-card-text">Javascript/Ruby on Rails</span>
+                    </div>
+                </div>
+            </div>
+            <button class="btn" type="button">See more Projects</button>
+        </section>
 
-						<div class="projectWrap group">
-							<a href="http://jessicabarnett.github.io/BloomsburgChildrensMuseum/" target="_blank">
-								<img class="smallColumn" src="images/project_icons/bloomsburg.svg" alt="man and a turtle in a boat">
-							</a>
-							<div class="largeColumn descriptionWrap">
-								<h4><a href="http://jessicabarnett.github.io/BloomsburgChildrensMuseum/" target="_blank">Bloomsburg Children's Museum</a></h4>
-								<p>A site for a fictional Children's Museum in Bloomsburg PA. It isn't responsive yet, but is built on a fluid grid, and contains a fluid form with javascript input-checking.  It is mostly finished, with the exception of the exhibits sub pages, which all still need a good deal of work. </p><p class="sourceCode"><a href="https://github.com/JessicaBarnett/BloomsburgChildrensMuseum" target="_blank">View the source code!</a></p>
-							</div>
-						</div> <!--end projectWrap-->
-					</div><!--end projectDetails-->
-				</section><!--end projects-->
+        <section class="layout-section skills-section">
+            <!-- <div class="skills-text"> -->
+            <h3 class="h-section">Skills</h3>
+            <div class="skills-tabs">
+                <div class="tabs tabs-r view-all" data-tabs="skills">
+                    <div class="tab-buttons">
+                        <button class="tab-button selected" type="button" data-tab-target="all">
+                            <span>All</span>
+                        </button>
+                        <button class="tab-button" type="button" data-tab-target="skills-fe">
+                            <span>Front End</span>
+                        </button>
+                        <button class="tab-button" type="button" data-tab-target="skills-be">
+                            <span>Back End</span>
+                        </button>
+                        <button class="tab-button" type="button" data-tab-target="skills-test">
+                            <span>Testing</span>
+                        </button>
+                        <button class="tab-button" type="button" data-tab-target="skills-db">
+                            <span>Databases</span>
+                        </button>
+                        <button class="tab-button" type="button" data-tab-target="skills-tools">
+                            <span>Tools</span>
+                        </button>
+                        <button class="tab-button" type="button" data-tab-target="skills-aws">
+                            <span>AWS</span>
+                        </button>
+                    </div>
+                    <div class="tab-content">
+                        <ol>
+                            <li id="skills-fe" class="tab-content-item" data-tab-group>
+                                <h4><span>Front End</span></h4>
+                                <ol class="flex">
+                                    <li><a href="javascript:void(0)" class="pill-link">Html/haml/Twig</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">Scss/Less</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">Tailwind</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">Accessibility</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">Responsive Design</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">Atomic Design</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">Storybook</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">Javascript</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">Typescript</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">Angular</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">React</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">JQuery</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">LoDash</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">d3.js</a></li>
+                                </ol>
+                                <div class="hide-if-all flex">
+                                    <h5 class="cards-h">Related Projects</h5>
+                                    <div class="card"></div>
+                                    <div class="card"></div>
+                                    <div class="card"></div>
+                                </div>
+                            </li>
+                            <li id="skills-be" class="tab-content-item"  data-tab-group>
+                                <h4><span>Back End</span></h4>
+                                <ol class="flex">
+                                    <li><a href="javascript:void(0)" class="pill-link">Node</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">TypeOrm</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">Fastify</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">Express</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">Craft CMS</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">Ruby/Rails</a></li>
+                                </ol>
+                                <div class="hide-if-all flex">
+                                    <h5 class="cards-h">Related Projects</h5>
+                                    <div class="card"></div>
+                                    <div class="card"></div>
+                                    <div class="card"></div>
+                                </div>
+                            </li>
+                            <li id="skills-db" class="tab-content-item"  data-tab-group>
+                                <h4><span>Databases</span></h4>
+                                <ol class="flex">
+                                    <li><a href="javascript:void(0)" class="pill-link">MongoDb</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">Redis</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">Postgres</a></li>
+                                </ol>
+                                <div class="hide-if-all flex">
+                                    <h5 class="cards-h">Related Projects</h5>
+                                    <div class="card"></div>
+                                    <div class="card"></div>
+                                    <div class="card"></div>
+                                </div>
+                            </li>
 
-				<div id="archBG">
-					<section id="skills">
-						<div class="titleWrap group">
-							<div class="angle flipped"><img src="images/detail/angleWhite.svg" alt="decoration"></div>
-							<h3>Skills</h3>
-							<div class="angle"><img src="images/detail/angleWhite.svg" alt="decoration"></div>
-						</div>
-						<div id="skillDetails" class="group">
-							<div id="skillHighlights" class="group">
-								<div class="halfColumn">
-									<div class="skillWrapper group">
-										<img src="images/skill_icons/html5.svg" alt="html5">
-										<div id="html5" class="skillBar">
-											<img src="images/fullStar.svg" alt="full star">
-											<img src="images/fullStar.svg" alt="full star">
-											<img src="images/fullStar.svg" alt="full star">
-											<img src="images/fullStar.svg" alt="full star">
-											<img src="images/fullStar.svg" alt="full star">
-											<img src="images/fullStar.svg" alt="full star">
-										</div>
-									</div>
-									<div class="skillWrapper group">
-										<img src="images/skill_icons/javascript.svg" alt="javascript">
-										<div id="javascript" class="skillBar">
-											<img src="images/fullStar.svg" alt="full star">
-											<img src="images/fullStar.svg" alt="full star">
-											<img src="images/fullStar.svg" alt="full star">
-											<img src="images/fullStar.svg" alt="full star">
-											<img src="images/fullStar.svg" alt="full star">
-											<img src="images/emptyStar.svg" alt="empty star">
-										</div>
-									</div>
-									<div class="skillWrapper group">
-										<img src="images/skill_icons/sass.svg" alt="sass">
-										<div id="sass" class="skillBar">
-											<img src="images/fullStar.svg" alt="full star">
-											<img src="images/fullStar.svg" alt="full star">
-											<img src="images/fullStar.svg" alt="full star">
-											<img src="images/fullStar.svg" alt="full star">
-											<img src="images/emptyStar.svg" alt="empty star">
-											<img src="images/emptyStar.svg" alt="empty star">
-										</div>
-									</div>
-								</div>
+                            <li id="skills-test" class="tab-content-item"  data-tab-group>
+                                <h4><span>Testing</span></h4>
+                                <ol class="flex">
+                                    <li><a href="javascript:void(0)" class="pill-link">Jest</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">Jasmine</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">Karma</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">Nightwatch</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">Locust</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">Datadog</a></li>
+                                </ol>
+                                <div class="hide-if-all flex">
+                                    <h5 class="cards-h">Related Projects</h5>
+                                    <div class="card"></div>
+                                    <div class="card"></div>
+                                    <div class="card"></div>
+                                </div>
+                            </li>
 
-								<div class="halfColumn">
-									<div class="skillWrapper group">
-										<img src="images/skill_icons/css3.svg" alt="css">
-										<div id="css" class="skillBar">
-											<img src="images/fullStar.svg" alt="full star">
-											<img src="images/fullStar.svg" alt="full star">
-											<img src="images/fullStar.svg" alt="full star">
-											<img src="images/fullStar.svg" alt="full star">
-											<img src="images/fullStar.svg" alt="full star">
-											<img src="images/fullStar.svg" alt="full star">
-										</div>
-									</div>
-									<div class="skillWrapper group">
-										<img src="images/skill_icons/jquery.svg" alt="jquery">
-										<div id="jquery" class="skillBar">
-											<img src="images/fullStar.svg" alt="full star">
-											<img src="images/fullStar.svg" alt="full star">
-											<img src="images/fullStar.svg" alt="full star">
-											<img src="images/fullStar.svg" alt="full star">
-											<img src="images/emptyStar.svg" alt="empty star">
-											<img src="images/emptyStar.svg" alt="empty star">
-										</div>
-									</div>
-									<div class="skillWrapper group">
-										<img src="images/skill_icons/git.svg" alt="git">
-										<div id="git" class="skillBar">
-											<img src="images/fullStar.svg" alt="full star">
-											<img src="images/fullStar.svg" alt="full star">
-											<img src="images/fullStar.svg" alt="full star">
-											<img src="images/emptyStar.svg" alt="empty star">
-											<img src="images/emptyStar.svg" alt="empty star">
-											<img src="images/emptyStar.svg" alt="empty star">
-										</div>
-									</div>
-								</div>
-							</div><!--end skillHighlights-->
+                            <li id="skills-tools" class="tab-content-item"  data-tab-group>
+                                <h4><span>Tools</span></h4>
+                                <ol class="flex">
+                                    <li><a href="javascript:void(0)" class="pill-link">Git</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">Docker</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">Terraform</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">VSCode</a></li>
+                                </ol>
+                                <div class="hide-if-all flex">
+                                    <h5 class="cards-h">Related Projects</h5>
+                                    <div class="card"></div>
+                                    <div class="card"></div>
+                                    <div class="card"></div>
+                                </div>
+                            </li>
 
-
-							<div class="moreSkills group">
-								<div class="halfColumn">
-									<div id="wordpress" class="skillWrapper group">
-										<p>Wordpress</p>
-										<div class="skillBar">
-											<div class="full"></div>
-											<div class="empty"><p>More Coming Soon!!</p></div>
-										</div>
-									</div><!--end skillWrapper-->
-									<div id="frameworks" class="skillWrapper group">
-										<p>Responsive Frameworks</p>
-										<div class="skillBar">
-											<div class="full"></div>
-											<div class="empty"><p>More Coming Soon!!</p></div>
-										</div>
-									</div><!--end skillWrapper-->
-									<div id="node" class="skillWrapper group">
-										<p>NodeJS</p>
-										<div class="skillBar">
-											<div class="full"></div>
-											<div class="empty"><p>More Coming Soon!!</p></div>
-										</div>
-									</div><!--end skillWrapper-->
-									<div id="angular" class="skillWrapper group">
-										<p>Angular</p>
-										<div class="skillBar">
-											<div class="full"></div>
-											<div class="empty"><p>More Coming Soon!!</p></div>
-										</div>
-									</div><!--end skillWrapper-->
-									<div id="grunt" class="skillWrapper group">
-										<p>Grunt</p>
-										<div class="skillBar">
-											<div class="full"></div>
-											<div class="empty"><p>More Coming Soon!!</p></div>
-										</div>
-									</div><!--end skillWrapper-->
-									<div id="hybridApps" class="skillWrapper group">
-										<p>Hybrid App Development</p>
-										<div class="skillBar">
-											<div class="full"></div>
-											<div class="empty"><p>Coming August 2015</p></div>
-										</div>
-									</div><!--end skillWrapper-->
-									<div id="java" class="skillWrapper group">
-										<p>Java</p>
-										<div class="skillBar">
-											<div class="full"></div>
-											<div class="empty"><p>Coming September 2015</p></div>
-										</div>
-									</div><!--end skillWrapper-->
-								</div><!--end halfColumn-->
-								<div class="halfColumn">
-									<div id="photoshop" class="skillWrapper group">
-										<p>Adobe Photoshop</p>
-										<div class="skillBar">
-											<div class="full"></div>
-											<div class="empty"></div>
-										</div>
-									</div><!--end skillWrapper-->
-									<div id="illustrator" class="skillWrapper group">
-										<p>Adobe Illustrator</p>
-										<div class="skillBar">
-											<div class="full"></div>
-											<div class="empty"></div>
-										</div>
-									</div><!--end skillWrapper-->
-									<div id="flash" class="skillWrapper group">
-										<p>Adobe Flash</p>
-										<div class="skillBar">
-											<div class="full"></div>
-											<div class="empty"></div>
-										</div>
-									</div><!--end skillWrapper-->
-									<div id="vectorIllustration" class="skillWrapper group">
-										<p>Vector Illustration</p>
-										<div class="skillBar">
-											<div class="full"></div>
-											<div class="empty"></div>
-										</div>
-									</div><!--end skillWrapper-->
-									<div id="animation" class="skillWrapper group">
-										<p>2D Animation</p>
-										<div class="skillBar">
-											<div class="full"></div>
-											<div class="empty"></div>
-										</div>
-									</div><!--end skillWrapper-->
-									<div id="commandLine" class="skillWrapper group">
-										<p>Command Line / Terminal</p>
-										<div class="skillBar">
-											<div class="full"></div>
-											<div class="empty"></div>
-										</div>
-									</div><!--end skillWrapper-->
-									<div id="phpMySql" class="skillWrapper group">
-										<p>PhP/MySQL</p>
-										<div class="skillBar">
-											<div class="full"></div>
-											<div class="empty"><p>Coming April 2015</p></div>
-										</div>
-									</div><!--end skillWrapper-->
-								</div><!--end halfColumn-->
-							</div> <!--end moreSkills-->
-						</div> <!--endSkillDetails-->
-					</section><!--End skills-->
-				</div><!-- end archBG -->
+                            <li id="skills-aws" class="tab-content-item"  data-tab-group>
+                                <h4><span>AWS</span></h4>
+                                <ol class="flex">
+                                    <li><a href="javascript:void(0)" class="pill-link">AWS EC2</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">AWS ECS</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">AWS Codepipeline</a></li>
+                                    <li><a href="javascript:void(0)" class="pill-link">AWS Codebuild</a></li>
+                                </ol>
+                                <div class="hide-if-all flex">
+                                    <h5 class="cards-h">Related Projects</h5>
+                                    <div class="card"></div>
+                                    <div class="card"></div>
+                                    <div class="card"></div>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit at leo condimentum pretium.
+                Maecenas vulputate orci leo. Vestibulum pellentesque diam ante, ut gravida augue porttitor sit amet.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit at leo condimentum pretium.
+                Maecenas vulputate orci leo. Vestibulum pellentesque diam ante, ut gravida augue porttitor sit amet.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit at leo condimentum pretium.
+                Maecenas vulputate orci leo. Vestibulum pellentesque diam ante, ut gravida augue porttitor sit amet.
+            </p>
 
 
-				<section id="contact">
-					<div class="titleWrap group">
-						<div class="angle flipped"><img src="images/detail/angleWhite.svg" alt="decoration"></div>
-						<h3>Get in touch</h3>
-						<div class="angle"><img src="images/detail/angleWhite.svg" alt="decoration"></div>
-					</div>
-					<p id="socialDetails"></p>
-					<div id="contactDetails">
-						<a href="files/JessicaBarnettResume2014.pdf" class="group" target="_blank">
-							<img src="images/social_icons/document.svg" alt="Resume">
-							<!-- <p>Resume</p> -->
-						</a>
-						<a href="mailto:barnetteffect@gmail.com" class="group">
-							<img src="images/social_icons/email.svg" alt="E-mail">
-							<!-- <p>E-mail</p> -->
-						</a>
-						<a href="https://github.com/JessicaBarnett" class="group" target="_blank">
-							<img src="images/social_icons/githubLg.svg" alt="Github">
-							<!-- <p>Github</p> -->
-						</a>
-						<a href="https://www.linkedin.com/pub/jessica-barnett/34/89b/803" class="group" target="_blank">
-							<img src="images/social_icons/linkedin.svg" alt="LinkedIn">
-							<!-- <p>LinkedIn</p> -->
-						</a>
-						<a href="http://barnetteffect.blogspot.com/" class="group" target="_blank">
-							<img src="images/social_icons/blogger.svg" alt="Art Blog">
-							<!-- <p>Blog</p> -->
-						</a>
-						<a href="https://vimeo.com/user1721178" class="group" target="_blank">
-							<img src="images/social_icons/Vimeo.svg" alt="Vimeo">
-							<!-- <p>vimeo</p> -->
-						</a>
-					</div>
-					<p id="pageSource" class="sourceCode">
-						<a href="https://github.com/JessicaBarnett/JessicaBarnett.github.io">See this page's source on github!</a>
-					</p>
-				</section>
-
-			</div><!--end mountainsBG-->
-		</div><!--end skyBG-->
+        </section>
 
 
-		<nav id="mobileNav" class="group" >
-			<ul>
-				<li><a href="#top">Top</a></li>
-				<li><a href="#about">About</a></li>
-				<li><a href="#projects">Projects</a></li>
-				<li><a href="#skills">Skills</a></li>
-				<li><a href="#contact">Contact</a></li>
-			</ul>
-		</nav>
 
-		<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
-		<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
-		<script type="text/javascript" src="js/script.js"></script>
-	</body>
+        <section class="layout-section experience">
+            <h3 class="h-section">Experience</h3>
+
+            <div class="work-exp-entry">
+                <div class="work-exp-img">
+                    <!-- <img src="./assets/images/experience/old-phone.webp" class="img-wide"> -->
+                </div>
+                <div class="work-exp-details">
+                    <h4 class="h-secondary">Fullstack Software Engineer</h4>
+                    <h5 class="h-secondary">Relay Network</h5>
+                    <div class="work-experience-date-range">
+                        <time>2020</time> - <time>2023</time>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit at leo
+                        condimentum pretium. Maecenas vulputate orci leo. Vestibulum pellentesque diam ante, ut
+                        gravida augue porttitor sit amet.
+                    </p>
+                    <ul class="flex">
+                        <li><a class="link">Relay Feed v3.0</a></li>
+                        <li><a class="link">Experience Library API</a></li>
+                        <li><a class="link">"Power Ups" Forms Integration API</a></li>
+                        <li><a class="link">Two Way Chat Rebuild</a></li>
+                        <li><a class="link">CXBuilder SSO Api</a></li>
+                        <li><a class="link">Service Load Testing</a></li>
+                    </ul>
+                    <ol class="flex">
+                        <li><a href="javascript:void(0);" class="pill-link">Javascript/Typescript</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">React</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">Storybook</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">Node</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">CSS/SCSS</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">Fastify</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">Express</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">TypeORM</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">Datadog</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">AWS EC2</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">AWS ECS</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">AWS Codebuild</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">AWS Codepipeline</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">AWS Cognito</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">Twig</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">CraftCms</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">Redis</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">Postgres</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">Terraform</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">Git</a></li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="work-exp-entry">
+                <div class="work-exp-img">
+                    <!-- <img src="./assets/images/experience/vintage-computer.webp" class="img-wide"> -->
+                </div>
+                <div class="work-exp-details">
+                    <h4 class="h-secondary">Front End Software Engineer</h4>
+                    <h5 class="h-secondary">Relay Network</h5>
+                    <div class="work-experience-date-range">
+                        <time>2018</time> - <time>2020</time>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit at leo
+                        condimentum pretium. Maecenas vulputate orci leo. Vestibulum pellentesque diam ante, ut
+                        gravida augue porttitor sit amet.
+                    </p>
+                    <ul class="flex">
+                        <li><a class="link">Relay Feed v2.0</a></li>
+                        <li><a class="link">CXBuilder v2.0</a></li>
+                        <li><a class="link">Twway Chat Pilot Implementation</a></li>
+                        <li><a class="link">File Engine Jobs Dashboard</a></li>
+                        <li><a class="link">PDF Preview Feature</a></li>
+                        <li><a class="link">Relay Feed Accessibility Audit</a></li>
+                        <li><a class="link">Relay Company Website v2.0</a></li>
+                    </ul>
+                    <ul class="flex">
+                        <li><a href="javascript:void(0);" class="pill-link">Javascript/Typescript</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">Angular</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">CSS/SCSS</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">Datadog</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">AWS Codebuild</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">AWS Codepipeline</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">Twig</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">CraftCms</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">Git</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="work-exp-entry">
+                <div class="work-exp-img">
+                    <!-- <img src="./assets/images/experience/flowers-3.webp" class="img img-tall"> -->
+                </div>
+                <div class="work-exp-details">
+                    <h4 class="h-secondary">Lead Front End Developer</h4>
+                    <h5 class="h-secondary">Weblinc Ecommerce</h5>
+                    <div class="work-experience-date-range">
+                        <time>2016</time> - <time>2018</time>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit at leo
+                        condimentum pretium. Maecenas vulputate orci leo. Vestibulum pellentesque diam ante, ut
+                        gravida augue porttitor sit amet.
+                    </p>
+                    <ul class="flex">
+                        <li><a class="link">The Bouqs</a></li>
+                        <li><a class="link">Woodcraft.com</a></li>
+                        <li><a class="link">Rachel Roy</a></li>
+                    </ul>
+                    <ol class="flex">
+                        <li><a href="javascript:void(0);" class="pill-link">Javascript</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">JQuery</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">CSS/SCSS</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">Html/Haml</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">Ruby/Rails</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">Style Guides</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">Ecommerce</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">MongoDb</a></li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="work-exp-entry">
+                <div class="work-exp-img">
+                    <!-- <img src="./assets/images/experience/shirts-2.webp" class="img-wide"> -->
+                </div>
+                <div class="work-exp-details">
+                    <h4 class="h-secondary">Front End Developer</h4>
+                    <h5 class="h-secondary">Weblinc Ecommerce</h5>
+                    <div class="work-experience-date-range">
+                        <time>2014</time> - <time>2016</time>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit at leo
+                        condimentum pretium. Maecenas vulputate orci leo. Vestibulum pellentesque diam ante, ut
+                        gravida augue porttitor sit amet.
+                    </p>
+                    <ul class="flex">
+                        <li><a class="link">Full Beauty</a></li>
+                        <li><a class="link">Mint Julep</a></li>
+                    </ul>
+                    <ol class="flex">
+                        <li><a href="javascript:void(0);" class="pill-link">Javascript</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">JQuery</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">CSS/SCSS</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">Html/Haml</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">Ruby/Rails</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">Style Guides</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">Ecommerce</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">MongoDb</a></li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="work-exp-entry">
+                <div class="work-exp-img">
+                    <!-- <img src="./assets/images/experience/books.jpeg" class="img-wide"> -->
+                </div>
+                <div class="work-exp-details">
+                    <h4 class="h-secondary">Summer of Open Source Fellow</h4>
+                    <h5 class="h-secondary">Girl Develop It Philadelphia</h5>
+                    <div class="work-experience-date-range">
+                        <time>2014</time>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit at leo condimentum pretium.
+                        Maecenas vulputate orci leo. Vestibulum pellentesque diam ante, ut gravida augue porttitor sit amet.
+                    </p>
+                    <ul class="flex">
+                        <li><a class="link">school budget phl</a></li>
+                    </ul>
+                    <ol class="flex">
+                        <li><a href="javascript:void(0);" class="pill-link">Javascript</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">JSON</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">D3</a></li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="work-exp-entry">
+                <div class="work-exp-img">
+                    <!-- <img src="./assets/images/experience/drafting-table.webp" class="img-wide"> -->
+                </div>
+                <div class="work-exp-details">
+                    <h4 class="h-secondary">Web Design and Development Certificate</h4>
+                    <h5 class="h-secondary">University of the Arts</h5>
+                    <div class="work-experience-date-range">
+                        <time>2012</time> - <time>2015</time>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit at leo condimentum pretium.
+                        Maecenas vulputate orci leo. Vestibulum pellentesque diam ante, ut gravida augue porttitor sit amet.
+                    </p>
+                    <ol class="flex">
+                        <li><a href="javascript:void(0);" class="pill-link">Html</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">CSS</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">Javascript</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">Design</a></li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="work-exp-entry">
+                <div class="work-exp-img">
+                    <!-- <img src="./assets/images/experience/paintbrushes.jpg" class="img-tall"> -->
+                </div>
+                <div class="work-exp-details">
+                    <h4 class="h-secondary">BFA Animation</h4>
+                    <h5 class="h-secondary">University of the Arts</h5>
+                    <div class="work-experience-date-range">
+                        <time>2006</time> - <time>2010</time>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit at leo condimentum pretium.
+                        Maecenas vulputate orci leo. Vestibulum pellentesque diam ante, ut gravida augue porttitor sit amet.
+                    </p>
+                    <ol class="flex">
+                        <li><a href="javascript:void(0);" class="pill-link">Animation</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">Film</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">Drawing</a></li>
+                        <li><a href="javascript:void(0);" class="pill-link">Sculpture</a></li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section class="layout-section projects" id="projects">
+            <h3 class="h-section">Contact</h3>
+            contact me! (web form here)
+        </section>
+
+        <footer class="layout-section-wide footer">
+            <div class="layout-section">
+                <p>Jessica Barnett &#169; 2024</p>
+            </div>
+        </footer>
+    </div>
+    <!-- End Page -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js"></script>
+    <script src="./scripts/canvas.js"></script>
+    <script src="./scripts/script.js"></script>
+</body>
+
 </html>
