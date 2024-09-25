@@ -1,7 +1,12 @@
 
 @use "./reset.css";
-@use "./utilities.scss";
+@use "./_utilities.scss";
+@use "./_fonts.scss";
 
 * {
   box-sizing: border-box;
+}
+
+.vhs-font {
+  font-family: "Lester Bold";
 }

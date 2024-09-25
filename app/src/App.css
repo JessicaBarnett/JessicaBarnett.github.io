@@ -52,8 +52,16 @@ table {
   border-spacing: 0;
 }
 
+@font-face {
+  font-family: "Lester Bold";
+  src: url(./assets/fonts/lester-bold.ttf);
+}
 * {
   box-sizing: border-box;
+}
+
+.vhs-font {
+  font-family: "Lester Bold";
 }
 
 /*# sourceMappingURL=App.css.map */

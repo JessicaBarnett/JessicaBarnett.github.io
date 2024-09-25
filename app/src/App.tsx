@@ -4,8 +4,8 @@ function App() {
 
   return (
     <>
-      <div>
-        Hello
+      <div className="vhs-font">
+        VHS
       </div>
     </>
   )
