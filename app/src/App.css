@@ -1,67 +1,85 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-body {
-  line-height: 1;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: "";
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
+/**************
+    FONTS
+***************/
 @font-face {
   font-family: "Lester Bold";
   src: url(./assets/fonts/lester-bold.ttf);
 }
+/**************
+    HEADINGS
+***************/
+/**************
+     ICONS
+***************/
+i {
+  display: inline-block;
+}
+
+.icon-sm {
+  max-width: 30px;
+}
+
+.icon-lg {
+  max-width: 60px;
+}
+
+/**************
+    LINKS
+***************/
+/**************
+    BUTTONS
+***************/
+.btn-1 {
+  border: 2px solid black;
+  border-radius: 3px;
+  padding: 0 2px;
+  margin: 2px;
+  font-weight: 600;
+}
+.btn-1:hover {
+  background-color: black;
+  color: white;
+}
+
+.btn-2 {
+  border: 2px solid black;
+  font-size: 24px;
+  border-radius: 3px;
+  padding: 0 2px;
+  font-weight: 600;
+  font-family: "Lester Bold", sans-serif;
+  text-transform: uppercase;
+}
+.btn-2:hover {
+  background-color: black;
+  color: white;
+}
+
 * {
   box-sizing: border-box;
 }
 
-.vhs-font {
-  font-family: "Lester Bold";
+/**************
+    IMAGES
+***************/
+img {
+  max-width: 100%;
+}
+
+/**************
+    TABLES
+***************/
+td:not(:last-child), th:not(:last-child) {
+  border-right: 1px solid black;
+}
+
+tr {
+  border-bottom: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid black;
 }
 
 /*# sourceMappingURL=App.css.map */

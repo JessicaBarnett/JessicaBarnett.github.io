@@ -1,0 +1,92 @@
+/**************
+    FONTS
+***************/
+
+@font-face {
+    font-family: "Lester Bold";
+    src: url(./assets/fonts/lester-bold.ttf);
+}
+
+
+/**************
+    HEADINGS
+***************/
+
+.h-title-1 {
+
+}
+
+.h-title-2 {
+
+}
+
+.h-section {}
+
+
+// Specific to the about section,
+// will probably move
+.h-abt {}
+
+.t-abt-1 {}
+
+.t-abt-2 {}
+
+
+
+/**************
+     ICONS
+***************/
+
+i {
+    display: inline-block;
+}
+
+.icon-sm {
+    max-width: 30px;
+}
+
+.icon-lg {
+    max-width: 60px;
+}
+
+
+/**************
+    LINKS
+***************/
+
+a {
+
+}
+
+/**************
+    BUTTONS
+***************/
+
+.btn-1 {
+    border: 2px solid black;
+    border-radius: 3px;
+    padding: 0 2px;
+    margin: 2px;
+    font-weight: 600;
+
+    &:hover {
+        background-color: black;
+        color: white;
+    }
+}
+
+// made to look like the "VHS" logo
+.btn-2 {
+    border: 2px solid black;
+    font-size: 24px;
+    border-radius: 3px;
+    padding: 0 2px;
+    font-weight: 600;
+    font-family: "Lester Bold", sans-serif;
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: black;
+        color: white;
+    }
+}

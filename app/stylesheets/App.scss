@@ -1,12 +1,34 @@
-
-@use "./reset.css";
+// @use "./reset.css";
+@use "./_variables.scss";
 @use "./_utilities.scss";
-@use "./_fonts.scss";
+@use "./_typography.scss";
+@use "./_forms.scss";
 
 * {
   box-sizing: border-box;
 }
 
-.vhs-font {
-  font-family: "Lester Bold";
+/**************
+    IMAGES
+***************/
+
+img {
+  max-width: 100%;
+}
+
+/**************
+    TABLES
+***************/
+
+td:not(:last-child), th:not(:last-child) {
+  border-right: 1px solid black;
+}
+
+tr {
+  border-bottom: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid black;
 }
