@@ -1,0 +1,35 @@
+
+/**************
+    FORMS
+***************/
+
+form {
+    max-width: 50%;
+}
+
+label {
+    display: block;
+}
+
+input {
+    display: block;
+    border: 2px solid black;
+    border-radius: 3px;
+    width: 100%;
+}
+
+textarea {
+    display: block;
+    border: 2px solid black;
+    border-radius: 3px;
+    width: 100%;
+    min-height: 250px;
+}
+
+/**************
+    SELECT
+***************/
+
+select {}
+
+option {}

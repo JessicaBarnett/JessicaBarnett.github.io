@@ -1,0 +1,16 @@
+//  usage:
+//      @use "./variables/_breakpoints.scss" as bp;
+
+//      .rule {
+//          @include respond-to(bp.$wide) {
+//              // styles to apply
+//          }
+//      }
+
+@mixin respond-to($breakpoint) {
+    @media (min-width: $breakpoint) {
+        @content;
+    }
+}
+
+
