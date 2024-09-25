@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "sass": "sass stylesheets/styles.scss stylesheets/build.css --watch",
+    "sass": "sass stylesheets/App.scss src/App.css --watch",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
