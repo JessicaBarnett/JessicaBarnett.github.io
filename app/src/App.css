@@ -38,6 +38,13 @@
   font-stretch: 25% 151%;
 }
 /**************
+    UTILS
+***************/
+.text-left {
+  text-align: left;
+}
+
+/**************
     HEADINGS
 ***************/
 :is(h1, h2, h3, h4, h5, h6, p, i, em) {
@@ -57,17 +64,31 @@ p {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-weight: 700;
   letter-spacing: 0.05rem;
-  font-size: 3.2rem;
+  font-size: 3.4rem;
   font-weight: 700;
-  line-height: 3rem;
+  line-height: 3.2rem;
+}
+
+.title-1 + .subtitle-1,
+.title-2 + p {
+  margin-top: 0.3rem;
 }
 
 .title-2 {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-weight: 700;
   letter-spacing: 0.05rem;
-  font-size: 3rem;
-  line-height: 2.8rem;
+  font-size: 3.2rem;
+  line-height: 3rem;
+  font-weight: 700;
+}
+
+.title-3 {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  font-size: 2.6rem;
+  line-height: 2.6rem;
   font-weight: 700;
 }
 
@@ -77,10 +98,6 @@ p {
   font-size: 1.2rem;
   line-height: 1.4rem;
   font-weight: 500;
-}
-
-.title-1 + .subtitle-1 {
-  margin-top: 0.3rem;
 }
 
 .deco-font-1 {
@@ -94,9 +111,6 @@ p {
   line-height: 2rem;
 }
 
-/**************
-    HEADINGS
-***************/
 /**************
      ICONS
 ***************/
@@ -142,7 +156,7 @@ input {
 
 textarea {
   display: block;
-  border: 2px solid black;
+  border: 2px solid #000;
   border-radius: 3px;
   width: 100%;
   min-height: 250px;
@@ -151,6 +165,27 @@ textarea {
 /**************
     SELECT
 ***************/
+.filter-group label {
+  text-transform: uppercase;
+  letter-spacing: 0.18rem;
+  font-size: 0.7rem;
+  line-height: 0.6rem;
+}
+.filter-group select {
+  font-size: 1rem;
+  background-color: #000;
+  border: 2px solid #000;
+  color: #FFF;
+  padding: 4px 32px 4px 8px;
+  font-weight: 500;
+  letter-spacing: 0.15rem;
+}
+@media (max-width: 480px) {
+  .filter-group select {
+    width: 90%;
+  }
+}
+
 /**************
     TABLES
 ***************/
@@ -194,10 +229,11 @@ button {
 .btn-1 {
   border: 2px solid #000;
   border-radius: 3px;
-  padding: 0 4px;
+  padding: 2px 4px;
   margin: 2px;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
 }
 .btn-1:hover {
   background-color: #000;
@@ -234,21 +270,28 @@ button {
   box-sizing: border-box;
 }
 
+.clear {
+  clear: both;
+}
+
 :root {
   width: 100%;
   background-color: #000;
   font-family: "Inter", Arial, Helvetica, sans-serif;
   color: #000;
   font-size: 1rem;
+  line-height: 1.2rem;
 }
 @media (min-width: 769px) {
   :root {
     font-size: 1.2rem;
+    line-height: 1.6rem;
   }
 }
 @media (min-width: 1440px) {
   :root {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
   }
 }
 
@@ -259,7 +302,6 @@ button {
   margin: 0 auto;
   padding: 4rem 1rem;
   max-width: 960px;
-  font-size: 1.5rem;
 }
 
 .content {
@@ -301,7 +343,72 @@ img {
     SECTION
 ***************/
 section {
-  margin-bottom: 86px;
+  position: relative;
+  margin-bottom: 96px;
+}
+
+.section-heading {
+  margin-bottom: 62px;
+}
+
+.section-subheading {
+  margin-bottom: 48px;
+}
+
+@media (max-width: 480px) {
+  .section-projects h3 {
+    margin-bottom: 32px;
+  }
+}
+@media (min-width: 769px) {
+  .section-projects h3 {
+    text-align: right;
+  }
+}
+@media (max-width: 480px) {
+  .section-projects .filter-group {
+    margin-bottom: 48px;
+  }
+}
+@media (min-width: 480px) {
+  .section-projects .filter-group {
+    position: absolute;
+    top: -8px;
+    right: 0;
+  }
+}
+@media (min-width: 769px) {
+  .section-projects .filter-group {
+    left: 0;
+  }
+}
+.section-projects .company-name {
+  text-align: center;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+}
+
+.project-entry + .company-name {
+  margin-top: 60px;
+}
+
+.project-entry {
+  margin-bottom: 34px;
+}
+.project-entry h5 {
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.project-entry p {
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  margin-bottom: 8px;
 }
 
 /*# sourceMappingURL=App.css.map */

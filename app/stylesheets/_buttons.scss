@@ -12,10 +12,11 @@ button {
 .btn-1 {
     border: 2px solid $black;
     border-radius: 3px;
-    padding: 0 4px;
+    padding: 2px 4px;
     margin: 2px;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
 
     &:hover {
         background-color: $black;

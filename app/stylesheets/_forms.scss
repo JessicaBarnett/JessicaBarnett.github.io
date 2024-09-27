@@ -1,7 +1,7 @@
 @use "./variables/breakpoints" as *;
 @use "./utilities/respond-to" as *;
 @use "./variables/globals" as *;
-
+@use "./variables/colors" as *;
 /**************
     FORMS
 ***************/
@@ -31,7 +31,7 @@ input {
 
 textarea {
     display: block;
-    border: 2px solid black;
+    border: 2px solid $black;
     border-radius: 3px;
     width: 100%;
     min-height: 250px;
@@ -41,6 +41,32 @@ textarea {
     SELECT
 ***************/
 
-select {}
+select {
+}
 
 option {}
+
+
+.filter-group {
+    label {
+        text-transform: uppercase;
+        letter-spacing: 0.18rem;
+        font-size: .7rem;
+        line-height: .6rem;
+    }
+
+    select {
+        font-size: 1rem;
+        background-color: $black;
+        border: 2px solid $black;
+        color: $white;
+        padding: 4px calc(8px + 24px) 4px 8px;
+        font-weight: 500;
+        letter-spacing: 0.15rem;
+
+        @include only-below($small-bp) {
+            width: 90%;
+          }
+    }
+
+}

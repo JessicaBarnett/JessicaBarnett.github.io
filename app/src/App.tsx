@@ -20,8 +20,8 @@ function App() {
 
 
           <section className="section-about indent-2">
-            <p>
-              <em className="title-1 outdent-1">Hello. </em>
+            <p className="title-2">
+              <em className="outdent-1">Hello.</em>
             </p>
             <p className="deco-font-1 ">
               My name is Jessica <span className="nowrap">and I make web things.</span>
@@ -32,33 +32,64 @@ function App() {
           </section>
 
 
-          <section className="section-projects">
-            <h3 className="h-section-1">Projects</h3>
+          <section className="section-projects indent-2">
+            <h3 className="section-heading title-3">Projects</h3>
+            <div className="filter-group">
             <label htmlFor="filterProjects">Filter</label>
-            <select name="filterProjects" id="filterProjects">
+            <select className="clear" name="filterProjects" id="filterProjects">
               <option selected>Filter</option>
               <option>Node</option>
               <option>Javascript</option>
               {/* populate with filters from project data */}
             </select>
-
-            <h3 className="h-section-2">Company Name</h3>
-
-            {/* Begin Project Component */}
-            <div className="project-entry">
-              <h4>Project Name</h4>
-              <p>This is a block of text that describes the project.  It isn"t super long or detailed, but should give just enough information.</p>
-              <button className="btn-1 filter-projects" type="button">Javascript</button>
-              <button className="btn-1 filter-projects" type="button">React</button>
-              <button className="btn-1 filter-projects" type="button">Node</button>
             </div>
-            {/* End Project Component */}
+
+
+            <ol className="project-list">
+              <h4 className="section-subheading company-name">Relay Network</h4>
+
+              {/* START Project Component */}
+              <li className="project-entry">
+                <h5>Project Name</h5>
+                <p>This is a block of text that describes the project.  It isn't super long or detailed, but should give just enough information.</p>
+                <button className="btn-1 filter-projects" type="button">Javascript</button>
+                <button className="btn-1 filter-projects" type="button">React</button>
+                <button className="btn-1 filter-projects" type="button">Node</button>
+              </li>
+              {/* END Project Component */}
+
+              <li className="project-entry">
+                <h5>Project Name</h5>
+                <p>This is a block of text that describes the project.  It isn't super long or detailed, but should give just enough information.</p>
+                <button className="btn-1 filter-projects" type="button">Javascript</button>
+                <button className="btn-1 filter-projects" type="button">React</button>
+                <button className="btn-1 filter-projects" type="button">Node</button>
+              </li>
+
+              <h4 className="section-subheading company-name">Weblinc Ecommerce</h4>
+
+              <li className="project-entry">
+                <h5>Project Name</h5>
+                <p>This is a block of text that describes the project.  It isn't super long or detailed, but should give just enough information.</p>
+                <button className="btn-1 filter-projects" type="button">Javascript</button>
+                <button className="btn-1 filter-projects" type="button">React</button>
+                <button className="btn-1 filter-projects" type="button">Node</button>
+              </li>
+
+              <li className="project-entry">
+                <h5>Project Name</h5>
+                <p>This is a block of text that describes the project.  It isn't super long or detailed, but should give just enough information.</p>
+                <button className="btn-1 filter-projects" type="button">Javascript</button>
+                <button className="btn-1 filter-projects" type="button">React</button>
+                <button className="btn-1 filter-projects" type="button">Node</button>
+              </li>
+            </ol>
 
           </section>
 
 
-          <section className="section-resume">
-            <h3 className="h-section-1">Resume</h3>
+          <section className="section-resume indent-2">
+            <h3 className="section-heading title-3">Resume</h3>
 
             {/* Begin Experience Component */}
             <div className="experience-entry">
@@ -74,8 +105,8 @@ function App() {
           </section>
 
 
-          <section className="section-contact">
-            <h3 className="h-section-1">Contact</h3>
+          <section className="section-contact indent-2">
+            <h3 className="section-heading title-3">Contact</h3>
 
             {/* Begin ContactForm Component */}
             <form className="contact-form">

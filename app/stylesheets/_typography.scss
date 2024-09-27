@@ -3,6 +3,14 @@
 @use "./variables/breakpoints" as *;
 
 /**************
+    UTILS
+***************/
+
+.text-left {
+    text-align: left;
+}
+
+/**************
     HEADINGS
 ***************/
 
@@ -16,7 +24,6 @@ p {
     font-weight: 400;
 }
 
-
 /**************
     TITLE
 ***************/
@@ -27,38 +34,44 @@ p {
     letter-spacing: 0.05rem;
 }
 
-.title-1 {
+.title-1 { // Jessica Barnettt
+    @include title;
+    font-size: 3.4rem;
+    font-weight: 700;
+    line-height: calc(3.4rem - .2rem);
+}
+
+.title-1 + .subtitle-1,
+.title-2 + p  {
+    margin-top: .3rem;
+}
+
+.title-2 { // Hello.
     @include title;
     font-size: 3.2rem;
-    font-weight: 700;
     line-height: calc(3.2rem - .2rem);
-}
-
-.title-2 {
-    @include title;
-    font-size: 3rem;
-    line-height: calc(3rem - .2rem);
     font-weight: 700;
 }
 
+.title-3 { // section headings
+    @include title;
+    font-size: 2.6rem;
+    line-height: 2.6rem;
+    font-weight: 700;
+}
 
 @mixin subtitle {
     font-family: $primary-font;
     letter-spacing: 0.1rem;
 }
 
+// FrontEnd/Fullstack Software Eng
 .subtitle-1 {
     @include subtitle;
     font-size: 1.2rem;
     line-height: calc(1.2rem + .2rem);
     font-weight: 500;
 }
-
-// this is only really used in the top-level title...  It just needed a liiiittle space
-.title-1 + .subtitle-1 {
-    margin-top: .3rem;
-}
-
 
 // TODO: figure out how to work these one-offs into some kind of real system?
 
@@ -74,22 +87,6 @@ p {
     font-weight: 500;
     line-height: 2rem;
 }
-
-/**************
-    HEADINGS
-***************/
-.h-section {}
-
-
-// Specific to the about section,
-// will probably move
-.h-abt {}
-
-.t-abt-1 {}
-
-.t-abt-2 {}
-
-
 
 /**************
      ICONS
