@@ -1,51 +1,18 @@
-@use "./variables/colors" as c;
-@use "./variables/fonts" as f;
-@use "./variables/breakpoints" as bp;
-
-/**************
-   UTILITY
-***************/
-
-.nowrap {
-    white-space: nowrap;
-}
-
-.outdent-1 {
-    margin-left: -1rem;
-}
-
-.outdent-2 {
-    margin-left: -2rem;
-}
-
-.indent-1 {
-    margin-left: 1rem;
-}
-
-.indent-2 {
-    margin-left: 2rem;
-}
-
+@use "./variables/colors" as *;
+@use "./variables/fonts" as *;
+@use "./variables/breakpoints" as *;
 
 /**************
     HEADINGS
 ***************/
 
-h1 {}
-
-h2 {}
-
-h3 {}
-
-h4 {}
-
-h5 {}
-
-h6 {}
-
+:is(h1, h2, h3, h4, h5, h6, p, i, em) {
+    margin: 0;
+	font: inherit;
+}
 
 p {
-    // font-family: 'Open Dyslexic', Arial, Helvetica, sans-serif;
+    font-family: $primary-font;
     font-weight: 400;
 }
 
@@ -55,7 +22,7 @@ p {
 ***************/
 
 @mixin title {
-    font-family: f.$primary;
+    font-family: $primary-font;
     font-weight: 700;
     letter-spacing: 0.05rem;
 }
@@ -76,7 +43,7 @@ p {
 
 
 @mixin subtitle {
-    font-family: f.$primary;
+    font-family: $primary-font;
     letter-spacing: 0.1rem;
 }
 
@@ -87,6 +54,7 @@ p {
     font-weight: 500;
 }
 
+// this is only really used in the top-level title...  It just needed a liiiittle space
 .title-1 + .subtitle-1 {
     margin-top: .3rem;
 }
@@ -145,34 +113,3 @@ a {
 
 }
 
-/**************
-    BUTTONS
-***************/
-
-.btn-1 {
-    border: 2px solid black;
-    border-radius: 3px;
-    padding: 0 2px;
-    margin: 2px;
-    font-weight: 600;
-
-    &:hover {
-        background-color: black;
-        color: white;
-    }
-}
-
-// made to look like the "VHS" logo
-.btn-2 {
-    border: 2px solid black;
-    border-radius: 3px;
-    padding: 0 2px;
-    font-weight: 600;
-    font-family: "Lester Bold", sans-serif;
-    text-transform: uppercase;
-
-    &:hover {
-        background-color: black;
-        color: white;
-    }
-}

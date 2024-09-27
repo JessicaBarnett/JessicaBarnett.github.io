@@ -1,5 +1,6 @@
-@use "./variables/breakpoints" as bp;
+@use "./variables/breakpoints" as *;
 @use "./utilities/respond-to" as *;
+@use "./variables/globals" as *;
 
 /**************
     FORMS
@@ -8,7 +9,7 @@
 form {
     width: 100%;
 
-    @include respond-to(bp.$medium) {
+    @include respond-to($medium-bp) {
         max-width: 70%;
     }
 }
@@ -16,6 +17,7 @@ form {
 label {
     display: block;
     margin-bottom: 4px;
+    font-size: $body-font-size;
 }
 
 input {

@@ -1,11 +1,20 @@
-@use "./reset.css";
-@use "./variables/colors" as c;
-@use "./variables/breakpoints" as bp;
-@use "./variables/variables" as v;
-@use "./variables/fonts" as f;
+// @use "./reset.css";
+
+// Variables
+@use './variables/breakpoints' as *;
+@use './variables/colors' as *;
+@use './variables/fonts' as *;
+@use './variables/globals' as *;
+
+// mixins and functions
 @use "./utilities/respond-to" as *;
+
+// partials
 @use "./typography";
 @use "./forms";
+@use "./tables";
+@use "./lists";
+@use "./buttons";
 
 * {
   box-sizing: border-box;
@@ -13,27 +22,28 @@
 
 :root {
   width: 100%;
-  background-color: c.$black;
-  font-family: f.$primary;
-  color: c.$black;
+  background-color: $black;
+  font-family: $primary-font;
+  color: $black;
+
   font-size: 1rem;
 
-  @include respond-to(bp.$medium) {
+  @include respond-to($medium-bp) {
     font-size: 1.2rem;
   }
 
-  @include respond-to(bp.$extra-wide) {
+  @include respond-to($extra-wide-bp) {
     font-size: 1.5rem;
   }
 }
 
 .page {
-  background-color: c.$white;
+  background-color: $white;
   width: 100%;
-  color: c.$black;
+  color: $black;
   margin: 0 auto;
   padding: 4rem 1rem;
-  max-width: v.$page-max-width;
+  max-width: $page-max-width;
   font-size: 1.5rem;
 }
 
@@ -44,30 +54,37 @@
 }
 
 /**************
+   UTILITY
+***************/
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.outdent-1 {
+  margin-left: -1rem;
+}
+
+.outdent-2 {
+  margin-left: -2rem;
+}
+
+.indent-1 {
+  margin-left: 1rem;
+}
+
+.indent-2 {
+  margin-left: 2rem;
+}
+
+
+/**************
     IMAGES
 ***************/
 
 img {
   max-width: 100%;
 }
-
-/**************
-    TABLES
-***************/
-
-td:not(:last-child), th:not(:last-child) {
-  border-right: 1px solid c.$black;
-}
-
-tr {
-  border-bottom: 1px solid c.$black;
-}
-
-table {
-  border-collapse: collapse;
-  border: 1px solid c.$black;
-}
-
 
 /**************
     SECTION
