@@ -1,10 +1,29 @@
+@use "./variables/colors" as c;
+@use "./variables/fonts" as f;
+@use "./variables/breakpoints" as bp;
+
 /**************
-    FONTS
+   UTILITY
 ***************/
 
-@font-face {
-    font-family: "Lester Bold";
-    src: url(./assets/fonts/lester-bold.ttf);
+.nowrap {
+    white-space: nowrap;
+}
+
+.outdent-1 {
+    margin-left: -1rem;
+}
+
+.outdent-2 {
+    margin-left: -2rem;
+}
+
+.indent-1 {
+    margin-left: 1rem;
+}
+
+.indent-2 {
+    margin-left: 2rem;
 }
 
 
@@ -12,14 +31,85 @@
     HEADINGS
 ***************/
 
-.h-title-1 {
+h1 {}
 
+h2 {}
+
+h3 {}
+
+h4 {}
+
+h5 {}
+
+h6 {}
+
+
+p {
+    // font-family: 'Open Dyslexic', Arial, Helvetica, sans-serif;
+    font-weight: 400;
 }
 
-.h-title-2 {
 
+/**************
+    TITLE
+***************/
+
+@mixin title {
+    font-family: f.$primary;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
 }
 
+.title-1 {
+    @include title;
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: calc(3.2rem - .2rem);
+}
+
+.title-2 {
+    @include title;
+    font-size: 3rem;
+    line-height: calc(3rem - .2rem);
+    font-weight: 700;
+}
+
+
+@mixin subtitle {
+    font-family: f.$primary;
+    letter-spacing: 0.1rem;
+}
+
+.subtitle-1 {
+    @include subtitle;
+    font-size: 1.2rem;
+    line-height: calc(1.2rem + .2rem);
+    font-weight: 500;
+}
+
+.title-1 + .subtitle-1 {
+    margin-top: .3rem;
+}
+
+
+// TODO: figure out how to work these one-offs into some kind of real system?
+
+// My name is...
+.deco-font-1 {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+}
+
+// thanks for...
+.deco-font-2 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 2rem;
+}
+
+/**************
+    HEADINGS
+***************/
 .h-section {}
 
 
@@ -37,18 +127,15 @@
      ICONS
 ***************/
 
-i {
-    display: inline-block;
-}
-
 .icon-sm {
+    display: inline-block;
     max-width: 30px;
 }
 
 .icon-lg {
+    display: inline-block;
     max-width: 60px;
 }
-
 
 /**************
     LINKS
@@ -78,7 +165,6 @@ a {
 // made to look like the "VHS" logo
 .btn-2 {
     border: 2px solid black;
-    font-size: 24px;
     border-radius: 3px;
     padding: 0 2px;
     font-weight: 600;

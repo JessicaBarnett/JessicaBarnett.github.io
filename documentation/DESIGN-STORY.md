@@ -20,9 +20,13 @@ So, these are my initial parameters:
 First step was to go on the hunt for some really cool Portfolio sites that other people have made, with the goal of feeling out what content I might want to put in this thing.  Here's some awesome projects that caught my fancy:
 
 - [Brittany Chiang](https://brittanychiang.com/)
-- [Dani Roxberry](https://droxey.com/#/portfolio)
-- [Lynn Fisher](https://lynnandtonic.com/about/)
+- [Sarah L. Fossheim](https://fossheim.io/)
+- [Dani Roxberry](https://droxey.com/)
+- [Lynn Fisher](https://lynnandtonic.com/)
 - [Matthew Williams](http://findmatthew.com/)
+
+and some other websites that I looked at during the process:
+- https://www.filamentgroup.com/
 
 Then I started looking for aesthetic inspiration.
 
@@ -73,3 +77,32 @@ I was on the fence about using react, since it's such a small project.  It kind 
 I also kinda wanted to roll out storybook for this project, which is DEFINITELY overkill.  But it's fun overkill, and won't affect performance of the actual site, so I'm not bothered.
 
 I was originally on the fence about Sass.  I love using it, but with a framework in place, isn't as necessary, since css can be scoped to the component.  That said, I do think it depends on how much global css I do end up with.
+
+
+## Typography + basic layout
+
+This design is typography heavy, so the next task is to get that all sorted out.  Heres some rabbit holes I stumbled into on the way:
+
+### Variable Fonts
+
+I went on the hunt for fonts, and whilst I was downloading the Inter font from google, I realized that font-importing is quite a bit different from the last time I did it.  Variable fonts are new to me.
+
+So I spent some time reading up on variable fonts and the new @font-face rules I'd need.  Ended up implementing it without too much trouble.
+
+I'll likely thin out the font variations later, but while I'm still building and tweaking the design, It's nice to have all the options available.
+
+### Fluid Font sizing
+
+When I was a fledgeling Developer a decade ago, I remember lots of people making a big deal about fluid fonts.  I was curious where the css world ended up in that regard, and thought I might be able to incorporate something like that.  Found some extremely good article
+
+- [Modern Fluid Typography with CSS Clamp](https://www.smashingmagazine.com/2022/01/modern-fluid-typography-css-clamp/) by Adrian Bece, the best overview of the development of fluid type over the last 8 years or so and the modern approach using the css clamp function.  Puts a lot of time into how the "preferred value" is calculared, and also buts a heavy emphasis on Accessibility issues with this approach, and potential solutions, tradeoffs, etc.
+- [Why should type be fluid, anyway?](https://elisehe.in/2021/03/13/fluid-type) by  Elise Hein.  Great overview of the actual use-cases of fluid type.
+- [Fluid Typography with Sass Functions](https://www.smashingmagazine.com/2022/10/fluid-typography-clamp-sass-functions/) by Brecht De Ruyte has some very nice sass functions that automate (and explain in detail) a lot of this math.
+- honorable mentions:
+    - https://codepen.io/chriscoyier/pen/XWmMdx
+    - https://css-tricks.com/simplified-fluid-typography/
+
+I didn't realize css had gained so many handy functions since I last looked.  Clamp is new to me, and it seems extremely useful.  Also Container
+
+I ended up spending most of a day in this rabbit hole, and then deciding to just stick with good old responsive font sizing for now.  Fluid would be nice, but the potential Accessibility tradeoff isn't worth it without having the time to really test.  I'll add this to my nice-to-haves pile and move along to other things.
+

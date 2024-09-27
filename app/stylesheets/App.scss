@@ -1,33 +1,47 @@
 @use "./reset.css";
-@use "./variables/_colors.scss" as c;
-@use "./variables/_breakpoints.scss" as bp;
-@use "./variables/_variables.scss" as v;
-@use "./utils" as u;
-@use "./_typography.scss";
-@use "./_forms.scss";
+@use "./variables/colors" as c;
+@use "./variables/breakpoints" as bp;
+@use "./variables/variables" as v;
+@use "./variables/fonts" as f;
+@use "./utilities/respond-to" as *;
+@use "./typography";
+@use "./forms";
 
 * {
   box-sizing: border-box;
 }
 
-#root {
+:root {
   width: 100%;
   background-color: c.$black;
+  font-family: f.$primary;
+  color: c.$black;
+  font-size: 1rem;
+
+  @include respond-to(bp.$medium) {
+    font-size: 1.2rem;
+  }
+
+  @include respond-to(bp.$extra-wide) {
+    font-size: 1.5rem;
+  }
 }
 
 .page {
   background-color: c.$white;
   width: 100%;
   color: c.$black;
-  padding: 80px 60px;
-
-  @include u.respond-to(bp.$small) {
-    width: 95%;
-    max-width: v.$page-max-width;
-    margin: 0 auto;
-  }
+  margin: 0 auto;
+  padding: 4rem 1rem;
+  max-width: v.$page-max-width;
+  font-size: 1.5rem;
 }
 
+
+.content {
+  margin: 0 auto;
+  max-width: 720px; // "max readable width" ?
+}
 
 /**************
     IMAGES
@@ -42,16 +56,16 @@ img {
 ***************/
 
 td:not(:last-child), th:not(:last-child) {
-  border-right: 1px solid black;
+  border-right: 1px solid c.$black;
 }
 
 tr {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid c.$black;
 }
 
 table {
   border-collapse: collapse;
-  border: 1px solid black;
+  border: 1px solid c.$black;
 }
 
 
