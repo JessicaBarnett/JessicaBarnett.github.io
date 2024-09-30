@@ -37,6 +37,25 @@
   font-weight: 100 1000;
   font-stretch: 25% 151%;
 }
+/*
+  We have a selector that can select based on the previous
+  sibling's class...
+
+  .make-the-next-p-different + p {
+    // rules are applied to p tags that are
+    // PRECEEDED by `.make-the-next-p-different`
+  }
+
+  but not one that can select based on the
+  NEXT sibling's class.
+
+  p - .make-the-previous-p-different {
+    // this selector doesn't exist :(
+  }
+
+  this is just a slightly more readable way to do that.
+*/
+/* enforces line heights */
 /**************
     UTILS
 ***************/
@@ -45,70 +64,113 @@
 }
 
 /**************
-    HEADINGS
+    Base HEADINGS and Paragraphs
 ***************/
-:is(h1, h2, h3, h4, h5, h6, p, i, em) {
-  margin: 0;
+:is(h1, h2, h3, h4, h5, h6, p, em, i) {
   font: inherit;
+  margin: 0;
 }
 
 p {
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-weight: 400;
+  font-weight: 300;
+  margin-bottom: 8px;
 }
 
 /**************
-    TITLE
+    TITLES
 ***************/
+/*
+    "page" titles
+        - h1/h2, once per page
+*/
 .title-1 {
+  font-size: 3.4rem;
+  line-height: 3.6rem;
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-weight: 700;
   letter-spacing: 0.05rem;
-  font-size: 3.4rem;
-  font-weight: 700;
-  line-height: 3.2rem;
 }
 
-.title-1 + .subtitle-1,
-.title-2 + p {
+.subtitle-1 {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
   margin-top: 0.3rem;
 }
 
+/*
+    "section" titles
+        - h3 once per section
+        - h4 multiple times per section
+*/
 .title-2 {
+  font-size: 2.6rem;
+  line-height: 2.8rem;
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-weight: 700;
-  letter-spacing: 0.05rem;
+}
+
+.subtitle-2 {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  text-align: center;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+}
+
+/*
+    "entry" titles
+        - h5 once per entry
+        - time and div elements
+*/
+.title-3 {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+}
+
+.supertitle-3 {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  font-style: italic;
+}
+
+.subtitle-3 {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  font-style: italic;
+}
+
+/*
+    One off title styles
+*/
+.deco-font-1 {
   font-size: 3.2rem;
+  line-height: 3.4rem;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-weight: 700;
   line-height: 3rem;
   font-weight: 700;
 }
 
-.title-3 {
-  font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.05rem;
-  font-size: 2.6rem;
-  line-height: 2.6rem;
-  font-weight: 700;
-}
-
-.subtitle-1 {
-  font-family: "Inter", Arial, Helvetica, sans-serif;
-  letter-spacing: 0.1rem;
+.deco-font-2 {
   font-size: 1.2rem;
   line-height: 1.4rem;
-  font-weight: 500;
+  line-height: 1.8rem;
 }
 
-.deco-font-1 {
-  font-size: 1.2rem;
-  line-height: 1.5rem;
-}
-
-.deco-font-2 {
+.deco-font-3 {
   font-size: 1.4rem;
-  font-weight: 500;
-  line-height: 2rem;
+  line-height: 1.6rem;
 }
 
 /**************
@@ -285,7 +347,7 @@ button {
 @media (min-width: 769px) {
   :root {
     font-size: 1.2rem;
-    line-height: 1.6rem;
+    line-height: 1.4rem;
   }
 }
 @media (min-width: 1440px) {
@@ -348,13 +410,29 @@ section {
 }
 
 .section-heading {
-  margin-bottom: 62px;
+  margin-bottom: 64px;
 }
 
 .section-subheading {
   margin-bottom: 48px;
 }
 
+/**************
+    ENTRY
+***************/
+.entry {
+  margin-bottom: 32px;
+}
+.entry:has(+ .section-subheading) {
+  margin-bottom: 48px;
+}
+.entry:last-of-type {
+  margin-bottom: 0;
+}
+
+/*************
+  one off stuff
+**************/
 @media (max-width: 480px) {
   .section-projects h3 {
     margin-bottom: 32px;
@@ -381,34 +459,6 @@ section {
   .section-projects .filter-group {
     left: 0;
   }
-}
-.section-projects .company-name {
-  text-align: center;
-  font-family: "Inter", Arial, Helvetica, sans-serif;
-  letter-spacing: 0.5rem;
-  text-transform: uppercase;
-  font-size: 1.2rem;
-  line-height: 1.4rem;
-}
-
-.project-entry + .company-name {
-  margin-top: 60px;
-}
-
-.project-entry {
-  margin-bottom: 34px;
-}
-.project-entry h5 {
-  font-size: 1.4rem;
-  line-height: 1.6rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-.project-entry p {
-  font-weight: 300;
-  font-size: 1.2rem;
-  line-height: 1.6rem;
-  margin-bottom: 8px;
 }
 
 /*# sourceMappingURL=App.css.map */

@@ -1,5 +1,5 @@
 @use "./variables/breakpoints" as *;
-@use "./utilities/respond-to" as *;
+@use "./utilities/media-queries" as *;
 @use "./variables/globals" as *;
 @use "./variables/colors" as *;
 /**************
@@ -9,7 +9,7 @@
 form {
     width: 100%;
 
-    @include respond-to($medium-bp) {
+    @include only-above($medium-bp) {
         max-width: 70%;
     }
 }

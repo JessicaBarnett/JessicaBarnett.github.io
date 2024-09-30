@@ -1,4 +1,4 @@
-@mixin respond-to($breakpoint) {
+@mixin only-above($breakpoint) {
     @media (min-width: $breakpoint) {
         @content;
     }

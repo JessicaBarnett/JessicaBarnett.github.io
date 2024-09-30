@@ -1,0 +1,26 @@
+  // https://tobiasahlin.com/blog/previous-sibling-css-has/
+
+
+  /*
+    We have a selector that can select based on the previous
+    sibling's class...
+
+    .make-the-next-p-different + p {
+      // rules are applied to p tags that are
+      // PRECEEDED by `.make-the-next-p-different`
+    }
+
+    but not one that can select based on the
+    NEXT sibling's class.
+
+    p - .make-the-previous-p-different {
+      // this selector doesn't exist :(
+    }
+
+    this is just a slightly more readable way to do that.
+  */
+  @mixin if-next-sibling-has($class) {
+      &:has(+ #{$class} ) {
+        @content;
+      }
+  }

@@ -1,0 +1,15 @@
+@use "sass:map";
+
+$vertical-spacing-unit: 16px;
+$vertical-spacing-levels: (
+    'section': #{$vertical-spacing-unit * 6}, // 96px space between sections
+    'section-heading':  #{$vertical-spacing-unit * 4},  // 64px space under section heading/title-2
+    'section-subheading': #{$vertical-spacing-unit * 3},  // 48px space between subsections/subtitle-2
+    'entry': #{$vertical-spacing-unit * 2}, // 32px between entries
+    'entry-heading': #{$vertical-spacing-unit * 1},
+    'paragraph': #{$vertical-spacing-unit * .5}, // 8px between paragraphs
+);
+
+@mixin vertical-spacing($vertical-spacing-level: 'section-heading') {
+    margin-bottom: map.get($vertical-spacing-levels, $vertical-spacing-level);
+}

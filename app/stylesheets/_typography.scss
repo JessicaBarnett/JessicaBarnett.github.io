@@ -1,6 +1,8 @@
 @use "./variables/colors" as *;
 @use "./variables/fonts" as *;
 @use "./variables/breakpoints" as *;
+@use "./utilities/font-size" as *;
+@use "./utilities/vertical-spacing" as *;
 
 /**************
     UTILS
@@ -10,83 +12,120 @@
     text-align: left;
 }
 
+
 /**************
-    HEADINGS
+    Base HEADINGS and Paragraphs
 ***************/
 
-:is(h1, h2, h3, h4, h5, h6, p, i, em) {
+// resets for standard text elements
+:is(h1, h2, h3, h4, h5, h6, p, em, i) {
+    font: inherit;
     margin: 0;
-	font: inherit;
 }
 
 p {
     font-family: $primary-font;
-    font-weight: 400;
+    font-weight: 300;
+    @include vertical-spacing('paragraph');
 }
 
 /**************
-    TITLE
+    TITLES
 ***************/
 
 @mixin title {
     font-family: $primary-font;
     font-weight: 700;
-    letter-spacing: 0.05rem;
-}
-
-.title-1 { // Jessica Barnettt
-    @include title;
-    font-size: 3.4rem;
-    font-weight: 700;
-    line-height: calc(3.4rem - .2rem);
-}
-
-.title-1 + .subtitle-1,
-.title-2 + p  {
-    margin-top: .3rem;
-}
-
-.title-2 { // Hello.
-    @include title;
-    font-size: 3.2rem;
-    line-height: calc(3.2rem - .2rem);
-    font-weight: 700;
-}
-
-.title-3 { // section headings
-    @include title;
-    font-size: 2.6rem;
-    line-height: 2.6rem;
-    font-weight: 700;
 }
 
 @mixin subtitle {
     font-family: $primary-font;
-    letter-spacing: 0.1rem;
-}
-
-// FrontEnd/Fullstack Software Eng
-.subtitle-1 {
-    @include subtitle;
-    font-size: 1.2rem;
-    line-height: calc(1.2rem + .2rem);
     font-weight: 500;
 }
 
-// TODO: figure out how to work these one-offs into some kind of real system?
+/*
+    "page" titles
+        - h1/h2, once per page
+*/
+
+.title-1 {
+    @include font-size(3.4rem);
+    @include title;
+    letter-spacing: 0.05rem; // unique to page title
+}
+
+.subtitle-1 {
+    @include font-size(1.2rem);
+    @include subtitle;
+    letter-spacing: 0.1rem; // unique to page title
+    margin-top: 0.3rem;
+}
+
+/*
+    "section" titles
+        - h3 once per section
+        - h4 multiple times per section
+*/
+
+.title-2 {
+    @include font-size(2.6rem);
+    @include title;
+}
+
+.subtitle-2 {
+    @include font-size(1.2rem);
+    text-align: center;
+    font-family: $primary-font;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+}
+
+/*
+    "entry" titles
+        - h5 once per entry
+        - time and div elements
+*/
+
+.title-3 {
+    @include title;
+    @include font-size(1.4rem);
+}
+
+.supertitle-3 {
+    @include title;
+    @include font-size(1rem);
+    font-style: italic
+}
+
+.subtitle-3 {
+    @include subtitle;
+    @include font-size(1.2rem);
+    font-style: italic;
+}
+
+/*
+    One off title styles
+*/
+
+// Hello.
+.deco-font-1 {
+    @include font-size(3.2rem);
+    @include title;
+    line-height: 3rem; // unique
+    font-weight: 700;
+}
 
 // My name is...
-.deco-font-1 {
-    font-size: 1.2rem;
-    line-height: 1.5rem;
+.deco-font-2 {
+    @include font-size(1.2rem);
+    line-height: 1.8rem; // unique
 }
 
 // thanks for...
-.deco-font-2 {
-    font-size: 1.4rem;
-    font-weight: 500;
-    line-height: 2rem;
+.deco-font-3 {
+    @include font-size(1.4rem);
 }
+
 
 /**************
      ICONS
@@ -106,7 +145,4 @@ p {
     LINKS
 ***************/
 
-a {
-
-}
-
+a {}

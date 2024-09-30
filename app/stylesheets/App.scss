@@ -7,7 +7,10 @@
 @use './variables/globals' as *;
 
 // mixins and functions
-@use "./utilities/respond-to" as *;
+@use "./utilities/media-queries" as *;
+@use "./utilities/vertical-spacing" as *;
+@use "./utilities/if-next-sibling-has" as *;
+
 
 // partials
 @use "./typography";
@@ -15,6 +18,9 @@
 @use "./tables";
 @use "./lists";
 @use "./buttons";
+@use "./utilities/font-size" as *;
+
+
 
 * {
   box-sizing: border-box;
@@ -30,19 +36,16 @@
   font-family: $primary-font;
   color: $black;
 
-  font-size: 1rem;
-  line-height: 1.2rem;
+
+  @include font-size(1rem);
 
 
-  @include respond-to($medium-bp) {
-    font-size: 1.2rem;
-    line-height: 1.6rem;
-
+  @include only-above($medium-bp) {
+    @include font-size(1.2rem);
   }
 
-  @include respond-to($extra-wide-bp) {
-    font-size: 1.6rem;
-    line-height: 1.8rem;
+  @include only-above($extra-wide-bp) {
+    @include font-size(1.6rem);
   }
 }
 
@@ -100,80 +103,67 @@ img {
 
 section {
   position: relative;
-  margin-bottom: 96px;
+  @include vertical-spacing('section');
 }
 
 .section-heading {
-  margin-bottom: 62px;
+  @include vertical-spacing('section-heading');
 }
+
 
 .section-subheading {
-  margin-bottom: 48px;
+  @include vertical-spacing('section-subheading');
 }
+
+/**************
+    ENTRY
+***************/
+
+.entry {
+  @include vertical-spacing('entry');
+
+  @include if-next-sibling-has('.section-subheading') {
+    @include vertical-spacing('section-subheading');
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+
+
+/*************
+  one off stuff
+**************/
 
 .section-projects {
-    h3 {
-      @include only-below($small-bp) {
-        margin-bottom: 32px;
-      }
-
-
-      @include respond-to($medium-bp) {
-        text-align: right;
-      }
+  h3 {
+    @include only-below($small-bp) {
+      margin-bottom: 32px;
     }
 
-    // util class?
-    .filter-group {
-      @include only-below($small-bp) {
-        margin-bottom: 48px;
-      }
 
-
-      @include respond-to($small-bp) {
-        position: absolute;
-        top: -8px;
-        right: 0;
-      }
-
-      @include respond-to($medium-bp) {
-        left: 0;
-      }
-    }
-
-    .company-name {
-      text-align: center;
-      font-family: $primary-font;
-      letter-spacing: 0.5rem;
-      text-transform: uppercase;
-      font-size: 1.2rem;
-      line-height: 1.4rem;
+    @include only-above($medium-bp) {
+      text-align: right;
     }
   }
 
-.project-entry + .company-name {
-  margin-top: 60px;
-}
+  // util class?
+  .filter-group {
+    @include only-below($small-bp) {
+      margin-bottom: 48px;
+    }
 
-.project-entry {
-  margin-bottom: 34px;
 
-  h5 {
-    font-size: 1.4rem;
-    line-height: 1.6rem;
-    font-weight: 700;
-    margin-bottom: 8px;
+    @include only-above($small-bp) {
+      position: absolute;
+      top: -8px;
+      right: 0;
+    }
+
+    @include only-above($medium-bp) {
+      left: 0;
+    }
   }
-
-  p {
-    font-weight: 300;
-    font-size: 1.2rem;
-    line-height: 1.6rem;
-    margin-bottom: 8px;
-  }
-
-
-
-
-
 }

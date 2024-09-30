@@ -7,7 +7,7 @@ function App() {
       <div className="page">
         <div className="content">
 
-          <section className="section-title indent-1">
+          <section className="indent-1">
             <h1 className="title-1">
               <span className="outdent-1">Jessica </span>
               Barnett
@@ -20,20 +20,20 @@ function App() {
 
 
           <section className="section-about indent-2">
-            <p className="title-2">
+            <p className="deco-font-1">
               <em className="outdent-1">Hello.</em>
             </p>
-            <p className="deco-font-1 ">
+            <p className="deco-font-2 ">
               My name is Jessica <span className="nowrap">and I make web things.</span>
             </p>
-            <p className="indent-1 deco-font-2">
+            <p className="indent-1 deco-font-3">
               Thanks for dropping by!
             </p>
           </section>
 
 
           <section className="section-projects indent-2">
-            <h3 className="section-heading title-3">Projects</h3>
+            <h3 className="section-heading title-2">Projects</h3>
             <div className="filter-group">
             <label htmlFor="filterProjects">Filter</label>
             <select className="clear" name="filterProjects" id="filterProjects">
@@ -45,12 +45,12 @@ function App() {
             </div>
 
 
-            <ol className="project-list">
-              <h4 className="section-subheading company-name">Relay Network</h4>
+            <ol>
+              <h4 className="section-subheading subtitle-2">Relay Network</h4>
 
               {/* START Project Component */}
-              <li className="project-entry">
-                <h5>Project Name</h5>
+              <li className="entry">
+                <h5 className="title-3">Project Name</h5>
                 <p>This is a block of text that describes the project.  It isn't super long or detailed, but should give just enough information.</p>
                 <button className="btn-1 filter-projects" type="button">Javascript</button>
                 <button className="btn-1 filter-projects" type="button">React</button>
@@ -58,26 +58,26 @@ function App() {
               </li>
               {/* END Project Component */}
 
-              <li className="project-entry">
-                <h5>Project Name</h5>
+              <li className="entry">
+                <h5 className="title-3">Project Name</h5>
                 <p>This is a block of text that describes the project.  It isn't super long or detailed, but should give just enough information.</p>
                 <button className="btn-1 filter-projects" type="button">Javascript</button>
                 <button className="btn-1 filter-projects" type="button">React</button>
                 <button className="btn-1 filter-projects" type="button">Node</button>
               </li>
 
-              <h4 className="section-subheading company-name">Weblinc Ecommerce</h4>
+              <h4 className="section-subheading subtitle-2">Weblinc Ecommerce</h4>
 
-              <li className="project-entry">
-                <h5>Project Name</h5>
+              <li className="entry">
+                <h5 className="title-3">Project Name</h5>
                 <p>This is a block of text that describes the project.  It isn't super long or detailed, but should give just enough information.</p>
                 <button className="btn-1 filter-projects" type="button">Javascript</button>
                 <button className="btn-1 filter-projects" type="button">React</button>
                 <button className="btn-1 filter-projects" type="button">Node</button>
               </li>
 
-              <li className="project-entry">
-                <h5>Project Name</h5>
+              <li className="entry">
+                <h5 className="title-3">Project Name</h5>
                 <p>This is a block of text that describes the project.  It isn't super long or detailed, but should give just enough information.</p>
                 <button className="btn-1 filter-projects" type="button">Javascript</button>
                 <button className="btn-1 filter-projects" type="button">React</button>
@@ -89,24 +89,64 @@ function App() {
 
 
           <section className="section-resume indent-2">
-            <h3 className="section-heading title-3">Resume</h3>
+            <h3 className="section-heading title-2">Resume</h3>
 
-            {/* Begin Experience Component */}
-            <div className="experience-entry">
-              <time>2018</time> - <time>2023</time>
-              <h4>Front End Engineer</h4>
-              <p>Company Name</p>
-              <button className="btn-1" type="button">Javascript</button>
-              <button className="btn-1" type="button">React</button>
-              <button className="btn-1" type="button">Node</button>
-            </div>
-            {/* End Experience Component */}
+            <ol>
+
+              {/* Begin Experience Component */}
+              <li className="entry">
+                <div className="supertitle-3"><time dateTime="2018">2018</time> - <time dateTime="2238">2023</time></div>
+                <h4 className="title-3">Front End Engineer</h4>
+                <p className="subtitle-3">Company Name</p>
+                <button className="btn-1" type="button">Javascript</button>
+                <button className="btn-1" type="button">React</button>
+                <button className="btn-1" type="button">Node</button>
+              </li>
+              {/* End Experience Component */}
+
+              {/* Begin Experience Component */}
+              <li className="entry">
+                <div className="supertitle-3"><time dateTime="2018">2018</time> - <time dateTime="2238">2023</time></div>
+                <h4 className="title-3">Front End Engineer</h4>
+                <p className="subtitle-3">Company Name</p>
+                <button className="btn-1" type="button">Javascript</button>
+                <button className="btn-1" type="button">React</button>
+                <button className="btn-1" type="button">Node</button>
+              </li>
+              {/* End Experience Component */}
+
+              {/* Begin Experience Component */}
+              <li className="entry">
+                <div className="supertitle-3"><time dateTime="2018">2018</time> - <time dateTime="2238">2023</time></div>
+                <h4 className="title-3">Front End Engineer</h4>
+                <p className="subtitle-3">Company Name</p>
+                <button className="btn-1" type="button">Javascript</button>
+                <button className="btn-1" type="button">React</button>
+                <button className="btn-1" type="button">Node</button>
+              </li>
+              {/* End Experience Component */}
+
+              {/* Begin Experience Component */}
+              <li className="entry">
+                <div className="supertitle-3"><time dateTime="2018">2018</time> - <time dateTime="2238">2023</time></div>
+                <h4 className="title-3">Front End Engineer</h4>
+                <p className="subtitle-3">Company Name</p>
+                <button className="btn-1" type="button">Javascript</button>
+                <button className="btn-1" type="button">React</button>
+                <button className="btn-1" type="button">Node</button>
+              </li>
+              {/* End Experience Component */}
+
+            </ol>
+
+
+
 
           </section>
 
 
           <section className="section-contact indent-2">
-            <h3 className="section-heading title-3">Contact</h3>
+            <h3 className="section-heading title-2">Contact</h3>
 
             {/* Begin ContactForm Component */}
             <form className="contact-form">
