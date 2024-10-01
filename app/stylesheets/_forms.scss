@@ -8,10 +8,6 @@
 
 form {
     width: 100%;
-
-    @include only-above($medium-bp) {
-        max-width: 70%;
-    }
 }
 
 label {

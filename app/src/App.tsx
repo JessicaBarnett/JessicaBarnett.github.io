@@ -32,7 +32,7 @@ function App() {
           </section>
 
 
-          <section className="section-projects indent-2">
+          <section className="section-projects">
             <h3 className="section-heading title-2">Projects</h3>
             <div className="filter-group">
             <label htmlFor="filterProjects">Filter</label>
@@ -88,7 +88,7 @@ function App() {
           </section>
 
 
-          <section className="section-resume indent-2">
+          <section className="section-resume">
             <h3 className="section-heading title-2">Resume</h3>
 
             <ol>
@@ -145,11 +145,11 @@ function App() {
           </section>
 
 
-          <section className="section-contact indent-2">
+          <section className="grid section-contact">
             <h3 className="section-heading title-2">Contact</h3>
 
             {/* Begin ContactForm Component */}
-            <form className="contact-form">
+            <form className="contact-form two-third">
               <label htmlFor="name">Name</label>
               <input type="text" name="name" id="name"></input>
 
@@ -167,15 +167,15 @@ function App() {
             </form>
             {/* End ContactForm  Component */}
 
-            <div className="sidebar-right">
+            <div className="sidebar-right one-third">
               <p>Made with <img className="icon-sm" alt="love" src="/assets/icons/love-icon.png"></img> in Philadelphia </p>
 
-              <a href="#">
+              <a className="social-link" href="#">
                 <img className="icon-lg" alt="Linkedin Icon" src="/assets/icons/linkedin-icon.png"></img>
                 <span>LinkedIn</span>
               </a>
 
-              <a href="#">
+              <a className="social-link" href="#">
                 <img className="icon-lg" alt="Github Icon" src="/assets/icons/github-icon.png"></img>
                 <span>Github</span>
               </a>
@@ -184,7 +184,7 @@ function App() {
           </section>
 
           <section className="section-footer">
-            <table>
+            <table className="page-stats-table">
               <tr>
                 <th>Language</th>
                 <th>HTML</th>
@@ -199,14 +199,14 @@ function App() {
               </tr>
               <tr>
                 <th>Lines</th>
-                <td>6000 lines</td>
+                <td colSpan="3">6000 lines</td>
               </tr>
             </table>
 
-            <a href="#">
+            <a className="page-stats-button" href="#">
               <button className="btn-2" type="button">Source</button>
             </a>
-            <p>Code for this website is available for review on Github.  It took [time] to construct from start to finish.  Build with React, Vite, and sass. </p>
+            <p className="page-stats-text">Code for this website is available for review on Github.  It took [time] to construct from start to finish.  Build with React, Vite, and sass. </p>
           </section>
 
         </div> {/* end content */}

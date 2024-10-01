@@ -132,12 +132,10 @@ p {
 ***************/
 
 .icon-sm {
-    display: inline-block;
     max-width: 30px;
 }
 
 .icon-lg {
-    display: inline-block;
     max-width: 60px;
 }
 
@@ -146,3 +144,9 @@ p {
 ***************/
 
 a {}
+
+
+.social-link {
+    display: flex;
+    align-items: center;
+}

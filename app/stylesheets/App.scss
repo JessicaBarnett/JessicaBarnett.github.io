@@ -106,6 +106,30 @@ section {
   @include vertical-spacing('section');
 }
 
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 12fr);
+  grid-gap: 16px;
+
+  > * {
+    grid-column-start: span 12;
+  }
+
+  .half {
+    grid-column-start: span 6;
+  }
+
+  .one-third {
+    grid-column-start: span 4;
+  }
+
+  .two-third {
+    grid-column-start: span 8;
+  }
+
+}
+
 .section-heading {
   @include vertical-spacing('section-heading');
 }

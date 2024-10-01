@@ -177,28 +177,26 @@ p {
      ICONS
 ***************/
 .icon-sm {
-  display: inline-block;
   max-width: 30px;
 }
 
 .icon-lg {
-  display: inline-block;
   max-width: 60px;
 }
 
 /**************
     LINKS
 ***************/
+.social-link {
+  display: flex;
+  align-items: center;
+}
+
 /**************
     FORMS
 ***************/
 form {
   width: 100%;
-}
-@media (min-width: 769px) {
-  form {
-    max-width: 70%;
-  }
 }
 
 label {
@@ -260,6 +258,18 @@ td:not(:last-child), th:not(:last-child) {
   border-right: 1px solid #000;
 }
 
+td, th {
+  padding: 4px;
+}
+
+th:first-of-type {
+  text-align: left;
+}
+
+td {
+  text-align: center;
+}
+
 tr {
   border-bottom: 1px solid #000;
 }
@@ -267,6 +277,32 @@ tr {
 table {
   border-collapse: collapse;
   border: 1px solid #000;
+}
+
+.page-stats-table {
+  width: 75%;
+  margin-bottom: 8px;
+}
+@media (min-width: 769px) {
+  .page-stats-table {
+    width: 50%;
+  }
+}
+
+.page-stats-button {
+  margin: 4px 16px 0 0;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.page-stats-text {
+  max-width: 60%;
+  display: inline-block;
+}
+@media (min-width: 769px) {
+  .page-stats-text {
+    max-width: 45%;
+  }
 }
 
 /**************
@@ -407,6 +443,24 @@ img {
 section {
   position: relative;
   margin-bottom: 96px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 12fr);
+  grid-gap: 16px;
+}
+.grid > * {
+  grid-column-start: span 12;
+}
+.grid .half {
+  grid-column-start: span 6;
+}
+.grid .one-third {
+  grid-column-start: span 4;
+}
+.grid .two-third {
+  grid-column-start: span 8;
 }
 
 .section-heading {
