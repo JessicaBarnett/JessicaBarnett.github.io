@@ -1,6 +1,5 @@
 @use "./variables/colors" as *;
 @use "./utilities/media-queries" as *;
-@use "./variables/breakpoints" as *;
 
 
 /**************
@@ -55,7 +54,6 @@ table {
 .page-stats-text {
   max-width: 60%;
   display: inline-block;
-
 
   @include only-above($medium-bp) {
     max-width: 45%;

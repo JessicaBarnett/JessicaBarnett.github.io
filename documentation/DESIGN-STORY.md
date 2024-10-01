@@ -106,3 +106,36 @@ I didn't realize css had gained so many handy functions since I last looked.  Cl
 
 I ended up spending most of a day in this rabbit hole, and then deciding to just stick with good old responsive font sizing for now.  Fluid would be nice, but the potential Accessibility tradeoff isn't worth it without having the time to really test.  I'll add this to my nice-to-haves pile and move along to other things.
 
+## Organization
+
+I'm a bit of a neat freak when it comes to my code, so I spent a decent amount of time figuring out the most sensible place to put my sass rules to keep them organized and concise.
+
+I love that sass has introduced @use, instead of @import.  That removes a LOT of duplicate-code problems that used to plague projects I've worked on, and frees me up to put things pretty much wherever I want.
+
+I decided I want mixins for font size/line height, a vertical rhythm scheme, media queries (naturally), and grids, and wanted colors and fonts in variable files.  Then I broke out partials for various things.
+
+## Why am I doing everything in a global css file?
+
+One question someone may ask: hey, jess.  You have react in this project.  Why aren't you writing your css in your components?
+
+Solid question deserves a solid answer, and my answer is that:
+
+1) It's a lot easier for me personally to work on a cohesive design, at least at this early stage (and on a small project) when I consider the whole page together, rather than looking at the components individually. Things like vertical rhythm, grid layout, etc, all are better figured out on a macro scale than a micro.
+
+2) Generally speaking, I kind of like having "global" styles?  Obviously anything bespoke to a component ought to be in a component, but things like typography, which tend to exist across components, are better suited to a global scope imo.  Relying too much on component encapsulization can be a bit of a crutch, and lead to a disjointed design and way more css than you need,
+
+If this project were more complicated, of course, then you would never catch me dumping ALL my css in a global file.  Been there, done that, thank you.  I've dealt with enough BEM, OOCSS, class-clashing, and specificity nightmares to last a lifetime.  But that said, I do still think having well-thought-out global styles is a good thing.  It cuts down the amount of repetition in your css overall, and keeps the design simple and cohesive.
+
+As in all things, balance is of the utmost importance.
+
+3) this is a tiny tiny project, and honestly react is kind of overkill anyway.
+
+
+## Css/Scss things!
+
+Css Grid is a thing of beauty.  I'm so glad browser support is where it is now.  My entire career is about as old as `display: grid;`, and it's nice to FINALLY be able to put it through its paces.  I've been very pleased with its flexibility thus far.
+
+I have a sandbox on codepen that I've been referencing and tweaking a lot lately. https://codepen.io/GreatPumpkin/pen/vYBjpyG
+
+
+

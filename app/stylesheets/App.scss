@@ -1,7 +1,6 @@
 // @use "./reset.css";
 
 // Variables
-@use './variables/breakpoints' as *;
 @use './variables/colors' as *;
 @use './variables/fonts' as *;
 @use './variables/globals' as *;
@@ -9,85 +8,26 @@
 // mixins and functions
 @use "./utilities/media-queries" as *;
 @use "./utilities/vertical-spacing" as *;
-@use "./utilities/if-next-sibling-has" as *;
+@use "./utilities/font-size" as *;
+@use "./utilities/grid" as *;
 
 
 // partials
 @use "./typography";
+@use "./layout";
 @use "./forms";
 @use "./tables";
 @use "./lists";
 @use "./buttons";
-@use "./utilities/font-size" as *;
+@use "./decorative";
 
-
+/**************
+    GLOBALS
+***************/
 
 * {
   box-sizing: border-box;
 }
-
-.clear {
-  clear: both;
-}
-
-:root {
-  width: 100%;
-  background-color: $black;
-  font-family: $primary-font;
-  color: $black;
-
-
-  @include font-size(1rem);
-
-
-  @include only-above($medium-bp) {
-    @include font-size(1.2rem);
-  }
-
-  @include only-above($extra-wide-bp) {
-    @include font-size(1.6rem);
-  }
-}
-
-.page {
-  background-color: $white;
-  width: 100%;
-  color: $black;
-  margin: 0 auto;
-  padding: 4rem 1rem;
-  max-width: $page-max-width;
-}
-
-
-.content {
-  margin: 0 auto;
-  max-width: 720px; // "max readable width" ?
-}
-
-/**************
-   UTILITY
-***************/
-
-.nowrap {
-  white-space: nowrap;
-}
-
-.outdent-1 {
-  margin-left: -1rem;
-}
-
-.outdent-2 {
-  margin-left: -2rem;
-}
-
-.indent-1 {
-  margin-left: 1rem;
-}
-
-.indent-2 {
-  margin-left: 2rem;
-}
-
 
 /**************
     IMAGES
@@ -97,97 +37,55 @@ img {
   max-width: 100%;
 }
 
-/**************
-    SECTION
-***************/
-
-section {
-  position: relative;
-  @include vertical-spacing('section');
-}
-
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(12, 12fr);
-  grid-gap: 16px;
-
-  > * {
-    grid-column-start: span 12;
-  }
-
-  .half {
-    grid-column-start: span 6;
-  }
-
-  .one-third {
-    grid-column-start: span 4;
-  }
-
-  .two-third {
-    grid-column-start: span 8;
-  }
-
-}
-
-.section-heading {
-  @include vertical-spacing('section-heading');
-}
-
-
-.section-subheading {
-  @include vertical-spacing('section-subheading');
-}
-
-/**************
-    ENTRY
-***************/
-
-.entry {
-  @include vertical-spacing('entry');
-
-  @include if-next-sibling-has('.section-subheading') {
-    @include vertical-spacing('section-subheading');
-  }
-
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-}
-
-
 
 /*************
-  one off stuff
+  Stuff to clean up and move
 **************/
 
 .section-projects {
   h3 {
+    text-align: left;
+
     @include only-below($small-bp) {
       margin-bottom: 32px;
     }
 
 
-    @include only-above($medium-bp) {
+    @include only-above($small-bp) {
       text-align: right;
+      order: 2;
     }
   }
 
+
   // util class?
   .filter-group {
+    width: 100%;
+
     @include only-below($small-bp) {
       margin-bottom: 48px;
     }
 
-
     @include only-above($small-bp) {
-      position: absolute;
-      top: -8px;
-      right: 0;
+      order: 1;
+      justify-self: start;
     }
 
-    @include only-above($medium-bp) {
-      left: 0;
+    label {
+      text-transform: uppercase;
+      letter-spacing: 0.18rem;
+      font-size: .7rem;
+      line-height: .6rem;
     }
+
+    select {
+        @include only-below($small-bp) {
+            width: 100%;
+        }
+    }
+  }
+
+  ol {
+    order: 3;
   }
 }

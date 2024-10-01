@@ -1,11 +1,33 @@
 @use "./variables/colors" as *;
 @use "./variables/fonts" as *;
-@use "./variables/breakpoints" as *;
 @use "./utilities/font-size" as *;
 @use "./utilities/vertical-spacing" as *;
+@use "./utilities/media-queries" as *;
+
+/****************
+    ROOT FONT
+*****************/
+
+:root {
+    @include font-size(1rem);
+    background-color: $black;
+    font-family: $primary-font;
+    color: $black;
+    font-weight: 300;
+
+    @include only-above($medium-bp) {
+      @include font-size(1.2rem);
+    }
+
+    @include only-above($extra-wide-bp) {
+      @include font-size(1.6rem);
+    }
+  }
+
+
 
 /**************
-    UTILS
+    UTIL
 ***************/
 
 .text-left {
@@ -14,19 +36,13 @@
 
 
 /**************
-    Base HEADINGS and Paragraphs
+    RESETS
 ***************/
 
 // resets for standard text elements
 :is(h1, h2, h3, h4, h5, h6, p, em, i) {
     font: inherit;
     margin: 0;
-}
-
-p {
-    font-family: $primary-font;
-    font-weight: 300;
-    @include vertical-spacing('paragraph');
 }
 
 /**************

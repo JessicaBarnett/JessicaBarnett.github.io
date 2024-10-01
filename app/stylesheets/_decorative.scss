@@ -1,0 +1,91 @@
+@use "./variables/colors" as *;
+
+/***********************
+  INDENTS AND OUTDENTS
+************************/
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.outdent-1 {
+  margin-left: -1rem;
+}
+
+.outdent-2 {
+  margin-left: -2rem;
+}
+
+.indent-1 {
+  margin-left: 1rem;
+}
+
+.indent-2 {
+  margin-left: 2rem;
+}
+
+
+/***********************
+  VISUAL FLARE ELEMENTS
+************************/
+
+.color-bar {
+    position: relative;
+
+    &:before {
+        position: absolute;
+        left: -32px;
+        top: 32px;
+        content: '';
+        display: block;
+        width: 32px;
+        height: 450px;
+
+        background: linear-gradient(
+            180deg,
+            $pink 0%,
+            $pink 20%,
+            $orange 20%,
+            $orange 40%,
+            $yellow 40%,
+            $yellow 60%,
+            $green 60%,
+            $green 80%,
+            $blue 80%,
+            $blue 100%,
+        );
+    }
+}
+
+
+.triangle-left {
+    position: relative;
+
+    &:before {
+        position: absolute;
+        left: 0;
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: 25px solid transparent;
+        border-left: 32px solid $black;
+        border-bottom: 25px solid transparent;
+    }
+}
+
+.trapezoid-right {
+    position: relative;
+
+    &:after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        content: '';
+        display: block;
+        border-right: 50px solid #000;
+        border-bottom: 25px solid transparent;
+        border-top: 25px solid transparent;
+        height: 80px;
+    }
+}

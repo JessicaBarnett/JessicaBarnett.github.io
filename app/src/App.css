@@ -37,44 +37,85 @@
   font-weight: 100 1000;
   font-stretch: 25% 151%;
 }
-/*
-  We have a selector that can select based on the previous
-  sibling's class...
-
-  .make-the-next-p-different + p {
-    // rules are applied to p tags that are
-    // PRECEEDED by `.make-the-next-p-different`
-  }
-
-  but not one that can select based on the
-  NEXT sibling's class.
-
-  p - .make-the-previous-p-different {
-    // this selector doesn't exist :(
-  }
-
-  this is just a slightly more readable way to do that.
-*/
 /* enforces line heights */
 /**************
-    UTILS
+      GRID
+***************/
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 12fr);
+  grid-gap: 16px;
+}
+.grid > * {
+  grid-column: auto/span 12;
+}
+.grid .half {
+  grid-column: auto/span 6;
+}
+.grid .one-third {
+  grid-column: auto/span 4;
+}
+.grid .two-third {
+  grid-column: auto/span 8;
+}
+
+@media (min-width: 480px) {
+  .grid-at-small {
+    display: grid;
+    grid-template-columns: repeat(12, 12fr);
+    grid-gap: 16px;
+  }
+  .grid-at-small > * {
+    grid-column: auto/span 12;
+  }
+  .grid-at-small .half {
+    grid-column: auto/span 6;
+  }
+  .grid-at-small .one-third {
+    grid-column: auto/span 4;
+  }
+  .grid-at-small .two-third {
+    grid-column: auto/span 8;
+  }
+}
+
+/****************
+    ROOT FONT
+*****************/
+:root {
+  font-size: 1rem;
+  line-height: 1.2rem;
+  background-color: #000;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  color: #000;
+  font-weight: 300;
+}
+@media (min-width: 769px) {
+  :root {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  }
+}
+@media (min-width: 1440px) {
+  :root {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+  }
+}
+
+/**************
+    UTIL
 ***************/
 .text-left {
   text-align: left;
 }
 
 /**************
-    Base HEADINGS and Paragraphs
+    RESETS
 ***************/
 :is(h1, h2, h3, h4, h5, h6, p, em, i) {
   font: inherit;
   margin: 0;
-}
-
-p {
-  font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-weight: 300;
-  margin-bottom: 8px;
 }
 
 /**************
@@ -192,6 +233,74 @@ p {
   align-items: center;
 }
 
+/*
+  We have a selector that can select based on the previous
+  sibling's class...
+
+  .make-the-next-p-different + p {
+    // rules are applied to p tags that are
+    // PRECEEDED by `.make-the-next-p-different`
+  }
+
+  but not one that can select based on the
+  NEXT sibling's class.
+
+  p - .make-the-previous-p-different {
+    // this selector doesn't exist :(
+  }
+
+  this is just a slightly more readable way to do that.
+*/
+/********************
+   WRAPPER ELEMENTS
+*********************/
+.page {
+  background-color: #FFF;
+  width: 100%;
+  color: #000;
+  margin: 0 auto;
+  padding: 4rem 0;
+  max-width: 960px;
+}
+
+/**************
+SECTION
+***************/
+.section-content {
+  max-width: 720px;
+  padding: 0 24px;
+  margin: 0 auto;
+  margin-bottom: 96px;
+}
+
+.section-heading {
+  margin-bottom: 64px;
+}
+
+.section-subheading {
+  margin-bottom: 48px;
+}
+
+/**************
+      ENTRY
+***************/
+.entry {
+  margin-bottom: 32px;
+}
+.entry:has(+ .section-subheading) {
+  margin-bottom: 48px;
+}
+.entry:last-of-type {
+  margin-bottom: 0;
+}
+
+/**************
+   PARAGRAPH
+***************/
+p {
+  margin-bottom: 8px;
+}
+
 /**************
     FORMS
 ***************/
@@ -225,13 +334,7 @@ textarea {
 /**************
     SELECT
 ***************/
-.filter-group label {
-  text-transform: uppercase;
-  letter-spacing: 0.18rem;
-  font-size: 0.7rem;
-  line-height: 0.6rem;
-}
-.filter-group select {
+select {
   font-size: 1rem;
   background-color: #000;
   border: 2px solid #000;
@@ -239,11 +342,7 @@ textarea {
   padding: 4px 32px 4px 8px;
   font-weight: 500;
   letter-spacing: 0.15rem;
-}
-@media (max-width: 480px) {
-  .filter-group select {
-    width: 90%;
-  }
+  width: auto;
 }
 
 /**************
@@ -364,52 +463,9 @@ button {
   color: #FFF;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-.clear {
-  clear: both;
-}
-
-:root {
-  width: 100%;
-  background-color: #000;
-  font-family: "Inter", Arial, Helvetica, sans-serif;
-  color: #000;
-  font-size: 1rem;
-  line-height: 1.2rem;
-}
-@media (min-width: 769px) {
-  :root {
-    font-size: 1.2rem;
-    line-height: 1.4rem;
-  }
-}
-@media (min-width: 1440px) {
-  :root {
-    font-size: 1.6rem;
-    line-height: 1.8rem;
-  }
-}
-
-.page {
-  background-color: #FFF;
-  width: 100%;
-  color: #000;
-  margin: 0 auto;
-  padding: 4rem 1rem;
-  max-width: 960px;
-}
-
-.content {
-  margin: 0 auto;
-  max-width: 720px;
-}
-
-/**************
-   UTILITY
-***************/
+/***********************
+  INDENTS AND OUTDENTS
+************************/
 .nowrap {
   white-space: nowrap;
 }
@@ -430,6 +486,60 @@ button {
   margin-left: 2rem;
 }
 
+/***********************
+  VISUAL FLARE ELEMENTS
+************************/
+.color-bar {
+  position: relative;
+}
+.color-bar:before {
+  position: absolute;
+  left: -32px;
+  top: 32px;
+  content: "";
+  display: block;
+  width: 32px;
+  height: 450px;
+  background: linear-gradient(180deg, #E2006A 0%, #E2006A 20%, #EE6B0F 20%, #EE6B0F 40%, #EBE000 40%, #EBE000 60%, #82A900 60%, #82A900 80%, #0084CE 80%, #0084CE 100%);
+}
+
+.triangle-left {
+  position: relative;
+}
+.triangle-left:before {
+  position: absolute;
+  left: 0;
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-left: 32px solid #000;
+  border-bottom: 25px solid transparent;
+}
+
+.trapezoid-right {
+  position: relative;
+}
+.trapezoid-right:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "";
+  display: block;
+  border-right: 50px solid #000;
+  border-bottom: 25px solid transparent;
+  border-top: 25px solid transparent;
+  height: 80px;
+}
+
+/**************
+    GLOBALS
+***************/
+* {
+  box-sizing: border-box;
+}
+
 /**************
     IMAGES
 ***************/
@@ -437,65 +547,25 @@ img {
   max-width: 100%;
 }
 
-/**************
-    SECTION
-***************/
-section {
-  position: relative;
-  margin-bottom: 96px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(12, 12fr);
-  grid-gap: 16px;
-}
-.grid > * {
-  grid-column-start: span 12;
-}
-.grid .half {
-  grid-column-start: span 6;
-}
-.grid .one-third {
-  grid-column-start: span 4;
-}
-.grid .two-third {
-  grid-column-start: span 8;
-}
-
-.section-heading {
-  margin-bottom: 64px;
-}
-
-.section-subheading {
-  margin-bottom: 48px;
-}
-
-/**************
-    ENTRY
-***************/
-.entry {
-  margin-bottom: 32px;
-}
-.entry:has(+ .section-subheading) {
-  margin-bottom: 48px;
-}
-.entry:last-of-type {
-  margin-bottom: 0;
-}
-
 /*************
-  one off stuff
+  Stuff to clean up and move
 **************/
+.section-projects h3 {
+  text-align: left;
+}
 @media (max-width: 480px) {
   .section-projects h3 {
     margin-bottom: 32px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 480px) {
   .section-projects h3 {
     text-align: right;
+    order: 2;
   }
+}
+.section-projects .filter-group {
+  width: 100%;
 }
 @media (max-width: 480px) {
   .section-projects .filter-group {
@@ -504,15 +574,23 @@ section {
 }
 @media (min-width: 480px) {
   .section-projects .filter-group {
-    position: absolute;
-    top: -8px;
-    right: 0;
+    order: 1;
+    justify-self: start;
   }
 }
-@media (min-width: 769px) {
-  .section-projects .filter-group {
-    left: 0;
+.section-projects .filter-group label {
+  text-transform: uppercase;
+  letter-spacing: 0.18rem;
+  font-size: 0.7rem;
+  line-height: 0.6rem;
+}
+@media (max-width: 480px) {
+  .section-projects .filter-group select {
+    width: 100%;
   }
+}
+.section-projects ol {
+  order: 3;
 }
 
 /*# sourceMappingURL=App.css.map */

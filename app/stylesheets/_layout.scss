@@ -1,0 +1,63 @@
+@use "./variables/colors" as *;
+@use "./variables/globals" as *;
+@use "./utilities/media-queries" as *;
+@use "./utilities/vertical-spacing" as *;
+@use "./utilities/if-next-sibling-has" as *;
+
+/********************
+   WRAPPER ELEMENTS
+*********************/
+
+.page {
+  background-color: $white;
+  width: 100%;
+  color: $black;
+  margin: 0 auto;
+  padding: 4rem 0; // top/bottom only
+  max-width: $page-max-width;
+}
+
+/**************
+SECTION
+***************/
+
+section {}
+
+.section-content {
+  max-width: 720px; // "max readable width" ?
+  padding: 0 24px;
+  margin: 0 auto;
+  @include vertical-spacing("section");
+}
+
+.section-heading {
+  @include vertical-spacing("section-heading");
+}
+
+.section-subheading {
+  @include vertical-spacing("section-subheading");
+}
+
+/**************
+      ENTRY
+***************/
+
+.entry {
+  @include vertical-spacing("entry");
+
+  @include if-next-sibling-has(".section-subheading") {
+    @include vertical-spacing("section-subheading");
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+/**************
+   PARAGRAPH
+***************/
+
+p {
+    @include vertical-spacing('paragraph');
+}
