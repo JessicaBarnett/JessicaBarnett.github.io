@@ -1,4 +1,5 @@
 @use "./variables/colors" as *;
+@use "./utilities/media-queries" as *;
 
 /***********************
   INDENTS AND OUTDENTS
@@ -6,6 +7,15 @@
 
 .nowrap {
   white-space: nowrap;
+}
+
+.indent-64 {
+    margin-left: 32px;
+    margin-right: 48px;
+
+    @include only-above($small-bp) {
+        margin-left: 64px;
+    }
 }
 
 .outdent-1 {
@@ -29,48 +39,48 @@
   VISUAL FLARE ELEMENTS
 ************************/
 
+.made-with-love {
+    border-bottom: 3px solid $black;
+    padding: 8px;
+}
+
 .color-bar {
     position: relative;
 
     &:before {
         position: absolute;
-        left: -32px;
+        left: 0;
         top: 32px;
         content: '';
         display: block;
         width: 32px;
         height: 450px;
-
-        background: linear-gradient(
-            180deg,
-            $pink 0%,
-            $pink 20%,
-            $orange 20%,
-            $orange 40%,
-            $yellow 40%,
-            $yellow 60%,
-            $green 60%,
-            $green 80%,
-            $blue 80%,
-            $blue 100%,
-        );
+        background: $rainbow-gradient-horiz
     }
 }
 
+@mixin trapezoid($orientation: 'left', $btm-width, $height, $top-width: 0px) {
+        position: absolute;
+        content: '';
+        display: block;
+        height: $top-width; // set this to 0 for a triangle
+        border-top: $height solid transparent;
+        border-bottom: $height solid transparent;
+
+        @if $orientation == 'left' {
+            border-left: $btm-width solid $black;
+        }
+
+        @if $orientation == 'right' {
+            border-right: $btm-width solid $black;
+        }
+}
 
 .triangle-left {
     position: relative;
 
     &:before {
-        position: absolute;
-        left: 0;
-        content: '';
-        display: block;
-        width: 0;
-        height: 0;
-        border-top: 25px solid transparent;
-        border-left: 32px solid $black;
-        border-bottom: 25px solid transparent;
+        @include trapezoid('left', 32px, 25px);
     }
 }
 
@@ -78,14 +88,27 @@
     position: relative;
 
     &:after {
-        position: absolute;
-        top: 0;
+        @include trapezoid('right', 50px, 25px, 80px);
+        top: -45px;
         right: 0;
-        content: '';
-        display: block;
-        border-right: 50px solid #000;
-        border-bottom: 25px solid transparent;
-        border-top: 25px solid transparent;
-        height: 80px;
+    }
+}
+
+
+.trapezoid-hug {
+    position: relative;
+
+    &:before {
+        @include trapezoid('left', 30px, 15px, 300px);
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+
+    &:after {
+        @include trapezoid('right', 30px, 15px, 300px);
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
     }
 }

@@ -9,31 +9,28 @@
 *****************/
 
 :root {
-    @include font-size(1rem);
-    background-color: $black;
-    font-family: $primary-font;
-    color: $black;
-    font-weight: 300;
+  @include font-size(1rem);
+  background-color: $black;
+  font-family: $primary-font;
+  color: $black;
+  font-weight: 300;
 
-    @include only-above($medium-bp) {
-      @include font-size(1.2rem);
-    }
-
-    @include only-above($extra-wide-bp) {
-      @include font-size(1.6rem);
-    }
+  @include only-above($medium-bp) {
+    @include font-size(1.2rem);
   }
 
-
+  @include only-above($extra-wide-bp) {
+    @include font-size(1.6rem);
+  }
+}
 
 /**************
     UTIL
 ***************/
 
 .text-left {
-    text-align: left;
+  text-align: left;
 }
-
 
 /**************
     RESETS
@@ -41,8 +38,8 @@
 
 // resets for standard text elements
 :is(h1, h2, h3, h4, h5, h6, p, em, i) {
-    font: inherit;
-    margin: 0;
+  font: inherit;
+  margin: 0;
 }
 
 /**************
@@ -50,13 +47,13 @@
 ***************/
 
 @mixin title {
-    font-family: $primary-font;
-    font-weight: 700;
+  font-family: $primary-font;
+  font-weight: 700;
 }
 
 @mixin subtitle {
-    font-family: $primary-font;
-    font-weight: 500;
+  font-family: $primary-font;
+  font-weight: 500;
 }
 
 /*
@@ -65,16 +62,16 @@
 */
 
 .title-1 {
-    @include font-size(3.4rem);
-    @include title;
-    letter-spacing: 0.05rem; // unique to page title
+  @include font-size(3.4rem);
+  @include title;
+  letter-spacing: 0.05rem; // unique to page title
 }
 
 .subtitle-1 {
-    @include font-size(1.2rem);
-    @include subtitle;
-    letter-spacing: 0.1rem; // unique to page title
-    margin-top: 0.3rem;
+  @include font-size(1.2rem);
+  @include subtitle;
+  letter-spacing: 0.1rem; // unique to page title
+  margin-top: 0.3rem;
 }
 
 /*
@@ -84,16 +81,16 @@
 */
 
 .title-2 {
-    @include font-size(2.6rem);
-    @include title;
+  @include font-size(2.6rem);
+  @include title;
 }
 
 .subtitle-2 {
-    @include font-size(1.2rem);
-    text-align: center;
-    font-family: $primary-font;
-    letter-spacing: 0.5rem;
-    text-transform: uppercase;
+  @include font-size(1.2rem);
+  text-align: center;
+  font-family: $primary-font;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
 }
 
 /*
@@ -103,20 +100,20 @@
 */
 
 .title-3 {
-    @include title;
-    @include font-size(1.4rem);
+  @include title;
+  @include font-size(1.4rem);
 }
 
 .supertitle-3 {
-    @include title;
-    @include font-size(1rem);
-    font-style: italic
+  @include title;
+  @include font-size(1rem);
+  font-style: italic;
 }
 
 .subtitle-3 {
-    @include subtitle;
-    @include font-size(1.2rem);
-    font-style: italic;
+  @include subtitle;
+  @include font-size(1.2rem);
+  font-style: italic;
 }
 
 /*
@@ -125,34 +122,35 @@
 
 // Hello.
 .deco-font-1 {
-    @include font-size(3.2rem);
-    @include title;
-    line-height: 3rem; // unique
-    font-weight: 700;
+  @include font-size(3.2rem);
+  @include title;
+  line-height: 3rem; // unique
+  font-weight: 700;
 }
 
 // My name is...
 .deco-font-2 {
-    @include font-size(1.2rem);
-    line-height: 1.8rem; // unique
+  @include font-size(1.2rem);
+  line-height: 1.8rem; // unique
 }
 
 // thanks for...
 .deco-font-3 {
-    @include font-size(1.4rem);
+  @include font-size(1.4rem);
 }
-
 
 /**************
      ICONS
 ***************/
 
 .icon-sm {
-    max-width: 30px;
+  max-width: 24px;
+  filter: invert(0);
 }
 
 .icon-lg {
-    max-width: 60px;
+  max-width: 45px;
+  margin: 8px;
 }
 
 /**************
@@ -161,8 +159,32 @@
 
 a {}
 
+/***************/
+/**   LINKS   **/
+/***************/
+
+.link {
+  margin-right: 16px;
+}
+
+.link::before {
+  content: '';
+  background: url('assets/icons/link-solid.svg') no-repeat;
+  display: inline-block;
+  height: 12px;
+  width: 16px;
+}
+
 
 .social-link {
-    display: flex;
-    align-items: center;
+  @include font-size(1.2rem);
+  display: flex;
+  align-items: center;
+  color: $black;
+  font-weight: 700;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

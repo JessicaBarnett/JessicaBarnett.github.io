@@ -1,0 +1,419 @@
+{
+    "filters": [
+        {
+            "name": "Testing",
+            "grouping": "testing"
+        },
+        {
+            "name": "AWS",
+            "grouping": "aws"
+        },
+        {
+            "name": "Tools",
+            "grouping": "tools"
+        },
+        {
+            "name": "Javascript",
+            "grouping": "javascript"
+        },
+        {
+            "name": "React",
+            "grouping": "react"
+        },
+        {
+            "name": "Angular",
+            "grouping": "angular"
+        },
+        {
+            "name": "Databases",
+            "grouping": "databases"
+        },
+        {
+            "name": "3rd Party Tools",
+            "grouping": "3rdpty"
+        },
+        {
+            "name": "CMS",
+            "grouping": "cms"
+        },
+        {
+            "name": "Ruby/Rails",
+            "grouping": "ror"
+        }
+    ],
+    "projects": [
+        {
+            "title": "Service Load Testing",
+            "description": "Performed large-scale Load tests on our SSO Api and our Form APIs, automating up to 500k user sessions across 3 small servers.",
+            "company": "Relay Network",
+            "tags": [
+                {
+                    "name": "Locust",
+                    "grouping": "testing"
+                },
+                {
+                    "name": "AWS ECS",
+                    "grouping": "aws"
+                },
+                {
+                    "name": "Bash/Zsh",
+                    "grouping": "tools"
+                }
+            ]
+        },
+        {
+            "title": "\"Power Ups\" Forms Integration API",
+            "description": "Worked with team to build a feature enabling businesses to configure forms to send to their customer's phones, along with monitoring and data management/reporting tools.",
+            "company": "Relay Network",
+            "tags": [
+                {
+                    "name": "Javascript",
+                    "grouping": "javascript"
+                },
+                {
+                    "name": "React",
+                    "grouping": "react"
+                },
+                {
+                    "name": "Node",
+                    "grouping": "node"
+                },
+                {
+                    "name": "AWS ECS",
+                    "grouping": "aws"
+                },
+                {
+                    "name": "Postgres/SQL",
+                    "grouping": "databases"
+                },
+                {
+                    "name": "CSS",
+                    "grouping": "css"
+                },
+                {
+                    "name": "HTML",
+                    "grouping": "html"
+                }
+            ]
+        },
+        {
+            "title": "Two Way Chat v2.0",
+            "description": "Collaboratively took the two-way chat pilot from tiny and fragile to hardened and reliable. Migrated all backend code from clojure to node, migrated data to a small self-contained postgres instance, and added customer-facing chat ui to the newly rebuilt feed app.",
+            "company": "Relay Network",
+            "tags": [
+                {
+                    "name": "Typescript",
+                    "grouping": "javascript"
+                },
+                {
+                    "name": "React",
+                    "grouping": "react"
+                },
+                {
+                    "name": "Node",
+                    "grouping": "node"
+                },
+                {
+                    "name": "AWS ECS",
+                    "grouping": "aws"
+                },
+                {
+                    "name": "Postgres/SQL",
+                    "grouping": "databases"
+                },
+                {
+                    "name": "Twilio",
+                    "grouping": "3rdpty"
+                }
+            ]
+        },
+        {
+            "title": "Relay Feed v3.0",
+            "description": "Collaborated with team to completely rebuild Relay's customer-facing "social feed for businesses" app, with a completely new stack and design.",
+            "company": "Relay Network",
+            "tags": [
+                {
+                    "name": "Typescript",
+                    "grouping": "javascript"
+                },
+                {
+                    "name": "React",
+                    "grouping": "react"
+                },
+                {
+                    "name": "Node",
+                    "grouping": "node"
+                }
+            ]
+        },
+        {
+            "title": "CXBuilder SSO Api",
+            "description": "Developed a feature to allow business clients to log into Relay's product via sso, and was responsible for client communications about sso setup for a full year.",
+            "company": "Relay Network",
+            "tags": [
+                {
+                    "name": "Typescript",
+                    "grouping": "javascript"
+                },
+                {
+                    "name": "Angular",
+                    "grouping": "angular"
+                },
+                {
+                    "name": "Node",
+                    "grouping": "node"
+                },
+                {
+                    "name": "AWS ECS",
+                    "grouping": "aws"
+                },
+                {
+                    "name": "AWS Cognito",
+                    "grouping": "aws"
+                }
+            ]
+        },
+        {
+            "title": "File Engine Jobs Dashboard",
+            "description": "TBA",
+            "company": "Relay Network",
+            "tags": [
+                {
+                    "name": "Typescript",
+                    "grouping": "javascript"
+                },
+                {
+                    "name": "Angular",
+                    "grouping": "angular"
+                },
+                {
+                    "name": "CSS/Scss",
+                    "grouping": "css"
+                }
+            ]
+        },
+        {
+            "title": "Two Way Chat Pilot",
+            "description": "Worked with team to build a complex chat feature in 2 months. Contributed roughly 50% of the Angular code, and collaborated closely with product reps and clojure engineers on both API and Visual design.",
+            "company": "Relay Network",
+            "tags": [
+                {
+                    "name": "Typescript",
+                    "grouping": "javascript"
+                },
+                {
+                    "name": "Angular",
+                    "grouping": "angular"
+                },
+                {
+                    "name": "Twilio",
+                    "grouping": "3rdpty"
+                }
+            ]
+        },
+        {
+            "title": "PDF Preview Feature",
+            "description": "TBA",
+            "company": "Relay Network",
+            "tags": [
+                {
+                    "name": "Typescript",
+                    "grouping": "javascript"
+                },
+                {
+                    "name": "Angular",
+                    "grouping": "angular"
+                },
+                {
+                    "name": "CSS/Scss",
+                    "grouping": "css"
+                },
+                {
+                    "name": "AWS Lambda",
+                    "grouping": "aws"
+                }
+            ]
+        },
+        {
+            "title": "Relay Feed Accessibility Audit",
+            "description": "Ran an accessibility audit on our customer-facing Feed application.  Identified and implemented a number of fixes including adding alt text to uploaded images, revamping the mobile navigation, and using aria tags much more liberally.",
+            "company": "Relay Network",
+            "tags": [
+                {
+                    "name": "Typescript",
+                    "grouping": "javascript"
+                },
+                {
+                    "name": "Angular",
+                    "grouping": "angular"
+                },
+                {
+                    "name": "CSS/Scss",
+                    "grouping": "css"
+                }
+            ]
+        },
+        {
+            "title": "Relay Company Website v2.0",
+            "description": "Worked with a small 3 person team to completely overhaul Relay's old company site.  We gave it a fresh and beautiful new design, new branding, and made it far easier for marketing to develop content for it going forward.",
+            "company": "Relay Network",
+            "tags": [
+                {
+                    "name": "Javascript",
+                    "grouping": "javascript"
+                },
+                {
+                    "name": "Craft CMS",
+                    "grouping": "cms"
+                },
+                {
+                    "name": "CSS/Scss",
+                    "grouping": "css"
+                },
+                {
+                    "name": "HTML/twig",
+                    "grouping": "html"
+                },
+                {
+                    "name": "AWS codepipeline",
+                    "grouping": "aws"
+                }
+            ]
+        },
+        {
+            "title": "The Bouqs",
+            "description": "TBA",
+            "company": "Weblinc Ecommerce",
+            "tags": [
+                {
+                    "name": "Javascript",
+                    "grouping": "javascript"
+                },
+                {
+                    "name": "JQuery",
+                    "grouping": "javascript"
+                },
+                {
+                    "name": "CSS/Scss",
+                    "grouping": "css"
+                },
+                {
+                    "name": "HTML/haml",
+                    "grouping": "html"
+                },
+                {
+                    "name": "Ruby/Rails",
+                    "grouping": "ror"
+                }
+            ]
+        },
+        {
+            "title": "The Bouqs",
+            "description": "TBA",
+            "company": "Weblinc Ecommerce",
+            "tags": [
+                {
+                    "name": "Javascript",
+                    "grouping": "javascript"
+                },
+                {
+                    "name": "JQuery",
+                    "grouping": "jquery"
+                },
+                {
+                    "name": "CSS/Scss",
+                    "grouping": "css"
+                },
+                {
+                    "name": "HTML/haml",
+                    "grouping": "html"
+                },
+                {
+                    "name": "Ruby/Rails",
+                    "grouping": "ror"
+                }
+            ]
+        },
+        {
+            "title": "Woodcraft & Japan Woodworker",
+            "description": "Contributed half of the front-end code for Woodcraft's initial build, and then took over front-end leadership of new feature work on the project. Led the development of a reskin of the same app to showcase their more upscale tool brand, Japan Woodworker.",
+            "company": "Weblinc Ecommerce",
+            "tags": [
+                {
+                    "name": "Javascript",
+                    "grouping": "javascript"
+                },
+                {
+                    "name": "JQuery",
+                    "grouping": "jquery"
+                },
+                {
+                    "name": "CSS/Scss",
+                    "grouping": "css"
+                },
+                {
+                    "name": "HTML/haml",
+                    "grouping": "html"
+                },
+                {
+                    "name": "Ruby/Rails",
+                    "grouping": "ror"
+                }
+            ]
+        },
+        {
+            "title": "Rachel Roy",
+            "description": "Led new feature development on an existing website.",
+            "company": "Weblinc Ecommerce",
+            "tags": [
+                {
+                    "name": "Javascript",
+                    "grouping": "javascript"
+                },
+                {
+                    "name": "JQuery",
+                    "grouping": "jquery"
+                },
+                {
+                    "name": "CSS/Scss",
+                    "grouping": "css"
+                },
+                {
+                    "name": "HTML/haml",
+                    "grouping": "html"
+                },
+                {
+                    "name": "Ruby/Rails",
+                    "grouping": "ror"
+                }
+            ]
+        },
+        {
+            "title": "Mint Julep",
+            "description": "Built features for a fun and lively fashion brand.",
+            "company": "Weblinc Ecommerce",
+            "tags": [
+                {
+                    "name": "Javascript",
+                    "grouping": "javascript"
+                },
+                {
+                    "name": "JQuery",
+                    "grouping": "jquery"
+                },
+                {
+                    "name": "CSS/Scss",
+                    "grouping": "css"
+                },
+                {
+                    "name": "HTML/haml",
+                    "grouping": "html"
+                },
+                {
+                    "name": "Ruby/Rails",
+                    "grouping": "ror"
+                }
+            ]
+        }
+    ]
+}

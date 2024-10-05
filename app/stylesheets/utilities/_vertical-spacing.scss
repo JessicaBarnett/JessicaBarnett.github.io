@@ -11,5 +11,5 @@ $vertical-spacing-levels: (
 );
 
 @mixin vertical-spacing($vertical-spacing-level: 'section-heading') {
-    margin-bottom: map.get($vertical-spacing-levels, $vertical-spacing-level);
+    padding-bottom: map.get($vertical-spacing-levels, $vertical-spacing-level);
 }

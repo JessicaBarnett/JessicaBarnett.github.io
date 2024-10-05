@@ -29,6 +29,18 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
+
 /**************
     IMAGES
 ***************/
@@ -37,12 +49,37 @@ img {
   max-width: 100%;
 }
 
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
 
 /*************
   Stuff to clean up and move
 **************/
 
+.section-title {
+  // background: $rainbow-gradient-vert  calc(100% - 6rem) 100% / 3rem 100% no-repeat;
+}
+
+.section-about {
+
+  // border-style: solid;
+  // border-width: 3rem;
+  // border-bottom: 60px solid;
+  // border-image: $rainbow-gradient-horiz 1 100%;
+}
+
 .section-projects {
+  // background: $rainbow-gradient-vert left / 3rem no-repeat,
+  //             $rainbow-gradient-vert right / 3rem no-repeat,
+  //             $rainbow-gradient-horiz top / 100% 60px no-repeat;
+
+
   h3 {
     text-align: left;
 
@@ -50,13 +87,11 @@ img {
       margin-bottom: 32px;
     }
 
-
     @include only-above($small-bp) {
       text-align: right;
       order: 2;
     }
   }
-
 
   // util class?
   .filter-group {
@@ -87,5 +122,12 @@ img {
 
   ol {
     order: 3;
+  }
+}
+
+.section-resume {
+  ol {
+    max-width: 70%;
+    margin: 0 auto;
   }
 }
