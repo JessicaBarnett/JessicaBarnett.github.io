@@ -448,20 +448,6 @@ button {
   background-color: transparent;
 }
 
-.btn-1 {
-  border: 2px solid #000;
-  border-radius: 3px;
-  padding: 2px 4px;
-  margin: 2px;
-  font-weight: 600;
-  font-size: 1.2rem;
-  line-height: 1.4rem;
-}
-.btn-1:hover {
-  background-color: #000;
-  color: #FFF;
-}
-
 .btn-1-inverted {
   border: 2px solid #FFF;
   border-radius: 3px;
@@ -472,6 +458,20 @@ button {
 .btn-1-inverted:hover {
   background-color: #FFF;
   color: #000;
+}
+
+.btn-1 {
+  border: 2px solid #000;
+  border-radius: 3px;
+  padding: 2px 4px;
+  margin: 2px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+}
+.btn-1:hover, .btn-1.selected {
+  background-color: #000;
+  color: #FFF;
 }
 
 .btn-2 {
@@ -676,7 +676,7 @@ img {
     width: 100%;
   }
 }
-.section-projects ol {
+.section-projects h4, .section-projects ul {
   order: 3;
 }
 

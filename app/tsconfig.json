@@ -2,9 +2,13 @@
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+    // { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
     "paths": {
       /* Remember to add new aliases to Vite.config as well */
       "@data/*": ["./data/*"],

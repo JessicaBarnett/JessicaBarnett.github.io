@@ -1,6 +1,19 @@
+import { useState } from "react";
 import "./App.css";
+import * as data from '../data/data.json';
+import ProjectList from "./components/ProjectList";
+import { ProjectT, TechTagFilterT } from "./types/types";
+
+type ProjectsByCompanyT = {
+  [key: string]: ProjectT[]
+}
+
 
 function App() {
+  const projectsByCompany = Object.groupBy(data.projects as ProjectT[], ({ company }) => company) as ProjectsByCompanyT;
+  const filters: TechTagFilterT[] = data.techTagFilters;
+  const [selectedTags, setSelectedTags] = useState([]);
+
   return (
     <>
       <canvas id="canvas"></canvas>
@@ -34,335 +47,25 @@ function App() {
         <section className="section-projects">
           <div className="section-content grid-at-small">
             <h3 className="section-heading title-2 half">Projects</h3>
+
             <div className="filter-group half">
               <label htmlFor="filterProjects">Filter</label>
               <select
-                className="clear"
                 name="filterProjects"
                 id="filterProjects"
+                value={selectedTags}
+                onChange={(e) => setSelectedTags(e.target.value.split(','))}
               >
-                <option selected>Filter</option>
-                <option value="javascript">Javascript</option>
-                <option value="typescript">Typescript</option>
-                <option value="react">React</option>
-                <option value="angular">Angular</option>
-                <option value="node">Node</option>
-                <option value="aws">AWS</option>
-                <option value="rails">Ruby/Rails</option>
-                <option value="pgsql">Postgres/SQL</option>
-                <option value="twilio">Twilio</option>
-                <option value="jquery">JQuery</option>
-                <option value="css">CSS/SCSS</option>
-                <option value="html">Html</option>
+                <option value="">Filter</option>
+                { filters.map(filter => (
+                  <option value={filter.tags.join(',')}>{filter.displayName}</option>
+                ))}
               </select>
             </div>
 
-            <ol>
-              <h4 className="section-subheading subtitle-2">Relay Network</h4>
+            <ProjectList heading="Relay Network" projects={projectsByCompany['Relay Network']} selectedTags={selectedTags}></ProjectList>
+            <ProjectList heading="Weblinc Ecommerce" projects={projectsByCompany['Weblinc Ecommerce']} selectedTags={selectedTags}></ProjectList>
 
-              <li className="entry">
-                <h5 className="title-3">Service Load Testing</h5>
-                <p>
-                  Performed large-scale Load tests on our SSO Api and our Forms
-                  APIs, automating up to 500k user sessions across 3 small
-                  servers.
-                </p>
-                <button className="btn-1 filter-projects" type="button">
-                  Locust
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  AWS EC2
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  Bash/Zsh
-                </button>
-              </li>
-
-              <li className="entry">
-                <h5 className="title-3">"Power Ups" Forms Integration API</h5>
-                <p>
-                  Worked with team to build a feature enabling businesses to
-                  configure forms to send to their customer's phones, along with
-                  monitoring and data management/reporting tools.
-                </p>
-                <button className="btn-1 filter-projects" type="button">
-                  Javascript
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  React
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  Node
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  AWS ECS
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  Postgres/SQL
-                </button>
-              </li>
-
-              <li className="entry">
-                <h5 className="title-3">Two Way Chat v2.0</h5>
-                <p>
-Collaboratively took the two-way chat pilot from tiny and fragile to hardened and reliable. Migrated all backend code from clojure to node, migrated data to a small self-contained postgres instance, and added customer-facing chat ui to the newly rebuilt feed app.
-                </p>
-                <button className="btn-1 filter-projects" type="button">
-                  Typescript
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  React
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  Node
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  Twilio
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  AWS ECS
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  Postgres/SQL
-                </button>
-              </li>
-
-              {/* START Project Component */}
-              <li className="entry">
-                <h5 className="title-3">Relay Feed v3.0</h5>
-                <p>
-Collaborated with team to completely rebuild Relay's customer-facing "social feed for businesses" app, with a completely new stack and design.
-                </p>
-                <button className="btn-1 filter-projects" type="button">
-                  Javascript
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  React
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  Node
-                </button>
-              </li>
-              {/* END Project Component */}
-
-              <li className="entry">
-                <h5 className="title-3">CXBuilder SSO Api</h5>
-                <p>
-Developed a feature to allow business clients to log into Relay's product via sso, and was responsible for client communications about sso setup for a full year.
-                </p>
-                <button className="btn-1 filter-projects" type="button">
-                  Angular
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  Typescript
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  Node
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  AWS ECS
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  AWS Cognito
-                </button>
-              </li>
-
-              <li className="entry">
-                <h5 className="title-3">File Engine Jobs Dashboard</h5>
-                <p>TBA</p>
-                <button className="btn-1 filter-projects" type="button">
-                  Angular
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  Typescript
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  CSS/SCSS
-                </button>
-              </li>
-
-              <li className="entry">
-                <h5 className="title-3">Two Way Chat Pilot</h5>
-                <p>
-Worked with team to build a complex chat feature in 2 months. Contributed roughly 50% of the Angular code, and collaborated closely with product reps and clojure engineers on both API and Visual design.
-                </p>
-                <button className="btn-1 filter-projects" type="button">
-                  Typescript
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  Angular
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  Twilio
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  Clojure
-                </button>
-              </li>
-
-              <li className="entry">
-                <h5 className="title-3">PDF Preview Feature</h5>
-                <p>TBA</p>
-                <button className="btn-1 filter-projects" type="button">
-                  Angular
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  Typescript
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  CSS/SCSS
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  AWS Lambda
-                </button>
-              </li>
-
-              <li className="entry">
-                <h5 className="title-3">Relay Feed Accessibility Audit</h5>
-                <p>Ran an accessibility audit on our customer-facing Feed application.  Identified and implemented a number of fixes including adding alt text to uploaded images, revamping the mobile navigation, and using aria tags much more liberally.</p>
-                <button className="btn-1 filter-projects" type="button">
-                  Angular
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  Typescript
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  CSS/SCSS
-                </button>
-              </li>
-
-              <li className="entry">
-                <h5 className="title-3">Relay Company Website v2.0</h5>
-                <p>Worked with a small 3 person team to completely overhaul Relay's old company site.  We gave it a fresh and beautiful new design, new branding, and made it far easier for marketing to develop content for it going forward.</p>
-                <button className="btn-1 filter-projects" type="button">
-                  Craft CMS
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  Javascript
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  HTML/Twig
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  CSS/SCSS
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  AWS
-                </button>
-              </li>
-
-              <h4 className="section-subheading subtitle-2">
-                Weblinc Ecommerce
-              </h4>
-
-              <li className="entry">
-                <h5 className="title-3">The Bouqs</h5>
-                <p>
-                  TBA
-                </p>
-                <button className="btn-1 filter-projects" type="button">
-                  Javascript
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  JQuery
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  Ruby/Rails
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  HTML/Haml
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  CSS/SCSS
-                </button>
-              </li>
-
-              <li className="entry">
-                <h5 className="title-3">Woodcraft & Japan Woodworker</h5>
-                <p>
-Contributed half of the front-end code for Woodcraft's initial build, and then took over front-end leadership of new feature work on the project. Led the development of a reskin of the same app to showcase their more upscale tool brand, Japan Woodworker.
-                </p>
-                <button className="btn-1 filter-projects" type="button">
-                  Javascript
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  JQuery
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  Ruby/Rails
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  HTML/Haml
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  CSS/SCSS
-                </button>
-              </li>
-
-              <li className="entry">
-                <h5 className="title-3">Rachel Roy</h5>
-                <p>Led new feature development on an existing website.</p>
-                <button className="btn-1 filter-projects" type="button">
-                  Javascript
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  JQuery
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  Ruby/Rails
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  HTML/Haml
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  CSS/SCSS
-                </button>
-              </li>
-
-              <li className="entry">
-                <h5 className="title-3">Full Beauty</h5>
-                <p>
-A massive new website for a venerable brand offering a huge variety of plus-size apparel. I contributed the vast majority of the front-end code to this project.
-                </p>
-                <button className="btn-1 filter-projects" type="button">
-                  Javascript
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  JQuery
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  Ruby/Rails
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  HTML/Haml
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  CSS/SCSS
-                </button>
-              </li>
-
-              <li className="entry">
-                <h5 className="title-3">Mint Julep</h5>
-                <p>
-                  Built small features for a fun and lively southern-us-focused fashion brand.
-                </p>
-                <button className="btn-1 filter-projects" type="button">
-                  Javascript
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  JQuery
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  Ruby/Rails
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  HTML/Haml
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  CSS/SCSS
-                </button>
-              </li>
-            </ol>
           </div>
         </section>
 
