@@ -8,11 +8,12 @@ type ProjectsByCompanyT = {
   [key: string]: ProjectT[]
 }
 
-
 function App() {
   const projectsByCompany = Object.groupBy(data.projects as ProjectT[], ({ company }) => company) as ProjectsByCompanyT;
   const filters: TechTagFilterT[] = data.techTagFilters;
-  const [selectedTags, setSelectedTags] = useState([]);
+  const [selectedFilter, setSelectedFilter] = useState<TechTagFilterT|undefined>();
+
+  const selectFilterByName = (name: string) => filters.find((filter) => filter.name === name)
 
   return (
     <>
@@ -53,18 +54,19 @@ function App() {
               <select
                 name="filterProjects"
                 id="filterProjects"
-                value={selectedTags}
-                onChange={(e) => setSelectedTags(e.target.value.split(','))}
-              >
+                value={selectedFilter?.name ?? undefined}
+                onChange={(e) => (
+                  setSelectedFilter(selectFilterByName(e.target.value))
+                )}>
                 <option value="">Filter</option>
                 { filters.map(filter => (
-                  <option value={filter.tags.join(',')}>{filter.displayName}</option>
+                  <option value={filter.name} data-tags={filter.tags}>{filter.displayName}</option>
                 ))}
               </select>
             </div>
 
-            <ProjectList heading="Relay Network" projects={projectsByCompany['Relay Network']} selectedTags={selectedTags}></ProjectList>
-            <ProjectList heading="Weblinc Ecommerce" projects={projectsByCompany['Weblinc Ecommerce']} selectedTags={selectedTags}></ProjectList>
+            <ProjectList heading="Relay Network" projects={projectsByCompany['Relay Network']} selectedTags={selectedFilter?.tags ?? []}></ProjectList>
+            <ProjectList heading="Weblinc Ecommerce" projects={projectsByCompany['Weblinc Ecommerce']} selectedTags={selectedFilter?.tags ?? []}></ProjectList>
 
           </div>
         </section>

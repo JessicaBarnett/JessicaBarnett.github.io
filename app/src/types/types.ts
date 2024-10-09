@@ -13,5 +13,6 @@ export type ProjectT = {
 
 export type TechTagFilterT = {
     displayName: string,
+    name: string,
     tags: string[]
 };

@@ -2,55 +2,68 @@
     "techTagFilters": [
         {
             "displayName": "Testing",
-            "tags": ["testing", "jest", "jasmine", "karma", "locust", "load-testing"]
+            "name": "testing",
+            "tags": ["jest", "jasmine", "karma", "locust", "load-testing"]
         },
         {
             "displayName": "AWS",
-            "tags": ["aws", "aws-ec2", "aws-ecs", "aws-cognito", "aws-lambda", "aws-codepipeline"]
+            "name": "aws",
+            "tags": ["aws-ec2", "aws-ecs", "aws-cognito", "aws-lambda", "aws-codepipeline"]
         },
         {
             "displayName": "Tools",
-            "tags": ["tools", "zsh", "bash"]
+            "name": "tools",
+            "tags": ["zsh", "bash"]
         },
         {
             "displayName": "Javascript",
+            "name": "javascript",
             "tags": ["javascript", "typescript", "angular", "react", "jquery", "node"]
         },
         {
             "displayName": "Typescript",
+            "name": "typescript",
             "tags": ["typescript"]
         },
         {
             "displayName": "Node",
+            "name": "node",
             "tags": ["node"]
         },
         {
             "displayName": "React/JSX",
+            "name": "react",
             "tags": ["react"]
         },
         {
             "displayName": "Angular",
+            "name": "angular",
             "tags": ["angular"]
         },
         {
             "displayName": "Databases",
-            "tags": ["databases", "pgsql", "redis", "mongodb"]
+            "name": "databases",
+            "tags": ["pgsql", "redis", "mongodb"]
         },
         {
             "displayName": "Integrations",
-            "tags": ["3rdpty", "twilio", "jotform"]
+            "name": "integrations",
+            "tags": ["twilio", "jotform"]
         },
         {
             "displayName": "CMS",
-            "tags": ["cms", "craft", "wordpress"]
+            "name": "cms",
+            "tags": ["craft", "wordpress"]
         },
         {
             "displayName": "HTML",
+            "name": "html",
             "tags": ["html", "haml", "twig", "react", "angular"]
         },
         {
             "displayName": "Ruby/Rails",
-            "tags": ["rails", "ror"]
+            "name": "rails",
+            "tags": ["rails"]
         }
     ],
     "projects": [

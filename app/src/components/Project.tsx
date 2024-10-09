@@ -1,11 +1,20 @@
 import { ProjectT } from "../types/types";
 
+/*
+ import this hook:
+   const [selectedTags, setSelectedTags] = useState([]);
+   update it when button is clicked
+ */
+
+
 type ProjectComponentProps = {
   project: ProjectT,
   selectedTags: string[]
 };
 
 const Project = ({project, selectedTags}: ProjectComponentProps) => {
+  // const [selectedTags, setSelectedTags] = useState([]);
+
   return (
     <>
       <h5 className="title-3">{project.title}</h5>
@@ -17,6 +26,7 @@ const Project = ({project, selectedTags}: ProjectComponentProps) => {
             selectedTags.find(tagStr => tagStr === tag.name) ? "selected" : ""
           }`}
           type="button"
+          onClick={(e) => { /*  update selectedTag state to equal    */ }}
         >
           {tag.displayName}
         </button>
