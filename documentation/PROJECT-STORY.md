@@ -135,8 +135,9 @@ As in all things, balance is of the utmost importance.
 
 Css Grid is a thing of beauty.  I'm so glad browser support is where it is now.  My entire career is about as old as `display: grid;`, and it's nice to FINALLY be able to put it through its paces.  I've been very pleased with its flexibility thus far.
 
-I have a sandbox on codepen that I've been referencing and tweaking a lot lately. https://codepen.io/GreatPumpkin/pen/vYBjpyG
+I have a sandbox on codepen that I've been referencing and tweaking a lot. https://codepen.io/GreatPumpkin/pen/vYBjpyG
 
 
 - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Realizing_common_layouts_using_grids
 - https://css-tricks.com/svg-line-animation-works/
+

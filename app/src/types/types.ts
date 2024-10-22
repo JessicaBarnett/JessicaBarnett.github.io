@@ -1,4 +1,4 @@
-export type TechTagT = {
+export type TagT = {
     displayName?: string,
     name: string
 };
@@ -8,12 +8,19 @@ export type ProjectT = {
     title: string,
     description: string,
     company: string,
-    tags: TechTagT[],
+    tags: TagT[],
 };
 
-export type TechTagFilterT = {
+export type FilterT = {
     displayName: string,
     name: string,
-    tags: TechTagT[]
+    tags: TagT[]
 };
 
+export type ExperienceEntryT = {
+    title: string,
+    company: string,
+    start: string,
+    end: string,
+    tags: string[]
+};

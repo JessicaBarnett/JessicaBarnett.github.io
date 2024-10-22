@@ -3,16 +3,14 @@
  *
  */
 import { useState, useEffect } from "react";
-import { ProjectT, TechTagFilterT, TechTagT } from "../types/types";
-import { useSelectedFilter } from "./useSelectedFilter";
+import { ProjectT, FilterT, TagT } from "../types/types";
 
 type ProjectsByCompanyT = {
   [key: string]: ProjectT[];
 };
 
 type UseFilteredProjectsReturnT = [
-  ProjectsByCompanyT,
-  (filter: string | undefined) => void
+  ProjectsByCompanyT
 ];
 
 /**
@@ -28,12 +26,12 @@ const groupProjectsByCompany = (projects: ProjectT[]) => {
 /**
  * Returns a map of just names
  */
-const toNames = (list: TechTagFilterT[] | TechTagT[]) => list.map((item) => item.name)
+const toNames = (list: FilterT[] | TagT[]) => list.map((item) => item.name)
 
 /**
  * returns true if any of the name fields in TagsA match the name fields in TagsB
  */
-const tagListsHaveMatches = (tagsA: TechTagT[], tagsB: TechTagT[]): boolean => {
+const tagListsHaveMatches = (tagsA: TagT[], tagsB: TagT[]): boolean => {
   const namesA = toNames(tagsA);
   const namesB = toNames(tagsB);
   return namesA.filter(name => namesB.includes(name)).length > 0;
@@ -42,34 +40,23 @@ const tagListsHaveMatches = (tagsA: TechTagT[], tagsB: TechTagT[]): boolean => {
 /**
  * Given a string, finds the filter in `filters` with a matching `name`
  */
-const getFilterByName = (filters: TechTagFilterT[], filterName: string): TechTagFilterT | undefined => {
+const getFilterByName = (filters: FilterT[], filterName: string): FilterT | undefined => {
     return filters.find((filter) => filter.name === filterName)
 }
 
 // Groups projects by company and applies filters
-export function useFilteredProjects(projects: ProjectT[], filters: TechTagFilterT[], selectedFilter: TechTagFilterT | undefined): UseFilteredProjectsReturnT {
-  // const [projects] = useProjects();
-  // const [filters] = useFilters();
-  // const [selectedFilter] = useSelectedFilter();
-
-  console.log(`selected filter: ${selectedFilter}`)
-
+export function useFilteredProjects(projects: ProjectT[], filters: FilterT[], selectedFilter: FilterT | undefined): UseFilteredProjectsReturnT {
   const [value, setValue] = useState<ProjectsByCompanyT>(
     groupProjectsByCompany(projects)
   );
 
   useEffect(() => {
-    console.log(`in useEffect with filter: ${selectedFilter?.name}`)
-    handleChange(selectedFilter?.name)
-  }, [selectedFilter]);
-
-  const handleChange = (filterName: string | undefined) => {
-    if (filterName === undefined) {
+    if (selectedFilter === undefined) {
       setValue(groupProjectsByCompany(projects));
       return;
     }
 
-    const filter: TechTagFilterT | undefined = getFilterByName(filters, filterName);
+    const filter: FilterT | undefined = getFilterByName(filters, selectedFilter.name);
 
     console.log('calling updateFilteredProjects')
     const filteredProjects = filter
@@ -79,7 +66,7 @@ export function useFilteredProjects(projects: ProjectT[], filters: TechTagFilter
       : projects;
       console.log(`filtered projects length: ${filteredProjects.length} out of ${projects.length}`)
     setValue(groupProjectsByCompany(filteredProjects));
-  }
+  }, [selectedFilter, filters, projects]);
 
-  return [value, handleChange];
+  return [value];
 }

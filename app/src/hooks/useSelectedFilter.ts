@@ -4,10 +4,10 @@
  * State required: useFilters
  */
 import { useState } from "react";
-import { TechTagFilterT } from "../types/types";
+import { FilterT } from "../types/types";
 
 type UseSelectedFilterReturnT = [
-  TechTagFilterT | undefined,
+  FilterT | undefined,
   (name: string) => void
 ];
 
@@ -15,17 +15,17 @@ type UseSelectedFilterReturnT = [
  * matches if the Filter itself or one of the Tags
  * has a name that matches the passed `name`
  */
-const selectFilterByName = (filters: TechTagFilterT[], name: string): TechTagFilterT | undefined => {
+const selectFilterByName = (filters: FilterT[], name: string): FilterT | undefined => {
   return (
-    filters.find((filter: TechTagFilterT) => filter.name === name) ??
-    filters.find((filter: TechTagFilterT) =>
+    filters.find((filter: FilterT) => filter.name === name) ??
+    filters.find((filter: FilterT) =>
       filter.tags.find((tag) => name === tag.name)
     )
   );
 };
 
-export function useSelectedFilter(filters: TechTagFilterT[]): UseSelectedFilterReturnT {
-  const [value, setValue] = useState<TechTagFilterT | undefined>();
+export function useSelectedFilter(filters: FilterT[]): UseSelectedFilterReturnT {
+  const [value, setValue] = useState<FilterT | undefined>();
 
   function handleChange(name: string): void {
     setValue(selectFilterByName(filters, name));

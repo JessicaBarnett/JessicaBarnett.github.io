@@ -1,11 +1,11 @@
 
-import { ProjectT, TechTagT } from '../types/types';
+import { ProjectT, TagT } from '../types/types';
 import Project from './Project';
 
 type ProjectListProps = {
   heading: string,
   projects: ProjectT[],
-  selectedTags: TechTagT[],
+  selectedTags: TagT[],
   onTagSelect: (name: string) => void
 };
 

@@ -1,23 +1,25 @@
 // import { useEffect } from "react";
 import "./App.css";
-import ProjectList from "./components/ProjectList";
 import { useFilters } from "./hooks/useFilters";
 import { useProjects } from "./hooks/useProjects";
+import { useExperienceEntries} from "./hooks/useExperienceEntries";
 import { useSelectedFilter } from "./hooks/useSelectedFilter";
 import { useFilteredProjects } from "./hooks/useFilteredProjects";
 
+import ProjectList from "./components/ProjectList";
+import ExperienceEntry from "./components/ExperienceEntry";
+
 function App() {
-  console.log('running app')
   const [filters] = useFilters();
   const [projects] = useProjects();
+  const [expEntries] = useExperienceEntries();
   const [selectedFilter, setSelectedFilter] = useSelectedFilter(filters);
   const [filteredProjects] = useFilteredProjects(projects, filters, selectedFilter);
 
+  // turn this back on after I fix the scroll position weirdness
   const onTagSelect = (name: string) => {
-    console.log(`tag selected: ${name}`)
-    setSelectedFilter(name);
+    // setSelectedFilter(name);
   }
-
 
   return (
     <>
@@ -90,106 +92,9 @@ function App() {
             <h3 className="section-heading title-2">Resume</h3>
 
             <ol>
-              {/* Begin Experience Component */}
-              <li className="entry">
-                <div className="supertitle-3">
-                  <time dateTime="2018">2020</time> -{" "}
-                  <time dateTime="2238">2023</time>
-                </div>
-                <h4 className="title-3">Fullstack Software Engineer</h4>
-                <p className="subtitle-3">Relay Network</p>
-                <button className="btn-1" type="button">
-                  Typescript
-                </button>
-                <button className="btn-1" type="button">
-                  React
-                </button>
-                <button className="btn-1" type="button">
-                  Angular
-                </button>
-                <button className="btn-1" type="button">
-                  Node
-                </button>
-                <button className="btn-1" type="button">
-                  AWS
-                </button>
-              </li>
-              {/* End Experience Component */}
-
-              {/* Begin Experience Component */}
-              <li className="entry">
-                <div className="supertitle-3">
-                  <time dateTime="2018">2018</time> -{" "}
-                  <time dateTime="2238">2020</time>
-                </div>
-                <h4 className="title-3">Front End Software Engineer</h4>
-                <p className="subtitle-3">Relay Network</p>
-                <button className="btn-1" type="button">
-                  Typescript
-                </button>
-                <button className="btn-1" type="button">
-                  Angular
-                </button>
-                <button className="btn-1" type="button">
-                  CSS/SCSS
-                </button>
-                <button className="btn-1" type="button">
-                  CraftCMS
-                </button>
-              </li>
-              {/* End Experience Component */}
-
-              {/* Begin Experience Component */}
-              <li className="entry">
-                <div className="supertitle-3">
-                  <time dateTime="2018">2016</time> -{" "}
-                  <time dateTime="2238">2018</time>
-                </div>
-                <h4 className="title-3">Lead Front End Developer</h4>
-                <p className="subtitle-3">Weblinc Ecommerce</p>
-                <button className="btn-1 filter-projects" type="button">
-                  Javascript
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  JQuery
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  Ruby/Rails
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  HTML/Haml
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  CSS/SCSS
-                </button>
-              </li>
-              {/* End Experience Component */}
-
-              {/* Begin Experience Component */}
-              <li className="entry">
-                <div className="supertitle-3">
-                  <time dateTime="2018">2016</time> -{" "}
-                  <time dateTime="2238">2018</time>
-                </div>
-                <h4 className="title-3">Front End Developer</h4>
-                <p className="subtitle-3">Weblinc Ecommerce</p>
-                <button className="btn-1 filter-projects" type="button">
-                  Javascript
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  JQuery
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  Ruby/Rails
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  HTML/Haml
-                </button>
-                <button className="btn-1 filter-projects" type="button">
-                  CSS/SCSS
-                </button>
-              </li>
-              {/* End Experience Component */}
+              { expEntries.map(entry => (
+                  <ExperienceEntry entry={entry}></ExperienceEntry>
+              ))}
             </ol>
           </div>
         </section>

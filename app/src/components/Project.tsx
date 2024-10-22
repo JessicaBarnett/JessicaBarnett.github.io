@@ -1,8 +1,8 @@
-import { ProjectT, TechTagT } from "../types/types";
+import { ProjectT, TagT } from "../types/types";
 
 type ProjectComponentProps = {
   project: ProjectT,
-  selectedTags: TechTagT[],
+  selectedTags: TagT[],
   onTagSelect: (name: string) => void
 };
 

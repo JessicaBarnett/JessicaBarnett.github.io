@@ -1,5 +1,5 @@
 {
-    "techTagFilters": [
+    "filters": [
         {
             "displayName": "Javascript/Typescript",
             "name": "javascript",
@@ -541,6 +541,59 @@
                     "displayName": "Ruby/Rails",
                     "name": "rails"
                 }
+            ]
+        }
+    ],
+    "experience": [
+        {
+            "title": "Fullstack Software Engineer",
+            "company": "Relay Network",
+            "start": "2020",
+            "end": "2023",
+            "tags": [
+                "Typescript",
+                "React",
+                "Anuglar",
+                "Node",
+                "AWS"
+            ]
+        },
+        {
+            "title": "Front End Software Engineer",
+            "company": "Relay Network",
+            "start": "2018",
+            "end": "2020",
+            "tags": [
+                "Typescript",
+                "Anuglar",
+                "CSS/SCSS",
+                "CraftCms"
+            ]
+        },
+        {
+            "title": "Lead Front End Developer",
+            "company": "Weblinc Ecommerce",
+            "start": "2016",
+            "end": "2018",
+            "tags": [
+                "Javascript",
+                "JQuery",
+                "Ruby/Rails",
+                "HTML/haml",
+                "CSS/SCSS"
+            ]
+        },
+        {
+            "title": "Front End Developer",
+            "company": "Weblinc Ecommerce",
+            "start": "2014",
+            "end": "2016",
+            "tags": [
+                "Javascript",
+                "JQuery",
+                "Ruby/Rails",
+                "HTML/haml",
+                "CSS/SCSS"
             ]
         }
     ]
