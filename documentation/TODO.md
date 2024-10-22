@@ -1,24 +1,31 @@
 
+
+javascript -> Js/ts, react, angular, jquery should all Highlight
+typescrit -> Ts should highlight
+
+
+- clicking buttons should change the filter
+
 Priorities
-- hard-code content for now
-- get filters working
-- contact form submit event!! 
+- filters: click btn -> select filter
+- filters: hide/show list items on change
+- filters: "selected" filters first in list
+- contact form: componentize
+- contact form: submit event
+- rainbow: baseline
 - tweak the hell outta the layout
-- rainbow baseline
-- socials text
 
 Nice-to-haves
-- rainbow perfection
-
+- rainbow: perfection
 - fix up the content form visuals + icons
-
-- break things into components (just project entry and resume entry, I think...)
-
-- page stats box (github api?)
-
+- page stats box: componentize
+- page stats box: hook up to github api?
 - lil animations and transitions to make it look prettyyyyy
 - "rewind"/back to top button lol
-- get the content from data somewhere?
 
-
-
+Done
+- hard-code content for now
+- move content to json file
+- socials text
+- componentize projects
+- filters: select filter -> highlight btn

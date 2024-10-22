@@ -1,69 +1,157 @@
 {
     "techTagFilters": [
         {
-            "displayName": "Testing",
-            "name": "testing",
-            "tags": ["jest", "jasmine", "karma", "locust", "load-testing"]
-        },
-        {
-            "displayName": "AWS",
-            "name": "aws",
-            "tags": ["aws-ec2", "aws-ecs", "aws-cognito", "aws-lambda", "aws-codepipeline"]
-        },
-        {
-            "displayName": "Tools",
-            "name": "tools",
-            "tags": ["zsh", "bash"]
-        },
-        {
-            "displayName": "Javascript",
+            "displayName": "Javascript/Typescript",
             "name": "javascript",
-            "tags": ["javascript", "typescript", "angular", "react", "jquery", "node"]
-        },
-        {
-            "displayName": "Typescript",
-            "name": "typescript",
-            "tags": ["typescript"]
-        },
-        {
-            "displayName": "Node",
-            "name": "node",
-            "tags": ["node"]
+            "tags": [
+                {
+                    "name": "javascript"
+                },
+                {
+                    "name": "typescript"
+                }
+            ]
         },
         {
             "displayName": "React/JSX",
             "name": "react",
-            "tags": ["react"]
+            "tags": [
+                {
+                    "name": "react"
+                }
+            ]
         },
         {
             "displayName": "Angular",
             "name": "angular",
-            "tags": ["angular"]
+            "tags": [
+                {
+                    "name": "angular"
+                }
+            ]
+        },
+        {
+            "displayName": "Node",
+            "name": "node",
+            "tags": [
+                {
+                    "name": "node"
+                }
+            ]
+        },
+        {
+            "displayName": "Testing",
+            "name": "testing",
+            "tags": [
+                {
+                    "name": "jest"
+                },
+                {
+                    "name": "jasmine"
+                },
+                {
+                    "name": "karma"
+                },
+                {
+                    "name": "locust"
+                },
+                {
+                    "name": "load-testing"
+                }
+            ]
+        },
+        {
+            "displayName": "AWS",
+            "name": "aws",
+            "tags": [
+                {
+                    "name": "aws-ec2"
+                },
+                {
+                    "name": "aws-ecs"
+                },
+                {
+                    "name": "aws-cognito"
+                },
+                {
+                    "name": "aws-lambda"
+                },
+                {
+                    "name": "aws-codepipeline"
+                }
+            ]
+        },
+        {
+            "displayName": "Tools",
+            "name": "tools",
+            "tags": [
+                {
+                    "name": "bash/zsh"
+                }
+            ]
         },
         {
             "displayName": "Databases",
             "name": "databases",
-            "tags": ["pgsql", "redis", "mongodb"]
+            "tags": [
+                {
+                    "name": "pgsql"
+                },
+                {
+                    "name": "redis"
+                },
+                {
+                    "name": "mongodb"
+                }
+            ]
         },
         {
             "displayName": "Integrations",
             "name": "integrations",
-            "tags": ["twilio", "jotform"]
+            "tags": [
+                {
+                    "name": "twilio"
+                },
+                {
+                    "name": "jotform"
+                }
+            ]
         },
         {
             "displayName": "CMS",
             "name": "cms",
-            "tags": ["craft", "wordpress"]
+            "tags": [
+                {
+                    "name": "craft"
+                },
+                {
+                    "name": "wordpress"
+                }
+            ]
         },
         {
             "displayName": "HTML",
             "name": "html",
-            "tags": ["html", "haml", "twig", "react", "angular"]
+            "tags": [
+                {
+                    "name": "html"
+                },
+                {
+                    "name": "haml"
+                },
+                {
+                    "name": "twig"
+                }
+            ]
         },
         {
             "displayName": "Ruby/Rails",
             "name": "rails",
-            "tags": ["rails"]
+            "tags": [
+                {
+                    "name": "rails"
+                }
+            ]
         }
     ],
     "projects": [
@@ -83,7 +171,7 @@
                 },
                 {
                     "displayName": "Bash/Zsh",
-                    "name": "tools"
+                    "name": "bash/zsh"
                 }
             ]
         },
@@ -345,7 +433,7 @@
         },
         {
             "id": "wl-003",
-            "title": "The Bouqs",
+            "title": "Full Beauty",
             "description": "TBA",
             "company": "Weblinc Ecommerce",
             "tags": [

@@ -1,37 +1,30 @@
-import { ProjectT } from "../types/types";
-
-/*
- import this hook:
-   const [selectedTags, setSelectedTags] = useState([]);
-   update it when button is clicked
- */
-
+import { ProjectT, TechTagT } from "../types/types";
 
 type ProjectComponentProps = {
   project: ProjectT,
-  selectedTags: string[]
+  selectedTags: TechTagT[],
+  onTagSelect: (name: string) => void
 };
 
-const Project = ({project, selectedTags}: ProjectComponentProps) => {
-  // const [selectedTags, setSelectedTags] = useState([]);
-
+const Project = ({project, selectedTags, onTagSelect}: ProjectComponentProps) => {
   return (
-    <>
+    <li className="entry" key={project.id}>
       <h5 className="title-3">{project.title}</h5>
       <p>{project.description}</p>
 
-      {project.tags.map((tag) => (
+      {project.tags.map((projTag) => (
         <button
           className={`btn-1 filter-projects ${
-            selectedTags.find(tagStr => tagStr === tag.name) ? "selected" : ""
+            selectedTags.find(selTag => selTag.name === projTag.name) ? "selected" : ""
           }`}
           type="button"
-          onClick={(e) => { /*  update selectedTag state to equal    */ }}
+          value={projTag.name}
+          onClick={(e) => { onTagSelect(e.currentTarget.value)}}
         >
-          {tag.displayName}
+          {projTag.displayName}
         </button>
       ))}
-    </>
+    </li>
   );
 };
 

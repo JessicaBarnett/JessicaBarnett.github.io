@@ -1,19 +1,23 @@
-import { useState } from "react";
+// import { useEffect } from "react";
 import "./App.css";
-import * as data from '../data/data.json';
 import ProjectList from "./components/ProjectList";
-import { ProjectT, TechTagFilterT } from "./types/types";
-
-type ProjectsByCompanyT = {
-  [key: string]: ProjectT[]
-}
+import { useFilters } from "./hooks/useFilters";
+import { useProjects } from "./hooks/useProjects";
+import { useSelectedFilter } from "./hooks/useSelectedFilter";
+import { useFilteredProjects } from "./hooks/useFilteredProjects";
 
 function App() {
-  const projectsByCompany = Object.groupBy(data.projects as ProjectT[], ({ company }) => company) as ProjectsByCompanyT;
-  const filters: TechTagFilterT[] = data.techTagFilters;
-  const [selectedFilter, setSelectedFilter] = useState<TechTagFilterT|undefined>();
+  console.log('running app')
+  const [filters] = useFilters();
+  const [projects] = useProjects();
+  const [selectedFilter, setSelectedFilter] = useSelectedFilter(filters);
+  const [filteredProjects] = useFilteredProjects(projects, filters, selectedFilter);
 
-  const selectFilterByName = (name: string) => filters.find((filter) => filter.name === name)
+  const onTagSelect = (name: string) => {
+    console.log(`tag selected: ${name}`)
+    setSelectedFilter(name);
+  }
+
 
   return (
     <>
@@ -56,17 +60,27 @@ function App() {
                 id="filterProjects"
                 value={selectedFilter?.name ?? undefined}
                 onChange={(e) => (
-                  setSelectedFilter(selectFilterByName(e.target.value))
+                  setSelectedFilter(e.target.value)
                 )}>
-                <option value="">Filter</option>
+                <option value="">All</option>
                 { filters.map(filter => (
                   <option value={filter.name} data-tags={filter.tags}>{filter.displayName}</option>
                 ))}
               </select>
             </div>
 
-            <ProjectList heading="Relay Network" projects={projectsByCompany['Relay Network']} selectedTags={selectedFilter?.tags ?? []}></ProjectList>
-            <ProjectList heading="Weblinc Ecommerce" projects={projectsByCompany['Weblinc Ecommerce']} selectedTags={selectedFilter?.tags ?? []}></ProjectList>
+            <ProjectList
+              heading="Relay Network"
+              projects={filteredProjects['Relay Network'] ?? []}
+              selectedTags={selectedFilter?.tags ?? []}
+              onTagSelect={onTagSelect}></ProjectList>
+
+
+            <ProjectList
+              heading="Weblinc Ecommerce"
+              projects={filteredProjects['Weblinc Ecommerce'] ?? []}
+              selectedTags={selectedFilter?.tags ?? []}
+              onTagSelect={onTagSelect}></ProjectList>
 
           </div>
         </section>
@@ -251,22 +265,24 @@ function App() {
         <section className="section-footer">
           <div className="section-content">
             <table className="page-stats-table">
-              <tr>
-                <th>Language</th>
-                <th>HTML</th>
-                <th>SCSS</th>
-                <th>JS</th>
-              </tr>
-              <tr>
-                <th>Percent</th>
-                <td>20%</td>
-                <td>40%</td>
-                <td>40%</td>
-              </tr>
-              <tr>
-                <th>Lines</th>
-                <td colSpan="3">6000 lines</td>
-              </tr>
+              <tbody>
+                <tr>
+                  <th>Language</th>
+                  <th>HTML</th>
+                  <th>SCSS</th>
+                  <th>JS</th>
+                </tr>
+                <tr>
+                  <th>Percent</th>
+                  <td>20%</td>
+                  <td>40%</td>
+                  <td>40%</td>
+                </tr>
+                <tr>
+                  <th>Lines</th>
+                  <td colSpan={3}>6000 lines</td>
+                </tr>
+              </tbody>
             </table>
 
             <a className="page-stats-button" href="#">

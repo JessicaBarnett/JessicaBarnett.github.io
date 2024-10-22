@@ -5,9 +5,11 @@
     // { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "skipLibCheck": true,
+    "target": "es2023",
+    "lib": [ "dom", "DOM.Iterable", "es2023" ],
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    // "skipLibCheck": true,
     "resolveJsonModule": true,
     "paths": {
       /* Remember to add new aliases to Vite.config as well */

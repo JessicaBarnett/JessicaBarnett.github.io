@@ -1,5 +1,5 @@
 export type TechTagT = {
-    displayName: string,
+    displayName?: string,
     name: string
 };
 
@@ -8,11 +8,12 @@ export type ProjectT = {
     title: string,
     description: string,
     company: string,
-    tags: TechTagT[]
+    tags: TechTagT[],
 };
 
 export type TechTagFilterT = {
     displayName: string,
     name: string,
-    tags: string[]
+    tags: TechTagT[]
 };
+
