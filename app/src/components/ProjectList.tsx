@@ -1,4 +1,3 @@
-
 import { ProjectT, TagT } from '../types/types';
 import Project from './Project';
 

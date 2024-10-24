@@ -1,0 +1,53 @@
+@use '../variables/colors' as *;
+@use 'sass:list';
+
+/**
+* Rainbows
+*/
+
+
+
+@function rainbow($angle: 90deg, $inverted: false, $width: 10%, $padding: 0%) {
+  $stripe-width: calc($width / 5);
+  $stops: ($angle, transparent 0%, transparent $padding);
+  $stop-position: $padding;
+
+  $rainbow-stop-colors: ($blue, $pink, $orange, $yellow, $green);
+  @if ($inverted) {
+    $rainbow-stop-colors: ($green, $yellow, $orange, $pink, $blue);
+  }
+
+  @for $i from 1 through 5 {
+    $stops: list.join($stops, (list.nth($rainbow-stop-colors, $i) $stop-position));
+    $stop-position: calc($stop-position + $stripe-width);
+    $stops: list.join($stops, (list.nth($rainbow-stop-colors, $i) $stop-position));
+  }
+
+  $stops: list.join($stops, (transparent $stop-position, transparent 100%));
+  @return $stops;
+}
+
+.rainbow-left {
+  background: linear-gradient(rainbow());
+}
+
+.rainbow-right {
+  background: linear-gradient(rainbow($width: 10%, $padding: 90%));
+}
+
+.rainbow-right-2 {
+  background: linear-gradient(rainbow($width: 10%, $padding: 82%));
+}
+
+.rainbow-left-right-top {
+  background: linear-gradient(rainbow()),
+    linear-gradient(rainbow($width: 10%, $padding: 90%)),
+    linear-gradient(rainbow($angle: 180deg, $width: 40px));
+}
+
+.rainbow-top {
+  background: linear-gradient(rainbow($width: 40px, $angle: 180deg));
+}
+.rainbow-left-2 {
+  background: linear-gradient(rainbow($width: 12%));
+}

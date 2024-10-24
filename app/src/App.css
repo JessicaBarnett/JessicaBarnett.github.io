@@ -293,7 +293,7 @@ SECTION
 ***************/
 .section-content {
   max-width: 720px;
-  padding: 0 24px;
+  padding: 0 64px;
   margin: 0 auto;
   padding-bottom: 96px;
 }
@@ -599,6 +599,33 @@ button {
   transform: translateY(-50%);
 }
 
+/**
+* Rainbows
+*/
+.rainbow-left {
+  background: linear-gradient(90deg, transparent 0%, transparent 0%, #0084CE, 0%, #0084CE, 2%, #E2006A, 2%, #E2006A, 4%, #EE6B0F, 4%, #EE6B0F, 6%, #EBE000, 6%, #EBE000, 8%, #82A900, 8%, #82A900, 10%, transparent 10%, transparent 100%);
+}
+
+.rainbow-right {
+  background: linear-gradient(90deg, transparent 0%, transparent 90%, #0084CE, 90%, #0084CE, 92%, #E2006A, 92%, #E2006A, 94%, #EE6B0F, 94%, #EE6B0F, 96%, #EBE000, 96%, #EBE000, 98%, #82A900, 98%, #82A900, 100%, transparent 100%, transparent 100%);
+}
+
+.rainbow-right-2 {
+  background: linear-gradient(90deg, transparent 0%, transparent 82%, #0084CE, 82%, #0084CE, 84%, #E2006A, 84%, #E2006A, 86%, #EE6B0F, 86%, #EE6B0F, 88%, #EBE000, 88%, #EBE000, 90%, #82A900, 90%, #82A900, 92%, transparent 92%, transparent 100%);
+}
+
+.rainbow-left-right-top {
+  background: linear-gradient(90deg, transparent 0%, transparent 0%, #0084CE, 0%, #0084CE, 2%, #E2006A, 2%, #E2006A, 4%, #EE6B0F, 4%, #EE6B0F, 6%, #EBE000, 6%, #EBE000, 8%, #82A900, 8%, #82A900, 10%, transparent 10%, transparent 100%), linear-gradient(90deg, transparent 0%, transparent 90%, #0084CE, 90%, #0084CE, 92%, #E2006A, 92%, #E2006A, 94%, #EE6B0F, 94%, #EE6B0F, 96%, #EBE000, 96%, #EBE000, 98%, #82A900, 98%, #82A900, 100%, transparent 100%, transparent 100%), linear-gradient(180deg, transparent 0%, transparent 0%, #0084CE, 0%, #0084CE, calc(0% + 8px), #E2006A, calc(0% + 8px), #E2006A, calc(0% + 8px + 8px), #EE6B0F, calc(0% + 8px + 8px), #EE6B0F, calc(0% + 8px + 8px + 8px), #EBE000, calc(0% + 8px + 8px + 8px), #EBE000, calc(0% + 8px + 8px + 8px + 8px), #82A900, calc(0% + 8px + 8px + 8px + 8px), #82A900, calc(0% + 8px + 8px + 8px + 8px + 8px), transparent calc(0% + 8px + 8px + 8px + 8px + 8px), transparent 100%);
+}
+
+.rainbow-top {
+  background: linear-gradient(180deg, transparent 0%, transparent 0%, #0084CE, 0%, #0084CE, calc(0% + 8px), #E2006A, calc(0% + 8px), #E2006A, calc(0% + 8px + 8px), #EE6B0F, calc(0% + 8px + 8px), #EE6B0F, calc(0% + 8px + 8px + 8px), #EBE000, calc(0% + 8px + 8px + 8px), #EBE000, calc(0% + 8px + 8px + 8px + 8px), #82A900, calc(0% + 8px + 8px + 8px + 8px), #82A900, calc(0% + 8px + 8px + 8px + 8px + 8px), transparent calc(0% + 8px + 8px + 8px + 8px + 8px), transparent 100%);
+}
+
+.rainbow-left-2 {
+  background: linear-gradient(90deg, transparent 0%, transparent 0%, #0084CE, 0%, #0084CE, 2.4%, #E2006A, 2.4%, #E2006A, 4.8%, #EE6B0F, 4.8%, #EE6B0F, 7.2%, #EBE000, 7.2%, #EBE000, 9.6%, #82A900, 9.6%, #82A900, 12%, transparent 12%, transparent 100%);
+}
+
 /**************
     GLOBALS
 ***************/
@@ -632,6 +659,14 @@ img {
   height: 100%;
   width: 100%;
   z-index: -1;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.submission-msg {
+  max-width: 350px;
 }
 
 /*************

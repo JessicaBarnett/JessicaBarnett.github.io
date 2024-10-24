@@ -1,9 +1,9 @@
 Priorities
-- contact form: componentize
-- contact form: submit event
+- secrets?  how/where to host
 - rainbow: baseline
 - work on copy
 - real links
+- form validation
 
 
 Backlog

@@ -5,6 +5,7 @@ $green: #82A900;
 $blue: #0084CE;
 $black: #000;
 $white: #FFF;
+
 $rainbow-gradient-vert: linear-gradient(
     90deg,
     $pink 0%,
@@ -17,8 +18,8 @@ $rainbow-gradient-vert: linear-gradient(
     $green 80%,
     $blue 80%,
     $blue 100%,
-);
-$rainbow-gradient-horiz: linear-gradient(
+  );
+  $rainbow-gradient-horiz: linear-gradient(
     180deg,
     $pink 0%,
     $pink 20%,
@@ -30,4 +31,4 @@ $rainbow-gradient-horiz: linear-gradient(
     $green 80%,
     $blue 80%,
     $blue 100%,
-);
+  );

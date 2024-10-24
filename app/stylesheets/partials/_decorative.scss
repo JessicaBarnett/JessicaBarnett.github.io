@@ -1,5 +1,6 @@
-@use "./variables/colors" as *;
-@use "./utilities/media-queries" as *;
+@use "sass:list";
+@use "../variables/colors" as *;
+@use "../utilities/media-queries" as *;
 
 /***********************
   INDENTS AND OUTDENTS
@@ -93,7 +94,6 @@
         right: 0;
     }
 }
-
 
 .trapezoid-hug {
     position: relative;
