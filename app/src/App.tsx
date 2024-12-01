@@ -8,6 +8,8 @@ import { useExperienceEntries} from "./hooks/useExperienceEntries";
 import { useSelectedFilter } from "./hooks/useSelectedFilter";
 import { useFilteredProjects } from "./hooks/useFilteredProjects";
 
+import { useBgLines } from "./hooks/useBgLines";
+
 import ProjectList from "./components/ProjectList";
 import ExperienceEntry from "./components/ExperienceEntry";
 import ContactForm from "./components/ContactForm";
@@ -27,82 +29,82 @@ function App() {
   const expRef = useRef<HTMLElement | null>(null);
   const contRef = useRef<HTMLElement | null>(null);
 
-  const doCanvasStuff = (e: Event | null) => {
-     if (e) {
-      console.dir(e);
-     }
+  useBgLines({
+    canvasRef,
+    pageRef,
+    ttlRef,
+    abtRef,
+    projRef,
+    expRef,
+    contRef,
+  }, useFilteredProjects);
 
-    console.log('------ doing canvas stuff -------')
-    const ctx = canvasRef?.current?.getContext('2d');
-    const width = pageRef?.current?.clientWidth;
-    const height = pageRef?.current?.clientHeight;
+  // // const doCanvasStuff = (e: Event | null) => {
+  // //    if (e) {
+  // //     console.dir(e);
+  // //    }
 
-    if (!ctx || !height || !width ) {
-      // if (retryCount < 5) {
-      //   setTimeout(() => doCanvasStuff((retryCount+1)), 3000);
-      // }
-      console.log('no context/height/width!')
-      return;
-    }
+  // //   console.log('------ doing canvas stuff -------')
+  // //   const ctx = canvasRef?.current?.getContext('2d');
+  // //   const width = pageRef?.current?.clientWidth;
+  // //   const height = pageRef?.current?.clientHeight;
 
-    console.log('clearing/redrawing!')
-    // setTimeout (() => {
-      canvasRef?.current?.setAttribute('height', `${height}px`);
-      canvasRef?.current?.setAttribute('width', `${width}px`);
-      ctx.clearRect(0, 0, height, width);
+  // //   if (!ctx || !height || !width ) {
+  // //     console.log('no context/height/width!')
+  // //     return;
+  // //   }
 
-      const ttlHeight = +(ttlRef!.current!.offsetHeight ?? 0);
-      const abtHeight = +(abtRef!.current!.offsetHeight ?? 0);
-      const projHeight = +(projRef!.current!.offsetHeight ?? 0);
-      const expHeight = +(expRef!.current!.offsetHeight ?? 0);
+  // //   canvasRef?.current?.setAttribute('height', `${height}px`);
+  // //   canvasRef?.current?.setAttribute('width', `${width}px`);
+  // //   ctx.clearRect(0, 0, height, width);
 
-      const path: [number, number][] = [
-        [(width - 100), 10],
-        [(width - 100), ttlHeight],
-        [10, ttlHeight],
-        [10, (ttlHeight + abtHeight + projHeight)],
-        [50, (ttlHeight + abtHeight + projHeight)],
-        [50, (ttlHeight + abtHeight + projHeight + expHeight)],
-        [width - 100, (ttlHeight + abtHeight + projHeight + expHeight)],
-        [width, (ttlHeight + abtHeight + projHeight + expHeight + 80)]
-      ];
+  // //   const ttlHeight = +(ttlRef!.current!.offsetHeight ?? 0);
+  // //   const abtHeight = +(abtRef!.current!.offsetHeight ?? 0);
+  // //   const projHeight = +(projRef!.current!.offsetHeight ?? 0);
+  // //   const expHeight = +(expRef!.current!.offsetHeight ?? 0);
 
-      ctx.beginPath()
-      path.forEach((point, idx) => {
-        if (idx === 0) {
-          ctx.moveTo(...point);
-        } else {
-          ctx.lineTo(...point);
-        }
-      });
+  // //   const path: [number, number][] = [
+  // //     [(width - 100), 10],
+  // //     [(width - 100), ttlHeight],
+  // //     [10, ttlHeight],
+  // //     [10, (ttlHeight + abtHeight + projHeight)],
+  // //     [50, (ttlHeight + abtHeight + projHeight)],
+  // //     [50, (ttlHeight + abtHeight + projHeight + expHeight)],
+  // //     [width - 100, (ttlHeight + abtHeight + projHeight + expHeight)],
+  // //     [width, (ttlHeight + abtHeight + projHeight + expHeight + 80)]
+  // //   ];
 
-      ctx.lineWidth = 5;
-      ctx.strokeStyle = "#0084CE";
-      ctx.stroke();
-    // }, 10)
+  // //   ctx.beginPath()
+  // //   path.forEach((point, idx) => {
+  // //     if (idx === 0) {
+  // //       ctx.moveTo(...point);
+  // //     } else {
+  // //       ctx.lineTo(...point);
+  // //     }
+  // //   });
 
-  }
+  // //   ctx.lineWidth = 5;
+  // //   ctx.strokeStyle = "#0084CE";
+  // //   ctx.stroke();
+
+  // // }
+
+    // useLayoutEffect(() => {
+    //   doCanvasStuff(null);
+    //   window.addEventListener('resize', doCanvasStuff);
+
+    //   return () => window.removeEventListener('resize', doCanvasStuff);
+    // }, [filteredProjects]);
 
   // turn this back on after I fix the scroll position weirdness
   const onTagSelect = (/*name: string*/) => {
     console.log('tag select - to do')
     // setSelectedFilter(name);
-    // doCanvasStuff();
   }
 
   const handleFilterChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedFilter(e.target.value);
   }
-
-  useLayoutEffect(() => {
-    // setTimeout(doCanvasStuff, 50); // This is TEMPORARY I swear.  FIXME
-    console.log('layout effect');
-
-    doCanvasStuff(null);
-    window.addEventListener('resize', doCanvasStuff);
-
-    return () => window.removeEventListener('resize', doCanvasStuff);
-  }, [filteredProjects]);
 
   return (
     <>
