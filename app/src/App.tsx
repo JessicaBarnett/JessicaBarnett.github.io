@@ -1,5 +1,7 @@
-// import { useEffect } from "react";
 import "./App.css";
+
+import { useLayoutEffect, useEffect, useRef } from "react";
+
 import { useFilters } from "./hooks/useFilters";
 import { useProjects } from "./hooks/useProjects";
 import { useExperienceEntries} from "./hooks/useExperienceEntries";
@@ -17,17 +19,97 @@ function App() {
   const [selectedFilter, setSelectedFilter] = useSelectedFilter(filters);
   const [filteredProjects] = useFilteredProjects(projects, filters, selectedFilter);
 
-  // turn this back on after I fix the scroll position weirdness
-  const onTagSelect = (name: string) => {
-    // setSelectedFilter(name);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const pageRef = useRef<HTMLDivElement| null>(null);
+  const ttlRef = useRef<HTMLElement | null>(null);
+  const abtRef = useRef<HTMLElement | null>(null);
+  const projRef = useRef<HTMLElement | null>(null);
+  const expRef = useRef<HTMLElement | null>(null);
+  const contRef = useRef<HTMLElement | null>(null);
+
+  const doCanvasStuff = (e: Event | null) => {
+     if (e) {
+      console.dir(e);
+     }
+
+    console.log('------ doing canvas stuff -------')
+    const ctx = canvasRef?.current?.getContext('2d');
+    const width = pageRef?.current?.clientWidth;
+    const height = pageRef?.current?.clientHeight;
+
+    if (!ctx || !height || !width ) {
+      // if (retryCount < 5) {
+      //   setTimeout(() => doCanvasStuff((retryCount+1)), 3000);
+      // }
+      console.log('no context/height/width!')
+      return;
+    }
+
+    console.log('clearing/redrawing!')
+    // setTimeout (() => {
+      canvasRef?.current?.setAttribute('height', `${height}px`);
+      canvasRef?.current?.setAttribute('width', `${width}px`);
+      ctx.clearRect(0, 0, height, width);
+
+      const ttlHeight = +(ttlRef!.current!.offsetHeight ?? 0);
+      const abtHeight = +(abtRef!.current!.offsetHeight ?? 0);
+      const projHeight = +(projRef!.current!.offsetHeight ?? 0);
+      const expHeight = +(expRef!.current!.offsetHeight ?? 0);
+
+      const path: [number, number][] = [
+        [(width - 100), 10],
+        [(width - 100), ttlHeight],
+        [10, ttlHeight],
+        [10, (ttlHeight + abtHeight + projHeight)],
+        [50, (ttlHeight + abtHeight + projHeight)],
+        [50, (ttlHeight + abtHeight + projHeight + expHeight)],
+        [width - 100, (ttlHeight + abtHeight + projHeight + expHeight)],
+        [width, (ttlHeight + abtHeight + projHeight + expHeight + 80)]
+      ];
+
+      ctx.beginPath()
+      path.forEach((point, idx) => {
+        if (idx === 0) {
+          ctx.moveTo(...point);
+        } else {
+          ctx.lineTo(...point);
+        }
+      });
+
+      ctx.lineWidth = 5;
+      ctx.strokeStyle = "#0084CE";
+      ctx.stroke();
+    // }, 10)
+
   }
+
+  // turn this back on after I fix the scroll position weirdness
+  const onTagSelect = (/*name: string*/) => {
+    console.log('tag select - to do')
+    // setSelectedFilter(name);
+    // doCanvasStuff();
+  }
+
+  const handleFilterChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedFilter(e.target.value);
+  }
+
+  useLayoutEffect(() => {
+    // setTimeout(doCanvasStuff, 50); // This is TEMPORARY I swear.  FIXME
+    console.log('layout effect');
+
+    doCanvasStuff(null);
+    window.addEventListener('resize', doCanvasStuff);
+
+    return () => window.removeEventListener('resize', doCanvasStuff);
+  }, [filteredProjects]);
 
   return (
     <>
-      <canvas id="canvas"></canvas>
-      <div className="page">
-        <section className="section-title triangle-left rainbow-right-2">
-          <div className="section-content indent-64 ">
+      <div ref={pageRef} className="page">
+        <canvas id="canvas" ref={canvasRef} height="100%" width="100%"></canvas>
+        <section ref={ttlRef} className="section-title triangle-left">
+          <div className="section-content">
             <h1 className="title-1">
               <span className="outdent-1">Jessica </span>
               Barnett
@@ -37,9 +119,10 @@ function App() {
               <span className="nowrap">Software Engineer</span>
             </h2>
           </div>
+          <div className="bezel"></div>
         </section>
 
-        <section className="section-about trapezoid-right rainbow-top">
+        <section ref={abtRef} className="section-about trapezoid-right">
           <div className="section-content">
             <div className="indent-2">
               <p className="deco-font-1">
@@ -54,7 +137,7 @@ function App() {
           </div>
         </section>
 
-        <section className="section-projects rainbow-left-right-top">
+        <section ref={projRef} className="section-projects rainbow-left-right-top">
           <div className="section-content grid-at-small">
             <h3 className="section-heading title-2 half">Projects</h3>
 
@@ -64,9 +147,7 @@ function App() {
                 name="filterProjects"
                 id="filterProjects"
                 value={selectedFilter?.name ?? undefined}
-                onChange={(e) => (
-                  setSelectedFilter(e.target.value)
-                )}>
+                onChange={handleFilterChange}>
                 <option value="">All</option>
                 { filters.map(filter => (
                   <option value={filter.name} data-tags={filter.tags}>{filter.displayName}</option>
@@ -90,7 +171,7 @@ function App() {
           </div>
         </section>
 
-        <section className="section-resume trapezoid-hug">
+        <section ref={expRef} className="section-resume trapezoid-hug">
           <div className="section-content">
             <h3 className="section-heading title-2">Resume</h3>
 
@@ -104,7 +185,7 @@ function App() {
           </div>
         </section>
 
-        <section className="section-contact color-bar">
+        <section ref={contRef} className="section-contact color-bar">
           <div className="section-content grid ">
             <h3 className="section-heading title-2">Contact</h3>
 
@@ -175,7 +256,7 @@ function App() {
             </p>
           </div>
         </section>
-      </div>{" "}
+      </div>
       {/* end page */}
     </>
   );

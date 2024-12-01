@@ -1,10 +1,13 @@
 Priorities
-- secrets?  how/where to host
-- rainbow: baseline
-- work on copy
-- real links
-- form validation
+- Rainbow: Bevel
+- Rainbow: horizontals
+- update spacing to acommodate rainbows
+- responsive reassesment
 
+- form validation
+- work on copy
+- update links
+- secrets?  how/where to host
 
 Backlog
 - "more" tag to show more than 2 rows of tags on prokects
