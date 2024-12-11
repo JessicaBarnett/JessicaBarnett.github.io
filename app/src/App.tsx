@@ -28,6 +28,8 @@ function App() {
   const projRef = useRef<HTMLElement | null>(null);
   const expRef = useRef<HTMLElement | null>(null);
   const contRef = useRef<HTMLElement | null>(null);
+  const ftrRef = useRef<HTMLElement | null>(null);
+
 
   useBgLines({
     canvasRef,
@@ -37,64 +39,8 @@ function App() {
     projRef,
     expRef,
     contRef,
+    ftrRef
   }, useFilteredProjects);
-
-  // // const doCanvasStuff = (e: Event | null) => {
-  // //    if (e) {
-  // //     console.dir(e);
-  // //    }
-
-  // //   console.log('------ doing canvas stuff -------')
-  // //   const ctx = canvasRef?.current?.getContext('2d');
-  // //   const width = pageRef?.current?.clientWidth;
-  // //   const height = pageRef?.current?.clientHeight;
-
-  // //   if (!ctx || !height || !width ) {
-  // //     console.log('no context/height/width!')
-  // //     return;
-  // //   }
-
-  // //   canvasRef?.current?.setAttribute('height', `${height}px`);
-  // //   canvasRef?.current?.setAttribute('width', `${width}px`);
-  // //   ctx.clearRect(0, 0, height, width);
-
-  // //   const ttlHeight = +(ttlRef!.current!.offsetHeight ?? 0);
-  // //   const abtHeight = +(abtRef!.current!.offsetHeight ?? 0);
-  // //   const projHeight = +(projRef!.current!.offsetHeight ?? 0);
-  // //   const expHeight = +(expRef!.current!.offsetHeight ?? 0);
-
-  // //   const path: [number, number][] = [
-  // //     [(width - 100), 10],
-  // //     [(width - 100), ttlHeight],
-  // //     [10, ttlHeight],
-  // //     [10, (ttlHeight + abtHeight + projHeight)],
-  // //     [50, (ttlHeight + abtHeight + projHeight)],
-  // //     [50, (ttlHeight + abtHeight + projHeight + expHeight)],
-  // //     [width - 100, (ttlHeight + abtHeight + projHeight + expHeight)],
-  // //     [width, (ttlHeight + abtHeight + projHeight + expHeight + 80)]
-  // //   ];
-
-  // //   ctx.beginPath()
-  // //   path.forEach((point, idx) => {
-  // //     if (idx === 0) {
-  // //       ctx.moveTo(...point);
-  // //     } else {
-  // //       ctx.lineTo(...point);
-  // //     }
-  // //   });
-
-  // //   ctx.lineWidth = 5;
-  // //   ctx.strokeStyle = "#0084CE";
-  // //   ctx.stroke();
-
-  // // }
-
-    // useLayoutEffect(() => {
-    //   doCanvasStuff(null);
-    //   window.addEventListener('resize', doCanvasStuff);
-
-    //   return () => window.removeEventListener('resize', doCanvasStuff);
-    // }, [filteredProjects]);
 
   // turn this back on after I fix the scroll position weirdness
   const onTagSelect = (/*name: string*/) => {
@@ -225,7 +171,7 @@ function App() {
           </div>
         </section>
 
-        <section className="section-footer">
+        <section ref={ftrRef} className="section-footer">
           <div className="section-content">
             <table className="page-stats-table">
               <tbody>
