@@ -3,67 +3,19 @@
 // could NOT have a current) and RefObject
 import { RefObject, useLayoutEffect } from "react";
 import { ProjectsByCompanyT } from "./useFilteredProjects";
-import variables from "@styles/variables.module.scss";
+import { BreakpointsT, useBreakpoints } from "./useBreakpoints";
+import { useColors } from "./useColors";
+import { ElementRefsT, SizesT, PointT } from "../types/bg-line-types";
+import { VtoD, HtoD, DtoH, DtoV, vertical, horizontal, diagonal, getElementSizes } from "../utils/bg-line-utils";
 
-type BreakpointsT = {
-  miniBp: string;
-  smallBp: string;
-  mediumBp: string;
-  wideBp: string;
-  extraWideBp: string;
-  hdBp: string;
-};
 
-const breakpoints: BreakpointsT = (() => {
-  const tmp = { ...variables };
-  delete tmp["colors"];
-  return tmp as BreakpointsT;
-})(); // to get 'colors' key out and type this properly
+/********************************/
+/******* Path Definitions ********/
+/********************************/
 
-// note the Null options are removed from this type
-type ElementRefsT = {
-  canvasRef: RefObject<HTMLCanvasElement>;
-  pageRef: RefObject<HTMLDivElement>;
-  ttlRef: RefObject<HTMLElement>;
-  abtRef: RefObject<HTMLElement>;
-  projRef: RefObject<HTMLElement>;
-  expRef: RefObject<HTMLElement>;
-  contRef: RefObject<HTMLElement>;
-  ftrRef: RefObject<HTMLElement>;
-};
+// These fns calculate paths using the heights of
+// all the elementsin ElementRefsT
 
-// element sizes
-type SizesT = {
-  pgWidth: number;
-  pgHeight: number;
-  ttlHeight: number;
-  abtHeight: number;
-  expHeight: number;
-  projHeight: number;
-  contHeight: number;
-  ftrHeight: number;
-};
-
-type PointT = {
-  x: number;
-  y: number;
-  a?: 90 | 45 | 0;
-  translate?: (p: PointT, offset: number, lineIdx: number) => PointT; // optional fn to use when translating a point
-};
-
-/*
-https://math.stackexchange.com/questions/143932/calculate-point-given-x-y-angle-and-distance
-xx = x + (d * cos(alpha))
-yy = y + (d * sin(alpha))
-
- */
-
-// given destination point, angle, and distance, calculates next point
-// const nextPoint = (p: PointT, angle: number, d: number): PointT => {
-//   return { x: p.x + (d * Math.cos(angle)), y: p.y + (d * Math.sin(angle)) };
-// }
-
-// Takes variable Element height/widths and creates a path with them.
 const getPathA = (
   { pgWidth, ttlHeight, abtHeight, expHeight, projHeight }: SizesT,
   lineW: number,
@@ -201,27 +153,49 @@ const getPathC = (
   ];
 };
 
-// Tests to determine stuff about each segment of the line,
-// as some of them need to use different offsets when translating
-const vertical = (p1: PointT, p2: PointT): boolean => p1.x === p2.x;
-const horizontal = (p1: PointT, p2: PointT): boolean => p1.y === p2.y;
-const diagonal = (p1: PointT, p2: PointT): boolean =>
-  !vertical(p1, p2) && !horizontal(p1, p2);
 
-const VtoD = (p: PointT, prev: PointT, next: PointT) =>
-  prev && next && vertical(p, prev) && diagonal(p, next);
-const DtoH = (p: PointT, prev: PointT, next: PointT) =>
-  prev && next && diagonal(p, prev) && horizontal(p, next);
-const HtoD = (p: PointT, prev: PointT, next: PointT) =>
-  prev && next && horizontal(p, prev) && diagonal(p, next);
-const DtoV = (p: PointT, prev: PointT, next: PointT) =>
-  prev && next && diagonal(p, prev) && vertical(p, next);
+/******************************/
+/******* Drawing Stuff ********/
+/******************************/
 
-const toRight = (p1: PointT, p2: PointT) => p1.x < p2.x;
-const toLeft = (p1: PointT, p2: PointT) => p1.x > p2.x;
-const toBottom = (p1: PointT, p2: PointT) => p1.y > p2.y;
-const toTop = (p1: PointT, p2: PointT) => p1.y < p2.y;
+const resizeAndClearCanvas = (
+  canvasRef: RefObject<HTMLCanvasElement>,
+  ctx: CanvasRenderingContext2D,
+  height: number,
+  width: number
+) => {
+  if (!canvasRef || !canvasRef.current) {
+    throw new Error("no canvasRef or canvasRef.current"); // this should already have been asserted but typescript doesn't see it...
+  }
+  canvasRef.current.setAttribute("height", `${height}px`);
+  canvasRef.current.setAttribute("width", `${width}px`);
+  ctx.clearRect(0, 0, height, width); // clear
+};
 
+// Change line Widths at breakpoints here
+const getLineW = (sizes: SizesT, breakpoints: BreakpointsT): number => {
+  if (sizes.pgWidth <= parseInt(breakpoints.miniBp)) {
+    return 8;
+  }
+
+  if (sizes.pgWidth <= parseInt(breakpoints.smallBp)) {
+    return 10;
+  }
+
+  if (sizes.pgWidth <= parseInt(breakpoints.mediumBp)) {
+    return 15;
+  }
+
+  if (sizes.pgWidth <= parseInt(breakpoints.wideBp)) {
+    return 20;
+  }
+
+  return 20;
+};
+
+// Given the points for the first line, translate all points and return new path
+// in other words, since we only have points for the blue line, this fn calculates
+// the paths/points for the other 4 lines
 const translatePath = (path: PointT[], offset: number, lineIdx: number) => {
   if (offset === 0) {
     return path; // no need to translate if there's no offset
@@ -235,8 +209,6 @@ const translatePath = (path: PointT[], offset: number, lineIdx: number) => {
     if (typeof point.translate === "function") {
       return point.translate(point, offset, lineIdx);
     }
-
-    // first and last points (missing next or prev) and dont have angles
 
     if (!prev && vertical(p, next)) {
       return { x: point.x + offset, y: point.y };
@@ -254,29 +226,23 @@ const translatePath = (path: PointT[], offset: number, lineIdx: number) => {
       return { x: point.x + offset, y: point.y + offset * 1.8 };
     }
 
-    // majority of points
-
     if (point.a === 90) {
       return { x: p.x + offset, y: p.y + offset };
     }
 
     if (point.a === 45 && VtoD(p, prev, next)) {
-      console.log(`DtoD -> point ${i}`);
       return { x: p.x + offset, y: p.y + offset / 2 };
     }
 
     if (point.a === 45 && DtoH(p, prev, next)) {
-      console.log(`DtoH to left -> point ${i}`);
       return { x: p.x + offset / 2, y: p.y + offset };
     }
 
     if (point.a === 45 && HtoD(p, prev, next)) {
-      console.log(`HtoD -> point ${i}`);
       return { x: p.x + offset / 2, y: p.y + offset };
     }
 
     if (point.a === 45 && DtoV(p, prev, next)) {
-      console.log(`DtoV -> point ${i}`);
       return { x: p.x + offset, y: p.y + offset / 2 };
     }
 
@@ -296,63 +262,14 @@ const translatePath = (path: PointT[], offset: number, lineIdx: number) => {
       return { x: p.x, y: p.y + offset };
     }
 
-    console.log(`fallthrough -> point ${i}`);
     return { x: p.x + offset, y: p.y + offset }; // only returns the first point of the segment
   });
 };
 
-const getElementSizes = (refs: ElementRefsT): SizesT => {
-  if (!refs.pageRef || !refs.pageRef.current) {
-    throw new Error("no pageRef or pageRef.current"); // this should already have been asserted but typescript doesn't see it...
-  }
-
-  return {
-    pgWidth: refs.pageRef.current.clientWidth,
-    pgHeight: refs.pageRef.current.clientHeight,
-    ttlHeight: +(refs.ttlRef!.current!.offsetHeight ?? 0),
-    abtHeight: +(refs.abtRef!.current!.offsetHeight ?? 0),
-    projHeight: +(refs.projRef!.current!.offsetHeight ?? 0),
-    expHeight: +(refs.expRef!.current!.offsetHeight ?? 0),
-    contHeight: +(refs.contRef!.current!.offsetHeight ?? 0),
-    ftrHeight: +(refs.ftrRef!.current!.offsetHeight ?? 0),
-  };
-};
-
-const getLineW = (sizes: SizesT): number => {
-  if (sizes.pgWidth <= parseInt(breakpoints.miniBp)) {
-    return 8;
-  }
-
-  if (sizes.pgWidth <= parseInt(breakpoints.smallBp)) {
-    return 10;
-  }
-
-  if (sizes.pgWidth <= parseInt(breakpoints.mediumBp)) {
-    return 15;
-  }
-
-  if (sizes.pgWidth <= parseInt(breakpoints.wideBp)) {
-    return 20;
-  }
-
-  return 25;
-};
-
-const resizeAndClearCanvas = (
-  canvasRef: RefObject<HTMLCanvasElement>,
-  ctx: CanvasRenderingContext2D,
-  height: number,
-  width: number
-) => {
-  if (!canvasRef || !canvasRef.current) {
-    throw new Error("no canvasRef or canvasRef.current"); // this should already have been asserted but typescript doesn't see it...
-  }
-  canvasRef.current.setAttribute("height", `${height}px`);
-  canvasRef.current.setAttribute("width", `${width}px`);
-  ctx.clearRect(0, 0, height, width); // clear
-};
-
 // Draw a single Line
+// this fn is basically just a bunch of
+// canvas configuration, a loop that calls
+// lineTo for each piont, and ctx.stroke.
 const drawLine = (
   ctx: CanvasRenderingContext2D,
   points: PointT[],
@@ -372,8 +289,9 @@ const drawLine = (
   ctx.stroke();
 };
 
+
 // draw all Lines
-const drawBgLines = (refs: ElementRefsT, colors: string[]) => {
+const drawBgLines = (refs: ElementRefsT, colors: string[], breakpoints: BreakpointsT) => {
   const { canvasRef } = refs;
   const ctx = refs.canvasRef?.current?.getContext("2d");
 
@@ -382,9 +300,9 @@ const drawBgLines = (refs: ElementRefsT, colors: string[]) => {
     return;
   }
 
+  // get sizes of elements and lines
   const elSizes = getElementSizes(refs);
-
-  const lineW = getLineW(elSizes);
+  const lineW = getLineW(elSizes, breakpoints);
 
   // clear and resize
   resizeAndClearCanvas(canvasRef, ctx, elSizes.pgHeight, elSizes.pgWidth);
@@ -396,30 +314,36 @@ const drawBgLines = (refs: ElementRefsT, colors: string[]) => {
 
   // draw paths
   colors.forEach((color, i) => {
-    drawLine(ctx, translatePath(pathB, lineW * i, i), lineW, colors[i]);
+    drawLine(ctx, translatePath(pathB, lineW * i, i), lineW, color);
   });
 
   colors.forEach((color, i) => {
-    drawLine(ctx, translatePath(pathC, lineW * i, i), lineW, colors[i]);
+    drawLine(ctx, translatePath(pathC, lineW * i, i), lineW, color);
   });
 
   colors.forEach((color, i) => {
-    drawLine(ctx, translatePath(pathA, lineW * i, i), lineW, colors[i]);
+    drawLine(ctx, translatePath(pathA, lineW * i, i), lineW, color);
   });
 };
 
-// The hook that will actually do the drawing in the app.
+
+/******************************/
+/******* Hook Function ********/
+/******************************/
+
 export function useBgLines(
   refs: ElementRefsT,
   filteredProjects: ProjectsByCompanyT
 ) {
+  const [ breakpoints ] = useBreakpoints();
+  const [ colors ] = useColors();
+
   useLayoutEffect(() => {
-    const colors = variables.colors.split(",");
-    const drawBgLinesWRefsApplied = () => drawBgLines(refs, colors);
+    const drawBgLinesWRefsApplied = () => drawBgLines(refs, colors, breakpoints);
 
     drawBgLinesWRefsApplied();
     window.addEventListener("resize", drawBgLinesWRefsApplied);
 
-    return () => window.removeEventListener("resize", drawBgLinesWRefsApplied);
-  }, [refs, filteredProjects]);
+    return () => window.removeEventListener("resize", drawBgLinesWRefsApplied); // cleanup fn
+  }, [refs, filteredProjects, breakpoints, colors]);
 }

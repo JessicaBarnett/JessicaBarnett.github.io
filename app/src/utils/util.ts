@@ -1,4 +1,4 @@
-import { ProjectT, FilterT, TagT } from "./types/types";
+import { FilterT } from "./types/types";
 
 // Util fns that I can't decide where to put
 
