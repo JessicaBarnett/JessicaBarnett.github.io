@@ -10,3 +10,4 @@ yy = y + (d * sin(alpha))
 // const nextPoint = (p: PointT, angle: number, d: number): PointT => {
 //   return { x: p.x + (d * Math.cos(angle)), y: p.y + (d * Math.sin(angle)) };
 // }
+

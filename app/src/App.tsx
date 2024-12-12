@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { useLayoutEffect, useEffect, useRef } from "react";
+import { useRef } from "react";
 
 import { useFilters } from "./hooks/useFilters";
 import { useProjects } from "./hooks/useProjects";
@@ -29,7 +29,6 @@ function App() {
   const expRef = useRef<HTMLElement | null>(null);
   const contRef = useRef<HTMLElement | null>(null);
   const ftrRef = useRef<HTMLElement | null>(null);
-
 
   useBgLines({
     canvasRef,
