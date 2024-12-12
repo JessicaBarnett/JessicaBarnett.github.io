@@ -14,6 +14,7 @@
     "paths": {
       /* Remember to add new aliases to Vite.config as well */
       "@data/*": ["./data/*"],
+      "@styles/*": ["./stylesheets/*"],
       "@src/*": ["./src/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@assets/*": ["./src/assets/*"],

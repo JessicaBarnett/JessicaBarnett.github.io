@@ -12,6 +12,10 @@ export default defineConfig({
         replacement: path.resolve(__dirname, "./data/"),
       },
       {
+        find: "@styles",
+        replacement: path.resolve(__dirname, "./stylesheets/"),
+      },
+      {
         find: "@src",
         replacement: path.resolve(__dirname, "./src/"),
       },

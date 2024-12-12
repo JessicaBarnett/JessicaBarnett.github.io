@@ -1,9 +1,4 @@
-$mini-bp: 300px;
-$small-bp: 480px;
-$medium-bp: 769px;
-$wide-bp: 1280px;
-$extra-wide-bp: 1440px;
-$hd-bp: 1920px;
+@import '../variables/breakpoints'; // this is a legit import!  Don't want to import the breakpoints file anywhere else
 
 @mixin only-above($breakpoint) {
     @media (min-width: $breakpoint) {

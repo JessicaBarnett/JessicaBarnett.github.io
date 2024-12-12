@@ -1,3 +1,5 @@
+@use 'sass:list';
+
 $pink: #E2006A;
 $orange: #EE6B0F;
 $yellow: #EBE000;
@@ -5,6 +7,8 @@ $green: #82A900;
 $blue: #0084CE;
 $black: #000;
 $white: #FFF;
+
+$colors: ($blue, $green, $yellow, $orange, $pink);
 
 $rainbow-gradient-vert: linear-gradient(
     90deg,

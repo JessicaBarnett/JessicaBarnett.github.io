@@ -1,0 +1,13 @@
+// module for importing things to react
+@use './variables/breakpoints' as *;
+@use './variables/colors' as *;
+
+:export {
+    colors: $colors;
+    miniBp: $mini-bp;
+    smallBp: $small-bp;
+    mediumBp: $medium-bp;
+    wideBp: $wide-bp;
+    extraWideBp: $extra-wide-bp;
+    hdBp: $hd-bp;
+}
