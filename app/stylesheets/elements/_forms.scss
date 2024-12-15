@@ -1,0 +1,52 @@
+@use "../utilities/media-queries" as *;
+@use "../variables/globals" as *;
+@use "../variables/colors" as *;
+
+/**************
+    FORMS
+***************/
+
+@mixin form-field() {
+    display: block;
+    border: 2px solid $black;
+    border-radius: 3px;
+    width: 100%;
+    background-color: $white;
+    padding: 8px 4px;
+}
+
+form {
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: $body-font-size;
+}
+
+input {
+    @include form-field();
+    margin-bottom: 8px;
+}
+
+textarea {
+    @include form-field();
+    min-height: 250px;
+}
+
+.submission-msg {
+    max-width: 350px;
+}
+
+/**************
+    SELECT
+***************/
+
+$width-of-select-arrow: 24px;
+
+select {
+    @include form-field();
+    padding: 4px calc(8px + $width-of-select-arrow) 4px 8px;
+}
+

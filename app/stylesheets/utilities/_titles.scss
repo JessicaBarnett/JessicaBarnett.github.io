@@ -1,0 +1,15 @@
+@use  '../variables/fonts' as *;
+
+/**************
+    TITLES
+***************/
+
+@mixin title {
+    font-family: $primary-font;
+    font-weight: 700;
+}
+
+@mixin subtitle {
+    font-family: $primary-font;
+    font-weight: 500;
+}

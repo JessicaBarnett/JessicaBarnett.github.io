@@ -1,0 +1,41 @@
+@use '../utilities/trapezoid' as *;
+@use '../variables/colors' as *;
+
+
+/*************
+  Experience
+**************/
+
+.section-experience {
+  .section-heading {
+    margin-left: -25px;
+  }
+
+  .section-content {
+    max-width: 80%;
+    margin: 0 auto;
+    margin-left: 12%;
+    padding: 4rem 0 4rem 63px;
+
+  //   max-width: 70%;
+  //   margin: 0 auto;
+  }
+}
+
+.trapezoid-hug {
+    position: relative;
+
+    &:before {
+        @include trapezoid('left', 30px, 15px, 300px, $black);
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+
+    &:after {
+        @include trapezoid('right', 30px, 15px, 300px, $black);
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+}

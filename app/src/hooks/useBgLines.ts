@@ -34,7 +34,7 @@ const getPathA = (
       a: 45,
     },
     {
-      x: pgWidth - 180,
+      x: pgWidth - (100 + (15 * (pgWidth * .004))), // I have no idea how I came up with this math
       y: ttlHeight - (linesW/2), // top-right of the about element
       a: 45,
     },
@@ -50,12 +50,12 @@ const getPathA = (
     },
     {
       x: lineW / 2,
-      y: ttlHeight + abtHeight + projHeight - 50, // bottom of the Projects Element/ top of experience
+      y: ttlHeight + abtHeight + projHeight + 60, // bottom of the Projects Element/ top of experience
       a: 0,
     },
     {
       x: lineCt * lineW,
-      y: ttlHeight + abtHeight + projHeight + 50,
+      y: ttlHeight + abtHeight + projHeight + 150,
       a: 0,
     },
     {
@@ -64,13 +64,13 @@ const getPathA = (
       a: 90,
     },
     {
-      x: pgWidth - 200,
+      x: pgWidth - (50 * (pgWidth * .006)),
       y: ttlHeight + abtHeight + projHeight + expHeight - (linesW/2), // horizontal across bottom
       a: 0,
     },
     {
       x: pgWidth,
-      y: ttlHeight + abtHeight + projHeight + expHeight + 150, // final point
+      y: ttlHeight + abtHeight + projHeight + expHeight + (50 * (pgWidth * .003)), // final point
     },
   ];
 };
@@ -80,35 +80,38 @@ const getPathB = (
   lineW: number,
   lineCt: number
 ): PointT[] => {
-  const linesW = lineW * lineCt;
+  const allLinesW = lineW * lineCt;
+  const halfLineW = lineW/2;
+  const halfLinesW = allLinesW/2;
 
   return [
     {
       x: 0, // left side
-      y: ttlHeight + abtHeight - (linesW/2) - 80 ,
+      y: ttlHeight + abtHeight - halfLinesW - 80 ,
     },
     {
-      x: linesW * 1.4, // left side
-      y: ttlHeight + abtHeight - (linesW/2),
+      x: allLinesW * 1.4, // left side
+      y: ttlHeight + abtHeight - halfLinesW,
       a: 0,
     },
     {
-      x: pgWidth - linesW, // right side minus line width
-      y: ttlHeight + abtHeight  - (linesW/2) ,
+      x: pgWidth - allLinesW + halfLineW, // right side minus line width
+      y: ttlHeight + abtHeight  - halfLinesW ,
       a: 90,
     },
     {
-      x: pgWidth - linesW, // right side minus line width
-      y: ttlHeight + abtHeight + projHeight - 200,
+      x: pgWidth - allLinesW + halfLineW, // right side minus line width
+      y: ttlHeight + abtHeight + projHeight - 150 + (pgWidth * .05),
       a: 45,
     },
     {
-      x: pgWidth - 280,
-      y: ttlHeight + abtHeight + projHeight - 50,
+      x: pgWidth - (pgWidth * .25),
+      y: ttlHeight + abtHeight + projHeight - 50 + (pgWidth * .02), // -30 @ small
       translate: (p: PointT, offset: number, lineIdx: number) => {
+
         return {
-          x: p.x + offset - lineIdx * 20,
-          y: p.y + lineIdx * 40,
+          x: p.x + offset - lineIdx * 2,
+          y: p.y + lineIdx * 20,
         };
       },
     },
@@ -130,23 +133,24 @@ const getPathC = (
 ): PointT[] => {
   const pgHeight =
     ttlHeight + abtHeight + projHeight + expHeight + contHeight + ftrHeight;
-
+    const halfLineW = (lineW / 2);
+    const linesW = (lineW * lineCt);
   return [
     {
       x: 0, // left side
-      y: pgHeight - lineW * lineCt,
+      y: pgHeight - linesW + halfLineW,
     },
     {
-      x: pgWidth - lineW * lineCt, // right side minus line width
-      y: pgHeight - lineW * lineCt,
+      x: pgWidth - linesW + halfLineW, // right side minus line width
+      y: pgHeight - linesW + halfLineW,
     },
     {
-      x: pgWidth - lineW * lineCt - 150, // right side minus line width
-      y: pgHeight - lineW * lineCt - 300,
+      x: pgWidth - linesW + halfLineW, // right side minus line width
+      y: pgHeight - linesW - 300,
       translate: (p: PointT, offset: number, lineIdx: number) => {
         return {
-          x: p.x + 4.5 * lineIdx,
-          y: p.y - 2 * lineIdx,
+          x: p.x + offset,
+          y: p.y + offset,
         };
       },
     },
@@ -174,20 +178,12 @@ const resizeAndClearCanvas = (
 
 // Change line Widths at breakpoints here
 const getLineW = (sizes: SizesT, breakpoints: BreakpointsT): number => {
-  if (sizes.pgWidth <= parseInt(breakpoints.miniBp)) {
-    return 8;
-  }
-
-  if (sizes.pgWidth <= parseInt(breakpoints.smallBp)) {
+  if (sizes.pgWidth <= parseInt(breakpoints.mediumBp)) {
     return 10;
   }
 
-  if (sizes.pgWidth <= parseInt(breakpoints.mediumBp)) {
-    return 15;
-  }
-
   if (sizes.pgWidth <= parseInt(breakpoints.wideBp)) {
-    return 20;
+    return 15;
   }
 
   return 20;

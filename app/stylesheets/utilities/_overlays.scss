@@ -1,0 +1,35 @@
+@use '../variables/globals' as *;
+
+@mixin absolute-overlay() {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+}
+
+@mixin pseudo-overlay() {
+    content: '';
+    display: block;
+    @include absolute-overlay;
+}
+
+
+@mixin paper-texture-overlay() {
+    @include pseudo-overlay;
+    background: $paper-texture-url;
+}
+
+
+@mixin vhs-rough-texture-overlay() {
+    @include pseudo-overlay;
+    background: $vhs-texture-rough-url;
+}
+
+
+@mixin vhs-smooth-texture-overlay() {
+    @include pseudo-overlay;
+    background: $vhs-texture-smooth-url;
+}

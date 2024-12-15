@@ -1,0 +1,44 @@
+@use '../utilities/trapezoid' as *;
+@use '../variables/colors' as *;
+@use '../utilities/font-size' as *;
+@use '../utilities/titles' as *;
+
+/*************
+  About
+**************/
+
+.section-about {}
+
+/*
+    One off title styles
+*/
+
+// Hello.
+.deco-font-1 {
+  @include font-size(3.2rem);
+  @include title;
+  line-height: 3rem; // unique
+  font-weight: 700;
+}
+
+// My name is...
+.deco-font-2 {
+  @include font-size(1.2rem);
+  line-height: 1.8rem; // unique
+}
+
+// thanks for...
+.deco-font-3 {
+  @include font-size(1.4rem);
+}
+
+
+.trapezoid-right {
+    position: relative;
+
+    &:after {
+        @include trapezoid('right', 50px, 25px, 80px, $black);
+        top: 75px;
+        right: 0;
+    }
+}

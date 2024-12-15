@@ -1,0 +1,17 @@
+@use "../utilities/trapezoid" as *;
+@use "../variables/colors" as *;
+
+/*************
+  Title
+**************/
+
+.section-title {}
+
+.triangle-left {
+  position: relative;
+
+  &:before {
+      @include trapezoid('left', 32px, 25px, $black);
+      top: 35%;
+  }
+}

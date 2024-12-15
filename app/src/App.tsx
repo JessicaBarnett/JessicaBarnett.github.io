@@ -53,156 +53,154 @@ function App() {
 
   return (
     <>
-      <div ref={pageRef} className="page">
-        <canvas id="canvas" ref={canvasRef} height="100%" width="100%"></canvas>
-        <section ref={ttlRef} className="section-title triangle-left">
-          <div className="section-content">
-            <h1 className="title-1">
-              <span className="outdent-1">Jessica </span>
-              Barnett
-            </h1>
-            <h2 className="indent-2 subtitle-1">
-              <span className="outdent-1">Front-End / FullStack </span>
-              <span className="nowrap">Software Engineer</span>
-            </h2>
-          </div>
-          <div className="bezel"></div>
-        </section>
-
-        <section ref={abtRef} className="section-about trapezoid-right">
-          <div className="section-content">
-            <div className="indent-2">
-              <p className="deco-font-1">
-                <em className="outdent-1">Hello.</em>
-              </p>
-              <p className="deco-font-2 ">
-                My name is Jessica{" "}
-                <span className="nowrap">and I make web things.</span>
-              </p>
-              <p className="indent-1 deco-font-3">Thanks for dropping by!</p>
+      <div className="layout">
+        <div ref={pageRef} className="page">
+          <canvas id="canvas" ref={canvasRef} height="100%" width="100%"></canvas>
+          <section ref={ttlRef} className="section-title triangle-left">
+            <div className="section-content">
+              <h1 className="title-1">
+                <span className="outdent-1">Jessica </span>
+                Barnett
+              </h1>
+              <h2 className="indent-2 subtitle-1">
+                <span className="outdent-1">Front-End / FullStack </span>
+                <span className="nowrap">Software Engineer</span>
+              </h2>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section ref={projRef} className="section-projects rainbow-left-right-top">
-          <div className="section-content grid-at-small">
-            <h3 className="section-heading title-2 half">Projects</h3>
-
-            <div className="filter-group half">
-              <label htmlFor="filterProjects">Filter</label>
-              <select
-                name="filterProjects"
-                id="filterProjects"
-                value={selectedFilter?.name ?? undefined}
-                onChange={handleFilterChange}>
-                <option value="">All</option>
-                { filters.map(filter => (
-                  <option value={filter.name} data-tags={filter.tags}>{filter.displayName}</option>
-                ))}
-              </select>
+          <section ref={abtRef} className="section-about trapezoid-right">
+            <div className="section-content">
+              <div className="indent-2">
+                <p className="deco-font-1">
+                  <em className="outdent-1">Hello.</em>
+                </p>
+                <p className="deco-font-2 ">
+                  My name is Jessica{" "}
+                  <span className="nowrap">and I make web things.</span>
+                </p>
+                <p className="indent-1 deco-font-3">Thanks for dropping by!</p>
+              </div>
             </div>
+          </section>
 
-            <ProjectList
-              heading="Relay Network"
-              projects={filteredProjects['Relay Network'] ?? []}
-              selectedTags={selectedFilter?.tags ?? []}
-              onTagSelect={onTagSelect}></ProjectList>
+          <section ref={projRef} className="section-projects">
+            <div className="section-content grid-at-small">
+              <h3 className="section-heading title-2 half">Projects</h3>
 
+              <div className="filter-projects-group half">
+                <label className="filter-projects-label" htmlFor="filterProjects">Filter</label>
+                <select
+                  className="filter-projects-select"
+                  name="filterProjects"
+                  id="filterProjects"
+                  value={selectedFilter?.name ?? undefined}
+                  onChange={handleFilterChange}>
+                  <option value="">All</option>
+                  { filters.map(filter => (
+                    <option value={filter.name} data-tags={filter.tags}>{filter.displayName}</option>
+                  ))}
+                </select>
+              </div>
 
-            <ProjectList
-              heading="Weblinc Ecommerce"
-              projects={filteredProjects['Weblinc Ecommerce'] ?? []}
-              selectedTags={selectedFilter?.tags ?? []}
-              onTagSelect={onTagSelect}></ProjectList>
+              <ProjectList
+                heading="Relay Network"
+                projects={filteredProjects['Relay Network'] ?? []}
+                selectedTags={selectedFilter?.tags ?? []}
+                onTagSelect={onTagSelect}></ProjectList>
 
-          </div>
-        </section>
+              <ProjectList
+                heading="Weblinc Ecommerce"
+                projects={filteredProjects['Weblinc Ecommerce'] ?? []}
+                selectedTags={selectedFilter?.tags ?? []}
+                onTagSelect={onTagSelect}></ProjectList>
 
-        <section ref={expRef} className="section-resume trapezoid-hug">
-          <div className="section-content">
-            <h3 className="section-heading title-2">Resume</h3>
+            </div>
+          </section>
 
-            <div className="rainbow-left-2">
+          <section ref={expRef} className="section-experience trapezoid-hug">
+            <div className="section-content">
+              <h3 className="section-heading title-2">Experience</h3>
               <ol>
                 { expEntries.map(entry => (
                     <ExperienceEntry entry={entry}></ExperienceEntry>
                 ))}
               </ol>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section ref={contRef} className="section-contact color-bar">
-          <div className="section-content grid ">
-            <h3 className="section-heading title-2">Contact</h3>
+          <section ref={contRef} className="section-contact color-bar">
+            <div className="section-content grid ">
+              <h3 className="section-heading title-2">Contact</h3>
 
-            <ContactForm></ContactForm>
+              <ContactForm></ContactForm>
 
-            <div className="sidebar-right one-third">
-              <p className="made-with-love">
-                Made with{" "}
-                <img
-                  className="icon-sm"
-                  alt="love"
-                  src="/assets/icons/love-icon-dark.png"
-                ></img>{" "}
-                in Philadelphia{" "}
-              </p>
+              <div className="sidebar-right one-third">
+                <p className="made-with-love">
+                  Made with{" "}
+                  <img
+                    className="icon-sm"
+                    alt="love"
+                    src="/assets/icons/love-icon-dark.png"
+                  ></img>{" "}
+                  in Philadelphia{" "}
+                </p>
 
-              <a className="social-link" href="#">
-                <img
-                  className="icon-lg"
-                  alt="Linkedin Icon"
-                  src="/assets/icons/linkedin-icon-dark.png"
-                ></img>
-                <span>LinkedIn</span>
-              </a>
+                <a className="social-link" href="#">
+                  <img
+                    className="icon-lg"
+                    alt="Linkedin Icon"
+                    src="/assets/icons/linkedin-icon-dark.png"
+                  ></img>
+                  <span>LinkedIn</span>
+                </a>
 
-              <a className="social-link" href="#">
-                <img
-                  className="icon-lg"
-                  alt="Github Icon"
-                  src="/assets/icons/github-icon-dark.png"
-                ></img>
-                <span>Github</span>
-              </a>
+                <a className="social-link" href="#">
+                  <img
+                    className="icon-lg"
+                    alt="Github Icon"
+                    src="/assets/icons/github-icon-dark.png"
+                  ></img>
+                  <span>Github</span>
+                </a>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section ref={ftrRef} className="section-footer">
-          <div className="section-content">
-            <table className="page-stats-table">
-              <tbody>
-                <tr>
-                  <th>Language</th>
-                  <th>HTML</th>
-                  <th>SCSS</th>
-                  <th>JS</th>
-                </tr>
-                <tr>
-                  <th>Percent</th>
-                  <td>20%</td>
-                  <td>40%</td>
-                  <td>40%</td>
-                </tr>
-                <tr>
-                  <th>Lines</th>
-                  <td colSpan={3}>6000 lines</td>
-                </tr>
-              </tbody>
-            </table>
+          <section ref={ftrRef} className="section-footer">
+            <div className="section-content">
+              <table className="page-stats-table">
+                <tbody>
+                  <tr>
+                    <th>Language</th>
+                    <th>HTML</th>
+                    <th>SCSS</th>
+                    <th>JS</th>
+                  </tr>
+                  <tr>
+                    <th>Percent</th>
+                    <td>20%</td>
+                    <td>40%</td>
+                    <td>40%</td>
+                  </tr>
+                  <tr>
+                    <th>Lines</th>
+                    <td colSpan={3}>6000 lines</td>
+                  </tr>
+                </tbody>
+              </table>
 
-            <a className="page-stats-button" href="#">
-              <button className="btn-2" type="button">
-                Source
-              </button>
-            </a>
-            <p className="page-stats-text">
-              Project built with Sass, React, and Vite.
-            </p>
-          </div>
-        </section>
+              <a className="page-stats-button" href="#">
+                <button className="btn-2" type="button">
+                  Source
+                </button>
+              </a>
+              <p className="page-stats-text">
+                Project built with Sass, React, and Vite.
+              </p>
+            </div>
+          </section>
+        </div>
       </div>
       {/* end page */}
     </>

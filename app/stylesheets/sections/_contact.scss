@@ -1,0 +1,40 @@
+@use '../variables/colors' as *;
+@use '../utilities/font-size' as *;
+
+/*************
+  Contact
+**************/
+
+.made-with-love {
+    border-bottom: 3px solid $black;
+    padding: 8px;
+}
+
+.color-bar {
+    position: relative;
+
+    &:before {
+        position: absolute;
+        left: 0;
+        top: 120px;
+        content: '';
+        display: block;
+        width: 32px;
+        height: 450px;
+        background: $rainbow-gradient-horiz
+    }
+}
+
+
+.social-link {
+    @include font-size(1.2rem);
+    display: flex;
+    align-items: center;
+    color: $black;
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }

@@ -1,26 +1,80 @@
-// @use "./reset.css";
-
 // Variables
 @use './variables/colors' as *;
 @use './variables/fonts' as *;
 @use './variables/globals' as *;
 
-// mixins and functions
-@use "./utilities/media-queries" as *;
-@use "./utilities/vertical-spacing" as *;
-@use "./utilities/font-size" as *;
-@use "./utilities/grid" as *;
-
+// elements
+@use "./elements/buttons";
+@use "./elements/forms";
+@use "./elements/icons";
+@use "./elements/images";
+@use "./elements/links";
+@use "./elements/lists";
+@use "./elements/tables";
 
 // partials
-@use "./partials/typography";
 @use "./partials/layout";
-@use "./partials/forms";
-@use "./partials/tables";
-@use "./partials/lists";
-@use "./partials/buttons";
-@use "./partials/decorative";
-@use "./partials/rainbows";
+@use "./partials/typography";
+
+// sections
+@use "./sections/title";
+@use "./sections/about";
+@use "./sections/projects";
+@use "./sections/experience";
+@use "./sections/contact";
+
+/*******************
+    FONT IMPORTS
+********************/
+
+@font-face {
+  font-family: 'Open Dyslexic';
+  src: url('/assets/fonts/open_dyslexic/OpenDyslexic-Regular.otf') format('opentype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Open Dyslexic';
+  src: url('/assets/fonts/open_dyslexic/OpenDyslexic-Bold.otf') format('opentype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Open Dyslexic';
+  src: url('/assets/fonts/open_dyslexic/OpenDyslexic-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Open Dyslexic';
+  src: url('/assets/fonts/open_dyslexic/OpenDyslexic-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Lester Bold';
+  src: url('/assets/fonts/lester-bold.ttf'), format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Inter';
+  // src: url('/assets/fonts/Inter/static/Inter_18pt-Regular.ttf') format('truetype');
+  src: url('/assets/fonts/Inter/Inter-Italic-VariableFont_opsz\,wght.ttf') format('truetype') tech('variations');
+  font-weight: 100 1000;
+  font-stretch: 25% 151%;
+}
+
+@font-face {
+  font-family: 'Lexend';
+  // src: url('/assets/fonts/Inter/static/Inter_18pt-Regular.ttf') format('truetype');
+  src: url('/assets/fonts/Lexend/Lexend-VariableFont_wght.ttf') format('truetype') tech('variations');
+  font-weight: 100 1000;
+  font-stretch: 25% 151%;
+}
+
 
 /**************
     GLOBALS
@@ -30,9 +84,21 @@
   box-sizing: border-box;
 }
 
+:root {
+  background-color: $black;
+}
+
 body {
   margin: 0;
 }
+
+section {
+  z-index: 1;
+}
+
+/**********************
+    UTILITY CLASSES
+***********************/
 
 .hidden {
   display: none;
@@ -42,100 +108,26 @@ body {
   display: flex;
 }
 
-/**************
-    IMAGES
-***************/
-
-img {
-  max-width: 100%;
+.text-left {
+  text-align: left;
 }
 
-#canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
+.nowrap {
+  white-space: nowrap;
 }
 
-.hidden {
-  opacity: 0;
+.outdent-1 {
+  margin-left: -1rem;
 }
 
-.submission-msg {
-  max-width: 350px;
+.outdent-2 {
+  margin-left: -2rem;
 }
 
-/*************
-  Stuff to clean up and move
-**************/
-
-.section-title {
-  // background: $rainbow-gradient-vert  calc(100% - 6rem) 100% / 3rem 100% no-repeat;
+.indent-1 {
+  margin-left: 1rem;
 }
 
-.section-about {
-  // border-style: solid;
-  // border-width: 3rem;
-  // border-bottom: 60px solid;
-  // border-image: $rainbow-gradient-horiz 1 100%;
-}
-
-.section-projects {
-  // background: $rainbow-gradient-vert left / 3rem no-repeat,
-  //             $rainbow-gradient-vert right / 3rem no-repeat,
-  //             $rainbow-gradient-horiz top / 100% 60px no-repeat;
-
-
-  h3 {
-    text-align: left;
-
-    @include only-below($small-bp) {
-      margin-bottom: 32px;
-    }
-
-    @include only-above($small-bp) {
-      text-align: right;
-      order: 2;
-    }
-  }
-
-  // util class?
-  .filter-group {
-    width: 100%;
-
-    @include only-below($small-bp) {
-      margin-bottom: 48px;
-    }
-
-    @include only-above($small-bp) {
-      order: 1;
-      justify-self: start;
-    }
-
-    label {
-      text-transform: uppercase;
-      letter-spacing: 0.18rem;
-      font-size: .7rem;
-      line-height: .6rem;
-    }
-
-    select {
-        @include only-below($small-bp) {
-            width: 100%;
-        }
-    }
-  }
-
-  h4, ul {
-    order: 3;
-  }
-}
-
-.section-resume {
-  ol {
-    max-width: 70%;
-    margin: 0 auto;
-  }
+.indent-2 {
+  margin-left: 2rem;
 }

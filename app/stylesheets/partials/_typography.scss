@@ -3,17 +3,24 @@
 @use "../utilities/font-size" as *;
 @use "../utilities/vertical-spacing" as *;
 @use "../utilities/media-queries" as *;
+@use "../utilities/overlays" as *;
+@use "../variables/globals" as *;
+@use "../utilities/titles" as *;
+
 
 /****************
     ROOT FONT
 *****************/
 
 :root {
-  @include font-size(1rem);
-  background-color: $black;
+  @include font-size(.9rem);
   font-family: $primary-font;
   color: $black;
   font-weight: 300;
+
+  @include only-above($small-bp) {
+    @include font-size(1rem);
+  }
 
   @include only-above($medium-bp) {
     @include font-size(1.2rem);
@@ -22,14 +29,6 @@
   @include only-above($extra-wide-bp) {
     @include font-size(1.6rem);
   }
-}
-
-/**************
-    UTIL
-***************/
-
-.text-left {
-  text-align: left;
 }
 
 /**************
@@ -45,16 +44,6 @@
 /**************
     TITLES
 ***************/
-
-@mixin title {
-  font-family: $primary-font;
-  font-weight: 700;
-}
-
-@mixin subtitle {
-  font-family: $primary-font;
-  font-weight: 500;
-}
 
 /*
     "page" titles
@@ -114,77 +103,4 @@
   @include subtitle;
   @include font-size(1.2rem);
   font-style: italic;
-}
-
-/*
-    One off title styles
-*/
-
-// Hello.
-.deco-font-1 {
-  @include font-size(3.2rem);
-  @include title;
-  line-height: 3rem; // unique
-  font-weight: 700;
-}
-
-// My name is...
-.deco-font-2 {
-  @include font-size(1.2rem);
-  line-height: 1.8rem; // unique
-}
-
-// thanks for...
-.deco-font-3 {
-  @include font-size(1.4rem);
-}
-
-/**************
-     ICONS
-***************/
-
-.icon-sm {
-  max-width: 24px;
-  filter: invert(0);
-}
-
-.icon-lg {
-  max-width: 45px;
-  margin: 8px;
-}
-
-/**************
-    LINKS
-***************/
-
-a {}
-
-/***************/
-/**   LINKS   **/
-/***************/
-
-.link {
-  margin-right: 16px;
-}
-
-.link::before {
-  content: '';
-  background: url('assets/icons/link-solid.svg') no-repeat;
-  display: inline-block;
-  height: 12px;
-  width: 16px;
-}
-
-
-.social-link {
-  @include font-size(1.2rem);
-  display: flex;
-  align-items: center;
-  color: $black;
-  font-weight: 700;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
 }

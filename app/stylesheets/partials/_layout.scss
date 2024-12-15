@@ -3,19 +3,63 @@
 @use "../utilities/media-queries" as *;
 @use "../utilities/vertical-spacing" as *;
 @use "../utilities/if-next-sibling-has" as *;
+@use "../utilities/overlays" as *;
+
 
 /********************
-   WRAPPER ELEMENTS
+   ROOT
+*********************/
+
+.layout {
+  position: relative;
+  background-color: $black;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 16px;
+
+  &:before {
+    @include paper-texture-overlay();
+    opacity: 20%;
+    z-index: 0;
+  }
+}
+
+
+/********************
+   PAGE
 *********************/
 
 .page {
+  position: relative;
+  background-color: white;
   overflow: hidden;
   background-color: $white;
   width: 100%;
   color: $black;
   margin: 0 auto;
-  // padding: 4rem 0; // top/bottom only
   max-width: $page-max-width;
+  min-width: $mini-bp;
+  margin-bottom: 180px;
+  z-index: 1;
+
+
+
+  &:after {
+    @include paper-texture-overlay();
+    z-index: 2;
+    opacity: 20%;
+    pointer-events: none;
+  }
+
+}
+
+/********************
+   CANVAS
+*********************/
+
+#canvas {
+  @include absolute-overlay;
+  z-index: 1;
 }
 
 /**************

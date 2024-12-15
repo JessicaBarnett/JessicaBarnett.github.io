@@ -1,0 +1,22 @@
+
+/**************
+    LINKS
+***************/
+
+a {}
+
+/***************/
+/**   LINKS   **/
+/***************/
+
+.link {
+  margin-right: 16px;
+}
+
+.link::before {
+  content: '';
+  background: url('assets/icons/link-solid.svg') no-repeat;
+  display: inline-block;
+  height: 12px;
+  width: 16px;
+}

@@ -1,0 +1,21 @@
+/* Example usage:
+    @include trapezoid('left', 30px, 15px, 300px, $black);
+    @include trapezoid('right', 50px, 25px, 80px, $black);
+    @include trapezoid('right', 30px, 15px, 300px, $black);
+*/
+@mixin trapezoid($orientation: 'left', $btm-width, $height, $top-width: 0px, $color: black) {
+    position: absolute;
+    content: '';
+    display: block;
+    height: $top-width; // set this to 0 for a triangle
+    border-top: $height solid transparent;
+    border-bottom: $height solid transparent;
+
+    @if $orientation == 'left' {
+        border-left: $btm-width solid $color;
+    }
+
+    @if $orientation == 'right' {
+        border-right: $btm-width solid $color;
+    }
+}
