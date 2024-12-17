@@ -49,21 +49,32 @@
     color: $black;
     font-weight: 700;
     text-decoration: none;
+    width: 20%;
+    max-width: 60px;
+    text-align: center;
+    display: inline-block;
+    padding: 4px;
 
     &:hover {
       text-decoration: underline;
     }
 
     @include only-above($medium-bp) {
-      display: flex;
-      align-items: center;
+      display: block;
     }
 
-    span {
+    .social-link-text {
       display: none;
 
       @include only-above($medium-bp) {
         display: inline-block;
       }
+    }
+
+    &:hover svg {
+      fill: none;
+      stroke: black;
+      stroke-width: 10px;
+      stroke-linejoin: round;
     }
 }

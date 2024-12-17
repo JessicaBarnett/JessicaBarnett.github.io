@@ -799,23 +799,33 @@ p {
   color: #000;
   font-weight: 700;
   text-decoration: none;
+  width: 20%;
+  max-width: 60px;
+  text-align: center;
+  display: inline-block;
+  padding: 4px;
 }
 .social-link:hover {
   text-decoration: underline;
 }
 @media (min-width: 769px) {
   .social-link {
-    display: flex;
-    align-items: center;
+    display: block;
   }
 }
-.social-link span {
+.social-link .social-link-text {
   display: none;
 }
 @media (min-width: 769px) {
-  .social-link span {
+  .social-link .social-link-text {
     display: inline-block;
   }
+}
+.social-link:hover svg {
+  fill: none;
+  stroke: black;
+  stroke-width: 10px;
+  stroke-linejoin: round;
 }
 
 /*******************

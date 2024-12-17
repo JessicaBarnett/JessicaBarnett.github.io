@@ -18,6 +18,8 @@ import ContactForm from "./components/ContactForm";
 import { Play } from "./icons/Play";
 import { Pause } from "./icons/Pause";
 import { Stop } from "./icons/Stop";
+import { Linkedin } from "./icons/Linkedin";
+import { Github } from "./icons/Github";
 
 
 function App() {
@@ -50,27 +52,27 @@ function App() {
   }, useFilteredProjects);
 
 
-  useEffect(() => {
-    const ttlHeight = +(ttlRef!.current!.offsetHeight ?? 0);
-    const abtHeight = +(abtRef!.current!.offsetHeight ?? 0);
-    const waypoint = ttlHeight + (abtHeight / 2);
+  // useEffect(() => {
+  //   const ttlHeight = +(ttlRef!.current!.offsetHeight ?? 0);
+  //   const abtHeight = +(abtRef!.current!.offsetHeight ?? 0);
+  //   const waypoint = ttlHeight + (abtHeight / 2);
 
-    if (!scrollPosition.current) {
-      console.log('no current scroll pos')
-      return;
-    }
-    const isBelowNavWaypoint = scrollPosition.current > waypoint;
-    const navIsHidden = fixedNavRef.current?.classList.contains('hidden');
+  //   if (!scrollPosition.current) {
+  //     console.log('no current scroll pos')
+  //     return;
+  //   }
+  //   const isBelowNavWaypoint = scrollPosition.current > waypoint;
+  //   const navIsHidden = fixedNavRef.current?.classList.contains('hidden');
 
-    if (isBelowNavWaypoint && navIsHidden) {
-      fixedNavRef.current?.classList.remove('hidden');
-      return;
-    }
+  //   if (isBelowNavWaypoint && navIsHidden) {
+  //     fixedNavRef.current?.classList.remove('hidden');
+  //     return;
+  //   }
 
-    if (!isBelowNavWaypoint && !navIsHidden) {
-      fixedNavRef.current?.classList.add('hidden');
-    }
-  }, [scrollPosition, ttlRef, abtRef])
+  //   if (!isBelowNavWaypoint && !navIsHidden) {
+  //     fixedNavRef.current?.classList.add('hidden');
+  //   }
+  // }, [scrollPosition, ttlRef, abtRef])
 
   // turn this back on after I fix the scroll position weirdness
   const onTagSelect = (/*name: string*/) => {
@@ -84,6 +86,21 @@ function App() {
 
   return (
     <>
+      <div ref={fixedNavRef} className="nav-links nav-links-fixed">
+        <a className="nav-link" href="#projects">
+          <Play></Play>
+          <span>projects</span>
+        </a>
+        <a className="nav-link" href="#experience">
+          <Pause></Pause>
+          <span>experience</span>
+        </a>
+        <a className="nav-link" href="#contact">
+          <Stop></Stop>
+          <span>contact</span>
+        </a>
+      </div>
+
       <div className="layout">
         <div ref={pageRef} className="page">
           <canvas id="canvas" ref={canvasRef} height="100%" width="100%"></canvas>
@@ -190,22 +207,14 @@ function App() {
                   in Philadelphia{" "}
                 </p>
 
-                <a className="social-link" href="#">
-                  <img
-                    className="icon-lg"
-                    alt="Linkedin Icon"
-                    src="/assets/icons/linkedin-icon-dark.png"
-                  ></img>
-                  <span>LinkedIn</span>
+                <a className="social-link" target="_blank" href="https://www.linkedin.com/in/jessica-m-barnett/">
+                  <Linkedin></Linkedin>
+                  <span className="social-link-text">LinkedIn</span>
                 </a>
 
-                <a className="social-link" href="#">
-                  <img
-                    className="icon-lg"
-                    alt="Github Icon"
-                    src="/assets/icons/github-icon-dark.png"
-                  ></img>
-                  <span>Github</span>
+                <a className="social-link" target="_blank" href="https://github.com/JessicaBarnett">
+                  <Github></Github>
+                  <span className="social-link-text">Github</span>
                 </a>
               </div>
             </div>
@@ -213,7 +222,8 @@ function App() {
 
           <section ref={ftrRef} className="section-footer">
             <div className="section-content">
-              <table className="page-stats-table">
+              {/* Put like, "interested in this build?  see the style guide, or my write up about it!" in this section too  */}
+              {/* <table className="page-stats-table">
                 <tbody>
                   <tr>
                     <th>Language</th>
@@ -232,32 +242,18 @@ function App() {
                     <td colSpan={3}>6000 lines</td>
                   </tr>
                 </tbody>
-              </table>
+              </table> */}
 
-              <a className="page-stats-button" href="#">
+              {/* <a className="page-stats-button" href="#">
                 <button className="btn-2" type="button">
                   Source
                 </button>
               </a>
               <p className="page-stats-text">
                 Project built with Sass, React, and Vite.
-              </p>
+              </p> */}
             </div>
           </section>
-        </div>
-        <div ref={fixedNavRef} className="nav-links nav-links-fixed hidden">
-          <a className="nav-link" href="#projects">
-            <Play></Play>
-            <span>projects</span>
-          </a>
-          <a className="nav-link" href="#experience">
-            <Pause></Pause>
-            <span>experience</span>
-          </a>
-          <a className="nav-link" href="#contact">
-            <Stop></Stop>
-            <span>contact</span>
-          </a>
         </div>
       </div>
       {/* end page */}
