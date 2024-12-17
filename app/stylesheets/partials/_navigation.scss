@@ -1,0 +1,62 @@
+@use '../variables/colors' as *;
+
+// maybe a 3d button push effect?  like a vcr button?
+// add play/stop/pause/rw/ff/rec icons!
+
+
+
+@use '../variables/colors' as *;
+
+// maybe a 3d button push effect?  like a vcr button?
+// add play/stop/pause/rw/ff/rec icons!
+
+.nav-links {
+    display: grid;
+    width: 70%;
+
+    .icon {
+      display: inline-block;
+      width: 1.2rem;
+      padding: 0 4px;
+
+      svg {
+        fill: $white;
+      }
+    }
+}
+
+    .nav-link {
+        padding: 4px 8px;
+        margin: 8px;
+        border: 2px solid $black;
+        border-radius: 3px;
+        text-decoration: none;
+        font-weight: bold;
+        color: $white;
+        background-color: $black;
+        text-transform: lowercase;
+
+        &:hover {
+        color: $black;
+        background-color: $white;;
+        }
+
+        &:hover svg {
+        fill: $black;
+        }
+    }
+
+/* Modifiers */
+
+.nav-links-fixed {
+    z-index: 6;
+    background-color: $black;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    grid-template-columns: 1fr 1fr 1fr;
+    top: 0;
+    text-align: center;
+}
+

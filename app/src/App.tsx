@@ -1,12 +1,13 @@
 import "./App.css";
 
-import { useRef } from "react";
+import { useLayoutEffect, useEffect, useRef } from "react";
 
 import { useFilters } from "./hooks/useFilters";
 import { useProjects } from "./hooks/useProjects";
-import { useExperienceEntries} from "./hooks/useExperienceEntries";
+import { useExperienceEntries } from "./hooks/useExperienceEntries";
 import { useSelectedFilter } from "./hooks/useSelectedFilter";
 import { useFilteredProjects } from "./hooks/useFilteredProjects";
+import { useScrollPosition } from "./hooks/useScrollPosition";
 
 import { useBgLines } from "./hooks/useBgLines";
 
@@ -14,21 +15,28 @@ import ProjectList from "./components/ProjectList";
 import ExperienceEntry from "./components/ExperienceEntry";
 import ContactForm from "./components/ContactForm";
 
+import { Play } from "./icons/Play";
+import { Pause } from "./icons/Pause";
+import { Stop } from "./icons/Stop";
+
+
 function App() {
   const [filters] = useFilters();
   const [projects] = useProjects();
   const [expEntries] = useExperienceEntries();
   const [selectedFilter, setSelectedFilter] = useSelectedFilter(filters);
   const [filteredProjects] = useFilteredProjects(projects, filters, selectedFilter);
+  const [scrollPosition] = useScrollPosition();
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const pageRef = useRef<HTMLDivElement| null>(null);
+  const pageRef = useRef<HTMLDivElement | null>(null);
   const ttlRef = useRef<HTMLElement | null>(null);
   const abtRef = useRef<HTMLElement | null>(null);
   const projRef = useRef<HTMLElement | null>(null);
   const expRef = useRef<HTMLElement | null>(null);
   const contRef = useRef<HTMLElement | null>(null);
   const ftrRef = useRef<HTMLElement | null>(null);
+  const fixedNavRef = useRef<HTMLElement | null>(null);
 
   useBgLines({
     canvasRef,
@@ -40,6 +48,29 @@ function App() {
     contRef,
     ftrRef
   }, useFilteredProjects);
+
+
+  useEffect(() => {
+    const ttlHeight = +(ttlRef!.current!.offsetHeight ?? 0);
+    const abtHeight = +(abtRef!.current!.offsetHeight ?? 0);
+    const waypoint = ttlHeight + (abtHeight / 2);
+
+    if (!scrollPosition.current) {
+      console.log('no current scroll pos')
+      return;
+    }
+    const isBelowNavWaypoint = scrollPosition.current > waypoint;
+    const navIsHidden = fixedNavRef.current?.classList.contains('hidden');
+
+    if (isBelowNavWaypoint && navIsHidden) {
+      fixedNavRef.current?.classList.remove('hidden');
+      return;
+    }
+
+    if (!isBelowNavWaypoint && !navIsHidden) {
+      fixedNavRef.current?.classList.add('hidden');
+    }
+  }, [scrollPosition, ttlRef, abtRef])
 
   // turn this back on after I fix the scroll position weirdness
   const onTagSelect = (/*name: string*/) => {
@@ -79,7 +110,20 @@ function App() {
                   My name is Jessica{" "}
                   <span className="nowrap">and I make web things.</span>
                 </p>
-                <p className="indent-1 deco-font-3">Thanks for dropping by!</p>
+                <nav className="nav-links nav-links-inline">
+                  <a className="nav-link" href="#projects">
+                    <Play></Play>
+                    <span>projects</span>
+                  </a>
+                  <a className="nav-link" href="#experience">
+                    <Pause></Pause>
+                    <span>experience</span>
+                  </a>
+                  <a className="nav-link" href="#contact">
+                    <Stop></Stop>
+                    <span>contact</span>
+                  </a>
+                </nav>
               </div>
             </div>
           </section>
@@ -97,7 +141,7 @@ function App() {
                   value={selectedFilter?.name ?? undefined}
                   onChange={handleFilterChange}>
                   <option value="">All</option>
-                  { filters.map(filter => (
+                  {filters.map(filter => (
                     <option value={filter.name} data-tags={filter.tags}>{filter.displayName}</option>
                   ))}
                 </select>
@@ -122,15 +166,15 @@ function App() {
             <div className="section-content">
               <h3 className="section-heading title-2">Experience</h3>
               <ol>
-                { expEntries.map(entry => (
-                    <ExperienceEntry entry={entry}></ExperienceEntry>
+                {expEntries.map(entry => (
+                  <ExperienceEntry entry={entry}></ExperienceEntry>
                 ))}
               </ol>
             </div>
           </section>
 
           <section ref={contRef} className="section-contact color-bar">
-            <div className="section-content grid ">
+            <div className="section-content grid-at-med">
               <h3 className="section-heading title-2">Contact</h3>
 
               <ContactForm></ContactForm>
@@ -200,6 +244,20 @@ function App() {
               </p>
             </div>
           </section>
+        </div>
+        <div ref={fixedNavRef} className="nav-links nav-links-fixed hidden">
+          <a className="nav-link" href="#projects">
+            <Play></Play>
+            <span>projects</span>
+          </a>
+          <a className="nav-link" href="#experience">
+            <Pause></Pause>
+            <span>experience</span>
+          </a>
+          <a className="nav-link" href="#contact">
+            <Stop></Stop>
+            <span>contact</span>
+          </a>
         </div>
       </div>
       {/* end page */}

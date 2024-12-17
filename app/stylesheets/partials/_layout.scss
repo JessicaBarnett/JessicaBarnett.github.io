@@ -1,5 +1,6 @@
 @use "../variables/colors" as *;
 @use "../variables/globals" as *;
+// @use "../variables/breakpoints" as *;
 @use "../utilities/media-queries" as *;
 @use "../utilities/vertical-spacing" as *;
 @use "../utilities/if-next-sibling-has" as *;
@@ -37,12 +38,14 @@
   width: 100%;
   color: $black;
   margin: 0 auto;
-  max-width: $page-max-width;
+  max-width: $page-med-width;
   min-width: $mini-bp;
   margin-bottom: 180px;
   z-index: 1;
 
-
+  @include only-above($wide-bp) {
+    max-width: $page-max-width;
+  }
 
   &:after {
     @include paper-texture-overlay();

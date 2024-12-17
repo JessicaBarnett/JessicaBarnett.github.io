@@ -1,9 +1,18 @@
 @use '../variables/colors' as *;
 @use '../utilities/font-size' as *;
+@use '../utilities/media-queries' as *;
+@use '../utilities/grid' as *;
 
 /*************
   Contact
 **************/
+
+.section-contact {
+
+
+
+
+}
 
 .made-with-love {
     border-bottom: 3px solid $black;
@@ -25,11 +34,18 @@
     }
 }
 
+.sidebar-right {
+  text-align: center;
+  max-width: 80%;
+  margin: 0 auto;
+
+  @include only-above($medium-bp) {
+    text-align: left;
+  }
+}
 
 .social-link {
-    @include font-size(1.2rem);
-    display: flex;
-    align-items: center;
+    @include font-size(1rem);
     color: $black;
     font-weight: 700;
     text-decoration: none;
@@ -37,4 +53,17 @@
     &:hover {
       text-decoration: underline;
     }
-  }
+
+    @include only-above($medium-bp) {
+      display: flex;
+      align-items: center;
+    }
+
+    span {
+      display: none;
+
+      @include only-above($medium-bp) {
+        display: inline-block;
+      }
+    }
+}

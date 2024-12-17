@@ -35,3 +35,10 @@
     @include grid;
   }
 }
+
+
+.grid-at-med {
+  @include only-above($medium-bp) {
+    @include grid;
+  }
+}

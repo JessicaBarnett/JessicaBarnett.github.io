@@ -17,6 +17,19 @@
 
 form {
     width: 100%;
+    margin-bottom: 24px;
+
+    button[type=submit] {
+        margin: 24px 0 auto;
+        height: auto;
+        padding: 8px 4px;
+
+        @include only-above($medium-bp) {
+            width: auto;
+            float: right;
+        }
+
+    }
 }
 
 label {
@@ -33,6 +46,7 @@ input {
 textarea {
     @include form-field();
     min-height: 250px;
+    margin-bottom: 8px;
 }
 
 .submission-msg {

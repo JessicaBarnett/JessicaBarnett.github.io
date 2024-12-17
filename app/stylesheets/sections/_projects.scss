@@ -16,6 +16,10 @@
 
   }
 
+  ul {
+    margin-bottom: 16px;
+  }
+
     h3 {
       text-align: left;
 
@@ -40,6 +44,7 @@
 
 .filter-projects-group {
   width: 100%;
+  position: relative; // to enable z-index
   z-index: 1;
 
   @include only-below($small-bp) {

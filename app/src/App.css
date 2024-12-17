@@ -45,11 +45,38 @@ button {
   color: #FFF;
 }
 
+.btn-3 {
+  border: 2px solid #000;
+  border-radius: 3px;
+  width: 100%;
+  padding: 0 4px;
+  font-weight: 600;
+  font-family: "Lester Bold";
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+.btn-3:hover {
+  background-color: #000;
+  color: #FFF;
+}
+
 /**************
     FORMS
 ***************/
 form {
   width: 100%;
+  margin-bottom: 24px;
+}
+form button[type=submit] {
+  margin: 24px 0 auto;
+  height: auto;
+  padding: 8px 4px;
+}
+@media (min-width: 769px) {
+  form button[type=submit] {
+    width: auto;
+    float: right;
+  }
 }
 
 label {
@@ -76,6 +103,7 @@ textarea {
   background-color: #FFF;
   padding: 8px 4px;
   min-height: 250px;
+  margin-bottom: 8px;
 }
 
 .submission-msg {
@@ -104,8 +132,12 @@ select {
 }
 
 .icon-lg {
-  max-width: 45px;
+  max-width: 35px;
   margin: 8px;
+}
+
+.icon svg {
+  width: 100%;
 }
 
 img {
@@ -259,6 +291,11 @@ table {
   min-width: 360px;
   margin-bottom: 180px;
   z-index: 1;
+}
+@media (min-width: 1280px) {
+  .page {
+    max-width: 1080px;
+  }
 }
 .page:after {
   content: "";
@@ -442,6 +479,51 @@ p {
   font-style: italic;
 }
 
+.nav-links {
+  display: grid;
+  width: 70%;
+}
+.nav-links .icon {
+  display: inline-block;
+  width: 1.2rem;
+  padding: 0 4px;
+}
+.nav-links .icon svg {
+  fill: #FFF;
+}
+
+.nav-link {
+  padding: 4px 8px;
+  margin: 8px;
+  border: 2px solid #000;
+  border-radius: 3px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #FFF;
+  background-color: #000;
+  text-transform: lowercase;
+}
+.nav-link:hover {
+  color: #000;
+  background-color: #FFF;
+}
+.nav-link:hover svg {
+  fill: #000;
+}
+
+/* Modifiers */
+.nav-links-fixed {
+  z-index: 6;
+  background-color: #000;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  grid-template-columns: 1fr 1fr 1fr;
+  top: 0;
+  text-align: center;
+}
+
 /* Example usage:
     @include trapezoid('left', 30px, 15px, 300px, $black);
     @include trapezoid('right', 50px, 25px, 80px, $black);
@@ -516,6 +598,9 @@ p {
     padding-bottom: 48px;
   }
 }
+.section-projects ul {
+  margin-bottom: 16px;
+}
 .section-projects h3 {
   text-align: left;
 }
@@ -536,6 +621,7 @@ p {
 
 .filter-projects-group {
   width: 100%;
+  position: relative;
   z-index: 1;
 }
 @media (max-width: 560px) {
@@ -613,6 +699,67 @@ p {
   transform: translateY(-50%);
 }
 
+/**************
+      GRID
+***************/
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 12fr);
+  grid-gap: 16px;
+}
+.grid > * {
+  grid-column: auto/span 12;
+}
+.grid .half {
+  grid-column: auto/span 6;
+}
+.grid .one-third {
+  grid-column: auto/span 4;
+}
+.grid .two-third {
+  grid-column: auto/span 8;
+}
+
+@media (min-width: 560px) {
+  .grid-at-small {
+    display: grid;
+    grid-template-columns: repeat(12, 12fr);
+    grid-gap: 16px;
+  }
+  .grid-at-small > * {
+    grid-column: auto/span 12;
+  }
+  .grid-at-small .half {
+    grid-column: auto/span 6;
+  }
+  .grid-at-small .one-third {
+    grid-column: auto/span 4;
+  }
+  .grid-at-small .two-third {
+    grid-column: auto/span 8;
+  }
+}
+
+@media (min-width: 769px) {
+  .grid-at-med {
+    display: grid;
+    grid-template-columns: repeat(12, 12fr);
+    grid-gap: 16px;
+  }
+  .grid-at-med > * {
+    grid-column: auto/span 12;
+  }
+  .grid-at-med .half {
+    grid-column: auto/span 6;
+  }
+  .grid-at-med .one-third {
+    grid-column: auto/span 4;
+  }
+  .grid-at-med .two-third {
+    grid-column: auto/span 8;
+  }
+}
+
 /*************
   Contact
 **************/
@@ -635,17 +782,40 @@ p {
   background: linear-gradient(180deg, #E2006A 0%, #E2006A 20%, #EE6B0F 20%, #EE6B0F 40%, #EBE000 40%, #EBE000 60%, #82A900 60%, #82A900 80%, #0084CE 80%, #0084CE 100%);
 }
 
+.sidebar-right {
+  text-align: center;
+  max-width: 80%;
+  margin: 0 auto;
+}
+@media (min-width: 769px) {
+  .sidebar-right {
+    text-align: left;
+  }
+}
+
 .social-link {
-  font-size: 1.2rem;
-  line-height: 1.4rem;
-  display: flex;
-  align-items: center;
+  font-size: 1rem;
+  line-height: 1.2rem;
   color: #000;
   font-weight: 700;
   text-decoration: none;
 }
 .social-link:hover {
   text-decoration: underline;
+}
+@media (min-width: 769px) {
+  .social-link {
+    display: flex;
+    align-items: center;
+  }
+}
+.social-link span {
+  display: none;
+}
+@media (min-width: 769px) {
+  .social-link span {
+    display: inline-block;
+  }
 }
 
 /*******************

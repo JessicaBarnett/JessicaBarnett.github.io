@@ -9,7 +9,7 @@ import * as data from '../../data/data.json';
 
 export function useProjects() {
   const [value] = useState<ProjectT[]>(data.projects);
-  console.log('initing useProjects');
+  console.log('initing useProjects'); // TODO why is this initing so much????  should be 1 and done...
   return [value];
 }
 
