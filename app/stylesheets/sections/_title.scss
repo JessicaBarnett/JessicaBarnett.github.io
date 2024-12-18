@@ -1,5 +1,6 @@
 @use "../utilities/trapezoid" as *;
 @use "../variables/colors" as *;
+@use "../utilities/media-queries" as *;
 
 /*************
   Title
@@ -11,7 +12,19 @@
   position: relative;
 
   &:before {
-      @include trapezoid('left', 32px, 25px, $black);
+      @include trapezoid('left', 35px, 25px, $black);
       top: 35%;
+
+      @include only-above($medium-bp) {
+        border-top-width: 40px;
+        border-bottom-width: 40px;
+        border-left-width: 50px;
+      }
+
+      @include only-above($wide-bp) {
+        border-top-width: 60px;
+        border-bottom-width: 60px;
+        border-left-width: 70px;
+      }
   }
 }

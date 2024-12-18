@@ -483,6 +483,9 @@ p {
   display: grid;
   width: 70%;
 }
+.nav-links span {
+  vertical-align: middle;
+}
 .nav-links .icon {
   display: inline-block;
   width: 1.2rem;
@@ -493,6 +496,7 @@ p {
 }
 
 .nav-link {
+  white-space: nowrap;
   padding: 4px 8px;
   margin: 8px;
   border: 2px solid #000;
@@ -542,8 +546,22 @@ p {
   height: #000;
   border-top: 25px solid transparent;
   border-bottom: 25px solid transparent;
-  border-left: 32px solid black;
+  border-left: 35px solid black;
   top: 35%;
+}
+@media (min-width: 769px) {
+  .triangle-left:before {
+    border-top-width: 40px;
+    border-bottom-width: 40px;
+    border-left-width: 50px;
+  }
+}
+@media (min-width: 1280px) {
+  .triangle-left:before {
+    border-top-width: 60px;
+    border-bottom-width: 60px;
+    border-left-width: 70px;
+  }
 }
 
 /*************
@@ -583,8 +601,22 @@ p {
   border-top: 25px solid transparent;
   border-bottom: 25px solid transparent;
   border-right: 50px solid #000;
-  top: 75px;
+  top: 33%;
   right: 0;
+}
+@media (min-width: 769px) {
+  .trapezoid-right:after {
+    border-top-width: 45px;
+    border-bottom-width: 45px;
+    border-right-width: 70px;
+  }
+}
+@media (min-width: 1280px) {
+  .trapezoid-right:after {
+    border-top-width: 70px;
+    border-bottom-width: 70px;
+    border-right-width: 90px;
+  }
 }
 
 /*************
@@ -763,9 +795,15 @@ p {
 /*************
   Contact
 **************/
+.section-contact .section-content {
+  padding: 4rem 72px 10px 56px;
+}
+
 .made-with-love {
   border-bottom: 3px solid #000;
   padding: 8px;
+  margin-bottom: 4px;
+  text-align: center;
 }
 
 .color-bar {
@@ -792,6 +830,11 @@ p {
     text-align: left;
   }
 }
+@media (min-width: 1280px) {
+  .sidebar-right {
+    min-width: 200px;
+  }
+}
 
 .social-link {
   font-size: 1rem;
@@ -799,11 +842,24 @@ p {
   color: #000;
   font-weight: 700;
   text-decoration: none;
-  width: 20%;
-  max-width: 60px;
   text-align: center;
   display: inline-block;
   padding: 4px;
+  white-space: nowrap;
+  margin-bottom: 4px;
+  border-radius: 3px;
+  padding: 4px 8px;
+}
+.social-link .icon {
+  max-width: 36px;
+  vertical-align: middle;
+  display: inline-block;
+  line-height: 0px;
+}
+@media (min-width: 769px) {
+  .social-link .icon {
+    margin-right: 8px;
+  }
 }
 .social-link:hover {
   text-decoration: underline;
@@ -811,21 +867,26 @@ p {
 @media (min-width: 769px) {
   .social-link {
     display: block;
+    text-align: left;
   }
 }
 .social-link .social-link-text {
   display: none;
+  vertical-align: middle;
 }
 @media (min-width: 769px) {
   .social-link .social-link-text {
     display: inline-block;
   }
 }
+.social-link:hover {
+  background-color: black;
+}
 .social-link:hover svg {
-  fill: none;
-  stroke: black;
-  stroke-width: 10px;
-  stroke-linejoin: round;
+  fill: #FFF;
+}
+.social-link:hover .social-link-text {
+  color: #FFF;
 }
 
 /*******************
@@ -883,6 +944,7 @@ p {
 
 body {
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 section {

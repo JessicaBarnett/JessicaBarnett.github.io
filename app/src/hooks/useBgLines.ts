@@ -336,6 +336,7 @@ export function useBgLines(
 
   useLayoutEffect(() => {
     const drawBgLinesWRefsApplied = () => drawBgLines(refs, colors, breakpoints);
+    requestAnimationFrame(drawBgLinesWRefsApplied);
 
     drawBgLinesWRefsApplied();
     window.addEventListener("resize", drawBgLinesWRefsApplied);

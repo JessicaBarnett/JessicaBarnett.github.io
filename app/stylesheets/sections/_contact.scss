@@ -7,16 +7,15 @@
   Contact
 **************/
 
-.section-contact {
-
-
-
-
+.section-contact .section-content {
+  padding: 4rem 72px 10px 56px;
 }
 
 .made-with-love {
     border-bottom: 3px solid $black;
     padding: 8px;
+    margin-bottom: 4px;
+    text-align: center;
 }
 
 .color-bar {
@@ -42,6 +41,10 @@
   @include only-above($medium-bp) {
     text-align: left;
   }
+
+  @include only-above($wide-bp) {
+    min-width: 200px;
+  }
 }
 
 .social-link {
@@ -49,11 +52,24 @@
     color: $black;
     font-weight: 700;
     text-decoration: none;
-    width: 20%;
-    max-width: 60px;
     text-align: center;
     display: inline-block;
     padding: 4px;
+    white-space: nowrap;
+    margin-bottom: 4px;
+    border-radius: 3px;
+    padding: 4px 8px;
+
+    .icon {
+      max-width: 36px;
+      vertical-align: middle;
+      display: inline-block;
+      line-height: 0px; // hacky
+
+      @include only-above($medium-bp) {
+        margin-right: 8px;
+      }
+    }
 
     &:hover {
       text-decoration: underline;
@@ -61,20 +77,27 @@
 
     @include only-above($medium-bp) {
       display: block;
+      text-align: left;
     }
 
     .social-link-text {
       display: none;
+      vertical-align: middle;
 
       @include only-above($medium-bp) {
         display: inline-block;
       }
     }
 
-    &:hover svg {
-      fill: none;
-      stroke: black;
-      stroke-width: 10px;
-      stroke-linejoin: round;
+    &:hover {
+      background-color: black;
+
+      svg {
+        fill: $white;
+      }
+
+      .social-link-text {
+        color: $white;
+      }
     }
 }

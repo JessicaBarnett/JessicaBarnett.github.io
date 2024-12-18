@@ -2,6 +2,7 @@
 @use '../variables/colors' as *;
 @use '../utilities/font-size' as *;
 @use '../utilities/titles' as *;
+@use '../utilities/media-queries' as *;
 
 /*************
   About
@@ -38,7 +39,22 @@
 
     &:after {
         @include trapezoid('right', 50px, 25px, 80px, $black);
-        top: 75px;
+        top: 33%;
         right: 0;
+
+        @include only-above($medium-bp) {
+          // top: 110px;
+          border-top-width: 45px;
+          border-bottom-width: 45px;
+          border-right-width: 70px;
+        }
+
+
+        @include only-above($wide-bp) {
+          // top: 110px;
+          border-top-width: 70px;
+          border-bottom-width: 70px;
+          border-right-width: 90px;
+        }
     }
 }

@@ -28,7 +28,7 @@ function App() {
   const [expEntries] = useExperienceEntries();
   const [selectedFilter, setSelectedFilter] = useSelectedFilter(filters);
   const [filteredProjects] = useFilteredProjects(projects, filters, selectedFilter);
-  const [scrollPosition] = useScrollPosition();
+  // const [scrollPosition] = useScrollPosition();
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const pageRef = useRef<HTMLDivElement | null>(null);
