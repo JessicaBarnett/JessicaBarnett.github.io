@@ -37,7 +37,7 @@ async function createNewFiles(svgFilesPath, componentsPath) {
       const svgContent = await fsp.readFile(svgIconFullPath, "utf8");
 
       fsp.writeFile(componentFileName, `
-// This component was Generated via the generateIconComponents.cjs file
+// This component was Generated via the generateIconComponents.cjs script
 export const ${componentName} = () => {
     return (
     <span className="icon icon-${svgIconName}">

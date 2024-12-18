@@ -9,7 +9,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "genIcons": "node genIconComponents.cjs"
+    "genIcons": "node ./scripts/genIconComponents.cjs"
   },
   "dependencies": {
     "react": "^18.3.1",
