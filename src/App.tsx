@@ -118,7 +118,7 @@ function App() {
             </div>
           </section>
 
-          <section ref={abtRef} className="section-about trapezoid-right">
+          <section id="about" ref={abtRef} className="section-about trapezoid-right">
             <div className="section-content">
               <div className="indent-2">
                 <p className="deco-font-1">
@@ -146,7 +146,7 @@ function App() {
             </div>
           </section>
 
-          <section ref={projRef} className="section-projects">
+          <section id="projects" ref={projRef} className="section-projects">
             <div className="section-content grid-at-small">
               <h3 className="section-heading title-2 half">Projects</h3>
 
@@ -180,7 +180,7 @@ function App() {
             </div>
           </section>
 
-          <section ref={expRef} className="section-experience trapezoid-hug">
+          <section  id="experience" ref={expRef} className="section-experience trapezoid-hug">
             <div className="section-content">
               <h3 className="section-heading title-2">Experience</h3>
               <ol>
@@ -191,7 +191,7 @@ function App() {
             </div>
           </section>
 
-          <section ref={contRef} className="section-contact color-bar">
+          <section id="contact" ref={contRef} className="section-contact color-bar">
             <div className="section-content grid-at-med">
               <h3 className="section-heading title-2">Contact</h3>
 

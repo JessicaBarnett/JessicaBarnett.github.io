@@ -20,7 +20,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
+    heading: "Company Name",
     projects: projects,
-    selectedTags: selectedTags
+    selectedTags: selectedTags,
+    onTagSelect: (name: string) => { console.log(`tag selected: ${name}`) }
   }
 };
