@@ -1,13 +1,14 @@
 import "./App.css";
 
-import { useLayoutEffect, useEffect, useRef } from "react";
+// import { useLayoutEffect, useEffect, useRef } from "react";
+import { useRef } from "react";
 
 import { useFilters } from "./hooks/useFilters";
 import { useProjects } from "./hooks/useProjects";
 import { useExperienceEntries } from "./hooks/useExperienceEntries";
 import { useSelectedFilter } from "./hooks/useSelectedFilter";
 import { useFilteredProjects } from "./hooks/useFilteredProjects";
-import { useScrollPosition } from "./hooks/useScrollPosition";
+// import { useScrollPosition } from "./hooks/useScrollPosition";
 
 import { useBgLines } from "./hooks/useBgLines";
 
@@ -38,7 +39,7 @@ function App() {
   const expRef = useRef<HTMLElement | null>(null);
   const contRef = useRef<HTMLElement | null>(null);
   const ftrRef = useRef<HTMLElement | null>(null);
-  const fixedNavRef = useRef<HTMLElement | null>(null);
+  const fixedNavRef = useRef<HTMLDivElement | null>(null);
 
   useBgLines({
     canvasRef,
@@ -49,7 +50,7 @@ function App() {
     expRef,
     contRef,
     ftrRef
-  }, useFilteredProjects);
+  }, filteredProjects);
 
 
   // useEffect(() => {

@@ -1,5 +1,5 @@
 
-// This component was Generated via the generateIconComponents.cjs file
+// This component was Generated via the generateIconComponents.cjs script
 export const Linkedin = () => {
     return (
     <span className="icon icon-linkedin">

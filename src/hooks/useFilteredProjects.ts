@@ -9,7 +9,7 @@ export type ProjectsByCompanyT = {
   [key: string]: ProjectT[];
 };
 
-type UseFilteredProjectsReturnT = [
+export type FilteredProjectsT = [
   ProjectsByCompanyT
 ];
 
@@ -45,7 +45,7 @@ const getFilterByName = (filters: FilterT[], filterName: string): FilterT | unde
 }
 
 // Groups projects by company and applies filters
-export function useFilteredProjects(projects: ProjectT[], filters: FilterT[], selectedFilter: FilterT | undefined): UseFilteredProjectsReturnT {
+export function useFilteredProjects(projects: ProjectT[], filters: FilterT[], selectedFilter: FilterT | undefined): FilteredProjectsT {
   const [value, setValue] = useState<ProjectsByCompanyT>(
     groupProjectsByCompany(projects)
   );

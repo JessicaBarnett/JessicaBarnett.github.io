@@ -3,6 +3,7 @@
 // could NOT have a current) and RefObject
 import { RefObject, useLayoutEffect } from "react";
 import { ProjectsByCompanyT } from "./useFilteredProjects";
+
 import { BreakpointsT, useBreakpoints } from "./useBreakpoints";
 import { useColors } from "./useColors";
 import { ElementRefsT, SizesT, PointT } from "../types/bg-line-types";
@@ -147,7 +148,7 @@ const getPathC = (
     {
       x: pgWidth - linesW + halfLineW, // right side minus line width
       y: pgHeight - linesW - 300,
-      translate: (p: PointT, offset: number, lineIdx: number) => {
+      translate: (p: PointT, offset: number) => {
         return {
           x: p.x + offset,
           y: p.y + offset,
