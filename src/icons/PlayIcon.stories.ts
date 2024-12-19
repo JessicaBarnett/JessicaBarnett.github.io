@@ -3,7 +3,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 // import { fn } from '@storybook/test';
 
-import { PlayIcon } from '../../icons/PlayIcon';
+import { PlayIcon } from './PlayIcon';
 
 const meta = {
   title: 'Icons/PlayIcon',

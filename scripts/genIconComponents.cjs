@@ -3,14 +3,14 @@ const path = require('path');
 
 const componentsPath = './src/icons';
 const svgFilesPath = './public/assets/icons';
-const storiesPath = './src/stories/icons';
+const storiesPath = './src/icons';
 
 
 
 async function deleteOldFiles(componentsPath) {
   try {
     const filenames = await fsp.readdir(componentsPath);
-    console.log(`deleting existing components: \n${filenames.join('\n')}\n\n` )
+    console.log(`deleting existing components and stories: \n${filenames.join('\n')}\n\n` )
 
     const deleteFilePromises = filenames.map(filename =>
       fsp.unlink(path.join(componentsPath, filename)),
@@ -71,7 +71,7 @@ async function createManifest(componentsPath) {
 
 async function createStories(storiesPath, componentsPath) {
   try {
-    console.log(`writing stories`)
+    console.log(`writing stories`);
     const removeExt = (compName) => compName.slice(0, -4);
     const componentNames = (await fsp.readdir(componentsPath)).filter(filename => /.*\.tsx$/.test(filename)).map(removeExt);
     const writeFilePromises = (await componentNames.map((componentName) => {
@@ -81,7 +81,7 @@ async function createStories(storiesPath, componentsPath) {
 import type { Meta, StoryObj } from '@storybook/react';
 // import { fn } from '@storybook/test';
 
-import { ${componentName} } from '../../icons/${componentName}';
+import { ${componentName} } from './${componentName}';
 
 const meta = {
   title: 'Icons/${componentName}',
@@ -103,12 +103,10 @@ export const Default: Story = {};
   }
 }
 
-
-
 async function run () {
   await deleteOldFiles(componentsPath)
   await createNewFiles(svgFilesPath, componentsPath)
-  // await createManifest(componentsPath)
+  await createManifest(componentsPath)
   await createStories(storiesPath, componentsPath);
 }
 

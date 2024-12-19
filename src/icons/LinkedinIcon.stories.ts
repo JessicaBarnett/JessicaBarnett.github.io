@@ -3,15 +3,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 // import { fn } from '@storybook/test';
 
-import { RewindIcon } from '../../icons/RewindIcon';
+import { LinkedinIcon } from './LinkedinIcon';
 
 const meta = {
-  title: 'Icons/RewindIcon',
-  component: RewindIcon,
+  title: 'Icons/LinkedinIcon',
+  component: LinkedinIcon,
   tags: ['autodocs'],
   parameters: {},
   args: {},
-} satisfies Meta<typeof RewindIcon>;
+} satisfies Meta<typeof LinkedinIcon>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

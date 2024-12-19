@@ -3,15 +3,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 // import { fn } from '@storybook/test';
 
-import { GithubIcon } from '../../icons/GithubIcon';
+import { StopIcon } from './StopIcon';
 
 const meta = {
-  title: 'Icons/GithubIcon',
-  component: GithubIcon,
+  title: 'Icons/StopIcon',
+  component: StopIcon,
   tags: ['autodocs'],
   parameters: {},
   args: {},
-} satisfies Meta<typeof GithubIcon>;
+} satisfies Meta<typeof StopIcon>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
