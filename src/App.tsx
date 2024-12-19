@@ -16,11 +16,11 @@ import ProjectList from "./components/ProjectList";
 import ExperienceEntry from "./components/ExperienceEntry";
 import ContactForm from "./components/ContactForm";
 
-import { Play } from "./icons/Play";
-import { Pause } from "./icons/Pause";
-import { Stop } from "./icons/Stop";
-import { Linkedin } from "./icons/Linkedin";
-import { Github } from "./icons/Github";
+import { PlayIcon } from "./icons/PlayIcon";
+import { PauseIcon } from "./icons/PauseIcon";
+import { StopIcon } from "./icons/StopIcon";
+import { LinkedinIcon } from "./icons/LinkedinIcon";
+import { GithubIcon } from "./icons/GithubIcon";
 
 
 function App() {
@@ -130,15 +130,15 @@ function App() {
                 </p>
                 <nav className="nav-links nav-links-inline">
                   <a className="nav-link" href="#projects">
-                    <Play></Play>
+                    <PlayIcon></PlayIcon>
                     <span>projects</span>
                   </a>
                   <a className="nav-link" href="#experience">
-                    <Pause></Pause>
+                    <PauseIcon></PauseIcon>
                     <span>experience</span>
                   </a>
                   <a className="nav-link" href="#contact">
-                    <Stop></Stop>
+                    <StopIcon></StopIcon>
                     <span>contact</span>
                   </a>
                 </nav>
@@ -209,12 +209,12 @@ function App() {
                 </p>
 
                 <a className="social-link" target="_blank" href="https://www.linkedin.com/in/jessica-m-barnett/">
-                  <Linkedin></Linkedin>
+                  <LinkedinIcon></LinkedinIcon>
                   <span className="social-link-text">LinkedIn</span>
                 </a>
 
                 <a className="social-link" target="_blank" href="https://github.com/JessicaBarnett">
-                  <Github></Github>
+                  <GithubIcon></GithubIcon>
                   <span className="social-link-text">Github</span>
                 </a>
               </div>

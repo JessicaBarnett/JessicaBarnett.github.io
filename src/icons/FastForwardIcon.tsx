@@ -1,6 +1,6 @@
 
 // This component was Generated via the generateIconComponents.cjs script
-export const FastForward = () => {
+export const FastForwardIcon = () => {
     return (
     <span className="icon icon-fast-forward">
 <svg viewBox="0 0 280 280"  xmlns="http://www.w3.org/2000/svg" version="1.1" fill="#000000">

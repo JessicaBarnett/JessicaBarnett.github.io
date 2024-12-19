@@ -1,6 +1,6 @@
 
 // This component was Generated via the generateIconComponents.cjs script
-export const Pause = () => {
+export const PauseIcon = () => {
     return (
     <span className="icon icon-pause">
 <svg viewBox="0 0 280 280"  xmlns="http://www.w3.org/2000/svg">

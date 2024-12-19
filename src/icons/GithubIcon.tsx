@@ -1,6 +1,6 @@
 
 // This component was Generated via the generateIconComponents.cjs script
-export const Github = () => {
+export const GithubIcon = () => {
     return (
     <span className="icon icon-github">
 <svg viewBox="0,0,280,280" xmlns="http://www.w3.org/2000/svg">
