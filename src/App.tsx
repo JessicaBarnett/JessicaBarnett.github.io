@@ -89,15 +89,15 @@ function App() {
     <>
       <div ref={fixedNavRef} className="nav-links nav-links-fixed">
         <a className="nav-link" href="#projects">
-          <Play></Play>
+          <PlayIcon></PlayIcon>
           <span>projects</span>
         </a>
         <a className="nav-link" href="#experience">
-          <Pause></Pause>
+          <PauseIcon></PauseIcon>
           <span>experience</span>
         </a>
         <a className="nav-link" href="#contact">
-          <Stop></Stop>
+          <StopIcon></StopIcon>
           <span>contact</span>
         </a>
       </div>
