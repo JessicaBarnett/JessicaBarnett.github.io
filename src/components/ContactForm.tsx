@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { web3FormsAccessKey } from '../../env.ts';
 
 const ContactForm = () => {
-    const accessKey = web3FormsAccessKey;
+    const accessKey = '0172a4b7-83eb-46cf-aed1-2ce6809204a7';
     const [sumbissionComplete, setSubmissionComplete] = useState(false);
     const [sumbissionError, setSubmissionError] = useState(false);
 

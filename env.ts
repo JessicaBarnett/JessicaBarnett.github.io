@@ -1,1 +1,0 @@
-export const web3FormsAccessKey = '0172a4b7-83eb-46cf-aed1-2ce6809204a7';
