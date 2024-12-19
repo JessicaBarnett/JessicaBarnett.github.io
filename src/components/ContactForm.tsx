@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { web3FormsAccessKey } from '../../secrets.ts';
+import { web3FormsAccessKey } from '../../env.ts';
 
 const ContactForm = () => {
     const accessKey = web3FormsAccessKey;
