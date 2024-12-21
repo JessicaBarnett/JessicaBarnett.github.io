@@ -9,6 +9,8 @@
 - [hard] fill in TBA sections
 - [easy] form validation (html5, nothing fancy)
 - [easy] transitions
+- dark mode adaptations.
+- test in mobile browsers
 
 ## High Interest
 - storybook
@@ -41,8 +43,15 @@
 - https://freesvgeditor.com/en/svg-editor-online
 
 
-svgs
+### svgs
 - remove height/width and add voiewbox to be able to scale w/ css
 - remove in-file "fill="s to use the fill rule
 
 
+### deployment
+- deploy storybook to gh pages: https://medium.com/swlh/how-to-deploy-storybook-to-github-pages-4894097d49ab
+
+
+
+## storybook
+- "unattached" documentation (no story connected) https://storybook.js.org/docs/writing-docs/mdx#writing-unattached-documentation

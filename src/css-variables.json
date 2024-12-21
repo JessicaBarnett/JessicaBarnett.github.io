@@ -1,0 +1,19 @@
+{
+    "colors": {
+        "blue": "#0084CE",
+        "green": "#82A900",
+        "yellow": "#EBE000",
+        "orange": "#EE6B0F",
+        "pink": "#E2006A",
+        "black": "#000",
+        "white": "#FFF"
+    },
+    "breakpoints": {
+        "miniBp": "360px",
+        "smallBp": "560px",
+        "mediumBp": "769px",
+        "wideBp": "1280px",
+        "extraWideBp": "1440px",
+        "hdBp": "1920px"
+    }
+}

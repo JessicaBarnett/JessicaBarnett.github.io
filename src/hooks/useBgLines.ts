@@ -5,7 +5,7 @@ import { RefObject, useLayoutEffect } from "react";
 import { ProjectsByCompanyT } from "./useFilteredProjects";
 
 import { BreakpointsT, useBreakpoints } from "./useBreakpoints";
-import { useColors } from "./useColors";
+import { useRainbowColors } from "./useRainbowColors";
 import { ElementRefsT, SizesT, PointT } from "../types/bg-line-types";
 import { VtoD, HtoD, DtoH, DtoV, vertical, horizontal, diagonal, getElementSizes } from "../utils/bg-line-utils";
 
@@ -333,7 +333,7 @@ export function useBgLines(
   filteredProjects: ProjectsByCompanyT
 ) {
   const [ breakpoints ] = useBreakpoints();
-  const [ colors ] = useColors();
+  const [ colors ] = useRainbowColors();
 
   useLayoutEffect(() => {
     const drawBgLinesWRefsApplied = () => drawBgLines(refs, colors, breakpoints);

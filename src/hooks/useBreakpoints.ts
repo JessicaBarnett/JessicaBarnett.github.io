@@ -4,24 +4,20 @@
  */
 
 import { useState } from 'react';
-import variables from "@styles/variables.module.scss";
+import * as sharedVars from '../css-variables.json';
 
 export type BreakpointsT = {
-  miniBp: string;
-  smallBp: string;
-  mediumBp: string;
-  wideBp: string;
-  extraWideBp: string;
-  hdBp: string;
-};
+    miniBp: string;
+    smallBp: string;
+    mediumBp: string;
+    wideBp: string;
+    extraWideBp: string;
+    hdBp: string;
+  };
 
 export function useBreakpoints() {
-    const breakpoints: BreakpointsT = (() => {
-        const tmp = { ...variables };
-        delete tmp["colors"];
-        return tmp as BreakpointsT;
-        })();
-    const [breakpointsState] = useState<BreakpointsT>(breakpoints);
+
+    const [breakpointsState] = useState<BreakpointsT>(sharedVars.breakpoints as BreakpointsT);
     return [breakpointsState];
 }
 

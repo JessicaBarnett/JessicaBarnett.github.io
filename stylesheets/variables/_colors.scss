@@ -1,38 +1,10 @@
 @use 'sass:list';
 
-$pink: #E2006A;
-$orange: #EE6B0F;
-$yellow: #EBE000;
-$green: #82A900;
 $blue: #0084CE;
+$green: #82A900;
+$yellow: #EBE000;
+$orange: #EE6B0F;
+$pink: #E2006A;
+
 $black: #000;
 $white: #FFF;
-
-$colors: ($blue, $green, $yellow, $orange, $pink);
-
-$rainbow-gradient-vert: linear-gradient(
-    90deg,
-    $pink 0%,
-    $pink 20%,
-    $orange 20%,
-    $orange 40%,
-    $yellow 40%,
-    $yellow 60%,
-    $green 60%,
-    $green 80%,
-    $blue 80%,
-    $blue 100%,
-  );
-  $rainbow-gradient-horiz: linear-gradient(
-    180deg,
-    $pink 0%,
-    $pink 20%,
-    $orange 20%,
-    $orange 40%,
-    $yellow 40%,
-    $yellow 60%,
-    $green 60%,
-    $green 80%,
-    $blue 80%,
-    $blue 100%,
-  );
