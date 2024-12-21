@@ -1,0 +1,24 @@
+import { Meta, Unstyled } from "@storybook/blocks";
+import * as sharedVars from '../src/css-variables.json';
+import "../src/App.css";
+import "./storybook.css";
+
+<Meta title="globals/Colors" />
+
+<Unstyled>
+    { Object.keys(sharedVars.colors).map((colorName) => {
+     return <div className={`color-block`} style={{backgroundColor: sharedVars.colors[colorName]}}><span>{colorName}</span></div>
+    })}
+</Unstyled>
+
+<style>
+{`
+    .color-block {
+      width: 100px;
+      height: 100px;
+      display: inline-block;
+      margin: 8px 4px;
+      border: 1px solid black;
+    }
+`}
+</style>

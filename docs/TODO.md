@@ -47,11 +47,22 @@
 - remove height/width and add voiewbox to be able to scale w/ css
 - remove in-file "fill="s to use the fill rule
 
+### node scripting
+- fs = filesystem w/ callbacks, and fsp = filesystem with promises.
+
+
+### regex
+- reference regex capturing groups in the replace function callback to convert kebab-case-variable-names to camelCaseVariablesNames.  see copyScssVarsToJson.cjs file and look at: https://stackoverflow.com/questions/3954927/how-to-replace-captured-groups-only
+
 
 ### deployment
 - deploy storybook to gh pages: https://medium.com/swlh/how-to-deploy-storybook-to-github-pages-4894097d49ab
 
 
 
-## storybook
+## Storybook
 - "unattached" documentation (no story connected) https://storybook.js.org/docs/writing-docs/mdx#writing-unattached-documentation
+
+- It looks like the Canvas element, which is the sort of "demo block" that storybook uses, HAS to be tied to a story.  Which means I cant pop one in there for like, colors or headings.  This is that was causing me issues creating unattached docs earlier.
+
+- To create a block without Storybook's own styling applied, use the Unstyled Block. https://storybook.js.org/docs/api/doc-blocks/doc-block-unstyled

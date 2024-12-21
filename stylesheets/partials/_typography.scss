@@ -37,9 +37,13 @@
 
 // resets for standard text elements
 :is(h1, h2, h3, h4, h5, h6, p, em, i) {
-  font: inherit;
   margin: 0;
 }
+
+:is(em, i) {
+  font: inherit;
+}
+
 
 /**************
     TITLES
@@ -76,10 +80,10 @@
 
 .subtitle-2 {
   @include font-size(1.2rem);
-  text-align: center;
   font-family: $primary-font;
   letter-spacing: 0.5rem;
   text-transform: uppercase;
+  font-weight: normal;
 }
 
 /*

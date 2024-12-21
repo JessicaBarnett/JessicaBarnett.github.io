@@ -1,0 +1,50 @@
+import { Meta, Unstyled } from '@storybook/addon-docs/blocks';
+import "../src/App.css";
+import "./storybook.css";
+
+
+<Meta title="typography/Headings" />
+
+<h1>Headings</h1>
+
+<p>In most projects I've worked on in the past, there have been 2 sets of heading styles.  A "primary" and a "secondary", or similar.</p>
+<p>This has always caused a dilemma for me.  Heading tags need to be used in a semantic and accessible way that follows the flow of the document, but this often conflicts with the visual treatment that's being asked for.</p>
+<p>So, in this case, I chose to decouple my visual styles from the heading tags completely, so that any `<h*>` tag can be used by any of the visual-treatment classes available.  I've also chosen to divide my headings into 3 groups, with title, subtitle, and supertitle styles, to avoid confusing myself by using h1-6.</p>
+
+<h2>title-1 and subtitle-1</h2>
+<Unstyled>
+  <div class="example-block">
+    <h2 class="title-1">The Quick Brown Fox</h2>
+    <h3 class="subtitle-1">Jumped Over the Lazy Dog</h3>
+  </div>
+</Unstyled>
+
+<h2>title-2 and subtitle-2</h2>
+<Unstyled>
+  <div class="example-block">
+    <h2 class="title-2">The Quick Brown Fox</h2>
+    <h3 class="subtitle-2">Jumped Over the Lazy Dog</h3>
+  </div>
+</Unstyled>
+
+<h2>title-3, subtitle-3, and supertitle-3</h2>
+<Unstyled>
+  <div class="example-block">
+    <div class="supertitle-3">Once more with feeling...</div>
+    <h2 class="title-3">The Quick Brown Fox</h2>
+    <h3 class="subtitle-3">Jumped Over the Lazy Dog</h3>
+  </div>
+</Unstyled>
+
+
+<h2>Baseline Headings</h2>
+<Unstyled>
+  <div class="example-block">
+    <h1>The Quick Brown Fox Jumped Over the Lazy Dog</h1>
+    <h2>The Quick Brown Fox Jumped Over the Lazy Dog</h2>
+    <h3>The Quick Brown Fox Jumped Over the Lazy Dog</h3>
+    <h4>The Quick Brown Fox Jumped Over the Lazy Dog</h4>
+    <h5>The Quick Brown Fox Jumped Over the Lazy Dog</h5>
+    <h6>The Quick Brown Fox Jumped Over the Lazy Dog</h6>
+  </div>
+</Unstyled>

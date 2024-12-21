@@ -402,8 +402,11 @@ p {
     RESETS
 ***************/
 :is(h1, h2, h3, h4, h5, h6, p, em, i) {
-  font: inherit;
   margin: 0;
+}
+
+:is(em, i) {
+  font: inherit;
 }
 
 /**************
@@ -445,10 +448,10 @@ p {
 .subtitle-2 {
   font-size: 1.2rem;
   line-height: 1.4rem;
-  text-align: center;
   font-family: "Inter", Arial, Helvetica, sans-serif;
   letter-spacing: 0.5rem;
   text-transform: uppercase;
+  font-weight: normal;
 }
 
 /*
@@ -622,6 +625,9 @@ p {
 /*************
   Projects
 **************/
+.section-projects .subtitle-2 {
+  text-align: center;
+}
 .section-projects .section-content {
   padding-bottom: 18px;
 }

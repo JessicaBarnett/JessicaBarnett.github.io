@@ -1,0 +1,21 @@
+
+/* tried to match Storybook's Canvas component*/
+.example-block {
+    border: 1px solid black;
+    padding: 16px;
+    box-shadow: rgba(0, 0, 0, 0.10) 0 1px 3px 0;
+    border: 1px solid hsla(203, 50%, 30%, 0.15);
+    margin-bottom: 64px;
+}
+
+.description-block {
+    margin-bottom: 64px;
+}
+
+.inter {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+.lester {
+    font-family: "Lester Bold";
+}
