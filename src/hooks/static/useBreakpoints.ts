@@ -5,7 +5,7 @@
 
 import { useState } from 'react';
 import { CssVariablesT } from '@src/types/css-variables-types';
-import * as data from '@src/css-variables.json';
+import * as data from '@src/css-variables.json' assert { type: 'json' };;
 
 const cssVariables = data as CssVariablesT;
 

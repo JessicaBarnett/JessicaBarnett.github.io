@@ -5,7 +5,7 @@
 
 import { useState } from 'react';
 import { FilterT } from "@src/types/data-types";
-import * as data from '@data/data.json';
+import * as data from '@data/data.json' assert { type: 'json' };
 
 export function useFilters() {
   const [value] = useState<FilterT[]>(data.filters);

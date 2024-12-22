@@ -4,7 +4,7 @@
  */
 import { useState } from 'react';
 import { ExperienceEntryT } from "@src/types/data-types";
-import * as data from '@data/data.json';
+import * as data from '@data/data.json' assert { type: 'json' };
 
 export function useExperienceEntries() {
   const [value] = useState<ExperienceEntryT[]>(data.experience);

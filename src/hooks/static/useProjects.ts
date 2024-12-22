@@ -5,7 +5,7 @@
 
 import { useState } from 'react';
 import { ProjectT } from "@src/types/data-types";
-import * as data from '@data/data.json';
+import * as data from '@data/data.json' assert { type: 'json' };
 
 export function useProjects() {
   const [value] = useState<ProjectT[]>(data.projects);
