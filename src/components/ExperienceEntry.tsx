@@ -1,4 +1,4 @@
-import { ExperienceEntryT } from "../types/types";
+import { ExperienceEntryT } from "../types/data-types";
 
 type ExperienceEntryProps = {
     entry: ExperienceEntryT

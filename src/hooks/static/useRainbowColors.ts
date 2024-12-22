@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import * as sharedVars from '../css-variables.json';
+import { CssVariablesT } from '@src/types/css-variables-types';
+import * as data from '@src/css-variables.json';
 
-export type ColorsT = { [key: string]: string };
+const cssVariables = data as CssVariablesT;
 
 export function useRainbowColors() {
-    const colors = sharedVars['colors'];
+    const colors = cssVariables['colors'];
 
     // defines the order in which that colors will appear in rainbow stripes
     const rainbowColors = [

@@ -1,0 +1,60 @@
+import { Meta, Unstyled } from "@storybook/blocks";
+import "../src/App.css";
+import "./storybook.css";
+
+import { PlayIcon } from "../src/icons/PlayIcon";
+import { PauseIcon } from "../src/icons/PauseIcon";
+import { StopIcon } from "../src/icons/StopIcon";
+import { FastForwardIcon } from "../src/icons/FastForwardIcon";
+import { RewindIcon } from "../src/icons/RewindIcon";
+
+import { LinkedinIcon } from "../src/icons/LinkedinIcon";
+import { GithubIcon } from "../src/icons/GithubIcon";
+
+
+<Meta title="icons/SVG Icons" />
+
+<h1>Icons</h1>
+
+<h2>Available Icons</h2>
+
+<p>these icons are all added as svg markup in a react component.  Therefore they are styleable via `fill`, border, and other svg properties.  </p>
+
+<p>SVG elements have 2 styleable classes applied: `icon` and  `icon-*`, where `*` is the kebab-case svg file name (ie, `super-cool-cat.svg` yields `class="icon super-cool-cat-icon"`</p>
+
+<Unstyled>
+  <div class="example-block icon-block">
+    <PlayIcon></PlayIcon>
+    <PauseIcon></PauseIcon>
+    <StopIcon></StopIcon>
+    <RewindIcon></RewindIcon>
+    <FastForwardIcon></FastForwardIcon>
+
+    <LinkedinIcon></LinkedinIcon>
+    <GithubIcon></GithubIcon>
+  </div>
+</Unstyled>
+
+<h2>Adding Icons</h2>
+
+<p>In order to add a new svg icon, do the following: </p>
+
+<ol>
+  <li>Add a `.svg` file to the `public/assets/icons` directory.</li>
+  <li>run the `genIcons` npm script.</li>
+  <li>verify the new Icon component and story in `src/icons`</li>
+  <li>Add the new icon to this MDX file</li>
+</ol>
+
+<p>The genIcons script is a node script is located in `scripts/`.  It will grab all `.svg` files in `public/assets/icons`, and then pop that html into a component as JSX in `src/icons`.  It will also create a story file for the new component.</p>
+
+<h2>SVG Icon File Guidelines</h2>
+  <ul>
+    <li>filename should be kebab-case. The script will convert it to CamelCase when naming the component. (ex: `super-cool-cat.svg` will result in component `SuperCoolCatIcon.tsx`)</li>
+    <li>use `viewBox="0 0 280 280"` to keep the new icon in line with the others</li>
+    <li>There is no JSX conversion in this script, so you'll have to remove `xml:space="preserve"`, `class` properties, and anything else that isn't JSX-compatible</li>
+    <li>remove any `fill` attributes if you want the icon to be recolorable!</li>
+  </ul>
+
+
+

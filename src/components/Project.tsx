@@ -1,4 +1,4 @@
-import { ProjectT, TagT } from "../types/types";
+import { ProjectT, TagT } from "../types/data-types";
 
 type ProjectComponentProps = {
   project: ProjectT,

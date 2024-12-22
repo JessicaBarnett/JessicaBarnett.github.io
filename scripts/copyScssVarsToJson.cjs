@@ -5,6 +5,7 @@ const cssColorsPath = './stylesheets/variables/_colors.scss';
 const cssBreakpointsPath = './stylesheets/variables/_breakpoints.scss';
 
 const jsSharedVarsPath = './src/css-variables.json';
+const tsTypesPath = './src/types/css-variables-types.ts';
 
 // returns tuple, [varName, varVal]
 const parseVar = (line) => /\$(.*)\:\s(.*);/.exec(line).slice(1);
@@ -14,6 +15,13 @@ const lineHasVar = (line) => /^\$.*:.*;$/.test(line);
 
 // capitalize letter after dashes, and removes dashes
 const formatForJs = (varName) => varName.replace(/-(.)/g, (_, c) => c.toUpperCase())
+
+// capitalize 1st letter in word
+const capitalize = (str) => str.replace(/^(.)/, (_, c) => c.toUpperCase());
+
+//
+const formatAsType = (str) => `Css${capitalize(str)}T`;
+
 
 // returns object with variable names as keys
 async function getSharedVariables(cssPath) {
@@ -33,9 +41,26 @@ async function getSharedVariables(cssPath) {
   }
 }
 
+const typeFromObject = (obj, typeName, valueFn) => {
+  const typeText = [];
+  typeText.push(`export type ${typeName} = {`);
+  Object.keys(obj).forEach((key) => {
+    typeText.push(`    ${key}: ${valueFn(key)}`);
+  });
+  typeText.push(`};`);
+  return [...typeText].join('\n');
+}
+
+function getTypesFileContent(sharedVars) {
+  const subTypes = Object.keys(sharedVars).map((varGroup) => {
+    return typeFromObject(sharedVars[varGroup], formatAsType(varGroup), () => 'string');
+  });
+  const primaryType = typeFromObject(sharedVars, 'CssVariablesT', (key) => `Css${capitalize(key)}T;`);
+  return [...subTypes, primaryType].join('\n');
+}
+
 async function run() {
   const sharedVars = {};
-
   sharedVars.colors = await getSharedVariables(cssColorsPath);
   sharedVars.breakpoints = await getSharedVariables(cssBreakpointsPath);
 
@@ -43,6 +68,12 @@ async function run() {
   console.log(sharedVars)
 
   await fsp.writeFile(jsSharedVarsPath, JSON.stringify(sharedVars, null, 4))
+
+  const typesFileContent = getTypesFileContent(sharedVars);
+  console.log(`writing the following to ${tsTypesPath}`);
+  console.log(typesFileContent)
+
+  await fsp.writeFile(tsTypesPath, typesFileContent);
 }
 
 run();

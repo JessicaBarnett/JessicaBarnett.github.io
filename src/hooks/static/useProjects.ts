@@ -4,8 +4,8 @@
  */
 
 import { useState } from 'react';
-import { ProjectT } from "../types/types";
-import * as data from '../../data/data.json';
+import { ProjectT } from "@src/types/data-types";
+import * as data from '@data/data.json';
 
 export function useProjects() {
   const [value] = useState<ProjectT[]>(data.projects);

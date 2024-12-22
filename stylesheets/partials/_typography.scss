@@ -37,12 +37,18 @@
 
 // resets for standard text elements
 :is(h1, h2, h3, h4, h5, h6, p, em, i) {
-  margin: 0;
+  margin: 0 0 4px 0;
 }
 
 :is(em, i) {
   font: inherit;
 }
+
+p {
+  margin-bottom: 12px;
+}
+
+
 
 
 /**************

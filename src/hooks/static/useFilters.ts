@@ -4,8 +4,8 @@
  */
 
 import { useState } from 'react';
-import { FilterT } from "../types/types";
-import * as data from '../../data/data.json'; // TODO: improve this?
+import { FilterT } from "@src/types/data-types";
+import * as data from '@data/data.json';
 
 export function useFilters() {
   const [value] = useState<FilterT[]>(data.filters);

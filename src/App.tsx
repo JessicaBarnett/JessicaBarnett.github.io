@@ -3,24 +3,24 @@ import "./App.css";
 // import { useLayoutEffect, useEffect, useRef } from "react";
 import { useRef } from "react";
 
-import { useFilters } from "./hooks/useFilters";
-import { useProjects } from "./hooks/useProjects";
-import { useExperienceEntries } from "./hooks/useExperienceEntries";
-import { useSelectedFilter } from "./hooks/useSelectedFilter";
-import { useFilteredProjects } from "./hooks/useFilteredProjects";
-// import { useScrollPosition } from "./hooks/useScrollPosition";
+import { useFilters } from "@src/hooks/static/useFilters";
+import { useProjects } from "@src/hooks/static/useProjects";
+import { useExperienceEntries } from "@src/hooks/static/useExperienceEntries";
+import { useSelectedFilter } from "@src/hooks/useSelectedFilter";
+import { useFilteredProjects } from "@src/hooks/useFilteredProjects";
+// import { useScrollPosition } from "@src/hooks/useScrollPosition";
 
-import { useBgLines } from "./hooks/useBgLines";
+import { useBgLines } from "@src/hooks/useBgLines";
 
-import ProjectList from "./components/ProjectList";
-import ExperienceEntry from "./components/ExperienceEntry";
-import ContactForm from "./components/ContactForm";
+import ProjectList from "@src/components/ProjectList";
+import ExperienceEntry from "@src/components/ExperienceEntry";
+import ContactForm from "@src/components/ContactForm";
 
-import { PlayIcon } from "./icons/PlayIcon";
-import { PauseIcon } from "./icons/PauseIcon";
-import { StopIcon } from "./icons/StopIcon";
-import { LinkedinIcon } from "./icons/LinkedinIcon";
-import { GithubIcon } from "./icons/GithubIcon";
+import { PlayIcon } from "@src/icons/PlayIcon";
+import { PauseIcon } from "@src/icons/PauseIcon";
+import { StopIcon } from "@src/icons/StopIcon";
+import { LinkedinIcon } from "@src/icons/LinkedinIcon";
+import { GithubIcon } from "@src/icons/GithubIcon";
 
 
 function App() {

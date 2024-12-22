@@ -101,11 +101,3 @@ section {}
     margin-bottom: 0;
   }
 }
-
-/**************
-   PARAGRAPH
-***************/
-
-p {
-    @include vertical-spacing('paragraph');
-}

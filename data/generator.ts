@@ -1,4 +1,4 @@
-import { ProjectT, TagT, ExperienceEntryT } from '../src/types/types';
+import { ProjectT, TagT, ExperienceEntryT } from '../src/types/data-types';
 
 const random = (max = 10) => Math.floor(Math.random() * max);
 

@@ -1,4 +1,4 @@
-import { FilterT } from "../types/types";
+import { FilterT } from "../types/data-types";
 
 // Util fns that I can't decide where to put
 

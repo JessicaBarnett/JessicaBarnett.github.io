@@ -3,8 +3,8 @@
  * List is STATIC and can't be updated.
  */
 import { useState } from 'react';
-import { ExperienceEntryT } from "../types/types";
-import * as data from '../../data/data.json';
+import { ExperienceEntryT } from "@src/types/data-types";
+import * as data from '@data/data.json';
 
 export function useExperienceEntries() {
   const [value] = useState<ExperienceEntryT[]>(data.experience);

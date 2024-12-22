@@ -2,12 +2,12 @@
 // I need to distinctify between Ref (joined type,
 // could NOT have a current) and RefObject
 import { RefObject, useLayoutEffect } from "react";
-import { ProjectsByCompanyT } from "./useFilteredProjects";
+import { ProjectsByCompanyT } from "@src/hooks/static/useFilteredProjects";
 
-import { BreakpointsT, useBreakpoints } from "./useBreakpoints";
-import { useRainbowColors } from "./useRainbowColors";
-import { ElementRefsT, SizesT, PointT } from "../types/bg-line-types";
-import { VtoD, HtoD, DtoH, DtoV, vertical, horizontal, diagonal, getElementSizes } from "../utils/bg-line-utils";
+import { BreakpointsT, useBreakpoints } from "@src/hooks/static/useBreakpoints";
+import { useRainbowColors } from "@src/hooks/static/useRainbowColors";
+import { ElementRefsT, SizesT, PointT } from "@src/types/bg-line-types";
+import { VtoD, HtoD, DtoH, DtoV, vertical, horizontal, diagonal, getElementSizes } from "@src/utils/bg-line-utils";
 
 
 /********************************/

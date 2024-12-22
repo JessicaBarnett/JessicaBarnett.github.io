@@ -1,5 +1,5 @@
 /* enforces line heights */
 @mixin font-size($size: 1rem) {
     font-size: $size;
-    line-height: calc($size + 0.2rem);
+    line-height: calc($size + 0.6rem);
 }

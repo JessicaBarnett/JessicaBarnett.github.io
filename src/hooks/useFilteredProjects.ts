@@ -3,7 +3,7 @@
  *
  */
 import { useState, useEffect } from "react";
-import { ProjectT, FilterT, TagT } from "../types/types";
+import { ProjectT, FilterT, TagT } from "@src/types/data-types";
 
 export type ProjectsByCompanyT = {
   [key: string]: ProjectT[];

@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import svgr from '@svgr/rollup';
 import path from 'path';
 
 
@@ -21,30 +20,14 @@ export default defineConfig({
         replacement: path.resolve(__dirname, "./src/"),
       },
       {
-        find: "@hooks",
-        replacement: path.resolve(__dirname, "./src/hooks"),
+        find: "@public",
+        replacement: path.resolve(__dirname, "./public"),
       },
       {
-        find: "@assets",
-        replacement: path.resolve(__dirname, "./src/assets"),
-      },
-      {
-        find: "@customtypes",
-        replacement: path.resolve(__dirname, "./src/types"),
-      },
-      {
-        find: "@pages",
-        replacement: path.resolve(__dirname, "./src/pages"),
-      },
-      {
-        find: "@layouts",
-        replacement: path.resolve(__dirname, "./src/layouts"),
-      },
-      {
-        find: "@components",
-        replacement: path.resolve(__dirname, "./src/components"),
+        find: "@stories",
+        replacement: path.resolve(__dirname, "./stories"),
       },
     ],
   },
-  plugins: [svgr(), react()],
+  plugins: [react()],
 })

@@ -1,3 +1,11 @@
+:not(.sb-unstyled *):is(h1) {
+    margin-bottom: 36px !important;
+}
+
+:not(.sb-unstyled *):is(h2, h3, h4, h5, h6) {
+    margin: 24px 0 !important;
+}
+
 
 /* tried to match Storybook's Canvas component*/
 .example-block {
@@ -5,11 +13,21 @@
     padding: 16px;
     box-shadow: rgba(0, 0, 0, 0.10) 0 1px 3px 0;
     border: 1px solid hsla(203, 50%, 30%, 0.15);
-    margin-bottom: 64px;
+    margin-bottom: 52px;
 }
 
-.description-block {
-    margin-bottom: 64px;
+.icon-block {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    grid-gap: 16px;
+}
+
+.color-block {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    margin: 8px 4px;
+    border: 1px solid black;
 }
 
 .inter {
@@ -18,4 +36,8 @@
 
 .lester {
     font-family: "Lester Bold";
+}
+
+ol {
+    list-style: decimal;
 }
