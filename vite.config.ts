@@ -2,7 +2,6 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path';
 
-
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {
@@ -21,11 +20,11 @@ export default defineConfig({
       },
       {
         find: "@public",
-        replacement: path.resolve(__dirname, "./public"),
+        replacement: path.resolve(__dirname, "./public/"),
       },
       {
         find: "@stories",
-        replacement: path.resolve(__dirname, "./stories"),
+        replacement: path.resolve(__dirname, "./stories/"),
       },
     ],
   },

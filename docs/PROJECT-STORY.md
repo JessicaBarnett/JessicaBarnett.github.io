@@ -24,6 +24,7 @@ First step was to go on the hunt for some really cool Portfolio sites that other
 - [Dani Roxberry](https://droxey.com/)
 - [Lynn Fisher](https://lynnandtonic.com/)
 - [Matthew Williams](http://findmatthew.com/)
+- [The Filament Group](https://www.filamentgroup.com/)
 
 and some other websites that I looked at during the process:
 - https://www.filamentgroup.com/
