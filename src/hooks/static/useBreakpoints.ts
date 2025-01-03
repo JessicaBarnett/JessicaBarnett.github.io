@@ -4,12 +4,10 @@
  */
 
 import { useState } from 'react';
-import { CssVariablesT } from '@src/types/css-variables-types';
-import * as data from '@src/css-variables.json' assert { type: 'json' };;
-
-const cssVariables = data as CssVariablesT;
+import { useCssVariables } from '@src/hooks/static/useCssVariables.ts';
 
 export function useBreakpoints() {
+    const cssVariables = useCssVariables();
     const [breakpointsState] = useState(cssVariables.breakpoints);
     return [breakpointsState];
 }

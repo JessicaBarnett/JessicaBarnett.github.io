@@ -551,11 +551,11 @@
             "start": "2020",
             "end": "2023",
             "tags": [
-                "Typescript",
-                "React",
-                "Anuglar",
-                "Node",
-                "AWS"
+                {"name": "typescript", "displayName": "Typescript"},
+                {"name": "react", "displayName": "React"},
+                {"name": "angular", "displayName": "Angular"},
+                {"name": "node", "displayName": "Node"},
+                {"name": "aws", "displayName": "Angular"}
             ]
         },
         {
@@ -564,10 +564,10 @@
             "start": "2018",
             "end": "2020",
             "tags": [
-                "Typescript",
-                "Anuglar",
-                "CSS/SCSS",
-                "CraftCms"
+                {"name": "typescript", "displayName": "Typescript"},
+                {"name": "angular", "displayName": "Angular"},
+                {"name": "css", "displayName": "CSS/Scss"},
+                {"name": "cms", "displayName": "Craft CMS"}
             ]
         },
         {
@@ -576,11 +576,11 @@
             "start": "2016",
             "end": "2018",
             "tags": [
-                "Javascript",
-                "JQuery",
-                "Ruby/Rails",
-                "HTML/haml",
-                "CSS/SCSS"
+                {"name": "javascript", "displayName": "Javascript"},
+                {"name": "jquery", "displayName": "JQuery"},
+                {"name": "ror", "displayName": "Ruby/Rails"},
+                {"name": "html", "displayName": "HTML/haml"},
+                {"name": "css", "displayName": "CSS/Scss"}
             ]
         },
         {
@@ -589,11 +589,11 @@
             "start": "2014",
             "end": "2016",
             "tags": [
-                "Javascript",
-                "JQuery",
-                "Ruby/Rails",
-                "HTML/haml",
-                "CSS/SCSS"
+                {"name": "javascript", "displayName": "Javascript"},
+                {"name": "jquery", "displayName": "JQuery"},
+                {"name": "ror", "displayName": "Ruby/Rails"},
+                {"name": "html", "displayName": "HTML/haml"},
+                {"name": "css", "displayName": "CSS/Scss"}
             ]
         }
     ]

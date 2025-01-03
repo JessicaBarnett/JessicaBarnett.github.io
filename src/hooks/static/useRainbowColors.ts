@@ -1,10 +1,8 @@
 import { useState } from 'react';
-import { CssVariablesT } from '@src/types/css-variables-types';
-import * as data from '@src/css-variables.json' assert { type: 'json' };
-
-const cssVariables = data as CssVariablesT;
+import { useCssVariables } from '@src/hooks/static/useCssVariables.ts';
 
 export function useRainbowColors() {
+    const cssVariables = useCssVariables();
     const colors = cssVariables['colors'];
 
     // defines the order in which that colors will appear in rainbow stripes

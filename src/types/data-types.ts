@@ -22,5 +22,11 @@ export type ExperienceEntryT = {
     company: string,
     start: string,
     end: string,
-    tags: string[]
+    tags: TagT[]
 };
+
+export type DataT = {
+    filters: FilterT[],
+    projects: ProjectT[],
+    experience: ExperienceEntryT[]
+}

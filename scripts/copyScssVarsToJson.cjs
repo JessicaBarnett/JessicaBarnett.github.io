@@ -4,7 +4,7 @@ const path = require('path');
 const cssColorsPath = './stylesheets/variables/_colors.scss';
 const cssBreakpointsPath = './stylesheets/variables/_breakpoints.scss';
 
-const jsSharedVarsPath = './src/css-variables.json';
+const jsSharedVarsPath = './data/css-variables.json';
 const tsTypesPath = './src/types/css-variables-types.ts';
 
 // returns tuple, [varName, varVal]

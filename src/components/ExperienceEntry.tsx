@@ -1,4 +1,6 @@
-import { ExperienceEntryT } from "../types/data-types";
+import { ExperienceEntryT } from "@src/types/data-types.ts";
+import Tag from "@src/components/Tag.tsx";
+
 
 type ExperienceEntryProps = {
     entry: ExperienceEntryT
@@ -15,7 +17,7 @@ const ExperienceEntry = ({entry}: ExperienceEntryProps) => {
         <p className="subtitle-3">{entry.company}</p>
 
         { entry.tags.map(tag => (
-            <button className="btn-1" type="button">{tag}</button>
+          <Tag tag={tag}></Tag>
         ))}
     </li>
   );

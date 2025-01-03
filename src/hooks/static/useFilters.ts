@@ -4,10 +4,11 @@
  */
 
 import { useState } from 'react';
-import { FilterT } from "@src/types/data-types";
-import * as data from '@data/data.json' assert { type: 'json' };
+import { FilterT } from "@src/types/data-types.ts";
+import { useData } from '@src/hooks/static/useData.ts';
 
 export function useFilters() {
+  const data = useData();
   const [value] = useState<FilterT[]>(data.filters);
   return [value];
 }

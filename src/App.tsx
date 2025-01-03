@@ -3,24 +3,24 @@ import "./App.css";
 // import { useLayoutEffect, useEffect, useRef } from "react";
 import { useRef } from "react";
 
-import { useFilters } from "@src/hooks/static/useFilters";
-import { useProjects } from "@src/hooks/static/useProjects";
-import { useExperienceEntries } from "@src/hooks/static/useExperienceEntries";
-import { useSelectedFilter } from "@src/hooks/useSelectedFilter";
-import { useFilteredProjects } from "@src/hooks/useFilteredProjects";
-// import { useScrollPosition } from "@src/hooks/useScrollPosition";
+import { useFilters } from "@src/hooks/static/useFilters.ts";
+import { useProjects } from "@src/hooks/static/useProjects.ts";
+import { useExperienceEntries } from "@src/hooks/static/useExperienceEntries.ts";
+import { useSelectedFilter } from "@src/hooks/useSelectedFilter.ts";
+import { useFilteredProjects } from "@src/hooks/useFilteredProjects.ts";
+// import { useScrollPosition } from "@src/hooks/useScrollPosition.ts";
 
-import { useBgLines } from "@src/hooks/useBgLines";
+import { useBgLines } from "@src/hooks/useBgLines.ts";
 
-import ProjectList from "@src/components/ProjectList";
-import ExperienceEntry from "@src/components/ExperienceEntry";
-import ContactForm from "@src/components/ContactForm";
+import ProjectList from "@src/components/ProjectList.tsx";
+import ExperienceEntry from "@src/components/ExperienceEntry.tsx";
+import ContactForm from "@src/components/ContactForm.tsx";
 
-import { PlayIcon } from "@src/icons/PlayIcon";
-import { PauseIcon } from "@src/icons/PauseIcon";
-import { StopIcon } from "@src/icons/StopIcon";
-import { LinkedinIcon } from "@src/icons/LinkedinIcon";
-import { GithubIcon } from "@src/icons/GithubIcon";
+import { PlayIcon } from "@src/icons/PlayIcon.tsx";
+import { PauseIcon } from "@src/icons/PauseIcon.tsx";
+import { StopIcon } from "@src/icons/StopIcon.tsx";
+import { LinkedinIcon } from "@src/icons/LinkedinIcon.tsx";
+import { GithubIcon } from "@src/icons/GithubIcon.tsx";
 
 
 function App() {

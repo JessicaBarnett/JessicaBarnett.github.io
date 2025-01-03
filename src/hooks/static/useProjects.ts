@@ -4,10 +4,11 @@
  */
 
 import { useState } from 'react';
-import { ProjectT } from "@src/types/data-types";
-import * as data from '@data/data.json' assert { type: 'json' };
+import { ProjectT } from "@src/types/data-types.ts";
+import { useData } from '@src/hooks/static/useData.ts';
 
 export function useProjects() {
+  const data = useData();
   const [value] = useState<ProjectT[]>(data.projects);
   console.log('initing useProjects'); // TODO why is this initing so much????  should be 1 and done...
   return [value];
