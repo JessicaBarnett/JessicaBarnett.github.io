@@ -1,4 +1,5 @@
-import { TagT } from "@src/types/data-types.tsx";
+import { TagT } from "@src/types/data-types.ts";
+// import '../stylesheets/components/tags.scss';
 
 type ProjectComponentProps = {
   tag: TagT;

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { projectsGen, tagsGen } from '../../data/generator.js';
 
-import ProjectList from '../components/ProjectList';
+import ProjectList from '../components/ProjectList.tsx';
 
 const projects = projectsGen(10);
 const selectedTags = tagsGen(1);

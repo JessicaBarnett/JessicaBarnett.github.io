@@ -1,5 +1,5 @@
-import { ProjectT, TagT } from '../types/data-types';
-import Project from './Project';
+import { ProjectT, TagT } from '../types/data-types.ts';
+import Project from './Project.tsx';
 
 type ProjectListProps = {
   heading: string,

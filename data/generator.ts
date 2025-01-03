@@ -38,7 +38,7 @@ export const experienceEntryGen = (idx = random()): ExperienceEntryT => {
         company: "Company Name",
         start: "20XX",
         end: "20XX",
-        tags: tagsGen().map(tag => tag.name)
+        tags: tagsGen()
     }
 }
 export const experienceEntrysGen = (num = random()): ExperienceEntryT[] => multiGen(experienceEntryGen, num);
