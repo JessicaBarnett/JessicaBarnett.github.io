@@ -1,6 +1,8 @@
 import ContactForm from "@src/components/ContactForm.tsx";
 import { LinkedinIcon } from "@src/icons/LinkedinIcon.tsx";
 import { GithubIcon } from "@src/icons/GithubIcon.tsx";
+import { LoveIcon } from "@src/icons/LoveIcon.tsx";
+
 
 import '@styles/components/contact.scss';
 
@@ -14,14 +16,13 @@ function ContactSection() {
 
         <div className="sidebar-right one-third">
           <p className="made-with-love">
-            Made with{" "}
-            <img
+            Made with <LoveIcon></LoveIcon> in Philadelphia
+          </p>
+          {/* <img
               className="icon-sm"
               alt="love"
               src="/assets/icons/love-icon-dark.png"
-            ></img>{" "}
-            in Philadelphia{" "}
-          </p>
+            ></img>{" "} */}
 
           <a
             className="social-link"

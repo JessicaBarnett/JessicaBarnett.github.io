@@ -1,11 +1,9 @@
 @use "../variables/colors" as *;
 @use "../variables/globals" as *;
-// @use "../variables/breakpoints" as *;
 @use "../utilities/media-queries" as *;
 @use "../utilities/vertical-spacing" as *;
 @use "../utilities/if-next-sibling-has" as *;
 @use "../utilities/overlays" as *;
-
 
 /********************
    ROOT
@@ -17,6 +15,7 @@
   height: 100%;
   width: 100%;
   padding-bottom: 16px;
+  margin-top: 45px; // account for nav height
 
   &:before {
     @include paper-texture-overlay();
