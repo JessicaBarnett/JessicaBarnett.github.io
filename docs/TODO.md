@@ -1,9 +1,11 @@
 # Post-launch ASAP
 ----------------------------------------------------------------
 
-## High Priority
+## ToDo
+- Animate Lines
+- add a "more" link to projects, which opens up a popup with more info + pictures
+- About section - add 3 sections for info about specialties + get rid of the 3 buttons.
 - [med] Offscreen canvas rendering to fix that black screen on scroll (https://web.dev/articles/offscreen-canvas)
-- [med-hard] why is the texture not loading?
 - [easy] contact textarea font (it's courier ew)
 - [med] reset lines on contact form submission
 - [hard] fill in TBA sections
@@ -11,9 +13,13 @@
 - [easy] transitions
 - dark mode adaptations.
 - test in mobile browsers
-
-## High Interest
-- storybook
+- figure out how to import compontnent-specific Scss in components?
+- storybook: get css loading correctly in all components
+- storybook: breakpoints page
+- storybook: development page
+- storybook: "submitted" state story
+- storybook: breakpoints?
+- storybook: hook up fns?
 
 
 ----------------------------------------------------------------
@@ -22,11 +28,6 @@
 
 ## High Priority
 - add a "more" link to projects, which opens up a popup with more info + pictures
-
-
-## High Interest
-- animate lines!!
-
 
 ## Other
 - Articles/blog (link in social and in nav)
@@ -38,7 +39,7 @@
 # Notes to add to Obsidian later
 ----------------------------------------------------------------
 
-# AMAZING TOOL
+### amazing tools
 - https://svg-path.com/
 - https://freesvgeditor.com/en/svg-editor-online
 
@@ -59,10 +60,11 @@
 - deploy storybook to gh pages: https://medium.com/swlh/how-to-deploy-storybook-to-github-pages-4894097d49ab
 
 
-
 ## Storybook
 - "unattached" documentation (no story connected) https://storybook.js.org/docs/writing-docs/mdx#writing-unattached-documentation
 
 - It looks like the Canvas element, which is the sort of "demo block" that storybook uses, HAS to be tied to a story.  Which means I cant pop one in there for like, colors or headings.  This is that was causing me issues creating unattached docs earlier.
 
 - To create a block without Storybook's own styling applied, use the Unstyled Block. https://storybook.js.org/docs/api/doc-blocks/doc-block-unstyled
+
+- preview.ts file to set order of categories

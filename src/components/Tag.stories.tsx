@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { tagGen } from '@data/generator.js';
 
+import '@styles/elements/_buttons.scss';
 import Tag from '@src/components/Tag.tsx';
 
 const tagData = tagGen(1);

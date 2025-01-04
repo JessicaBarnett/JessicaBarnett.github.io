@@ -41,4 +41,4 @@ export const experienceEntryGen = (idx = random()): ExperienceEntryT => {
         tags: tagsGen()
     }
 }
-export const experienceEntrysGen = (num = random()): ExperienceEntryT[] => multiGen(experienceEntryGen, num);
+export const experienceEntriesGen = (num = random()): ExperienceEntryT[] => multiGen(experienceEntryGen, num);

@@ -35,26 +35,26 @@ table {
   border: 1px solid $black;
 }
 
-.page-stats-table {
-  width: 75%;
-  margin-bottom: 8px;
+// .page-stats-table {
+//   width: 75%;
+//   margin-bottom: 8px;
 
-  @include only-above($medium-bp) {
-    width: 50%;
-  }
-}
+//   @include only-above($medium-bp) {
+//     width: 50%;
+//   }
+// }
 
-.page-stats-button {
-  margin: 4px 16px 0 0;
-  display: inline-block;
-  vertical-align: top;
-}
+// .page-stats-button {
+//   margin: 4px 16px 0 0;
+//   display: inline-block;
+//   vertical-align: top;
+// }
 
-.page-stats-text {
-  max-width: 60%;
-  display: inline-block;
+// .page-stats-text {
+//   max-width: 60%;
+//   display: inline-block;
 
-  @include only-above($medium-bp) {
-    max-width: 45%;
-  }
-}
+//   @include only-above($medium-bp) {
+//     max-width: 45%;
+//   }
+// }

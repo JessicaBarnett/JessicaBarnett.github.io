@@ -13,15 +13,13 @@ import { useFilteredProjects } from "@src/hooks/useFilteredProjects.ts";
 import { useBgLines } from "@src/hooks/useBgLines.ts";
 
 import ProjectList from "@src/components/ProjectList.tsx";
-import ExperienceEntry from "@src/components/ExperienceEntry.tsx";
-import ContactForm from "@src/components/ContactForm.tsx";
 
-import { PlayIcon } from "@src/icons/PlayIcon.tsx";
-import { PauseIcon } from "@src/icons/PauseIcon.tsx";
-import { StopIcon } from "@src/icons/StopIcon.tsx";
-import { LinkedinIcon } from "@src/icons/LinkedinIcon.tsx";
-import { GithubIcon } from "@src/icons/GithubIcon.tsx";
-
+import AboutSection from "@src/sections/About.tsx";
+import TitleSection from "@src/sections/Title.tsx";
+import ExperienceSection from "@src/sections/Experience.tsx";
+import ContactSection from "@src/sections/Contact.tsx";
+import FooterSection from "./sections/Footer.tsx";
+import Navigation from "./components/Navigation.tsx";
 
 function App() {
   const [filters] = useFilters();
@@ -87,66 +85,26 @@ function App() {
 
   return (
     <>
-      <div ref={fixedNavRef} className="nav-links nav-links-fixed">
-        <a className="nav-link" href="#projects">
-          <PlayIcon></PlayIcon>
-          <span>projects</span>
-        </a>
-        <a className="nav-link" href="#experience">
-          <PauseIcon></PauseIcon>
-          <span>experience</span>
-        </a>
-        <a className="nav-link" href="#contact">
-          <StopIcon></StopIcon>
-          <span>contact</span>
-        </a>
+      <div ref={fixedNavRef}>
+        <Navigation></Navigation>
       </div>
 
       <div className="layout">
         <div ref={pageRef} className="page">
+
           <canvas id="canvas" ref={canvasRef} height="100%" width="100%"></canvas>
+
           <section ref={ttlRef} className="section-title triangle-left">
-            <div className="section-content">
-              <h1 className="title-1">
-                <span className="outdent-1">Jessica </span>
-                Barnett
-              </h1>
-              <h2 className="indent-2 subtitle-1">
-                <span className="outdent-1">Front-End / FullStack </span>
-                <span className="nowrap">Software Engineer</span>
-              </h2>
-            </div>
+            <TitleSection></TitleSection>
           </section>
 
-          <section id="about" ref={abtRef} className="section-about trapezoid-right">
-            <div className="section-content">
-              <div className="indent-2">
-                <p className="deco-font-1">
-                  <em className="outdent-1">Hello.</em>
-                </p>
-                <p className="deco-font-2 ">
-                  My name is Jessica{" "}
-                  <span className="nowrap">and I make web things.</span>
-                </p>
-                <nav className="nav-links nav-links-inline">
-                  <a className="nav-link" href="#projects">
-                    <PlayIcon></PlayIcon>
-                    <span>projects</span>
-                  </a>
-                  <a className="nav-link" href="#experience">
-                    <PauseIcon></PauseIcon>
-                    <span>experience</span>
-                  </a>
-                  <a className="nav-link" href="#contact">
-                    <StopIcon></StopIcon>
-                    <span>contact</span>
-                  </a>
-                </nav>
-              </div>
-            </div>
+          <section id="about" ref={abtRef}>
+            <AboutSection></AboutSection>
           </section>
 
           <section id="projects" ref={projRef} className="section-projects">
+            {/* <ProjectsSection ></ProjectsSection> */}
+
             <div className="section-content grid-at-small">
               <h3 className="section-heading title-2 half">Projects</h3>
 
@@ -181,79 +139,15 @@ function App() {
           </section>
 
           <section  id="experience" ref={expRef} className="section-experience trapezoid-hug">
-            <div className="section-content">
-              <h3 className="section-heading title-2">Experience</h3>
-              <ol>
-                {expEntries.map(entry => (
-                  <ExperienceEntry entry={entry}></ExperienceEntry>
-                ))}
-              </ol>
-            </div>
+            <ExperienceSection expEntries={expEntries}></ExperienceSection>
           </section>
 
           <section id="contact" ref={contRef} className="section-contact color-bar">
-            <div className="section-content grid-at-med">
-              <h3 className="section-heading title-2">Contact</h3>
-
-              <ContactForm></ContactForm>
-
-              <div className="sidebar-right one-third">
-                <p className="made-with-love">
-                  Made with{" "}
-                  <img
-                    className="icon-sm"
-                    alt="love"
-                    src="/assets/icons/love-icon-dark.png"
-                  ></img>{" "}
-                  in Philadelphia{" "}
-                </p>
-
-                <a className="social-link" target="_blank" href="https://www.linkedin.com/in/jessica-m-barnett/">
-                  <LinkedinIcon></LinkedinIcon>
-                  <span className="social-link-text">LinkedIn</span>
-                </a>
-
-                <a className="social-link" target="_blank" href="https://github.com/JessicaBarnett">
-                  <GithubIcon></GithubIcon>
-                  <span className="social-link-text">Github</span>
-                </a>
-              </div>
-            </div>
+            <ContactSection></ContactSection>
           </section>
 
           <section ref={ftrRef} className="section-footer">
-            <div className="section-content">
-              {/* Put like, "interested in this build?  see the style guide, or my write up about it!" in this section too  */}
-              {/* <table className="page-stats-table">
-                <tbody>
-                  <tr>
-                    <th>Language</th>
-                    <th>HTML</th>
-                    <th>SCSS</th>
-                    <th>JS</th>
-                  </tr>
-                  <tr>
-                    <th>Percent</th>
-                    <td>20%</td>
-                    <td>40%</td>
-                    <td>40%</td>
-                  </tr>
-                  <tr>
-                    <th>Lines</th>
-                    <td colSpan={3}>6000 lines</td>
-                  </tr>
-                </tbody>
-              </table> */}
-
-              {/* <a className="page-stats-button" href="#">
-                <button className="btn-2" type="button">
-                  Source
-                </button>
-              </a>
-              <p className="page-stats-text">
-                Project built with Sass, React, and Vite.
-              </p> */}
-            </div>
+            <FooterSection></FooterSection>
           </section>
         </div>
       </div>
