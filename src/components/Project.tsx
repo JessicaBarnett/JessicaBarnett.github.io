@@ -4,10 +4,10 @@ import Tag from "@src/components/Tag.tsx";
 type ProjectComponentProps = {
   project: ProjectT,
   selectedTags: TagT[],
-  onTagSelect: (name: string) => void
+  // onTagSelect: (name: string) => void
 };
 
-const Project = ({project, selectedTags, onTagSelect}: ProjectComponentProps) => {
+const Project = ({project, selectedTags, /*onTagSelect*/}: ProjectComponentProps) => {
   const tagSelected = (tag: TagT): boolean => {
     return !!selectedTags.find(selTag => selTag.name === tag.name);
   }
@@ -20,7 +20,7 @@ const Project = ({project, selectedTags, onTagSelect}: ProjectComponentProps) =>
       {project.tags.map((projTag: TagT) => (
         <Tag tag={projTag}
           isSelected={tagSelected(projTag)}
-          onClick={onTagSelect}
+          /*onClick={onTagSelect}*/
         ></Tag>
       ))}
     </li>

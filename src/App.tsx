@@ -12,11 +12,10 @@ import { useFilteredProjects } from "@src/hooks/useFilteredProjects.ts";
 
 import { useBgLines } from "@src/hooks/useBgLines.ts";
 
-import ProjectList from "@src/components/ProjectList.tsx";
-
 import AboutSection from "@src/sections/About.tsx";
 import TitleSection from "@src/sections/Title.tsx";
 import ExperienceSection from "@src/sections/Experience.tsx";
+import ProjectsSection from "@src/sections/Projects.tsx";
 import ContactSection from "@src/sections/Contact.tsx";
 import FooterSection from "./sections/Footer.tsx";
 import Navigation from "./components/Navigation.tsx";
@@ -26,7 +25,11 @@ function App() {
   const [projects] = useProjects();
   const [expEntries] = useExperienceEntries();
   const [selectedFilter, setSelectedFilter] = useSelectedFilter(filters);
-  const [filteredProjects] = useFilteredProjects(projects, filters, selectedFilter);
+  const [filteredProjects] = useFilteredProjects(
+    projects,
+    filters,
+    selectedFilter
+  );
   // const [scrollPosition] = useScrollPosition();
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -39,17 +42,19 @@ function App() {
   const ftrRef = useRef<HTMLElement | null>(null);
   const fixedNavRef = useRef<HTMLDivElement | null>(null);
 
-  useBgLines({
-    canvasRef,
-    pageRef,
-    ttlRef,
-    abtRef,
-    projRef,
-    expRef,
-    contRef,
-    ftrRef
-  }, filteredProjects);
-
+  useBgLines(
+    {
+      canvasRef,
+      pageRef,
+      ttlRef,
+      abtRef,
+      projRef,
+      expRef,
+      contRef,
+      ftrRef,
+    },
+    filteredProjects
+  );
 
   // useEffect(() => {
   //   const ttlHeight = +(ttlRef!.current!.offsetHeight ?? 0);
@@ -75,13 +80,13 @@ function App() {
 
   // turn this back on after I fix the scroll position weirdness
   const onTagSelect = (/*name: string*/) => {
-    console.log('tag select - to do')
+    console.log("tag select - to do");
     // setSelectedFilter(name);
-  }
+  };
 
   const handleFilterChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedFilter(e.target.value);
-  }
+  };
 
   return (
     <>
@@ -91,8 +96,12 @@ function App() {
 
       <div className="layout">
         <div ref={pageRef} className="page">
-
-          <canvas id="canvas" ref={canvasRef} height="100%" width="100%"></canvas>
+          <canvas
+            id="canvas"
+            ref={canvasRef}
+            height="100%"
+            width="100%"
+          ></canvas>
 
           <section ref={ttlRef} className="section-title triangle-left">
             <TitleSection></TitleSection>
@@ -102,47 +111,28 @@ function App() {
             <AboutSection></AboutSection>
           </section>
 
-          <section id="projects" ref={projRef} className="section-projects">
-            {/* <ProjectsSection ></ProjectsSection> */}
-
-            <div className="section-content grid-at-small">
-              <h3 className="section-heading title-2 half">Projects</h3>
-
-              <div className="filter-projects-group half">
-                <label className="filter-projects-label" htmlFor="filterProjects">Filter</label>
-                <select
-                  className="filter-projects-select"
-                  name="filterProjects"
-                  id="filterProjects"
-                  value={selectedFilter?.name ?? undefined}
-                  onChange={handleFilterChange}>
-                  <option value="">All</option>
-                  {filters.map(filter => (
-                    <option value={filter.name} data-tags={filter.tags}>{filter.displayName}</option>
-                  ))}
-                </select>
-              </div>
-
-              <ProjectList
-                heading="Relay Network"
-                projects={filteredProjects['Relay Network'] ?? []}
-                selectedTags={selectedFilter?.tags ?? []}
-                onTagSelect={onTagSelect}></ProjectList>
-
-              <ProjectList
-                heading="Weblinc Ecommerce"
-                projects={filteredProjects['Weblinc Ecommerce'] ?? []}
-                selectedTags={selectedFilter?.tags ?? []}
-                onTagSelect={onTagSelect}></ProjectList>
-
-            </div>
+          <section id="projects" ref={projRef}>
+            <ProjectsSection
+              filteredProjects={filteredProjects}
+              filters={filters}
+              selectedFilter={selectedFilter}
+              onFilterChange={handleFilterChange}
+            ></ProjectsSection>
           </section>
 
-          <section  id="experience" ref={expRef} className="section-experience trapezoid-hug">
+          <section
+            id="experience"
+            ref={expRef}
+            className="section-experience trapezoid-hug"
+          >
             <ExperienceSection expEntries={expEntries}></ExperienceSection>
           </section>
 
-          <section id="contact" ref={contRef} className="section-contact color-bar">
+          <section
+            id="contact"
+            ref={contRef}
+            className="section-contact color-bar"
+          >
             <ContactSection></ContactSection>
           </section>
 

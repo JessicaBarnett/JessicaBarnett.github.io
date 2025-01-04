@@ -1,9 +1,9 @@
-import { ProjectT, TagT, ExperienceEntryT } from '../src/types/data-types';
+import { ProjectT, TagT, ExperienceEntryT, FilterT } from '../src/types/data-types.ts';
 
-const random = (max = 10) => Math.floor(Math.random() * max);
+const random = (max = 5) => Math.floor(Math.random() * max);
 
 const multiGen = <T>(fn: (idx: number) => T, numItems: number): T[] => {
-    numItems = numItems !== null ? numItems : random(10);
+    numItems = numItems !== null ? numItems : random();
     const items: T[] = [];
     for (let idx = 0; idx <= numItems; idx++) {
         const item = fn(idx);
@@ -42,3 +42,13 @@ export const experienceEntryGen = (idx = random()): ExperienceEntryT => {
     }
 }
 export const experienceEntriesGen = (num = random()): ExperienceEntryT[] => multiGen(experienceEntryGen, num);
+
+
+export const filterGen = (idx = random()): FilterT => {
+    return {
+        displayName: `Tag ${idx}`,
+        name: `tag-${idx}`,
+        tags: tagsGen()
+    }
+};
+export const filtersGen = (num = random()): FilterT[] => multiGen(filterGen, num);

@@ -2,12 +2,13 @@
 // I need to distinctify between Ref (joined type,
 // could NOT have a current) and RefObject
 import { RefObject, useLayoutEffect } from "react";
-import { ProjectsByCompanyT } from "@src/hooks/static/useFilteredProjects";
+import { ProjectsByCompanyT } from "@src/hooks/useFilteredProjects.ts";
 
-import { BreakpointsT, useBreakpoints } from "@src/hooks/static/useBreakpoints";
-import { useRainbowColors } from "@src/hooks/static/useRainbowColors";
-import { ElementRefsT, SizesT, PointT } from "@src/types/bg-line-types";
-import { VtoD, HtoD, DtoH, DtoV, vertical, horizontal, diagonal, getElementSizes } from "@src/utils/bg-line-utils";
+import {useBreakpoints } from "@src/hooks/static/useBreakpoints.ts";
+import { useRainbowColors } from "@src/hooks/static/useRainbowColors.ts";
+import { ElementRefsT, SizesT, PointT } from "@src/types/bg-line-types.ts";
+import { CssBreakpointsT } from "@src/types/css-variables-types.ts";
+import { VtoD, HtoD, DtoH, DtoV, vertical, horizontal, diagonal, getElementSizes } from "@src/utils/bg-line-utils.ts";
 
 
 /********************************/
@@ -178,7 +179,7 @@ const resizeAndClearCanvas = (
 };
 
 // Change line Widths at breakpoints here
-const getLineW = (sizes: SizesT, breakpoints: BreakpointsT): number => {
+const getLineW = (sizes: SizesT, breakpoints: CssBreakpointsT ): number => {
   if (sizes.pgWidth <= parseInt(breakpoints.mediumBp)) {
     return 10;
   }

@@ -2,8 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { experienceEntriesGen } from '../../data/generator.js';
 const entries = experienceEntriesGen(4);
 
-import '@styles/app.scss';
-
 import Experience from '@src/sections/Experience.tsx';
 
 const meta = {

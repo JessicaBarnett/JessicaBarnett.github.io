@@ -471,12 +471,6 @@ p {
   font-style: italic;
 }
 @font-face {
-  font-family: "Open Dyslexic";
-  src: url("/assets/fonts/open_dyslexic/OpenDyslexic-Italic.otf") format("opentype");
-  font-weight: 400;
-  font-style: italic;
-}
-@font-face {
   font-family: "Lester Bold";
   src: url("/assets/fonts/lester-bold.ttf"), format("truetype");
   font-weight: 400;
@@ -484,12 +478,6 @@ p {
 @font-face {
   font-family: "Inter";
   src: url("/assets/fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf") format("truetype") tech("variations");
-  font-weight: 100 1000;
-  font-stretch: 25% 151%;
-}
-@font-face {
-  font-family: "Lexend";
-  src: url("/assets/fonts/Lexend/Lexend-VariableFont_wght.ttf") format("truetype") tech("variations");
   font-weight: 100 1000;
   font-stretch: 25% 151%;
 }

@@ -48,6 +48,11 @@
 - remove height/width and add voiewbox to be able to scale w/ css
 - remove in-file "fill="s to use the fill rule
 
+### Inkscape
+- png to svg -> https://designbundles.net/design-school/how-to-convert-a-jpegpng-to-a-vector-in-inkscape
+
+
+
 ### node scripting
 - fs = filesystem w/ callbacks, and fsp = filesystem with promises.
 

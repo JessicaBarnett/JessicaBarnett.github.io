@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import '@styles/app.scss';
 import Title from './Title.tsx';
 
 const meta = {

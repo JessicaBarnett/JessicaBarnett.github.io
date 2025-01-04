@@ -4,7 +4,7 @@
  * State required: useFilters
  */
 import { useState } from "react";
-import { FilterT } from "@src/types/data-types";
+import { FilterT } from "@src/types/data-types.ts";
 
 type UseSelectedFilterReturnT = [
   FilterT | undefined,

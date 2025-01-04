@@ -15,14 +15,7 @@
 // partials
 @use "./partials/layout";
 @use "./partials/typography";
-// @use "./partials/navigation";
 
-// // sections
-// @use "./sections/title";
-// @use "./sections/about";
-// @use "./sections/projects";
-// @use "./sections/experience";
-// @use "./sections/contact";
 
 /*******************
     FONT IMPORTS
@@ -47,12 +40,12 @@
   font-style: italic;
 }
 
-@font-face {
-  font-family: 'Open Dyslexic';
-  src: url('/assets/fonts/open_dyslexic/OpenDyslexic-Italic.otf') format('opentype');
-  font-weight: 400;
-  font-style: italic;
-}
+// @font-face {
+//   font-family: 'Open Dyslexic';
+//   src: url('/assets/fonts/open_dyslexic/OpenDyslexic-Italic.otf') format('opentype');
+//   font-weight: 400;
+//   font-style: italic;
+// }
 
 @font-face {
   font-family: 'Lester Bold';
@@ -68,13 +61,13 @@
   font-stretch: 25% 151%;
 }
 
-@font-face {
-  font-family: 'Lexend';
-  // src: url('/assets/fonts/Inter/static/Inter_18pt-Regular.ttf') format('truetype');
-  src: url('/assets/fonts/Lexend/Lexend-VariableFont_wght.ttf') format('truetype') tech('variations');
-  font-weight: 100 1000;
-  font-stretch: 25% 151%;
-}
+// @font-face {
+//   font-family: 'Lexend';
+//   // src: url('/assets/fonts/Inter/static/Inter_18pt-Regular.ttf') format('truetype');
+//   src: url('/assets/fonts/Lexend/Lexend-VariableFont_wght.ttf') format('truetype') tech('variations');
+//   font-weight: 100 1000;
+//   font-stretch: 25% 151%;
+// }
 
 
 /**************

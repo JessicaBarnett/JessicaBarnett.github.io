@@ -1,8 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-
-import '@styles/app.scss';
-
 import Navigation from '@src/components/Navigation.tsx';
 
 const meta = {
