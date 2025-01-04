@@ -1,6 +1,6 @@
 // this is a legit import, not a use!  I don't want to have to
 // import the breakpoints file anywhere else without a good reason
-@import '../variables/breakpoints';
+// @import '../variables/breakpoints';
 
 @mixin only-above($breakpoint) {
     @media (min-width: $breakpoint) {

@@ -73,3 +73,10 @@
 - To create a block without Storybook's own styling applied, use the Unstyled Block. https://storybook.js.org/docs/api/doc-blocks/doc-block-unstyled
 
 - preview.ts file to set order of categories
+
+
+## React
+- refObjects have a .current, ref callbacks don't.
+  I need to distinctify between Ref (joined type, could NOT have a current) and RefObject
+  `import { RefObject, useLayoutEffect } from "react";`
+

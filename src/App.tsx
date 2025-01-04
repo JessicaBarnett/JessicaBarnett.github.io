@@ -1,6 +1,5 @@
 import "./App.css";
 
-// import { useLayoutEffect, useEffect, useRef } from "react";
 import { useRef } from "react";
 
 import { useFilters } from "@src/hooks/static/useFilters.ts";
@@ -8,7 +7,6 @@ import { useProjects } from "@src/hooks/static/useProjects.ts";
 import { useExperienceEntries } from "@src/hooks/static/useExperienceEntries.ts";
 import { useSelectedFilter } from "@src/hooks/useSelectedFilter.ts";
 import { useFilteredProjects } from "@src/hooks/useFilteredProjects.ts";
-// import { useScrollPosition } from "@src/hooks/useScrollPosition.ts";
 
 import { useBgLines } from "@src/hooks/useBgLines.ts";
 
@@ -30,7 +28,6 @@ function App() {
     filters,
     selectedFilter
   );
-  // const [scrollPosition] = useScrollPosition();
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const pageRef = useRef<HTMLDivElement | null>(null);
@@ -55,34 +52,6 @@ function App() {
     },
     filteredProjects
   );
-
-  // useEffect(() => {
-  //   const ttlHeight = +(ttlRef!.current!.offsetHeight ?? 0);
-  //   const abtHeight = +(abtRef!.current!.offsetHeight ?? 0);
-  //   const waypoint = ttlHeight + (abtHeight / 2);
-
-  //   if (!scrollPosition.current) {
-  //     console.log('no current scroll pos')
-  //     return;
-  //   }
-  //   const isBelowNavWaypoint = scrollPosition.current > waypoint;
-  //   const navIsHidden = fixedNavRef.current?.classList.contains('hidden');
-
-  //   if (isBelowNavWaypoint && navIsHidden) {
-  //     fixedNavRef.current?.classList.remove('hidden');
-  //     return;
-  //   }
-
-  //   if (!isBelowNavWaypoint && !navIsHidden) {
-  //     fixedNavRef.current?.classList.add('hidden');
-  //   }
-  // }, [scrollPosition, ttlRef, abtRef])
-
-  // turn this back on after I fix the scroll position weirdness
-  const onTagSelect = (/*name: string*/) => {
-    console.log("tag select - to do");
-    // setSelectedFilter(name);
-  };
 
   const handleFilterChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedFilter(e.target.value);
@@ -141,7 +110,6 @@ function App() {
           </section>
         </div>
       </div>
-      {/* end page */}
     </>
   );
 }

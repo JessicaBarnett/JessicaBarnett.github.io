@@ -1,15 +1,22 @@
-// refObjects have a .current, ref callbacks don't.
-// I need to distinctify between Ref (joined type,
-// could NOT have a current) and RefObject
-import { RefObject, useLayoutEffect } from "react";
+import { RefObject, useLayoutEffect } from "react"; // refObject always has a .current.  ref, does not.  Need to specify
+
 import { ProjectsByCompanyT } from "@src/hooks/useFilteredProjects.ts";
-
-import {useBreakpoints } from "@src/hooks/static/useBreakpoints.ts";
-import { useRainbowColors } from "@src/hooks/static/useRainbowColors.ts";
-import { ElementRefsT, SizesT, PointT } from "@src/types/bg-line-types.ts";
 import { CssBreakpointsT } from "@src/types/css-variables-types.ts";
-import { VtoD, HtoD, DtoH, DtoV, vertical, horizontal, diagonal, getElementSizes } from "@src/utils/bg-line-utils.ts";
+import { ElementRefsT, SizesT, PointT } from "@src/types/bg-line-types.ts";
 
+import { useBreakpoints } from "@src/hooks/static/useBreakpoints.ts";
+import { useRainbowColors } from "@src/hooks/static/useRainbowColors.ts";
+
+import {
+  VtoD,
+  HtoD,
+  DtoH,
+  DtoV,
+  vertical,
+  horizontal,
+  diagonal,
+  getElementSizes,
+} from "@src/utils/bg-line-utils.ts";
 
 /********************************/
 /******* Path Definitions ********/
@@ -27,27 +34,27 @@ const getPathA = (
 
   return [
     {
-      x: pgWidth - (linesW * 1.5), // right side of the page, offset by 100
+      x: pgWidth - linesW * 1.5, // right side of the page, offset by 100
       y: 0, // slightly below page top edge
     },
     {
-      x: pgWidth - (linesW * 1.5),
+      x: pgWidth - linesW * 1.5,
       y: ttlHeight - 80,
       a: 45,
     },
     {
-      x: pgWidth - (100 + (15 * (pgWidth * .004))), // I have no idea how I came up with this math
-      y: ttlHeight - (linesW/2), // top-right of the about element
+      x: pgWidth - (100 + 15 * (pgWidth * 0.004)), // I have no idea how I came up with this math
+      y: ttlHeight - linesW / 2, // top-right of the about element
       a: 45,
     },
     {
       x: linesW,
-      y: ttlHeight - (linesW/2),
+      y: ttlHeight - linesW / 2,
       a: 45,
     },
     {
       x: lineW / 2,
-      y: ttlHeight + (linesW / 2), // top-left of the about element
+      y: ttlHeight + linesW / 2, // top-left of the about element
       a: 45,
     },
     {
@@ -62,17 +69,18 @@ const getPathA = (
     },
     {
       x: lineCt * lineW,
-      y: ttlHeight + abtHeight + projHeight + expHeight - (linesW/2), // bottom of Experience Element
+      y: ttlHeight + abtHeight + projHeight + expHeight - linesW / 2, // bottom of Experience Element
       a: 90,
     },
     {
-      x: pgWidth - (50 * (pgWidth * .006)),
-      y: ttlHeight + abtHeight + projHeight + expHeight - (linesW/2), // horizontal across bottom
+      x: pgWidth - 50 * (pgWidth * 0.006),
+      y: ttlHeight + abtHeight + projHeight + expHeight - linesW / 2, // horizontal across bottom
       a: 0,
     },
     {
       x: pgWidth,
-      y: ttlHeight + abtHeight + projHeight + expHeight + (50 * (pgWidth * .003)), // final point
+      y:
+        ttlHeight + abtHeight + projHeight + expHeight + 50 * (pgWidth * 0.003), // final point
     },
   ];
 };
@@ -83,13 +91,13 @@ const getPathB = (
   lineCt: number
 ): PointT[] => {
   const allLinesW = lineW * lineCt;
-  const halfLineW = lineW/2;
-  const halfLinesW = allLinesW/2;
+  const halfLineW = lineW / 2;
+  const halfLinesW = allLinesW / 2;
 
   return [
     {
       x: 0, // left side
-      y: ttlHeight + abtHeight - halfLinesW - 80 ,
+      y: ttlHeight + abtHeight - halfLinesW - 80,
     },
     {
       x: allLinesW * 1.4, // left side
@@ -98,19 +106,18 @@ const getPathB = (
     },
     {
       x: pgWidth - allLinesW + halfLineW, // right side minus line width
-      y: ttlHeight + abtHeight  - halfLinesW ,
+      y: ttlHeight + abtHeight - halfLinesW,
       a: 90,
     },
     {
       x: pgWidth - allLinesW + halfLineW, // right side minus line width
-      y: ttlHeight + abtHeight + projHeight - 150 + (pgWidth * .05),
+      y: ttlHeight + abtHeight + projHeight - 150 + pgWidth * 0.05,
       a: 45,
     },
     {
-      x: pgWidth - (pgWidth * .25),
-      y: ttlHeight + abtHeight + projHeight - 50 + (pgWidth * .02), // -30 @ small
+      x: pgWidth - pgWidth * 0.25,
+      y: ttlHeight + abtHeight + projHeight - 50 + pgWidth * 0.02, // -30 @ small
       translate: (p: PointT, offset: number, lineIdx: number) => {
-
         return {
           x: p.x + offset - lineIdx * 2,
           y: p.y + lineIdx * 20,
@@ -135,8 +142,8 @@ const getPathC = (
 ): PointT[] => {
   const pgHeight =
     ttlHeight + abtHeight + projHeight + expHeight + contHeight + ftrHeight;
-    const halfLineW = (lineW / 2);
-    const linesW = (lineW * lineCt);
+  const halfLineW = lineW / 2;
+  const linesW = lineW * lineCt;
   return [
     {
       x: 0, // left side
@@ -159,7 +166,6 @@ const getPathC = (
   ];
 };
 
-
 /******************************/
 /******* Drawing Stuff ********/
 /******************************/
@@ -179,7 +185,7 @@ const resizeAndClearCanvas = (
 };
 
 // Change line Widths at breakpoints here
-const getLineW = (sizes: SizesT, breakpoints: CssBreakpointsT ): number => {
+const getLineW = (sizes: SizesT, breakpoints: CssBreakpointsT): number => {
   if (sizes.pgWidth <= parseInt(breakpoints.mediumBp)) {
     return 10;
   }
@@ -287,9 +293,12 @@ const drawLine = (
   ctx.stroke();
 };
 
-
 // draw all Lines
-const drawBgLines = (refs: ElementRefsT, colors: string[], breakpoints: BreakpointsT) => {
+const drawBgLines = (
+  refs: ElementRefsT,
+  colors: string[],
+  breakpoints: BreakpointsT
+) => {
   const { canvasRef } = refs;
   const ctx = refs.canvasRef?.current?.getContext("2d");
 
@@ -324,7 +333,6 @@ const drawBgLines = (refs: ElementRefsT, colors: string[], breakpoints: Breakpoi
   });
 };
 
-
 /******************************/
 /******* Hook Function ********/
 /******************************/
@@ -333,11 +341,12 @@ export function useBgLines(
   refs: ElementRefsT,
   filteredProjects: ProjectsByCompanyT
 ) {
-  const [ breakpoints ] = useBreakpoints();
-  const [ colors ] = useRainbowColors();
+  const [breakpoints] = useBreakpoints();
+  const [colors] = useRainbowColors();
 
   useLayoutEffect(() => {
-    const drawBgLinesWRefsApplied = () => drawBgLines(refs, colors, breakpoints);
+    const drawBgLinesWRefsApplied = () =>
+      drawBgLines(refs, colors, breakpoints);
     requestAnimationFrame(drawBgLinesWRefsApplied);
 
     drawBgLinesWRefsApplied();

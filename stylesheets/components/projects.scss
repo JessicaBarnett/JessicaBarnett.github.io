@@ -1,3 +1,4 @@
+@use "../variables/breakpoints" as *;
 @use "../utilities/media-queries" as *;
 @use "../variables/colors" as *;
 
@@ -17,7 +18,6 @@
     @include only-above($medium-bp) {
       padding-bottom: 48px;
     }
-
   }
 
   ul {
@@ -41,43 +41,5 @@
       @include only-below($medium-bp) {
         margin-right: 15%;
       }
-    }
-}
-
-
-
-.filter-projects-group {
-  width: 100%;
-  position: relative; // to enable z-index
-  z-index: 1;
-
-  @include only-below($small-bp) {
-    margin-bottom: 48px;
-  }
-
-  @include only-above($small-bp) {
-    order: 1;
-    justify-self: start;
-  }
-}
-
-.filter-projects-label {
-  text-transform: uppercase;
-  letter-spacing: 0.18rem;
-  font-size: .7rem;
-  line-height: .6rem;
-}
-
-.filter-projects-select {
-    font-size: 1rem;
-    background-color: $black;
-    border: 2px solid $black;
-    color: $white;
-    font-weight: 500;
-    letter-spacing: 0.15rem;
-    width: auto;
-
-    @include only-below($small-bp) {
-      width: 100%;
     }
 }

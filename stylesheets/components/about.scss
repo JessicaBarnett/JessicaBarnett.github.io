@@ -1,5 +1,6 @@
-@use '../utilities/trapezoid' as *;
+@use "../variables/breakpoints" as *;
 @use '../variables/colors' as *;
+@use '../utilities/trapezoid' as *;
 @use '../utilities/font-size' as *;
 @use '../utilities/titles' as *;
 @use '../utilities/media-queries' as *;
