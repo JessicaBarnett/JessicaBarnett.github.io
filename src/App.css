@@ -450,55 +450,6 @@ p {
   font-style: italic;
 }
 
-.nav-links {
-  display: grid;
-  width: 70%;
-}
-.nav-links span {
-  vertical-align: middle;
-}
-.nav-links .icon {
-  display: inline-block;
-  width: 1.2rem;
-  padding: 0 4px;
-}
-.nav-links .icon svg {
-  fill: #FFF;
-}
-
-.nav-link {
-  white-space: nowrap;
-  padding: 4px 8px;
-  margin: 8px;
-  border: 2px solid #000;
-  border-radius: 3px;
-  text-decoration: none;
-  font-weight: bold;
-  color: #FFF;
-  background-color: #000;
-  text-transform: lowercase;
-}
-.nav-link:hover {
-  color: #000;
-  background-color: #FFF;
-}
-.nav-link:hover svg {
-  fill: #000;
-}
-
-/* Modifiers */
-.nav-links-fixed {
-  z-index: 6;
-  background-color: #000;
-  width: 100%;
-  position: fixed;
-  left: 0;
-  right: 0;
-  grid-template-columns: 1fr 1fr 1fr;
-  top: 0;
-  text-align: center;
-}
-
 /*******************
     FONT IMPORTS
 ********************/
