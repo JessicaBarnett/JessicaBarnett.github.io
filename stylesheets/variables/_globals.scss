@@ -1,4 +1,5 @@
-@use "./_breakpoints" as *;;
+@use "./_breakpoints" as *;
+@use "./_colors" as *;
 
 $primary-font: 'Inter', Arial, Helvetica, sans-serif;
 $accent-font: 'Lester Bold';
@@ -11,5 +12,41 @@ $body-font-xsm: .9rem;
 $body-font-sm: 1rem;
 $body-font-med: 1.2rem;
 $body-font-lg: 1.6rem;
+
+// Default
+$bg-color: $black;
+$page-color: $white;
+$text-color: $black;
+$text-contrast-color: $white;
+$border-color: $text-color;
+
+$icon-color: $text-color;
+$icon-contrast-color: $text-contrast-color;
+$btn-color: $text-color;
+$btn-bg-color: transparent;
+$btn-border-color: $text-contrast-color;
+$btn-contrast-color: $text-contrast-color;
+$btn-contrast-bg-color: $btn-color;
+$form-border-color: $text-color;
+$form-bg-color: transparent;
+
+
+// Dark Mode
+$drk-bg-color: #161616;
+$drk-page-color: #313130;
+$drk-text-color: $white;
+$drk-text-contrast-color: $black;
+$drk-border-color: #161616;
+
+$drk-icon-color: $drk-text-color;
+$drk-icon-contrast-color: $drk-text-contrast-color;
+
+$drk-btn-color: #bebebe;
+$drk-btn-bg-color: #1f1f1f;
+$drk-btn-border-color: #1f1f1f;
+$drk-btn-contrast-color: #1f1f1f;
+
+$drk-form-border-color: $drk-border-color;
+$drk-form-bg-color: $drk-bg-color;
 
 $paper-texture-url: url('assets/images/concrete-wall-tileable.jpg');

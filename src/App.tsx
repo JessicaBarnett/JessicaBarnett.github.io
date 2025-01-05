@@ -59,11 +59,10 @@ function App() {
 
   return (
     <>
-      <div ref={fixedNavRef}>
-        <Navigation></Navigation>
-      </div>
-
-      <div className="background">
+      <div className="background dark">
+        <div ref={fixedNavRef}>
+          <Navigation></Navigation>
+        </div>
 
         <div ref={pageRef} className="page">
 

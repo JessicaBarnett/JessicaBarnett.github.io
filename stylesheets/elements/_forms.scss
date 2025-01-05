@@ -9,10 +9,10 @@
 
 @mixin form-field() {
     display: block;
-    border: 2px solid $black;
+    border: 2px solid $form-border-color;
     border-radius: 3px;
     width: 100%;
-    background-color: $white;
+    background-color: $form-bg-color;
     padding: 8px 4px;
 }
 
@@ -42,6 +42,12 @@ label {
 input {
     @include form-field();
     margin-bottom: 8px;
+
+    .dark & {
+        color: $drk-text-color;
+        border-color: $drk-form-border-color;
+        background-color: $drk-form-bg-color;
+    }
 }
 
 textarea {
@@ -49,6 +55,12 @@ textarea {
     font-family: $primary-font;
     min-height: 250px;
     margin-bottom: 8px;
+
+    .dark & {
+        color: $drk-text-color;
+        border-color: $drk-form-border-color;
+        background-color: $drk-form-bg-color;
+    }
 }
 
 .submission-msg {

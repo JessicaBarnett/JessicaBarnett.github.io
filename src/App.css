@@ -3,43 +3,57 @@
     BUTTONS
 ***************/
 .btn-1 {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
   color: #000;
   background-color: transparent;
-  border: 2px solid #000;
+  border: 2px solid #FFF;
   border-radius: 3px;
   padding: 2px 4px;
   margin: 2px;
   font-weight: 600;
-  font-size: 1.2rem;
-  line-height: 1.8rem;
 }
 .btn-1:hover, .btn-1.selected {
   color: #FFF;
   background-color: #000;
 }
+.dark .btn-1 {
+  color: #bebebe;
+  background-color: #1f1f1f;
+  border-color: #1f1f1f;
+}
+.dark .btn-1:hover, .dark .btn-1.selected {
+  background-color: #000;
+  color: #FFF;
+  border-color: #000;
+}
 
 .btn-2 {
+  font-size: 1.5rem;
+  line-height: 2.1rem;
+  font-family: "Lester Bold";
   color: #000;
   background-color: transparent;
-  border: 2px solid #000;
+  border: 2px solid #FFF;
   border-radius: 3px;
   padding: 2px 4px;
   margin: 2px;
   font-weight: 600;
-  font-size: 1.5rem;
-  line-height: 2.1rem;
   width: 100%;
-  font-weight: 600;
-  font-family: "Lester Bold";
   text-transform: uppercase;
 }
 .btn-2:hover, .btn-2.selected {
   color: #FFF;
   background-color: #000;
 }
-.btn-2:hover {
-  background-color: #000;
+.dark .btn-2 {
   color: #FFF;
+  background-color: #000;
+  border-color: #000;
+}
+.dark .btn-2:hover {
+  background-color: #FFF;
+  color: #000;
 }
 
 /**************
@@ -72,9 +86,14 @@ input {
   border: 2px solid #000;
   border-radius: 3px;
   width: 100%;
-  background-color: #FFF;
+  background-color: transparent;
   padding: 8px 4px;
   margin-bottom: 8px;
+}
+.dark input {
+  color: #FFF;
+  border-color: #161616;
+  background-color: #161616;
 }
 
 textarea {
@@ -82,11 +101,16 @@ textarea {
   border: 2px solid #000;
   border-radius: 3px;
   width: 100%;
-  background-color: #FFF;
+  background-color: transparent;
   padding: 8px 4px;
   font-family: "Inter", Arial, Helvetica, sans-serif;
   min-height: 250px;
   margin-bottom: 8px;
+}
+.dark textarea {
+  color: #FFF;
+  border-color: #161616;
+  background-color: #161616;
 }
 
 .submission-msg {
@@ -101,7 +125,7 @@ select {
   border: 2px solid #000;
   border-radius: 3px;
   width: 100%;
-  background-color: #FFF;
+  background-color: transparent;
   padding: 8px 4px;
   padding: 4px 32px 4px 8px;
 }
@@ -525,7 +549,7 @@ table {
   }
 }
 .social-link:hover {
-  background-color: black;
+  background-color: #000;
 }
 .social-link:hover svg {
   fill: #FFF;
@@ -577,13 +601,18 @@ table {
   opacity: 20%;
   z-index: 0;
 }
+.background.dark {
+  background-color: #161616;
+}
+.background.dark:before {
+  opacity: 10%;
+}
 
 /********************
    PAGE
 *********************/
 .page {
   position: relative;
-  background-color: white;
   overflow: hidden;
   background-color: #FFF;
   width: 100%;
@@ -613,6 +642,13 @@ table {
   z-index: 2;
   opacity: 20%;
   pointer-events: none;
+}
+.dark .page {
+  background-color: #313130;
+  color: #FFF;
+}
+.dark .page:after {
+  opacity: 13%;
 }
 
 /********************
@@ -918,14 +954,6 @@ section {
 
 .outdent-1 {
   margin-left: -1rem;
-}
-
-.outdent-2 {
-  margin-left: -2rem;
-}
-
-.indent-1 {
-  margin-left: 1rem;
 }
 
 .indent-2 {

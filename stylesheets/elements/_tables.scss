@@ -1,6 +1,4 @@
-@use "../variables/colors" as *;
-@use "../variables/breakpoints" as *;
-@use "../utilities/media-queries" as *;
+@use "../variables/globals" as *;
 
 /**************
     TABLES
@@ -12,7 +10,7 @@
 }
 
 td:not(:last-child), th:not(:last-child) {
-  border-right: 1px solid $black;
+  border-right: 1px solid $border-color;
 }
 
 td, th {
@@ -28,34 +26,10 @@ td {
 }
 
 tr {
-  border-bottom: 1px solid $black;
+  border-bottom: 1px solid $border-color;
 }
 
 table {
   border-collapse: collapse;
-  border: 1px solid $black;
+  border: 1px solid $border-color;
 }
-
-// .page-stats-table {
-//   width: 75%;
-//   margin-bottom: 8px;
-
-//   @include only-above($medium-bp) {
-//     width: 50%;
-//   }
-// }
-
-// .page-stats-button {
-//   margin: 4px 16px 0 0;
-//   display: inline-block;
-//   vertical-align: top;
-// }
-
-// .page-stats-text {
-//   max-width: 60%;
-//   display: inline-block;
-
-//   @include only-above($medium-bp) {
-//     max-width: 45%;
-//   }
-// }

@@ -12,7 +12,7 @@
 
 .background {
   position: relative;
-  background-color: $black;
+  background-color: $bg-color;
   height: 100%;
   width: 100%;
   padding-bottom: 16px;
@@ -23,6 +23,14 @@
     opacity: 20%;
     z-index: 0;
   }
+
+  &.dark {
+    background-color: $drk-bg-color;
+
+    &:before {
+      opacity: 10%;
+    }
+  }
 }
 
 
@@ -32,11 +40,10 @@
 
 .page {
   position: relative;
-  background-color: white;
   overflow: hidden;
-  background-color: $white;
+  background-color: $page-color;
   width: 100%;
-  color: $black;
+  color: $text-color;
   margin: 0 auto;
   max-width: $page-med-width;
   min-width: $mini-bp;
@@ -54,6 +61,14 @@
     pointer-events: none;
   }
 
+  .dark & {
+    background-color: $drk-page-color;
+    color: $drk-text-color;
+
+    &:after {
+      opacity: 13%;
+    }
+  }
 }
 
 /********************

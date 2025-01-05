@@ -1,6 +1,13 @@
 # Post-launch ASAP
 ----------------------------------------------------------------
 
+
+- use Css vars instead of sass vars for line colors
+- use js to allow changing the line colors (grayscale looks do good!! )
+- can trapezoids be cutouts instead? can css do that?  maybe with svg?
+- extend texture to the nav
+
+
 ## ToDo
 - Animate Lines
 - add a "more" link to projects, which opens up a popup with more info + pictures

@@ -1,5 +1,6 @@
 @use '../variables/colors' as *;
 @use '../variables/breakpoints' as *;
+@use '../variables/globals' as *;
 @use '../utilities/font-size' as *;
 @use '../utilities/media-queries' as *;
 @use '../utilities/grid' as *;
@@ -13,7 +14,7 @@
 }
 
 .made-with-love {
-    border-bottom: 3px solid $black;
+    border-bottom: 3px solid $border-color;
     padding: 8px;
     margin-bottom: 4px;
     text-align: center;
@@ -57,7 +58,7 @@
 
 .social-link {
     @include font-size(1rem);
-    color: $black;
+    color: $text-color;
     font-weight: 700;
     text-decoration: none;
     text-align: center;
@@ -98,14 +99,14 @@
     }
 
     &:hover {
-      background-color: black;
+      background-color: $icon-color;
 
       svg {
-        fill: $white;
+        fill: $icon-contrast-color;
       }
 
       .social-link-text {
-        color: $white;
+        color: $text-contrast-color;
       }
     }
 }
