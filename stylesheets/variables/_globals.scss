@@ -13,40 +13,28 @@ $body-font-sm: 1rem;
 $body-font-med: 1.2rem;
 $body-font-lg: 1.6rem;
 
-// Default
-$bg-color: $black;
-$page-color: $white;
-$text-color: $black;
-$text-contrast-color: $white;
-$border-color: $text-color;
-
-$icon-color: $text-color;
-$icon-contrast-color: $text-contrast-color;
-$btn-color: $text-color;
-$btn-bg-color: transparent;
-$btn-border-color: $text-contrast-color;
-$btn-contrast-color: $text-contrast-color;
-$btn-contrast-bg-color: $btn-color;
-$form-border-color: $text-color;
-$form-bg-color: transparent;
-
-
-// Dark Mode
-$drk-bg-color: #161616;
-$drk-page-color: #313130;
-$drk-text-color: $white;
-$drk-text-contrast-color: $black;
-$drk-border-color: #161616;
-
-$drk-icon-color: $drk-text-color;
-$drk-icon-contrast-color: $drk-text-contrast-color;
-
-$drk-btn-color: #bebebe;
-$drk-btn-bg-color: #1f1f1f;
-$drk-btn-border-color: #1f1f1f;
-$drk-btn-contrast-color: #1f1f1f;
-
-$drk-form-border-color: $drk-border-color;
-$drk-form-bg-color: $drk-bg-color;
-
 $paper-texture-url: url('assets/images/concrete-wall-tileable.jpg');
+
+
+// Color Schemes
+
+// Default
+$body-bg-color: #000;
+$page-bg-color: #fff;
+$text-color: #000;
+$bg-color: transparent;
+$border-color: #000;
+$highlight-text-color: #fff;
+$highlight-bg-color: #000;
+$highlight-border-color: #000;
+
+
+// Dark
+$drk-page-bg-color: #313130;
+$drk-text-color: #fff;
+$drk-text-color-alt: #bebebe; // Unique to dark scheme
+$drk-bg-color: #1f1f1f;
+$drk-border-color: #1f1f1f; // #161616
+$drk-highlight-text-color: #fff;
+$drk-highlight-bg-color: #000;
+$drk-highlight-border-color: #000;

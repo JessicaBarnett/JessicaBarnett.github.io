@@ -99,14 +99,14 @@
     }
 
     &:hover {
-      background-color: $icon-color;
+      background-color: $highlight-bg-color;
 
       svg {
-        fill: $icon-contrast-color;
+        fill: $highlight-text-color;
       }
 
       .social-link-text {
-        color: $text-contrast-color;
+        color: $highlight-text-color;
       }
     }
 }

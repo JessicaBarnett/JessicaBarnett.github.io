@@ -12,7 +12,7 @@
 
 .background {
   position: relative;
-  background-color: $bg-color;
+  background-color: $body-bg-color;
   height: 100%;
   width: 100%;
   padding-bottom: 16px;
@@ -22,12 +22,8 @@
     @include paper-texture-overlay();
     opacity: 20%;
     z-index: 0;
-  }
 
-  &.dark {
-    background-color: $drk-bg-color;
-
-    &:before {
+    .dark & {
       opacity: 10%;
     }
   }
@@ -41,7 +37,7 @@
 .page {
   position: relative;
   overflow: hidden;
-  background-color: $page-color;
+  background-color: $page-bg-color;
   width: 100%;
   color: $text-color;
   margin: 0 auto;
@@ -62,7 +58,7 @@
   }
 
   .dark & {
-    background-color: $drk-page-color;
+    background-color: $drk-page-bg-color;
     color: $drk-text-color;
 
     &:after {
@@ -83,7 +79,6 @@
 /**************
 SECTION
 ***************/
-
 
 .content {
   max-width: 720px;

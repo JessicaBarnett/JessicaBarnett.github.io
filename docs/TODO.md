@@ -4,6 +4,7 @@
 
 - use Css vars instead of sass vars for line colors
 - use js to allow changing the line colors (grayscale looks do good!! )
+-- use css vars for dark mode as well.
 - can trapezoids be cutouts instead? can css do that?  maybe with svg?
 - extend texture to the nav
 

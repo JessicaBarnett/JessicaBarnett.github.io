@@ -6,15 +6,15 @@
   font-size: 1.2rem;
   line-height: 1.8rem;
   color: #000;
-  background-color: transparent;
-  border: 2px solid #FFF;
+  background-color: #fff;
+  border: 2px solid #000;
   border-radius: 3px;
   padding: 2px 4px;
   margin: 2px;
   font-weight: 600;
 }
 .btn-1:hover, .btn-1.selected {
-  color: #FFF;
+  color: #fff;
   background-color: #000;
 }
 .dark .btn-1 {
@@ -23,37 +23,17 @@
   border-color: #1f1f1f;
 }
 .dark .btn-1:hover, .dark .btn-1.selected {
+  color: #fff;
   background-color: #000;
-  color: #FFF;
   border-color: #000;
 }
 
-.btn-2 {
+.btn-accent {
   font-size: 1.5rem;
   line-height: 2.1rem;
   font-family: "Lester Bold";
-  color: #000;
-  background-color: transparent;
-  border: 2px solid #FFF;
-  border-radius: 3px;
-  padding: 2px 4px;
-  margin: 2px;
-  font-weight: 600;
-  width: 100%;
+  padding: 4px;
   text-transform: uppercase;
-}
-.btn-2:hover, .btn-2.selected {
-  color: #FFF;
-  background-color: #000;
-}
-.dark .btn-2 {
-  color: #FFF;
-  background-color: #000;
-  border-color: #000;
-}
-.dark .btn-2:hover {
-  background-color: #FFF;
-  color: #000;
 }
 
 /**************
@@ -86,14 +66,14 @@ input {
   border: 2px solid #000;
   border-radius: 3px;
   width: 100%;
-  background-color: transparent;
+  background-color: #fff;
   padding: 8px 4px;
   margin-bottom: 8px;
 }
 .dark input {
-  color: #FFF;
-  border-color: #161616;
-  background-color: #161616;
+  color: #fff;
+  border-color: #1f1f1f;
+  background-color: #1f1f1f;
 }
 
 textarea {
@@ -101,16 +81,16 @@ textarea {
   border: 2px solid #000;
   border-radius: 3px;
   width: 100%;
-  background-color: transparent;
+  background-color: #fff;
   padding: 8px 4px;
   font-family: "Inter", Arial, Helvetica, sans-serif;
   min-height: 250px;
   margin-bottom: 8px;
 }
 .dark textarea {
-  color: #FFF;
-  border-color: #161616;
-  background-color: #161616;
+  color: #fff;
+  border-color: #1f1f1f;
+  background-color: #1f1f1f;
 }
 
 .submission-msg {
@@ -125,7 +105,7 @@ select {
   border: 2px solid #000;
   border-radius: 3px;
   width: 100%;
-  background-color: transparent;
+  background-color: #fff;
   padding: 8px 4px;
   padding: 4px 32px 4px 8px;
 }
@@ -240,7 +220,7 @@ table {
   line-height: 1.6rem;
   background-color: #000;
   border: 2px solid #000;
-  color: #FFF;
+  color: #fff;
   font-weight: 500;
   letter-spacing: 0.15rem;
   width: auto;
@@ -552,10 +532,10 @@ table {
   background-color: #000;
 }
 .social-link:hover svg {
-  fill: #FFF;
+  fill: #fff;
 }
 .social-link:hover .social-link-text {
-  color: #FFF;
+  color: #fff;
 }
 
 /*
@@ -601,10 +581,7 @@ table {
   opacity: 20%;
   z-index: 0;
 }
-.background.dark {
-  background-color: #161616;
-}
-.background.dark:before {
+.dark .background:before {
   opacity: 10%;
 }
 
@@ -614,7 +591,7 @@ table {
 .page {
   position: relative;
   overflow: hidden;
-  background-color: #FFF;
+  background-color: #fff;
   width: 100%;
   color: #000;
   margin: 0 auto;
@@ -645,7 +622,7 @@ table {
 }
 .dark .page {
   background-color: #313130;
-  color: #FFF;
+  color: #fff;
 }
 .dark .page:after {
   opacity: 13%;
