@@ -78,7 +78,7 @@ function App() {
             <TitleSection></TitleSection>
           </section>
 
-          <section id="about" className="section-about" ref={abtRef}>
+          <section id="about" className="section-about trapezoid-right" ref={abtRef}>
             <AboutSection></AboutSection>
           </section>
 

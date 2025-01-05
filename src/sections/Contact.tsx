@@ -3,9 +3,6 @@ import { LinkedinIcon } from "@src/icons/LinkedinIcon.tsx";
 import { GithubIcon } from "@src/icons/GithubIcon.tsx";
 import { LoveIcon } from "@src/icons/LoveIcon.tsx";
 
-
-import '@styles/components/contact.scss';
-
 function ContactSection() {
   return (
     <>

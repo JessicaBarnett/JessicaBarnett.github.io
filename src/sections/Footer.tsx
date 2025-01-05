@@ -1,4 +1,3 @@
-// import "@styles/components/footer.scss";
 
 function FooterSection() {
   return (

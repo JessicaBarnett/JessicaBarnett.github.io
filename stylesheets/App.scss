@@ -11,6 +11,16 @@
 @use "./elements/lists";
 @use "./elements/tables";
 
+// components
+@use "./components/filter-select.scss";
+@use "./components/navigation.scss";
+@use "./components/tags.scss";
+@use "./components/title.scss";
+@use "./components/about.scss";
+@use "./components/projects.scss";
+@use "./components/experience.scss";
+@use "./components/contact.scss";
+
 // partials
 @use "./partials/layout";
 @use "./partials/typography";

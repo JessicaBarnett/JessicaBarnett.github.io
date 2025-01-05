@@ -1,5 +1,3 @@
-import '@styles/components/title.scss';
-
 function TitleSection() {
   return (
     <>

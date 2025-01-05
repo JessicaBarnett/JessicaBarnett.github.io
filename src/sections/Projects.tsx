@@ -1,8 +1,6 @@
 import { ProjectsByCompanyT } from "@src/hooks/useFilteredProjects.ts";
 import { FilterT } from "@src/types/data-types.ts";
 
-import "@styles/components/projects.scss";
-
 import ProjectList from "@src/components/ProjectList.tsx";
 import FilterSelect from "@src/components/FilterSelect.tsx";
 

@@ -2,8 +2,6 @@ import { PlayIcon } from "@src/icons/PlayIcon.tsx";
 import { PauseIcon } from "@src/icons/PauseIcon.tsx";
 import { StopIcon } from "@src/icons/StopIcon.tsx";
 
-import '@styles/components/about.scss';
-
 function AboutSection() {
   return (
     <>

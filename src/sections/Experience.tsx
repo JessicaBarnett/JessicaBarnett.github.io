@@ -1,8 +1,6 @@
 import ExperienceEntry from "@src/components/ExperienceEntry.tsx";
 import { ExperienceEntryT } from "@src/types/data-types.ts";
 
-import '@styles/components/experience.scss';
-
 type ExperienceSectionProps = {
     expEntries: ExperienceEntryT[]
 }
