@@ -1,61 +1,43 @@
+/* enforces line heights */
 /**************
     BUTTONS
 ***************/
-button {
-  background-color: transparent;
-}
-
-.btn-1-inverted {
-  border: 2px solid #FFF;
-  border-radius: 3px;
-  padding: 0 2px;
-  margin: 2px;
-  font-weight: 600;
-}
-.btn-1-inverted:hover {
-  background-color: #FFF;
-  color: #000;
-}
-
 .btn-1 {
+  color: #000;
+  background-color: transparent;
   border: 2px solid #000;
   border-radius: 3px;
   padding: 2px 4px;
   margin: 2px;
   font-weight: 600;
   font-size: 1.2rem;
-  line-height: 1.4rem;
+  line-height: 1.8rem;
 }
 .btn-1:hover, .btn-1.selected {
-  background-color: #000;
   color: #FFF;
+  background-color: #000;
 }
 
 .btn-2 {
+  color: #000;
+  background-color: transparent;
   border: 2px solid #000;
   border-radius: 3px;
-  padding: 0 4px;
+  padding: 2px 4px;
+  margin: 2px;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2.1rem;
+  width: 100%;
   font-weight: 600;
   font-family: "Lester Bold";
   text-transform: uppercase;
-  font-size: 1.5rem;
+}
+.btn-2:hover, .btn-2.selected {
+  color: #FFF;
+  background-color: #000;
 }
 .btn-2:hover {
-  background-color: #000;
-  color: #FFF;
-}
-
-.btn-3 {
-  border: 2px solid #000;
-  border-radius: 3px;
-  width: 100%;
-  padding: 0 4px;
-  font-weight: 600;
-  font-family: "Lester Bold";
-  text-transform: uppercase;
-  font-size: 1.5rem;
-}
-.btn-3:hover {
   background-color: #000;
   color: #FFF;
 }
@@ -102,6 +84,7 @@ textarea {
   width: 100%;
   background-color: #FFF;
   padding: 8px 4px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
   min-height: 250px;
   margin-bottom: 8px;
 }
@@ -225,7 +208,7 @@ table {
 /********************
    ROOT
 *********************/
-.layout {
+.background {
   position: relative;
   background-color: #000;
   height: 100%;
@@ -233,7 +216,7 @@ table {
   padding-bottom: 16px;
   margin-top: 45px;
 }
-.layout:before {
+.background:before {
   content: "";
   display: block;
   position: absolute;
@@ -302,7 +285,7 @@ table {
 /**************
 SECTION
 ***************/
-.section-content {
+.content {
   max-width: 720px;
   padding: 4rem 64px;
   margin: 0 auto;
@@ -330,7 +313,6 @@ SECTION
   margin-bottom: 0;
 }
 
-/* enforces line heights */
 /**************
     TITLES
 ***************/
@@ -451,25 +433,99 @@ p {
   font-style: italic;
 }
 
+/* Example usage:
+    @include trapezoid('left', 30px, 15px, 300px, $black);
+    @include trapezoid('right', 50px, 25px, 80px, $black);
+    @include trapezoid('right', 30px, 15px, 300px, $black);
+*/
+.triangle-left {
+  position: relative;
+}
+.triangle-left:before {
+  position: absolute;
+  content: "";
+  display: block;
+  height: #000;
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  border-left: 35px solid black;
+  top: 35%;
+}
+@media (min-width: 769px) {
+  .triangle-left:before {
+    border-top-width: 40px;
+    border-bottom-width: 40px;
+    border-left-width: 50px;
+  }
+}
+@media (min-width: 1280px) {
+  .triangle-left:before {
+    border-top-width: 60px;
+    border-bottom-width: 60px;
+    border-left-width: 70px;
+  }
+}
+
+.trapezoid-right {
+  position: relative;
+}
+.trapezoid-right:after {
+  position: absolute;
+  content: "";
+  display: block;
+  height: 80px;
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  border-right: 50px solid #000;
+  top: 33%;
+  right: 0;
+}
+@media (min-width: 769px) {
+  .trapezoid-right:after {
+    border-top-width: 45px;
+    border-bottom-width: 45px;
+    border-right-width: 70px;
+  }
+}
+@media (min-width: 1280px) {
+  .trapezoid-right:after {
+    border-top-width: 70px;
+    border-bottom-width: 70px;
+    border-right-width: 90px;
+  }
+}
+
+.trapezoid-hug {
+  position: relative;
+}
+.trapezoid-hug:before {
+  position: absolute;
+  content: "";
+  display: block;
+  height: 300px;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 30px solid #000;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.trapezoid-hug:after {
+  position: absolute;
+  content: "";
+  display: block;
+  height: 300px;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 30px solid #000;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
 /*******************
     FONT IMPORTS
 ********************/
-@font-face {
-  font-family: "Open Dyslexic";
-  src: url("/assets/fonts/open_dyslexic/OpenDyslexic-Regular.otf") format("opentype");
-  font-weight: 400;
-}
-@font-face {
-  font-family: "Open Dyslexic";
-  src: url("/assets/fonts/open_dyslexic/OpenDyslexic-Bold.otf") format("opentype");
-  font-weight: 700;
-}
-@font-face {
-  font-family: "Open Dyslexic";
-  src: url("/assets/fonts/open_dyslexic/OpenDyslexic-BoldItalic.otf") format("opentype");
-  font-weight: 700;
-  font-style: italic;
-}
 @font-face {
   font-family: "Lester Bold";
   src: url("/assets/fonts/lester-bold.ttf"), format("truetype");
@@ -510,10 +566,6 @@ section {
 
 .flex {
   display: flex;
-}
-
-.text-left {
-  text-align: left;
 }
 
 .nowrap {

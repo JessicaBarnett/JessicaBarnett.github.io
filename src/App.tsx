@@ -63,8 +63,10 @@ function App() {
         <Navigation></Navigation>
       </div>
 
-      <div className="layout">
+      <div className="background">
+
         <div ref={pageRef} className="page">
+
           <canvas
             id="canvas"
             ref={canvasRef}
@@ -76,11 +78,11 @@ function App() {
             <TitleSection></TitleSection>
           </section>
 
-          <section id="about" ref={abtRef}>
+          <section id="about" className="section-about" ref={abtRef}>
             <AboutSection></AboutSection>
           </section>
 
-          <section id="projects" ref={projRef}>
+          <section id="projects" className="section-projects" ref={projRef}>
             <ProjectsSection
               filteredProjects={filteredProjects}
               filters={filters}
@@ -105,7 +107,11 @@ function App() {
             <ContactSection></ContactSection>
           </section>
 
-          <section ref={ftrRef} className="section-footer">
+          <section
+            ref={ftrRef}
+            id="footer"
+            className="section-footer"
+          >
             <FooterSection></FooterSection>
           </section>
         </div>

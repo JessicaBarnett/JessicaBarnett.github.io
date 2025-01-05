@@ -1,5 +1,4 @@
 @use "../variables/colors" as *;
-@use "../variables/fonts" as *;
 @use "../variables/breakpoints" as *;
 @use "../utilities/font-size" as *;
 @use "../utilities/vertical-spacing" as *;
@@ -14,21 +13,21 @@
 *****************/
 
 :root {
-  @include font-size(.9rem);
+  @include font-size($body-font-xsm);
   font-family: $primary-font;
   color: $black;
   font-weight: 300;
 
   @include only-above($small-bp) {
-    @include font-size(1rem);
+    @include font-size($body-font-sm);
   }
 
   @include only-above($medium-bp) {
-    @include font-size(1.2rem);
+    @include font-size($body-font-med);
   }
 
   @include only-above($extra-wide-bp) {
-    @include font-size(1.6rem);
+    @include font-size($body-font-lg);
   }
 }
 
@@ -48,9 +47,6 @@
 p {
   margin-bottom: 12px;
 }
-
-
-
 
 /**************
     TITLES

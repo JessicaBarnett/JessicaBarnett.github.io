@@ -1,45 +1,46 @@
+@use "../variables/colors" as *;
 @use "../variables/breakpoints" as *;
 @use "../utilities/media-queries" as *;
-@use "../variables/colors" as *;
 
 /*************
   Projects
 **************/
 
-.section-projects {
+.content-projects {
 
   .subtitle-2 {
     text-align: center;
   }
 
-  .section-content {
+
     padding-bottom: 18px;
 
     @include only-above($medium-bp) {
       padding-bottom: 48px;
     }
-  }
+
 
   ul {
     margin-bottom: 16px;
   }
 
-    h3 {
-      text-align: left;
+  h3 {
+    text-align: left;
 
-      @include only-above($small-bp) {
-        text-align: right;
-        order: 2;
-      }
+    @include only-above($small-bp) {
+      text-align: right;
+      order: 2;
     }
+  }
 
-    h4, ul {
-      order: 3;
-    }
+  h4, ul {
+    order: 3;
+  }
 
-    ul:last-of-type .entry:last-of-type {
-      @include only-below($medium-bp) {
-        margin-right: 15%;
-      }
+  ul:last-of-type .entry:last-of-type {
+    @include only-below($medium-bp) {
+      margin-right: 15%;
     }
+  }
 }
+

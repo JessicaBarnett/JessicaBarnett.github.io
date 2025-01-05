@@ -15,23 +15,25 @@ type ProjectsSectionProps = {
 
 function ProjectsSection({filteredProjects, filters, selectedFilter, onFilterChange}: ProjectsSectionProps) {
   return (
-    <div className="section-content section-projects grid-at-small">
+    <div className="content content-projects grid-at-small">
       <h3 className="section-heading title-2 half">Projects</h3>
 
-      <FilterSelect filters={filters} selectedFilter={selectedFilter} onFilterChange={onFilterChange}></FilterSelect>
+      <FilterSelect
+        filters={filters}
+        selectedFilter={selectedFilter}
+        onFilterChange={onFilterChange}
+      ></FilterSelect>
 
       <ProjectList
         heading="Relay Network"
         projects={filteredProjects["Relay Network"] ?? []}
         selectedTags={selectedFilter?.tags ?? []}
-        // onTagSelect={onTagSelect}
       ></ProjectList>
 
       <ProjectList
         heading="Weblinc Ecommerce"
         projects={filteredProjects["Weblinc Ecommerce"] ?? []}
         selectedTags={selectedFilter?.tags ?? []}
-        // onTagSelect={onTagSelect}
       ></ProjectList>
     </div>
   );

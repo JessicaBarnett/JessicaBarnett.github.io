@@ -3,7 +3,7 @@ import '@styles/components/title.scss';
 function TitleSection() {
   return (
     <>
-        <div className="section-content section-title">
+        <div className="content content-title">
             <h1 className="title-1">
             <span className="outdent-1">Jessica </span>
             Barnett

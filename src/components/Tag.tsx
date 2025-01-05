@@ -16,7 +16,7 @@ const Tag = ({
 
   return (
     <button
-      className={`btn-1 filter-projects ${isSelected ? "selected" : ""}`}
+      className={`tag btn-1 filter-projects ${isSelected ? "selected" : ""}`}
       type="button"
       value={tag.name}
       onClick={(e) => {

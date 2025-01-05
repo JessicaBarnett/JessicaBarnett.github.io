@@ -1,17 +1,8 @@
+import { createElement } from 'react';
 import { Meta, Unstyled } from "@storybook/blocks";
 import "../src/App.css";
 import "./storybook.css";
-
-import { PlayIcon } from "../src/icons/PlayIcon";
-import { PauseIcon } from "../src/icons/PauseIcon";
-import { StopIcon } from "../src/icons/StopIcon";
-import { FastForwardIcon } from "../src/icons/FastForwardIcon";
-import { RewindIcon } from "../src/icons/RewindIcon";
-
-import { LinkedinIcon } from "../src/icons/LinkedinIcon";
-import { GithubIcon } from "../src/icons/GithubIcon";
-import { LoveIcon } from "../src/icons/LoveIcon";
-
+import IconsManifest from './manifests/IconsManifest.mdx';
 
 <Meta title="icons/SVG Icons" />
 
@@ -25,15 +16,7 @@ import { LoveIcon } from "../src/icons/LoveIcon";
 
 <Unstyled>
   <div class="sb-example-block sb-icon-block">
-    <PlayIcon></PlayIcon>
-    <PauseIcon></PauseIcon>
-    <StopIcon></StopIcon>
-    <RewindIcon></RewindIcon>
-    <FastForwardIcon></FastForwardIcon>
-
-    <LinkedinIcon></LinkedinIcon>
-    <GithubIcon></GithubIcon>
-    <LoveIcon></LoveIcon>
+    <IconsManifest></IconsManifest>
   </div>
 </Unstyled>
 

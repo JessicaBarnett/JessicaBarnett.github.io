@@ -9,8 +9,8 @@ type ExperienceSectionProps = {
 
 function ExperienceSection({expEntries}: ExperienceSectionProps) {
   return (
-    <div className="section-content section-experience">
-        <h3 className="section-heading title-2">Experience</h3>
+    <div className="content content-experience">
+        <h3 className="title-2">Experience</h3>
         <ol>
             {expEntries.map(entry => (
                 <ExperienceEntry entry={entry}></ExperienceEntry>

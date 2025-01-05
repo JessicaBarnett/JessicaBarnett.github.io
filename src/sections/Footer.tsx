@@ -3,7 +3,7 @@
 function FooterSection() {
   return (
     <>
-      <div className="section-content">
+      <div className="content content-footer">
         {/* Put like, "interested in this build?  see the style guide, or my write up AboutSection it!" in this section too  */}
         {/* <table className="page-stats-table">
         <tbody>

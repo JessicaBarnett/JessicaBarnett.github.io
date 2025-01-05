@@ -1,6 +1,6 @@
+@use "../variables/globals" as *;
 @use "../variables/breakpoints" as *;
 @use "../utilities/media-queries" as *;
-@use "../variables/globals" as *;
 @use "../variables/colors" as *;
 
 /**************
@@ -36,7 +36,7 @@ form {
 label {
     display: block;
     margin-bottom: 4px;
-    font-size: $body-font-size;
+    font-size: $body-font-sm;
 }
 
 input {
@@ -46,6 +46,7 @@ input {
 
 textarea {
     @include form-field();
+    font-family: $primary-font;
     min-height: 250px;
     margin-bottom: 8px;
 }

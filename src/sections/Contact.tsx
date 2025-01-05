@@ -9,7 +9,7 @@ import '@styles/components/contact.scss';
 function ContactSection() {
   return (
     <>
-      <div className="section-content grid-at-med">
+      <div className="content content-contact grid-at-med">
         <h3 className="section-heading title-2">Contact</h3>
 
         <ContactForm></ContactForm>

@@ -1,6 +1,6 @@
 import { FilterT } from "@src/types/data-types.ts";
 
-// import '../../stylesheets/components/tags.scss';
+import '../../stylesheets/components/filter-select.scss';
 
 type FilterSelectComponentProps = {
   filters: FilterT[],

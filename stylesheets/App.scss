@@ -1,6 +1,5 @@
 // Variables
 @use './variables/colors' as *;
-@use './variables/fonts' as *;
 @use './variables/globals' as *;
 
 // elements
@@ -15,37 +14,12 @@
 // partials
 @use "./partials/layout";
 @use "./partials/typography";
+@use "./partials/trapezoids";
 
 
 /*******************
     FONT IMPORTS
 ********************/
-
-@font-face {
-  font-family: 'Open Dyslexic';
-  src: url('/assets/fonts/open_dyslexic/OpenDyslexic-Regular.otf') format('opentype');
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: 'Open Dyslexic';
-  src: url('/assets/fonts/open_dyslexic/OpenDyslexic-Bold.otf') format('opentype');
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: 'Open Dyslexic';
-  src: url('/assets/fonts/open_dyslexic/OpenDyslexic-BoldItalic.otf') format('opentype');
-  font-weight: 700;
-  font-style: italic;
-}
-
-// @font-face {
-//   font-family: 'Open Dyslexic';
-//   src: url('/assets/fonts/open_dyslexic/OpenDyslexic-Italic.otf') format('opentype');
-//   font-weight: 400;
-//   font-style: italic;
-// }
 
 @font-face {
   font-family: 'Lester Bold';
@@ -55,20 +29,10 @@
 
 @font-face {
   font-family: 'Inter';
-  // src: url('/assets/fonts/Inter/static/Inter_18pt-Regular.ttf') format('truetype');
   src: url('/assets/fonts/Inter/Inter-Italic-VariableFont_opsz\,wght.ttf') format('truetype') tech('variations');
   font-weight: 100 1000;
   font-stretch: 25% 151%;
 }
-
-// @font-face {
-//   font-family: 'Lexend';
-//   // src: url('/assets/fonts/Inter/static/Inter_18pt-Regular.ttf') format('truetype');
-//   src: url('/assets/fonts/Lexend/Lexend-VariableFont_wght.ttf') format('truetype') tech('variations');
-//   font-weight: 100 1000;
-//   font-stretch: 25% 151%;
-// }
-
 
 /**************
     GLOBALS
@@ -101,10 +65,6 @@ section {
 
 .flex {
   display: flex;
-}
-
-.text-left {
-  text-align: left;
 }
 
 .nowrap {

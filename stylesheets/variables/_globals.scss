@@ -1,11 +1,15 @@
+@use "./_breakpoints" as *;;
+
+$primary-font: 'Inter', Arial, Helvetica, sans-serif;
+$accent-font: 'Lester Bold';
+
+$page-min-width: $mini-bp;
 $page-med-width: 960px;
 $page-max-width: 1080px;
 
-$body-font-size: 1rem;
+$body-font-xsm: .9rem;
+$body-font-sm: 1rem;
+$body-font-med: 1.2rem;
+$body-font-lg: 1.6rem;
 
-// $paper-texture-url: url('assets/images/white-paper-with-fibers.jpg');
 $paper-texture-url: url('assets/images/concrete-wall-tileable.jpg');
-
-$vhs-texture-rough-url: url('assets/images/vhs-texture-1.png');
-$vhs-texture-smooth-url: url('assets/images/vhs-texture-2.png');
-$vhs-texture-message-url: url('assets/images/vhs-texture-3.png');

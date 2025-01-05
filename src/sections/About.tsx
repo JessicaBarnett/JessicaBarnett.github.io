@@ -7,7 +7,7 @@ import '@styles/components/about.scss';
 function AboutSection() {
   return (
     <>
-        <div className="section-content section-about">
+        <div className="content  section-about">
             <div className="indent-2">
             <p className="deco-font-1">
                 <em className="outdent-1">Hello.</em>

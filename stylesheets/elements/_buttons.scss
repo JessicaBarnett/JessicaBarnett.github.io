@@ -1,70 +1,39 @@
 @use "../variables/colors" as *;
-@use "../variables/fonts" as *;
+@use "../variables/globals" as *;
+@use '../utilities/font-size' as *;
 
 /**************
     BUTTONS
 ***************/
 
-button {
-    background-color: transparent;
-}
-
-.btn-1-inverted {
-    border: 2px solid $white;
-    border-radius: 3px;
-    padding: 0 2px;
-    margin: 2px;
-    font-weight: 600;
-
-    &:hover {
-        background-color: $white;
-        color: $black;
-    }
-}
-
-.btn-1 {
+@mixin btn ($color: $black, $altColor: $white, $bgColor: transparent) {
+    color: $color;
+    background-color: $bgColor;
     border: 2px solid $black;
     border-radius: 3px;
     padding: 2px 4px;
     margin: 2px;
     font-weight: 600;
-    font-size: 1.2rem;
-    line-height: 1.4rem;
 
     &:hover,
     &.selected {
-        background-color: $black;
-        color: $white;
+        color: $altColor;
+        background-color: $color;
     }
 }
 
+.btn-1 {
+    @include btn();
+    @include font-size(1.2rem);
+}
 
-// made to look like the "VHS" logo
 .btn-2 {
-    border: 2px solid $black;
-    border-radius: 3px;
-    padding: 0 4px;
-    font-weight: 600;
-    font-family: $accent-font;
-    text-transform: uppercase;
-    font-size: 1.5rem;
-
-    &:hover {
-        background-color: $black;
-        color: $white;
-    }
-}
-
-
-.btn-3 {
-    border: 2px solid $black;
-    border-radius: 3px;
+    @include btn();
+    @include font-size(1.5rem);
     width: 100%;
-    padding: 0 4px;
     font-weight: 600;
     font-family: $accent-font;
     text-transform: uppercase;
-    font-size: 1.5rem;
 
     &:hover {
         background-color: $black;
