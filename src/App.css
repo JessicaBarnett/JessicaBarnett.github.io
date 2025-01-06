@@ -2,7 +2,7 @@
 /**************
     BUTTONS
 ***************/
-.btn-1 {
+.btn {
   font-size: 1.2rem;
   line-height: 1.8rem;
   color: #000;
@@ -13,27 +13,33 @@
   margin: 2px;
   font-weight: 600;
 }
-.btn-1:hover, .btn-1.selected {
+.btn:hover, .btn.selected {
   color: #fff;
   background-color: #000;
 }
-.dark .btn-1 {
+.dark .btn {
   color: #bebebe;
   background-color: #1f1f1f;
   border-color: #1f1f1f;
 }
-.dark .btn-1:hover, .dark .btn-1.selected {
+.dark .btn:hover, .dark .btn.selected {
   color: #fff;
   background-color: #000;
   border-color: #000;
 }
 
-.btn-accent {
+.btn-submit {
   font-size: 1.5rem;
   line-height: 2.1rem;
   font-family: "Lester Bold";
   padding: 4px;
   text-transform: uppercase;
+  width: 100%;
+}
+@media (min-width: 769px) {
+  .btn-submit {
+    width: auto;
+  }
 }
 
 /**************
@@ -191,43 +197,64 @@ table {
   border: 1px solid #000;
 }
 
-.filter-projects-group {
-  width: 100%;
-  position: relative;
-  z-index: 1;
+/**************
+      GRID
+***************/
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 12fr);
+  grid-gap: 16px;
 }
-@media (max-width: 560px) {
-  .filter-projects-group {
-    margin-bottom: 48px;
-  }
+.grid > * {
+  grid-column: auto/span 12;
 }
+.grid .half {
+  grid-column: auto/span 6;
+}
+.grid .one-third {
+  grid-column: auto/span 4;
+}
+.grid .two-third {
+  grid-column: auto/span 8;
+}
+
 @media (min-width: 560px) {
-  .filter-projects-group {
-    order: 1;
-    justify-self: start;
+  .grid-at-small {
+    display: grid;
+    grid-template-columns: repeat(12, 12fr);
+    grid-gap: 16px;
+  }
+  .grid-at-small > * {
+    grid-column: auto/span 12;
+  }
+  .grid-at-small .half {
+    grid-column: auto/span 6;
+  }
+  .grid-at-small .one-third {
+    grid-column: auto/span 4;
+  }
+  .grid-at-small .two-third {
+    grid-column: auto/span 8;
   }
 }
 
-.filter-projects-label {
-  font-size: 0.7rem;
-  line-height: 1.3rem;
-  text-transform: uppercase;
-  letter-spacing: 0.18rem;
-}
-
-.filter-projects-select {
-  font-size: 1rem;
-  line-height: 1.6rem;
-  background-color: #000;
-  border: 2px solid #000;
-  color: #fff;
-  font-weight: 500;
-  letter-spacing: 0.15rem;
-  width: auto;
-}
-@media (max-width: 560px) {
-  .filter-projects-select {
-    width: 100%;
+@media (min-width: 769px) {
+  .grid-at-med {
+    display: grid;
+    grid-template-columns: repeat(12, 12fr);
+    grid-gap: 16px;
+  }
+  .grid-at-med > * {
+    grid-column: auto/span 12;
+  }
+  .grid-at-med .half {
+    grid-column: auto/span 6;
+  }
+  .grid-at-med .one-third {
+    grid-column: auto/span 4;
+  }
+  .grid-at-med .two-third {
+    grid-column: auto/span 8;
   }
 }
 
@@ -277,6 +304,46 @@ table {
 }
 .nav-link:hover svg {
   fill: #000;
+}
+
+.filter-projects-group {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 560px) {
+  .filter-projects-group {
+    margin-bottom: 48px;
+  }
+}
+@media (min-width: 560px) {
+  .filter-projects-group {
+    order: 1;
+    justify-self: start;
+  }
+}
+
+.filter-projects-label {
+  font-size: 0.7rem;
+  line-height: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18rem;
+}
+
+.filter-projects-select {
+  font-size: 1rem;
+  line-height: 1.6rem;
+  background-color: #000;
+  border: 2px solid #000;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.15rem;
+  width: auto;
+}
+@media (max-width: 560px) {
+  .filter-projects-select {
+    width: 100%;
+  }
 }
 
 /**************
@@ -465,35 +532,35 @@ CONTENT
   padding-bottom: 80px;
 }
 
-.content-projects {
+.content.content-projects {
   padding-bottom: 18px;
 }
-.content-projects .subtitle-2 {
+.content.content-projects .subtitle-2 {
   text-align: center;
 }
 @media (min-width: 769px) {
-  .content-projects {
+  .content.content-projects {
     padding-bottom: 48px;
   }
 }
-.content-projects ul {
+.content.content-projects ul {
   margin-bottom: 16px;
 }
-.content-projects h3 {
+.content.content-projects h3 {
   text-align: left;
 }
 @media (min-width: 560px) {
-  .content-projects h3 {
+  .content.content-projects h3 {
     text-align: right;
     order: 2;
   }
 }
-.content-projects h4,
-.content-projects ul {
+.content.content-projects h4,
+.content.content-projects ul {
   order: 3;
 }
 @media (max-width: 769px) {
-  .content-projects ul:last-of-type .entry:last-of-type {
+  .content.content-projects ul:last-of-type .entry:last-of-type {
     margin-right: 15%;
   }
 }

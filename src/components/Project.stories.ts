@@ -21,6 +21,6 @@ export const Default: Story = {
   args: {
     project: projectData,
     selectedTags: [],
-    onTagSelect: () => { console.log('selected') }
+    // onTagSelect: () => { console.log('selected') }
   }
 };

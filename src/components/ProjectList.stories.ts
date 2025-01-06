@@ -23,6 +23,6 @@ export const Default: Story = {
     heading: "Company Name",
     projects: projects,
     selectedTags: selectedTags,
-    onTagSelect: (name: string) => { console.log(`tag selected: ${name}`) }
+    // onTagSelect: (name: string) => { console.log(`tag selected: ${name}`) }
   }
 };

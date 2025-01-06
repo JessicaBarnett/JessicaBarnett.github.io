@@ -1,7 +1,5 @@
 import { TagT } from "@src/types/data-types.ts";
 
-// import '../../stylesheets/components/tags.scss';
-
 type ProjectComponentProps = {
   tag: TagT;
   isSelected?: boolean;
@@ -13,10 +11,9 @@ const Tag = ({
   isSelected = false,
   onClick = () => {},
 }: ProjectComponentProps) => {
-
   return (
     <button
-      className={`tag btn-1 filter-projects ${isSelected ? "selected" : ""}`}
+      className={`tag btn filter-projects ${isSelected ? 'selected' : ''}`}
       type="button"
       value={tag.name}
       onClick={(e) => {

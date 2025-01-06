@@ -11,13 +11,14 @@
 @use "./elements/lists";
 @use "./elements/tables";
 
-// components
-@use "./components/filter-select";
-@use "./components/navigation";
-@use "./components/about";
-@use "./components/social-sidebar";
+
+@use "./utilities/grid";
 
 // partials
+@use "./partials/navigation";
+@use "./partials/filter-select";
+@use "./partials/about";
+@use "./partials/social-sidebar";
 @use "./partials/layout";
 @use "./partials/typography";
 @use "./partials/color-bar";

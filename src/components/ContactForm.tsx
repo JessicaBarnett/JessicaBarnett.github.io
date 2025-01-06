@@ -70,7 +70,7 @@ const ContactForm = () => {
                 <label htmlFor="message">Message</label>
                 <textarea name="message" id="message" disabled={sumbissionComplete} required></textarea>
 
-                <button className="btn-1 btn-accent" type="submit" disabled={sumbissionComplete}>Send</button>
+                <button className="btn btn-submit" type="submit" disabled={sumbissionComplete}>Send</button>
             </form>
         </div>
     );

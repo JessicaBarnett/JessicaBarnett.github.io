@@ -2,12 +2,12 @@ import "./App.css";
 
 import { useRef } from "react";
 
+// Hooks
 import { useFilters } from "@src/hooks/static/useFilters.ts";
 import { useProjects } from "@src/hooks/static/useProjects.ts";
 import { useExperienceEntries } from "@src/hooks/static/useExperienceEntries.ts";
 import { useSelectedFilter } from "@src/hooks/useSelectedFilter.ts";
 import { useFilteredProjects } from "@src/hooks/useFilteredProjects.ts";
-
 import { useBgLines } from "@src/hooks/useBgLines.ts";
 
 // Nav
@@ -67,7 +67,7 @@ function App() {
     setSelectedFilter(e.target.value);
   };
 
-  // should be a Hook
+  // could be a Hook?
   let colorTheme = "light";
   if (
     window.matchMedia &&

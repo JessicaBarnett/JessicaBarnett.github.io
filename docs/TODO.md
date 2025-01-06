@@ -1,7 +1,24 @@
 # Post-launch ASAP
 ----------------------------------------------------------------
 
+Bugs
+- reset lines on contact form submission [mid]
 
+Content
+- fill in the TBAs [involved]
+- write the 3 sections out [involved]
+
+Features
+- more-info section [involved]
+- click-tag-to-select [midHigh]
+- button transition [easy]
+- animate lines [High]
+
+Deployment
+- Fix the Deploy
+- Deploy storybook
+
+Other
 - use Css vars instead of sass vars for line colors
 - use js to allow changing the line colors (grayscale looks do good!! )
 - can trapezoids be cutouts instead? can css do that?  maybe with svg?
@@ -16,7 +33,6 @@
 - [med] Offscreen canvas rendering to fix that black screen on scroll (https://web.dev/articles/offscreen-canvas)
 - [med] reset lines on contact form submission
 - [hard] fill in TBA sections
-- [easy] form validation (html5, nothing fancy)
 - [easy] transitions
 - test in mobile browsers
 
