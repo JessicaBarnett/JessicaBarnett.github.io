@@ -8,6 +8,7 @@
     BUTTONS
 ***************/
 
+
 .btn {
     @include font-size(1.2rem);
     color: $text-color;
@@ -17,6 +18,7 @@
     padding: 2px 4px;
     margin: 2px;
     font-weight: 600;
+    transition: color $text-transition, background-color $bg-transition, border-color $bg-transition;
 
     &:hover,
     &.selected {

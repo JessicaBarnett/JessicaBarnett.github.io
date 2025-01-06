@@ -16,6 +16,11 @@
     margin-bottom: 4px;
     border-radius: 3px;
     padding: 4px 8px;
+    transition: background-color $bg-transition;
+
+    svg {
+      transition: fill $text-transition;
+    }
 
     .icon {
         max-width: 36px;
@@ -40,15 +45,9 @@
       svg {
         fill: $highlight-text-color;
       }
-
-      .social-link-text {
-        color: $highlight-text-color;
-      }
     }
 
     @include dark-mode() {
-        color: $drk-text-color;
-
         svg {
           fill: $drk-text-color;
         }
@@ -58,6 +57,15 @@
 .social-link-text {
     display: none;
     vertical-align: middle;
+    transition: color $text-transition;
+
+    .social-link:hover & {
+      color: $highlight-text-color;
+    }
+
+    @include dark-mode() {
+      color: $drk-text-color;
+    }
 
     @include only-above($medium-bp) {
         display: inline-block;

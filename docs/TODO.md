@@ -3,7 +3,6 @@
 
 Plan
 
-- fix scroll height on tag click jankiness, and/or add a 2nd filter dropdown for just the experience section
 
 - button transition [easy] **
 
@@ -43,9 +42,10 @@ Organization
 - Get css imports under control?
 - grid? other layout one-offs?  consolidation?
 - organize media query usage?
+- standardize linter settings
 
 Other
-- use Css vars instead of sass vars for line colors
+- use Css vars instead of sass vars for line colors?
 - use js to allow changing the line colors (grayscale looks do good!! )
 - can trapezoids be cutouts instead? can css do that?  maybe with svg?
 - extend texture to the nav

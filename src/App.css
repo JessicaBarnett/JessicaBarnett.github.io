@@ -12,6 +12,7 @@
   padding: 2px 4px;
   margin: 2px;
   font-weight: 600;
+  transition: color 0.1s ease-in, background-color 0.2s ease-in, border-color 0.2s ease-in;
 }
 .btn:hover, .btn.selected {
   color: #fff;
@@ -842,6 +843,10 @@ p {
   margin-bottom: 4px;
   border-radius: 3px;
   padding: 4px 8px;
+  transition: background-color 0.2s ease-in;
+}
+.social-link svg {
+  transition: fill 0.1s ease-in;
 }
 .social-link .icon {
   max-width: 36px;
@@ -867,13 +872,7 @@ p {
 .social-link:hover svg {
   fill: #fff;
 }
-.social-link:hover .social-link-text {
-  color: #fff;
-}
 @media (prefers-color-scheme: dark) {
-  .social-link {
-    color: #fff;
-  }
   .social-link svg {
     fill: #fff;
   }
@@ -882,6 +881,15 @@ p {
 .social-link-text {
   display: none;
   vertical-align: middle;
+  transition: color 0.1s ease-in;
+}
+.social-link:hover .social-link-text {
+  color: #fff;
+}
+@media (prefers-color-scheme: dark) {
+  .social-link-text {
+    color: #fff;
+  }
 }
 @media (min-width: 769px) {
   .social-link-text {
