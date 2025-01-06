@@ -3,9 +3,12 @@
 
 Plan
 
-- reset lines on contact form submission [mid]
-- click-tag-to-select [midHigh] **
+- fix scroll height on tag click jankiness
 - button transition [easy] **
+
+- merge to main
+- Fix the Deploy **
+- Deploy storybook **
 
 Most interested (but involved)
 - more-info section [involved]
@@ -13,6 +16,8 @@ Most interested (but involved)
 ----------------------------------------------------------------
 Bugs
 - reset lines on contact form submission [mid] **
+- storybook doesn't actually trigger dark mode?
+- align breakpoints in sb to breakpoints in project
 
 Content
 - fill in the TBAs [involved]
@@ -29,8 +34,8 @@ Features
   - transition inspo: https://alvarotrigo.com/blog/css-page-transitions/
 
 Deployment
-- Fix the Deploy
-- Deploy storybook
+- Fix the Deploy **
+- Deploy storybook **
 
 
 Organization
@@ -124,3 +129,18 @@ Other
   I need to distinctify between Ref (joined type, could NOT have a current) and RefObject
   `import { RefObject, useLayoutEffect } from "react";`
 
+
+## JSX
+- Nested loop example (the syntax KILLED me)
+```
+              { Object.keys(filteredProjects).map(companyName => (
+                <>
+                  <h4 className="section-subheading subtitle-2">{companyName}</h4>
+                  <ul>
+                    { filteredProjects[companyName].map(project => (
+                      <Project project={project} selectedTags={selectedFilter?.tags ?? []} onTagSelect={onTagSelect}></Project>
+                    ))}
+                  </ul>
+                </>
+              ))}
+              ```

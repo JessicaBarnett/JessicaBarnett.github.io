@@ -297,7 +297,7 @@ const drawLine = (
 const drawBgLines = (
   refs: ElementRefsT,
   colors: string[],
-  breakpoints: BreakpointsT
+  breakpoints: CssBreakpointsT
 ) => {
   const { canvasRef } = refs;
   const ctx = refs.canvasRef?.current?.getContext("2d");

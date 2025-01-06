@@ -1,12 +1,15 @@
-import { ExperienceEntryT } from "@src/types/data-types.ts";
+import { ExperienceEntryT, TagT } from "@src/types/data-types.ts";
 import Tag from "@src/components/Tag.tsx";
+import { tagSelected } from "@src/utils/util.ts";
 
 
 type ExperienceEntryProps = {
-    entry: ExperienceEntryT
+    entry: ExperienceEntryT,
+    selectedTags: TagT[],
+    onTagSelect: (tag: TagT) => void
 };
 
-const ExperienceEntry = ({entry}: ExperienceEntryProps) => {
+const ExperienceEntry = ({entry, selectedTags, onTagSelect}: ExperienceEntryProps) => {
   return (
     <li className="entry">
         <div className="supertitle-3">
@@ -17,7 +20,11 @@ const ExperienceEntry = ({entry}: ExperienceEntryProps) => {
         <p className="subtitle-3">{entry.company}</p>
 
         { entry.tags.map(tag => (
-          <Tag tag={tag}></Tag>
+          <Tag
+            tag={tag}
+            isSelected={tagSelected(tag, selectedTags)}
+            onClick={onTagSelect}
+          ></Tag>
         ))}
     </li>
   );

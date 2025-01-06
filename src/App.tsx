@@ -18,15 +18,16 @@ import AboutSection from "@src/components/About.tsx";
 import TitleSection from "@src/components/Title.tsx";
 
 // Projects
-import ProjectList from "@src/components/ProjectList.tsx";
 import FilterSelect from "@src/components/FilterSelect.tsx";
+import Project from "./components/Project.tsx";
 
 // Experience
-import ExperienceList from "@src/components/ExperienceList.tsx";
+import ExperienceEntry from "./components/ExperienceEntry.tsx";
 
 // Contact
 import ContactForm from "@src/components/ContactForm.tsx";
 import SocialSidebar from "@src/components/SocialSidebar.tsx";
+import { TagT } from "./types/data-types.ts";
 
 function App() {
   const [filters] = useFilters();
@@ -71,8 +72,12 @@ function App() {
   };
 
   const handleFormStateChange = (formEvent: 'pending' | 'error' | 'submitted') => {
-    console.log(`form state changed: ${formEvent}`)
     setFormState(formEvent)
+  };
+
+  const handleTagSelect = (tag: TagT) => {
+    setSelectedFilter(tag.name);
+    console.dir(tag)
   };
 
   return (
@@ -112,19 +117,22 @@ function App() {
                 onFilterChange={handleFilterChange}
               ></FilterSelect>
 
-              <ProjectList
-                heading="Relay Network"
-                projects={filteredProjects["Relay Network"] ?? []}
-                selectedTags={selectedFilter?.tags ?? []}
-              ></ProjectList>
+              { Object.keys(filteredProjects).map(companyName => (
+                <>
+                  <h4 className="section-subheading subtitle-2">{companyName}</h4>
+                  <ul>
+                    { filteredProjects[companyName].map(project => (
+                      <Project
+                        project={project}
+                        selectedTags={selectedFilter?.tags ?? []}
+                        onTagSelect={handleTagSelect}
+                      ></Project>
+                    ))}
+                  </ul>
+                </>
+              ))}
 
-              <ProjectList
-                heading="Weblinc Ecommerce"
-                projects={filteredProjects["Weblinc Ecommerce"] ?? []}
-                selectedTags={selectedFilter?.tags ?? []}
-              ></ProjectList>
             </div>
-
           </section>
 
           <section
@@ -134,7 +142,15 @@ function App() {
           >
             <div className="content content-experience">
               <h3 className="title-2">Experience</h3>
-              <ExperienceList expEntries={expEntries}></ExperienceList>
+              <ol>
+                  {expEntries.map(entry => (
+                      <ExperienceEntry
+                        entry={entry}
+                        selectedTags={selectedFilter?.tags ?? []}
+                        onTagSelect={handleTagSelect}
+                      ></ExperienceEntry>
+                  ))}
+              </ol>
             </div>
           </section>
 

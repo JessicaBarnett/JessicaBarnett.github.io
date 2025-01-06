@@ -74,6 +74,7 @@
 #canvas {
   @include absolute-overlay;
   z-index: 1;
+  pointer-events: none;
 }
 
 /**************
