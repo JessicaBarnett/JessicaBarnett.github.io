@@ -15,7 +15,7 @@ function AboutSection() {
                     <span className="nowrap">and I make web things.</span>
                 </p>
             </div>
-            <div className="flex">
+            {/* <div className="flex">
 
                 <div>
                     <PlayIcon></PlayIcon>
@@ -33,7 +33,7 @@ function AboutSection() {
                     <p>Skilled in creating and designing high-end visuals and animations with css3 and webgl</p>
                 </div>
 
-            </div>
+            </div> */}
         </div>
     </>
   );
