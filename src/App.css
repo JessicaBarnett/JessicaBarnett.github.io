@@ -17,15 +17,17 @@
   color: #fff;
   background-color: #000;
 }
-.dark .btn {
-  color: #bebebe;
-  background-color: #1f1f1f;
-  border-color: #1f1f1f;
-}
-.dark .btn:hover, .dark .btn.selected {
-  color: #fff;
-  background-color: #000;
-  border-color: #000;
+@media (prefers-color-scheme: dark) {
+  .btn {
+    color: #bebebe;
+    background-color: #1f1f1f;
+    border-color: #1f1f1f;
+  }
+  .btn:hover, .btn.selected {
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
+  }
 }
 
 .btn-submit {
@@ -76,10 +78,12 @@ input {
   padding: 8px 4px;
   margin-bottom: 8px;
 }
-.dark input {
-  color: #fff;
-  border-color: #1f1f1f;
-  background-color: #1f1f1f;
+@media (prefers-color-scheme: dark) {
+  input {
+    color: #fff;
+    border-color: #1f1f1f;
+    background-color: #1f1f1f;
+  }
 }
 
 textarea {
@@ -93,10 +97,12 @@ textarea {
   min-height: 250px;
   margin-bottom: 8px;
 }
-.dark textarea {
-  color: #fff;
-  border-color: #1f1f1f;
-  background-color: #1f1f1f;
+@media (prefers-color-scheme: dark) {
+  textarea {
+    color: #fff;
+    border-color: #1f1f1f;
+    background-color: #1f1f1f;
+  }
 }
 
 .submission-msg {
@@ -395,8 +401,10 @@ table {
   text-align: center;
   line-height: 1.5rem;
 }
-.dark .made-with-love {
-  border-color: #1f1f1f;
+@media (prefers-color-scheme: dark) {
+  .made-with-love {
+    border-color: #1f1f1f;
+  }
 }
 .made-with-love .icon-love {
   display: inline-block;
@@ -450,8 +458,10 @@ table {
   opacity: 20%;
   z-index: 0;
 }
-.dark .background:before {
-  opacity: 10%;
+@media (prefers-color-scheme: dark) {
+  .background:before {
+    opacity: 10%;
+  }
 }
 
 /********************
@@ -489,12 +499,14 @@ table {
   opacity: 20%;
   pointer-events: none;
 }
-.dark .page {
-  background-color: #313130;
-  color: #fff;
-}
-.dark .page:after {
-  opacity: 13%;
+@media (prefers-color-scheme: dark) {
+  .page {
+    background-color: #313130;
+    color: #fff;
+  }
+  .page:after {
+    opacity: 13%;
+  }
 }
 
 /********************
@@ -855,11 +867,13 @@ p {
 .social-link:hover .social-link-text {
   color: #fff;
 }
-.dark .social-link {
-  color: #fff;
-}
-.dark .social-link svg {
-  fill: #fff;
+@media (prefers-color-scheme: dark) {
+  .social-link {
+    color: #fff;
+  }
+  .social-link svg {
+    fill: #fff;
+  }
 }
 
 .social-link-text {

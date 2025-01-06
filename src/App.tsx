@@ -67,18 +67,17 @@ function App() {
     setSelectedFilter(e.target.value);
   };
 
-  // could be a Hook?
-  let colorTheme = "light";
-  if (
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-  ) {
-    colorTheme = "dark";
-  }
+  // // could be a Hook?
+  // let colorTheme = "light";
+  // if (
+  //   window.matchMedia &&
+  //   window.matchMedia("(prefers-color-scheme: dark)").matches
+  // ) {
+  //   colorTheme = "dark";
+  // }
 
   return (
     <>
-      <div className={`background ${colorTheme}`}>
         <div ref={fixedNavRef}>
           <Navigation></Navigation>
         </div>
@@ -188,7 +187,6 @@ function App() {
             </div>
           </section>
         </div>
-      </div>
     </>
   );
 }

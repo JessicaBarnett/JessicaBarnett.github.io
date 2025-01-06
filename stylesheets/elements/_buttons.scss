@@ -24,7 +24,7 @@
         background-color: $highlight-bg-color;
     }
 
-    .dark & {
+    @include dark-mode() {
         color: $drk-text-color-alt;
         background-color: $drk-bg-color;
         border-color: $drk-border-color;

@@ -21,12 +21,12 @@
     background: $paper-texture-url;
 }
 
-@mixin vhs-rough-texture-overlay() {
-    @include pseudo-overlay;
-    background: $vhs-texture-rough-url;
-}
+// @mixin vhs-rough-texture-overlay() {
+//     @include pseudo-overlay;
+//     background: $vhs-texture-rough-url;
+// }
 
-@mixin vhs-smooth-texture-overlay() {
-    @include pseudo-overlay;
-    background: $vhs-texture-smooth-url;
-}
+// @mixin vhs-smooth-texture-overlay() {
+//     @include pseudo-overlay;
+//     background: $vhs-texture-smooth-url;
+// }

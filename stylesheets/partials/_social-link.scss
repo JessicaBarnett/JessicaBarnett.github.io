@@ -46,7 +46,7 @@
       }
     }
 
-    .dark & {
+    @include dark-mode() {
         color: $drk-text-color;
 
         svg {

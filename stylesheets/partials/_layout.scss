@@ -23,7 +23,7 @@
     opacity: 20%;
     z-index: 0;
 
-    .dark & {
+    @include dark-mode() {
       opacity: 10%;
     }
   }
@@ -57,7 +57,7 @@
     pointer-events: none;
   }
 
-  .dark & {
+  @include dark-mode() {
     background-color: $drk-page-bg-color;
     color: $drk-text-color;
 

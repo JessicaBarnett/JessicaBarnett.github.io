@@ -24,7 +24,7 @@
   text-align: center;
   line-height: 1.5rem;
 
-  .dark & {
+  @include dark-mode() {
     border-color: $drk-border-color;
   }
 

@@ -1,8 +1,18 @@
 # Post-launch ASAP
 ----------------------------------------------------------------
 
-Bugs
+Plan
+
 - reset lines on contact form submission [mid]
+- click-tag-to-select [midHigh] **
+- button transition [easy] **
+
+Most interested (but involved)
+- more-info section [involved]
+
+----------------------------------------------------------------
+Bugs
+- reset lines on contact form submission [mid] **
 
 Content
 - fill in the TBAs [involved]
@@ -10,19 +20,32 @@ Content
 
 Features
 - more-info section [involved]
-- click-tag-to-select [midHigh]
-- button transition [easy]
+- click-tag-to-select [midHigh] **
+- button transition [easy] **
 - animate lines [High]
+- page transition for more-info
+  - tiles: https://codepen.io/alvarotrigo/pen/wvpbRmE
+  - curtain: https://codepen.io/alvarotrigo/pen/qBpGLYq
+  - transition inspo: https://alvarotrigo.com/blog/css-page-transitions/
 
 Deployment
 - Fix the Deploy
 - Deploy storybook
+
+
+Organization
+- Get css imports under control?
+- grid? other layout one-offs?  consolidation?
+- organize media query usage?
 
 Other
 - use Css vars instead of sass vars for line colors
 - use js to allow changing the line colors (grayscale looks do good!! )
 - can trapezoids be cutouts instead? can css do that?  maybe with svg?
 - extend texture to the nav
+
+
+----------------------------------------------------------------
 
 
 ## ToDo
@@ -35,7 +58,6 @@ Other
 - [hard] fill in TBA sections
 - [easy] transitions
 - test in mobile browsers
-
 
 - storybook: breakpoints page
 - storybook: development page
