@@ -1,7 +1,7 @@
 {
     "filters": [
         {
-            "displayName": "Javascript/Typescript",
+            "displayName": "Front-End Javascript",
             "name": "javascript",
             "tags": [
                 {
@@ -9,6 +9,18 @@
                 },
                 {
                     "name": "typescript"
+                },
+                {
+                    "name": "lodash"
+                },
+                {
+                    "name": "jquery"
+                },
+                {
+                    "name": "react"
+                },
+                {
+                    "name": "angular"
                 }
             ]
         },
