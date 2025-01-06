@@ -343,7 +343,7 @@
         {
             "id": "rl-004",
             "title": "File Engine Jobs Dashboard",
-            "description": "TBA",
+            "description": "A dashboard displaying the status of backend processes and allowing clients to download reports and create new jobs, all in one place.  Feature empowered clients to do a significant abount of self-service and saved CSMs a ton of time.",
             "company": "Relay Network",
             "tags": [
                 {
@@ -391,7 +391,7 @@
         {
             "id": "rl-002",
             "title": "PDF Preview Feature",
-            "description": "TBA",
+            "description": "A preview feature that reorganized a complex tree of messages into a printable, sharable PDF file.  Enabled our clients to more easily share thier work with stakeholders in within their companies, and saved our CS team a lot of effort.",
             "company": "Relay Network",
             "tags": [
                 {
@@ -471,7 +471,7 @@
         {
             "id": "wl-004",
             "title": "The Bouqs",
-            "description": "TBA",
+            "description": "A fresh flower retailer with a fresh take on their business.  The Bouqs had a heavy focus on optimizing ui performance and producing an experience almost as beautiful as their products.",
             "company": "Weblinc Ecommerce",
             "tags": [
                 {
@@ -499,7 +499,7 @@
         {
             "id": "wl-003",
             "title": "Full Beauty",
-            "description": "TBA",
+            "description": "This company's flagship brand encompased a huge catalog of products and large number of smaller brands, making this build quite complex.",
             "company": "Weblinc Ecommerce",
             "tags": [
                 {
@@ -555,7 +555,7 @@
         {
             "id": "wl-001",
             "title": "Rachel Roy",
-            "description": "Led new feature development on an existing website.",
+            "description": "Led new feature development on an existing fashion website.",
             "company": "Weblinc Ecommerce",
             "tags": [
                 {
@@ -583,7 +583,7 @@
         {
             "id": "wl-000",
             "title": "Mint Julep",
-            "description": "Built features for a fun and lively fashion brand.",
+            "description": "Built features for a fun and lively fashion brand based in the Southern United States.",
             "company": "Weblinc Ecommerce",
             "tags": [
                 {
