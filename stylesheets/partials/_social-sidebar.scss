@@ -33,8 +33,10 @@
     max-width: 24px;
     line-height: 0px;
 
-    .dark & svg {
-      fill: $drk-text-color;
+    @include dark-mode() {
+      svg {
+        fill: $drk-text-color;
+      }
     }
   }
 }

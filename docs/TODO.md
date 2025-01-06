@@ -3,7 +3,8 @@
 
 Plan
 
-- fix scroll height on tag click jankiness
+- fix scroll height on tag click jankiness, and/or add a 2nd filter dropdown for just the experience section
+
 - button transition [easy] **
 
 - merge to main
@@ -15,7 +16,9 @@ Most interested (but involved)
 
 ----------------------------------------------------------------
 Bugs
-- reset lines on contact form submission [mid] **
+- fix scroll height on tag click jankiness, and/or add a 2nd filter dropdown for just the experience section
+
+Storybook
 - storybook doesn't actually trigger dark mode?
 - align breakpoints in sb to breakpoints in project
 
@@ -25,7 +28,6 @@ Content
 
 Features
 - more-info section [involved]
-- click-tag-to-select [midHigh] **
 - button transition [easy] **
 - animate lines [High]
 - page transition for more-info
@@ -36,7 +38,6 @@ Features
 Deployment
 - Fix the Deploy **
 - Deploy storybook **
-
 
 Organization
 - Get css imports under control?

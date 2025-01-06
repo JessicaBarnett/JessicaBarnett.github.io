@@ -411,8 +411,10 @@ table {
   max-width: 24px;
   line-height: 0px;
 }
-.dark .made-with-love .icon-love svg {
-  fill: #fff;
+@media (prefers-color-scheme: dark) {
+  .made-with-love .icon-love svg {
+    fill: #fff;
+  }
 }
 
 /*
