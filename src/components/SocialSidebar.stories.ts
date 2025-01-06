@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import FooterSection from './Footer.tsx';
+import SocialSidebar from './SocialSidebar.tsx';
 
 const meta = {
-  title: 'sections/Footer',
-  component: FooterSection,
+  title: 'components/SocialSidebar',
+  component: SocialSidebar,
   parameters: {},
   tags: ['autodocs'],
   argTypes: {},
   args: {},
-} satisfies Meta<typeof FooterSection>;
+} satisfies Meta<typeof SocialSidebar>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

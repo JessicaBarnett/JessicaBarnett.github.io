@@ -27,6 +27,7 @@ const ContactForm = () => {
 
                 const json = await response.json();
                 if (response.status === 200) {
+                    setSubmissionError(false);
                     setSubmissionComplete(true);
                 } else {
                     setSubmissionError(true);
@@ -58,16 +59,16 @@ const ContactForm = () => {
                 <input type="checkbox" name="botcheck" className="hidden" disabled={sumbissionComplete}></input>
 
                 <label htmlFor="name">Name</label>
-                <input type="text" name="name" id="name" disabled={sumbissionComplete}></input>
+                <input type="text" name="name" id="name" disabled={sumbissionComplete} required></input>
 
                 <label htmlFor="email">Email</label>
-                <input type="text" name="email" id="email" disabled={sumbissionComplete}></input>
+                <input type="email" name="email" id="email" disabled={sumbissionComplete} required></input>
 
                 <label htmlFor="subject">Subject</label>
-                <input type="text" name="subject" id="subject" disabled={sumbissionComplete}></input>
+                <input type="text" name="subject" id="subject" disabled={sumbissionComplete} required></input>
 
                 <label htmlFor="message">Message</label>
-                <textarea name="message" id="message" disabled={sumbissionComplete}></textarea>
+                <textarea name="message" id="message" disabled={sumbissionComplete} required></textarea>
 
                 <button className="btn-1 btn-accent" type="submit" disabled={sumbissionComplete}>Send</button>
             </form>

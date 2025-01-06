@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { projectGen } from '@data/generator.js';
 
-import Project from '@src/components/Project.tsx';
+import Project from './Project.tsx';
 
 const projectData = projectGen(1);
 

@@ -1,7 +1,5 @@
 import { FilterT } from "@src/types/data-types.ts";
 
-import '../../stylesheets/components/filter-select.scss';
-
 type FilterSelectComponentProps = {
   filters: FilterT[],
   selectedFilter: FilterT | undefined,

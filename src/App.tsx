@@ -10,13 +10,23 @@ import { useFilteredProjects } from "@src/hooks/useFilteredProjects.ts";
 
 import { useBgLines } from "@src/hooks/useBgLines.ts";
 
-import AboutSection from "@src/sections/About.tsx";
-import TitleSection from "@src/sections/Title.tsx";
-import ExperienceSection from "@src/sections/Experience.tsx";
-import ProjectsSection from "@src/sections/Projects.tsx";
-import ContactSection from "@src/sections/Contact.tsx";
-import FooterSection from "./sections/Footer.tsx";
-import Navigation from "./components/Navigation.tsx";
+// Nav
+import Navigation from "@src/components/Navigation.tsx";
+
+// Title sections
+import AboutSection from "@src/components/About.tsx";
+import TitleSection from "@src/components/Title.tsx";
+
+// Projects
+import ProjectList from "@src/components/ProjectList.tsx";
+import FilterSelect from "@src/components/FilterSelect.tsx";
+
+// Experience
+import ExperienceList from "@src/components/ExperienceList.tsx";
+
+// Contact
+import ContactForm from "@src/components/ContactForm.tsx";
+import SocialSidebar from "@src/components/SocialSidebar.tsx";
 
 function App() {
   const [filters] = useFilters();
@@ -57,11 +67,13 @@ function App() {
     setSelectedFilter(e.target.value);
   };
 
-
-  let colorTheme = 'light';
-
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    colorTheme = 'dark';
+  // should be a Hook
+  let colorTheme = "light";
+  if (
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  ) {
+    colorTheme = "dark";
   }
 
   return (
@@ -72,7 +84,6 @@ function App() {
         </div>
 
         <div ref={pageRef} className="page">
-
           <canvas
             id="canvas"
             ref={canvasRef}
@@ -84,17 +95,38 @@ function App() {
             <TitleSection></TitleSection>
           </section>
 
-          <section id="about" className="section-about trapezoid-right" ref={abtRef}>
+          <section
+            id="about"
+            className="section-about trapezoid-right"
+            ref={abtRef}
+          >
             <AboutSection></AboutSection>
           </section>
 
           <section id="projects" className="section-projects" ref={projRef}>
-            <ProjectsSection
-              filteredProjects={filteredProjects}
-              filters={filters}
-              selectedFilter={selectedFilter}
-              onFilterChange={handleFilterChange}
-            ></ProjectsSection>
+
+            <div className="content content-projects grid-at-small">
+              <h3 className="section-heading title-2 half">Projects</h3>
+
+              <FilterSelect
+                filters={filters}
+                selectedFilter={selectedFilter}
+                onFilterChange={handleFilterChange}
+              ></FilterSelect>
+
+              <ProjectList
+                heading="Relay Network"
+                projects={filteredProjects["Relay Network"] ?? []}
+                selectedTags={selectedFilter?.tags ?? []}
+              ></ProjectList>
+
+              <ProjectList
+                heading="Weblinc Ecommerce"
+                projects={filteredProjects["Weblinc Ecommerce"] ?? []}
+                selectedTags={selectedFilter?.tags ?? []}
+              ></ProjectList>
+            </div>
+
           </section>
 
           <section
@@ -102,7 +134,10 @@ function App() {
             ref={expRef}
             className="section-experience trapezoid-hug"
           >
-            <ExperienceSection expEntries={expEntries}></ExperienceSection>
+            <div className="content content-experience">
+              <h3 className="title-2">Experience</h3>
+              <ExperienceList expEntries={expEntries}></ExperienceList>
+            </div>
           </section>
 
           <section
@@ -110,15 +145,47 @@ function App() {
             ref={contRef}
             className="section-contact color-bar"
           >
-            <ContactSection></ContactSection>
+            <div className="content content-contact grid-at-med">
+              <h3 className="section-heading title-2">Contact</h3>
+              <ContactForm /*onFormStateChange={handleFilterChange}*/
+              ></ContactForm>
+              <SocialSidebar></SocialSidebar>
+            </div>
           </section>
 
-          <section
-            ref={ftrRef}
-            id="footer"
-            className="section-footer"
-          >
-            <FooterSection></FooterSection>
+          <section ref={ftrRef} id="footer" className="section-footer">
+            <div className="content content-footer">
+              {/* Put like, "interested in this build?  see the style guide, or my write up AboutSection it!" in this section too  */}
+              {/* <table className="page-stats-table">
+              <tbody>
+                  <tr>
+                  <th>Language</th>
+                  <th>HTML</th>
+                  <th>SCSS</th>
+                  <th>JS</th>
+                  </tr>
+                  <tr>
+                  <th>Percent</th>
+                  <td>20%</td>
+                  <td>40%</td>
+                  <td>40%</td>
+                  </tr>
+                  <tr>
+                  <th>Lines</th>
+                  <td colSpan={3}>6000 lines</td>
+                  </tr>
+              </tbody>
+              </table> */}
+
+              {/* <a className="page-stats-button" href="#">
+              <button className="btn-2" type="button">
+                  Source
+              </button>
+              </a>
+              <p className="page-stats-text">
+              Project built with Sass, React, and Vite.
+              </p> */}
+            </div>
           </section>
         </div>
       </div>

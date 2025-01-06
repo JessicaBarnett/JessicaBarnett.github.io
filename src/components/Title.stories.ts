@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import AboutSection from '@src/sections/About.tsx';
+import Title from './Title.tsx';
 
 const meta = {
-  title: 'sections/About',
-  component: AboutSection,
+  title: 'components/Title',
+  component: Title,
   parameters: {},
   tags: ['autodocs'],
   argTypes: {},
   args: {},
-} satisfies Meta<typeof AboutSection>;
+} satisfies Meta<typeof Title>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

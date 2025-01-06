@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import ContactSection from './Contact.tsx';
+import AboutSection from './About.tsx';
 
 const meta = {
-  title: 'sections/Contact',
-  component: ContactSection,
+  title: 'components/About',
+  component: AboutSection,
   parameters: {},
   tags: ['autodocs'],
   argTypes: {},
   args: {},
-} satisfies Meta<typeof ContactSection>;
+} satisfies Meta<typeof AboutSection>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

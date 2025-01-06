@@ -12,19 +12,17 @@
 @use "./elements/tables";
 
 // components
-@use "./components/filter-select.scss";
-@use "./components/navigation.scss";
-@use "./components/tags.scss";
-@use "./components/title.scss";
-@use "./components/about.scss";
-@use "./components/projects.scss";
-@use "./components/experience.scss";
-@use "./components/contact.scss";
+@use "./components/filter-select";
+@use "./components/navigation";
+@use "./components/about";
+@use "./components/social-sidebar";
 
 // partials
 @use "./partials/layout";
 @use "./partials/typography";
+@use "./partials/color-bar";
 @use "./partials/trapezoids";
+@use "./partials/social-link";
 
 
 /*******************

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { experienceEntryGen } from '../../data/generator.js';
 
-import ExperienceEntry from '../components/ExperienceEntry.tsx';
+import ExperienceEntry from './ExperienceEntry.tsx';
 
 const experienceEntry = experienceEntryGen(1);
 

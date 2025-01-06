@@ -1,0 +1,65 @@
+
+@use "../variables/breakpoints" as *;
+@use "../variables/globals" as *;
+@use "../utilities/font-size" as *;
+@use "../utilities/media-queries" as *;
+
+.social-link {
+    @include font-size(1rem);
+    color: $text-color;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    padding: 4px;
+    white-space: nowrap;
+    margin-bottom: 4px;
+    border-radius: 3px;
+    padding: 4px 8px;
+
+    .icon {
+        max-width: 36px;
+        vertical-align: middle;
+        display: inline-block;
+        line-height: 0px;
+
+        @include only-above($medium-bp) {
+            margin-right: 8px;
+        }
+    }
+
+    @include only-above($medium-bp) {
+        display: block;
+        text-align: left;
+    }
+
+    &:hover {
+      text-decoration: underline;
+      background-color: $highlight-bg-color;
+
+      svg {
+        fill: $highlight-text-color;
+      }
+
+      .social-link-text {
+        color: $highlight-text-color;
+      }
+    }
+
+    .dark & {
+        color: $drk-text-color;
+
+        svg {
+          fill: $drk-text-color;
+        }
+    }
+  }
+
+.social-link-text {
+    display: none;
+    vertical-align: middle;
+
+    @include only-above($medium-bp) {
+        display: inline-block;
+    }
+}

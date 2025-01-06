@@ -2,8 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { filtersGen } from '../../data/generator.js';
 import { FilterT } from '@src/types/data-types.ts';
 
-import '@styles/components/filter-select.scss';
-import FilterSelect from '@src/components/FilterSelect.tsx';
+import FilterSelect from './FilterSelect.tsx';
 
 const filters: FilterT[] = filtersGen(3);
 

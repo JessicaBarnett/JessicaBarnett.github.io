@@ -4,25 +4,23 @@
 
 - use Css vars instead of sass vars for line colors
 - use js to allow changing the line colors (grayscale looks do good!! )
--- use css vars for dark mode as well.
 - can trapezoids be cutouts instead? can css do that?  maybe with svg?
 - extend texture to the nav
 
 
 ## ToDo
-- Animate Lines
-- add a "more" link to projects, which opens up a popup with more info + pictures
 - About section - add 3 sections for info about specialties + get rid of the 3 buttons.
+- add a "more" link to projects, which opens up a popup with more info + pictures
+- Animate Lines
+
 - [med] Offscreen canvas rendering to fix that black screen on scroll (https://web.dev/articles/offscreen-canvas)
-- [easy] contact textarea font (it's courier ew)
 - [med] reset lines on contact form submission
 - [hard] fill in TBA sections
 - [easy] form validation (html5, nothing fancy)
 - [easy] transitions
-- dark mode adaptations.
 - test in mobile browsers
-- figure out how to import compontnent-specific Scss in components?
-- storybook: get css loading correctly in all components
+
+
 - storybook: breakpoints page
 - storybook: development page
 - storybook: "submitted" state story

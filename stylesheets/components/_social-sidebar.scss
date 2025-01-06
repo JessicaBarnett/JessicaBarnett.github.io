@@ -1,0 +1,40 @@
+// @use '../variables/colors' as *;
+@use "../variables/breakpoints" as *;
+@use "../variables/globals" as *;
+@use "../utilities/media-queries" as *;
+
+.social-sidebar {
+  text-align: center;
+  max-width: 80%;
+  margin: 0 auto;
+
+  @include only-above($medium-bp) {
+    text-align: left;
+  }
+
+  @include only-above($wide-bp) {
+    min-width: 200px;
+  }
+}
+
+.made-with-love {
+  border-bottom: 3px solid $border-color;
+  padding: 8px;
+  margin-bottom: 4px;
+  text-align: center;
+  line-height: 1.5rem;
+
+  .dark & {
+    border-color: $drk-border-color;
+  }
+
+  .icon-love {
+    display: inline-block;
+    max-width: 24px;
+    line-height: 0px;
+
+    .dark & svg {
+      fill: $drk-text-color;
+    }
+  }
+}

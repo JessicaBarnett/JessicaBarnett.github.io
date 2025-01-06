@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
-import ContactForm from '../components/ContactForm.tsx';
+import ContactForm from './ContactForm.tsx';
 
 const meta = {
   title: 'components/ContactForm',
