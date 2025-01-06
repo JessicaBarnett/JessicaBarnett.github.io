@@ -25,6 +25,15 @@
             ]
         },
         {
+            "displayName": "Typescript",
+            "name": "typescript",
+            "tags": [
+                {
+                    "name": "typescript"
+                }
+            ]
+        },
+        {
             "displayName": "React/JSX",
             "name": "react",
             "tags": [
@@ -232,6 +241,10 @@
                 {
                     "displayName": "HTML",
                     "name": "html"
+                },
+                {
+                    "displayName": "Jest",
+                    "name": "jest"
                 }
             ]
         },
@@ -264,6 +277,10 @@
                 {
                     "displayName": "Twilio",
                     "name": "twilio"
+                },
+                {
+                    "displayName": "Jest",
+                    "name": "jest"
                 }
             ]
         },
@@ -284,6 +301,10 @@
                 {
                     "displayName": "Node",
                     "name": "node"
+                },
+                {
+                    "displayName": "Jest",
+                    "name": "jest"
                 }
             ]
         },
@@ -312,6 +333,10 @@
                 {
                     "displayName": "AWS Cognito",
                     "name": "aws-cognito"
+                },
+                {
+                    "displayName": "Jasmine",
+                    "name": "jasmine"
                 }
             ]
         },
@@ -332,6 +357,10 @@
                 {
                     "displayName": "CSS/Scss",
                     "name": "scss"
+                },
+                {
+                    "displayName": "Jasmine",
+                    "name": "jasmine"
                 }
             ]
         },
@@ -352,6 +381,10 @@
                 {
                     "displayName": "Twilio",
                     "name": "twilio"
+                },
+                {
+                    "displayName": "Jasmine",
+                    "name": "jasmine"
                 }
             ]
         },
@@ -372,6 +405,10 @@
                 {
                     "displayName": "CSS/Scss",
                     "name": "scss"
+                },
+                {
+                    "displayName": "Jasmine",
+                    "name": "jasmine"
                 },
                 {
                     "displayName": "AWS Lambda",
@@ -396,6 +433,10 @@
                 {
                     "displayName": "CSS/Scss",
                     "name": "scss"
+                },
+                {
+                    "displayName": "Jasmine",
+                    "name": "jasmine"
                 }
             ]
         },
