@@ -152,6 +152,18 @@
                     "name": "rails"
                 }
             ]
+        },
+        {
+            "displayName": "CSS",
+            "name": "css",
+            "tags": [
+                {
+                    "name": "css"
+                },
+                {
+                    "name": "scss"
+                }
+            ]
         }
     ],
     "projects": [
@@ -202,8 +214,8 @@
                     "name": "pgsql"
                 },
                 {
-                    "displayName": "CSS",
-                    "name": "css"
+                    "displayName": "CSS/Scss",
+                    "name": "scss"
                 },
                 {
                     "displayName": "HTML",
@@ -555,7 +567,7 @@
                 {"name": "react", "displayName": "React"},
                 {"name": "angular", "displayName": "Angular"},
                 {"name": "node", "displayName": "Node"},
-                {"name": "aws", "displayName": "Angular"}
+                {"name": "aws", "displayName": "AWS"}
             ]
         },
         {
