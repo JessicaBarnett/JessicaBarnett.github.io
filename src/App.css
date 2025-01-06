@@ -449,10 +449,17 @@ table {
   text-align: center;
   line-height: 1.5rem;
 }
-.made-with-love .icon-love {
+.dark .made-with-love {
+  border-color: #1f1f1f;
+}
+
+.icon-love {
   display: inline-block;
   max-width: 24px;
   line-height: 0px;
+}
+.dark .icon-love svg {
+  fill: #fff;
 }
 
 .color-bar {
@@ -536,6 +543,12 @@ table {
 }
 .social-link:hover .social-link-text {
   color: #fff;
+}
+.dark .social-link {
+  color: #fff;
+}
+.dark .social-link svg {
+  fill: #fff;
 }
 
 /*

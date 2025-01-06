@@ -20,11 +20,20 @@
     text-align: center;
     line-height: 1.5rem;
 
-    .icon-love {
-      display: inline-block;
-      max-width: 24px;
-      line-height: 0px;
-    }
+  .dark & {
+    border-color: $drk-border-color;
+  }
+
+}
+
+.icon-love {
+  display: inline-block;
+  max-width: 24px;
+  line-height: 0px;
+
+  .dark & svg {
+    fill: $drk-text-color;
+  }
 }
 
 .color-bar {
@@ -107,6 +116,14 @@
 
       .social-link-text {
         color: $highlight-text-color;
+      }
+    }
+
+    .dark & {
+      color: $drk-text-color;
+
+      svg {
+        fill: $drk-text-color;
       }
     }
 }
