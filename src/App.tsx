@@ -57,9 +57,16 @@ function App() {
     setSelectedFilter(e.target.value);
   };
 
+
+  let colorTheme = 'light';
+
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    colorTheme = 'dark';
+  }
+
   return (
     <>
-      <div className="background dark">
+      <div className={`background ${colorTheme}`}>
         <div ref={fixedNavRef}>
           <Navigation></Navigation>
         </div>
