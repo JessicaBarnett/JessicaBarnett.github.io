@@ -1,9 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const ContactForm = () => {
+type ContactFormComponentProps = {
+  onFormStateChange: (formEvent: string) => 'pending' | 'error' | 'submitted'
+};
+
+const ContactForm = ({onFormStateChange}: ContactFormComponentProps) => {
     const accessKey = '0172a4b7-83eb-46cf-aed1-2ce6809204a7';
     const [sumbissionComplete, setSubmissionComplete] = useState(false);
     const [sumbissionError, setSubmissionError] = useState(false);
+
+    useEffect(() => {
+        if (sumbissionComplete) {
+            onFormStateChange('submitted');
+        } else if (sumbissionError) {
+            onFormStateChange('error');
+        }
+    }, [onFormStateChange, sumbissionComplete, sumbissionError]);
 
     const formatData = (form: HTMLFormElement) => {
         const formData = new FormData(form);

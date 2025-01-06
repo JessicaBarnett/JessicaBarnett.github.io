@@ -339,7 +339,8 @@ const drawBgLines = (
 
 export function useBgLines(
   refs: ElementRefsT,
-  filteredProjects: ProjectsByCompanyT
+  filteredProjects: ProjectsByCompanyT,
+  formState: string
 ) {
   const [breakpoints] = useBreakpoints();
   const [colors] = useRainbowColors();
@@ -352,6 +353,8 @@ export function useBgLines(
     drawBgLinesWRefsApplied();
     window.addEventListener("resize", drawBgLinesWRefsApplied);
 
+    console.log('redrawing lines')
+
     return () => window.removeEventListener("resize", drawBgLinesWRefsApplied); // cleanup fn
-  }, [refs, filteredProjects, breakpoints, colors]);
+  }, [refs, filteredProjects, formState, breakpoints, colors]);
 }

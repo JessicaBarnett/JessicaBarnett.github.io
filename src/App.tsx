@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 // Hooks
 import { useFilters } from "@src/hooks/static/useFilters.ts";
@@ -49,6 +49,8 @@ function App() {
   const ftrRef = useRef<HTMLElement | null>(null);
   const fixedNavRef = useRef<HTMLDivElement | null>(null);
 
+  const [formState, setFormState] = useState('pending'); // pending, error, submitted
+
   useBgLines(
     {
       canvasRef,
@@ -60,21 +62,18 @@ function App() {
       contRef,
       ftrRef,
     },
-    filteredProjects
+    filteredProjects,
+    formState
   );
 
   const handleFilterChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedFilter(e.target.value);
   };
 
-  // // could be a Hook?
-  // let colorTheme = "light";
-  // if (
-  //   window.matchMedia &&
-  //   window.matchMedia("(prefers-color-scheme: dark)").matches
-  // ) {
-  //   colorTheme = "dark";
-  // }
+  const handleFormStateChange = (formEvent: 'pending' | 'error' | 'submitted') => {
+    console.log(`form state changed: ${formEvent}`)
+    setFormState(formEvent)
+  };
 
   return (
     <>
@@ -146,7 +145,7 @@ function App() {
           >
             <div className="content content-contact grid-at-med">
               <h3 className="section-heading title-2">Contact</h3>
-              <ContactForm /*onFormStateChange={handleFilterChange}*/
+              <ContactForm onFormStateChange={handleFormStateChange}
               ></ContactForm>
               <SocialSidebar></SocialSidebar>
             </div>
