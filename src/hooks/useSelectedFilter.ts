@@ -8,7 +8,8 @@ import { FilterT, TagT } from "@src/types/data-types.ts";
 
 type UseSelectedFilterReturnT = [
   FilterT | undefined | null,
-  (tag: TagT) => void
+
+  ((tag: TagT ) => void) & ((tagName: string ) => void)
 ];
 
 /**
