@@ -6,7 +6,7 @@ import { DataT } from "@src/types/data-types.ts";
 import * as json from '@data/data.json' assert { type: 'json' };
 
 export function useData() {
-  const data: DataT = json.default;
+  const data: DataT = json;
   const [value] = useState<DataT>(data);
   return value;
 }

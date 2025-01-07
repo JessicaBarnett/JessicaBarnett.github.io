@@ -153,7 +153,6 @@ img {
 
 .link::before {
   content: "";
-  background: url("assets/icons/link-solid.svg") no-repeat;
   display: inline-block;
   height: 12px;
   width: 16px;
@@ -457,7 +456,7 @@ table {
   right: 0;
   height: 100%;
   width: 100%;
-  background: url("assets/images/concrete-wall-tileable.jpg");
+  background: url("/assets/images/concrete-wall-tileable.jpg");
   opacity: 20%;
   z-index: 0;
 }
@@ -497,7 +496,7 @@ table {
   right: 0;
   height: 100%;
   width: 100%;
-  background: url("assets/images/concrete-wall-tileable.jpg");
+  background: url("/assets/images/concrete-wall-tileable.jpg");
   z-index: 2;
   opacity: 20%;
   pointer-events: none;
