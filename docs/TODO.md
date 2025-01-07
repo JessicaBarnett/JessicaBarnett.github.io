@@ -1,147 +1,67 @@
-# Post-launch ASAP
+# ToDos
 ----------------------------------------------------------------
 
-Plan
+----------------------------------------------------------------
+## In Progress
+----------------------------------------------------------------
 
+- add a filter dropdown for experience section and figure out scroll jankiness
+- animate lines
 
-- button transition [easy] **
-
-- merge to main
-- Fix the Deploy **
-- Deploy storybook **
-
-Most interested (but involved)
-- more-info section [involved]
+- more-info section
 
 ----------------------------------------------------------------
-Bugs
-- fix scroll height on tag click jankiness, and/or add a 2nd filter dropdown for just the experience section
+## Backlog
+----------------------------------------------------------------
 
-Storybook
-- storybook doesn't actually trigger dark mode?
-- align breakpoints in sb to breakpoints in project
+#### Bugs
+- add a filter dropdown for experience section and figure out scroll jankiness ***
+- tiled bg texture isn't as nicely tiled as it could be...
+- extend texture to the nav
+- go through console warnings
 
-Content
-- fill in the TBAs [involved]
-- write the 3 sections out [involved]
+#### Copy/Content
+- Go over all the copy
+- add more to the About Section
 
-Features
-- more-info section [involved]
-- button transition [easy] **
-- animate lines [High]
-- page transition for more-info
+#### Small Features
+- "rewind" back to top button!
+- animate lines
+
+#### Large Features
+- more-info section
+- page transitions (for more-info sections)
   - tiles: https://codepen.io/alvarotrigo/pen/wvpbRmE
   - curtain: https://codepen.io/alvarotrigo/pen/qBpGLYq
   - transition inspo: https://alvarotrigo.com/blog/css-page-transitions/
+- Articles/blog (link in social and in nav)
+- change rainbow color themes? (grayscale looks so good!)
 
-Deployment
-- Fix the Deploy **
-- Deploy storybook **
+#### Storybook
+- storybook doesn't actually trigger dark mode?
+- align breakpoints in sb to breakpoints in project
+- what knobs can I add to the stories?
 
-Organization
-- Get css imports under control?
+#### Organization
+- minimize css imports?
 - grid? other layout one-offs?  consolidation?
 - organize media query usage?
-- standardize linter settings
+- standardize linter settings?
 
-Other
-- use Css vars instead of sass vars for line colors?
-- use js to allow changing the line colors (grayscale looks do good!! )
+#### Investigations
 - can trapezoids be cutouts instead? can css do that?  maybe with svg?
-- extend texture to the nav
 
 
 ----------------------------------------------------------------
-
-
-## ToDo
-- About section - add 3 sections for info about specialties + get rid of the 3 buttons.
-- add a "more" link to projects, which opens up a popup with more info + pictures
-- Animate Lines
-
-- [med] Offscreen canvas rendering to fix that black screen on scroll (https://web.dev/articles/offscreen-canvas)
-- [med] reset lines on contact form submission
-- [hard] fill in TBA sections
-- [easy] transitions
-- test in mobile browsers
-
-- storybook: breakpoints page
-- storybook: development page
-- storybook: "submitted" state story
-- storybook: breakpoints?
-- storybook: hook up fns?
-
-
-----------------------------------------------------------------
-# After Launch
+## Notes
 ----------------------------------------------------------------
 
-## High Priority
-- add a "more" link to projects, which opens up a popup with more info + pictures
 
-## Other
-- Articles/blog (link in social and in nav)
-- "rewind" back to top button!
-- re-enable click-tag-to-select-filter
+can I pin to the element (btn) that was clicked?
 
 
-----------------------------------------------------------------
-# Notes to add to Obsidian later
-----------------------------------------------------------------
+like, get the scroll offset of the element I clicked on post-adjustment,
 
-### amazing tools
-- https://svg-path.com/
-- https://freesvgeditor.com/en/svg-editor-online
+https://ux.stackexchange.com/questions/147067/is-there-a-standard-algorithm-for-maintaining-scroll-position-of-a-list-when-the
 
-
-### svgs
-- remove height/width and add voiewbox to be able to scale w/ css
-- remove in-file "fill="s to use the fill rule
-
-### Inkscape
-- png to svg -> https://designbundles.net/design-school/how-to-convert-a-jpegpng-to-a-vector-in-inkscape
-
-
-
-### node scripting
-- fs = filesystem w/ callbacks, and fsp = filesystem with promises.
-
-
-### regex
-- reference regex capturing groups in the replace function callback to convert kebab-case-variable-names to camelCaseVariablesNames.  see copyScssVarsToJson.cjs file and look at: https://stackoverflow.com/questions/3954927/how-to-replace-captured-groups-only
-
-
-### deployment
-- deploy storybook to gh pages: https://medium.com/swlh/how-to-deploy-storybook-to-github-pages-4894097d49ab
-
-
-## Storybook
-- "unattached" documentation (no story connected) https://storybook.js.org/docs/writing-docs/mdx#writing-unattached-documentation
-
-- It looks like the Canvas element, which is the sort of "demo block" that storybook uses, HAS to be tied to a story.  Which means I cant pop one in there for like, colors or headings.  This is that was causing me issues creating unattached docs earlier.
-
-- To create a block without Storybook's own styling applied, use the Unstyled Block. https://storybook.js.org/docs/api/doc-blocks/doc-block-unstyled
-
-- preview.ts file to set order of categories
-
-
-## React
-- refObjects have a .current, ref callbacks don't.
-  I need to distinctify between Ref (joined type, could NOT have a current) and RefObject
-  `import { RefObject, useLayoutEffect } from "react";`
-
-
-## JSX
-- Nested loop example (the syntax KILLED me)
-```
-              { Object.keys(filteredProjects).map(companyName => (
-                <>
-                  <h4 className="section-subheading subtitle-2">{companyName}</h4>
-                  <ul>
-                    { filteredProjects[companyName].map(project => (
-                      <Project project={project} selectedTags={selectedFilter?.tags ?? []} onTagSelect={onTagSelect}></Project>
-                    ))}
-                  </ul>
-                </>
-              ))}
-              ```
+I didn't realize there was a ux stackexchange!
