@@ -1,0 +1,10 @@
+<svg width="100" height="600" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <title>rainbow vertical</title>
+  <line transform="rotate(90, 9.24493, 201)" stroke-width="20" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_1" y2="201" x2="409.48985" y1="201" x1="-391" stroke="#e2006a" fill="none"/>
+  <line transform="rotate(90, 29.2449, 262.72)" stroke-width="20" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_2" y2="262.72005" x2="429.48985" y1="262.72005" x1="-371" stroke="#ee6b0f" fill="none"/>
+  <line transform="rotate(90, 48.2449, 303.014)" stroke-width="20" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_3" y2="303.01389" x2="448.48985" y1="303.01389" x1="-352" stroke="#ebe000" fill="none"/>
+  <line x1="-313" transform="rotate(90, 87.2449, 230.014)" stroke-width="20" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_4" y2="230.01389" x2="487.48985" y1="230.01389" stroke="#0084ce" fill="none"/>
+  <line transform="rotate(90, 67.2449, 208.014)" stroke-width="20" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_5" y2="208.01389" x2="467.48985" y1="208.01389" x1="-333" stroke="#82a900" fill="none"/>
+ </g>
+</svg>
