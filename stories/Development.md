@@ -42,15 +42,15 @@ This project utilizes the following:
     </tr>
 </table>
 
-<img class="sb-img" src="/docs/build-wips/build-wip-1.png" />
-<img class="sb-img" src="/docs/build-wips/build-wip-2.png" />
+<img class="sb-img" src="/assets/docs/build-wips/build-wip-1.png" />
+<img class="sb-img" src="/assets/docs/build-wips/build-wip-2.png" />
 
-<div class="sb-fake-phone"><img src="/docs/build-wips/build-wip-3.png" /></div>
+<div class="sb-fake-phone"><img src="/assets/docs/build-wips/build-wip-3.png" /></div>
 
-<div class="sb-fake-phone"><img src="/docs/build-wips/build-wip-4.png" /></div>
+<div class="sb-fake-phone"><img src="/assets/docs/build-wips/build-wip-4.png" /></div>
 
-<div class="sb-fake-phone"><img src="/docs/build-wips/build-wip-5.png" /></div>
+<div class="sb-fake-phone"><img src="/assets/docs/build-wips/build-wip-5.png" /></div>
 
-<div class="sb-fake-phone"><img src="/docs/build-wips/build-wip-6.png" /></div>
+<div class="sb-fake-phone"><img src="/assets/docs/build-wips/build-wip-6.png" /></div>
 
-<div class="sb-fake-phone"><img src="/docs/build-wips/build-wip-7.png" /></div>
+<div class="sb-fake-phone"><img src="/assets/docs/build-wips/build-wip-7.png" /></div>
