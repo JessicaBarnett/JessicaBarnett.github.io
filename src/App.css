@@ -144,18 +144,29 @@ img {
   max-width: 100%;
 }
 
-/**************
-    LINKS
-***************/
+/***************/
+/**   LINKS   **/
+/***************/
 .link {
-  margin-right: 16px;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
 }
-
-.link::before {
-  content: "";
-  display: inline-block;
-  height: 12px;
-  width: 16px;
+.link:hover {
+  text-decoration: underline;
+}
+.link:visited {
+  color: #000;
+}
+@media (prefers-color-scheme: dark) {
+  .link {
+    color: #fff;
+  }
+  .link:visited {
+    color: #fff;
+  }
 }
 
 /**************
@@ -593,6 +604,10 @@ CONTENT
 .content-contact {
   padding: 4rem 72px 10px 56px;
   min-height: 560px;
+}
+
+.content-footer {
+  text-align: center;
 }
 
 /**************

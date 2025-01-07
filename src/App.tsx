@@ -28,6 +28,7 @@ import ExperienceEntry from "./components/ExperienceEntry.tsx";
 import ContactForm, { FormEventT } from "@src/components/ContactForm.tsx";
 import SocialSidebar from "@src/components/SocialSidebar.tsx";
 import { TagT } from "./types/data-types.ts";
+import { StorybookIcon } from "./icons/StorybookIcon.tsx";
 
 function App() {
   const [filters] = useFilters();
@@ -169,7 +170,7 @@ function App() {
 
           <section ref={ftrRef} id="footer" className="section-footer">
             <div className="content content-footer">
-              <p>curious about this build?  Check out the <a href="/docs/index" target="_blank">storybook here!</a></p>
+              <p>Curious about this build?  Check out the <a className="link" href="/docs/index" target="_blank">storybook!</a></p>
               {/* Put like, "interested in this build?  see the style guide, or my write up AboutSection it!" in this section too  */}
               {/* <table className="page-stats-table">
               <tbody>

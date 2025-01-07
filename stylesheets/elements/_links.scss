@@ -1,14 +1,31 @@
-/**************
-    LINKS
-***************/
+@use "../variables/globals" as *;
+@use '../utilities/font-size' as *;
+@use '../utilities/media-queries' as *;
+
+/***************/
+/**   LINKS   **/
+/***************/
 
 .link {
-  margin-right: 16px;
-}
+    @include font-size(1.2rem);
+    color: $text-color;
+    text-decoration: none;
+    font-weight: bold;
 
-.link::before {
-  content: '';
-  display: inline-block;
-  height: 12px;
-  width: 16px;
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &:visited {
+        color: $text-color;
+    }
+
+    @include dark-mode() {
+        color: $drk-text-color;
+
+        &:visited {
+            color: $drk-text-color;
+        }
+
+    }
 }
