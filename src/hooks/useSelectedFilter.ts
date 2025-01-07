@@ -4,18 +4,18 @@
  * State required: useFilters
  */
 import { useState } from "react";
-import { FilterT } from "@src/types/data-types.ts";
+import { FilterT, TagT } from "@src/types/data-types.ts";
 
 type UseSelectedFilterReturnT = [
-  FilterT | undefined,
-  (name: string) => void
+  FilterT | undefined | null,
+  (tag: TagT) => void
 ];
 
 /**
  * matches if the Filter itself or one of the Tags
  * has a name that matches the passed `name`
  */
-const selectFilterByName = (filters: FilterT[], name: string): FilterT | undefined => {
+const matchFilterByName = (filters: FilterT[], name: string): FilterT | undefined => {
   return (
     filters.find((filter: FilterT) => filter.name === name) ??
     filters.find((filter: FilterT) =>
@@ -24,11 +24,19 @@ const selectFilterByName = (filters: FilterT[], name: string): FilterT | undefin
   );
 };
 
-export function useSelectedFilter(filters: FilterT[]): UseSelectedFilterReturnT {
-  const [value, setValue] = useState<FilterT | undefined>();
+export function useSelectedFilter(filters: FilterT[], initial?: FilterT): UseSelectedFilterReturnT {
+  const [value, setValue] = useState<FilterT | undefined | null>();
+  if (initial) {
+    setValue(initial);
+  }
 
-  function handleChange(name: string): void {
-    setValue(selectFilterByName(filters, name));
+  function handleChange(tag: TagT ): void {
+    const matchingFilter = matchFilterByName(filters, tag.name);
+    if (matchingFilter?.name === value?.name) {
+      setValue(null);
+    } else {
+      setValue(matchFilterByName(filters, tag.name));
+    }
   }
 
   return [value, handleChange];

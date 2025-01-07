@@ -76,8 +76,7 @@ function App() {
   };
 
   const handleTagSelect = (tag: TagT) => {
-    setSelectedFilter(tag.name);
-    console.dir(tag)
+      setSelectedFilter(tag);
   };
 
   return (
@@ -169,7 +168,7 @@ function App() {
 
           <section ref={ftrRef} id="footer" className="section-footer">
             <div className="content content-footer">
-              <p>Curious about this build?  Check out the <a className="link" href="https://github.com/JessicaBarnett/JessicaBarnett.github.io" target="_blank">source code</a> and the <a className="link" href="/docs/index" target="_blank">storybook!</a></p>
+              <p>Curious about this build?  Check out the <a className="link" href="/docs/index" target="_blank">storybook!</a></p>
               {/* Put like, "interested in this build?  see the style guide, or my write up AboutSection it!" in this section too  */}
               {/* <table className="page-stats-table">
               <tbody>

@@ -46,13 +46,13 @@ const getFilterByName = (filters: FilterT[], filterName: string): FilterT | unde
 }
 
 // Groups projects by company and applies filters
-export function useFilteredProjects(projects: ProjectT[], filters: FilterT[], selectedFilter: FilterT | undefined): FilteredProjectsT {
+export function useFilteredProjects(projects: ProjectT[], filters: FilterT[], selectedFilter: FilterT | undefined | null): FilteredProjectsT {
   const [value, setValue] = useState<ProjectsByCompanyT>(
     groupProjectsByCompany(projects)
   );
 
   useEffect(() => {
-    if (selectedFilter === undefined) {
+    if (selectedFilter === undefined || selectedFilter === null) {
       setValue(groupProjectsByCompany(projects));
       return;
     }

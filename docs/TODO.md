@@ -5,9 +5,9 @@
 ## In Progress
 ----------------------------------------------------------------
 
-- add a filter dropdown for experience section and figure out scroll jankiness
+- figure out scroll jankiness
 - animate lines
-- more-info section
+- more-info section **
 
 ----------------------------------------------------------------
 ## Backlog

@@ -2,7 +2,7 @@ import { FilterT } from "@src/types/data-types.ts";
 
 type FilterSelectComponentProps = {
   filters: FilterT[],
-  selectedFilter: FilterT | undefined,
+  selectedFilter: FilterT | undefined | null,
   onFilterChange: (e: React.ChangeEvent<HTMLSelectElement>) => void
 };
 
@@ -21,7 +21,7 @@ const FilterSelect = ({
       className="filter-projects-select"
       name="filterProjects"
       id="filterProjects"
-      value={selectedFilter?.name ?? undefined}
+      value={selectedFilter?.name ?? ''}
       onChange={onFilterChange}
     >
       <option value="">All</option>
