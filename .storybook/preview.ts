@@ -1,6 +1,5 @@
 import type { Preview } from "@storybook/react";
-import '@styles/app.scss';
-
+import '../stylesheets/app.scss';
 
 const customViewports = {
   xs: {
