@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Title from './Title.tsx';
+import Title from './TitleSection.tsx';
 
 const meta = {
-  title: 'components/Title',
+  title: 'components/TitleSection',
   component: Title,
   parameters: {},
   tags: ['autodocs'],

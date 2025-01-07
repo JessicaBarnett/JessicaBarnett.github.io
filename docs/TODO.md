@@ -5,9 +5,9 @@
 ## In Progress
 ----------------------------------------------------------------
 
-- figure out scroll jankiness
-- animate lines
-- more-info section **
+- more-info section (higher impact, but more involved)
+- figure out scroll jankiness (bugfix, high impact)
+- animate lines (might be an easy win?)
 
 ----------------------------------------------------------------
 ## Backlog

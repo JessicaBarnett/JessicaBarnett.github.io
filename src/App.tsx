@@ -14,8 +14,8 @@ import { useBgLines } from "@src/hooks/useBgLines.ts";
 import Navigation from "@src/components/Navigation.tsx";
 
 // Title sections
-import AboutSection from "@src/components/About.tsx";
-import TitleSection from "@src/components/Title.tsx";
+import AboutSection from "@src/components/AboutSection.tsx";
+import TitleSection from "@src/components/TitleSection.tsx";
 
 // Projects
 import FilterSelect from "@src/components/FilterSelect.tsx";
@@ -28,6 +28,7 @@ import ExperienceEntry from "./components/ExperienceEntry.tsx";
 import ContactForm, { FormEventT } from "@src/components/ContactForm.tsx";
 import SocialSidebar from "@src/components/SocialSidebar.tsx";
 import { TagT } from "./types/data-types.ts";
+import SectionHeading from "./components/SectionHeading.tsx";
 
 function App() {
   const [filters] = useFilters();
@@ -108,7 +109,7 @@ function App() {
           <section id="projects" className="section-projects" ref={projRef}>
 
             <div className="content content-projects grid-at-small">
-              <h3 className="section-heading title-2 half">Projects</h3>
+            <SectionHeading className="half">Projects</SectionHeading>
 
               <FilterSelect
                 filters={filters}
@@ -140,7 +141,7 @@ function App() {
             className="section-experience trapezoid-hug"
           >
             <div className="content content-experience">
-              <h3 className="title-2">Experience</h3>
+              <SectionHeading>Experience</SectionHeading>
               <ol>
                   {expEntries.map(entry => (
                       <ExperienceEntry
@@ -159,7 +160,8 @@ function App() {
             className="section-contact color-bar"
           >
             <div className="content content-contact grid-at-med">
-              <h3 className="section-heading title-2">Contact</h3>
+              <SectionHeading>Contact</SectionHeading>
+
               <ContactForm onFormStateChange={handleFormStateChange}
               ></ContactForm>
               <SocialSidebar></SocialSidebar>

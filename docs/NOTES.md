@@ -21,6 +21,31 @@
 
 ### Typescript
 - Got an "object is possibly null" warning that yoou KNOW is not null?  You can use the ! to assert your confidence, ie: `document.getElementById(id)!`.
+- Overloads!!  Never done these before [but I like them!](https://www.typescripttutorial.net/typescript-tutorial/typescript-function-overloadings/)
+```typescript
+    // hook return type
+    type UseSelectedFilterReturnT = [
+        FilterT | undefined | null,
+        ((tag: TagT ) => void) & ((tagName: string ) => void)
+    ];
+
+    // overloads and definition
+    function handleChange(tagName: string): void;
+    function handleChange(tag: TagT): void;
+    function handleChange(newValue: TagT | string): void {
+        const tagName = typeof newValue === 'string' ? newValue : newValue.name;
+        const matchingFilter = matchFilterByName(filters, tagName);
+        if (matchingFilter?.name === value?.name) {
+            setValue(null);
+        } else {
+            setValue(matchFilterByName(filters, tagName));
+        }
+    }
+```
+
+
+### Content Projection comparison!
+- Love this! https://www.thisdot.co/blog/content-projection-in-front-end-javascript-frameworks
 
 ### node scripting
 - fs = filesystem w/ callbacks, and fsp = filesystem with promises.
