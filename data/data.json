@@ -112,6 +112,15 @@
             ]
         },
         {
+            "displayName": "JQuery",
+            "name": "jquery",
+            "tags": [
+                {
+                    "name": "jquery"
+                }
+            ]
+        },
+        {
             "displayName": "Databases",
             "name": "databases",
             "tags": [

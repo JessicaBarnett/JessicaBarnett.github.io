@@ -30,12 +30,15 @@ export function useSelectedFilter(filters: FilterT[], initial?: FilterT): UseSel
     setValue(initial);
   }
 
-  function handleChange(tag: TagT ): void {
-    const matchingFilter = matchFilterByName(filters, tag.name);
+  function handleChange(tagName: string): void;
+  function handleChange(tag: TagT): void;
+  function handleChange(newValue: TagT | string): void {
+    const tagName = typeof newValue === 'string' ? newValue : newValue.name;
+    const matchingFilter = matchFilterByName(filters, tagName);
     if (matchingFilter?.name === value?.name) {
       setValue(null);
     } else {
-      setValue(matchFilterByName(filters, tag.name));
+      setValue(matchFilterByName(filters, tagName));
     }
   }
 
