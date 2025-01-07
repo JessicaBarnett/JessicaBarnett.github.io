@@ -169,6 +169,7 @@ function App() {
 
           <section ref={ftrRef} id="footer" className="section-footer">
             <div className="content content-footer">
+              <p>curious about this build?  Check out the <a href="/docs/index" target="_blank">storybook here!</a></p>
               {/* Put like, "interested in this build?  see the style guide, or my write up AboutSection it!" in this section too  */}
               {/* <table className="page-stats-table">
               <tbody>
