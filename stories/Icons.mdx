@@ -37,7 +37,7 @@ import IconsManifest from './manifests/IconsManifest.mdx';
   <ul>
     <li>filename should be kebab-case. The script will convert it to CamelCase when naming the component. (ex: `super-cool-cat.svg` will result in component `SuperCoolCatIcon.tsx`)</li>
     <li>use `viewBox="0 0 280 280"` to keep the new icon in line with the others</li>
-    <li>There is no JSX conversion in this script, so you'll have to remove `xml:space="preserve"`, `class` properties, and anything else that isn't JSX-compatible</li>
+    <li>The xml-to-jsx conversion is very rudimentary.  Check the `genIconComponents` `xmlToJsx` function to add additional replacements.</li>
     <li>remove any `fill` attributes if you want the icon to be recolorable!</li>
   </ul>
 
