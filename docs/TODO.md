@@ -7,7 +7,6 @@
 
 - add a filter dropdown for experience section and figure out scroll jankiness
 - animate lines
-
 - more-info section
 
 ----------------------------------------------------------------
@@ -15,21 +14,22 @@
 ----------------------------------------------------------------
 
 #### Bugs
-- add a filter dropdown for experience section and figure out scroll jankiness ***
-- tiled bg texture isn't as nicely tiled as it could be...
+- add a filter dropdown for experience section and figure out scroll jankiness **
+- tiled bg texture isn't as nicely tiled as it could be... **
 - extend texture to the nav
 - go through console warnings
+- texture is missing on bg in light mode?
 
 #### Copy/Content
-- Go over all the copy
+- Go over all the copy **
 - add more to the About Section
 
 #### Small Features
 - "rewind" back to top button!
-- animate lines
+- animate lines **
 
 #### Large Features
-- more-info section
+- more-info section **
 - page transitions (for more-info sections)
   - tiles: https://codepen.io/alvarotrigo/pen/wvpbRmE
   - curtain: https://codepen.io/alvarotrigo/pen/qBpGLYq

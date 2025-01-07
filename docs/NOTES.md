@@ -7,6 +7,9 @@
 - https://svg-path.com/
 - https://freesvgeditor.com/en/svg-editor-online
 
+### Fun projects to do
+- https://stylestage.dev/styles/manual/#contribute
+
 
 ### svgs
 - remove height/width and add voiewbox to be able to scale w/ css
@@ -16,6 +19,8 @@
 - png to svg -> https://designbundles.net/design-school/how-to-convert-a-jpegpng-to-a-vector-in-inkscape
 
 
+### Typescript
+- Got an "object is possibly null" warning that yoou KNOW is not null?  You can use the ! to assert your confidence, ie: `document.getElementById(id)!`.
 
 ### node scripting
 - fs = filesystem w/ callbacks, and fsp = filesystem with promises.
