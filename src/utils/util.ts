@@ -1,11 +1,24 @@
 import { FilterT, TagT } from "../types/data-types.ts";
 
 // Util fns that I can't decide where to put
-
 export const getFilterByName = (filters: FilterT[], filterName: string): FilterT | undefined => {
     return filters.find((filter) => filter.name === filterName)
 }
 
 export const tagSelected = (tag: TagT, selectedTags: TagT[]): boolean => {
     return !!selectedTags.find(selTag => selTag.name === tag.name);
+}
+
+// Polyfill for Object.groupBy
+export const groupBy = <T>(collection: T[], key: string | ((val: T) => string)) => {
+    const keyFn = typeof key === 'string' ? () => key : key;
+    const result: { [key: string]: T[] } = {};
+    return collection.reduce((result,  value) => {
+        if (result[keyFn(value)]) {
+            result[keyFn(value)].push(value);
+        } else {
+            result[keyFn(value)] = [value]
+        }
+        return result;
+    }, result)
 }

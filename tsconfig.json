@@ -1,21 +1,19 @@
 {
   "compilerOptions": {
-    "target": "es2023",
-
-    "useDefineForClassFields": true,
-
+    "target": "ESNext",
+    "module": "ESNext",
     "lib": [ "dom", "DOM.Iterable", "es2023" ],
-    "module": "nodenext",
     "skipLibCheck": true,
 
     /* Bundler mode */
     // "moduleResolution": "bundler",
-    "moduleResolution": "nodenext",
+    "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
     "noEmit": true,
     "jsx": "react-jsx",
+    "useDefineForClassFields": true,
 
     /* Linting */
     "strict": true,

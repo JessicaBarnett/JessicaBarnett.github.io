@@ -25,7 +25,7 @@ import Project from "./components/Project.tsx";
 import ExperienceEntry from "./components/ExperienceEntry.tsx";
 
 // Contact
-import ContactForm from "@src/components/ContactForm.tsx";
+import ContactForm, { FormEventT } from "@src/components/ContactForm.tsx";
 import SocialSidebar from "@src/components/SocialSidebar.tsx";
 import { TagT } from "./types/data-types.ts";
 
@@ -71,7 +71,7 @@ function App() {
     setSelectedFilter(e.target.value);
   };
 
-  const handleFormStateChange = (formEvent: 'pending' | 'error' | 'submitted') => {
+  const handleFormStateChange = (formEvent:FormEventT) => {
     setFormState(formEvent)
   };
 

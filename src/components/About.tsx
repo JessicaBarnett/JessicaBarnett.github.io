@@ -1,7 +1,3 @@
-import { PlayIcon } from "@src/icons/PlayIcon.tsx";
-import { PauseIcon } from "@src/icons/PauseIcon.tsx";
-import { StopIcon } from "@src/icons/StopIcon.tsx";
-
 function AboutSection() {
   return (
     <>

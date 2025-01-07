@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 
+export type FormEventT =  'pending' | 'error' | 'submitted';
+
 type ContactFormComponentProps = {
-  onFormStateChange: (formEvent: 'pending' | 'error' | 'submitted') => void
+  onFormStateChange: (formEvent: FormEventT) => void
 };
 
 const ContactForm = ({onFormStateChange}: ContactFormComponentProps) => {

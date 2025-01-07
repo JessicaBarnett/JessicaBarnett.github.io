@@ -3,7 +3,8 @@
  *
  */
 import { useState, useEffect } from "react";
-import { ProjectT, FilterT, TagT } from "@src/types/data-types";
+import { ProjectT, FilterT, TagT } from "@src/types/data-types.ts";
+import { groupBy } from "@src/utils/util";
 
 export type ProjectsByCompanyT = {
   [key: string]: ProjectT[];
@@ -17,9 +18,9 @@ export type FilteredProjectsT = [
  * groups projects by company name
  */
 const groupProjectsByCompany = (projects: ProjectT[]) => {
-  return Object.groupBy(
+  return groupBy(
     projects,
-    (project) => project.company
+    (project: ProjectT) => project.company
   ) as ProjectsByCompanyT;
 };
 

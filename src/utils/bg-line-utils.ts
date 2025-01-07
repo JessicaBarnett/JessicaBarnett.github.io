@@ -1,4 +1,4 @@
-import { PointT, ElementRefsT, SizesT } from "../types/bg-line-types";
+import { PointT, ElementRefsT, SizesT } from "../types/bg-line-types.ts";
 
 // Tests to determine stuff about each segment of the line,
 // as some of them need to use different offsets when translating
