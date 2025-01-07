@@ -28,7 +28,6 @@ import ExperienceEntry from "./components/ExperienceEntry.tsx";
 import ContactForm, { FormEventT } from "@src/components/ContactForm.tsx";
 import SocialSidebar from "@src/components/SocialSidebar.tsx";
 import { TagT } from "./types/data-types.ts";
-import { StorybookIcon } from "./icons/StorybookIcon.tsx";
 
 function App() {
   const [filters] = useFilters();
