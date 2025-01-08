@@ -58,14 +58,11 @@ export function useFilteredProjects(projects: ProjectT[], filters: FilterT[], se
     }
 
     const filter: FilterT | undefined = getFilterByName(filters, selectedFilter.name);
-
-    console.log('calling updateFilteredProjects')
     const filteredProjects = filter
       ? projects.filter((project) =>
           tagListsHaveMatches(project.tags, filter.tags)
         )
       : projects;
-      console.log(`filtered projects length: ${filteredProjects.length} out of ${projects.length}`)
     setValue(groupProjectsByCompany(filteredProjects));
   }, [selectedFilter, filters, projects]);
 

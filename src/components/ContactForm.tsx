@@ -38,19 +38,15 @@ const ContactForm = ({onFormStateChange}: ContactFormComponentProps) => {
                 body: formatData(form)
             })
             .then(async (response) => {
-
-                const json = await response.json();
                 if (response.status === 200) {
                     setSubmissionError(false);
                     setSubmissionComplete(true);
                 } else {
                     setSubmissionError(true);
-                    console.log(json);
                 }
             })
-            .catch(error => {
+            .catch(() => {
                 setSubmissionError(true);
-                console.log(error);
             })
     }
 

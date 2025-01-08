@@ -10,7 +10,6 @@ import { useData } from '@src/hooks/static/useData.ts';
 export function useProjects() {
   const data = useData();
   const [value] = useState<ProjectT[]>(data.projects);
-  console.log('initing useProjects'); // TODO why is this initing so much????  should be 1 and done...
   return [value];
 }
 

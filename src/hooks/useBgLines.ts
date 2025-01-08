@@ -303,7 +303,6 @@ const drawBgLines = (
   const ctx = refs.canvasRef?.current?.getContext("2d");
 
   if (!ctx || !canvasRef || !canvasRef.current) {
-    console.log("no context/canvasRef/canvasRef.current!");
     return;
   }
 
@@ -352,8 +351,6 @@ export function useBgLines(
 
     drawBgLinesWRefsApplied();
     window.addEventListener("resize", drawBgLinesWRefsApplied);
-
-    console.log('redrawing lines')
 
     return () => window.removeEventListener("resize", drawBgLinesWRefsApplied); // cleanup fn
   }, [refs, filteredProjects, formState, breakpoints, colors]);

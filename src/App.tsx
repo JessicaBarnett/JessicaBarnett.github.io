@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 
 // Hooks
 import { useFilters } from "@src/hooks/static/useFilters.ts";
@@ -41,6 +41,12 @@ function App() {
     selectedFilter
   );
 
+  type TagScrollEventT = {
+    target: EventTarget & Element | undefined,
+    y: number
+  }
+  const [tagScrollEvent, setTagScrollEvent] = useState<TagScrollEventT | null>();
+
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const pageRef = useRef<HTMLDivElement | null>(null);
   const ttlRef = useRef<HTMLElement | null>(null);
@@ -76,9 +82,29 @@ function App() {
     setFormState(formEvent)
   };
 
-  const handleTagSelect = (tag: TagT) => {
+  const handleTagSelect = (tag: TagT, e: React.MouseEvent) => {
+      setTagScrollEvent({
+        target: e.currentTarget,
+        y: e.currentTarget.getBoundingClientRect().y
+      })
       setSelectedFilter(tag);
   };
+
+  useLayoutEffect(() => {
+      setTimeout(function() {
+        if (tagScrollEvent && tagScrollEvent.target && tagScrollEvent.y) {
+          const newViewportOffset = tagScrollEvent.target.getBoundingClientRect().y;
+          const newScrollPos = newViewportOffset - tagScrollEvent.y + window.scrollY;
+          window.scrollTo({ top: newScrollPos })
+          console.dir({
+            newScrollPos,
+            newViewportOffset,
+            ...tagScrollEvent,
+          })
+          setTagScrollEvent(null)
+        }
+      }, 100);
+  }, [tagScrollEvent]);
 
   return (
     <>

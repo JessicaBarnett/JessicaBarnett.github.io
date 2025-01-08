@@ -6,7 +6,6 @@ type ScrollPositionT = {
 }
 
 const updatePosition = (scrollPosition: ScrollPositionT, setScrollPosition: React.Dispatch<React.SetStateAction<ScrollPositionT>>) => {
-    console.log(scrollPosition)
     setScrollPosition({
         previous: scrollPosition.current,
         current: window.scrollY

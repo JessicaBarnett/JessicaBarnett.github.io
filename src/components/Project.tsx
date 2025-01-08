@@ -1,11 +1,12 @@
 import { ProjectT, TagT } from "@src/types/data-types.tsx";
 import Tag from "@src/components/Tag.tsx";
 import { tagSelected } from "@src/utils/util.ts";
+import React from "react";
 
 type ProjectComponentProps = {
   project: ProjectT,
   selectedTags: TagT[],
-  onTagSelect: (tag: TagT) => void
+  onTagSelect: (tag: TagT, e: React.MouseEvent) => void
 };
 
 const Project = ({project, selectedTags, onTagSelect}: ProjectComponentProps) => {
