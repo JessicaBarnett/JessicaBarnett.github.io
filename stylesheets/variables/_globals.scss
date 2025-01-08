@@ -18,6 +18,9 @@ $paper-texture-url: url('/assets/images/concrete-wall-tileable.jpg');
 $text-transition: .1s ease-in;
 $bg-transition: .2s ease-in;
 
+$nav-height: 45px;
+$nav-height-med: 60px;
+
 // Normal
 $body-bg-color: #000;
 $page-bg-color: #fff;
@@ -27,6 +30,7 @@ $border-color: #000;
 $highlight-text-color: #fff;
 $highlight-bg-color: #000;
 $highlight-border-color: #000;
+$paper-texture-opacity: 20%;
 
 
 // Dark mode
@@ -38,3 +42,4 @@ $drk-border-color: #1f1f1f; // #161616
 $drk-highlight-text-color: #fff;
 $drk-highlight-bg-color: #000;
 $drk-highlight-border-color: #000;
+$drk-paper-texture-opacity: 10%;

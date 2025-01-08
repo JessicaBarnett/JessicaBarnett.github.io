@@ -26,7 +26,7 @@ const FilterSelect = ({
     >
       <option value="">All</option>
       {filters.map((filter) => (
-        <option value={filter.name} data-tags={filter.tags}>
+        <option key={filter.name} value={filter.name} data-tags={filter.tags}>
           {filter.displayName}
         </option>
       ))}

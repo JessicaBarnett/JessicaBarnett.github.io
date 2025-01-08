@@ -16,15 +16,19 @@
   height: 100%;
   width: 100%;
   padding-bottom: 16px;
-  margin-top: 45px; // account for nav height
+  margin-top: $nav-height;
+
+  @include only-above($medium-bp) {
+    margin-top: $nav-height-med;
+  }
 
   &:before {
     @include paper-texture-overlay();
-    opacity: 20%;
+    opacity: $paper-texture-opacity;
     z-index: 0;
 
     @include dark-mode() {
-      opacity: 10%;
+      opacity: $drk-paper-texture-opacity;
     }
   }
 }
@@ -46,6 +50,10 @@
   margin-bottom: 180px;
   z-index: 1;
 
+  @include only-above($medium-bp) {
+    border-radius: 10px;
+  }
+
   @include only-above($wide-bp) {
     max-width: $page-max-width;
   }
@@ -53,7 +61,7 @@
   &:after {
     @include paper-texture-overlay();
     z-index: 2;
-    opacity: 20%;
+    opacity: $paper-texture-opacity;
     pointer-events: none;
   }
 
@@ -62,7 +70,7 @@
     color: $drk-text-color;
 
     &:after {
-      opacity: 13%;
+      opacity: $drk-paper-texture-opacity;
     }
   }
 }

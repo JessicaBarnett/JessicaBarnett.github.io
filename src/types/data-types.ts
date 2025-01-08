@@ -18,6 +18,7 @@ export type FilterT = {
 };
 
 export type ExperienceEntryT = {
+    id: string,
     title: string,
     company: string,
     start: string,

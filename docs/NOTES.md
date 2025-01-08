@@ -21,6 +21,7 @@
 
 ### Typescript
 - Got an "object is possibly null" warning that yoou KNOW is not null?  You can use the ! to assert your confidence, ie: `document.getElementById(id)!`.
+
 - Overloads!!  Never done these before [but I like them!](https://www.typescripttutorial.net/typescript-tutorial/typescript-function-overloadings/)
 ```typescript
     // hook return type
@@ -73,7 +74,7 @@
 - refObjects have a .current, ref callbacks don't.
   I need to distinctify between Ref (joined type, could NOT have a current) and RefObject
   `import { RefObject, useLayoutEffect } from "react";`
-
+- trying to add a key to a react fragment? Use the Fn instead! ```<React.Fragment key={companyName}>/* ... */React.Fragment>```
 
 ## JSX
 - Nested loop example (mind your parens...)

@@ -11,12 +11,13 @@ type ProjectComponentProps = {
 
 const Project = ({project, selectedTags, onTagSelect}: ProjectComponentProps) => {
   return (
-    <li className="entry" key={project.id}>
+    <li className="entry">
       <h5 className="title-3">{project.title}</h5>
       <p>{project.description}</p>
 
       {project.tags.map((tag: TagT) => (
         <Tag
+          key={`${project.id}-${tag.name}`}
           tag={tag}
           isSelected={tagSelected(tag, selectedTags)}
           onClick={onTagSelect}

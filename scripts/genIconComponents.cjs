@@ -33,6 +33,7 @@ const xmlToJsx = (xml) => {
     .replaceAll('fill-rule', 'fillRule')
     .replaceAll('clip-rule', 'clipRule')
     .replaceAll('class', 'className');
+
 }
 
 const manifestContent = (componentNames) => {
