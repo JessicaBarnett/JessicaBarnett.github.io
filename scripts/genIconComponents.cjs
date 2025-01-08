@@ -25,10 +25,13 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {};
 `};
 
+// should consider a real xml parser
 const xmlToJsx = (xml) => {
   return xml.replaceAll('xmlns:xlink', 'xmlnsXlink')
     .replaceAll('xlink:href', 'xlinkHref')
     .replaceAll('xml:space', 'xmlSpace')
+    .replaceAll('fill-rule', 'fillRule')
+    .replaceAll('clip-rule', 'clipRule')
     .replaceAll('class', 'className');
 }
 
