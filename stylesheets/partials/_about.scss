@@ -13,16 +13,16 @@ em {
 
 // Hello.
 .deco-font-1 {
-  @include font-size(3.2rem);
+  @include font-size(2.8rem);
   @include title;
   line-height: 3rem; // unique
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 16px;
 }
 
 // My name is...
 .deco-font-2 {
-  @include font-size(2.2rem);
+  @include font-size(2rem);
     margin-bottom: 1rem;
     font-weight: 400;
     margin-bottom: 24px;
