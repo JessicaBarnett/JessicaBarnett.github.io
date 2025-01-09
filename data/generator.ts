@@ -34,6 +34,7 @@ export const projectsGen = (num = random()): ProjectT[] => multiGen(projectGen, 
 
 export const experienceEntryGen = (idx = random()): ExperienceEntryT => {
     return {
+        id: 'job-${idx}',
         title: `Job Title ${idx}`,
         company: "Company Name",
         start: "20XX",

@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { useLayoutEffect, useRef, useState } from "react";
+import { /*useLayoutEffect,*/ useRef, useState } from "react";
 
 // Hooks
 import { useFilters } from "@src/hooks/static/useFilters.ts";
@@ -44,12 +44,12 @@ function App() {
     selectedFilter
   );
 
-  type TagScrollEventT = {
-    target: React.MutableRefObject<HTMLButtonElement | null>,
-    viewportOffset: number,
-    distFromTop: number
-  }
-    const [tagScrollEvent, setTagScrollEvent] = useState<TagScrollEventT | null>();
+  // type TagScrollEventT = {
+  //   target: React.MutableRefObject<HTMLButtonElement | null>,
+  //   viewportOffset: number,
+  //   distFromTop: number
+  // }
+  // const [tagScrollEvent, setTagScrollEvent] = useState<TagScrollEventT | null>();
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const pageRef = useRef<HTMLDivElement | null>(null);
@@ -88,7 +88,7 @@ function App() {
     setFormState(formEvent)
   };
 
-  const handleTagSelect = (tag: TagT, e: React.MouseEvent) => {
+  const handleTagSelect = (tag: TagT, /*e: React.MouseEvent*/) => {
       // setTagScrollEvent({
       //   target: useRef(e.currentTarget),
       //   viewportOffset: e.currentTarget.getBoundingClientRect().y,
@@ -200,7 +200,6 @@ function App() {
         >
           <div className="content content-contact grid-at-med">
             <SectionHeading>Contact</SectionHeading>
-
             <ContactForm onFormStateChange={handleFormStateChange}
             ></ContactForm>
             <SocialSidebar></SocialSidebar>
