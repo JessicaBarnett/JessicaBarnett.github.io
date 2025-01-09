@@ -1,3 +1,70 @@
+/******************************************
+        Forwarder Variables file
+    forwards all other Variable files,
+    so if you have this one you shouldn't
+    need colors/rainbow/breakpoints
+*******************************************/
+/**************
+      GRID
+***************/
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 12fr);
+  grid-gap: 16px;
+}
+.grid > * {
+  grid-column: auto/span 12;
+}
+.grid .half {
+  grid-column: auto/span 6;
+}
+.grid .one-third {
+  grid-column: auto/span 4;
+}
+.grid .two-third {
+  grid-column: auto/span 8;
+}
+
+@media (min-width: 560px) {
+  .grid-at-small {
+    display: grid;
+    grid-template-columns: repeat(12, 12fr);
+    grid-gap: 16px;
+  }
+  .grid-at-small > * {
+    grid-column: auto/span 12;
+  }
+  .grid-at-small .half {
+    grid-column: auto/span 6;
+  }
+  .grid-at-small .one-third {
+    grid-column: auto/span 4;
+  }
+  .grid-at-small .two-third {
+    grid-column: auto/span 8;
+  }
+}
+
+@media (min-width: 769px) {
+  .grid-at-med {
+    display: grid;
+    grid-template-columns: repeat(12, 12fr);
+    grid-gap: 16px;
+  }
+  .grid-at-med > * {
+    grid-column: auto/span 12;
+  }
+  .grid-at-med .half {
+    grid-column: auto/span 6;
+  }
+  .grid-at-med .one-third {
+    grid-column: auto/span 4;
+  }
+  .grid-at-med .two-third {
+    grid-column: auto/span 8;
+  }
+}
+
 /* enforces line heights */
 /**************
     BUTTONS
@@ -227,67 +294,6 @@ tr {
 table {
   border-collapse: collapse;
   border: 1px solid #000;
-}
-
-/**************
-      GRID
-***************/
-.grid {
-  display: grid;
-  grid-template-columns: repeat(12, 12fr);
-  grid-gap: 16px;
-}
-.grid > * {
-  grid-column: auto/span 12;
-}
-.grid .half {
-  grid-column: auto/span 6;
-}
-.grid .one-third {
-  grid-column: auto/span 4;
-}
-.grid .two-third {
-  grid-column: auto/span 8;
-}
-
-@media (min-width: 560px) {
-  .grid-at-small {
-    display: grid;
-    grid-template-columns: repeat(12, 12fr);
-    grid-gap: 16px;
-  }
-  .grid-at-small > * {
-    grid-column: auto/span 12;
-  }
-  .grid-at-small .half {
-    grid-column: auto/span 6;
-  }
-  .grid-at-small .one-third {
-    grid-column: auto/span 4;
-  }
-  .grid-at-small .two-third {
-    grid-column: auto/span 8;
-  }
-}
-
-@media (min-width: 769px) {
-  .grid-at-med {
-    display: grid;
-    grid-template-columns: repeat(12, 12fr);
-    grid-gap: 16px;
-  }
-  .grid-at-med > * {
-    grid-column: auto/span 12;
-  }
-  .grid-at-med .half {
-    grid-column: auto/span 6;
-  }
-  .grid-at-med .one-third {
-    grid-column: auto/span 4;
-  }
-  .grid-at-med .two-third {
-    grid-column: auto/span 8;
-  }
 }
 
 .nav {

@@ -1,7 +1,4 @@
 @use "./_breakpoints" as *;
-@forward "./_breakpoints";
-@forward "./_colors";
-@forward "./_rainbow";
 
 $primary-font: 'Inter', Arial, Helvetica, sans-serif;
 $accent-font: 'Lester Bold';

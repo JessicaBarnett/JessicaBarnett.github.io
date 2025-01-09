@@ -1,4 +1,4 @@
-@use '../variables/globals' as *;
+@use '../variables/variables' as *;
 
 @mixin absolute-overlay() {
     position: absolute;

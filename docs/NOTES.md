@@ -67,6 +67,16 @@ you might be trying to spread an array into an object or destructure an object i
 - fs = filesystem w/ callbacks, and fsp = filesystem with promises.
 
 
+### Scss
+@forward is the new @import!! just remember that @forward DOES NOT REPLACE @use if you actuaoly need to use that variable in that file.  In that case ypu need both @forward and @use. ex:
+```scss
+@use './variables' as *; // you need this too!!
+@forward './variables';
+
+background-color: $variable-from-variables;
+```
+
+
 ### regex
 - reference regex capturing groups in the replace function callback to convert kebab-case-variable-names to camelCaseVariablesNames.  see copyScssVarsToJson.cjs file and look at: https://stackoverflow.com/questions/3954927/how-to-replace-captured-groups-only
 

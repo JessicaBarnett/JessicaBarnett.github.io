@@ -1,9 +1,10 @@
 // Variables
-@use './variables/globals' as *; // forwards colors, rainbow, breakpoints
+@use './variables/variables' as *; // forwards colors, rainbow, breakpoints
 
 
 // utils
 @use "./utilities/media-queries" as *;
+@use "./utilities/grid";
 
 // elements
 @use "./elements/buttons";
@@ -13,9 +14,6 @@
 @use "./elements/links";
 @use "./elements/lists";
 @use "./elements/tables";
-
-
-@use "./utilities/grid";
 
 // partials
 @use "./partials/navigation";
