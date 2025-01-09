@@ -52,7 +52,7 @@ const ContactForm = ({onFormStateChange}: ContactFormComponentProps) => {
 
     return (
         <div className="two-third">
-            <p className={`submission-msg ${!sumbissionComplete ? "hidden" : ""}`}>Message Success!  Thanks a lot for you for your interest.  You'll be hearing back from me shortly :&#41;</p>
+            <p className={`submission-msg ${!sumbissionComplete ? "hidden" : ""}`}>Message Success!  Thanks a lot for your interest.  You'll be hearing back from me soon :&#41;</p>
             <p className={`error-msg ${!sumbissionError ? "hidden" : ""}`}>So Sorry!  There was an error submitting your message.  Please give it another try!</p>
             <form
                 className={`contact-form ${sumbissionComplete ? "hidden" : ""}`}

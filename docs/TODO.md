@@ -5,30 +5,26 @@
 ## In Progress
 ----------------------------------------------------------------
 
-- more-info section (higher impact, but more involved)
-- figure out scroll jankiness (bugfix, high impact)
-- animate lines (might be an easy win?)
+- figure out scroll jankiness **
+- more-info section
+- animate lines
+- Go over all the copy **
 
 ----------------------------------------------------------------
 ## Backlog
 ----------------------------------------------------------------
 
 #### Bugs
-- add a filter dropdown for experience section and figure out scroll jankiness **
+- figure out scroll jankiness **
 - tiled bg texture isn't as nicely tiled as it could be... **
-- extend texture to the nav
-- go through console warnings
-- texture is missing on bg in light mode?
 
 #### Copy/Content
 - Go over all the copy **
-- add more to the About Section
 
-#### Small Features
+#### Features
 - "rewind" back to top button!
 - animate lines **
-
-#### Large Features
+- switch for dark mode
 - more-info section **
 - page transitions (for more-info sections)
   - tiles: https://codepen.io/alvarotrigo/pen/wvpbRmE
@@ -43,14 +39,8 @@
 - what knobs can I add to the stories?
 
 #### Organization
-- minimize css imports?
 - grid? other layout one-offs?  consolidation?
-- organize media query usage?
 - standardize linter settings?
-
-#### Investigations
-- can trapezoids be cutouts instead? can css do that?  maybe with svg?
-
 
 ----------------------------------------------------------------
 ## Notes
