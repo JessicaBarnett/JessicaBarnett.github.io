@@ -1,8 +1,5 @@
 /******************************************
         Forwarder Variables file
-    forwards all other Variable files,
-    so if you have this one you shouldn't
-    need colors/rainbow/breakpoints
 *******************************************/
 /**************
       GRID
@@ -503,6 +500,9 @@ em {
   }
 }
 
+/******************************************
+        Forwarder Utilities file
+*******************************************/
 /*
   We have a selector that can select based on the previous
   sibling's class...
