@@ -11,10 +11,7 @@ function AboutSection() {
                 </p>
                 <div className="paragraph-group">
                     <p className="indent-2 deco-font-3 ">
-                        I've been crafting <em>beautiful user experiences</em> since 2013, and <em>high-quality backends</em> since 2021.
-                    </p>
-                    <p className="indent-2 deco-font-3">
-                        I lead with my heart in all things, and strive to <em>use technology to make people's lives easier</em>, one tappity-tap at a time.
+                        I've been crafting <em>beautiful user experiences</em> since 2013, and <em>high-quality backends</em> since 2021.  I lead with my heart in all things, and strive to <em>use technology to make people's lives easier</em>, one tappity-tap at a time.
                     </p>
                 </div>
                 <p className="deco-font-4 emphasized-p">
