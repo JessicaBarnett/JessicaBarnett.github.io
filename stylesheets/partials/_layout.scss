@@ -17,10 +17,7 @@
   width: 100%;
   padding-bottom: 16px;
   margin-top: $nav-height;
-
-  @include only-above($medium-bp) {
-    margin-top: $nav-height-med;
-  }
+  padding-top: $nav-height;
 
   &:before {
     @include paper-texture-overlay();

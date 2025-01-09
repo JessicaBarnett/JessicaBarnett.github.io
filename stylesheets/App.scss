@@ -80,10 +80,30 @@ section {
   white-space: nowrap;
 }
 
+// .deco-font-2 {
+//   font-size: 2.2rem;
+//   margin-bottom: 1rem;
+//   font-weight: 400;
+// }
+
 .outdent-1 {
   margin-left: -1rem;
 }
 
+.indent-1 {
+  margin-left: 1rem;
+}
+
 .indent-2 {
   margin-left: 2rem;
+}
+
+.indent-3 {
+  margin-left: 3rem;
+}
+
+*:focus-visible {
+  outline: none;
+  box-shadow: rgba($pink, .3) 3px 3px 3px, rgba($pink, .3) -3px -3px 3px;
+  border: 2px solid $pink !important;
 }

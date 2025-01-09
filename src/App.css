@@ -79,6 +79,11 @@ input {
   padding: 8px 4px;
   margin-bottom: 8px;
 }
+input:focus {
+  outline: none;
+  box-shadow: rgba(226, 0, 106, 0.3) 3px 3px 3px, rgba(226, 0, 106, 0.3) -3px -3px 3px;
+  border: 2px solid #E2006A;
+}
 @media (prefers-color-scheme: dark) {
   input {
     color: #fff;
@@ -97,6 +102,11 @@ textarea {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   min-height: 250px;
   margin-bottom: 8px;
+}
+textarea:focus {
+  outline: none;
+  box-shadow: rgba(226, 0, 106, 0.3) 3px 3px 3px, rgba(226, 0, 106, 0.3) -3px -3px 3px;
+  border: 2px solid #E2006A;
 }
 @media (prefers-color-scheme: dark) {
   textarea {
@@ -121,6 +131,11 @@ select {
   background-color: #fff;
   padding: 8px 4px;
   padding: 4px 32px 4px 8px;
+}
+select:focus {
+  outline: none;
+  box-shadow: rgba(226, 0, 106, 0.3) 3px 3px 3px, rgba(226, 0, 106, 0.3) -3px -3px 3px;
+  border: 2px solid #E2006A;
 }
 
 /**************
@@ -313,11 +328,6 @@ table {
   margin: 0 auto;
   height: 45px;
 }
-@media (min-width: 769px) {
-  .nav-links {
-    height: 60px;
-  }
-}
 .nav-links span {
   vertical-align: middle;
 }
@@ -334,19 +344,13 @@ table {
   white-space: nowrap;
   padding: 4px 8px;
   border: none;
-  border-radius: 3px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: bold;
   color: #FFF;
   background-color: #000;
   text-transform: lowercase;
   text-align: center;
-}
-@media (min-width: 769px) {
-  .nav-link {
-    height: 60px;
-    border-radius: 10px;
-  }
 }
 .nav-link:hover {
   color: #000;
@@ -402,6 +406,10 @@ table {
 /*************
   About
 **************/
+em {
+  font-style: normal;
+}
+
 .deco-font-1 {
   font-size: 3.2rem;
   line-height: 3.8rem;
@@ -409,17 +417,44 @@ table {
   font-weight: 700;
   line-height: 3rem;
   font-weight: 700;
+  margin-bottom: 16px;
 }
 
 .deco-font-2 {
-  font-size: 1.2rem;
-  line-height: 1.8rem;
-  line-height: 1.8rem;
+  font-size: 2.2rem;
+  line-height: 2.8rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  margin-bottom: 24px;
 }
 
 .deco-font-3 {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}
+.deco-font-3 em {
   font-size: 1.4rem;
   line-height: 2rem;
+  font-weight: 400;
+}
+
+.deco-font-4 {
+  font-size: 1rem;
+  line-height: 1.6rem;
+}
+
+.paragraph-group {
+  margin-bottom: 24px;
+}
+
+.emphasized-p {
+  width: 80%;
+  border: 1px solid black;
+  padding: 12px;
+  border-radius: 5px;
+  margin: 16px auto;
+  transform: rotate(-2deg);
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 3px 0;
 }
 
 .social-sidebar {
@@ -489,11 +524,7 @@ table {
   width: 100%;
   padding-bottom: 16px;
   margin-top: 45px;
-}
-@media (min-width: 769px) {
-  .background {
-    margin-top: 60px;
-  }
+  padding-top: 45px;
 }
 .background:before {
   content: "";
@@ -700,10 +731,6 @@ CONTENT
 ***************/
 :is(h1, h2, h3, h4, h5, h6, p, em, i) {
   margin: 0 0 4px 0;
-}
-
-:is(em, i) {
-  font: inherit;
 }
 
 p {
@@ -1008,8 +1035,22 @@ section {
   margin-left: -1rem;
 }
 
+.indent-1 {
+  margin-left: 1rem;
+}
+
 .indent-2 {
   margin-left: 2rem;
+}
+
+.indent-3 {
+  margin-left: 3rem;
+}
+
+*:focus-visible {
+  outline: none;
+  box-shadow: rgba(226, 0, 106, 0.3) 3px 3px 3px, rgba(226, 0, 106, 0.3) -3px -3px 3px;
+  border: 2px solid #E2006A !important;
 }
 
 /*# sourceMappingURL=App.css.map */

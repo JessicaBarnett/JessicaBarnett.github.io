@@ -14,6 +14,12 @@
     width: 100%;
     background-color: $page-bg-color;
     padding: 8px 4px;
+
+    &:focus {
+        outline: none;
+        box-shadow: rgba($pink, .3) 3px 3px 3px, rgba($pink, .3) -3px -3px 3px;
+        border: 2px solid $pink;
+    }
 }
 
 form {

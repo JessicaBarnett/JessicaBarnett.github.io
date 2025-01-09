@@ -33,10 +33,6 @@
   margin: 0 auto;
   height: $nav-height;
 
-  @include only-above($medium-bp) {
-    height: $nav-height-med;
-  }
-
   span {
     vertical-align: middle;
   }
@@ -56,18 +52,13 @@
   white-space: nowrap;
   padding: 4px 8px;
   border: none;
-  border-radius: 3px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: bold;
   color: $white;
   background-color: $black;
   text-transform: lowercase;
   text-align: center;
-
-  @include only-above($medium-bp) {
-    height: $nav-height-med;
-    border-radius: 10px;
-  }
 
   &:hover {
     color: $black;

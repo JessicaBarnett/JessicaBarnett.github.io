@@ -3,33 +3,25 @@ function AboutSection() {
     <>
         <div className="content  section-about">
             <div className="indent-2">
-                <p className="deco-font-1">
-                    <em className="outdent-1">Hello.</em>
+                <p className="outdent-1 deco-font-1">
+                    Hello.
                 </p>
-                <p className="deco-font-2 ">
-                    My name is Jessica{" "}
-                    <span className="nowrap">and I make web things.</span>
+                <p className="indent-1 deco-font-2 ">
+                    My name is Jessica!
+                </p>
+                <div className="paragraph-group">
+                    <p className="indent-2 deco-font-3 ">
+                        I've been crafting <em>beautiful user experiences</em> since 2013, and <em>high-quality backends</em> since 2021.
+                    </p>
+                    <p className="indent-2 deco-font-3">
+                        I lead with my heart in all things, and strive to <em>use technology to make people's lives easier</em>, one tappity-tap at a time.
+                    </p>
+                </div>
+                <p className="deco-font-4 emphasized-p">
+                    Want to work with me?  Great!  Drop me a line using the <a className="link" href="#contact">contact form</a> below!  Otherwise, Feel free to peruse my <a className="link" href="#projects">projects</a> and <a className="link" href="#projects">experience</a> below.
                 </p>
             </div>
-            {/* <div className="flex">
 
-                <div>
-                    <PlayIcon></PlayIcon>
-                    <h3>Software Development</h3>
-                    <p>Experienced in development of both front and back end systems.  Ruby, Typescript</p>
-                </div>
-                <div>
-                    <PauseIcon></PauseIcon>
-                    <h3>Front End Dev, React, Angular</h3>
-                    <p>Passionate about UI/UX.  Over 8 years of development experience in Html, Css, JS, Angular, and React.</p>
-                </div>
-                <div>
-                    <StopIcon></StopIcon>
-                    <h3>Web Designer</h3>
-                    <p>Skilled in creating and designing high-end visuals and animations with css3 and webgl</p>
-                </div>
-
-            </div> */}
         </div>
     </>
   );

@@ -1,9 +1,15 @@
 @use '../utilities/font-size' as *;
 @use '../utilities/titles' as *;
+@use '../variables/colors' as *;
 
 /*************
   About
 **************/
+
+
+em {
+  font-style: normal;
+}
 
 // Hello.
 .deco-font-1 {
@@ -11,16 +17,53 @@
   @include title;
   line-height: 3rem; // unique
   font-weight: 700;
+  margin-bottom: 16px;
 }
 
 // My name is...
 .deco-font-2 {
-  @include font-size(1.2rem);
-  line-height: 1.8rem; // unique
+  @include font-size(2.2rem);
+    margin-bottom: 1rem;
+    font-weight: 400;
+    margin-bottom: 24px;
 }
 
 // thanks for...
 .deco-font-3 {
-  @include font-size(1.4rem);
+  @include font-size(1.2rem);
+
+  em{
+    @include font-size(1.4rem);
+    font-weight: 400;
+  }
 }
 
+.deco-font-4 {
+  @include font-size(1rem);
+}
+
+
+.paragraph-group {
+  margin-bottom: 24px;
+
+
+  // &:after {
+  //   display: block;
+  //   position: relative;
+  //   width: 30px;
+  //   height: 2px;
+  //   background-color: $black;
+  //   content: '';
+  //   margin: 16px auto;
+  // }
+}
+
+.emphasized-p {
+  width: 80%;
+  border: 1px solid black;
+  padding: 12px;
+  border-radius: 5px;
+  margin: 16px auto;
+  transform: rotate(-2deg);
+  box-shadow: rgba($black, .3) 2px 2px 3px 0
+}
