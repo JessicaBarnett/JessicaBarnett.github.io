@@ -3,6 +3,7 @@ const path = require('path');
 
 const cssColorsPath = './stylesheets/variables/_colors.scss';
 const cssBreakpointsPath = './stylesheets/variables/_breakpoints.scss';
+const cssRainbowPath = './stylesheets/variables/_rainbow.scss';
 
 const jsSharedVarsPath = './data/css-variables.json';
 const tsTypesPath = './src/types/css-variables-types.ts';
@@ -63,6 +64,8 @@ async function run() {
   const sharedVars = {};
   sharedVars.colors = await getSharedVariables(cssColorsPath);
   sharedVars.breakpoints = await getSharedVariables(cssBreakpointsPath);
+  sharedVars.rainbow = await getSharedVariables(cssRainbowPath);
+
 
   console.log(`writing the following to ${jsSharedVarsPath}`);
   console.log(sharedVars)

@@ -15,5 +15,11 @@
         "wideBp": "1280px",
         "extraWideBp": "1440px",
         "hdBp": "1920px"
+    },
+    "rainbow": {
+        "lineWidthXsm": "10px",
+        "lineWidthSm": "15px",
+        "lineWidthMed": "20px",
+        "lineWidthLg": "25px"
     }
 }

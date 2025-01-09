@@ -9,7 +9,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "copyCssVars": "node ./scripts/copyScssVarsToJson.cjs",
+    "cssVars": "node ./scripts/shareCssVars.cjs",
     "genIcons": "node ./scripts/genIconComponents.cjs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"

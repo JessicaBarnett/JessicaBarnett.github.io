@@ -20,6 +20,21 @@
 
 
 ### Typescript
+- need to tell the compiler or linter to ignore an error?  I always have to look this up...
+```typescript
+// tslint:disable-next-line
+// @ts-expect-error: Let's ignore a compile error like this unreachable code
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// eslint-disable-next-line
+// @typescript-eslint/ban-ts-comment
+```
+
+- "Type 'CssVariablesT' must have a '[Symbol.iterator]()' method that returns an iterator."
+
+REMEMBER THIS BECAUSE IT HAPPENS A LOT
+
+you might be trying to spread an array into an object or destructure an object into an array
+
 - Got an "object is possibly null" warning that yoou KNOW is not null?  You can use the ! to assert your confidence, ie: `document.getElementById(id)!`.
 
 - Overloads!!  Never done these before [but I like them!](https://www.typescripttutorial.net/typescript-tutorial/typescript-function-overloadings/)
@@ -74,7 +89,8 @@
 - refObjects have a .current, ref callbacks don't.
   I need to distinctify between Ref (joined type, could NOT have a current) and RefObject
   `import { RefObject, useLayoutEffect } from "react";`
-- trying to add a key to a react fragment? Use the Fn instead! ```<React.Fragment key={companyName}>/* ... */React.Fragment>```
+- trying to add a key to a react fragment? Use the Fn instead! ```<React.Fragment key={companyName}>/* ... */React.Fragment>``` https://bobbyhadz.com/blog/react-add-key-to-fragment
+-
 
 ## JSX
 - Nested loop example (mind your parens...)

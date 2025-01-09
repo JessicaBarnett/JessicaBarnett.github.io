@@ -1,6 +1,9 @@
 // Variables
-@use './variables/colors' as *;
-@use './variables/globals' as *;
+@use './variables/globals' as *; // forwards colors, rainbow, breakpoints
+
+
+// utils
+@use "./utilities/media-queries" as *;
 
 // elements
 @use "./elements/buttons";
@@ -58,6 +61,28 @@
 body {
   margin: 0;
   scroll-behavior: smooth;
+
+
+  // CSS Variables
+  --rainbow-w: calc(#{$line-width-xsm} * 5);
+  --double-rainbow-w: calc(#{$line-width-xsm}  * 10);
+  --content-gap: #{$content-gap};
+
+  @include only-above($small-bp) {
+    --rainbow-w: calc(#{$line-width-sm} * 5);
+    --double-rainbow-w: calc(#{$line-width-sm} * 10);
+  }
+
+  @include only-above($medium-bp) {
+    --rainbow-w: calc(#{$line-width-med} * 5);
+    --double-rainbow-w: calc(#{$line-width-med} * 10);
+    --content-gap: #{$content-gap-med};
+  }
+
+  @include only-above($extra-wide-bp) {
+    --rainbow-w: calc(#{$line-width-lg} * 5);
+    --double-rainbow-w: calc(#{$line-width-lg} * 10);
+  }
 }
 
 section {
@@ -79,12 +104,6 @@ section {
 .nowrap {
   white-space: nowrap;
 }
-
-// .deco-font-2 {
-//   font-size: 2.2rem;
-//   margin-bottom: 1rem;
-//   font-weight: 400;
-// }
 
 .outdent-1 {
   margin-left: -1rem;

@@ -1,5 +1,7 @@
 @use "./_breakpoints" as *;
-@use "./_colors" as *;
+@forward "./_breakpoints";
+@forward "./_colors";
+@forward "./_rainbow";
 
 $primary-font: 'Inter', Arial, Helvetica, sans-serif;
 $accent-font: 'Lester Bold';
@@ -8,7 +10,7 @@ $page-min-width: $mini-bp;
 $page-med-width: 960px;
 $page-max-width: 1080px;
 
-$body-font-xsm: .9rem;
+$body-font-xsm: .8rem;
 $body-font-sm: 1rem;
 $body-font-med: 1.2rem;
 $body-font-lg: 1.6rem;
@@ -19,7 +21,9 @@ $text-transition: .1s ease-in;
 $bg-transition: .2s ease-in;
 
 $nav-height: 45px;
-// $nav-height-med: 60px;
+
+$content-gap: 8px;
+$content-gap-med: 16px;
 
 // Normal
 $body-bg-color: #000;

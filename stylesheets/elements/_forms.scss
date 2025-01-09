@@ -1,5 +1,4 @@
 @use "../variables/globals" as *;
-@use "../variables/breakpoints" as *;
 @use "../utilities/media-queries" as *;
 @use "../variables/colors" as *;
 
@@ -42,7 +41,7 @@ form {
 label {
     display: block;
     margin-bottom: 4px;
-    font-size: $body-font-sm;
+    font-size: $body-font-med;
 }
 
 input {

@@ -56,7 +56,6 @@
 ## Notes
 ----------------------------------------------------------------
 
-
 can I pin to the element (btn) that was clicked?
 
 
@@ -65,3 +64,13 @@ like, get the scroll offset of the element I clicked on post-adjustment,
 https://ux.stackexchange.com/questions/147067/is-there-a-standard-algorithm-for-maintaining-scroll-position-of-a-list-when-the
 
 I didn't realize there was a ux stackexchange!
+
+
+What I really want... is the position of the btn from the top of the viewport
+
+- get position of the btn that was clicked (from top) (before list shift)
+-
+-
+
+// how to SET the position of an element relative to the viewport
+I can GET it with boundingClientRect

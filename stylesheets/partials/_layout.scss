@@ -1,3 +1,4 @@
+@use "../variables/rainbow" as *;
 @use "../variables/colors" as *;
 @use "../variables/globals" as *;
 @use "../variables/breakpoints" as *;
@@ -101,9 +102,13 @@ CONTENT
 
 .content {
   max-width: 720px;
-  padding: 4rem 64px;
-  margin: 0 auto;
+  margin: 0 var(--rainbow-w);
+  padding: 4rem var(--content-gap);
   @include vertical-spacing("section");
+}
+
+.content-about {
+  padding: 5rem var(--content-gap);
 }
 
 
@@ -145,9 +150,7 @@ CONTENT
 
 .content-experience {
   max-width: 80%;
-  margin: 0 auto;
-  margin-left: 12%;
-  padding: 4rem 0 4rem 63px;
+  margin: 0 42px 0 var(--double-rainbow-w);
 
   .title-2 {
     margin-left: -25px;
@@ -155,12 +158,13 @@ CONTENT
 }
 
 .content-contact {
-  padding: 4rem 72px 10px 56px;
+  // padding: 4rem 72px 10px 56px;
   min-height: 560px;
 }
 
 .content-footer {
   text-align: center;
+  padding-bottom: calc(var(--rainbow-w) + 8px);
 }
 
 

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "lib": [ "dom", "DOM.Iterable", "es2023" ],
+    "lib": [ "es5", "es6", "dom", "dom.iterable", "es2023" ],
     "skipLibCheck": true,
 
     /* Bundler mode */

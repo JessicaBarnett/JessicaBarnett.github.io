@@ -1,11 +1,10 @@
 import { RefObject, useLayoutEffect } from "react"; // refObject always has a .current.  ref, does not.  Need to specify
 
 import { ProjectsByCompanyT } from "@src/hooks/useFilteredProjects.ts";
-import { CssBreakpointsT } from "@src/types/css-variables-types.ts";
+import { CssVariablesT } from "@src/types/css-variables-types.ts";
 import { ElementRefsT, SizesT, PointT } from "@src/types/bg-line-types.ts";
 
-import { useBreakpoints } from "@src/hooks/static/useBreakpoints.ts";
-import { useRainbowColors } from "@src/hooks/static/useRainbowColors.ts";
+import { useCssVariables } from "@src/hooks/static/useCssVariables.ts";
 
 import {
   VtoD,
@@ -185,16 +184,22 @@ const resizeAndClearCanvas = (
 };
 
 // Change line Widths at breakpoints here
-const getLineW = (sizes: SizesT, breakpoints: CssBreakpointsT): number => {
+const getLineW = (sizes: SizesT, cssVars: CssVariablesT): number => {
+  const { breakpoints, rainbow } = cssVars;
+
+  if (sizes.pgWidth <= parseInt(breakpoints.smallBp)) {
+    return parseInt(rainbow.lineWidthXsm);
+  }
+
   if (sizes.pgWidth <= parseInt(breakpoints.mediumBp)) {
-    return 10;
+    return parseInt(rainbow.lineWidthSm);
   }
 
   if (sizes.pgWidth <= parseInt(breakpoints.wideBp)) {
-    return 15;
+    return parseInt(rainbow.lineWidthMed);
   }
 
-  return 20;
+  return parseInt(rainbow.lineWidthLg);
 };
 
 // Given the points for the first line, translate all points and return new path
@@ -296,11 +301,20 @@ const drawLine = (
 // draw all Lines
 const drawBgLines = (
   refs: ElementRefsT,
-  colors: string[],
-  breakpoints: CssBreakpointsT
+  cssVars: CssVariablesT
 ) => {
+  console.log('drawing lines')
   const { canvasRef } = refs;
   const ctx = refs.canvasRef?.current?.getContext("2d");
+
+  // need this as an array
+  const colors = [
+    cssVars.colors.blue,
+    cssVars.colors.green,
+    cssVars.colors.yellow,
+    cssVars.colors.orange,
+    cssVars.colors.pink,
+  ];
 
   if (!ctx || !canvasRef || !canvasRef.current) {
     return;
@@ -308,7 +322,7 @@ const drawBgLines = (
 
   // get sizes of elements and lines
   const elSizes = getElementSizes(refs);
-  const lineW = getLineW(elSizes, breakpoints);
+  const lineW = getLineW(elSizes, cssVars);
 
   // clear and resize
   resizeAndClearCanvas(canvasRef, ctx, elSizes.pgHeight, elSizes.pgWidth);
@@ -341,17 +355,17 @@ export function useBgLines(
   filteredProjects: ProjectsByCompanyT,
   formState: string
 ) {
-  const [breakpoints] = useBreakpoints();
-  const [colors] = useRainbowColors();
+
+  const cssVars =  useCssVariables();
 
   useLayoutEffect(() => {
     const drawBgLinesWRefsApplied = () =>
-      drawBgLines(refs, colors, breakpoints);
+      drawBgLines(refs, cssVars);
     requestAnimationFrame(drawBgLinesWRefsApplied);
 
     drawBgLinesWRefsApplied();
     window.addEventListener("resize", drawBgLinesWRefsApplied);
 
     return () => window.removeEventListener("resize", drawBgLinesWRefsApplied); // cleanup fn
-  }, [refs, filteredProjects, formState, breakpoints, colors]);
+  }, [refs, filteredProjects, formState, cssVars]);
 }

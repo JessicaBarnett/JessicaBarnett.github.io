@@ -67,7 +67,7 @@ form button[type=submit] {
 label {
   display: block;
   margin-bottom: 4px;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 input {
@@ -448,7 +448,8 @@ em {
 }
 
 .emphasized-p {
-  width: 80%;
+  width: 100%;
+  max-width: 500px;
   border: 1px solid black;
   padding: 12px;
   border-radius: 5px;
@@ -627,9 +628,13 @@ CONTENT
 ***************/
 .content {
   max-width: 720px;
-  padding: 4rem 64px;
-  margin: 0 auto;
+  margin: 0 var(--rainbow-w);
+  padding: 4rem var(--content-gap);
   padding-bottom: 80px;
+}
+
+.content-about {
+  padding: 5rem var(--content-gap);
 }
 
 .content.content-projects {
@@ -667,21 +672,19 @@ CONTENT
 
 .content-experience {
   max-width: 80%;
-  margin: 0 auto;
-  margin-left: 12%;
-  padding: 4rem 0 4rem 63px;
+  margin: 0 42px 0 var(--double-rainbow-w);
 }
 .content-experience .title-2 {
   margin-left: -25px;
 }
 
 .content-contact {
-  padding: 4rem 72px 10px 56px;
   min-height: 560px;
 }
 
 .content-footer {
   text-align: center;
+  padding-bottom: calc(var(--rainbow-w) + 8px);
 }
 
 /**************
@@ -701,8 +704,8 @@ CONTENT
     ROOT FONT
 *****************/
 :root {
-  font-size: 0.9rem;
-  line-height: 1.5rem;
+  font-size: 0.8rem;
+  line-height: 1.4rem;
   font-family: "Inter", Arial, Helvetica, sans-serif;
   color: #000;
   font-weight: 300;
@@ -868,7 +871,7 @@ p {
   border-top: 25px solid transparent;
   border-bottom: 25px solid transparent;
   border-right: 50px solid #000;
-  top: 30px;
+  top: 15%;
   right: 0;
 }
 @media (min-width: 769px) {
@@ -876,6 +879,7 @@ p {
     border-top-width: 45px;
     border-bottom-width: 45px;
     border-right-width: 70px;
+    top: 25%;
   }
 }
 @media (min-width: 1280px) {
@@ -883,7 +887,6 @@ p {
     border-top-width: 70px;
     border-bottom-width: 70px;
     border-right-width: 90px;
-    top: 0;
   }
 }
 
@@ -1010,6 +1013,28 @@ p {
 body {
   margin: 0;
   scroll-behavior: smooth;
+  --rainbow-w: calc(10px * 5);
+  --double-rainbow-w: calc(10px * 10);
+  --content-gap: 8px;
+}
+@media (min-width: 560px) {
+  body {
+    --rainbow-w: calc(15px * 5);
+    --double-rainbow-w: calc(15px * 10);
+  }
+}
+@media (min-width: 769px) {
+  body {
+    --rainbow-w: calc(20px * 5);
+    --double-rainbow-w: calc(20px * 10);
+    --content-gap: 16px;
+  }
+}
+@media (min-width: 1440px) {
+  body {
+    --rainbow-w: calc(25px * 5);
+    --double-rainbow-w: calc(25px * 10);
+  }
 }
 
 section {

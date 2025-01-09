@@ -45,21 +45,11 @@ em {
 
 .paragraph-group {
   margin-bottom: 24px;
-
-
-  // &:after {
-  //   display: block;
-  //   position: relative;
-  //   width: 30px;
-  //   height: 2px;
-  //   background-color: $black;
-  //   content: '';
-  //   margin: 16px auto;
-  // }
 }
 
 .emphasized-p {
-  width: 80%;
+  width: 100%;
+  max-width: 500px;
   border: 1px solid black;
   padding: 12px;
   border-radius: 5px;

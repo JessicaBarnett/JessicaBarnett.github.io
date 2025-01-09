@@ -1,5 +1,4 @@
 @use "../variables/colors" as *;
-@use "../variables/breakpoints" as *;
 @use "../utilities/media-queries" as *;
 
 
@@ -52,20 +51,20 @@
 
     &:after {
         @include trapezoid('right', 50px, 25px, 80px, $black);
-        top: 30px;
+        top: 15%;
         right: 0;
 
         @include only-above($medium-bp) {
           border-top-width: 45px;
           border-bottom-width: 45px;
           border-right-width: 70px;
+          top: 25%;
         }
 
         @include only-above($wide-bp) {
           border-top-width: 70px;
           border-bottom-width: 70px;
           border-right-width: 90px;
-          top: 0;
         }
     }
 }

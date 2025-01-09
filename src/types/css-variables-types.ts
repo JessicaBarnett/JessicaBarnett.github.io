@@ -15,7 +15,14 @@ export type CssBreakpointsT = {
     extraWideBp: string
     hdBp: string
 };
+export type CssRainbowT = {
+    lineWidthXsm: string
+    lineWidthSm: string
+    lineWidthMed: string
+    lineWidthLg: string
+};
 export type CssVariablesT = {
     colors: CssColorsT;
     breakpoints: CssBreakpointsT;
+    rainbow: CssRainbowT;
 };
