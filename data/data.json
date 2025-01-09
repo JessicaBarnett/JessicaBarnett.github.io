@@ -478,7 +478,7 @@
             ]
         },
         {
-            "id": "wl-004",
+            "id": "wl-p-004",
             "title": "The Bouqs",
             "description": "A fresh flower retailer with a fresh take on their business.  The Bouqs had a heavy focus on optimizing ui performance and producing an experience almost as beautiful as their products.",
             "company": "Weblinc Ecommerce",
@@ -506,7 +506,7 @@
             ]
         },
         {
-            "id": "wl-003",
+            "id": "wl-p-003",
             "title": "Full Beauty",
             "description": "This company's flagship brand encompased a huge catalog of products and large number of smaller brands, making this build quite complex.",
             "company": "Weblinc Ecommerce",
@@ -534,7 +534,7 @@
             ]
         },
         {
-            "id": "wl-002",
+            "id": "wl-p-002",
             "title": "Woodcraft & Japan Woodworker",
             "description": "Contributed half of the front-end code for Woodcraft's initial build, and then took over front-end leadership of new feature work on the project. Led the development of a reskin of the same app to showcase their more upscale tool brand, Japan Woodworker.",
             "company": "Weblinc Ecommerce",
@@ -562,7 +562,7 @@
             ]
         },
         {
-            "id": "wl-001",
+            "id": "wl-p-001",
             "title": "Rachel Roy",
             "description": "Led new feature development on an existing fashion website.",
             "company": "Weblinc Ecommerce",
@@ -590,7 +590,7 @@
             ]
         },
         {
-            "id": "wl-000",
+            "id": "wl-p-000",
             "title": "Mint Julep",
             "description": "Built features for a fun and lively fashion brand based in the Southern United States.",
             "company": "Weblinc Ecommerce",
@@ -620,6 +620,7 @@
     ],
     "experience": [
         {
+            "id": "rl-e-00",
             "title": "Fullstack Software Engineer",
             "company": "Relay Network",
             "start": "2020",
@@ -633,6 +634,7 @@
             ]
         },
         {
+            "id": "rl-e-01",
             "title": "Front End Software Engineer",
             "company": "Relay Network",
             "start": "2018",
@@ -645,6 +647,7 @@
             ]
         },
         {
+            "id": "wl-e-00",
             "title": "Lead Front End Developer",
             "company": "Weblinc Ecommerce",
             "start": "2016",
@@ -658,6 +661,7 @@
             ]
         },
         {
+            "id": "wl-e-01",
             "title": "Front End Developer",
             "company": "Weblinc Ecommerce",
             "start": "2014",
