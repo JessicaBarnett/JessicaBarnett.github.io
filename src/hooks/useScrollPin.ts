@@ -1,5 +1,5 @@
-export function useScrollPin() {
-  useLayoutEffect(() => {
+// export function useScrollPin() {
+//   useLayoutEffect(() => {
 
-  }, [refs, filteredProjects, formState, breakpoints, colors]);
-}
+//   }, [refs, filteredProjects, formState, breakpoints, colors]);
+// }
