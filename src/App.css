@@ -293,6 +293,30 @@ table {
   border: 1px solid #000;
 }
 
+/******************************************
+        Forwarder Utilities file
+*******************************************/
+/*
+  We have a selector that can select based on the previous
+  sibling's class...
+
+  .make-the-next-p-different + p {
+    // rules are applied to p tags that are
+    // PRECEEDED by `.make-the-next-p-different`
+  }
+
+  but not one that can select based on the
+  NEXT sibling's class.
+
+  p - .make-the-previous-p-different {
+    // this selector doesn't exist :(
+  }
+
+  this is just a slightly more readable way to do that.
+*/
+/**************
+    TITLES
+***************/
 .nav {
   background-color: #000;
   width: 100%;
@@ -328,8 +352,7 @@ table {
   align-items: center;
   display: grid;
   max-width: 1080px;
-  margin: 0 auto;
-  height: 45px;
+  margin: 8px auto;
 }
 .nav-links span {
   vertical-align: middle;
@@ -344,6 +367,8 @@ table {
 }
 
 .nav-link {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
   white-space: nowrap;
   padding: 4px 8px;
   border: none;
@@ -403,9 +428,6 @@ table {
   }
 }
 
-/**************
-    TITLES
-***************/
 /*************
   About
 **************/
@@ -500,27 +522,6 @@ em {
   }
 }
 
-/******************************************
-        Forwarder Utilities file
-*******************************************/
-/*
-  We have a selector that can select based on the previous
-  sibling's class...
-
-  .make-the-next-p-different + p {
-    // rules are applied to p tags that are
-    // PRECEEDED by `.make-the-next-p-different`
-  }
-
-  but not one that can select based on the
-  NEXT sibling's class.
-
-  p - .make-the-previous-p-different {
-    // this selector doesn't exist :(
-  }
-
-  this is just a slightly more readable way to do that.
-*/
 /********************
    ROOT
 *********************/
@@ -530,7 +531,7 @@ em {
   height: 100%;
   width: 100%;
   padding-bottom: 16px;
-  margin-top: 45px;
+  margin-top: 8px;
   padding-top: 45px;
 }
 .background:before {

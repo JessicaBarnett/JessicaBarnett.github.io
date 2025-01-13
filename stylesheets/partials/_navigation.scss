@@ -1,6 +1,5 @@
 @use "../variables/variables" as *;
-@use "../utilities/overlays" as *;
-@use "../utilities/media-queries" as *;
+@use "../utilities/utilities" as *;
 
 .nav {
   background-color: $black;
@@ -28,8 +27,7 @@
   align-items: center;
   display: grid;
   max-width: $page-max-width;
-  margin: 0 auto;
-  height: $nav-height;
+  margin: 8px auto;
 
   span {
     vertical-align: middle;
@@ -47,6 +45,7 @@
 }
 
 .nav-link {
+  @include font-size(1.2rem);
   white-space: nowrap;
   padding: 4px 8px;
   border: none;
