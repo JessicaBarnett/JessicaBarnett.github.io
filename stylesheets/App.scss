@@ -1,7 +1,6 @@
 // Variables
 @use './variables/variables' as *; // forwards colors, rainbow, breakpoints
 
-
 // utils
 @use "./utilities/media-queries" as *;
 @use "./utilities/grid";
@@ -25,6 +24,7 @@
 @use "./partials/color-bar";
 @use "./partials/trapezoids";
 @use "./partials/social-link";
+@use "./partials/popup";
 
 
 /*******************

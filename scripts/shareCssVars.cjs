@@ -1,5 +1,4 @@
 var fsp = require('fs/promises');
-const path = require('path');
 
 const cssColorsPath = './stylesheets/variables/_colors.scss';
 const cssBreakpointsPath = './stylesheets/variables/_breakpoints.scss';
@@ -65,7 +64,6 @@ async function run() {
   sharedVars.colors = await getSharedVariables(cssColorsPath);
   sharedVars.breakpoints = await getSharedVariables(cssBreakpointsPath);
   sharedVars.rainbow = await getSharedVariables(cssRainbowPath);
-
 
   console.log(`writing the following to ${jsSharedVarsPath}`);
   console.log(sharedVars)

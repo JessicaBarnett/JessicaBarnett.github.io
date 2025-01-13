@@ -212,6 +212,11 @@ function App() {
           </div>
         </section>
       </div>
+      {/* <div className="more-info-dialog">
+          <button className="btn-close">X</button>
+          <h3>The Bouqs</h3>
+
+      </div> */}
     </div>
   );
 }
