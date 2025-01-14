@@ -3,6 +3,8 @@ import Tag from "@src/components/Tag.tsx";
 import { tagSelected } from "@src/utils/util.ts";
 import { RewindIcon } from "@src/icons/RewindIcon.tsx";
 import { FastForwardIcon } from "@src/icons/FastForwardIcon.tsx";
+import { CloseIcon } from "@src/icons/CloseIcon.tsx";
+
 
 type ProjectDetailsComponentProps = {
   project: ProjectT;
@@ -19,7 +21,7 @@ const ProjectDetails = ({
 
   return (
     <div className="more-info-dialog">
-      <button className="btn-close ">X</button>
+      <button className="btn-close"><CloseIcon></CloseIcon></button>
       <div className="more-info-dialog-content grid-at-med">
         <div className="half faux-phone">
             {project.media.map((media: MediaT, i) => (

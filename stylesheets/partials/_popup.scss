@@ -192,6 +192,29 @@
 
 .btn-close {
     float: right;
-    margin: 24px;
+    width: 55px;
+    z-index: 1;
+    position: relative;
+    background: black;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 50%;
+    margin: 8px;
+    transition: background-color $bg-transition;
+
+    svg {
+        margin-top: 3px;
+        fill: white;
+        transition: fill $text-transition;
+    }
+
+    &:hover {
+        background: white;
+
+        svg {
+            fill: black;
+        }
+    }
+
 }
 
