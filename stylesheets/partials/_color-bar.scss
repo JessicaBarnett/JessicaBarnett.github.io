@@ -1,19 +1,5 @@
 @use "../variables/colors" as *;
 
-$rainbow-gradient-horiz: linear-gradient(
-    180deg,
-    $pink 0%,
-    $pink 20%,
-    $orange 20%,
-    $orange 40%,
-    $yellow 40%,
-    $yellow 60%,
-    $green 60%,
-    $green 80%,
-    $blue 80%,
-    $blue 100%,
-);
-
 .color-bar {
     position: relative;
 

@@ -559,6 +559,33 @@
                     "displayName": "Ruby/Rails",
                     "name": "rails"
                 }
+            ],
+            "detailed_description": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus pulvinar neque in ultrices. Curabitur urna lacus, lobortis sit amet euismod at, molestie ut justo. Nunc id nisi quis felis condimentum imperdiet. Fusce ac purus quam. Vivamus eget diam vitae urna elementum dictum. Vivamus commodo fringilla leo, vel tincidunt nibh blandit et. Nullam at condimentum quam. Sed tempus purus et dictum tempus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum accumsan ornare lacinia. Fusce placerat vulputate turpis nec luctus. Fusce tristique eros tortor, non mollis eros iaculis id. Sed posuere ultrices ex, nec posuere velit venenatis in. Pellentesque convallis ante erat, ac venenatis lorem euismod at. Sed maximus maximus nulla eu volutpat. Nunc a ante eu mi viverra ornare.\nNullam ultricies risus eu quam efficitur, sed suscipit nunc rhoncus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel dolor felis. In tincidunt et lacus non aliquet. Ut ultrices ex augue, eget facilisis eros fermentum quis. Phasellus nulla nunc, sodales vel tempor in, eleifend ut magna. Suspendisse pretium tortor lectus, eu rutrum felis iaculis nec. Praesent cursus ligula non congue elementum. Duis placerat sagittis semper. Suspendisse potenti. Nunc eu dolor laoreet, auctor lacus a, vulputate orci. Vivamus sapien lectus, mattis eget nisl non, dignissim dignissim nisl.\nAliquam vehicula eleifend quam, vel accumsan est consequat a. Fusce cursus metus ac malesuada commodo. Fusce ullamcorper at purus quis feugiat. Suspendisse laoreet orci eu sapien pharetra, eleifend efficitur ex tempor. Praesent tellus mi, feugiat eu rhoncus id, aliquet ac lacus. Vivamus mollis augue nec dolor tempus, a imperdiet lectus sodales. Nullam blandit dignissim elementum. Suspendisse hendrerit orci quis sollicitudin ultricies. Phasellus eget cursus libero, non euismod lectus. Curabitur ultricies libero in sem porttitor, eu ultricies eros facilisis.",
+            "media": [
+                {
+                    "type": "image",
+                    "name": "home page",
+                    "url": "/assets/projects/woodcraft-hp-med-2018.png",
+                    "alt": "Image of the woodcraft website"
+                },
+                {
+                    "type": "image",
+                    "name": "mobile",
+                    "url": "/assets/projects/woodcraft-hp-small-2018.png",
+                    "alt": "Image of the woodcraft website"
+                },
+                {
+                    "type": "image",
+                    "name": "blog",
+                    "url": "/assets/projects/woodcraft-blog-wide-2018.png",
+                    "alt": "Image of the woodcraft website"
+                },
+                {
+                    "type": "image",
+                    "name": "find a store",
+                    "url": "/assets/projects/woodcraft-findstore-wide-2018.png",
+                    "alt": "Image of the woodcraft website"
+                }
             ]
         },
         {

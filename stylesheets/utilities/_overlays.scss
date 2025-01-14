@@ -13,12 +13,14 @@
 @mixin pseudo-overlay() {
     content: '';
     display: block;
+    pointer-events: none;
     @include absolute-overlay;
 }
 
 @mixin paper-texture-overlay() {
     @include pseudo-overlay;
     background: $paper-texture-url;
+    pointer-events: none;
 }
 
 // @mixin vhs-rough-texture-overlay() {

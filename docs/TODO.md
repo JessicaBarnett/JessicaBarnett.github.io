@@ -7,8 +7,8 @@
 
 - figure out scroll jankiness **
 - more-info section
+  - Get some better screenshots from the wayback machine
 - animate lines
-- Go over all the copy **
 
 ----------------------------------------------------------------
 ## Backlog

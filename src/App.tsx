@@ -22,6 +22,7 @@ import TitleSection from "@src/components/TitleSection.tsx";
 // Projects
 import FilterSelect from "@src/components/FilterSelect.tsx";
 import Project from "./components/Project.tsx";
+import ProjectDetails from "@src/components/ProjectDetails.tsx";
 
 // Experience
 import ExperienceEntry from "./components/ExperienceEntry.tsx";
@@ -212,11 +213,13 @@ function App() {
           </div>
         </section>
       </div>
-      {/* <div className="more-info-dialog">
-          <button className="btn-close">X</button>
-          <h3>The Bouqs</h3>
-
-      </div> */}
+      { projects.filter((project) => project.detailed_description && project?.media && project?.media.length).map(project => (
+          <ProjectDetails
+          key={project.id}
+          project={project}
+          selectedTags={selectedFilter?.tags ?? []}
+        ></ProjectDetails>
+      ))}
     </div>
   );
 }

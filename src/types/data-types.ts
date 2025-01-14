@@ -1,3 +1,10 @@
+export type MediaT = {
+    name?: string,
+    url: string,
+    alt: string,
+    type: 'video' | 'image'
+}
+
 export type TagT = {
     displayName?: string,
     name: string
@@ -9,6 +16,8 @@ export type ProjectT = {
     description: string,
     company: string,
     tags: TagT[],
+    detailed_description?: string,
+    media?: MediaT[],
 };
 
 export type FilterT = {
