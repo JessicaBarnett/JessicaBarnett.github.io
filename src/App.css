@@ -1134,7 +1134,7 @@ p {
   right: 0;
   height: 100%;
   width: 100%;
-  border-bottom: 25px inset rgb(236, 236, 236);
+  box-shadow: rgb(236, 236, 236) 20px 20px 0 inset, rgb(236, 236, 236) -20px -20px 0 inset;
   pointer-events: none;
   border-radius: 10px;
 }
@@ -1142,7 +1142,7 @@ p {
 .img-title {
   display: none;
   position: absolute;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
   padding: 8px 16px;
   font-weight: bold;
@@ -1248,22 +1248,6 @@ p {
 .btn-close {
   float: right;
   margin: 24px;
-}
-
-.banner {
-  max-height: 30vh;
-  overflow: hidden;
-  position: relative;
-}
-.banner:before {
-  display: block;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: #EE6B0F;
-  opacity: 50%;
-  position: absolute;
-  z-index: 7;
 }
 
 /*******************
