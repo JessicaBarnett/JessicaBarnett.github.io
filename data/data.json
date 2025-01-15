@@ -199,7 +199,7 @@
     "projects": [
         {
             "id": "rl-009",
-            "title": "Service Load Testing",
+            "title": "Service Load-Testing",
             "description": "Performed large-scale Load tests on our SSO Api and our Form APIs, automating up to 500k user sessions across 3 small servers.",
             "company": "Relay Network",
             "tags": [
@@ -220,7 +220,7 @@
         {
             "id": "rl-008",
             "title": "\"Power Ups\" Forms Integration API",
-            "description": "Worked with team to build a feature enabling businesses to configure forms to send to their customer's phones, along with monitoring and data management/reporting tools.",
+            "description": "Worked with team to build a feature enabling businesses to configure forms to send to their customers' phones, along with monitoring and data management/reporting tools.",
             "company": "Relay Network",
             "tags": [
                 {
@@ -351,8 +351,8 @@
         },
         {
             "id": "rl-004",
-            "title": "File Engine Jobs Dashboard",
-            "description": "A dashboard displaying the status of backend processes and allowing clients to download reports and create new jobs, all in one place.  Feature empowered clients to do a significant abount of self-service and saved CSMs a ton of time.",
+            "title": "Jobs Dashboard",
+            "description": "A dashboard displaying the status of backend processes and allowing clients to download reports and create new jobs all in one place.  Feature empowered clients to manage their own jobs, which saved CSMs a great deal of time.",
             "company": "Relay Network",
             "tags": [
                 {
@@ -376,7 +376,7 @@
         {
             "id": "rl-003",
             "title": "Two Way Chat Pilot",
-            "description": "Worked with team to build a complex chat feature in 2 months. Contributed roughly 50% of the Angular code, and collaborated closely with product reps and clojure engineers on both API and Visual design.",
+            "description": "Worked with team to build a complex chat feature in 2 months. Contributed roughly 50% of the Angular code, collaborated closely with product reps, and clojure engineers on both API and Visual design.",
             "company": "Relay Network",
             "tags": [
                 {
@@ -400,7 +400,7 @@
         {
             "id": "rl-002",
             "title": "PDF Preview Feature",
-            "description": "A preview feature that reorganized a complex tree of messages into a printable, sharable PDF file.  Enabled our clients to more easily share thier work with stakeholders in within their companies, and saved our CS team a lot of effort.",
+            "description": "A preview feature that reorganized a complex tree of messages into a printable, sharable PDF file.  Enabled our clients to more easily share thier work with stakeholders within their companies which saved our CS team significant time.",
             "company": "Relay Network",
             "tags": [
                 {
@@ -480,7 +480,7 @@
         {
             "id": "wl-p-004",
             "title": "The Bouqs",
-            "description": "A fresh flower retailer with a fresh take on their business.  The Bouqs had a heavy focus on optimizing ui performance and producing an experience almost as beautiful as their products.",
+            "description": "A fresh flower retailer with a fresh take on their business.  The Bouqs had a heavy focus on optimizing UI performance and producing an experience almost as beautiful as their products.",
             "company": "Weblinc Ecommerce",
             "tags": [
                 {
@@ -508,7 +508,7 @@
         {
             "id": "wl-p-003",
             "title": "Full Beauty",
-            "description": "This company's flagship brand encompased a huge catalog of products and large number of smaller brands, making this build quite complex.",
+            "description": "This company's flagship brand encompased a huge catalog of products and a large number of smaller brands making this build quite complex.",
             "company": "Weblinc Ecommerce",
             "tags": [
                 {
@@ -536,7 +536,7 @@
         {
             "id": "wl-p-002",
             "title": "Woodcraft & Japan Woodworker",
-            "description": "Contributed half of the front-end code for Woodcraft's initial build, and then took over front-end leadership of new feature work on the project. Led the development of a reskin of the same app to showcase their more upscale tool brand, Japan Woodworker.",
+            "description": "Contributed half of the front-end code for Woodcraft's initial build and then took over front-end leadership of new feature work on the project. Led the development of a reskin of the same app to showcase their more upscale tool brand, Japan Woodworker.",
             "company": "Weblinc Ecommerce",
             "tags": [
                 {
