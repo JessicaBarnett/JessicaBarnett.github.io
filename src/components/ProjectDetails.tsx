@@ -6,7 +6,7 @@ import Slider from "@src/components/Slider.tsx";
 import { useState } from "react";
 
 type ProjectDetailsComponentProps = {
-    project: ProjectT;
+    project: ProjectT | null;
     selectedTags: TagT[];
 };
 
@@ -16,7 +16,7 @@ const ProjectDetails = ({
 }: ProjectDetailsComponentProps) => {
     const [showLeftPage, updateShowLeftPage] = useState<boolean>(false);
 
-    if (!project.detailed_description || !project.media?.length) {
+    if (!project || !project.detailed_description || !project.media?.length) {
         return;
     }
 

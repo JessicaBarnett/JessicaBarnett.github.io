@@ -6,14 +6,22 @@ import React from "react";
 type ProjectComponentProps = {
   project: ProjectT,
   selectedTags: TagT[],
-  onTagSelect: (tag: TagT, e: React.MouseEvent) => void
+  onTagSelect: (tag: TagT, e: React.MouseEvent) => void,
+  onMoreInfoClick: (e: React.MouseEvent) => void,
 };
 
-const Project = ({project, selectedTags, onTagSelect}: ProjectComponentProps) => {
+const Project = ({project, selectedTags, onTagSelect, onMoreInfoClick}: ProjectComponentProps) => {
+  const hasMoreInfo = (): boolean => !!project.detailed_description && !!project.media && !!project.media.length;
+
   return (
     <li className="entry">
       <h5 className="title-3">{project.title}</h5>
-      <p>{project.description}</p>
+      <p>
+        {project.description}
+        {hasMoreInfo() &&
+          <button className="btn-link" onClick={onMoreInfoClick}>more info</button>
+        }
+      </p>
 
       {project.tags.map((tag: TagT) => (
         <Tag
@@ -23,6 +31,7 @@ const Project = ({project, selectedTags, onTagSelect}: ProjectComponentProps) =>
           onClick={onTagSelect}
         ></Tag>
       ))}
+
     </li>
   );
 };

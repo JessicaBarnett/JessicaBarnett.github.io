@@ -11,7 +11,6 @@ import { useFilteredProjects } from "@src/hooks/useFilteredProjects.ts";
 import { useBgLines } from "@src/hooks/useBgLines.ts";
 // import { useScrollPin } from "@src/hooks/useScrollPin.ts";
 
-
 // Nav
 import Navigation from "@src/components/Navigation.tsx";
 
@@ -33,7 +32,7 @@ import ExperienceEntry from "./components/ExperienceEntry.tsx";
 // Contact
 import ContactForm, { FormEventT } from "@src/components/ContactForm.tsx";
 import SocialSidebar from "@src/components/SocialSidebar.tsx";
-import { TagT } from "./types/data-types.ts";
+import { ProjectT, TagT } from "./types/data-types.ts";
 import SectionHeading from "./components/SectionHeading.tsx";
 import React from "react";
 
@@ -47,6 +46,8 @@ function App() {
     filters,
     selectedFilter
   );
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<ProjectT | null>(null);
 
   // type TagScrollEventT = {
   //   target: React.MutableRefObject<HTMLButtonElement | null>,
@@ -65,7 +66,7 @@ function App() {
   const ftrRef = useRef<HTMLElement | null>(null);
   const fixedNavRef = useRef<HTMLDivElement | null>(null);
 
-  const [formState, setFormState] = useState('pending'); // pending, error, submitted
+  const [formState, setFormState] = useState("pending"); // pending, error, submitted
 
   useBgLines(
     {
@@ -88,21 +89,26 @@ function App() {
     setSelectedFilter(e.target.value);
   };
 
-  const handleFormStateChange = (formEvent:FormEventT) => {
-    setFormState(formEvent)
+  const handleFormStateChange = (formEvent: FormEventT) => {
+    setFormState(formEvent);
   };
 
-  const handleTagSelect = (tag: TagT, /*e: React.MouseEvent*/) => {
-      // setTagScrollEvent({
-      //   target: useRef(e.currentTarget),
-      //   viewportOffset: e.currentTarget.getBoundingClientRect().y,
-      //   distFromTop: e.currentTarget.getBoundingClientRect().top
-      // });
-      setSelectedFilter(tag);
+  const handleTagSelect = (tag: TagT /*e: React.MouseEvent*/) => {
+    // setTagScrollEvent({
+    //   target: useRef(e.currentTarget),
+    //   viewportOffset: e.currentTarget.getBoundingClientRect().y,
+    //   distFromTop: e.currentTarget.getBoundingClientRect().top
+    // });
+    setSelectedFilter(tag);
   };
 
-/* problem now is probably that react DOES remove and re-add elements, so my refs again might get lost */
-// this means I need to react-ify this, and use a ref instead
+  const handleMoreInfoClick = (project: ProjectT) => {
+      setDialogOpen(true);
+      setSelectedProject(project);
+  }
+
+  /* problem now is probably that react DOES remove and re-add elements, so my refs again might get lost */
+  // this means I need to react-ify this, and use a ref instead
 
   // useLayoutEffect(() => {
   //     setTimeout(() => {
@@ -122,18 +128,13 @@ function App() {
   // }, [tagScrollEvent]);
 
   return (
-    <div className="background">
+    <div className={`background ${dialogOpen ? "body-scroll-disabled" : ""}`}>
       <div ref={fixedNavRef}>
         <Navigation></Navigation>
       </div>
 
       <div ref={pageRef} className="page">
-        <canvas
-          id="canvas"
-          ref={canvasRef}
-          height="100%"
-          width="100%"
-        ></canvas>
+        <canvas id="canvas" ref={canvasRef} height="100%" width="100%"></canvas>
 
         <section ref={ttlRef} className="section-title triangle-left">
           <TitleSection></TitleSection>
@@ -148,9 +149,8 @@ function App() {
         </section>
 
         <section id="projects" className="section-projects" ref={projRef}>
-
           <div className="content content-projects grid-at-small">
-          <SectionHeading className="half">Projects</SectionHeading>
+            <SectionHeading className="half">Projects</SectionHeading>
 
             <FilterSelect
               filters={filters}
@@ -158,22 +158,22 @@ function App() {
               onFilterChange={handleFilterChange}
             ></FilterSelect>
 
-            { Object.keys(filteredProjects).map(companyName => (
+            {Object.keys(filteredProjects).map((companyName) => (
               <React.Fragment key={companyName}>
                 <h4 className="section-subheading subtitle-2">{companyName}</h4>
                 <ul>
-                  { filteredProjects[companyName].map(project => (
+                  {filteredProjects[companyName].map((project) => (
                     <Project
                       key={project.id}
                       project={project}
                       selectedTags={selectedFilter?.tags ?? []}
                       onTagSelect={handleTagSelect}
+                      onMoreInfoClick={() => handleMoreInfoClick(project)}
                     ></Project>
                   ))}
                 </ul>
               </React.Fragment>
             ))}
-
           </div>
         </section>
 
@@ -185,14 +185,14 @@ function App() {
           <div className="content content-experience">
             <SectionHeading>Experience</SectionHeading>
             <ol>
-                {expEntries.map((entry) => (
-                    <ExperienceEntry
-                      key={entry.id}
-                      entry={entry}
-                      selectedTags={selectedFilter?.tags ?? []}
-                      onTagSelect={handleTagSelect}
-                    ></ExperienceEntry>
-                ))}
+              {expEntries.map((entry) => (
+                <ExperienceEntry
+                  key={entry.id}
+                  entry={entry}
+                  selectedTags={selectedFilter?.tags ?? []}
+                  onTagSelect={handleTagSelect}
+                ></ExperienceEntry>
+              ))}
             </ol>
           </div>
         </section>
@@ -204,7 +204,8 @@ function App() {
         >
           <div className="content content-contact grid-at-med">
             <SectionHeading>Contact</SectionHeading>
-            <ContactForm onFormStateChange={handleFormStateChange}
+            <ContactForm
+              onFormStateChange={handleFormStateChange}
             ></ContactForm>
             <SocialSidebar></SocialSidebar>
           </div>
@@ -212,25 +213,34 @@ function App() {
 
         <section ref={ftrRef} id="footer" className="section-footer">
           <div className="content content-footer">
-            <p>Curious about this build?  <br/> Check out the <a className="link" href="https://github.com/JessicaBarnett/JessicaBarnett.github.io" target="_blank">source code</a> and <a className="link" href="/docs/index" target="_blank">storybook!</a></p>
+            <p>
+              Curious about this build? <br /> Check out the{" "}
+              <a
+                className="link"
+                href="https://github.com/JessicaBarnett/JessicaBarnett.github.io"
+                target="_blank"
+              >
+                source code
+              </a>{" "}
+              and{" "}
+              <a className="link" href="/docs/index" target="_blank">
+                storybook!
+              </a>
+            </p>
           </div>
         </section>
       </div>
-      {/*
-          I can easily do this with one component instance + just switch
-          the project prop on more-info-link click... But what would be
-          better for transitions?  Perf?
-      */}
-      { projects.filter((project) => project.detailed_description && project?.media && project?.media.length).map(project => (
-          <Dialog key={`${project.id}-more-details-dialog`} >
-            {/* <p>{project.title}</p> */}
-            <ProjectDetails
-            key={project.id}
-            project={project}
-            selectedTags={selectedFilter?.tags ?? []}
-            ></ProjectDetails>
-          </Dialog>
-      ))}
+      <Dialog
+        isOpen={dialogOpen}
+        onClose={() => {
+          setDialogOpen(false)
+        }}
+      >
+        <ProjectDetails
+          project={selectedProject}
+          selectedTags={selectedFilter?.tags ?? []}
+        ></ProjectDetails>
+      </Dialog>
     </div>
   );
 }

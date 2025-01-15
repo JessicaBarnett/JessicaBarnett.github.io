@@ -22,6 +22,7 @@ export const Default: Story = {
   args: {
     project: projectData,
     selectedTags: [],
-    onTagSelect: (tag: TagT) => { console.log(`Tag "${tag.displayName}" selected`) }
+    onTagSelect: (tag: TagT) => { console.log(`Tag "${tag.displayName}" selected`) },
+    onMoreInfoClick: () => { console.log(`more info button clicked`) }
   }
 };

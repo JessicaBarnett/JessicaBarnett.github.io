@@ -81,3 +81,16 @@
         width: auto;
     }
 }
+
+.btn-link {
+    display: inline-block;
+    font-weight: 800;
+    background-color: transparent;
+    border: 0;
+    font-size: 1.1rem;
+    margin-left: 8px;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

@@ -127,6 +127,12 @@ Gradient borders
     </>
 ))}
 ```
+- conditional rendering in jsx
+```jsx
+{ hasMoreInfo() &&
+    <button onClick={onMoreInfoClick}>more info</button>
+}
+```
 
 
 ## Math
