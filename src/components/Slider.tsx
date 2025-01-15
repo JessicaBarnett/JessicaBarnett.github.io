@@ -2,7 +2,8 @@ import { MediaT } from "@src/types/data-types";
 import { RewindIcon } from "@src/icons/RewindIcon.tsx";
 import { FastForwardIcon } from "@src/icons/FastForwardIcon.tsx";
 
-type SliderComponentProps = {
+
+export type SliderComponentProps = {
     media: MediaT[]
 };
 

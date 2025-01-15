@@ -1,6 +1,6 @@
 import { CloseIcon } from "@src/icons/CloseIcon.tsx";
 
-type DialogComponentProps = {
+export type DialogComponentProps = {
     children: React.ReactNode,
     isOpen: boolean,
     onClose:  (e: React.MouseEvent) => void;

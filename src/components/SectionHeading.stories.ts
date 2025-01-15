@@ -5,9 +5,7 @@ import SectionHeading from './SectionHeading.tsx';
 const meta = {
   title: 'components/SectionHeading',
   component: SectionHeading,
-  parameters: {
-    titleText: "Section Title"
-  },
+  parameters: {},
   tags: ['autodocs'],
 } satisfies Meta<typeof SectionHeading>;
 

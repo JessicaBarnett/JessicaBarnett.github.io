@@ -1,4 +1,4 @@
-import { ProjectT, TagT, ExperienceEntryT, FilterT } from '../src/types/data-types.ts';
+import { ProjectT, TagT, ExperienceEntryT, FilterT, MediaT } from '../src/types/data-types.ts';
 
 const random = (max = 5) => Math.floor(Math.random() * max);
 
@@ -19,6 +19,21 @@ export const tagGen = (idx = random()): TagT => {
     }
 };
 export const tagsGen = (num = random()): TagT[] => multiGen(tagGen, num);
+
+
+export const mediaGen = (idx = random()): MediaT => {
+    const demoImageUrls = ['/assets/docs/demo/pink-800-1000.jpg', '/assets/docs/demo/orange-800-1000.jpg', '/assets/docs/demo/yellow-800-1000.jpg', '/assets/docs/demo/green-800-1000.jpg', '/assets/docs/demo/blue-800-1000.jpg']
+
+    return {
+        id: `media-${idx}`,
+        name: `image #${idx}`,
+        url: demoImageUrls[idx % demoImageUrls.length],
+        alt: `image #${idx}`,
+        type: 'image'
+    }
+};
+export const mediasGen = (num = random()): MediaT[] => multiGen(mediaGen, num);
+
 
 export const projectGen = (idx = random()): ProjectT => {
     return {

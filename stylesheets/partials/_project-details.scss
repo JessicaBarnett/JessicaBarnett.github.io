@@ -61,10 +61,10 @@ $trapezoid-width: 8vw;
 
 .detailed-description {
     overflow: scroll;
-    margin-top: 4vh;
     margin-left: $trapezoid-width + 4vw;
-    padding: 6px;
+    padding: 42px 0;
     height: 100vh;
+    margin-right: 6vw;
 
     @include only-above($medium-bp) {
         margin: 4vh 24px;

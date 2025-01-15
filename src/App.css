@@ -140,7 +140,7 @@
 
 .btn-link {
   display: inline-block;
-  font-weight: 800;
+  font-weight: 500;
   background-color: transparent;
   border: 0;
   font-size: 1.1rem;
@@ -1356,10 +1356,10 @@ p {
 
 .detailed-description {
   overflow: scroll;
-  margin-top: 4vh;
   margin-left: 12vw;
-  padding: 6px;
+  padding: 42px 0;
   height: 100vh;
+  margin-right: 6vw;
 }
 @media (min-width: 769px) {
   .detailed-description {
