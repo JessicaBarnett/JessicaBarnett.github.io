@@ -12,6 +12,20 @@ const multiGen = <T>(fn: (idx: number) => T, numItems: number): T[] => {
     return items;
 };
 
+const demoWords = 'Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum'.split(' ');
+export const wordGen = (): string => demoWords[random(demoWords.length - 1)]
+export const wordsGen = (num = random(10)): string[] => multiGen(wordGen, num);
+export const sentenceGen = (num = random(5)): string => [...wordsGen(num), '.  '].join(' ');
+export const sentencesGen = (num = random(5)): string[] => multiGen(sentenceGen, num);
+export const paragraphGen = (num = random(5)): string => [...sentencesGen(num), '\n'].join(' ');
+export const paragraphsGen = (num = random(5)): string[] => multiGen(wordGen, num);
+
+
+const demoImageUrls = ['/assets/docs/demo/pink-800-1000.jpg', '/assets/docs/demo/orange-800-1000.jpg', '/assets/docs/demo/yellow-800-1000.jpg', '/assets/docs/demo/green-800-1000.jpg', '/assets/docs/demo/blue-800-1000.jpg']
+export const imageUrl = (num = random(demoImageUrls.length)) => demoImageUrls[num];
+export const imageUrls = (num = random(demoImageUrls.length)) => [...demoImageUrls].slice(0, num);
+
+
 export const tagGen = (idx = random()): TagT => {
     return {
         displayName: `Tag ${idx}`,
@@ -22,12 +36,10 @@ export const tagsGen = (num = random()): TagT[] => multiGen(tagGen, num);
 
 
 export const mediaGen = (idx = random()): MediaT => {
-    const demoImageUrls = ['/assets/docs/demo/pink-800-1000.jpg', '/assets/docs/demo/orange-800-1000.jpg', '/assets/docs/demo/yellow-800-1000.jpg', '/assets/docs/demo/green-800-1000.jpg', '/assets/docs/demo/blue-800-1000.jpg']
-
     return {
         id: `media-${idx}`,
         name: `image #${idx}`,
-        url: demoImageUrls[idx % demoImageUrls.length],
+        url: imageUrl(idx % demoImageUrls.length),
         alt: `image #${idx}`,
         type: 'image'
     }
