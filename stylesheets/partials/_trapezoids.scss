@@ -10,6 +10,7 @@
 @mixin trapezoid($orientation: 'left', $btm-width, $height, $top-width: 0px, $color: black) {
     position: absolute;
     content: '';
+    border: 0; // remove existing borders, since theres always 1 we don't set with this mixin
     display: block;
     height: $top-width; // set this to 0 for a triangle
     border-top: $height solid transparent;

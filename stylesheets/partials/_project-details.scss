@@ -9,32 +9,22 @@ $trapezoid-width: 8vw;
 .more-info {
     overflow: hidden;
 
-    &.show-left-pg {
-        @include only-below($medium-bp) {
-            transform: translateX(-45vw);
-        }
-    }
-
     @include only-below($medium-bp) {
         transition: transform $bg-transition;
-        width: 190vw;
-        transform: translateX(-95vw);
+        width: 200vw;
+        transform: translateX(-100vw);
 
+        &.show-left-page {
+            transform: translateX(0vw);
+        }
     }
 }
+
 
 .right-page {
     @include only-below($medium-bp) {
         box-shadow: rgba(0, 0, 0, 0.3) 6px 0 5px inset;
         margin-left: -8px;
-
-        &:after {
-            content: '';
-            @include trapezoid('left', $trapezoid-width, calc($trapezoid-width / 2), 20vh, rgba($black, 0.8));
-            left: 50%;
-            top: 50%;
-            transform: translateY(-50%);
-        }
     }
 
 }
@@ -44,15 +34,29 @@ $trapezoid-width: 8vw;
         box-shadow: rgba(0, 0, 0, 0.3) -6px 0 5px inset,
                     rgba(0, 0, 0, 0.3) -6px 0 3px inset;
         margin-right: -8px;
-
-        &:after {
-            @include trapezoid('right', $trapezoid-width, calc($trapezoid-width / 2), 20vh, rgba($black, 0.8));
-            content: '';
-            right: 50%;
-            top: 50%;
-            transform: translateY(-50%);
-        }
     }
+}
+
+@mixin pg-turn-btn {
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+
+    @include only-above($medium-bp) {
+        display: none;
+    }
+}
+
+.turn-pg-btn-right {
+    @include trapezoid('right', $trapezoid-width, calc($trapezoid-width / 2), 20vh, rgba($black, 0.8));
+    @include pg-turn-btn();
+    right: 50%;
+}
+
+.turn-pg-btn-left {
+    @include trapezoid('left', $trapezoid-width, calc($trapezoid-width / 2), 20vh, rgba($black, 0.8));
+    @include pg-turn-btn();
+    left: 50%;
 }
 
 .detailed-description {
