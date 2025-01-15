@@ -67,7 +67,7 @@ you might be trying to spread an array into an object or destructure an object i
 - fs = filesystem w/ callbacks, and fsp = filesystem with promises.
 
 
-### Scss
+### Css/Scss
 @forward is the new @import!! just remember that @forward DOES NOT REPLACE @use if you actuaoly need to use that variable in that file.  In that case ypu need both @forward and @use. ex:
 ```scss
 @use './variables' as *; // you need this too!!
@@ -75,6 +75,17 @@ you might be trying to spread an array into an object or destructure an object i
 
 background-color: $variable-from-variables;
 ```
+
+Gradient borders
+1. can't use gradients using the `border` rule.  Have to use `border-image`
+2. if the border image is only showing up in the corners, add slice!
+```scss
+    border-image: $gray-linear-gradient; // border-color
+    border-image-width: 3px; // border-width
+    border-image-repeat: repeat;
+    border-image-slice: 10; // add this if you are only seeing corners
+```
+
 
 
 ### regex

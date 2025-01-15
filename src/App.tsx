@@ -22,6 +22,9 @@ import TitleSection from "@src/components/TitleSection.tsx";
 // Projects
 import FilterSelect from "@src/components/FilterSelect.tsx";
 import Project from "./components/Project.tsx";
+
+// Projects more info
+import Dialog from "@src/components/Dialog.tsx";
 import ProjectDetails from "@src/components/ProjectDetails.tsx";
 
 // Experience
@@ -213,12 +216,20 @@ function App() {
           </div>
         </section>
       </div>
+      {/*
+          I can easily do this with one component instance + just switch
+          the project prop on more-info-link click... But what would be
+          better for transitions?  Perf?
+      */}
       { projects.filter((project) => project.detailed_description && project?.media && project?.media.length).map(project => (
-          <ProjectDetails
-          key={project.id}
-          project={project}
-          selectedTags={selectedFilter?.tags ?? []}
-        ></ProjectDetails>
+          <Dialog key={`${project.id}-more-details-dialog`} >
+            {/* <p>{project.title}</p> */}
+            <ProjectDetails
+            key={project.id}
+            project={project}
+            selectedTags={selectedFilter?.tags ?? []}
+            ></ProjectDetails>
+          </Dialog>
       ))}
     </div>
   );

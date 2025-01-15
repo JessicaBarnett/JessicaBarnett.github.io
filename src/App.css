@@ -138,22 +138,6 @@
   }
 }
 
-.btn-icon {
-  display: block;
-  width: 60px;
-  height: 60px;
-  background: none;
-  border: none;
-  transform: scale(1);
-  transition: transform 0.2s ease-in;
-}
-.btn-icon svg {
-  fill: #FFF;
-}
-.btn-icon:hover {
-  transform: scale(1.1);
-}
-
 /**************
     FORMS
 ***************/
@@ -1043,37 +1027,6 @@ p {
   }
 }
 
-.more-info-dialog {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, #E2006A 0%, #E2006A 20%, #EE6B0F 20%, #EE6B0F 40%, #EBE000 40%, #EBE000 60%, #82A900 60%, #82A900 80%, #0084CE 80%, #0084CE 100%);
-  z-index: 6;
-}
-.more-info-dialog:before {
-  content: "";
-  display: block;
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  background: url("/assets/images/concrete-wall-tileable.jpg");
-  pointer-events: none;
-  opacity: 20%;
-  z-index: 0;
-}
-@media (prefers-color-scheme: dark) {
-  .more-info-dialog:before {
-    opacity: 10%;
-  }
-}
-
 .buttons {
   width: 100%;
   display: flex;
@@ -1088,8 +1041,8 @@ p {
 .slider-dot-btn {
   background-color: rgba(0, 0, 0, 0.8);
   border: 0;
-  width: 25px;
-  height: 25px;
+  width: 1.5rem;
+  height: 1.5rem;
   border-radius: 50%;
   margin: 0 10px;
   transition: transfrom 0.2s ease-in;
@@ -1099,22 +1052,10 @@ p {
   transform: scale(1.5);
 }
 
-.more-info-dialog-content {
-  background-color: #FFF;
-  border-radius: 10px;
-  position: absolute;
-  top: 5vh;
-  right: 45px;
-  bottom: 45px;
-  left: 5vh;
-  padding: 5vh 45px;
-  overflow: hidden;
-}
-
 .faux-phone {
-  border: 5px solid #000;
+  width: 90%;
+  height: 100%;
   border-radius: 10px;
-  height: 80vh;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 3px 0;
   position: relative;
@@ -1122,21 +1063,31 @@ p {
   background-color: rgb(236, 236, 236);
   padding: 15px;
 }
+@media (min-width: 769px) {
+  .faux-phone {
+    height: 80vh;
+    width: 100%;
+  }
+}
 .faux-phone:after {
   content: "";
-  content: "";
-  display: block;
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  box-shadow: rgb(236, 236, 236) 20px 20px 0 inset, rgb(236, 236, 236) -20px -20px 0 inset;
-  pointer-events: none;
-  border-radius: 10px;
+}
+@media (min-width: 769px) {
+  .faux-phone:after {
+    content: "";
+    display: block;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    box-shadow: rgb(236, 236, 236) 20px 20px 0 inset, rgb(236, 236, 236) -20px -20px 0 inset;
+    pointer-events: none;
+    border-radius: 10px;
+  }
 }
 
 .img-title {
@@ -1159,9 +1110,9 @@ p {
 
 .scrollable-image {
   overflow: scroll;
-  height: 80vh;
   border-radius: 10px;
   position: relative;
+  height: 90vh;
 }
 .scrollable-image img {
   margin: 45px auto 60px;
@@ -1169,7 +1120,7 @@ p {
 
 .slider-btn {
   display: block;
-  width: 60px;
+  width: 2.8rem;
   height: 150px;
   background: none;
   border: none;
@@ -1203,10 +1154,10 @@ p {
   position: absolute;
   content: "";
   display: block;
-  height: 120px;
-  border-top: 30px solid transparent;
-  border-bottom: 30px solid transparent;
-  border-left: 60px solid rgba(0, 0, 0, 0.8);
+  height: 8rem;
+  border-top: 1.4rem solid transparent;
+  border-bottom: 1.4rem solid transparent;
+  border-left: 2.8rem solid rgba(0, 0, 0, 0.8);
   left: 0;
 }
 .slider-btn:last-of-type {
@@ -1216,15 +1167,15 @@ p {
   position: absolute;
   content: "";
   display: block;
-  height: 120px;
-  border-top: 30px solid transparent;
-  border-bottom: 30px solid transparent;
-  border-right: 60px solid rgba(0, 0, 0, 0.8);
+  height: 8rem;
+  border-top: 1.4rem solid transparent;
+  border-bottom: 1.4rem solid transparent;
+  border-right: 2.8rem solid rgba(0, 0, 0, 0.8);
   right: 0;
 }
 .slider-btn .icon {
   display: inline-block;
-  width: 30px;
+  width: 2rem;
 }
 .slider-btn .icon-fast-forward {
   margin-right: -10px;
@@ -1240,16 +1191,60 @@ p {
   display: block;
 }
 
-.detailed-description {
-  overflow: scroll;
-  height: 80vh;
+.dialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, #E2006A 0%, #E2006A 20%, #EE6B0F 20%, #EE6B0F 40%, #EBE000 40%, #EBE000 60%, #82A900 60%, #82A900 80%, #0084CE 80%, #0084CE 100%);
+  z-index: 6;
+}
+.dialog:before {
+  content: "";
+  display: block;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background: url("/assets/images/concrete-wall-tileable.jpg");
+  pointer-events: none;
+  opacity: 20%;
+  z-index: 0;
+}
+@media (prefers-color-scheme: dark) {
+  .dialog:before {
+    opacity: 10%;
+  }
+}
+
+.dialog-content {
+  background-color: #FFF;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+@media (min-width: 769px) {
+  .dialog-content {
+    border-radius: 10px;
+    top: 6vh;
+    left: 6vw;
+    width: 88vw;
+    height: 88vh;
+  }
 }
 
 .btn-close {
-  float: right;
-  width: 55px;
-  z-index: 1;
-  position: relative;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 3rem;
+  z-index: 2;
   background: black;
   border: 2px solid black;
   padding: 10px;
@@ -1267,6 +1262,76 @@ p {
 }
 .btn-close:hover svg {
   fill: black;
+}
+
+.more-info {
+  overflow: hidden;
+}
+@media (max-width: 769px) {
+  .more-info.show-left-pg {
+    transform: translateX(-45vw);
+  }
+}
+@media (max-width: 769px) {
+  .more-info {
+    transition: transform 0.2s ease-in;
+    width: 190vw;
+    transform: translateX(-95vw);
+  }
+}
+
+@media (max-width: 769px) {
+  .right-page {
+    box-shadow: rgba(0, 0, 0, 0.3) 6px 0 5px inset;
+    margin-left: -8px;
+  }
+  .right-page:after {
+    content: "";
+    position: absolute;
+    content: "";
+    display: block;
+    height: 20vh;
+    border-top: 4vw solid transparent;
+    border-bottom: 4vw solid transparent;
+    border-left: 8vw solid rgba(0, 0, 0, 0.8);
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@media (max-width: 769px) {
+  .left-page {
+    box-shadow: rgba(0, 0, 0, 0.3) -6px 0 5px inset, rgba(0, 0, 0, 0.3) -6px 0 3px inset;
+    margin-right: -8px;
+  }
+  .left-page:after {
+    position: absolute;
+    content: "";
+    display: block;
+    height: 20vh;
+    border-top: 4vw solid transparent;
+    border-bottom: 4vw solid transparent;
+    border-right: 8vw solid rgba(0, 0, 0, 0.8);
+    content: "";
+    right: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.detailed-description {
+  overflow: scroll;
+  margin-top: 4vh;
+  margin-left: 12vw;
+  padding: 6px;
+  height: 100vh;
+}
+@media (min-width: 769px) {
+  .detailed-description {
+    margin: 4vh 24px;
+    height: 80vh;
+  }
 }
 
 /*******************

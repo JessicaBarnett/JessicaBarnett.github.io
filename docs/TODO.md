@@ -6,8 +6,20 @@
 ----------------------------------------------------------------
 
 - figure out scroll jankiness **
+
 - more-info section
-  - Get some better screenshots from the wayback machine
+  - so much cleanup
+  - Extract slider into a component
+    - wire up slider buttons
+  - extract dialog into a component
+    - wire up close btn
+  - split out data a bit more:
+    - Add role, time period, context (redesign?  feature? maintenance?  new build?)
+    - intro?  challenges?  solutions?  results?
+    - display tech stack in a table like the sp/lp grid on vhs tapes??
+    - add some stories
+  - accessibility audit
+
 - animate lines
 
 ----------------------------------------------------------------

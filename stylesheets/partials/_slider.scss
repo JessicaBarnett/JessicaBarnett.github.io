@@ -2,25 +2,7 @@
 @use "../utilities/utilities" as *;
 @use "./trapezoids" as *;
 
-.more-info-dialog {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background: $rainbow-gradient-diag;
-    z-index: 6;
-
-    &:before {
-        @include paper-texture-overlay();
-        opacity: $paper-texture-opacity;
-        z-index: 0;
-
-        @include dark-mode() {
-          opacity: $drk-paper-texture-opacity;
-        }
-    }
-}
+// Slider
 
 .buttons {
     width: 100%;
@@ -36,8 +18,8 @@
 .slider-dot-btn {
     background-color: rgba($black, .8);
     border: 0;
-    width: 25px;
-    height: 25px;
+    width: 1.5rem;
+    height: 1.5rem;
     border-radius: 50%;
     margin: 0 10px;
     transition: transfrom $bg-transition;
@@ -49,22 +31,11 @@
 
 }
 
-.more-info-dialog-content {
-    background-color: #FFF;
-    border-radius: 10px;
-    position: absolute;
-    top: 5vh;
-    right: 45px;
-    bottom: 45px;
-    left: 5vh;
-    padding: 5vh 45px;
-    overflow: hidden;
-}
-
 .faux-phone {
-    border: 5px solid $black;
+    width: 90%;
+    height: 100%;
+    // border: 5px solid $black;
     border-radius: 10px;
-    height: 80vh;
     overflow: hidden;
     box-shadow: rgba($black, .3) 2px 2px 3px 0;
     position: relative;
@@ -72,15 +43,25 @@
     background-color: rgb(236, 236, 236);
     padding: 15px;
 
+
+    @include only-above($medium-bp) {
+        height: 80vh;
+        width: 100%;
+    }
+
     &:after {
         content: '';
-        @include pseudo-overlay();
-        box-shadow: rgb(236, 236, 236) 20px 20px 0 inset,
-                    rgb(236, 236, 236) -20px -20px 0 inset;
-        pointer-events: none;
-        border-radius: 10px;
+
+        @include only-above($medium-bp) {
+            @include pseudo-overlay();
+            box-shadow: rgb(236, 236, 236) 20px 20px 0 inset,
+                        rgb(236, 236, 236) -20px -20px 0 inset;
+            pointer-events: none;
+            border-radius: 10px;
+        }
     }
 }
+
 
 .img-title {
     display: none;
@@ -103,9 +84,9 @@
 
 .scrollable-image {
     overflow: scroll;
-    height: 80vh;
     border-radius: 10px;
     position: relative;
+    height: 90vh;
 
     img {
         margin: 45px auto 60px;
@@ -114,7 +95,7 @@
 
 .slider-btn {
     display: block;
-    width: 60px;
+    width: 2.8rem;
     height: 150px;
     background: none;
     border: none;
@@ -149,7 +130,7 @@
         left: 0;
 
         &:after {
-            @include trapezoid('left', 60px, 30px, 120px, rgba($black, 0.8));
+            @include trapezoid('left', 2.8rem, calc(2.8rem / 2), 8rem, rgba($black, 0.8));
             left: 0;
         }
     }
@@ -158,14 +139,14 @@
         right: 0;
 
         &:after {
-            @include trapezoid('right', 60px, 30px, 120px, rgba($black, 0.8));
+            @include trapezoid('right', 2.8rem, calc(2.8rem / 2), 8rem, rgba($black, 0.8));
             right: 0;
         }
     }
 
     .icon {
         display: inline-block;
-        width: 30px;
+        width: 2rem;
     }
 
     .icon-fast-forward {
@@ -184,37 +165,3 @@
         display: block;
     }
 }
-
-.detailed-description {
-    overflow: scroll;
-    height: 80vh;
-}
-
-.btn-close {
-    float: right;
-    width: 55px;
-    z-index: 1;
-    position: relative;
-    background: black;
-    border: 2px solid black;
-    padding: 10px;
-    border-radius: 50%;
-    margin: 8px;
-    transition: background-color $bg-transition;
-
-    svg {
-        margin-top: 3px;
-        fill: white;
-        transition: fill $text-transition;
-    }
-
-    &:hover {
-        background: white;
-
-        svg {
-            fill: black;
-        }
-    }
-
-}
-

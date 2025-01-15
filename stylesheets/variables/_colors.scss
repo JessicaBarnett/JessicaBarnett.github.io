@@ -57,3 +57,9 @@ $rainbow-gradient-diag: linear-gradient(
     $blue 80%,
     $blue 100%,
 );
+
+$gray-linear-gradient: linear-gradient(
+    90deg,
+    $black 100%,
+    $black 0%
+);

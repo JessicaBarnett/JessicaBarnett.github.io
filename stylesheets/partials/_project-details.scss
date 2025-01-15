@@ -1,0 +1,70 @@
+@use "../variables/variables" as *;
+@use "../utilities/utilities" as *;
+@use "./trapezoids" as *;
+
+// Project Details Layout
+
+$trapezoid-width: 8vw;
+
+.more-info {
+    overflow: hidden;
+
+    &.show-left-pg {
+        @include only-below($medium-bp) {
+            transform: translateX(-45vw);
+        }
+    }
+
+    @include only-below($medium-bp) {
+        transition: transform $bg-transition;
+        width: 190vw;
+        transform: translateX(-95vw);
+
+    }
+}
+
+.right-page {
+    @include only-below($medium-bp) {
+        box-shadow: rgba(0, 0, 0, 0.3) 6px 0 5px inset;
+        margin-left: -8px;
+
+        &:after {
+            content: '';
+            @include trapezoid('left', $trapezoid-width, calc($trapezoid-width / 2), 20vh, rgba($black, 0.8));
+            left: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+}
+
+.left-page {
+    @include only-below($medium-bp) {
+        box-shadow: rgba(0, 0, 0, 0.3) -6px 0 5px inset,
+                    rgba(0, 0, 0, 0.3) -6px 0 3px inset;
+        margin-right: -8px;
+
+        &:after {
+            @include trapezoid('right', $trapezoid-width, calc($trapezoid-width / 2), 20vh, rgba($black, 0.8));
+            content: '';
+            right: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+.detailed-description {
+    overflow: scroll;
+    margin-top: 4vh;
+    margin-left: $trapezoid-width + 4vw;
+    padding: 6px;
+    height: 100vh;
+
+    @include only-above($medium-bp) {
+        margin: 4vh 24px;
+        height: 80vh;
+    }
+}
+

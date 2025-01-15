@@ -1,4 +1,5 @@
 export type MediaT = {
+    id: string,
     name?: string,
     url: string,
     alt: string,
