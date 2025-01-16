@@ -3,7 +3,6 @@ export type MediaT = {
     name?: string,
     url: string,
     alt: string,
-    type: 'video' | 'image'
 }
 
 export type TagT = {

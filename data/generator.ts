@@ -1,6 +1,6 @@
 import { ProjectT, TagT, ExperienceEntryT, FilterT, MediaT } from '../src/types/data-types.ts';
 
-const random = (max = 5) => Math.floor(Math.random() * max);
+const random = (max=5, min=1) => Math.floor(Math.random() * (max - min) + min);
 
 const multiGen = <T>(fn: (idx: number) => T, numItems: number): T[] => {
     numItems = numItems !== null ? numItems : random();
@@ -12,13 +12,13 @@ const multiGen = <T>(fn: (idx: number) => T, numItems: number): T[] => {
     return items;
 };
 
-const demoWords = 'Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum'.split(' ');
+const demoWords = 'lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum'.split(' ');
 export const wordGen = (): string => demoWords[random(demoWords.length - 1)]
-export const wordsGen = (num = random(10)): string[] => multiGen(wordGen, num);
-export const sentenceGen = (num = random(5)): string => [...wordsGen(num), '.  '].join(' ');
-export const sentencesGen = (num = random(5)): string[] => multiGen(sentenceGen, num);
-export const paragraphGen = (num = random(5)): string => [...sentencesGen(num), '\n'].join(' ');
-export const paragraphsGen = (num = random(5)): string[] => multiGen(wordGen, num);
+export const wordsGen = (num = random(10, 5) ): string => multiGen(wordGen, num).join(' ');
+export const sentenceGen = (): string => [wordsGen(), '.  '].join('');
+export const sentencesGen = (num = random(5)): string => multiGen(sentenceGen, num).join(' ');
+export const paragraphGen = (): string => [sentencesGen(), '\n'].join(' ');
+export const paragraphsGen = (num = random(5)): string => multiGen(paragraphGen, num).join(' ');
 
 
 const demoImageUrls = ['/assets/docs/demo/pink-800-1000.jpg', '/assets/docs/demo/orange-800-1000.jpg', '/assets/docs/demo/yellow-800-1000.jpg', '/assets/docs/demo/green-800-1000.jpg', '/assets/docs/demo/blue-800-1000.jpg']
@@ -41,7 +41,6 @@ export const mediaGen = (idx = random()): MediaT => {
         name: `image #${idx}`,
         url: imageUrl(idx % demoImageUrls.length),
         alt: `image #${idx}`,
-        type: 'image'
     }
 };
 export const mediasGen = (num = random()): MediaT[] => multiGen(mediaGen, num);

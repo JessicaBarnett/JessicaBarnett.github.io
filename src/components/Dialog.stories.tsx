@@ -15,7 +15,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    children: <p>Duis molestie eros sit amet eros porta, id accumsan justo lobortis. Mauris laoreet maximus ex, interdum dictum est volutpat vitae. Fusce cursus ipsum ac erat luctus tincidunt. Nam egestas tortor orci. Aenean in lacinia felis. Donec ut lectus elementum, blandit leo a, ultricies ligula. Maecenas id nunc accumsan, tempor ligula nec, consequat sapien.</p>,
+    children: <p>{paragraphsGen(3)}</p>,
     isOpen: true,
     onClose: () => console.log("dialog has been closed"),
   } as DialogComponentProps,
