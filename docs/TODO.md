@@ -5,6 +5,12 @@
 ## In Progress
 ----------------------------------------------------------------
 
+- slider
+  - add disabled styling to buttons
+  - add highlights to the dots.
+  -
+
+
 - figure out scroll jankiness **
 
 - more-info section

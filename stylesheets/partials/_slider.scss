@@ -4,14 +4,74 @@
 
 // Slider
 
-.buttons {
+.slider-frame {
+    position: relative; //ctx for btns
+    width: 90%;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: rgba($black, .3) 2px 2px 3px 0;
+    position: relative;
+    z-index: 1;
+    background-color: rgb(236, 236, 236);
+    padding: 15px;
+
+
+    @include only-above($medium-bp) {
+        height: 80vh;
+        width: 100%;
+        border-radius: 10px;
+    }
+}
+
+$pinstripes: repeating-linear-gradient(
+    45deg,
+    #a8a8a8,
+    #a8a8a8 1px,
+    #ccc 1px,
+    #ccc 10px,
+    $black 10px
+);
+
+.slider-contents {
+    position: relative; // needed for small vp
+    overflow: hidden scroll;
+    border-radius: 10px;
+    height: 96vh;
+    background-image: $pinstripes;
+
+    @include only-above($medium-bp) {
+        height: calc(100% - 30px); // top/bottom padding (15px) * 2
+    }
+}
+
+.slider-image-track {
+    overflow-x: hidden;
+    display: flex;
+    align-items: flex-start;
+    transition: transform $bg-transition, left $bg-transition;
+}
+
+.slider-title {
+    position: absolute;
+    background-color: rgba($black, 0.8);
+    color: white;
+    padding: 8px 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    max-width: fit-content;
+    margin-top: -25px;
+    margin-left: -22px;
+    z-index: 1;
+    cursor: default;
+}
+
+.slider-dot-btns {
     width: 100%;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     z-index: 1;
-    position: relative;
     position: absolute;
-    bottom: 24px;
+    bottom: 36px;
     left: 0;
 }
 
@@ -25,75 +85,16 @@
     transition: transfrom $bg-transition;
     transform: scale(1);
 
-    &.selected, &:hover  {
+    &:hover  {
         transform: scale(1.5);
     }
+    &.selected {
+        background-color: $white;
+    }
 
 }
 
-.faux-phone {
-    width: 90%;
-    height: 100%;
-    // border: 5px solid $black;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: rgba($black, .3) 2px 2px 3px 0;
-    position: relative;
-    z-index: 1;
-    background-color: rgb(236, 236, 236);
-    padding: 15px;
-
-
-    @include only-above($medium-bp) {
-        height: 80vh;
-        width: 100%;
-    }
-
-    &:after {
-        content: '';
-
-        @include only-above($medium-bp) {
-            @include pseudo-overlay();
-            box-shadow: rgb(236, 236, 236) 20px 20px 0 inset,
-                        rgb(236, 236, 236) -20px -20px 0 inset;
-            pointer-events: none;
-            border-radius: 10px;
-        }
-    }
-}
-
-
-.img-title {
-    display: none;
-    position: absolute;
-    background-color: rgba($black, 0.8);
-    color: white;
-    padding: 8px 16px;
-    font-weight: bold;
-    border-radius: 10px;
-    max-width: fit-content;
-    margin-top: -25px;
-    margin-left: -22px;
-    z-index: 1;
-    cursor: default;
-
-    &.visible {
-        display: block;
-    }
-}
-
-.scrollable-image {
-    overflow: scroll;
-    border-radius: 10px;
-    position: relative;
-    height: 90vh;
-
-    img {
-        margin: 45px auto 60px;
-    }
-}
-
-.slider-btn {
+.slider-arrow-btn {
     display: block;
     width: 2.8rem;
     height: 150px;
@@ -105,20 +106,27 @@
     top: 50%;
     transform: translateY(-50%) scale(1);
 
+    .icon {
+        display: inline-block;
+        width: 2rem;
+    }
+
     svg {
+        transition: transform $text-transition ease-in,  fill $bg-transition ease-in;
         fill: $white;
         z-index: 2;
         position: relative;
-        transition: transform 0.2s ease-in;
     }
 
     &:after {
         top: 50%;
         transform: translateY(-50%);
         z-index: 1;
+        position: fixed !important;
+        transition: border-color $text-transition ease-in;
     }
 
-    &:hover {
+    &:not(:disabled):hover {
         transform: translateY(-50%) scale(1.1);
 
         svg {
@@ -129,39 +137,42 @@
     &:first-of-type {
         left: 0;
 
+        &:disabled {
+            transform: translateY(-50%) translateX(-80%);
+        }
+
         &:after {
-            @include trapezoid('left', 4.5rem, 3.5rem, rgba($black, 0.8));
+            @include trapezoid('left', 4.5rem, 3.5rem, rgba($black, 0.7));
             left: 0;
+        }
+
+        &:disabled:after {
+            border-left-color: rgba($black, 0.2);
+        }
+
+        &:disabled svg {
+            fill: rgba($black, 0.2);
         }
     }
 
     &:last-of-type {
         right: 0;
 
+        &:disabled {
+            transform: translateY(-50%) translateX(80%);
+        }
+
         &:after {
-            @include trapezoid('right', 4.5rem, 3.5rem, rgba($black, 0.8));
+            @include trapezoid('right', 4.5rem, 3.5rem, rgba($black, 0.7));
             right: 0;
         }
-    }
 
-    .icon {
-        display: inline-block;
-        width: 2rem;
-    }
+        &:disabled:after {
+            border-right-color: rgba($black, 0.5);
+        }
 
-    // .icon-fast-forward {
-    //     margin-right: 10px;
-    // }
-
-    // .icon-rewind {
-    //     margin-left: 10px;
-    // }
-}
-
-.slider-img {
-    display: none;
-
-    &.visible {
-        display: block;
+        &:disabled svg {
+            fill: rgba($black, 0.2);
+        }
     }
 }
