@@ -16,7 +16,15 @@ export type ProjectT = {
     description: string,
     company: string,
     tags: TagT[],
-    detailed_description?: string,
+
+    business?: string,
+    role?: string,
+    type?: string,
+
+    task?: string,
+    stack?: string,
+    results?: string,
+
     media?: MediaT[],
 };
 

@@ -11,8 +11,8 @@ type ProjectComponentProps = {
 };
 
 const Project = ({project, selectedTags, onTagSelect, onMoreInfoClick}: ProjectComponentProps) => {
-  // const hasMoreInfo = (): boolean => !!project.detailed_description && !!project.media && !!project.media.length;
-  const hasMoreInfo = (): boolean => false;
+  const hasMoreInfo = (): boolean => !!project.task && !!project.media && !!project.media.length;
+  // const hasMoreInfo = (): boolean => false;
 
 
   return (

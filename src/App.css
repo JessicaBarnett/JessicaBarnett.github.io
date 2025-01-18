@@ -1060,7 +1060,7 @@ p {
 }
 @media (min-width: 769px) {
   .slider-frame {
-    height: 80vh;
+    height: 90vh;
     width: 100%;
     border-radius: 10px;
   }
@@ -1080,7 +1080,6 @@ p {
 }
 
 .slider-image-track {
-  overflow-x: hidden;
   display: flex;
   align-items: flex-start;
   transition: transform 0.2s ease-in, left 0.2s ease-in;

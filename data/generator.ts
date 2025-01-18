@@ -52,7 +52,14 @@ export const projectGen = (idx = random()): ProjectT => {
         title: "Project Title",
         description: "Worked on this, that and the other, and this thing and that thing and stuff and things.",
         company: "Company Name",
-        tags: tagsGen()
+        tags: tagsGen(),
+        business: "ecommerce",
+        role: "frontend lead",
+        type: "new build",
+        task: paragraphGen(),
+        stack: paragraphGen(),
+        results: paragraphGen(),
+        media: mediasGen(3)
       };
 }
 export const projectsGen = (num = random()): ProjectT[] => multiGen(projectGen, num);

@@ -17,7 +17,7 @@
 
 
     @include only-above($medium-bp) {
-        height: 80vh;
+        height: 90vh;
         width: 100%;
         border-radius: 10px;
     }
@@ -45,7 +45,6 @@ $pinstripes: repeating-linear-gradient(
 }
 
 .slider-image-track {
-    overflow-x: hidden;
     display: flex;
     align-items: flex-start;
     transition: transform $bg-transition, left $bg-transition;

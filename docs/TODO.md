@@ -6,9 +6,9 @@
 ----------------------------------------------------------------
 
 - slider
-  - add disabled styling to buttons
-  - add highlights to the dots.
-  -
+  - I just... dont like it.
+
+- turn the more-info Section into a more standard document layout.  Still a dialog for now, but not scrollable.  Instead of a slider, have multiple scrollable image containers
 
 
 - figure out scroll jankiness **

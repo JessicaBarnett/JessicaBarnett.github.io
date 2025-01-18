@@ -16,7 +16,7 @@ const ProjectDetails = ({
 }: ProjectDetailsComponentProps) => {
     const [showLeftPage, updateShowLeftPage] = useState<boolean>(false);
 
-    if (!project || !project.detailed_description || !project.media?.length) {
+    if (!project || !project.task || !project.media?.length) {
         return;
     }
 
@@ -41,7 +41,7 @@ const ProjectDetails = ({
                             isSelected={tagSelected(tag, selectedTags)}
                         ></Tag>
                     ))}
-                    <div>{project.detailed_description}</div>
+                    <div>{project.task}</div>
                 </div>
             </div>
         </div>
