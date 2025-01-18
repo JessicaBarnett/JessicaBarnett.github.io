@@ -8,6 +8,13 @@ const meta = {
   parameters: {},
   tags: ["autodocs"],
   argTypes: {},
+  decorators: [
+    (Story) => (
+      <div style={{position: 'relative', minHeight: '400px'}}>
+        <Story></Story>
+      </div>
+    )
+  ]
 } satisfies Meta<typeof Dialog>;
 
 export default meta;

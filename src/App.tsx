@@ -103,8 +103,8 @@ function App() {
   };
 
   const handleMoreInfoClick = (project: ProjectT) => {
-      setDialogOpen(true);
-      setSelectedProject(project);
+    setDialogOpen(true);
+    setSelectedProject(project);
   }
 
   /* problem now is probably that react DOES remove and re-add elements, so my refs again might get lost */
@@ -127,7 +127,7 @@ function App() {
   //     }, 1);
   // }, [tagScrollEvent]);
 
-  return (
+  return (<>
     <div className={`background ${dialogOpen ? "body-scroll-disabled" : ""}`}>
       <div ref={fixedNavRef}>
         <Navigation></Navigation>
@@ -230,18 +230,20 @@ function App() {
           </div>
         </section>
       </div>
-      <Dialog
-        isOpen={dialogOpen}
-        onClose={() => {
-          setDialogOpen(false)
-        }}
-      >
-        <ProjectDetails
+
+    </div>
+    <Dialog
+      isOpen={dialogOpen}
+      onClose={() => {
+        setDialogOpen(false)
+      }}
+    >
+      <ProjectDetails
           project={selectedProject}
           selectedTags={selectedFilter?.tags ?? []}
         ></ProjectDetails>
-      </Dialog>
-    </div>
+    </Dialog>
+  </>
   );
 }
 

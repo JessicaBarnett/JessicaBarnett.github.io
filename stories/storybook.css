@@ -16,6 +16,11 @@
     margin-bottom: 52px;
 }
 
+.sb-relative-parent {
+    position: relative;
+    min-height: 300px;
+}
+
 .sb-clear {
     clear: both;
 }

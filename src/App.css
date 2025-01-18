@@ -1212,9 +1212,8 @@ p {
 .dialog {
   position: fixed;
   top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
+  height: 100%;
+  width: 100%;
   background: linear-gradient(45deg, #E2006A 0%, #E2006A 20%, #EE6B0F 20%, #EE6B0F 40%, #EBE000 40%, #EBE000 60%, #82A900 60%, #82A900 80%, #0084CE 80%, #0084CE 100%);
   z-index: 6;
 }
@@ -1249,11 +1248,10 @@ p {
 }
 @media (min-width: 769px) {
   .dialog-content {
+    width: 90%;
+    height: 90%;
+    margin: 3% 5% 7%;
     border-radius: 10px;
-    top: 6vh;
-    left: 6vw;
-    width: 88vw;
-    height: 88vh;
   }
 }
 
