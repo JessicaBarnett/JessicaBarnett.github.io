@@ -46,8 +46,11 @@ function App() {
     filters,
     selectedFilter
   );
-  const [dialogOpen, setDialogOpen] = useState(false);
-  const [selectedProject, setSelectedProject] = useState<ProjectT | null>(null);
+  // const [dialogOpen, setDialogOpen] = useState(false);
+  // const [selectedProject, setSelectedProject] = useState<ProjectT | null>(null);
+  const [dialogOpen, setDialogOpen] = useState(true);
+  const [selectedProject, setSelectedProject] = useState<ProjectT | null>(projects.find(project => project.id === 'wl-p-002') || null);
+
 
   // type TagScrollEventT = {
   //   target: React.MutableRefObject<HTMLButtonElement | null>,

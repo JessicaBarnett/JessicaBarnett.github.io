@@ -3,7 +3,6 @@
 @use "./trapezoids" as *;
 
 // Slider
-
 .slider-frame {
     position: relative; //ctx for btns
     width: 90%;
@@ -14,6 +13,7 @@
     z-index: 1;
     background-color: rgb(236, 236, 236);
     padding: 15px;
+    max-height: 50vh;
 
 
     @include only-above($medium-bp) {
@@ -21,28 +21,50 @@
         width: 100%;
         border-radius: 10px;
     }
-}
 
-$pinstripes: repeating-linear-gradient(
-    45deg,
-    #a8a8a8,
-    #a8a8a8 1px,
-    #ccc 1px,
-    #ccc 10px,
-    $black 10px
-);
+    &:hover:after {
+        pointer-events: none;
+        opacity: 0;
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        opacity: 0.2;
+        display: block;
+        top: 0;
+        z-index: 11;
+        left: 0;
+        transition: opacity $bg-transition;
+    }
+}
 
 .slider-contents {
     position: relative; // needed for small vp
     overflow: hidden scroll;
     border-radius: 10px;
-    height: 96vh;
-    background-image: $pinstripes;
-
-    @include only-above($medium-bp) {
-        height: calc(100% - 30px); // top/bottom padding (15px) * 2
-    }
+    // height: 96vh;
+    box-shadow: rgba($black, .3) 2px 2px 3px 0, rgba($black, .3) -2px -2px 3px 0;
+    background-image: $graph-ppr-gradient;
+    height: 100%;
 }
+
+.slide {
+    margin: 0;
+}
+
+.slide-caption {
+    position: absolute;
+    background-color: black;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+    display: block;
+}
+
 
 .slider-image-track {
     display: flex;
@@ -56,10 +78,10 @@ $pinstripes: repeating-linear-gradient(
     color: white;
     padding: 8px 16px;
     font-weight: bold;
-    border-radius: 10px;
+    border-radius: 0 10px 0 0;
     max-width: fit-content;
-    margin-top: -25px;
-    margin-left: -22px;
+    margin-top: -36px;
+    margin-left: -14px;
     z-index: 1;
     cursor: default;
 }

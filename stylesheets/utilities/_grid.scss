@@ -9,7 +9,7 @@
   grid-template-columns: repeat(12, 12fr);
   grid-gap: 16px;
 
-  > * {
+  > *, .full {
     grid-column: auto / span 12;
   }
 
@@ -36,7 +36,6 @@
     @include grid;
   }
 }
-
 
 .grid-at-med {
   @include only-above($medium-bp) {

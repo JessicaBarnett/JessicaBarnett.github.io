@@ -5,6 +5,7 @@ import { FastForwardIcon } from "@src/icons/FastForwardIcon.tsx";
 
 export type SliderComponentProps = {
     media: MediaT[];
+    className?: string;
 };
 
 // Private Hooks
@@ -27,7 +28,7 @@ function useOffsetState(sliderTrackRef: React.MutableRefObject<HTMLDivElement | 
 
 // Component
 
-const Slider = ({ media }: SliderComponentProps) => {
+const Slider = ({ media, className }: SliderComponentProps) => {
     const sliderContentsRef = useRef<HTMLDivElement | null>(null);
     const sliderTrackRef = useRef<HTMLDivElement | null>(null);
     const [offset, setOffset] = useOffsetState(sliderTrackRef);
@@ -66,25 +67,28 @@ const Slider = ({ media }: SliderComponentProps) => {
     }, [selectedSlideIdx, media, setOffset, setSelectedSlide]);
 
     return (
-        <div className="slider-frame">
-            <p className="slider-title">{selectedSlide.name}</p>
+        <div className={`slider-frame ${className}`}>
+            { media.length > 1 && (
+                <>
+                    <button className="slider-arrow-btn" onClick={() => moveBackward()}>
+                        <RewindIcon></RewindIcon>
+                    </button>
+                    <button className="slider-arrow-btn" onClick={() => moveForward()}>
+                        <FastForwardIcon></FastForwardIcon>
+                    </button>
 
-            <button className="slider-arrow-btn" onClick={() => moveBackward()}>
-                <RewindIcon></RewindIcon>
-            </button>
-            <button className="slider-arrow-btn" onClick={() => moveForward()}>
-                <FastForwardIcon></FastForwardIcon>
-            </button>
+                    <div className="slider-dot-btns">
+                        {media.map((slide, idx) => (
+                            <button
+                                key={`${slide.id}-dot-btn`}
+                                className={`slider-dot-btn ${idx === selectedSlideIdx ? 'selected' : ''}`}
+                                onClick={() => handleGoToBtnClick(idx)}
+                            ></button>
+                        ))}
+                    </div>
+                </>
+            )}
 
-            <div className="slider-dot-btns">
-                {media.map((slide, idx) => (
-                    <button
-                        key={`${slide.id}-dot-btn`}
-                        className={`slider-dot-btn ${idx === selectedSlideIdx ? 'selected' : ''}`}
-                        onClick={() => handleGoToBtnClick(idx)}
-                    ></button>
-                ))}
-            </div>
 
             <div className="slider-contents" ref={sliderContentsRef}>
                 <div
@@ -102,6 +106,8 @@ const Slider = ({ media }: SliderComponentProps) => {
                     ))}
                 </div>
             </div>
+            <p className="slider-title">{selectedSlide.name}</p>
+
         </div>
     );
 };

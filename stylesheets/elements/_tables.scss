@@ -17,11 +17,16 @@ td, th {
   padding: 4px;
 }
 
-th:first-of-type {
-  text-align: left;
+// th:first-of-type {
+//   text-align: left;
+// }
+
+
+th {
+  font-weight: 700;
 }
 
-td {
+td, th {
   text-align: center;
 }
 
@@ -33,3 +38,30 @@ table {
   border-collapse: collapse;
   border: 1px solid $border-color;
 }
+
+
+// .clearfix:after {
+//   content: "";
+//   clear: both;
+//   display: table;
+// }
+
+// dl {
+// display: block;
+// width: 100%;
+// clear: both
+
+// }
+
+// dd, dt {
+//   display: inline-block;
+// }
+
+// dd {
+//  float: left;
+// }
+
+// dt {
+//   float: left;
+//   clear: both;
+// }

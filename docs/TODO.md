@@ -6,26 +6,23 @@
 ----------------------------------------------------------------
 
 - slider
-  - I just... dont like it.
+  - add "click to expand"
+  - improve button scaling
+  - accessibility audit!!
 
-- turn the more-info Section into a more standard document layout.  Still a dialog for now, but not scrollable.  Instead of a slider, have multiple scrollable image containers
+- More info section
+  - @mobile
+    - banner slider hidden
+    - all images visible in secondary slider
+  - @wide
+    - banner slider visible
+    - only mobile images visible in secondary slider
+  - content organization
+    - Stack displayed as a table
+    - role/period/type/business as a datalist
 
-
-- figure out scroll jankiness **
-
-- more-info section
-  - so much cleanup
-  - Extract slider into a component
-    - wire up slider buttons
-  - extract dialog into a component
-    - wire up close btn
-  - split out data a bit more:
-    - Add role, time period, context (redesign?  feature? maintenance?  new build?)
-    - intro?  challenges?  solutions?  results?
-    - display tech stack in a table like the sp/lp grid on vhs tapes??
-    - add some stories
-  - accessibility audit
-
+- Css Modules / scoping
+- accessibility audit
 - animate lines
 
 ----------------------------------------------------------------
@@ -37,7 +34,7 @@
 - tiled bg texture isn't as nicely tiled as it could be... **
 
 #### Copy/Content
-- Go over all the copy **
+- Go over all the copy *
 
 #### Features
 - "rewind" back to top button!

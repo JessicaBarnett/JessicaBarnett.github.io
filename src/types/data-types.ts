@@ -1,8 +1,12 @@
+export type StrTuple = [string, string]
+
+export type ViewportT = "mobile" | "wide";
 export type MediaT = {
     id: string,
     name?: string,
     url: string,
     alt: string,
+    viewport: ViewportT
 }
 
 export type TagT = {
@@ -20,6 +24,7 @@ export type ProjectT = {
     business?: string,
     role?: string,
     type?: string,
+    period?: string,
 
     task?: string,
     stack?: string,

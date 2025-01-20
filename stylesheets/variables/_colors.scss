@@ -63,3 +63,16 @@ $gray-linear-gradient: linear-gradient(
     $black 100%,
     $black 0%
 );
+
+$pinstripes: repeating-linear-gradient(
+    45deg,
+    #a8a8a8,
+    #a8a8a8 1px,
+    #ccc 1px,
+    #ccc 10px,
+    $black 10px
+);
+
+$graph-ppr-gradient:
+linear-gradient(to right, grey 1px, transparent 1px),
+linear-gradient(to bottom, grey 1px, transparent 1px);
