@@ -2,17 +2,18 @@ import { ProjectT, TagT } from "@src/types/data-types.tsx";
 import Tag from "@src/components/Tag.tsx";
 import { tagSelected } from "@src/utils/util.ts";
 import React from "react";
+import { Link } from "react-router";
 
 type ProjectComponentProps = {
   project: ProjectT,
   selectedTags: TagT[],
   onTagSelect: (tag: TagT, e: React.MouseEvent) => void,
-  onMoreInfoClick: (e: React.MouseEvent) => void,
+  // onMoreInfoClick: (e: React.MouseEvent) => void,
 };
 
-const Project = ({project, selectedTags, onTagSelect, onMoreInfoClick}: ProjectComponentProps) => {
+const Project = ({project, selectedTags, onTagSelect}: ProjectComponentProps) => {
   // const hasMoreInfo = (): boolean => !!project.task && !!project.media && !!project.media.length;
-  const hasMoreInfo = (): boolean => false;
+  const hasMoreInfo = (): boolean => true;
 
 
   return (
@@ -21,7 +22,8 @@ const Project = ({project, selectedTags, onTagSelect, onMoreInfoClick}: ProjectC
       <p>
         {project.description}
         {hasMoreInfo() &&
-          <button className="btn-link" onClick={onMoreInfoClick}>more info</button>
+          <Link className="btn-link" to={`/projects/${project.title}`} >more info</Link>
+          // <button className="btn-link" onClick={onMoreInfoClick}>more info</button>
         }
       </p>
 

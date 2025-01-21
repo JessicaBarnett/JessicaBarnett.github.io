@@ -3,7 +3,7 @@
 @use "./trapezoids" as *;
 
 // Slider
-.slider-frame {
+.slider {
     position: relative; //ctx for btns
     width: 90%;
     height: 100%;
@@ -11,9 +11,9 @@
     box-shadow: rgba($black, .3) 2px 2px 3px 0;
     position: relative;
     z-index: 1;
-    background-color: rgb(236, 236, 236);
+    background-color: rgb(24, 24, 24);
     padding: 15px;
-    max-height: 50vh;
+    // max-height: 50vh;
 
 
     @include only-above($medium-bp) {
@@ -22,31 +22,46 @@
         border-radius: 10px;
     }
 
-    &:hover:after {
-        pointer-events: none;
-        opacity: 0;
-    }
+    // &:hover:after {
+    //     pointer-events: none;
+    //     opacity: 0;
+    // }
 
-    &:after {
-        content: '';
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        background-color: black;
-        opacity: 0.2;
-        display: block;
-        top: 0;
-        z-index: 11;
-        left: 0;
-        transition: opacity $bg-transition;
+    // &:after {
+    //     content: '';
+    //     position: absolute;
+    //     height: 100%;
+    //     width: 100%;
+    //     background-color: black;
+    //     opacity: 0.2;
+    //     display: block;
+    //     top: 0;
+    //     z-index: 11;
+    //     left: 0;
+    //     transition: opacity $bg-transition;
+    // }
+}
+
+.slider-expanded {
+    .slider-image-track {
+        transform: none;
     }
 }
+
+.slider-image-expanded {
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
 
 .slider-contents {
     position: relative; // needed for small vp
     overflow: hidden scroll;
     border-radius: 10px;
-    // height: 96vh;
+    height: 96vh;
     box-shadow: rgba($black, .3) 2px 2px 3px 0, rgba($black, .3) -2px -2px 3px 0;
     background-image: $graph-ppr-gradient;
     height: 100%;
@@ -106,16 +121,18 @@
     transition: transfrom $bg-transition;
     transform: scale(1);
 
-    &:hover  {
+    &:hover {
         transform: scale(1.5);
     }
+
     &.selected {
         background-color: $white;
     }
 
 }
 
-.slider-arrow-btn {
+.slider-arrow-btn-forward,
+.slider-arrow-btn-backward {
     display: block;
     width: 2.8rem;
     height: 150px;
@@ -133,7 +150,7 @@
     }
 
     svg {
-        transition: transform $text-transition ease-in,  fill $bg-transition ease-in;
+        transition: transform $text-transition ease-in, fill $bg-transition ease-in;
         fill: $white;
         z-index: 2;
         position: relative;
@@ -154,46 +171,53 @@
             transform: scale(1.2);
         }
     }
+}
 
-    &:first-of-type {
+
+.slider-arrow-btn-backward {
+    left: 0;
+
+    &:disabled {
+        transform: translateY(-50%) translateX(-80%);
+    }
+
+    &:after {
+        @include trapezoid('left', 4.5rem, 3.5rem, rgba($black, 0.7));
         left: 0;
-
-        &:disabled {
-            transform: translateY(-50%) translateX(-80%);
-        }
-
-        &:after {
-            @include trapezoid('left', 4.5rem, 3.5rem, rgba($black, 0.7));
-            left: 0;
-        }
-
-        &:disabled:after {
-            border-left-color: rgba($black, 0.2);
-        }
-
-        &:disabled svg {
-            fill: rgba($black, 0.2);
-        }
     }
 
-    &:last-of-type {
+    &:disabled:after {
+        border-left-color: rgba($black, 0.2);
+    }
+
+    &:disabled svg {
+        fill: rgba($black, 0.2);
+    }
+}
+
+.slider-arrow-btn-forward {
+    right: 0;
+
+    &:disabled {
+        transform: translateY(-50%) translateX(80%);
+    }
+
+    &:after {
+        @include trapezoid('right', 4.5rem, 3.5rem, rgba($black, 0.7));
         right: 0;
-
-        &:disabled {
-            transform: translateY(-50%) translateX(80%);
-        }
-
-        &:after {
-            @include trapezoid('right', 4.5rem, 3.5rem, rgba($black, 0.7));
-            right: 0;
-        }
-
-        &:disabled:after {
-            border-right-color: rgba($black, 0.5);
-        }
-
-        &:disabled svg {
-            fill: rgba($black, 0.2);
-        }
     }
+
+    &:disabled:after {
+        border-right-color: rgba($black, 0.5);
+    }
+
+    &:disabled svg {
+        fill: rgba($black, 0.2);
+    }
+}
+
+.btn-expand {
+    position: absolute;
+    right: 0;
+    bottom: 21px;
 }

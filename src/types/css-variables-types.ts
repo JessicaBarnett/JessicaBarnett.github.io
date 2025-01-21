@@ -4,6 +4,11 @@ export type CssColorsT = {
     yellow: string
     orange: string
     pink: string
+    wc1: string
+    wc2: string
+    wc3: string
+    wc4: string
+    wc5: string
     black: string
     white: string
 };

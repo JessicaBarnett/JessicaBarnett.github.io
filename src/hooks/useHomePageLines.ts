@@ -1,31 +1,68 @@
 import { RefObject, useLayoutEffect } from "react"; // refObject always has a .current.  ref, does not.  Need to specify
-
 import { ProjectsByCompanyT } from "@src/hooks/useFilteredProjects.ts";
 import { CssVariablesT } from "@src/types/css-variables-types.ts";
-import { ElementRefsT, SizesT, PointT } from "@src/types/bg-line-types.ts";
-
 import { useCssVariables } from "@src/hooks/static/useCssVariables.ts";
 
 import {
-  VtoD,
-  HtoD,
-  DtoH,
-  DtoV,
-  vertical,
-  horizontal,
-  diagonal,
-  getElementSizes,
+  PointT,
+  getLineW,
+  resizeAndClearCanvas,
+  drawLine,
+  translatePath,
+  refHeight
 } from "@src/utils/bg-line-utils.ts";
+
+
+// note the Null options are removed from this type
+export type HomeElementRefsT = {
+  pageRef: RefObject<HTMLDivElement>;
+  ttlRef: RefObject<HTMLElement>;
+  abtRef: RefObject<HTMLElement>;
+  projRef: RefObject<HTMLElement>;
+  expRef: RefObject<HTMLElement>;
+  contRef: RefObject<HTMLElement>;
+  ftrRef: RefObject<HTMLElement>;
+};
+
+// element sizes
+export type HomeSizesT = {
+  pgWidth: number;
+  pgHeight: number;
+  ttlHeight: number;
+  abtHeight: number;
+  expHeight: number;
+  projHeight: number;
+  contHeight: number;
+  ftrHeight: number;
+};
+
+/********************************/
+/******* Required Refs ********/
+/********************************/
+
+export const getElementSizes = (refs: HomeElementRefsT): HomeSizesT => {
+    if (!refs.pageRef || !refs.pageRef.current) {
+      throw new Error("no pageRef or pageRef.current"); // this should already have been asserted but typescript doesn't see it...
+    }
+
+    return {
+      pgWidth: refs.pageRef.current.clientWidth,
+      pgHeight: refs.pageRef.current.clientHeight,
+      ttlHeight: refHeight(refs.ttlRef),
+      abtHeight: refHeight(refs.abtRef),
+      projHeight: refHeight(refs.projRef),
+      expHeight: refHeight(refs.expRef),
+      contHeight: refHeight(refs.contRef),
+      ftrHeight: refHeight(refs.ftrRef),
+    };
+  };
 
 /********************************/
 /******* Path Definitions ********/
 /********************************/
 
-// These fns calculate paths using the heights of
-// all the elementsin ElementRefsT
-
-const getPathA = (
-  { pgWidth, ttlHeight, abtHeight, expHeight, projHeight }: SizesT,
+export const getPathA = (
+  { pgWidth, ttlHeight, abtHeight, expHeight, projHeight }: HomeSizesT,
   lineW: number,
   lineCt: number
 ): PointT[] => {
@@ -84,8 +121,8 @@ const getPathA = (
   ];
 };
 
-const getPathB = (
-  { pgWidth, ttlHeight, abtHeight, projHeight }: SizesT,
+export const getPathB = (
+  { pgWidth, ttlHeight, abtHeight, projHeight }: HomeSizesT,
   lineW: number,
   lineCt: number
 ): PointT[] => {
@@ -126,7 +163,7 @@ const getPathB = (
   ];
 };
 
-const getPathC = (
+export const getPathC = (
   {
     pgWidth,
     ttlHeight,
@@ -135,7 +172,7 @@ const getPathC = (
     projHeight,
     contHeight,
     ftrHeight,
-  }: SizesT,
+  }: HomeSizesT,
   lineW: number,
   lineCt: number
 ): PointT[] => {
@@ -165,147 +202,14 @@ const getPathC = (
   ];
 };
 
-/******************************/
-/******* Drawing Stuff ********/
-/******************************/
-
-const resizeAndClearCanvas = (
-  canvasRef: RefObject<HTMLCanvasElement>,
-  ctx: CanvasRenderingContext2D,
-  height: number,
-  width: number
-) => {
-  if (!canvasRef || !canvasRef.current) {
-    throw new Error("no canvasRef or canvasRef.current"); // this should already have been asserted but typescript doesn't see it...
-  }
-  canvasRef.current.setAttribute("height", `${height}px`);
-  canvasRef.current.setAttribute("width", `${width}px`);
-  ctx.clearRect(0, 0, height, width); // clear
-};
-
-// Change line Widths at breakpoints here
-const getLineW = (sizes: SizesT, cssVars: CssVariablesT): number => {
-  const { breakpoints, rainbow } = cssVars;
-
-  if (sizes.pgWidth <= parseInt(breakpoints.smallBp)) {
-    return parseInt(rainbow.lineWidthXsm);
-  }
-
-  if (sizes.pgWidth <= parseInt(breakpoints.mediumBp)) {
-    return parseInt(rainbow.lineWidthSm);
-  }
-
-  if (sizes.pgWidth <= parseInt(breakpoints.wideBp)) {
-    return parseInt(rainbow.lineWidthMed);
-  }
-
-  return parseInt(rainbow.lineWidthLg);
-};
-
-// Given the points for the first line, translate all points and return new path
-// in other words, since we only have points for the blue line, this fn calculates
-// the paths/points for the other 4 lines
-const translatePath = (path: PointT[], offset: number, lineIdx: number) => {
-  if (offset === 0) {
-    return path; // no need to translate if there's no offset
-  }
-
-  return path.map((point, i, points) => {
-    const prev = points[i - 1]; // prev point
-    const p = point; // first pt of segment
-    const next = points[i + 1]; // next point
-
-    if (typeof point.translate === "function") {
-      return point.translate(point, offset, lineIdx);
-    }
-
-    if (!prev && vertical(p, next)) {
-      return { x: point.x + offset, y: point.y };
-    }
-
-    if (!prev && diagonal(p, next)) {
-      return { x: point.x - offset, y: point.y + offset / 2 };
-    }
-
-    if (!prev && horizontal(p, next)) {
-      return { x: point.x, y: point.y + offset };
-    }
-
-    if (!next) {
-      return { x: point.x + offset, y: point.y + offset * 1.8 };
-    }
-
-    if (point.a === 90) {
-      return { x: p.x + offset, y: p.y + offset };
-    }
-
-    if (point.a === 45 && VtoD(p, prev, next)) {
-      return { x: p.x + offset, y: p.y + offset / 2 };
-    }
-
-    if (point.a === 45 && DtoH(p, prev, next)) {
-      return { x: p.x + offset / 2, y: p.y + offset };
-    }
-
-    if (point.a === 45 && HtoD(p, prev, next)) {
-      return { x: p.x + offset / 2, y: p.y + offset };
-    }
-
-    if (point.a === 45 && DtoV(p, prev, next)) {
-      return { x: p.x + offset, y: p.y + offset / 2 };
-    }
-
-    if (point.a === 0 && VtoD(p, prev, next)) {
-      return { x: p.x + offset, y: p.y };
-    }
-
-    if (point.a === 0 && DtoV(p, prev, next)) {
-      return { x: p.x + offset, y: p.y };
-    }
-
-    if (point.a === 0 && HtoD(p, prev, next)) {
-      return { x: p.x, y: p.y + offset };
-    }
-
-    if (point.a === 0 && DtoH(p, prev, next)) {
-      return { x: p.x, y: p.y + offset };
-    }
-
-    return { x: p.x + offset, y: p.y + offset }; // only returns the first point of the segment
-  });
-};
-
-// Draw a single Line
-// this fn is basically just a bunch of
-// canvas configuration, a loop that calls
-// lineTo for each piont, and ctx.stroke.
-const drawLine = (
-  ctx: CanvasRenderingContext2D,
-  points: PointT[],
-  lineW: number,
-  color: string
-) => {
-  ctx.beginPath();
-  ctx.lineWidth = lineW;
-  ctx.lineJoin = "round";
-  ctx.lineCap = "round";
-  ctx.strokeStyle = color;
-
-  points.forEach((point) => {
-    ctx.lineTo(point.x, point.y);
-  });
-
-  ctx.stroke();
-};
 
 // draw all Lines
 const drawBgLines = (
-  refs: ElementRefsT,
+  canvasRef: RefObject<HTMLCanvasElement>,
+  refs: HomeElementRefsT,
   cssVars: CssVariablesT
 ) => {
-  console.log('drawing lines')
-  const { canvasRef } = refs;
-  const ctx = refs.canvasRef?.current?.getContext("2d");
+  const ctx = canvasRef.current?.getContext("2d");
 
   // need this as an array
   const colors = [
@@ -322,7 +226,7 @@ const drawBgLines = (
 
   // get sizes of elements and lines
   const elSizes = getElementSizes(refs);
-  const lineW = getLineW(elSizes, cssVars);
+  const lineW = getLineW(elSizes.pgWidth, cssVars);
 
   // clear and resize
   resizeAndClearCanvas(canvasRef, ctx, elSizes.pgHeight, elSizes.pgWidth);
@@ -332,7 +236,8 @@ const drawBgLines = (
   const pathB = getPathB(elSizes, lineW, colors.length);
   const pathC = getPathC(elSizes, lineW, colors.length);
 
-  // draw paths
+
+  // draw paths, bottom to top
   colors.forEach((color, i) => {
     drawLine(ctx, translatePath(pathB, lineW * i, i), lineW, color);
   });
@@ -350,22 +255,22 @@ const drawBgLines = (
 /******* Hook Function ********/
 /******************************/
 
-export function useBgLines(
-  refs: ElementRefsT,
+export function useHomePageLines(
+  canvasRef: RefObject<HTMLCanvasElement>,
+  refs: HomeElementRefsT,
   filteredProjects: ProjectsByCompanyT,
   formState: string
 ) {
-
   const cssVars =  useCssVariables();
 
   useLayoutEffect(() => {
     const drawBgLinesWRefsApplied = () =>
-      drawBgLines(refs, cssVars);
+      drawBgLines(canvasRef, refs, cssVars);
     requestAnimationFrame(drawBgLinesWRefsApplied);
 
     drawBgLinesWRefsApplied();
     window.addEventListener("resize", drawBgLinesWRefsApplied);
 
     return () => window.removeEventListener("resize", drawBgLinesWRefsApplied); // cleanup fn
-  }, [refs, filteredProjects, formState, cssVars]);
+  }, [refs, canvasRef, filteredProjects, formState, cssVars]);
 }

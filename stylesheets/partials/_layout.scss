@@ -11,8 +11,7 @@
   height: 100%;
   width: 100%;
   padding-bottom: 16px;
-  margin-top: 8px;
-  padding-top: $nav-height;
+  padding-top: $nav-height +8px;
 
   &:before {
     @include paper-texture-overlay();
@@ -35,12 +34,13 @@
 *********************/
 
 .page {
+  overflow: hidden;
   position: relative;
   overflow: hidden;
   background-color: $page-bg-color;
   width: 100%;
   color: $text-color;
-  margin: 0 auto;
+  margin: 8px auto;
   max-width: $page-med-width;
   min-width: $mini-bp;
   margin-bottom: 180px;

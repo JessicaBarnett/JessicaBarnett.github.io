@@ -3,7 +3,8 @@
 
 ----------------------------------------------------------------
 ## In Progress
-----------------------------------------------------------------
+---------------------------------------------------------------- dialog
+  - esc to close
 
 - slider
   - add "click to expand"
@@ -20,7 +21,7 @@
   - content organization
     - Stack displayed as a table
     - role/period/type/business as a datalist
-
+lo
 - Css Modules / scoping
 - accessibility audit
 - animate lines

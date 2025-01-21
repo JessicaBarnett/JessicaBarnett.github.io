@@ -1,20 +1,15 @@
 import { ProjectT, TagT } from "@src/types/data-types.tsx";
-import Tag from "@src/components/Tag.tsx";
-import { tagSelected } from "@src/utils/util.ts";
 
 import Slider from "@src/components/Slider.tsx";
-import { useState } from "react";
-import SectionHeading from "./SectionHeading";
+
 import StackTable from "./StackTable";
 
 type ProjectDetailsComponentProps = {
     project: ProjectT | null;
-    selectedTags: TagT[];
 };
 
 const ProjectDetails = ({
     project,
-    selectedTags,
 }: ProjectDetailsComponentProps) => {
     //   const [showLeftPage, updateShowLeftPage] = useState<boolean>(false);
 

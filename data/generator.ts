@@ -20,7 +20,7 @@ export const multiGen = <T>(fn: (idx: number) => T, numItems: number): T[] => {
 const viewports: ViewportT[] = ['wide', 'mobile']
 export const viewport = () => randomGen(viewports);
 
-const demoImageUrls = ['/assets/docs/demo/pink-800-1000.jpg', '/assets/docs/demo/orange-800-1000.jpg', '/assets/docs/demo/yellow-800-1000.jpg', '/assets/docs/demo/green-800-1000.jpg', '/assets/docs/demo/blue-800-1000.jpg']
+const demoImageUrls = ['/docs/demo/pink-1080x1000.jpg', '/docs/demo/orange-1080x1000.jpg', '/docs/demo/yellow-1080x1000.jpg', '/docs/demo/green-1080x1000.jpg', '/docs/demo/blue-1080x1000.jpg']
 export const imageUrl = (num = random(demoImageUrls.length)) => demoImageUrls[num];
 export const imageUrls = (num = random(demoImageUrls.length)) => [...demoImageUrls].slice(0, num);
 

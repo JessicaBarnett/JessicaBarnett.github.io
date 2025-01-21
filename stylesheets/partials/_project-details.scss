@@ -22,33 +22,27 @@ $trapezoid-width: 8vw;
 .project-title {
     overflow: hidden;
     position: relative;
-    padding: 36px;
-    text-align: center;
-    vertical-align: center;
-    background-color: var(--project-color);
-
-    &:before {
-        @include paper-texture-overlay();
-        opacity: $drk-paper-texture-opacity;
-        z-index: 0;
-    }
-
-    h4 {
-        color: var(--project-text-color);
-        position: relative;
-        z-index: 1;
-        font-size: 3rem;
-        text-shadow:
-        var(--project-shadow-color-1) 4px 5px 1px,
-        var(--project-shadow-color-2) 8px 10px 1px;
-    }
-
-
-
+    text-align: left;
+    padding: 40px 0 22px 160px;
 }
 
+.project-banner {
+    // all these need to change to dynamic variables
+    margin: 125px 102px 35px 44px;
+
+    .slider {
+        height: 50vh;
+    }
+}
+
+
+
 .project-info {
-    padding: 24px;
+    margin-left: 165px;
+
+    .slider {
+        max-height: 50vh;
+    }
 
     &:before {
         @include paper-texture-overlay();

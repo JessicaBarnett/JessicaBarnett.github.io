@@ -44,6 +44,30 @@
           border-left-width: 70px;
         }
     }
+}
+
+
+
+.triangle-right {
+    position: relative;
+
+    &:before {
+        @include trapezoid('right', 35px, 25px, $black);
+        top: 35%;
+        right: 0;
+
+        @include only-above($medium-bp) {
+          border-top-width: 40px;
+          border-bottom-width: 40px;
+          border-right-width: 50px;
+        }
+
+        @include only-above($wide-bp) {
+          border-top-width: 60px;
+          border-bottom-width: 60px;
+          border-right-width: 70px;
+        }
+    }
   }
 
 
