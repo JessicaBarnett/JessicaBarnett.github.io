@@ -126,3 +126,7 @@ section {
   box-shadow: rgba($pink, .3) 3px 3px 3px, rgba($pink, .3) -3px -3px 3px;
   border: 2px solid $pink !important;
 }
+
+.page.transitioning {
+  transform: translateX(-100vh);
+}

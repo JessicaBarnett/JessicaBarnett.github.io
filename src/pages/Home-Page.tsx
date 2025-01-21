@@ -1,4 +1,7 @@
-import { /*useLayoutEffect,*/ useRef, useState } from "react";
+import React, { /*useLayoutEffect,*/ useRef, useState } from "react";
+
+// types
+import { TagT } from "@src/types/data-types.ts";
 
 // Hooks
 import { useFilters } from "@src/hooks/static/useFilters.ts";
@@ -8,12 +11,10 @@ import { useSelectedFilter } from "@src/hooks/useSelectedFilter.ts";
 import { useFilteredProjects } from "@src/hooks/useFilteredProjects.ts";
 import { useHomePageLines } from "@src/hooks/useHomePageLines.ts";
 
-// Nav
-import Navigation from "@src/components/Navigation.tsx";
-
 // Title sections
-import AboutSection from "@src/components/AboutSection.tsx";
 import TitleSection from "@src/components/TitleSection.tsx";
+import AboutSection from "@src/components/AboutSection.tsx";
+import SectionHeading from "@src/components/SectionHeading.tsx";
 
 // Projects
 import FilterSelect from "@src/components/FilterSelect.tsx";
@@ -25,9 +26,6 @@ import ExperienceEntry from "@src/components/ExperienceEntry.tsx";
 // Contact
 import ContactForm, { FormEventT } from "@src/components/ContactForm.tsx";
 import SocialSidebar from "@src/components/SocialSidebar.tsx";
-import { TagT } from "@src/types/data-types.ts";
-import SectionHeading from "@src/components/SectionHeading.tsx";
-import React from "react";
 
 function HomePage() {
   const [filters] = useFilters();
@@ -39,19 +37,6 @@ function HomePage() {
     filters,
     selectedFilter
   );
-  // const [dialogOpen, setDialogOpen] = useState(false);
-  // const [selectedProject, setSelectedProject] = useState<ProjectT | null>(null);
-  // const [dialogOpen, setDialogOpen] = useState(true);
-  // const [selectedProject, setSelectedProject] = useState<ProjectT | null>(projects.find(project => project.id === 'wl-p-002') || null);
-
-
-  // type TagScrollEventT = {
-  //   target: React.MutableRefObject<HTMLButtonElement | null>,
-  //   viewportOffset: number,
-  //   distFromTop: number
-  // }
-  // const [tagScrollEvent, setTagScrollEvent] = useState<TagScrollEventT | null>();
-
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const pageRef = useRef<HTMLDivElement | null>(null);
   const ttlRef = useRef<HTMLElement | null>(null);
@@ -60,7 +45,6 @@ function HomePage() {
   const expRef = useRef<HTMLElement | null>(null);
   const contRef = useRef<HTMLElement | null>(null);
   const ftrRef = useRef<HTMLElement | null>(null);
-  const fixedNavRef = useRef<HTMLDivElement | null>(null);
 
   const [formState, setFormState] = useState("pending"); // pending, error, submitted
 
@@ -79,8 +63,6 @@ function HomePage() {
     formState
   );
 
-  // useScrollPin()
-
   const handleFilterChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedFilter(e.target.value);
   };
@@ -89,47 +71,13 @@ function HomePage() {
     setFormState(formEvent);
   };
 
-  const handleTagSelect = (tag: TagT /*e: React.MouseEvent*/) => {
-    // setTagScrollEvent({
-    //   target: useRef(e.currentTarget),
-    //   viewportOffset: e.currentTarget.getBoundingClientRect().y,
-    //   distFromTop: e.currentTarget.getBoundingClientRect().top
-    // });
+  const handleTagSelect = (tag: TagT) => {
     setSelectedFilter(tag);
   };
 
-  // const handleMoreInfoClick = (project: ProjectT) => {
-  //   setDialogOpen(true);
-  //   setSelectedProject(project);
-  // }
-
-  /* problem now is probably that react DOES remove and re-add elements, so my refs again might get lost */
-  // this means I need to react-ify this, and use a ref instead
-
-  // useLayoutEffect(() => {
-  //     setTimeout(() => {
-  //       // issue is that I've lost the link to the live button for some reason?
-  //       if (tagScrollEvent === null || tagScrollEvent === undefined) {
-  //         setTagScrollEvent(null)
-  //         return;
-  //       }
-  //       const { distFromTop, target, viewportOffset } = tagScrollEvent;
-  //       const newDistFromTop = target?.getBoundingClientRect().top || 0;
-  //       const newScrollPos = Math.abs(distFromTop - newDistFromTop) + viewportOffset;
-  //       console.log(`difference: ${distFromTop - newDistFromTop} | newDistFromTop: ${newDistFromTop}`)
-  //       // window.scrollTo({ top: newScrollPos, behavior: "smooth" })
-  //       setTagScrollEvent(null)
-
-  //     }, 1);
-  // }, [tagScrollEvent]);
-
   return (
     <>
-      <div ref={fixedNavRef}>
-        <Navigation></Navigation>
-      </div>
-      <div ref={pageRef} className="page">
-        <div className="inner-page">
+        <div ref={pageRef} className="page">
 
           <canvas id="canvas" ref={canvasRef} height="100%" width="100%"></canvas>
 
@@ -227,8 +175,6 @@ function HomePage() {
             </div>
           </section>
         </div>
-      </div>
-      {/* <div className="page-frame"></div> */}
     </>
   );
 }

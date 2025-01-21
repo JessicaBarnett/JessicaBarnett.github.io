@@ -8,12 +8,11 @@ type ProjectComponentProps = {
   project: ProjectT,
   selectedTags: TagT[],
   onTagSelect: (tag: TagT, e: React.MouseEvent) => void,
-  // onMoreInfoClick: (e: React.MouseEvent) => void,
 };
 
 const Project = ({project, selectedTags, onTagSelect}: ProjectComponentProps) => {
   // const hasMoreInfo = (): boolean => !!project.task && !!project.media && !!project.media.length;
-  const hasMoreInfo = (): boolean => true;
+  const hasMoreInfo = (): boolean => false;
 
 
   return (
@@ -22,8 +21,7 @@ const Project = ({project, selectedTags, onTagSelect}: ProjectComponentProps) =>
       <p>
         {project.description}
         {hasMoreInfo() &&
-          <Link className="btn-link" to={`/projects/${project.title}`} >more info</Link>
-          // <button className="btn-link" onClick={onMoreInfoClick}>more info</button>
+          <Link className="btn-link" to={`/projects/${project.title}`} viewTransition>more info</Link>
         }
       </p>
 
@@ -35,7 +33,6 @@ const Project = ({project, selectedTags, onTagSelect}: ProjectComponentProps) =>
           onClick={onTagSelect}
         ></Tag>
       ))}
-
     </li>
   );
 };

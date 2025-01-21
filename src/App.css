@@ -1491,4 +1491,8 @@ section {
   border: 2px solid #E2006A !important;
 }
 
+.page.transitioning {
+  transform: translateX(-100vh);
+}
+
 /*# sourceMappingURL=App.css.map */

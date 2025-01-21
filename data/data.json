@@ -560,41 +560,30 @@
                     "name": "rails"
                 }
             ],
-            "business": "E-Commerce",
-            "role": "Front-End Lead",
-            "type": "New Build",
-            "task": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc dapibus pulvinar neque in ultrices. Curabitur urna lacus, lobortis sit amet euismod at, molestie ut justo.",
-            "stack": "Nunc id nisi quis felis condimentum imperdiet. Fusce ac purus quam. Vivamus eget diam vitae urna elementum dictum. Vivamus commodo fringilla leo, vel tincidunt nibh blandit et.",
-            "results": "Nullam at condimentum quam. Sed tempus purus et dictum tempus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum accumsan ornare lacinia. Fusce placerat vulputate turpis nec luctus. Fusce tristique eros tortor, non mollis eros iaculis id.",
-            "period": "2014-2018",
             "media": [
                 {
                     "id": "wc-01",
                     "name": "home page",
                     "url": "/assets/projects/woodcraft-hp-med-2018.png",
-                    "alt": "Image of the woodcraft website",
-                    "viewport": "mobile"
+                    "alt": "Image of the woodcraft website"
                 },
                 {
                     "id": "wc-02",
                     "name": "mobile",
                     "url": "/assets/projects/woodcraft-hp-small-2018.png",
-                    "alt": "Image of the woodcraft website",
-                    "viewport": "mobile"
+                    "alt": "Image of the woodcraft website"
                 },
                 {
                     "id": "wc-03",
                     "name": "blog",
                     "url": "/assets/projects/woodcraft-blog-wide-2018.png",
-                    "alt": "Image of the woodcraft website",
-                    "viewport": "wide"
+                    "alt": "Image of the woodcraft website"
                 },
                 {
                     "id": "wc-04",
                     "name": "find a store",
                     "url": "/assets/projects/woodcraft-findstore-wide-2018.png",
-                    "alt": "Image of the woodcraft website",
-                    "viewport": "wide"
+                    "alt": "Image of the woodcraft website"
                 }
             ]
         },

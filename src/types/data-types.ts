@@ -6,7 +6,7 @@ export type MediaT = {
     name?: string,
     url: string,
     alt: string,
-    viewport: ViewportT
+    viewport?: ViewportT
 }
 
 export type TagT = {
