@@ -608,7 +608,7 @@ em {
 /********************
    PAGE
 *********************/
-.page {
+.page-frame {
   overflow: hidden;
   position: relative;
   overflow: hidden;
@@ -622,16 +622,16 @@ em {
   z-index: 1;
 }
 @media (min-width: 769px) {
-  .page {
+  .page-frame {
     border-radius: 10px;
   }
 }
 @media (min-width: 1280px) {
-  .page {
+  .page-frame {
     max-width: 1080px;
   }
 }
-.page:after {
+.page-frame:after {
   content: "";
   display: block;
   pointer-events: none;
@@ -649,11 +649,11 @@ em {
   pointer-events: none;
 }
 @media (prefers-color-scheme: dark) {
-  .page {
+  .page-frame {
     background-color: #313130;
     color: #fff;
   }
-  .page:after {
+  .page-frame:after {
     opacity: 10%;
   }
 }
@@ -1491,8 +1491,18 @@ section {
   border: 2px solid #E2006A !important;
 }
 
-.page.transitioning {
+.page {
+  transition: transition 1s ease-out;
+}
+
+.page::view-transition-old {
   transform: translateX(-100vh);
+  view-transition-name: page;
+}
+
+.page::view-transition-new {
+  transform: translateX(-100vh);
+  view-transition-name: page;
 }
 
 /*# sourceMappingURL=App.css.map */

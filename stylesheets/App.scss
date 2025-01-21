@@ -127,6 +127,16 @@ section {
   border: 2px solid $pink !important;
 }
 
-.page.transitioning {
+.page {
+  transition: transition 1s ease-out;
+}
+
+.page::view-transition-old {
   transform: translateX(-100vh);
+  view-transition-name: page;
+}
+
+.page::view-transition-new {
+  transform: translateX(-100vh);
+  view-transition-name: page;
 }

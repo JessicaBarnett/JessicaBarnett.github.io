@@ -114,7 +114,7 @@ const Slider = ({ media, className }: SliderComponentProps) => {
                     </div>
                 </div>
 
-                <p className="slider-title">{selectedSlide.name}</p>
+                {/* <p className="slider-title">{selectedSlide?.name ?? ''}</p> */}
                 <button className="btn-expand" onClick={handleExpandClick}>expand</button>
             </div>
             <Dialog

@@ -11,7 +11,7 @@
   height: 100%;
   width: 100%;
   padding-bottom: 16px;
-  padding-top: $nav-height +8px;
+  padding-top: $nav-height + 8px;
 
   &:before {
     @include paper-texture-overlay();
@@ -33,7 +33,7 @@
    PAGE
 *********************/
 
-.page {
+.page-frame {
   overflow: hidden;
   position: relative;
   overflow: hidden;

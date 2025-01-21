@@ -11,7 +11,6 @@ import Navigation from "@src/components/Navigation.tsx";
 function App() {
   const fixedNavRef = useRef<HTMLDivElement | null>(null);
 
-
   return (
     <>
         <BrowserRouter>
