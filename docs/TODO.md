@@ -3,28 +3,22 @@
 
 ----------------------------------------------------------------
 ## In Progress
----------------------------------------------------------------- dialog
-  - esc to close
+----------------------------------------------------------------
 
-- slider
-  - add "click to expand"
-  - improve button scaling
-  - accessibility audit!!
 
-- More info section
-  - @mobile
-    - banner slider hidden
-    - all images visible in secondary slider
-  - @wide
-    - banner slider visible
-    - only mobile images visible in secondary slider
-  - content organization
-    - Stack displayed as a table
-    - role/period/type/business as a datalist
-lo
+- FIGURE OUT PAGE TRANSITIONS
+- figure out scroll management across page transitions
+
 - Css Modules / scoping
-- accessibility audit
+- esc to close dialog (or go back to home)
 - animate lines
+
+- Nail down final data structure
+- content: start collecting images and text for these more info pages
+- accessibility audit
+- slider: expand icon
+- dark mode audit
+- mobile audit
 
 ----------------------------------------------------------------
 ## Backlog
@@ -34,8 +28,6 @@ lo
 - figure out scroll jankiness **
 - tiled bg texture isn't as nicely tiled as it could be... **
 
-#### Copy/Content
-- Go over all the copy *
 
 #### Features
 - "rewind" back to top button!

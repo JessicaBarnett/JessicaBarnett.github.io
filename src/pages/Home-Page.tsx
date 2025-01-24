@@ -1,4 +1,4 @@
-import React, { /*useLayoutEffect,*/ useRef, useState } from "react";
+import React, { /*useLayoutEffect,*/ useEffect, useRef, useState } from "react";
 
 // types
 import { TagT } from "@src/types/data-types.ts";
@@ -26,6 +26,7 @@ import ExperienceEntry from "@src/components/ExperienceEntry.tsx";
 // Contact
 import ContactForm, { FormEventT } from "@src/components/ContactForm.tsx";
 import SocialSidebar from "@src/components/SocialSidebar.tsx";
+import { useViewTransitionState } from "react-router";
 
 function HomePage() {
   const [filters] = useFilters();
@@ -45,6 +46,11 @@ function HomePage() {
   const expRef = useRef<HTMLElement | null>(null);
   const contRef = useRef<HTMLElement | null>(null);
   const ftrRef = useRef<HTMLElement | null>(null);
+  const isTransitioning = useViewTransitionState('/');
+
+  useEffect(() => {
+    console.log('transitioning from home')
+  }, [isTransitioning])
 
   const [formState, setFormState] = useState("pending"); // pending, error, submitted
 
@@ -113,7 +119,6 @@ function HomePage() {
                         project={project}
                         selectedTags={selectedFilter?.tags ?? []}
                         onTagSelect={handleTagSelect}
-                        // onMoreInfoClick={() => handleMoreInfoClick(project)}
                       ></Project>
                     ))}
                   </ul>

@@ -1364,14 +1364,16 @@ p {
 }
 
 .project-banner {
-  margin: 125px 102px 35px 44px;
+  max-width: 75%;
+  margin: 120px auto 0px;
 }
 .project-banner .slider {
   height: 50vh;
 }
 
 .project-info {
-  margin-left: 165px;
+  max-width: 75%;
+  margin: 125px auto 16px;
 }
 .project-info .slider {
   max-height: 50vh;
@@ -1396,6 +1398,39 @@ p {
   .project-info:before {
     opacity: 10%;
   }
+}
+
+.back-btn {
+  position: absolute;
+  content: "";
+  border: 0;
+  display: block;
+  height: 20vh;
+  border-top: 40px solid transparent;
+  border-bottom: 40px solid transparent;
+  border-left: 80px solid #000;
+  position: fixed;
+  margin: 0 auto;
+  top: 50vh;
+  background-color: transparent;
+  z-index: 2;
+  transition: transform 0.2s ease-in;
+}
+.back-btn .icon {
+  width: 50px;
+  display: inline-block;
+  margin-left: -65px;
+  margin-top: 22px;
+  transition: transform 0.1s ease-in;
+}
+.back-btn svg {
+  fill: #FFF;
+}
+.back-btn:hover {
+  transform: scale(1.2) translateX(7px);
+}
+.back-btn:hover .icon {
+  transform: scale(1.05);
 }
 
 /*******************
@@ -1485,6 +1520,10 @@ section {
   margin-left: 3rem;
 }
 
+.indent-4 {
+  margin-left: 4rem;
+}
+
 *:focus-visible {
   outline: none;
   box-shadow: rgba(226, 0, 106, 0.3) 3px 3px 3px, rgba(226, 0, 106, 0.3) -3px -3px 3px;
@@ -1492,7 +1531,7 @@ section {
 }
 
 .page {
-  transition: transition 1s ease-out;
+  transition: transform 1s ease-out;
 }
 
 .page::view-transition-old {

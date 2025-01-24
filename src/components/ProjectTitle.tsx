@@ -10,8 +10,8 @@ function ProjectTitle({ title, subtitle }: ProjectTitleProps) {
         <h2 className="title-1">
           <span className="outdent-1">{title}</span>
         </h2>
-        <h3 className="indent-2 subtitle-1">
-          <span className="outdent-1">{subtitle}</span>
+        <h3 className="indent-4 subtitle-1">
+          <span>{subtitle}</span>
         </h3>
       </div>
     </>

@@ -72,6 +72,8 @@ const Slider = ({ media, className }: SliderComponentProps) => {
         setOffset(selectedSlideIdx);
     }, [selectedSlideIdx, media, setOffset, setSelectedSlide]);
 
+    if (media.length < 0) {  return; }
+
     return (
         <>
             <div className={`slider ${isExpanded ? 'slider-expanded' : ''} ${className}`}>
@@ -114,7 +116,7 @@ const Slider = ({ media, className }: SliderComponentProps) => {
                     </div>
                 </div>
 
-                {/* <p className="slider-title">{selectedSlide?.name ?? ''}</p> */}
+                <p className="slider-title">{selectedSlide?.name ?? ''}</p>
                 <button className="btn-expand" onClick={handleExpandClick}>expand</button>
             </div>
             <Dialog
@@ -122,7 +124,7 @@ const Slider = ({ media, className }: SliderComponentProps) => {
                 onClose={() => { setIsExpanded(false) }}
                 scroll={'all'}
                 >
-                    <img className={selectedSlide.viewport === 'wide' ? 'full-width' : ''}  src={selectedSlide.url} />
+                    <img className='full-width' src={selectedSlide?.url} />
             </Dialog>
         </>
     );

@@ -4,7 +4,7 @@
 
 // Project Details Layout
 
-$trapezoid-width: 8vw;
+$trapezoid-width: 80px;
 
 .more-info-2 {
     --project-h: 120;
@@ -28,7 +28,8 @@ $trapezoid-width: 8vw;
 
 .project-banner {
     // all these need to change to dynamic variables
-    margin: 125px 102px 35px 44px;
+    max-width: 75%;
+    margin: 120px auto 0px;
 
     .slider {
         height: 50vh;
@@ -36,9 +37,9 @@ $trapezoid-width: 8vw;
 }
 
 
-
 .project-info {
-    margin-left: 165px;
+    max-width: 75%;
+  margin: 125px auto 16px;
 
     .slider {
         max-height: 50vh;
@@ -53,6 +54,46 @@ $trapezoid-width: 8vw;
           opacity: $drk-paper-texture-opacity;
         }
     }
+}
+
+.back-btn-container {
+}
+
+.back-btn {
+    @include trapezoid('left', $trapezoid-width, calc($trapezoid-width / 2), 20vh, $black);
+    position: fixed;
+    // max-width: $page-med-width;
+    // min-width: $mini-bp;
+    margin: 0 auto;
+    top: 50vh;
+    // left: 0;
+    // height: 10px;
+    // z-index: 10;
+    // background-color: green;
+    background-color: transparent;
+    z-index: 2;
+    transition: transform $bg-transition;
+
+    .icon {
+        width: 50px;
+        display: inline-block;
+        margin-left: -65px;
+        margin-top: 22px;
+        transition: transform $text-transition;
+    }
+
+    svg {
+        fill: $white;
+    }
+
+    &:hover {
+        transform: scale(1.2) translateX(7px);
+
+        .icon {
+            transform: scale(1.05);
+        }
+    }
+
 }
 
 // .engraved {
