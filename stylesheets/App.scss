@@ -26,6 +26,7 @@
 @use "./partials/social-link";
 @use "./partials/slider";
 @use "./partials/dialog";
+@use "./partials/drawer";
 @use "./partials/project-details";
 @use "./partials/stack-table";
 
@@ -129,18 +130,4 @@ section {
   outline: none;
   box-shadow: rgba($pink, .3) 3px 3px 3px, rgba($pink, .3) -3px -3px 3px;
   border: 2px solid $pink !important;
-}
-
-.page {
-  transition: transform 1s ease-out;
-}
-
-.page::view-transition-old {
-  transform: translateX(-100vh);
-  view-transition-name: page;
-}
-
-.page::view-transition-new {
-  transform: translateX(-100vh);
-  view-transition-name: page;
 }

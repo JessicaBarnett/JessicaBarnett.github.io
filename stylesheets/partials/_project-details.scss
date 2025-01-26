@@ -6,6 +6,10 @@
 
 $trapezoid-width: 80px;
 
+.project-detail {
+    padding-bottom: 80px;
+}
+
 .more-info-2 {
     --project-h: 120;
     --project-s: 100%;
@@ -17,6 +21,7 @@ $trapezoid-width: 80px;
 
     height: 100%;
     overflow-y: scroll;
+
 }
 
 .project-title {
@@ -35,7 +40,6 @@ $trapezoid-width: 80px;
         height: 50vh;
     }
 }
-
 
 .project-info {
     max-width: 75%;
@@ -56,129 +60,27 @@ $trapezoid-width: 80px;
     }
 }
 
-.back-btn-container {
-}
-
 .back-btn {
     @include trapezoid('left', $trapezoid-width, calc($trapezoid-width / 2), 20vh, $black);
     position: fixed;
-    // max-width: $page-med-width;
-    // min-width: $mini-bp;
-    margin: 0 auto;
-    top: 50vh;
-    // left: 0;
-    // height: 10px;
-    // z-index: 10;
-    // background-color: green;
+    top: 40vh;
     background-color: transparent;
     z-index: 2;
-    transition: transform $bg-transition;
+    transition: opacity .2s ease-out;
+    opacity: 1;
 
     .icon {
         width: 50px;
         display: inline-block;
         margin-left: -65px;
         margin-top: 22px;
-        transition: transform $text-transition;
     }
 
     svg {
         fill: $white;
     }
 
-    &:hover {
-        transform: scale(1.2) translateX(7px);
-
-        .icon {
-            transform: scale(1.05);
-        }
+    &.hidden {
+        opacity: 0;
     }
-
 }
-
-// .engraved {
-//     position: absolute;
-//     top: 10px;
-//     left: 0;
-//     z-index: 0;
-//     font-size: 6rem;
-//     line-height: 6rem;
-//     // transform: rotate(6deg);
-//     font-family: Futura;
-//     background-color: darken(var(--project-color), 3%);
-//     -webkit-background-clip: text;
-//     -moz-background-clip: text;
-//     background-clip: text;
-//     color: transparent;
-//     white-space: nowrap;
-//     text-overflow: hidden;
-//     // text-shadow: darken(var(--project-color), 2%) 3px 5px 1px;
-//  }
-
-
-// .more-info {
-//     overflow: hidden;
-
-//     @include only-below($medium-bp) {
-//         transition: transform $bg-transition;
-//         width: 200vw;
-//         transform: translateX(-100vw);
-
-//         &.show-left-page {
-//             transform: translateX(0vw);
-//         }
-//     }
-// }
-
-
-// .right-page {
-//     @include only-below($medium-bp) {
-//         box-shadow: rgba(0, 0, 0, 0.3) 6px 0 5px inset;
-//         margin-left: -8px;
-//     }
-
-// }
-
-// .left-page {
-//     @include only-below($medium-bp) {
-//         box-shadow: rgba(0, 0, 0, 0.3) -6px 0 5px inset,
-//                     rgba(0, 0, 0, 0.3) -6px 0 3px inset;
-//         margin-right: -8px;
-//     }
-// }
-
-// @mixin pg-turn-btn {
-//     top: 50%;
-//     transform: translateY(-50%);
-//     background-color: transparent;
-
-//     @include only-above($medium-bp) {
-//         display: none;
-//     }
-// }
-
-// .turn-pg-btn-right {
-//     @include trapezoid('right', $trapezoid-width, calc($trapezoid-width / 2), 20vh, rgba($black, 0.8));
-//     @include pg-turn-btn();
-//     right: 50%;
-// }
-
-// .turn-pg-btn-left {
-//     @include trapezoid('left', $trapezoid-width, calc($trapezoid-width / 2), 20vh, rgba($black, 0.8));
-//     @include pg-turn-btn();
-//     left: 50%;
-// }
-
-// .detailed-description {
-//     overflow: scroll;
-//     margin-left: $trapezoid-width + 4vw;
-//     padding: 42px 0;
-//     height: 100vh;
-//     margin-right: 6vw;
-
-//     @include only-above($medium-bp) {
-//         margin: 4vh 24px;
-//         height: 80vh;
-//     }
-// }
-

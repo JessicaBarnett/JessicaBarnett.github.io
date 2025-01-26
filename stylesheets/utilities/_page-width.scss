@@ -1,0 +1,13 @@
+@use "../variables/breakpoints" as *;
+@use "../variables/globals" as *;
+@use "./media-queries" as *;
+
+@mixin page-width {
+    width: 100%;
+    max-width: $page-med-width;
+    min-width: $mini-bp;
+
+    @include only-above($wide-bp) {
+      max-width: $page-max-width;
+    }
+  }

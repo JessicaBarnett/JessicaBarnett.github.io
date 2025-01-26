@@ -34,24 +34,17 @@
 *********************/
 
 .page-frame {
+  @include page-width;
   overflow: hidden;
   position: relative;
-  overflow: hidden;
   background-color: $page-bg-color;
-  width: 100%;
   color: $text-color;
   margin: 8px auto;
-  max-width: $page-med-width;
-  min-width: $mini-bp;
   margin-bottom: 180px;
   z-index: 1;
 
   @include only-above($medium-bp) {
     border-radius: 10px;
-  }
-
-  @include only-above($wide-bp) {
-    max-width: $page-max-width;
   }
 
   &:after {

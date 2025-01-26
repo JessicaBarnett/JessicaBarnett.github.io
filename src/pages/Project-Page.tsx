@@ -3,27 +3,25 @@ import Slider from "@src/components/Slider.tsx";
 import StackTable from "@src/components/StackTable";
 import ProjectTitle from "@src/components/ProjectTitle";
 
-import { useProjects } from "@src/hooks/static/useProjects.ts";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useProjectPageLines } from "@src/hooks/useProjectPageLines";
 
 import { paragraphsGen } from "@data/generator.ts";
-import { RewindIcon } from "@src/icons/RewindIcon";
-import { Link, useViewTransitionState } from "react-router";
 
-//   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
-function ProjectPage() {
+type ProjectPageProps = {
+    project: ProjectT | null
+};
+
+function ProjectPage({
+    project,
+  }: ProjectPageProps) {
+
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
     const pageRef = useRef<HTMLDivElement | null>(null);
     const ttlRef = useRef<HTMLElement | null>(null);
     const contentRef = useRef<HTMLElement | null>(null);
     const bannerRef = useRef<HTMLElement | null>(null);
-    const isTransitioning = useViewTransitionState('/');
-
-    useEffect(() => {
-      console.log('transitioning from page')
-    }, [isTransitioning])
 
     const text = paragraphsGen(3);
     const stackData: StrTuple[] = [
@@ -45,23 +43,12 @@ function ProjectPage() {
         }
     );
 
-    const [projects] = useProjects();
-    const project: ProjectT = projects.find(
-        (project) => project.id === "wl-p-002"
-    )!;
-
-    return (
-        <div ref={pageRef} className="page">
+    return project && (
+        <div ref={pageRef} className='page' id='project-detail'>
             <canvas id="canvas" ref={canvasRef} height="100%" width="100%"></canvas>
 
-            {/* <div className="back-btn-container"> */}
-                <Link className="back-btn" to={`/`} viewTransition>
-                    <RewindIcon></RewindIcon>
-                </Link>
-            {/* </div> */}
-
             <section ref={ttlRef} className="section-title triangle-right">
-                <ProjectTitle title="Woodcraft" subtitle="& Japan Woodworker">
+                <ProjectTitle title={project.title}>
                 </ProjectTitle>
             </section>
 

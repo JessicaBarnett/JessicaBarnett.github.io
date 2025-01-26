@@ -1,7 +1,7 @@
-import React, { /*useLayoutEffect,*/ useEffect, useRef, useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 
 // types
-import { TagT } from "@src/types/data-types.ts";
+import { ProjectT, TagT } from "@src/types/data-types.ts";
 
 // Hooks
 import { useFilters } from "@src/hooks/static/useFilters.ts";
@@ -26,9 +26,12 @@ import ExperienceEntry from "@src/components/ExperienceEntry.tsx";
 // Contact
 import ContactForm, { FormEventT } from "@src/components/ContactForm.tsx";
 import SocialSidebar from "@src/components/SocialSidebar.tsx";
-import { useViewTransitionState } from "react-router";
 
-function HomePage() {
+export type HomePageComponentProps = {
+  onNavigateToProject: (project: ProjectT) => void;
+};
+
+function HomePage({onNavigateToProject}: HomePageComponentProps) {
   const [filters] = useFilters();
   const [projects] = useProjects();
   const [expEntries] = useExperienceEntries();
@@ -38,6 +41,7 @@ function HomePage() {
     filters,
     selectedFilter
   );
+
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const pageRef = useRef<HTMLDivElement | null>(null);
   const ttlRef = useRef<HTMLElement | null>(null);
@@ -46,11 +50,6 @@ function HomePage() {
   const expRef = useRef<HTMLElement | null>(null);
   const contRef = useRef<HTMLElement | null>(null);
   const ftrRef = useRef<HTMLElement | null>(null);
-  const isTransitioning = useViewTransitionState('/');
-
-  useEffect(() => {
-    console.log('transitioning from home')
-  }, [isTransitioning])
 
   const [formState, setFormState] = useState("pending"); // pending, error, submitted
 
@@ -81,9 +80,13 @@ function HomePage() {
     setSelectedFilter(tag);
   };
 
+  const handleMoreInfoClick = (project: ProjectT) => {
+    onNavigateToProject(project)
+  }
+
   return (
     <>
-        <div ref={pageRef} className="page">
+        <div ref={pageRef} className={`page`} id='home-page'>
 
           <canvas id="canvas" ref={canvasRef} height="100%" width="100%"></canvas>
 
@@ -119,6 +122,7 @@ function HomePage() {
                         project={project}
                         selectedTags={selectedFilter?.tags ?? []}
                         onTagSelect={handleTagSelect}
+                        onMoreInfoClick={() => handleMoreInfoClick(project)}
                       ></Project>
                     ))}
                   </ul>

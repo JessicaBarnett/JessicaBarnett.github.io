@@ -86,6 +86,8 @@ Gradient borders
     border-image-slice: 10; // add this if you are only seeing corners
 ```
 
+fixed position not working?
+remember it won't work within a container with a transform rule!!
 
 
 ### regex

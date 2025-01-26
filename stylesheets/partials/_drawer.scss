@@ -1,0 +1,21 @@
+@use '../variables/variables' as *; // forwards colors, rainbow, breakpoints
+@use '../utilities/utilities' as *;
+
+.drawer {
+    @include page-width;
+    position: absolute;
+    top: 0;
+    background-color: white;
+    clip-path: rect(0 auto auto auto);
+    transition: clip-path .4s ease-out;
+    z-index: 1;
+
+    &.closed {
+      clip-path: rect(0 100vw auto 100vw);
+    }
+  }
+
+  .drawer-content {
+    overflow: scroll;
+    width: 100%;
+  }
