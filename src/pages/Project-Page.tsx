@@ -23,14 +23,6 @@ function ProjectPage({
     const bannerRef = useRef<HTMLElement | null>(null);
 
     const text = paragraphsGen(3);
-    const stackData: StrTuple[] = [
-        ["Framework", "Ruby on Rails"],
-        ["Server Language", "Ruby"],
-        ["Templates", "Haml"],
-        ["CSS preprossor", "SCSS"],
-        ["Javascript Tools", "JQuery, JQueryUi, LoDash, SlickSlider"],
-        ["Database", "MongoDb"],
-    ];
 
     useProjectPageLines(
         canvasRef,
@@ -47,11 +39,18 @@ function ProjectPage({
             <canvas id="canvas" ref={canvasRef} height="100%" width="100%"></canvas>
 
             <section ref={ttlRef} className="section-title triangle-right">
-                <ProjectTitle title={project.title} subtitle={project.subtitle}>
-                </ProjectTitle>
+                <ProjectTitle project={project} />
             </section>
 
             <section ref={bannerRef} className="project-banner">
+                <dl>
+                    <dt>Role: </dt>
+                    <dd>{project.role}</dd>
+                    <dt>Time: </dt>
+                    <dd>{project.time}</dd>
+                    <dt>Type: </dt>
+                    <dd>{project.type}</dd>
+                </dl>
                 <Slider
                     className="full"
                     media={project?.media?.filter((p) => p.viewport === "wide") ?? []}
@@ -59,26 +58,24 @@ function ProjectPage({
             </section>
 
             <section ref={contentRef} className="project-info">
-
-                <div className="grid">
-                    <div className="half">
-                        <Table data={project.table}></Table>
-                        <p>{text}</p>
+                    <div>
+                        {project.content.map((content, idx) => {
+                            return (
+                                <>
+                                    {idx === 0 && (
+                                        <Table data={project.table}></Table>
+                                    )}
+                                    {idx === 1 && (
+                                    <Slider
+                                        media={project?.media?.filter((p) => p.viewport === "mobile") ?? []}
+                                    ></Slider>
+                                    )}
+                                    <h4>{content.heading}</h4>
+                                    {content.paragraphs.map((paragraph) => (<p>{paragraph}</p>))}
+                                </>
+                            )
+                        })}
                     </div>
-                    <div className="half">
-                        <h4>Stack</h4>
-                        <p>{text}</p>
-                    </div>
-                    <Slider
-                        className="half"
-                        media={project?.media?.filter((p) => p.viewport === "mobile") ?? []}
-                    ></Slider>
-
-                    <div className="half">
-                        <h4>Results</h4>
-                        <p>{text}</p>
-                    </div>
-                </div>
             </section>
         </div>
     );

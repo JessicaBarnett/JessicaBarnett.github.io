@@ -361,6 +361,12 @@ table {
   border: 1px solid #000;
 }
 
+dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  justify-items: start;
+}
+
 /******************************************
         Forwarder Utilities file
 *******************************************/
@@ -1402,7 +1408,7 @@ p {
 
 .project-info {
   max-width: 75%;
-  margin: 125px auto 16px;
+  margin: 32px auto;
 }
 .project-info .slider {
   max-height: 50vh;
@@ -1527,6 +1533,12 @@ section {
 
 .nowrap {
   white-space: nowrap;
+}
+
+.left {
+  float: left;
+  max-width: 50%;
+  margin-right: 16px;
 }
 
 .outdent-1 {

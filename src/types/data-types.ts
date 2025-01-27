@@ -1,12 +1,11 @@
-export type StrTuple = [string, string]
-
 export type ViewportT = "mobile" | "wide";
+
 export type MediaT = {
     id: string,
     name?: string,
     url: string,
     alt: string,
-    viewport?: ViewportT
+    viewport: ViewportT
 }
 
 export type ContentT = {
@@ -34,7 +33,7 @@ export type ProjectT = {
 
 export type ProjectDetailsT = ProjectT & {
     title: string,
-    subtitle: string,
+    subtitle?: string,
     role: string,
     time: string,
     type: string,

@@ -1,18 +1,19 @@
+import { ProjectDetailsT } from "@src/types/data-types";
+
 type ProjectTitleProps = {
-  title: string,
-  subtitle?: string
+  project: ProjectDetailsT
 };
 
-function ProjectTitle({ title, subtitle }: ProjectTitleProps) {
+function ProjectTitle({ project }: ProjectTitleProps) {
   return (
     <>
       <div className="project-title">
         <h2 className="title-1">
-          <span className="outdent-1">{title}</span>
+          <span className="outdent-1">{project.title}</span>
         </h2>
-        {subtitle && (
+        {project.subtitle && (
           <h3 className="indent-4 subtitle-1">
-            <span>{subtitle}</span>
+            <span>{project.subtitle}</span>
           </h3>
         )}
       </div>

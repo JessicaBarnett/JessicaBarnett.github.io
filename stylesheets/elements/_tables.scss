@@ -39,6 +39,12 @@ table {
   border: 1px solid $border-color;
 }
 
+dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  justify-items: start;
+}
+
 
 // .clearfix:after {
 //   content: "";
