@@ -5,6 +5,7 @@
    ROOT
 *********************/
 
+// black bg with paper texture overlat
 .background {
   position: relative;
   background-color: $body-bg-color;
@@ -24,29 +25,25 @@
   }
 }
 
-.body-scroll-disabled {
-  overflow: hidden;
-}
-
-
 /********************
    PAGE
 *********************/
 
 .page-frame {
-  @include page-width;
+  @include page-width; // defines page min and max widths
   overflow: hidden;
-  position: relative;
+  position: relative; // context for `&:after` overlay, and the canvas
   background-color: $page-bg-color;
   color: $text-color;
-  margin: 8px auto;
+  margin: 0 auto;
   margin-bottom: 180px;
   z-index: 1;
 
   @include only-above($medium-bp) {
-    border-radius: 10px;
+    border-radius: $border-radius-lg;
   }
 
+  // An overlay with a transparent paper texture
   &:after {
     @include paper-texture-overlay();
     z-index: 2;
@@ -62,16 +59,6 @@
       opacity: $drk-paper-texture-opacity;
     }
   }
-}
-
-/********************
-   CANVAS
-*********************/
-
-#canvas {
-  @include absolute-overlay;
-  z-index: 1;
-  pointer-events: none;
 }
 
 /**************
@@ -102,8 +89,7 @@ CONTENT
   padding: 5rem var(--content-gap);
 }
 
-
-.content.content-projects {
+.content-projects {
   padding-bottom: 18px;
 
   .subtitle-2 {
@@ -149,7 +135,6 @@ CONTENT
 }
 
 .content-contact {
-  // padding: 4rem 72px 10px 56px;
   min-height: 560px;
 }
 

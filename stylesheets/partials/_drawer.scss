@@ -13,9 +13,9 @@
     &.closed {
       clip-path: rect(0 100vw auto 100vw);
     }
-  }
+}
 
-  .drawer-content {
+.drawer-content {
     overflow: scroll;
     width: 100%;
-  }
+}

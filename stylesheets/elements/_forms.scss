@@ -8,7 +8,7 @@
 @mixin form-field() {
     display: block;
     border: 2px solid $border-color;
-    border-radius: 3px;
+    border-radius: $border-radius-sm;
     width: 100%;
     background-color: $page-bg-color;
     padding: 8px 4px;

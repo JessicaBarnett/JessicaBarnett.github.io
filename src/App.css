@@ -1,6 +1,18 @@
 /******************************************
         Forwarder Variables file
 *******************************************/
+/********************
+   TYPOGRAPHY
+*********************/
+/**********************
+   SPACING / LAYOUT
+***********************/
+/************************************
+   TRANSITIONS / IMAGE URLS / ETC
+*************************************/
+/********************
+   COLORS
+*********************/
 /**************
       GRID
 ***************/
@@ -66,40 +78,11 @@
 /**************
     BUTTONS
 ***************/
-.btn {
+.btn-tag {
   font-size: 1.2rem;
   line-height: 1.8rem;
   color: #000;
   background-color: #fff;
-  border: 2px solid #000;
-  border-radius: 3px;
-  padding: 2px 4px;
-  margin: 2px;
-  font-weight: 600;
-  transition: color 0.1s ease-in, background-color 0.2s ease-in, border-color 0.2s ease-in;
-}
-.btn:hover, .btn.selected {
-  color: #fff;
-  background-color: #000;
-}
-@media (prefers-color-scheme: dark) {
-  .btn {
-    color: #bebebe;
-    background-color: #1f1f1f;
-    border-color: #1f1f1f;
-  }
-  .btn:hover, .btn.selected {
-    color: #fff;
-    background-color: #000;
-    border-color: #000;
-  }
-}
-
-.btn-slider {
-  font-size: 1.2rem;
-  line-height: 1.8rem;
-  color: #fff;
-  background-color: #000;
   border: 2px solid #000;
   border-radius: 5px;
   padding: 2px 4px;
@@ -107,30 +90,56 @@
   font-weight: 600;
   transition: color 0.1s ease-in, background-color 0.2s ease-in, border-color 0.2s ease-in;
 }
-.btn-slider:hover, .btn-slider.selected {
-  color: #000;
-  background-color: #fff;
+.btn-tag:hover, .btn-tag.selected {
+  color: #fff;
+  background-color: #000;
 }
 @media (prefers-color-scheme: dark) {
-  .btn-slider {
-    color: #fff;
-    background-color: #000;
-    border-color: #000;
-  }
-  .btn-slider:hover, .btn-slider.selected {
+  .btn-tag {
     color: #bebebe;
     background-color: #1f1f1f;
     border-color: #1f1f1f;
   }
+  .btn-tag:hover, .btn-tag.selected {
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
+  }
 }
 
 .btn-submit {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  color: #000;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 5px;
+  padding: 2px 4px;
+  margin: 2px;
+  font-weight: 600;
+  transition: color 0.1s ease-in, background-color 0.2s ease-in, border-color 0.2s ease-in;
   font-size: 1.5rem;
   line-height: 2.1rem;
   font-family: "Lester Bold";
   padding: 4px;
   text-transform: uppercase;
   width: 100%;
+}
+.btn-submit:hover, .btn-submit.selected {
+  color: #fff;
+  background-color: #000;
+}
+@media (prefers-color-scheme: dark) {
+  .btn-submit {
+    color: #bebebe;
+    background-color: #1f1f1f;
+    border-color: #1f1f1f;
+  }
+  .btn-submit:hover, .btn-submit.selected {
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
+  }
 }
 @media (min-width: 769px) {
   .btn-submit {
@@ -140,7 +149,7 @@
 
 .btn-link {
   display: inline-block;
-  font-weight: 500;
+  font-weight: 600;
   background-color: transparent;
   border: 0;
   font-size: 1.1rem;
@@ -148,6 +157,21 @@
 }
 .btn-link:hover {
   text-decoration: underline;
+}
+
+/********************
+   CANVAS
+*********************/
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  pointer-events: none;
 }
 
 /**************
@@ -178,7 +202,7 @@ label {
 input {
   display: block;
   border: 2px solid #000;
-  border-radius: 3px;
+  border-radius: 5px;
   width: 100%;
   background-color: #fff;
   padding: 8px 4px;
@@ -200,7 +224,7 @@ input:focus {
 textarea {
   display: block;
   border: 2px solid #000;
-  border-radius: 3px;
+  border-radius: 5px;
   width: 100%;
   background-color: #fff;
   padding: 8px 4px;
@@ -231,7 +255,7 @@ textarea:focus {
 select {
   display: block;
   border: 2px solid #000;
-  border-radius: 3px;
+  border-radius: 5px;
   width: 100%;
   background-color: #fff;
   padding: 8px 4px;
@@ -601,10 +625,6 @@ em {
   }
 }
 
-.body-scroll-disabled {
-  overflow: hidden;
-}
-
 /********************
    PAGE
 *********************/
@@ -616,7 +636,7 @@ em {
   position: relative;
   background-color: #fff;
   color: #000;
-  margin: 8px auto;
+  margin: 0 auto;
   margin-bottom: 180px;
   z-index: 1;
 }
@@ -657,21 +677,6 @@ em {
   }
 }
 
-/********************
-   CANVAS
-*********************/
-#canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-  pointer-events: none;
-}
-
 /**************
 SECTION
 ***************/
@@ -697,35 +702,35 @@ CONTENT
   padding: 5rem var(--content-gap);
 }
 
-.content.content-projects {
+.content-projects {
   padding-bottom: 18px;
 }
-.content.content-projects .subtitle-2 {
+.content-projects .subtitle-2 {
   text-align: center;
 }
 @media (min-width: 769px) {
-  .content.content-projects {
+  .content-projects {
     padding-bottom: 48px;
   }
 }
-.content.content-projects ul {
+.content-projects ul {
   margin-bottom: 16px;
 }
-.content.content-projects h3 {
+.content-projects h3 {
   text-align: left;
 }
 @media (min-width: 560px) {
-  .content.content-projects h3 {
+  .content-projects h3 {
     text-align: right;
     order: 2;
   }
 }
-.content.content-projects h4,
-.content.content-projects ul {
+.content-projects h4,
+.content-projects ul {
   order: 3;
 }
 @media (max-width: 769px) {
-  .content.content-projects ul:last-of-type .entry:last-of-type {
+  .content-projects ul:last-of-type .entry:last-of-type {
     margin-right: 15%;
   }
 }
@@ -1023,7 +1028,7 @@ p {
   padding: 4px;
   white-space: nowrap;
   margin-bottom: 4px;
-  border-radius: 3px;
+  border-radius: 5px;
   padding: 4px 8px;
   transition: background-color 0.2s ease-in;
 }

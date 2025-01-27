@@ -19,7 +19,7 @@
     @include only-above($medium-bp) {
         height: 90vh;
         width: 100%;
-        border-radius: 10px;
+        border-radius: $border-radius-lg;
     }
 
     // &:hover:after {
@@ -60,7 +60,7 @@
 .slider-contents {
     position: relative; // needed for small vp
     overflow: hidden scroll;
-    border-radius: 10px;
+    border-radius: $border-radius-lg;;
     height: 96vh;
     box-shadow: rgba($black, .3) 2px 2px 3px 0, rgba($black, .3) -2px -2px 3px 0;
     background-image: $graph-ppr-gradient;
@@ -93,7 +93,7 @@
     color: white;
     padding: 8px 16px;
     font-weight: bold;
-    border-radius: 0 10px 0 0;
+    border-radius: 0 $border-radius-lg 0 0;
     max-width: fit-content;
     margin-top: -36px;
     margin-left: -14px;

@@ -1,6 +1,6 @@
 @use '../utilities/font-size' as *;
 @use '../utilities/titles' as *;
-@use '../variables/colors' as *;
+@use '../variables/variables' as *;
 
 /*************
   About
@@ -52,7 +52,7 @@ em {
   max-width: 500px;
   border: 1px solid black;
   padding: 12px;
-  border-radius: 5px;
+  border-radius: $border-radius-sm;
   margin: 16px auto;
   transform: rotate(-2deg);
   box-shadow: rgba($black, .3) 2px 2px 3px 0

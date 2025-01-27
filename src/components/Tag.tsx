@@ -13,7 +13,7 @@ const Tag = ({
 }: ProjectComponentProps) => {
   return (
     <button
-      className={`tag btn filter-projects ${isSelected ? 'selected' : ''}`}
+      className={`btn-tag filter-projects ${isSelected ? 'selected' : ''}`}
       type="button"
       value={tag.name}
       onClick={(e) => onClick(tag, e)}

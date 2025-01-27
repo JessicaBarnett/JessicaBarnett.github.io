@@ -1,26 +1,56 @@
 @use "./_breakpoints" as *;
 
+
+/********************
+   TYPOGRAPHY
+*********************/
+
 $primary-font: 'Inter', Arial, Helvetica, sans-serif;
 $accent-font: 'Lester Bold';
 
-$page-min-width: $mini-bp;
-$page-med-width: 960px;
-$page-max-width: 1080px;
-
+// Body Fonts
 $body-font-xsm: .8rem;
 $body-font-sm: 1rem;
 $body-font-med: 1.2rem;
 $body-font-lg: 1.6rem;
 
-$paper-texture-url: url('/assets/images/concrete-wall-tileable.jpg');
+/**********************
+   SPACING / LAYOUT
+***********************/
 
-$text-transition: .1s ease-in;
-$bg-transition: .2s ease-in;
+// Page Widths
+$page-min-width: $mini-bp;
+$page-med-width: 960px;
+$page-max-width: 1080px;
+
+// layout Vertical Spacing
+
+// $vertical-spacing-unit: 16px;
+// $section-v-spacing: #{$vertical-spacing-unit * 5};
+// $section-heading-v-spacing: #{$vertical-spacing-unit * 3};
+// $section-subheading-v-spacing: #{$vertical-spacing-unit * 2.5};
+// $entry-v-spacing:  #{$vertical-spacing-unit * 2};
+// $entry-heading-v-spacing:  #{$vertical-spacing-unit * 1};
+// $paragraph-v-spacing: #{$vertical-spacing-unit * .5};
 
 $nav-height: 45px;
 
 $content-gap: 8px;
 $content-gap-med: 16px;
+
+/************************************
+   TRANSITIONS / IMAGE URLS / ETC
+*************************************/
+
+$paper-texture-url: url('/assets/images/concrete-wall-tileable.jpg');
+$text-transition: .1s ease-in;
+$bg-transition: .2s ease-in;
+$border-radius-lg: 10px;
+$border-radius-sm: 5px;
+
+/********************
+   COLORS
+*********************/
 
 // Normal
 $body-bg-color: #000;
@@ -32,7 +62,6 @@ $highlight-text-color: #fff;
 $highlight-bg-color: #000;
 $highlight-border-color: #000;
 $paper-texture-opacity: 20%;
-
 
 // Dark mode
 $drk-page-bg-color: #313130;
