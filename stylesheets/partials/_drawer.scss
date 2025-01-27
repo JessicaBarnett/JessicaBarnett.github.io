@@ -5,7 +5,7 @@
     @include page-width;
     position: absolute;
     top: 0;
-    background-color: white;
+    background-color: $white;
     clip-path: rect(0 auto auto auto);
     transition: clip-path .4s ease-out;
     z-index: 1;

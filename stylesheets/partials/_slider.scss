@@ -13,33 +13,12 @@
     z-index: 1;
     background-color: rgb(24, 24, 24);
     padding: 15px;
-    // max-height: 50vh;
-
 
     @include only-above($medium-bp) {
         height: 90vh;
         width: 100%;
         border-radius: $border-radius-lg;
     }
-
-    // &:hover:after {
-    //     pointer-events: none;
-    //     opacity: 0;
-    // }
-
-    // &:after {
-    //     content: '';
-    //     position: absolute;
-    //     height: 100%;
-    //     width: 100%;
-    //     background-color: black;
-    //     opacity: 0.2;
-    //     display: block;
-    //     top: 0;
-    //     z-index: 11;
-    //     left: 0;
-    //     transition: opacity $bg-transition;
-    // }
 }
 
 .slider-expanded {

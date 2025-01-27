@@ -1,6 +1,6 @@
-import { ProjectT, StrTuple } from "@src/types/data-types.tsx";
+import { ProjectDetailsT, StrTuple } from "@src/types/data-types.tsx";
 import Slider from "@src/components/Slider.tsx";
-import StackTable from "@src/components/StackTable";
+import Table from "@src/components/Table";
 import ProjectTitle from "@src/components/ProjectTitle";
 
 import { useRef } from "react";
@@ -8,9 +8,8 @@ import { useProjectPageLines } from "@src/hooks/useProjectPageLines";
 
 import { paragraphsGen } from "@data/generator.ts";
 
-
 type ProjectPageProps = {
-    project: ProjectT | null
+    project: ProjectDetailsT | null
 };
 
 function ProjectPage({
@@ -48,7 +47,7 @@ function ProjectPage({
             <canvas id="canvas" ref={canvasRef} height="100%" width="100%"></canvas>
 
             <section ref={ttlRef} className="section-title triangle-right">
-                <ProjectTitle title={project.title}>
+                <ProjectTitle title={project.title} subtitle={project.subtitle}>
                 </ProjectTitle>
             </section>
 
@@ -63,7 +62,7 @@ function ProjectPage({
 
                 <div className="grid">
                     <div className="half">
-                        <StackTable data={stackData}></StackTable>
+                        <Table data={project.table}></Table>
                         <p>{text}</p>
                     </div>
                     <div className="half">

@@ -9,6 +9,16 @@ export type MediaT = {
     viewport?: ViewportT
 }
 
+export type ContentT = {
+    heading: string,
+    paragraphs: string[]
+}
+
+export type TableRowT = {
+    heading: string,
+    value: string
+}
+
 export type TagT = {
     displayName?: string,
     name: string
@@ -16,22 +26,22 @@ export type TagT = {
 
 export type ProjectT = {
     id: string,
-    title: string,
+    listTitle: string,
     description: string,
     company: string,
     tags: TagT[],
-
-    business?: string,
-    role?: string,
-    type?: string,
-    period?: string,
-
-    task?: string,
-    stack?: string,
-    results?: string,
-
-    media?: MediaT[],
 };
+
+export type ProjectDetailsT = ProjectT & {
+    title: string,
+    subtitle: string,
+    role: string,
+    time: string,
+    type: string,
+    media: MediaT[],
+    table: TableRowT[]
+    content: ContentT[]
+}
 
 export type FilterT = {
     displayName: string,
