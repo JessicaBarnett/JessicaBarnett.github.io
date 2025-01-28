@@ -1,4 +1,5 @@
 import { useLayoutEffect, useRef, useState } from "react";
+import { createPortal } from 'react-dom';
 import { MediaT } from "@src/types/data-types";
 import { RewindIcon } from "@src/icons/RewindIcon.tsx";
 import { FastForwardIcon } from "@src/icons/FastForwardIcon.tsx";
@@ -131,13 +132,16 @@ const Slider = ({ media, options = {} }: SliderComponentProps) => {
                 <p className="slider-title">{selectedSlide?.name ?? ''}</p>
                 <button className="btn-expand" onClick={handleExpandClick}>expand</button>
             </div>
-            <Dialog
-                isOpen={isExpanded}
-                onClose={() => { setIsExpanded(false) }}
-                scroll={'all'}
-                >
-                    <img className='full-width' src={selectedSlide?.url} />
-            </Dialog>
+            {createPortal(
+                <Dialog
+                    isOpen={isExpanded}
+                    onClose={() => { setIsExpanded(false) }}
+                    scroll={'all'}
+                    >
+                        <img className='full-width' src={selectedSlide?.url} />
+                </Dialog>,
+                document.body
+            )}
         </>
     );
 };
