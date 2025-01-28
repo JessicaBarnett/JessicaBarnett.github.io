@@ -287,7 +287,10 @@ select:focus {
 img {
   max-width: 100%;
 }
-img.full-width {
+
+.img-expanded {
+  display: block;
+  margin: 0 auto;
   max-width: inherit;
 }
 
@@ -1425,14 +1428,17 @@ p {
   top: 40vh;
   background-color: transparent;
   z-index: 2;
-  transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
   opacity: 1;
+}
+.back-btn:hover {
+  transform: scale(1.2) translateX(6px);
 }
 .back-btn .icon {
   width: 50px;
   display: inline-block;
-  margin-left: -65px;
-  margin-top: 22px;
+  margin-left: -90px;
+  margin-top: 8px;
 }
 .back-btn svg {
   fill: #FFF;

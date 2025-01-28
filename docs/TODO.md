@@ -5,32 +5,45 @@
 ## In Progress
 ----------------------------------------------------------------
 
-In progress/features
-- animate lines
-- Project detail page layout
+Content
 - write actual content + get more pictures from the wayback machine
 
-Bugs
-- fix expand positioning
-- nav links while project details is open
-- drawer positioning on resize (close it?)
-- route changes on drawer open
-- slider buttons are too big
-- close drawer button icon alignment off
-- expand button styling
-- image title bg 100% opacity
-- Lines on proj detail page
+Drawer
+  -  work on positioning of the back button on mobile - slide it off to the left and slide it back out on hover/tap
+  - close on resize
 
-Testing/Audits
-- browser testing
-- Accessibility Audit
-- mobile audit
-- dark mode audit
+Slider
+  - arrows too big on mobile (and in general)
+  - dots also too big (and hard to see)
+  - title should have an opaque bg
+  - expand button styling
+  - on back, close dialog.
+  - do some scroll/height fixing so you don't have someone scrolling down way below a shorter image
+
+
+More Details pg
+  - use rainbow widths to define spacing of everything
+
+
+Navigation Links
+  - close drawer before going to id, when clicked
+
+
+
+Other
+  - route changes on drawer open
+
 
 
 ----------------------------------------------------------------
 ## Backlog
 ----------------------------------------------------------------
+
+#### Testing/Audits
+- browser testing
+- Accessibility Audit
+- mobile audit
+- dark mode audit
 
 #### Bugs
 - figure out scroll jankiness on filter click

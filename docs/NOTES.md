@@ -11,6 +11,11 @@
 - https://stylestage.dev/styles/manual/#contribute
 
 
+### CSS
+- aspect ratio rule is amazing
+- overscroll-behavior: good for when you have a scrollable thing in the main scroll path.  https://getcssscan.com/blog/prevent-page-scrolling-while-scrolling-div-element?ref=demo
+
+
 ### svgs
 - remove height/width and add voiewbox to be able to scale w/ css
 - remove in-file "fill="s to use the fill rule
@@ -113,6 +118,7 @@ remember it won't work within a container with a transform rule!!
   I need to distinctify between Ref (joined type, could NOT have a current) and RefObject
   `import { RefObject, useLayoutEffect } from "react";`
 - trying to add a key to a react fragment? Use the Fn instead! ```<React.Fragment key={companyName}>/* ... */React.Fragment>``` https://bobbyhadz.com/blog/react-add-key-to-fragment
+- PORTALS!! the easiest way to render something (like a dialog) out to a parent element.  Super useful. https://react.dev/reference/react-dom/createPortal
 -
 
 ## JSX
@@ -129,7 +135,7 @@ remember it won't work within a container with a transform rule!!
     </>
 ))}
 ```
-- conditional rendering in jsx
+- conditional rendering in jsx with &&
 ```jsx
 { hasMoreInfo() &&
     <button onClick={onMoreInfoClick}>more info</button>

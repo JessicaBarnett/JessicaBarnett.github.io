@@ -138,7 +138,7 @@ const Slider = ({ media, options = {} }: SliderComponentProps) => {
                     onClose={() => { setIsExpanded(false) }}
                     scroll={'all'}
                     >
-                        <img className='full-width' src={selectedSlide?.url} />
+                        <img className='img-expanded' src={selectedSlide?.url} />
                 </Dialog>,
                 document.body
             )}

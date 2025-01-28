@@ -19,18 +19,15 @@ const Drawer = ({  children, isOpen, onClose}: DrawerComponentProps) => {
     onClose();
   }
 
-  const scrollLimiter = useCallback((top: number, bottom: number, e: Event) => {
-    if (!isOpen) { return; }
+  const scrollLimiter = useCallback((top: number, bottom: number) => {
+    if (!isOpen) { return; } // don't limit scroll if the drawer is closed!
 
-    console.log(`limit: ${top} <-> ${bottom - window.screen.availHeight }. screenHeight: ${window.screen.height}`)
-    console.log(`scrollPos: ${window.scrollY}`)
-
-    if (window.scrollY < top) {
+    if (window.scrollY < top) { // if we've scrolled too far up, then limit
       window.scrollTo({ top: top, behavior: 'instant' })
     }
 
-    const lowerLimit = bottom - window.screen.availHeight + 170; // TODO: fix this.  170 value is arbitrary.  Why is this calculation wrong?
-    if (window.scrollY > lowerLimit) {
+    const lowerLimit = bottom - window.screen.availHeight + 170; // TODO: fix this!  170 value is arbitrary.  Why is this calculation wrong?
+    if (window.scrollY > lowerLimit) { // if we've scrolled too far down, then limit
       window.scrollTo({ top: lowerLimit, behavior: 'instant' })
     }
   }, [isOpen])

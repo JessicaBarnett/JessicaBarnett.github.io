@@ -1,7 +1,9 @@
 img {
   max-width: 100%;
+}
 
-  &.full-width {
+.img-expanded {
+    display: block;
+    margin: 0 auto;
     max-width: inherit;
-  }
 }

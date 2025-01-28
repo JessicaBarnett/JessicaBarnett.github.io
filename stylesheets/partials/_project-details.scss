@@ -59,14 +59,18 @@ $trapezoid-width: 80px;
     top: 40vh;
     background-color: transparent;
     z-index: 2;
-    transition: opacity .2s ease-out;
+    transition: opacity .2s ease-out, transform .2s ease-out;
     opacity: 1;
+
+    &:hover {
+        transform: scale(1.2) translateX(6px);
+    }
 
     .icon {
         width: 50px;
         display: inline-block;
-        margin-left: -65px;
-        margin-top: 22px;
+        margin-left: -90px;
+        margin-top: 8px;
     }
 
     svg {
