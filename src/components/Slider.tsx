@@ -4,9 +4,14 @@ import { RewindIcon } from "@src/icons/RewindIcon.tsx";
 import { FastForwardIcon } from "@src/icons/FastForwardIcon.tsx";
 import Dialog from "./Dialog";
 
+export type SliderOptions = {
+    mobile?: boolean,
+    wide?: boolean
+};
+
 export type SliderComponentProps = {
     media: MediaT[];
-    className?: string;
+    options?: SliderOptions;
 };
 
 // Private Hooks
@@ -29,7 +34,7 @@ function useOffsetState(sliderTrackRef: React.MutableRefObject<HTMLDivElement | 
 
 // Component
 
-const Slider = ({ media, className }: SliderComponentProps) => {
+const Slider = ({ media, options = {} }: SliderComponentProps) => {
     const sliderContentsRef = useRef<HTMLDivElement | null>(null);
     const sliderTrackRef = useRef<HTMLDivElement | null>(null);
     const [offset, setOffset] = useOffsetState(sliderTrackRef);
@@ -72,11 +77,18 @@ const Slider = ({ media, className }: SliderComponentProps) => {
         setOffset(selectedSlideIdx);
     }, [selectedSlideIdx, media, setOffset, setSelectedSlide]);
 
+    const sliderClasses = [
+        'slider',
+        isExpanded ? 'slider-expanded' : '',
+        options.mobile ? 'slider-mobile' : '',
+        options.wide ? 'slider-wide' : ''
+    ].join(' ');
+
     if (media.length < 0) {  return; }
 
     return (
         <>
-            <div className={`slider ${isExpanded ? 'slider-expanded' : ''} ${className}`}>
+            <div className={sliderClasses}>
                 {media.length > 1 && (
                     <>
                         <button className="slider-arrow-btn-backward" onClick={() => moveBackward()}>

@@ -107,10 +107,26 @@ section {
   white-space: nowrap;
 }
 
+.right {
+  float: right;
+  margin: 0 0 1.2rem 1.2rem;
+  width: 50%;
+}
+
 .left {
   float: left;
-  max-width: 50%;
-  margin-right: 16px;
+  margin: 0 1.2rem 1.2rem 0;
+  width: 50%;
+}
+
+.short {
+  height: 40vh;
+}
+
+.clear:after {
+  content: '';
+  clear: both;
+  display: table-cell;
 }
 
 .outdent-1 {

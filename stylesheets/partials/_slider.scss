@@ -15,26 +15,18 @@
     padding: 15px;
 
     @include only-above($medium-bp) {
-        height: 90vh;
         width: 100%;
         border-radius: $border-radius-lg;
     }
 }
 
-.slider-expanded {
-    .slider-image-track {
-        transform: none;
-    }
+.slider-wide {
+    aspect-ratio: 2/1;
 }
 
-.slider-image-expanded {
-    position: absolute;
-    z-index: 20;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
+.slider-mobile {
+    aspect-ratio: 1/2;
+}
 
 .slider-contents {
     position: relative; // needed for small vp
@@ -59,11 +51,25 @@
     display: block;
 }
 
+.slider-image {
+    .slider-expanded & {
+        position: absolute;
+        z-index: 20;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+}
 
 .slider-image-track {
     display: flex;
     align-items: flex-start;
     transition: transform $bg-transition, left $bg-transition;
+
+    .slider-expanded & {
+        transform: none;
+    }
 }
 
 .slider-title {
@@ -153,6 +159,13 @@
 }
 
 
+.btn-expand {
+    position: absolute;
+    right: 0;
+    bottom: 21px;
+}
+
+
 .slider-arrow-btn-backward {
     left: 0;
 
@@ -193,10 +206,4 @@
     &:disabled svg {
         fill: rgba($black, 0.2);
     }
-}
-
-.btn-expand {
-    position: absolute;
-    right: 0;
-    bottom: 21px;
 }

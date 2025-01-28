@@ -9,34 +9,29 @@
 	font: inherit;
 }
 
+table {
+  border-collapse: collapse;
+  border: 1px solid $border-color;
+}
+
 td:not(:last-child), th:not(:last-child) {
   border-right: 1px solid $border-color;
 }
 
-td, th {
-  padding: 4px;
-}
-
-// th:first-of-type {
-//   text-align: left;
-// }
-
-
-th {
+th, dt {
   font-weight: 700;
 }
 
 td, th {
+  padding: 4px;
   text-align: center;
+  font-size: .8rem;
+  line-height: 1rem;
+  height: 40px;
 }
 
 tr {
   border-bottom: 1px solid $border-color;
-}
-
-table {
-  border-collapse: collapse;
-  border: 1px solid $border-color;
 }
 
 dl {
@@ -44,30 +39,3 @@ dl {
   grid-template-columns: auto 1fr;
   justify-items: start;
 }
-
-
-// .clearfix:after {
-//   content: "";
-//   clear: both;
-//   display: table;
-// }
-
-// dl {
-// display: block;
-// width: 100%;
-// clear: both
-
-// }
-
-// dd, dt {
-//   display: inline-block;
-// }
-
-// dd {
-//  float: left;
-// }
-
-// dt {
-//   float: left;
-//   clear: both;
-// }

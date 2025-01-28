@@ -45,7 +45,7 @@ export const getElementSizes = (refs: ProjectElementRefsT): ProjectSizesT => {
       bannerHeight: refHeight(refs.bannerRef),
       contentHeight: refHeight(refs.contentRef)
     };
-  };
+};
 
 /********************************/
 /******* Path Definitions ********/
@@ -65,7 +65,7 @@ export const getPathA = (
     },
     {
       x: 0,
-      y: ttlHeight ,
+      y: ttlHeight,
       a: 45,
     },
     {
@@ -101,17 +101,17 @@ export const getPathB = (
     },
     {
       x: 0,
-      y: ttlHeight + bannerHeight + contentHeight - linesW,
+      y: ttlHeight + bannerHeight + contentHeight + 24,
       a: 0
     },
     {
       x: pgWidth  - (2*linesW),
-      y: ttlHeight +  bannerHeight + contentHeight - linesW,
+      y: ttlHeight +  bannerHeight + contentHeight + 24,
       a: 0
     },
     {
       x: pgWidth  - (2*linesW),
-      y: ttlHeight +  bannerHeight + contentHeight + 100,
+      y: ttlHeight +  bannerHeight + contentHeight + 100 + linesW,
       a: 0
     },
   ];
@@ -129,15 +129,6 @@ const drawBgLines = (
   if (!ctx || !canvasRef || !canvasRef.current) {
     return;
   }
-
-  // need this as an array
-  // const colors = [
-  //   cssVars.colors.wc5,
-  //   cssVars.colors.wc4,
-  //   cssVars.colors.wc3,
-  //   cssVars.colors.wc2,
-  //   cssVars.colors.wc1,
-  // ];
 
   const colors = [
     cssVars.colors.blue,
@@ -157,7 +148,6 @@ const drawBgLines = (
   // calculate paths based on element sizes
   const pathA = getPathA(elSizes, lineW, colors.length);
   const pathB = getPathB(elSizes, lineW, colors.length);
-
 
   // draw paths, bottom to top
   colors.forEach((color, i) => {

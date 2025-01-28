@@ -79,7 +79,7 @@ export const getPathA = (
       a: 45,
     },
     {
-      x: pgWidth - (100 + 15 * (pgWidth * 0.004)), // I have no idea how I came up with this math
+      x: pgWidth - (100 + 15 * (pgWidth * 0.005)), // I have no idea how I came up with this math
       y: ttlHeight - linesW / 2, // top-right of the about element
       a: 45,
     },

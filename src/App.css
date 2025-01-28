@@ -336,29 +336,29 @@ img.full-width {
   font: inherit;
 }
 
+table {
+  border-collapse: collapse;
+  border: 1px solid #000;
+}
+
 td:not(:last-child), th:not(:last-child) {
   border-right: 1px solid #000;
 }
 
-td, th {
-  padding: 4px;
-}
-
-th {
+th, dt {
   font-weight: 700;
 }
 
 td, th {
+  padding: 4px;
   text-align: center;
+  font-size: 0.8rem;
+  line-height: 1rem;
+  height: 40px;
 }
 
 tr {
   border-bottom: 1px solid #000;
-}
-
-table {
-  border-collapse: collapse;
-  border: 1px solid #000;
 }
 
 dl {
@@ -793,12 +793,6 @@ CONTENT
     line-height: 1.8rem;
   }
 }
-@media (min-width: 1440px) {
-  :root {
-    font-size: 1.6rem;
-    line-height: 2.2rem;
-  }
-}
 
 /**************
     RESETS
@@ -1103,23 +1097,17 @@ p {
 }
 @media (min-width: 769px) {
   .slider {
-    height: 90vh;
     width: 100%;
     border-radius: 10px;
   }
 }
 
-.slider-expanded .slider-image-track {
-  transform: none;
+.slider-wide {
+  aspect-ratio: 2/1;
 }
 
-.slider-image-expanded {
-  position: absolute;
-  z-index: 20;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+.slider-mobile {
+  aspect-ratio: 1/2;
 }
 
 .slider-contents {
@@ -1145,10 +1133,22 @@ p {
   display: block;
 }
 
+.slider-expanded .slider-image {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 .slider-image-track {
   display: flex;
   align-items: flex-start;
   transition: transform 0.2s ease-in, left 0.2s ease-in;
+}
+.slider-expanded .slider-image-track {
+  transform: none;
 }
 
 .slider-title {
@@ -1234,6 +1234,12 @@ p {
   transform: scale(1.2);
 }
 
+.btn-expand {
+  position: absolute;
+  right: 0;
+  bottom: 21px;
+}
+
 .slider-arrow-btn-backward {
   left: 0;
 }
@@ -1282,40 +1288,16 @@ p {
   fill: rgba(0, 0, 0, 0.2);
 }
 
-.btn-expand {
-  position: absolute;
-  right: 0;
-  bottom: 21px;
-}
-
 .dialog {
   position: fixed;
   top: 0;
-  height: 100%;
-  width: 100%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
   background-color: #000;
   z-index: 6;
-}
-.dialog:before {
-  content: "";
-  display: block;
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  background: url("/assets/images/concrete-wall-tileable.jpg");
-  pointer-events: none;
-  opacity: 20%;
-  z-index: 0;
-}
-@media (prefers-color-scheme: dark) {
-  .dialog:before {
-    opacity: 10%;
-  }
 }
 
 .dialog-content {
@@ -1358,7 +1340,7 @@ p {
   top: 0;
   background-color: #FFF;
   clip-path: rect(0 auto auto auto);
-  transition: clip-path 0.4s ease-out;
+  transition: clip-path 0.4s ease-in-out;
   z-index: 1;
 }
 @media (min-width: 1280px) {
@@ -1402,16 +1384,11 @@ p {
   max-width: 75%;
   margin: 120px auto 0px;
 }
-.project-banner .slider {
-  height: 50vh;
-}
 
 .project-info {
   max-width: 75%;
   margin: 32px auto;
-}
-.project-info .slider {
-  max-height: 50vh;
+  padding-bottom: 120px;
 }
 .project-info:before {
   content: "";
@@ -1535,10 +1512,26 @@ section {
   white-space: nowrap;
 }
 
+.right {
+  float: right;
+  margin: 0 0 1.2rem 1.2rem;
+  width: 50%;
+}
+
 .left {
   float: left;
-  max-width: 50%;
-  margin-right: 16px;
+  margin: 0 1.2rem 1.2rem 0;
+  width: 50%;
+}
+
+.short {
+  height: 40vh;
+}
+
+.clear:after {
+  content: "";
+  clear: both;
+  display: table-cell;
 }
 
 .outdent-1 {

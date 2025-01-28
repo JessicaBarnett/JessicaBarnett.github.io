@@ -5,41 +5,46 @@
 ## In Progress
 ----------------------------------------------------------------
 
-
-- FIGURE OUT PAGE TRANSITIONS
-- figure out scroll management across page transitions
-
-- Css Modules / scoping
-- esc to close dialog (or go back to home)
+In progress/features
 - animate lines
+- Project detail page layout
+- write actual content + get more pictures from the wayback machine
 
-- Nail down final data structure
-- content: start collecting images and text for these more info pages
-- accessibility audit
-- slider: expand icon
-- dark mode audit
+Bugs
+- fix expand positioning
+- nav links while project details is open
+- drawer positioning on resize (close it?)
+- route changes on drawer open
+- slider buttons are too big
+- close drawer button icon alignment off
+- expand button styling
+- image title bg 100% opacity
+- Lines on proj detail page
+
+Testing/Audits
+- browser testing
+- Accessibility Audit
 - mobile audit
+- dark mode audit
+
 
 ----------------------------------------------------------------
 ## Backlog
 ----------------------------------------------------------------
 
 #### Bugs
-- figure out scroll jankiness **
+- figure out scroll jankiness on filter click
 - tiled bg texture isn't as nicely tiled as it could be... **
 
 
 #### Features
+
+- Css Modules / scoping
 - "rewind" back to top button!
 - animate lines **
 - switch for dark mode
 - more-info section **
-- page transitions (for more-info sections)
-  - tiles: https://codepen.io/alvarotrigo/pen/wvpbRmE
-  - curtain: https://codepen.io/alvarotrigo/pen/qBpGLYq
-  - transition inspo: https://alvarotrigo.com/blog/css-page-transitions/
 - Articles/blog (link in social and in nav)
-- change rainbow color themes? (grayscale looks so good!)
 
 #### Storybook
 - storybook doesn't actually trigger dark mode?
@@ -53,22 +58,7 @@
 ----------------------------------------------------------------
 ## Notes
 ----------------------------------------------------------------
-
-can I pin to the element (btn) that was clicked?
-
-
-like, get the scroll offset of the element I clicked on post-adjustment,
-
-https://ux.stackexchange.com/questions/147067/is-there-a-standard-algorithm-for-maintaining-scroll-position-of-a-list-when-the
-
-I didn't realize there was a ux stackexchange!
-
-
-What I really want... is the position of the btn from the top of the viewport
-
-- get position of the btn that was clicked (from top) (before list shift)
--
--
-
-// how to SET the position of an element relative to the viewport
-I can GET it with boundingClientRect
+- page transitions ideas (for more-info sections)
+  - tiles: https://codepen.io/alvarotrigo/pen/wvpbRmE
+  - curtain: https://codepen.io/alvarotrigo/pen/qBpGLYq
+  - transition inspo: https://alvarotrigo.com/blog/css-page-transitions/

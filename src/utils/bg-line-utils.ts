@@ -165,3 +165,41 @@ export const drawLine = (
 
   ctx.stroke();
 };
+
+
+export const nextStep = (points: PointT[]) => {}
+
+export const drawFrame  = (
+  ctx: CanvasRenderingContext2D,
+  points: PointT[], // we need the length of this path as well
+  lineW: number,
+  length: number, // length for this step,
+  color: string
+) => {
+  // this is all the same
+  ctx.beginPath();
+  ctx.lineWidth = lineW;
+  ctx.lineJoin = "round";
+  ctx.lineCap = "round";
+  ctx.strokeStyle = color;
+
+  // need to be able to get the length
+
+  // draw the line in points, BUT only draw up to the length
+
+  points.forEach((point) => {
+    // if we have reached the end of our length, return
+    ctx.lineTo(point.x, point.y); // point x & y should
+  });
+
+  ctx.stroke();
+};
+
+// export const animateLine  = (
+//   ctx: CanvasRenderingContext2D,
+//   points: PointT[],
+//   lineW: number,
+//   color: string
+// ) => {
+//   // on a timer, call drawFrame
+// };
