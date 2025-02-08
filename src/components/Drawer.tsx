@@ -33,6 +33,20 @@ const Drawer = ({  children, isOpen, onClose}: DrawerComponentProps) => {
   }, [isOpen])
 
   useLayoutEffect(() => {
+
+    // Version that uses Height instead of top, and doesnt require scroll limiting
+    // const drawerHeight = refHeight(drawerRef);
+    // const frame = document.getElementById('page-frame');
+    // const homepage = document.getElementById('home-page');
+
+    // if (isOpen && frame && homepage) {
+    //     document.getElementById('page-frame')?.classList.toggle('covered');
+    //     frame.style.height = `${drawerHeight}`;
+    //     homepage.style.height = '0';
+    // }
+
+    //Version that uses top
+
     // open drawer at current scroll position
     document.getElementById('page-frame')?.classList.toggle('covered');
     const boundingClientRect = document.getElementById('home-page')?.getBoundingClientRect();

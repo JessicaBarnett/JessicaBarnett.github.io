@@ -6,11 +6,13 @@
     BUTTONS
 ***************/
 
-@mixin base-btn {
+// @mixin unbtn {
+//     border: 0;
+//     background: transparent;
+// }
+
+@mixin base-btn ($inverted: false) {
     @include font-size(1.2rem);
-    color: $text-color;
-    background-color: $page-bg-color;
-    border: 2px solid $border-color;
     border-radius: $border-radius-sm;
     padding: 2px 4px;
     margin: 2px;
@@ -20,10 +22,26 @@
         background-color $bg-transition,
         border-color $bg-transition;
 
-    &:hover,
-    &.selected {
-        color: $highlight-text-color;
-        background-color: $highlight-bg-color;
+    @if ($inverted == true) {
+        color: $drk-text-color;
+        background-color: $drk-page-bg-color;
+        border: 2px solid $drk-border-color;
+        &:hover,
+        &.selected {
+            color: $drk-highlight-text-color;
+            background-color: $drk-highlight-bg-color;
+        }
+    }
+    @else {
+        color: $text-color;
+        background-color: $page-bg-color;
+        border: 2px solid $border-color;
+
+        &:hover,
+        &.selected {
+            color: $highlight-text-color;
+            background-color: $highlight-bg-color;
+        }
     }
 
     @include dark-mode() {

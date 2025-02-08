@@ -73,16 +73,39 @@ SECTION
   @include vertical-spacing("section-subheading");
 }
 
-
 /**************
 CONTENT
 ***************/
 
+section {
+  // @include vertical-spacing("section");
+  // padding: 2rem 0;
+}
+
+.section-pd {
+  padding: 2rem 0;
+}
+
+.section-pd2 {
+  padding: 4rem 0;
+}
+
+.section-tpd {
+  padding: 4rem 0 2rem;
+}
+
+.section-tpd-2 {
+  padding: 4rem 0 1rem;
+}
+
+.section-bpd {
+  padding: 2rem 0 4rem;
+}
+
 .content {
   max-width: 720px;
   margin: 0 var(--rainbow-w);
-  padding: 4rem var(--content-gap);
-  @include vertical-spacing("section");
+  padding: 0 var(--content-gap);
 }
 
 .content-about {

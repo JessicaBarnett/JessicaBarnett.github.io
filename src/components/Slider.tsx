@@ -92,6 +92,7 @@ const Slider = ({ media, options = {} }: SliderComponentProps) => {
             <div className={sliderClasses}>
                 {media.length > 1 && (
                     <>
+                        <p className="slider-title">{selectedSlide?.name ?? ''}</p>
                         <button className="slider-arrow-btn-backward" onClick={() => moveBackward()}>
                             <RewindIcon></RewindIcon>
                         </button>
@@ -128,8 +129,6 @@ const Slider = ({ media, options = {} }: SliderComponentProps) => {
                         ))}
                     </div>
                 </div>
-
-                <p className="slider-title">{selectedSlide?.name ?? ''}</p>
                 <button className="btn-expand" onClick={handleExpandClick}>expand</button>
             </div>
             {createPortal(

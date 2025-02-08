@@ -90,19 +90,19 @@ function HomePage({onNavigateToProject}: HomePageComponentProps) {
 
           <canvas id="canvas" ref={canvasRef} height="100%" width="100%"></canvas>
 
-          <section ref={ttlRef} className="section-title triangle-left">
+          <section ref={ttlRef} className="section-pd2 section-title triangle-left">
             <TitleSection></TitleSection>
           </section>
 
           <section
             id="about"
-            className="section-about trapezoid-right"
+            className="section-about section-pd2 trapezoid-right"
             ref={abtRef}
           >
             <AboutSection></AboutSection>
           </section>
 
-          <section id="projects" className="section-projects" ref={projRef}>
+          <section id="projects" className="section-projects section-pd" ref={projRef}>
             <div className="content content-projects grid-at-small">
               <SectionHeading className="half">Projects</SectionHeading>
 
@@ -134,7 +134,7 @@ function HomePage({onNavigateToProject}: HomePageComponentProps) {
           <section
             id="experience"
             ref={expRef}
-            className="section-experience trapezoid-hug"
+            className="section-pd section-experience trapezoid-hug"
           >
             <div className="content content-experience">
               <SectionHeading>Experience</SectionHeading>
@@ -154,7 +154,7 @@ function HomePage({onNavigateToProject}: HomePageComponentProps) {
           <section
             id="contact"
             ref={contRef}
-            className="section-contact color-bar"
+            className="section-pd section-contact color-bar"
           >
             <div className="content content-contact grid-at-med">
               <SectionHeading>Contact</SectionHeading>
@@ -165,7 +165,7 @@ function HomePage({onNavigateToProject}: HomePageComponentProps) {
             </div>
           </section>
 
-          <section ref={ftrRef} id="footer" className="section-footer">
+          <section ref={ftrRef} id="footer" className="section-pd section-footer">
             <div className="content content-footer">
               <p>
                 Curious about this build? <br /> Check out the{" "}

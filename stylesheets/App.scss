@@ -108,15 +108,23 @@ section {
 }
 
 .right {
-  float: right;
-  margin: 0 0 1.2rem 1.2rem;
-  width: 50%;
+  margin: 0 0 1.2rem 0;
+
+  @include only-above($small-bp) {
+    float: right;
+    margin-left: 1.2rem;
+    width: 50%;
+  }
 }
 
 .left {
-  float: left;
-  margin: 0 1.2rem 1.2rem 0;
-  width: 50%;
+  margin: 0 0 1.2rem 0;
+
+  @include only-above($small-bp) {
+    float: left;
+    margin-right: 1.2rem;
+    width: 50%;
+  }
 }
 
 .short {

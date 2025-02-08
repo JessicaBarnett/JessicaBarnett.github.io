@@ -81,14 +81,14 @@
 .btn-tag {
   font-size: 1.2rem;
   line-height: 1.8rem;
-  color: #000;
-  background-color: #fff;
-  border: 2px solid #000;
   border-radius: 5px;
   padding: 2px 4px;
   margin: 2px;
   font-weight: 600;
   transition: color 0.1s ease-in, background-color 0.2s ease-in, border-color 0.2s ease-in;
+  color: #000;
+  background-color: #fff;
+  border: 2px solid #000;
 }
 .btn-tag:hover, .btn-tag.selected {
   color: #fff;
@@ -110,14 +110,14 @@
 .btn-submit {
   font-size: 1.2rem;
   line-height: 1.8rem;
-  color: #000;
-  background-color: #fff;
-  border: 2px solid #000;
   border-radius: 5px;
   padding: 2px 4px;
   margin: 2px;
   font-weight: 600;
   transition: color 0.1s ease-in, background-color 0.2s ease-in, border-color 0.2s ease-in;
+  color: #000;
+  background-color: #fff;
+  border: 2px solid #000;
   font-size: 1.5rem;
   line-height: 2.1rem;
   font-family: "Lester Bold";
@@ -331,45 +331,6 @@ img {
   list-style: none;
 }
 
-/**************
-    TABLES
-***************/
-:is(table, th, td, tr) {
-  padding: 0;
-  font: inherit;
-}
-
-table {
-  border-collapse: collapse;
-  border: 1px solid #000;
-}
-
-td:not(:last-child), th:not(:last-child) {
-  border-right: 1px solid #000;
-}
-
-th, dt {
-  font-weight: 700;
-}
-
-td, th {
-  padding: 4px;
-  text-align: center;
-  font-size: 0.8rem;
-  line-height: 1rem;
-  height: 40px;
-}
-
-tr {
-  border-bottom: 1px solid #000;
-}
-
-dl {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  justify-items: start;
-}
-
 /******************************************
         Forwarder Utilities file
 *******************************************/
@@ -394,6 +355,51 @@ dl {
 /**************
     TITLES
 ***************/
+/**************
+    TABLES
+***************/
+:is(table, th, td, tr) {
+  padding: 0;
+  font: inherit;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid #000;
+}
+
+td:not(:last-child), th:not(:last-child) {
+  border-right: 1px solid #000;
+}
+
+th, dt {
+  font-weight: 700;
+}
+
+td, th {
+  height: 2rem;
+  padding: 0 2px;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 1rem;
+}
+@media (min-width: 769px) {
+  td, th {
+    padding: 4px;
+    height: 3rem;
+  }
+}
+
+tr {
+  border-bottom: 1px solid #000;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  justify-items: start;
+}
+
 .nav {
   background-color: #000;
   width: 100%;
@@ -700,11 +706,30 @@ SECTION
 /**************
 CONTENT
 ***************/
+.section-pd {
+  padding: 2rem 0;
+}
+
+.section-pd2 {
+  padding: 4rem 0;
+}
+
+.section-tpd {
+  padding: 4rem 0 2rem;
+}
+
+.section-tpd-2 {
+  padding: 4rem 0 1rem;
+}
+
+.section-bpd {
+  padding: 2rem 0 4rem;
+}
+
 .content {
   max-width: 720px;
   margin: 0 var(--rainbow-w);
-  padding: 4rem var(--content-gap);
-  padding-bottom: 80px;
+  padding: 0 var(--content-gap);
 }
 
 .content-about {
@@ -1089,24 +1114,37 @@ p {
 
 .slider {
   position: relative;
-  width: 90%;
+  width: 100%;
   height: 100%;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 3px 0;
   position: relative;
   z-index: 1;
+  border-radius: 10px;
+  padding: 2rem 0;
   background-color: rgb(24, 24, 24);
-  padding: 15px;
+  border: 2px solid #191919;
 }
 @media (min-width: 769px) {
   .slider {
-    width: 100%;
-    border-radius: 10px;
+    padding: 2rem 1rem;
+    border: 0;
   }
 }
 
 .slider-wide {
-  aspect-ratio: 2/1;
+  height: 30vh;
+}
+@media (min-width: 560px) {
+  .slider-wide {
+    aspect-ratio: 4/3;
+    height: 100%;
+  }
+}
+@media (min-width: 769px) {
+  .slider-wide {
+    aspect-ratio: 2/1;
+  }
 }
 
 .slider-mobile {
@@ -1116,11 +1154,14 @@ p {
 .slider-contents {
   position: relative;
   overflow: hidden scroll;
-  border-radius: 10px;
   height: 96vh;
   box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 3px 0, rgba(0, 0, 0, 0.3) -2px -2px 3px 0;
-  background-image: linear-gradient(to right, grey 1px, transparent 1px), linear-gradient(to bottom, grey 1px, transparent 1px);
   height: 100%;
+}
+@media (min-width: 769px) {
+  .slider-contents {
+    border-radius: 10px;
+  }
 }
 
 .slide {
@@ -1156,14 +1197,12 @@ p {
 
 .slider-title {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.8);
   color: white;
-  padding: 8px 16px;
   font-weight: bold;
+  padding-left: 8px;
   border-radius: 0 10px 0 0;
   max-width: fit-content;
-  margin-top: -36px;
-  margin-left: -14px;
+  margin-top: -1.8rem;
   z-index: 1;
   cursor: default;
 }
@@ -1174,15 +1213,15 @@ p {
   justify-content: center;
   z-index: 1;
   position: absolute;
-  bottom: 36px;
+  bottom: 0.6rem;
   left: 0;
 }
 
 .slider-dot-btn {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: white;
   border: 0;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 0.8rem;
+  height: 0.8rem;
   border-radius: 50%;
   margin: 0 10px;
   transition: transfrom 0.2s ease-in;
@@ -1192,14 +1231,32 @@ p {
   transform: scale(1.5);
 }
 .slider-dot-btn.selected {
-  background-color: #FFF;
+  transform: scale(1.5);
+}
+
+.btn-expand {
+  position: absolute;
+  bottom: 36px;
+  right: 0.3rem;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  background-color: black;
+  padding: 2px 6px;
+  line-height: 1.5rem;
+  transition: background-color 0.2s ease-in, color 0.1s ease-in;
+}
+.btn-expand:hover {
+  background-color: white;
+  color: black;
 }
 
 .slider-arrow-btn-forward,
 .slider-arrow-btn-backward {
   display: block;
-  width: 2.8rem;
-  height: 150px;
+  height: 45px;
   background: none;
   border: none;
   transition: transform 0.2s ease-in;
@@ -1211,7 +1268,8 @@ p {
 .slider-arrow-btn-forward .icon,
 .slider-arrow-btn-backward .icon {
   display: inline-block;
-  width: 2rem;
+  width: 1.2rem;
+  padding-right: 2px;
 }
 .slider-arrow-btn-forward svg,
 .slider-arrow-btn-backward svg {
@@ -1237,12 +1295,6 @@ p {
   transform: scale(1.2);
 }
 
-.btn-expand {
-  position: absolute;
-  right: 0;
-  bottom: 21px;
-}
-
 .slider-arrow-btn-backward {
   left: 0;
 }
@@ -1255,9 +1307,9 @@ p {
   border: 0;
   display: block;
   height: rgba(0, 0, 0, 0.7);
-  border-top: 3.5rem solid transparent;
-  border-bottom: 3.5rem solid transparent;
-  border-left: 4.5rem solid black;
+  border-top: 2rem solid transparent;
+  border-bottom: 2rem solid transparent;
+  border-left: 3rem solid black;
   left: 0;
 }
 .slider-arrow-btn-backward:disabled:after {
@@ -1279,9 +1331,9 @@ p {
   border: 0;
   display: block;
   height: rgba(0, 0, 0, 0.7);
-  border-top: 3.5rem solid transparent;
-  border-bottom: 3.5rem solid transparent;
-  border-right: 4.5rem solid black;
+  border-top: 2rem solid transparent;
+  border-bottom: 2rem solid transparent;
+  border-right: 3rem solid black;
   right: 0;
 }
 .slider-arrow-btn-forward:disabled:after {
@@ -1289,6 +1341,11 @@ p {
 }
 .slider-arrow-btn-forward:disabled svg {
   fill: rgba(0, 0, 0, 0.2);
+}
+
+.dialog-image {
+  margin: 0 auto;
+  display: block;
 }
 
 .dialog {
@@ -1380,12 +1437,16 @@ p {
   overflow: hidden;
   position: relative;
   text-align: left;
-  padding: 40px 0 22px 160px;
+  padding-left: 16px;
 }
 
 .project-banner {
-  max-width: 75%;
-  margin: 120px auto 0px;
+  margin-left: -2rem;
+}
+@media (min-width: 560px) {
+  .project-banner {
+    margin-left: 0;
+  }
 }
 
 .project-info {
@@ -1421,9 +1482,9 @@ p {
   border: 0;
   display: block;
   height: 20vh;
-  border-top: 40px solid transparent;
-  border-bottom: 40px solid transparent;
-  border-left: 80px solid #000;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-left: 60px solid #000;
   position: fixed;
   top: 40vh;
   background-color: transparent;
@@ -1435,9 +1496,9 @@ p {
   transform: scale(1.2) translateX(6px);
 }
 .back-btn .icon {
-  width: 50px;
+  width: 36px;
   display: inline-block;
-  margin-left: -90px;
+  margin-left: -72px;
   margin-top: 8px;
 }
 .back-btn svg {
@@ -1519,15 +1580,25 @@ section {
 }
 
 .right {
-  float: right;
-  margin: 0 0 1.2rem 1.2rem;
-  width: 50%;
+  margin: 0 0 1.2rem 0;
+}
+@media (min-width: 560px) {
+  .right {
+    float: right;
+    margin-left: 1.2rem;
+    width: 50%;
+  }
 }
 
 .left {
-  float: left;
-  margin: 0 1.2rem 1.2rem 0;
-  width: 50%;
+  margin: 0 0 1.2rem 0;
+}
+@media (min-width: 560px) {
+  .left {
+    float: left;
+    margin-right: 1.2rem;
+    width: 50%;
+  }
 }
 
 .short {

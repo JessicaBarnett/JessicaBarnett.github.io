@@ -2,8 +2,11 @@
 ----------------------------------------------------------------
 
 ----------------------------------------------------------------
-## In Progress
+## In Progress (Do before more-info page release!)
 ----------------------------------------------------------------
+
+rewind back-to-top
+dark mode switch
 
 Content
 - write actual content + get more pictures from the wayback machine
@@ -20,24 +23,20 @@ Slider
   - on back, close dialog.
   - do some scroll/height fixing so you don't have someone scrolling down way below a shorter image
 
-
-More Details pg
+More Details page layout
   - use rainbow widths to define spacing of everything
-
 
 Navigation Links
   - close drawer before going to id, when clicked
 
 
 
-Other
-  - route changes on drawer open
-
-
-
 ----------------------------------------------------------------
 ## Backlog
 ----------------------------------------------------------------
+#### Top Priority!
+- animate lines!
+  - how to get the length of the lines?  that, and the height of the page, will determine how much of the line gets drawn per tick.
 
 #### Testing/Audits
 - browser testing
@@ -48,6 +47,7 @@ Other
 #### Bugs
 - figure out scroll jankiness on filter click
 - tiled bg texture isn't as nicely tiled as it could be... **
+- the more info page should reeeeally be a new route...
 
 
 #### Features

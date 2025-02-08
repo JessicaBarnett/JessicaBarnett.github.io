@@ -4,7 +4,8 @@
 
 // Project Details Layout
 
-$trapezoid-width: 80px;
+$trapezoid-width: 60px;
+$trapezoid-width-med: 80px;
 
 .project-detail {
     padding-bottom: 80px;
@@ -18,23 +19,23 @@ $trapezoid-width: 80px;
     --project-shadow-color-1: hsl(var(--project-h), var(--project-s), calc(var(--project-l) - 8%));
     --project-shadow-color-2: hsl(var(--project-h), var(--project-s), calc(var(--project-l) - 4%));
     --project-text-color: #fef8ef;
-
     height: 100%;
     overflow-y: scroll;
-
 }
 
 .project-title {
     overflow: hidden;
     position: relative;
     text-align: left;
-    padding: 40px 0 22px 160px;
+    padding-left: 16px;
 }
 
 .project-banner {
-    // all these need to change to dynamic variables
-    max-width: 75%;
-    margin: 120px auto 0px;
+    margin-left: -2rem;
+
+    @include only-above($small-bp) {
+        margin-left: 0;
+    }
 }
 
 .project-info {
@@ -67,9 +68,9 @@ $trapezoid-width: 80px;
     }
 
     .icon {
-        width: 50px;
+        width: 36px;
         display: inline-block;
-        margin-left: -90px;
+        margin-left: -72px;
         margin-top: 8px;
     }
 

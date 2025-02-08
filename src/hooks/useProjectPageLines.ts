@@ -16,6 +16,7 @@ import {
 export type ProjectElementRefsT = {
   pageRef: RefObject<HTMLDivElement>;
   ttlRef: RefObject<HTMLElement>;
+  infoRef: RefObject<HTMLElement>;
   bannerRef: RefObject<HTMLElement>;
   contentRef:RefObject<HTMLElement>;
 };
@@ -26,6 +27,7 @@ export type ProjectSizesT = {
   pgHeight: number;
   ttlHeight: number;
   bannerHeight: number;
+  infoHeight: number;
   contentHeight: number;
 };
 
@@ -42,6 +44,7 @@ export const getElementSizes = (refs: ProjectElementRefsT): ProjectSizesT => {
       pgWidth: refs.pageRef.current.clientWidth,
       pgHeight: refs.pageRef.current.clientHeight,
       ttlHeight: refHeight(refs.ttlRef),
+      infoHeight: refHeight(refs.infoRef),
       bannerHeight: refHeight(refs.bannerRef),
       contentHeight: refHeight(refs.contentRef)
     };
@@ -82,7 +85,7 @@ export const getPathA = (
 };
 
 export const getPathB = (
-  { pgWidth, ttlHeight, bannerHeight, contentHeight}: ProjectSizesT,
+  { pgWidth, ttlHeight, infoHeight, bannerHeight, contentHeight}: ProjectSizesT,
   lineW: number,
   lineCt: number
 ): PointT[] => {
@@ -92,26 +95,26 @@ export const getPathB = (
 
     {
       x: -100,
-      y: ttlHeight + bannerHeight + (2*linesW),
+      y: ttlHeight + bannerHeight +infoHeight+ (2*linesW),
       a: 90
     },
     {
       x: 0,
-      y: ttlHeight + bannerHeight  + (2*linesW),
+      y: ttlHeight + bannerHeight   +infoHeight+ (2*linesW),
     },
     {
       x: 0,
-      y: ttlHeight + bannerHeight + contentHeight + 24,
+      y: ttlHeight + bannerHeight  +infoHeight+ contentHeight + 24,
       a: 0
     },
     {
       x: pgWidth  - (2*linesW),
-      y: ttlHeight +  bannerHeight + contentHeight + 24,
+      y: ttlHeight +  bannerHeight  +infoHeight+ contentHeight + 24,
       a: 0
     },
     {
       x: pgWidth  - (2*linesW),
-      y: ttlHeight +  bannerHeight + contentHeight + 100 + linesW,
+      y: ttlHeight +  bannerHeight  +infoHeight+ contentHeight + 100 + linesW,
       a: 0
     },
   ];
