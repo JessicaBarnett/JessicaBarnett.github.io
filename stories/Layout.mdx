@@ -1,0 +1,94 @@
+import { Meta, Unstyled } from "@storybook/blocks";
+import * as sharedVars from '../data/css-variables.json';
+import "../src/App.css";
+import "./storybook.css";
+
+<Meta title="globals/Layout" />
+
+<h1>Layout</h1>
+
+<Unstyled>
+  <div class="sb-example-block sb-diagram">
+      <section>
+        <div className="sb-diagram-content">
+          <p>Section content</p>
+        </div>
+      </section>
+      <section>
+        <div className="sb-diagram-content">
+          <p>Section content</p>
+        </div>
+      </section>
+  </div>
+</Unstyled>
+
+
+<Unstyled>
+  <div class="sb-example-block sb-diagram">
+      <section>
+        <div className="sb-diagram-content">
+          <p>no layout classes</p>
+        </div>
+        <div className="h-centered">
+          <div className="sb-diagram-content">
+            <p>h-centered</p>
+          </div>
+        </div>
+        <div className="v-spaced">
+          <div className="sb-diagram-content">
+            <p>v-spaced</p>
+          </div>
+        </div>
+        <div className="h-centered v-spaced">
+          <div className="sb-diagram-content">
+            <p>h-centered and v-spaced</p>
+          </div>
+        </div>
+      </section>
+  </div>
+</Unstyled>
+
+
+<Unstyled>
+  <div class="sb-example-block sb-diagram">
+    <div className="page">
+      <section>
+        <div className="h-centered v-spaced">
+          <div className="sb-diagram-content">
+            <p>h-centered and v-spaced</p>
+          </div>
+        </div>
+
+        <div className="h-centered v-spaced">
+          <div className="sb-diagram-content">
+            <p>h-centered and v-spaced</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</Unstyled>
+
+<Unstyled>
+  <div class="sb-example-block sb-diagram">
+    <section>
+      <div className="h-centered h-centered-label">
+        <div className="v-spaced">
+          <div className="sb-diagram-content">
+            <p>v-spaced</p>
+          </div>
+        </div>
+        <div className="v-spaced">
+          <div className="sb-diagram-content">
+            <p>v-spaced</p>
+          </div>
+        </div>
+        <div className="v-spaced">
+          <div className="sb-diagram-content">
+            <p>v-spaced</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Unstyled>

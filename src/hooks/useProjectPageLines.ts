@@ -59,7 +59,8 @@ export const getPathA = (
   lineW: number,
   lineCt: number
 ): PointT[] => {
-  const linesW = lineW * lineCt;
+  const linesW = (lineW * lineCt);
+  const halfLinesW = (linesW / 2) - 12;
 
   return [
     {
@@ -68,12 +69,12 @@ export const getPathA = (
     },
     {
       x: 0,
-      y: ttlHeight,
+      y: ttlHeight - halfLinesW,
       a: 45,
     },
     {
       x: pgWidth - linesW + lineW,
-      y: ttlHeight,
+      y: ttlHeight - halfLinesW,
       a: 90
     },
     {

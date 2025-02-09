@@ -14,10 +14,10 @@ function ProjectPage({
 }: ProjectPageProps) {
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
     const pageRef = useRef<HTMLDivElement | null>(null);
-    const ttlRef = useRef<HTMLElement | null>(null);
-    const contentRef = useRef<HTMLElement | null>(null);
-    const infoRef = useRef<HTMLElement | null>(null);
-    const bannerRef = useRef<HTMLElement | null>(null);
+    const ttlRef = useRef<HTMLDivElement | null>(null);
+    const contentRef = useRef<HTMLDivElement | null>(null);
+    const infoRef = useRef<HTMLDivElement | null>(null);
+    const bannerRef = useRef<HTMLDivElement | null>(null);
 
     useProjectPageLines(
         canvasRef,
@@ -31,17 +31,17 @@ function ProjectPage({
     );
 
     return project && (
-        <div ref={pageRef} className='page' id='section-p-detail'>
+        <div ref={pageRef} className='page'>
             <canvas id="canvas" ref={canvasRef} height="100%" width="100%"></canvas>
 
-            <section ref={ttlRef} className="section-pd triangle-right">
-                <div className="content">
+            <section ref={ttlRef} className="triangle-right">
+                <div className="h-centered v-spaced">
                     <ProjectTitle project={project} />
                 </div>
             </section>
 
-            <section ref={infoRef} className="section-tpd-2">
-                <div className="content">
+            <section ref={infoRef}>
+                <div className="h-centered v-spaced">
                     <dl>
                         <dt>Role: </dt>
                         <dd>{project.role}</dd>
@@ -51,19 +51,15 @@ function ProjectPage({
                         <dd>{project.type}</dd>
                     </dl>
                 </div>
-            </section>
 
-            <section className="project-banner" ref={bannerRef}>
-                <div className="content">
+                <div className="h-centered v-spaced" ref={bannerRef}>
                     <Slider
                         options={{ wide: true }}
                         media={project?.media?.filter((p) => p.viewport === "wide") ?? []}
                     ></Slider>
                 </div>
-            </section>
 
-            <section className="section-pd" ref={contentRef}>
-                <div className="content">
+                <div className="h-centered v-spaced" ref={contentRef}>
                     {project.content.map((content, idx) => {
                         return (
                             <>
@@ -88,6 +84,7 @@ function ProjectPage({
                 </div>
             </section>
         </div>
+
     );
 }
 

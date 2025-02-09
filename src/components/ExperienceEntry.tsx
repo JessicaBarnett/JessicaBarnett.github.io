@@ -11,7 +11,7 @@ type ExperienceEntryProps = {
 
 const ExperienceEntry = ({entry, selectedTags, onTagSelect}: ExperienceEntryProps) => {
   return (
-    <li className="entry">
+    <li className="v-spaced">
         <div className="supertitle-3">
             <time dateTime={entry.start}>{entry.start}</time> -{" "}
             <time dateTime={entry.end}>{entry.end}</time>

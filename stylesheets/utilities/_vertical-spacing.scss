@@ -3,14 +3,14 @@
 
 $vertical-spacing-unit: 16px;
 $vertical-spacing-levels: (
-    'section': #{$vertical-spacing-unit * 5},
-    'section-heading':  #{$vertical-spacing-unit * 3},
-    'section-subheading': #{$vertical-spacing-unit * 2.5},
+    'partition': #{$vertical-spacing-unit * 5},
+    'partition-heading':  #{$vertical-spacing-unit * 3},
+    'partition-subheading': #{$vertical-spacing-unit * 2.5},
     'entry': #{$vertical-spacing-unit * 2},
     'entry-heading': #{$vertical-spacing-unit * 1},
     'paragraph': #{$vertical-spacing-unit * .5},
 );
 
-@mixin vertical-spacing($vertical-spacing-level: 'section-heading') {
+@mixin vertical-spacing($vertical-spacing-level: 'partition-heading') {
     padding-bottom: map.get($vertical-spacing-levels, $vertical-spacing-level);
 }

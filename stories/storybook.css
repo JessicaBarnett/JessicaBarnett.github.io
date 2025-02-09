@@ -42,11 +42,9 @@
     border: 5px solid lightgray;
     border-radius: 15px;
 }
-
 .sb-fake-phone img {
     width: 100%;
 }
-
 .sb-grid-1-1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -54,54 +52,86 @@
     max-width: 700px;
     grid-gap: 8px;
 }
-
 .sb-grid-span-2 {
     grid-column: 1 / span 2;
 }
-
 .sb-grid-1-1-3 {
     display: grid;
     grid-template-columns: 1fr 1fr 3fr;
 }
-
 .sb-align-left {
     text-align: left;
 }
-
-.sb-flex {
-    /* display: flex; */
-}
-
 .sb-img {
     max-width: 300px !important;
 }
-
 .sb-icon-block {
     display: grid;
     grid-template-columns: repeat(5, 100px);
     grid-gap: 16px;
 }
-
 .sb-color-block-group {
     display: inline-block;
     text-align: center;
 }
-
 .sb-color-block {
     width: 100px;
     height: 100px;
     margin: 8px 4px;
     border: 1px solid black;
 }
-
 .sb-inter {
     font-family: "Inter", Arial, Helvetica, sans-serif;
 }
-
 .sb-lester {
     font-family: "Lester Bold";
 }
-
 :not(.sb-unstyled *):is(ol) {
     list-style: decimal;
+}
+
+/* Layout Diagram */
+.sb-diagram {
+    --diagram-content-col: rgb(245, 245, 245);
+    --diagram-section-col: rgb(235, 235, 255);
+    --diagram-section-gradient: repeating-linear-gradient(45deg, var(--diagram-section-col) 0px, var(--diagram-section-col) 3px, transparent 3px, transparent 24px);
+    --diagram-h-centered-col: rgb(243, 211, 249);
+    --diagram-h-centered-gradient: repeating-linear-gradient(45deg, var(--diagram-h-centered-col) 0px, var(--diagram-h-centered-col) 2px, transparent 2px, transparent 10px);
+    --diagram-v-spaced-col: rgb(231, 233, 250);
+    --diagram-v-spaced-gradient: repeating-linear-gradient(-45deg, var(--diagram-v-spaced-col) 0px, var(--diagram-v-spaced-col) 2px, transparent 2px, transparent 10px);
+}
+.sb-diagram section {
+    border: 1px solid var(--diagram-section-col);
+    background: var(--diagram-section-gradient), white;
+}
+.sb-diagram .h-centered {
+    border: 1px solid var(--diagram-h-centered-col);
+    background: var(--diagram-h-centered-gradient), white;
+}
+.sb-diagram .h-centered-label {
+    position: relative;
+}
+.sb-diagram .h-centered-label:before {
+    position: absolute;
+    margin: -36px auto 0;
+    width: 100%;
+    content: 'h-centered container';
+    text-align: center;
+}
+.sb-diagram .v-spaced {
+    border: 1px solid var(--diagram-v-spaced-col);
+    background: var(--diagram-v-spaced-gradient), white;
+}
+.sb-diagram-content {
+    background-color: var(--diagram-content-col);
+    height: 60px;
+}
+.sb-diagram p {
+    text-align: center;
+}
+.sb-diagram .h-centered.v-spaced {
+    background:
+        var(--diagram-h-centered-gradient),
+        var(--diagram-v-spaced-gradient),
+        white;
 }

@@ -5,8 +5,16 @@
 ## In Progress (Do before more-info page release!)
 ----------------------------------------------------------------
 
+Things that FEEL urgent
+- adjust drawer to change main content height instead of effing with the scroll pos?
+-
+
+
+
+- dark mode switch
+
+
 rewind back-to-top
-dark mode switch
 
 Content
 - write actual content + get more pictures from the wayback machine

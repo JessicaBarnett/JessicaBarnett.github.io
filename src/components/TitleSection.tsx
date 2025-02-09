@@ -1,7 +1,7 @@
 function TitleSection() {
   return (
     <>
-        <div className="content content-title">
+        <div className="h-centered title">
             <h1 className="title-1">
               <span className="outdent-1">Jessica </span>
               Barnett

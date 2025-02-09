@@ -90,20 +90,20 @@ function HomePage({onNavigateToProject}: HomePageComponentProps) {
 
           <canvas id="canvas" ref={canvasRef} height="100%" width="100%"></canvas>
 
-          <section ref={ttlRef} className="section-pd2 section-title triangle-left">
+          <section ref={ttlRef} className="triangle-left">
             <TitleSection></TitleSection>
           </section>
 
           <section
-            id="about"
-            className="section-about section-pd2 trapezoid-right"
+            id="about-section"
+            className="trapezoid-right"
             ref={abtRef}
           >
             <AboutSection></AboutSection>
           </section>
 
-          <section id="projects" className="section-projects section-pd" ref={projRef}>
-            <div className="content content-projects grid-at-small">
+          <section id="projects-section" ref={projRef}>
+            <div className="h-centered projects grid-at-small">
               <SectionHeading className="half">Projects</SectionHeading>
 
               <FilterSelect
@@ -132,11 +132,11 @@ function HomePage({onNavigateToProject}: HomePageComponentProps) {
           </section>
 
           <section
-            id="experience"
+            id="experience-section"
             ref={expRef}
-            className="section-pd section-experience trapezoid-hug"
+            className="trapezoid-hug"
           >
-            <div className="content content-experience">
+            <div className="h-centered experience">
               <SectionHeading>Experience</SectionHeading>
               <ol>
                 {expEntries.map((entry) => (
@@ -152,11 +152,11 @@ function HomePage({onNavigateToProject}: HomePageComponentProps) {
           </section>
 
           <section
-            id="contact"
+            id="contact-section"
             ref={contRef}
-            className="section-pd section-contact color-bar"
+            className="color-bar"
           >
-            <div className="content content-contact grid-at-med">
+            <div className="h-centered contact grid-at-med">
               <SectionHeading>Contact</SectionHeading>
               <ContactForm
                 onFormStateChange={handleFormStateChange}
@@ -165,8 +165,8 @@ function HomePage({onNavigateToProject}: HomePageComponentProps) {
             </div>
           </section>
 
-          <section ref={ftrRef} id="footer" className="section-pd section-footer">
-            <div className="content content-footer">
+          <section ref={ftrRef} id="footer-section">
+            <div className="h-centered footer">
               <p>
                 Curious about this build? <br /> Check out the{" "}
                 <a

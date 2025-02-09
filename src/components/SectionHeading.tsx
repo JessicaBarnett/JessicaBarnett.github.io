@@ -5,7 +5,7 @@ type SectionHeadingProps = {
 
 function SectionHeading({children, className = ''}: SectionHeadingProps) {
   return (
-    <h3 className={`title-2 section-heading ${className}`}>{children}</h3>
+    <h3 className={`title-2 partition-heading ${className}`}>{children}</h3>
   )
 }
 

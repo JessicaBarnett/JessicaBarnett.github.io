@@ -1,7 +1,7 @@
 function AboutSection() {
   return (
     <>
-        <div className="content  section-about">
+        <div className="h-centered">
             <div className="indent-2">
                 <p className="outdent-1 deco-font-1">
                     Hello.

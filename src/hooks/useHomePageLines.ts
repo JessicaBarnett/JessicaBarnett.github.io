@@ -137,12 +137,12 @@ export const getPathB = (
     },
     {
       x: allLinesW * 1.4, // left side
-      y: ttlHeight + abtHeight - halfLinesW,
+      y: ttlHeight + abtHeight - halfLinesW + 8,
       a: 0,
     },
     {
       x: pgWidth - allLinesW + halfLineW, // right side minus line width
-      y: ttlHeight + abtHeight - halfLinesW,
+      y: ttlHeight + abtHeight - halfLinesW + 8,
       a: 90,
     },
     {

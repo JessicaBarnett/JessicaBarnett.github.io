@@ -5,6 +5,7 @@ import { StopIcon } from "@src/icons/StopIcon.tsx";
 
 function Navigation() {
     const handleNavClick = (e: React.MouseEvent<HTMLElement>) => {
+        //close drawer
         e.preventDefault();
         const id = e.currentTarget.getAttribute('href')?.slice(1) || '';
         window.scrollTo({
@@ -17,15 +18,15 @@ function Navigation() {
     return (
         <div className="nav">
             <nav className="nav-links">
-                <a className="nav-link" href="#projects" onClick={handleNavClick}>
+                <a className="nav-link" href="#projects-section" onClick={handleNavClick}>
                     <PlayIcon></PlayIcon>
                     <span>projects</span>
                 </a>
-                <a className="nav-link" href="#experience" onClick={handleNavClick}>
+                <a className="nav-link" href="#experience-section" onClick={handleNavClick}>
                     <PauseIcon></PauseIcon>
                     <span>experience</span>
                 </a>
-                <a className="nav-link" href="#contact" onClick={handleNavClick}>
+                <a className="nav-link" href="#contact-section" onClick={handleNavClick}>
                     <StopIcon></StopIcon>
                     <span>contact</span>
                 </a>

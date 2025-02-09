@@ -11,20 +11,7 @@ $trapezoid-width-med: 80px;
     padding-bottom: 80px;
 }
 
-.more-info-2 {
-    --project-h: 120;
-    --project-s: 100%;
-    --project-l: 10%;
-    --project-color: hsl(var(--project-h), var(--project-s), var(--project-l)); // update via json
-    --project-shadow-color-1: hsl(var(--project-h), var(--project-s), calc(var(--project-l) - 8%));
-    --project-shadow-color-2: hsl(var(--project-h), var(--project-s), calc(var(--project-l) - 4%));
-    --project-text-color: #fef8ef;
-    height: 100%;
-    overflow-y: scroll;
-}
-
 .project-title {
-    overflow: hidden;
     position: relative;
     text-align: left;
     padding-left: 16px;
@@ -57,7 +44,7 @@ $trapezoid-width-med: 80px;
 .back-btn {
     @include trapezoid('left', $trapezoid-width, calc($trapezoid-width / 2), 20vh, $black);
     position: fixed;
-    top: 40vh;
+    top: 45vh;
     background-color: transparent;
     z-index: 2;
     transition: opacity .2s ease-out, transform .2s ease-out;

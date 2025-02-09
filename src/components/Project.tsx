@@ -16,7 +16,7 @@ const projectHasDetails = (project: ProjectT): boolean => {
 
 const Project = ({project, selectedTags, onTagSelect, onMoreInfoClick}: ProjectComponentProps) => {
   return (
-    <li className="entry">
+    <li className="v-spaced">
       <h5 className="title-3">{project.listTitle}</h5>
       <p>
         {project.description}
