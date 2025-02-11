@@ -478,14 +478,10 @@ dl {
   position: relative;
   z-index: 1;
 }
-@media (max-width: 560px) {
-  .filter-projects-group {
-    margin-bottom: 48px;
-  }
-}
 @media (min-width: 560px) {
   .filter-projects-group {
     order: 1;
+    margin-top: -10px;
     justify-self: start;
   }
 }
@@ -640,14 +636,6 @@ em {
   }
 }
 
-.rainbow-above {
-  margin-top: var(--rainbow-w);
-}
-
-.rainbow-below {
-  margin-bottom: var(--rainbow-w);
-}
-
 /********************
    PAGE
 *********************/
@@ -703,16 +691,16 @@ em {
 /**************
     SECTION
 ***************/
-.partition-heading {
+section {
+  padding: 4rem 0;
+}
+
+.section-heading {
   padding-bottom: 48px;
 }
 
-.partition-subheading {
+.section-subheading {
   padding-bottom: 40px;
-}
-
-section {
-  padding: 4rem 0;
 }
 
 /**************

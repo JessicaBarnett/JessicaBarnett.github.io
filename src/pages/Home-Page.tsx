@@ -103,18 +103,20 @@ function HomePage({onNavigateToProject}: HomePageComponentProps) {
           </section>
 
           <section id="projects-section" ref={projRef}>
-            <div className="h-centered projects grid-at-small">
-              <SectionHeading className="half">Projects</SectionHeading>
+            <div className="h-centered projects">
+              <div className="v-spaced grid-at-small">
+                <SectionHeading className="half">Projects</SectionHeading>
 
-              <FilterSelect
-                filters={filters}
-                selectedFilter={selectedFilter}
-                onFilterChange={handleFilterChange}
-              ></FilterSelect>
+                <FilterSelect
+                  filters={filters}
+                  selectedFilter={selectedFilter}
+                  onFilterChange={handleFilterChange}
+                ></FilterSelect>
+              </div>
 
               {Object.keys(filteredProjects).map((companyName) => (
                 <React.Fragment key={companyName}>
-                  <h4 className="section-subheading subtitle-2">{companyName}</h4>
+                  <h4 className="v-spaced subtitle-2">{companyName}</h4>
                   <ul>
                     {filteredProjects[companyName].map((project) => (
                       <Project

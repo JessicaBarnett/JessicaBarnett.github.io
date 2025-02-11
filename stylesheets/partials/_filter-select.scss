@@ -7,12 +7,9 @@
     position: relative; // to enable z-index
     z-index: 1;
 
-    @include only-below($small-bp) {
-        margin-bottom: 48px;
-    }
-
     @include only-above($small-bp) {
         order: 1;
+        margin-top: -10px; // todo should I remove??
         justify-self: start;
     }
 }

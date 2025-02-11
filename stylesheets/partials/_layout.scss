@@ -25,21 +25,6 @@
   }
 }
 
-.rainbow-above {
-  margin-top: var(--rainbow-w);
-}
-
-.rainbow-below {
-  margin-bottom: var(--rainbow-w);
-}
-
-
-
-
-
-
-
-
 /********************
    PAGE
 *********************/
@@ -80,17 +65,18 @@
     SECTION
 ***************/
 
-.partition-heading {
-  @include vertical-spacing("partition-heading");
-}
-
-.partition-subheading {
-  @include vertical-spacing("partition-subheading");
-}
-
 section {
   padding: 4rem 0;
 }
+
+.section-heading {
+  @include vertical-spacing('section-heading');
+}
+
+.section-subheading {
+  @include vertical-spacing('section-subheading');
+}
+
 
 /**************
 CONTENT
@@ -167,11 +153,7 @@ CONTENT
 
 .entry,
 .v-spaced {
-  @include vertical-spacing("entry");
-
-  // @include if-next-sibling-has(".section-subheading") {
-  //   @include vertical-spacing("section-subheading");
-  // }
+  @include vertical-spacing('entry');
 
   &:last-of-type {
     margin-bottom: 0;
