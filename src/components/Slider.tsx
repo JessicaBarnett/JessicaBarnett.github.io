@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, RefObject, useState } from "react";
 import { createPortal } from 'react-dom';
 import { MediaT } from "@src/types/data-types";
 import { RewindIcon } from "@src/icons/RewindIcon.tsx";
@@ -7,12 +7,14 @@ import Dialog from "./Dialog";
 
 export type SliderOptions = {
     mobile?: boolean,
-    wide?: boolean
+    wide?: boolean,
+    name: string // unique name for this slider
 };
 
 export type SliderComponentProps = {
     media: MediaT[];
     options?: SliderOptions;
+    name: string;
 };
 
 // Private Hooks
@@ -32,51 +34,87 @@ function useOffsetState(sliderTrackRef: React.MutableRefObject<HTMLDivElement | 
     return [offset, handleSetOffset];
 }
 
+// function useCurrentImgHeightState(): [number|null, (currentImageRef: RefObject<HTMLImageElement | null>) => void] {
+//     const [currentImgHeight, setCurrentImgHeight] = useState<number|null>(null);
+
+//     const getImageHeight = (selectedImageRef: RefObject<HTMLImageElement | null>) => {
+//         if (!selectedImageRef?.current ||
+//             selectedImageRef.current.offsetWidth === 0
+//         ) { return null; }
+//         const current = selectedImageRef?.current;
+//         return current.naturalHeight * current.offsetWidth / current.naturalWidth;
+//     }
+
+//     const handleSetCurrentImgHeight = (selectedImageRef: RefObject<HTMLImageElement | null>): void => {
+//         setCurrentImgHeight(getImageHeight(selectedImageRef));
+//     }
+
+//     return [currentImgHeight, handleSetCurrentImgHeight];
+// }
+
 
 // Component
 
-const Slider = ({ media, options = {} }: SliderComponentProps) => {
+const Slider = ({ media, options = { name: 'default' } }: SliderComponentProps) => {
+     // determines whether the expanded dialog is open
+    const [isExpanded, setIsExpanded] = useState<boolean>(false);
+
+    // used for scrollToTop on slide change
     const sliderContentsRef = useRef<HTMLDivElement | null>(null);
+
+    // used in offset Calculation
     const sliderTrackRef = useRef<HTMLDivElement | null>(null);
-    const [offset, setOffset] = useOffsetState(sliderTrackRef);
     const [selectedSlide, setSelectedSlide] = useState<MediaT>(media[0]);
     const [selectedSlideIdx, setSelectedSlideIdx] = useState<number>(0);
-    const [isExpanded, setIsExpanded] = useState<boolean>(false);
+    const [selectedSlideHeight, setSelectedSlideHeight] = useState<number | null>(null);
+
+
+    const [offset, setOffset] = useOffsetState(sliderTrackRef); // determines which slide is shown (a translate-x px value)
+
+    const calculateImageHeight = (imageEl: HTMLImageElement) => {
+        if (sliderContentsRef && sliderContentsRef.current) {
+            return imageEl.naturalHeight * sliderContentsRef.current.offsetWidth / imageEl.naturalWidth;
+        } else {
+            return null;
+        }
+    };
 
     const scrollToTop = () => {
         sliderContentsRef?.current?.scrollTo({ top: 0, behavior: "smooth" })
     }
 
     const moveForward = () => {
-        if (selectedSlideIdx === media.length - 1) {
-            setSelectedSlideIdx(0);
-        } else {
-            setSelectedSlideIdx(selectedSlideIdx + 1);
-        }
+        const newIdx = selectedSlideIdx === media.length - 1 ? 0 : selectedSlideIdx + 1;
+        setSelectedSlideIdx(newIdx);
+        setSelectedSlide(media[newIdx])
+
+        document.getElementById(`img-${selectedSlideIdx}`)
     };
 
     const moveBackward = () => {
-        if (selectedSlideIdx === 0) {
-            setSelectedSlideIdx(media.length - 1);
-        } else {
-            setSelectedSlideIdx(selectedSlideIdx - 1);
-        }
+        const newIdx = selectedSlideIdx === 0 ? media.length - 1 : selectedSlideIdx - 1;
+        setSelectedSlideIdx(newIdx);
+        setSelectedSlide(media[newIdx]);
     };
 
     const handleGoToBtnClick = (imageId: number) => {
         setSelectedSlideIdx(imageId);
+        setSelectedSlide(media[imageId])
     }
 
     const handleExpandClick = () => {
         setIsExpanded(true);
     }
 
-    // slide change handler
+    // update selectedSlide when selectedSlideIdx changes
     useLayoutEffect(() => {
-        scrollToTop();
-        setSelectedSlide(media[selectedSlideIdx]);
-        setOffset(selectedSlideIdx);
-    }, [selectedSlideIdx, media, setOffset, setSelectedSlide]);
+        requestAnimationFrame(() => {
+            scrollToTop();
+            setOffset(selectedSlideIdx);
+            const img = sliderTrackRef.current?.children[selectedSlideIdx] as HTMLImageElement;
+            setSelectedSlideHeight(calculateImageHeight(img));
+        })
+    }, [selectedSlideIdx, setOffset])
 
     const sliderClasses = [
         'slider',
@@ -89,7 +127,8 @@ const Slider = ({ media, options = {} }: SliderComponentProps) => {
 
     return (
         <>
-            <div className={sliderClasses}>
+            <div className={sliderClasses} id={`slider-${options.name}`}>
+                {/* Buttons only get rendered if there's more than 1 image */}
                 {media.length > 1 && (
                     <>
                         <p className="slider-title">{selectedSlide?.name ?? ''}</p>
@@ -112,12 +151,16 @@ const Slider = ({ media, options = {} }: SliderComponentProps) => {
                     </>
                 )}
 
-
-                <div className="slider-contents" ref={sliderContentsRef}>
+                {/* Images */}
+                <div className="slider-contents"
+                    ref={sliderContentsRef}
+                >
                     <div
                         className="slider-image-track"
                         ref={sliderTrackRef}
-                        style={{ transform: `translateX(${offset}px)` }}
+                        style={{
+                            transform: `translateX(${offset}px)`
+                        }}
                     >
                         {media.map((slide: MediaT) => (
                             <img
@@ -125,12 +168,17 @@ const Slider = ({ media, options = {} }: SliderComponentProps) => {
                                 className='slider-image'
                                 src={slide.url}
                                 alt={slide.alt}
+                                style={{
+                                    height: selectedSlideHeight ? `${selectedSlideHeight}px` : 'auto'
+                                }}
                             ></img>
                         ))}
                     </div>
                 </div>
                 <button className="btn-expand" onClick={handleExpandClick}>expand</button>
             </div>
+
+            {/* Portal for the expanded-image Dialog */}
             {createPortal(
                 <Dialog
                     isOpen={isExpanded}

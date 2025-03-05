@@ -1,0 +1,71 @@
+@use "sass:math";
+@use '../variables/colors' as *;
+
+@function stepped-polygon ($startX: 0%, $endX: 100%) { // default covers whole screen
+  $numSteps: 10; /* 5 steps on each side, one for each stripe */
+  $stepW: #{math.div(($endX - $startX), $numSteps)};
+
+  $polygon: polygon(
+      #{$startX} 0vh, #{$startX} 20vh, /* leftmost points */
+      calc($startX + $stepW)       20vh, calc($startX + $stepW)       40vh,
+      calc($startX + (2 * $stepW)) 40vh, calc($startX + (2 * $stepW)) 60vh,
+      calc($startX + (3 * $stepW)) 60vh, calc($startX + (3 * $stepW)) 80vh,
+      calc($startX + (4 * $stepW)) 80vh, calc($startX + (4 * $stepW)) 100vh,
+      calc($startX + (5 * $stepW)) 100vh,
+
+      #{$endX} 100vh, #{$endX} 80vh, /* rightmost points */
+      calc($endX - $stepW)       80vh, calc($endX - $stepW)       60vh,
+      calc($endX - (2 * $stepW)) 60vh, calc($endX - (2 * $stepW)) 40vh,
+      calc($endX - (3 * $stepW)) 40vh, calc($endX - (3 * $stepW)) 20vh,
+      calc($endX - (4 * $stepW)) 20vh, calc($endX - (4 * $stepW)) 0vh,
+      calc($endX - (5 * $stepW)) 0vh
+    );
+
+  @return $polygon;
+}
+
+.block-transition {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  clip-path: stepped-polygon(100%, 300%);
+  background: $rainbow-gradient-horiz;
+  z-index: 6; // above nav
+  pointer-events: none;
+
+  &.transition-in {
+    animation: block-transition-in cubic-bezier(0.72, 0.17, 0.82, 0.98) 2s 1;
+  }
+
+  &.transition-out {
+    animation: block-transition-in cubic-bezier(0.72, 0.17, 0.82, 0.98) 2s 1;
+  }
+}
+
+@keyframes block-transition-in {
+  0% {
+    clip-path: stepped-polygon(100%, 300%)
+  }
+  50% {
+    clip-path: stepped-polygon(150%, 200%)
+  }
+  100% {
+    clip-path: stepped-polygon(-600%, 0%)
+  }
+}
+
+@keyframes block-transition-out {
+  0% {
+    clip-path: stepped-polygon(-600%, 0%)
+  }
+  50% {
+    clip-path: stepped-polygon(150%, 200%)
+  }
+  100% {
+    clip-path: stepped-polygon(100%, 300%)
+  }
+}
+
+

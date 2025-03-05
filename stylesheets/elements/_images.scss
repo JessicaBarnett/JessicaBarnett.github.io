@@ -5,5 +5,5 @@ img {
 .img-expanded {
     display: block;
     margin: 0 auto;
-    max-width: inherit;
+    // max-width: inherit; //NOTE: can't decide if I want this to be a "zoom" or just a full-width display...
 }

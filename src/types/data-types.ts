@@ -25,6 +25,7 @@ export type TagT = {
 
 export type ProjectT = {
     id: string,
+    slug: string,
     listTitle: string,
     description: string,
     company: string,
@@ -41,6 +42,18 @@ export type ProjectDetailsT = ProjectT & {
     table: TableRowT[]
     content: ContentT[]
 }
+
+// Meant for Runtime Checks
+export const projectHasDetails = (project: ProjectT | ProjectDetailsT ): boolean => {
+    return project &&
+      !!(project as ProjectDetailsT).title &&
+      !!(project as ProjectDetailsT).time &&
+      !!(project as ProjectDetailsT).role &&
+      !!(project as ProjectDetailsT).type &&
+      (project as ProjectDetailsT).media.length > 0 &&
+      (project as ProjectDetailsT).table.length > 0 &&
+      (project as ProjectDetailsT).content.length > 0;
+  }
 
 export type FilterT = {
     displayName: string,

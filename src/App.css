@@ -291,7 +291,6 @@ img {
 .img-expanded {
   display: block;
   margin: 0 auto;
-  max-width: inherit;
 }
 
 /***************/
@@ -400,6 +399,46 @@ dl {
   justify-items: start;
 }
 
+.block-transition {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  clip-path: polygon(100% 0vh, 100% 20vh, calc(100% + 20%) 20vh, calc(100% + 20%) 40vh, calc(100% + 2 * 20%) 40vh, calc(100% + 2 * 20%) 60vh, calc(100% + 3 * 20%) 60vh, calc(100% + 3 * 20%) 80vh, calc(100% + 4 * 20%) 80vh, calc(100% + 4 * 20%) 100vh, calc(100% + 5 * 20%) 100vh, 300% 100vh, 300% 80vh, calc(300% - 20%) 80vh, calc(300% - 20%) 60vh, calc(300% - 2 * 20%) 60vh, calc(300% - 2 * 20%) 40vh, calc(300% - 3 * 20%) 40vh, calc(300% - 3 * 20%) 20vh, calc(300% - 4 * 20%) 20vh, calc(300% - 4 * 20%) 0vh, calc(300% - 5 * 20%) 0vh);
+  background: linear-gradient(180deg, #E2006A 0%, #E2006A 20%, #EE6B0F 20%, #EE6B0F 40%, #EBE000 40%, #EBE000 60%, #82A900 60%, #82A900 80%, #0084CE 80%, #0084CE 100%);
+  z-index: 6;
+  pointer-events: none;
+}
+.block-transition.transition-in {
+  animation: block-transition-in cubic-bezier(0.72, 0.17, 0.82, 0.98) 2s 1;
+}
+.block-transition.transition-out {
+  animation: block-transition-in cubic-bezier(0.72, 0.17, 0.82, 0.98) 2s 1;
+}
+
+@keyframes block-transition-in {
+  0% {
+    clip-path: polygon(100% 0vh, 100% 20vh, calc(100% + 20%) 20vh, calc(100% + 20%) 40vh, calc(100% + 2 * 20%) 40vh, calc(100% + 2 * 20%) 60vh, calc(100% + 3 * 20%) 60vh, calc(100% + 3 * 20%) 80vh, calc(100% + 4 * 20%) 80vh, calc(100% + 4 * 20%) 100vh, calc(100% + 5 * 20%) 100vh, 300% 100vh, 300% 80vh, calc(300% - 20%) 80vh, calc(300% - 20%) 60vh, calc(300% - 2 * 20%) 60vh, calc(300% - 2 * 20%) 40vh, calc(300% - 3 * 20%) 40vh, calc(300% - 3 * 20%) 20vh, calc(300% - 4 * 20%) 20vh, calc(300% - 4 * 20%) 0vh, calc(300% - 5 * 20%) 0vh);
+  }
+  50% {
+    clip-path: polygon(150% 0vh, 150% 20vh, calc(150% + 5%) 20vh, calc(150% + 5%) 40vh, calc(150% + 2 * 5%) 40vh, calc(150% + 2 * 5%) 60vh, calc(150% + 3 * 5%) 60vh, calc(150% + 3 * 5%) 80vh, calc(150% + 4 * 5%) 80vh, calc(150% + 4 * 5%) 100vh, calc(150% + 5 * 5%) 100vh, 200% 100vh, 200% 80vh, calc(200% - 5%) 80vh, calc(200% - 5%) 60vh, calc(200% - 2 * 5%) 60vh, calc(200% - 2 * 5%) 40vh, calc(200% - 3 * 5%) 40vh, calc(200% - 3 * 5%) 20vh, calc(200% - 4 * 5%) 20vh, calc(200% - 4 * 5%) 0vh, calc(200% - 5 * 5%) 0vh);
+  }
+  100% {
+    clip-path: polygon(-600% 0vh, -600% 20vh, calc(-600% + 60%) 20vh, calc(-600% + 60%) 40vh, calc(-600% + 2 * 60%) 40vh, calc(-600% + 2 * 60%) 60vh, calc(-600% + 3 * 60%) 60vh, calc(-600% + 3 * 60%) 80vh, calc(-600% + 4 * 60%) 80vh, calc(-600% + 4 * 60%) 100vh, calc(-600% + 5 * 60%) 100vh, 0% 100vh, 0% 80vh, calc(0% - 60%) 80vh, calc(0% - 60%) 60vh, calc(0% - 2 * 60%) 60vh, calc(0% - 2 * 60%) 40vh, calc(0% - 3 * 60%) 40vh, calc(0% - 3 * 60%) 20vh, calc(0% - 4 * 60%) 20vh, calc(0% - 4 * 60%) 0vh, calc(0% - 5 * 60%) 0vh);
+  }
+}
+@keyframes block-transition-out {
+  0% {
+    clip-path: polygon(-600% 0vh, -600% 20vh, calc(-600% + 60%) 20vh, calc(-600% + 60%) 40vh, calc(-600% + 2 * 60%) 40vh, calc(-600% + 2 * 60%) 60vh, calc(-600% + 3 * 60%) 60vh, calc(-600% + 3 * 60%) 80vh, calc(-600% + 4 * 60%) 80vh, calc(-600% + 4 * 60%) 100vh, calc(-600% + 5 * 60%) 100vh, 0% 100vh, 0% 80vh, calc(0% - 60%) 80vh, calc(0% - 60%) 60vh, calc(0% - 2 * 60%) 60vh, calc(0% - 2 * 60%) 40vh, calc(0% - 3 * 60%) 40vh, calc(0% - 3 * 60%) 20vh, calc(0% - 4 * 60%) 20vh, calc(0% - 4 * 60%) 0vh, calc(0% - 5 * 60%) 0vh);
+  }
+  50% {
+    clip-path: polygon(150% 0vh, 150% 20vh, calc(150% + 5%) 20vh, calc(150% + 5%) 40vh, calc(150% + 2 * 5%) 40vh, calc(150% + 2 * 5%) 60vh, calc(150% + 3 * 5%) 60vh, calc(150% + 3 * 5%) 80vh, calc(150% + 4 * 5%) 80vh, calc(150% + 4 * 5%) 100vh, calc(150% + 5 * 5%) 100vh, 200% 100vh, 200% 80vh, calc(200% - 5%) 80vh, calc(200% - 5%) 60vh, calc(200% - 2 * 5%) 60vh, calc(200% - 2 * 5%) 40vh, calc(200% - 3 * 5%) 40vh, calc(200% - 3 * 5%) 20vh, calc(200% - 4 * 5%) 20vh, calc(200% - 4 * 5%) 0vh, calc(200% - 5 * 5%) 0vh);
+  }
+  100% {
+    clip-path: polygon(100% 0vh, 100% 20vh, calc(100% + 20%) 20vh, calc(100% + 20%) 40vh, calc(100% + 2 * 20%) 40vh, calc(100% + 2 * 20%) 60vh, calc(100% + 3 * 20%) 60vh, calc(100% + 3 * 20%) 80vh, calc(100% + 4 * 20%) 80vh, calc(100% + 4 * 20%) 100vh, calc(100% + 5 * 20%) 100vh, 300% 100vh, 300% 80vh, calc(300% - 20%) 80vh, calc(300% - 20%) 60vh, calc(300% - 2 * 20%) 60vh, calc(300% - 2 * 20%) 40vh, calc(300% - 3 * 20%) 40vh, calc(300% - 3 * 20%) 20vh, calc(300% - 4 * 20%) 20vh, calc(300% - 4 * 20%) 0vh, calc(300% - 5 * 20%) 0vh);
+  }
+}
 .nav {
   background-color: #000;
   width: 100%;
@@ -707,9 +746,8 @@ section {
 CONTENT
 ***************/
 .h-centered {
-  max-width: 720px;
-  margin: 0 var(--rainbow-w);
-  padding: 0 var(--content-gap);
+  margin: 0 auto;
+  padding: 0 calc(var(--content-gap) + var(--rainbow-w));
 }
 
 .about {
@@ -751,7 +789,7 @@ CONTENT
 
 .experience {
   max-width: 80%;
-  margin: 0 42px 0 var(--double-rainbow-w);
+  margin: 0 42px 0 auto;
 }
 .experience .title-2 {
   margin-left: -25px;
@@ -1215,7 +1253,7 @@ p {
 
 .btn-expand {
   position: absolute;
-  bottom: 36px;
+  bottom: 2.2rem;
   right: 0.3rem;
   color: white;
   border: 0;
@@ -1226,6 +1264,11 @@ p {
   padding: 2px 6px;
   line-height: 1.5rem;
   transition: background-color 0.2s ease-in, color 0.1s ease-in;
+}
+@media (min-width: 769px) {
+  .btn-expand {
+    right: 1.3rem;
+  }
 }
 .btn-expand:hover {
   background-color: white;
@@ -1388,6 +1431,7 @@ p {
   }
 }
 .drawer.closed {
+  transition: clip-path 0.4s 0.1s ease-in-out;
   clip-path: rect(0 100vw auto 100vw);
 }
 

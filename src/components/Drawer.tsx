@@ -1,74 +1,87 @@
 import { RewindIcon } from "@src/icons/RewindIcon";
-import { useCallback, useLayoutEffect, useRef, useState } from "react";
+import { RefObject, useLayoutEffect, useRef, useState } from "react";
 import { refHeight } from "@src/utils/bg-line-utils";
 
 export type DrawerComponentProps = {
     children: React.ReactNode,
     isOpen: boolean,
-    onClose:  () => void;
+    onClose:  () => void,
+    navRef: RefObject<HTMLElement>
 };
 
-const Drawer = ({  children, isOpen, onClose}: DrawerComponentProps) => {
-  const [top, setTop] = useState(0);
-  const [bottom, setBottom] = useState(0);
+const enum DrawerStatus {
+  open,
+  closed,
+  transitioningIn,
+  transitioningOut,
+}
+
+const Drawer = ({  children, isOpen, onClose, navRef}: DrawerComponentProps) => {
+  const [mainPageScrollPos, setMainPageScrollPos] = useState<number>(0);
+  const [drawerTop, setDrawerTop] = useState<number>(0);
   const drawerRef = useRef<HTMLDivElement | null>(null);
-
-  const handleDrawerClose = () => {
-    // scroll back to where you were when you clicked "more info"
-    window.scrollTo({ top: top, behavior: 'instant' })
-    onClose();
-  }
-
-  const scrollLimiter = useCallback((top: number, bottom: number) => {
-    if (!isOpen) { return; } // don't limit scroll if the drawer is closed!
-
-    if (window.scrollY < top) { // if we've scrolled too far up, then limit
-      window.scrollTo({ top: top, behavior: 'instant' })
-    }
-
-    const lowerLimit = bottom - window.screen.availHeight + 170; // TODO: fix this!  170 value is arbitrary.  Why is this calculation wrong?
-    if (window.scrollY > lowerLimit) { // if we've scrolled too far down, then limit
-      window.scrollTo({ top: lowerLimit, behavior: 'instant' })
-    }
-  }, [isOpen])
+  const [status, setStatus] = useState<DrawerStatus>( isOpen ? DrawerStatus.open : DrawerStatus.closed)
 
   useLayoutEffect(() => {
-
-    // Version that uses Height instead of top, and doesnt require scroll limiting
-    // const drawerHeight = refHeight(drawerRef);
-    // const frame = document.getElementById('page-frame');
-    // const homepage = document.getElementById('home-page');
-
-    // if (isOpen && frame && homepage) {
-    //     document.getElementById('page-frame')?.classList.toggle('covered');
-    //     frame.style.height = `${drawerHeight}`;
-    //     homepage.style.height = '0';
-    // }
-
-    //Version that uses top
-
-    // open drawer at current scroll position
-    document.getElementById('page-frame')?.classList.toggle('covered');
+    const navHeight = refHeight(navRef) ?? 0;
+    const frame = document.getElementById('page-frame');
     const boundingClientRect = document.getElementById('home-page')?.getBoundingClientRect();
-    const y = Math.abs(boundingClientRect?.y ?? 0) + 44;// nav height
-    setTop(y);
-    setBottom((y + refHeight(drawerRef)));
 
-    // limit scroll to height of the drawer
-    const scrollLimiterWithParams = (e: Event) => scrollLimiter(top, bottom, e);
-    window.addEventListener("scroll", scrollLimiterWithParams);
-    return () => window.removeEventListener("scroll", scrollLimiterWithParams);
-  }, [isOpen, top, bottom, scrollLimiter]);
+    if (frame) {
+      if (status === DrawerStatus.open) {
 
+
+        // while transitioning
+        // position drawer at the scroll pos of the main page
+        frame.classList.add('transitioning-in');
+
+
+
+
+        setMainPageScrollPos(Math.abs(boundingClientRect?.y ?? 0));
+        setDrawerTop(mainPageScrollPos);
+
+        // after transition
+        setTimeout(() => {
+
+          requestAnimationFrame(() => {
+            // shrink page's height to that of the drawer
+            const drawerHeight = refHeight(drawerRef) ?? 0;
+            frame.style.height = `${drawerHeight}px`;
+            // position drawer at the top instead of the main page scroll position
+            setDrawerTop(0 - navHeight);
+            // scroll there
+            window.scrollTo({ top: -(navHeight), behavior: 'instant' });
+            // shuffle classes
+            frame.classList.remove('transitioning-in');
+            frame.classList.add('drawer-open');
+          })
+        }, 400);
+      } else {
+          frame.classList.remove('drawer-open');
+          frame.classList.add('transitioning-out');
+
+          const drawerScrollPos = boundingClientRect?.y ?? 0;
+          setDrawerTop(mainPageScrollPos + drawerScrollPos - navHeight);
+          frame.style.height = `auto`;
+          window.scrollTo({ top: mainPageScrollPos, behavior: 'instant' });
+
+        setTimeout(() => {
+          frame.classList.remove('transitioning-out');
+
+        }, 300);
+      }
+    }
+  }, [isOpen]);
 
   return (
     <>
       {/* this button is outside the drawer because the drawer has a translate applied, and
           fixed positioned things (like this button) don't stay fixed within translated containers */}
-      <button className='back-btn' style={{opacity: isOpen ? 1 : 0}} onClick={handleDrawerClose}>
+      <button className='back-btn' style={{opacity: isOpen ? 1 : 0}} onClick={onClose}>
           <RewindIcon></RewindIcon>
       </button>
-      <div ref={drawerRef} className={`drawer ${isOpen ? 'open' : 'closed'}`} style={{top: top}}>
+      <div ref={drawerRef} className={`drawer ${isOpen ? 'open' : 'closed'}`} style={{top: drawerTop}}>
         <div className='drawer-content'>
           {children}
         </div>

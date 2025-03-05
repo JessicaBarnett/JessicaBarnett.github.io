@@ -83,9 +83,8 @@ CONTENT
 ***************/
 
 .h-centered {
-  max-width: 720px;
-  margin: 0 var(--rainbow-w);
-  padding: 0 var(--content-gap);
+  margin: 0 auto;
+  padding: 0 calc(var(--content-gap) + var(--rainbow-w));
 }
 
 .about {
@@ -130,7 +129,7 @@ CONTENT
 
 .experience {
   max-width: 80%;
-  margin: 0 42px 0 var(--double-rainbow-w);
+  margin: 0 42px 0 auto;
 
   .title-2 {
     margin-left: -25px;

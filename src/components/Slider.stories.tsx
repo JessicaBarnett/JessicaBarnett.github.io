@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { mediasGen } from '@data/generator.js';
 import Slider, {SliderComponentProps} from "./Slider.tsx";
 
-const mediaData = mediasGen(3);
+const mediaData = mediasGen(8);
 
 const meta = {
   title: "components/Slider",
@@ -12,7 +12,7 @@ const meta = {
   argTypes: {},
   decorators: [
     (Story) => (
-      <div style={{position: 'relative', minHeight: '800px'}}>
+      <div style={{position: 'relative', minHeight: '800px', maxHeight: '800px'}}>
         <Story></Story>
       </div>
     )
@@ -24,7 +24,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    media: mediaData
+    media: mediaData,
   } as SliderComponentProps,
 };
 

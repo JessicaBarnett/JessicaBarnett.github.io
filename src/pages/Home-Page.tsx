@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 // types
 import { ProjectT, TagT } from "@src/types/data-types.ts";
@@ -26,6 +26,7 @@ import ExperienceEntry from "@src/components/ExperienceEntry.tsx";
 // Contact
 import ContactForm, { FormEventT } from "@src/components/ContactForm.tsx";
 import SocialSidebar from "@src/components/SocialSidebar.tsx";
+import { useLocation } from "react-router-dom";
 
 export type HomePageComponentProps = {
   onNavigateToProject: (project: ProjectT) => void;
@@ -83,6 +84,22 @@ function HomePage({onNavigateToProject}: HomePageComponentProps) {
   const handleMoreInfoClick = (project: ProjectT) => {
     onNavigateToProject(project)
   }
+
+  const location = useLocation();
+useEffect(() => {
+
+
+  const href = e.currentTarget.getAttribute('href') || '';
+  const matchObj = href.match(/#(.*)/);
+  const id = matchObj !== null ? matchObj[1] : '';
+
+  window.scrollTo({
+      top: document.getElementById(id)!.offsetTop - 55,
+      left: 0,
+      behavior: 'smooth'
+  });
+   console.log("url changed")
+}, [location]);
 
   return (
     <>

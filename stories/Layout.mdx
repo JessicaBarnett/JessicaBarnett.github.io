@@ -7,6 +7,20 @@ import "./storybook.css";
 
 <h1>Layout</h1>
 
+<h2>background, page-frame, and page</h2>
+<Unstyled>
+  <div class="sb-example-block sb-diagram">
+    <div className="background">
+      <div className="page-frame">
+        <div className="page sb-diagram-force-height">
+        </div>
+      </div>
+    </div>
+  </div>
+</Unstyled>
+
+<h2>Sections</h2>
+
 <Unstyled>
   <div class="sb-example-block sb-diagram">
       <section>
@@ -22,6 +36,7 @@ import "./storybook.css";
   </div>
 </Unstyled>
 
+<h2>Layout Classes + combinations</h2>
 
 <Unstyled>
   <div class="sb-example-block sb-diagram">
@@ -48,47 +63,47 @@ import "./storybook.css";
   </div>
 </Unstyled>
 
+<h2>Layout Examples</h2>
 
 <Unstyled>
   <div class="sb-example-block sb-diagram">
-    <div className="page">
-      <section>
-        <div className="h-centered v-spaced">
-          <div className="sb-diagram-content">
-            <p>h-centered and v-spaced</p>
-          </div>
-        </div>
+    <div className="background">
+      <div className="page-frame">
+        <div className="page">
+          <section>
+            <div className="h-centered v-spaced">
+              <div className="sb-diagram-content">
+                <p>h-centered and v-spaced</p>
+              </div>
+            </div>
 
-        <div className="h-centered v-spaced">
-          <div className="sb-diagram-content">
-            <p>h-centered and v-spaced</p>
-          </div>
+            <div className="h-centered v-spaced">
+              <div className="sb-diagram-content">
+                <p>h-centered and v-spaced</p>
+              </div>
+            </div>
+          </section>
         </div>
-      </section>
-    </div>
-  </div>
-</Unstyled>
-
-<Unstyled>
-  <div class="sb-example-block sb-diagram">
-    <section>
-      <div className="h-centered h-centered-label">
-        <div className="v-spaced">
-          <div className="sb-diagram-content">
-            <p>v-spaced</p>
+        <section>
+          <div className="h-centered h-centered-label">
+            <div className="v-spaced">
+              <div className="sb-diagram-content">
+                <p>v-spaced</p>
+              </div>
+            </div>
+            <div className="v-spaced">
+              <div className="sb-diagram-content">
+                <p>v-spaced</p>
+              </div>
+            </div>
+            <div className="v-spaced">
+              <div className="sb-diagram-content">
+                <p>v-spaced</p>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="v-spaced">
-          <div className="sb-diagram-content">
-            <p>v-spaced</p>
-          </div>
-        </div>
-        <div className="v-spaced">
-          <div className="sb-diagram-content">
-            <p>v-spaced</p>
-          </div>
-        </div>
+        </section>
       </div>
-    </section>
+    </div>
   </div>
 </Unstyled>

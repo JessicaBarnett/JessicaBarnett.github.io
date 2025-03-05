@@ -1,17 +1,25 @@
-import { ProjectDetailsT } from "@src/types/data-types.tsx";
+import { useRef, useState } from "react";
+import { useParams } from "react-router";
+import { useProjects } from "@src/hooks/static/useProjects.ts";
 import Slider from "@src/components/Slider.tsx";
 import Table from "@src/components/Table";
 import ProjectTitle from "@src/components/ProjectTitle";
-import { useRef } from "react";
 import { useProjectPageLines } from "@src/hooks/useProjectPageLines";
+import { ProjectDetailsT, projectHasDetails, ProjectT } from "@src/types/data-types";
 
-type ProjectPageProps = {
-    project: ProjectDetailsT | null
-};
 
-function ProjectPage({
-    project,
-}: ProjectPageProps) {
+const findDetailedProjectBySlug = (projects: (ProjectDetailsT | ProjectT)[], slug: string = ''): ProjectDetailsT => {
+    const match = projects.find(project => project.slug === slug && projectHasDetails(project)) as ProjectDetailsT;
+    return match;
+}
+
+function ProjectPage() {
+    const [ projects ] = useProjects();
+    const { projectSlug } = useParams();
+    const [ project ] = useState(findDetailedProjectBySlug(projects, projectSlug))
+
+    console.log(projectSlug)
+
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
     const pageRef = useRef<HTMLDivElement | null>(null);
     const ttlRef = useRef<HTMLDivElement | null>(null);
@@ -54,6 +62,7 @@ function ProjectPage({
 
                 <div className="h-centered v-spaced" ref={bannerRef}>
                     <Slider
+                        name="wide-images"
                         options={{ wide: true }}
                         media={project?.media?.filter((p) => p.viewport === "wide") ?? []}
                     ></Slider>
@@ -71,6 +80,7 @@ function ProjectPage({
                                 {idx === 1 && (
                                     <div className="right">
                                         <Slider
+                                            name="mobile-images"
                                             options={{ mobile: true }}
                                             media={project?.media?.filter((p) => p.viewport === "mobile") ?? []}
                                         ></Slider>

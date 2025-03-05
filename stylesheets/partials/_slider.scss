@@ -51,7 +51,6 @@ $slider-dot-btn-diameter: .8rem;
 
     @include only-above($medium-bp) {
         border-radius: $border-radius-lg;
-        // background-image: $graph-ppr-gradient;
     }
 }
 
@@ -133,7 +132,7 @@ $slider-dot-btn-diameter: .8rem;
 
 .btn-expand {
     position: absolute;
-    bottom: 36px;
+    bottom: 2.2rem;
     right: .3rem;
     color: white;
     border: 0;
@@ -146,12 +145,15 @@ $slider-dot-btn-diameter: .8rem;
     transition: background-color $bg-transition,
                 color $text-transition;
 
+    @include only-above($medium-bp) {
+        right: 1.3rem;
+    }
+
     &:hover {
         background-color: white;
         color: black;
     }
 }
-
 
 .slider-arrow-btn-forward,
 .slider-arrow-btn-backward {
@@ -194,7 +196,6 @@ $slider-dot-btn-diameter: .8rem;
         }
     }
 }
-
 
 $triangle-btm-width: 2rem;
 $triangle-height: 3rem;

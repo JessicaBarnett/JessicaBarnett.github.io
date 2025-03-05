@@ -1,7 +1,7 @@
 import { ProjectT, TagT, ExperienceEntryT, FilterT, MediaT, ViewportT } from '../src/types/data-types.ts';
 
 // random positive integer between max and min
-export const random = (max=5, min=1) => Math.floor(Math.random() * (max - min) + min);
+export const random = (max=10, min=1) => Math.floor(Math.random() * (max - min) + min);
 
 // return a random item from an array
 export const randomGen = <T>(collection: T[]): T => collection[random(demoWords.length - 1)]
@@ -20,7 +20,7 @@ export const multiGen = <T>(fn: (idx: number) => T, numItems: number): T[] => {
 const viewports: ViewportT[] = ['wide', 'mobile']
 export const viewport = () => randomGen(viewports);
 
-const demoImageUrls = ['/docs/demo/pink-1080x1000.jpg', '/docs/demo/orange-1080x1000.jpg', '/docs/demo/yellow-1080x1000.jpg', '/docs/demo/green-1080x1000.jpg', '/docs/demo/blue-1080x1000.jpg']
+export const demoImageUrls = ['/docs/demo/pink-1080x1000.jpg', '/docs/demo/orange-1080x1000.jpg', '/docs/demo/yellow-1080x1000.jpg', '/docs/demo/green-1080x1000.jpg', '/docs/demo/blue-1080x1000.jpg', '/docs/demo/pink-800x1600.jpg', '/docs/demo/orange-800x1600.jpg', '/docs/demo/yellow-800x1600.jpg', '/docs/demo/green-800x1600.jpg', '/docs/demo/blue-800x1600.jpg']
 export const imageUrl = (num = random(demoImageUrls.length)) => demoImageUrls[num];
 export const imageUrls = (num = random(demoImageUrls.length)) => [...demoImageUrls].slice(0, num);
 

@@ -100,6 +100,9 @@
     --diagram-v-spaced-col: rgb(231, 233, 250);
     --diagram-v-spaced-gradient: repeating-linear-gradient(-45deg, var(--diagram-v-spaced-col) 0px, var(--diagram-v-spaced-col) 2px, transparent 2px, transparent 10px);
 }
+.sb-diagram-force-height {
+    height: 500px;
+}
 .sb-diagram section {
     border: 1px solid var(--diagram-section-col);
     background: var(--diagram-section-gradient), white;

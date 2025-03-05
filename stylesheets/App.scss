@@ -16,6 +16,7 @@
 @use "./elements/tables";
 
 // partials
+@use "./partials/block-transition";
 @use "./partials/navigation";
 @use "./partials/filter-select";
 @use "./partials/about";
