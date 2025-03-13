@@ -12,6 +12,12 @@
     }
 }
 
+@mixin only-between($start, $end) {
+    @media (min-width: $start) and (max-width: $end) {
+        @content;
+    }
+}
+
 @mixin dark-mode() {
     @media (prefers-color-scheme: dark) {
         @content;

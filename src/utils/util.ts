@@ -22,3 +22,10 @@ export const groupBy = <T>(collection: T[], key: string | ((val: T) => string)) 
         return result;
     }, result)
 }
+
+// this is a function which returning a promise in the requested time
+export const wait = (time: number) => {
+    return new Promise(resolve => {
+      setTimeout(resolve, time);
+    });
+}

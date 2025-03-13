@@ -401,42 +401,46 @@ dl {
 
 .block-transition {
   width: 100%;
+  max-width: 960px;
+  min-width: 360px;
+  margin: 0 auto;
+  width: 100%;
   height: 100vh;
   position: fixed;
   top: 0;
-  left: 0;
-  clip-path: polygon(100% 0vh, 100% 20vh, calc(100% + 20%) 20vh, calc(100% + 20%) 40vh, calc(100% + 2 * 20%) 40vh, calc(100% + 2 * 20%) 60vh, calc(100% + 3 * 20%) 60vh, calc(100% + 3 * 20%) 80vh, calc(100% + 4 * 20%) 80vh, calc(100% + 4 * 20%) 100vh, calc(100% + 5 * 20%) 100vh, 300% 100vh, 300% 80vh, calc(300% - 20%) 80vh, calc(300% - 20%) 60vh, calc(300% - 2 * 20%) 60vh, calc(300% - 2 * 20%) 40vh, calc(300% - 3 * 20%) 40vh, calc(300% - 3 * 20%) 20vh, calc(300% - 4 * 20%) 20vh, calc(300% - 4 * 20%) 0vh, calc(300% - 5 * 20%) 0vh);
+  clip-path: polygon(100% 0vh, 100% 20vh, 110% 20vh, 110% 40vh, 120% 40vh, 120% 60vh, 130% 60vh, 130% 80vh, 140% 80vh, 140% 100vh, 150% 100vh, 200% 100vh, 200% 80vh, 190% 80vh, 190% 60vh, 180% 60vh, 180% 40vh, 170% 40vh, 170% 20vh, 160% 20vh, 160% 0vh, 150% 0vh);
   background: linear-gradient(180deg, #E2006A 0%, #E2006A 20%, #EE6B0F 20%, #EE6B0F 40%, #EBE000 40%, #EBE000 60%, #82A900 60%, #82A900 80%, #0084CE 80%, #0084CE 100%);
   z-index: 6;
   pointer-events: none;
 }
+@media (min-width: 1280px) {
+  .block-transition {
+    max-width: 1080px;
+  }
+}
 .block-transition.transition-in {
-  animation: block-transition-in cubic-bezier(0.72, 0.17, 0.82, 0.98) 2s 1;
+  animation: block-transition-in cubic-bezier(0.38, 0.68, 0.64, 0.41) 0.5s;
+  animation-delay: 0;
 }
 .block-transition.transition-out {
-  animation: block-transition-in cubic-bezier(0.72, 0.17, 0.82, 0.98) 2s 1;
+  animation: block-transition-out cubic-bezier(0.38, 0.68, 0.64, 0.41) 0.5s;
+  animation-delay: 0;
 }
 
 @keyframes block-transition-in {
   0% {
-    clip-path: polygon(100% 0vh, 100% 20vh, calc(100% + 20%) 20vh, calc(100% + 20%) 40vh, calc(100% + 2 * 20%) 40vh, calc(100% + 2 * 20%) 60vh, calc(100% + 3 * 20%) 60vh, calc(100% + 3 * 20%) 80vh, calc(100% + 4 * 20%) 80vh, calc(100% + 4 * 20%) 100vh, calc(100% + 5 * 20%) 100vh, 300% 100vh, 300% 80vh, calc(300% - 20%) 80vh, calc(300% - 20%) 60vh, calc(300% - 2 * 20%) 60vh, calc(300% - 2 * 20%) 40vh, calc(300% - 3 * 20%) 40vh, calc(300% - 3 * 20%) 20vh, calc(300% - 4 * 20%) 20vh, calc(300% - 4 * 20%) 0vh, calc(300% - 5 * 20%) 0vh);
-  }
-  50% {
-    clip-path: polygon(150% 0vh, 150% 20vh, calc(150% + 5%) 20vh, calc(150% + 5%) 40vh, calc(150% + 2 * 5%) 40vh, calc(150% + 2 * 5%) 60vh, calc(150% + 3 * 5%) 60vh, calc(150% + 3 * 5%) 80vh, calc(150% + 4 * 5%) 80vh, calc(150% + 4 * 5%) 100vh, calc(150% + 5 * 5%) 100vh, 200% 100vh, 200% 80vh, calc(200% - 5%) 80vh, calc(200% - 5%) 60vh, calc(200% - 2 * 5%) 60vh, calc(200% - 2 * 5%) 40vh, calc(200% - 3 * 5%) 40vh, calc(200% - 3 * 5%) 20vh, calc(200% - 4 * 5%) 20vh, calc(200% - 4 * 5%) 0vh, calc(200% - 5 * 5%) 0vh);
+    clip-path: polygon(100% 0vh, 100% 20vh, 110% 20vh, 110% 40vh, 120% 40vh, 120% 60vh, 130% 60vh, 130% 80vh, 140% 80vh, 140% 100vh, 150% 100vh, 300% 100vh, 300% 80vh, 290% 80vh, 290% 60vh, 280% 60vh, 280% 40vh, 270% 40vh, 270% 20vh, 260% 20vh, 260% 0vh, 250% 0vh);
   }
   100% {
-    clip-path: polygon(-600% 0vh, -600% 20vh, calc(-600% + 60%) 20vh, calc(-600% + 60%) 40vh, calc(-600% + 2 * 60%) 40vh, calc(-600% + 2 * 60%) 60vh, calc(-600% + 3 * 60%) 60vh, calc(-600% + 3 * 60%) 80vh, calc(-600% + 4 * 60%) 80vh, calc(-600% + 4 * 60%) 100vh, calc(-600% + 5 * 60%) 100vh, 0% 100vh, 0% 80vh, calc(0% - 60%) 80vh, calc(0% - 60%) 60vh, calc(0% - 2 * 60%) 60vh, calc(0% - 2 * 60%) 40vh, calc(0% - 3 * 60%) 40vh, calc(0% - 3 * 60%) 20vh, calc(0% - 4 * 60%) 20vh, calc(0% - 4 * 60%) 0vh, calc(0% - 5 * 60%) 0vh);
+    clip-path: polygon(-200% 0vh, -200% 20vh, -180% 20vh, -180% 40vh, -160% 40vh, -160% 60vh, -140% 60vh, -140% 80vh, -120% 80vh, -120% 100vh, -100% 100vh, 0% 100vh, 0% 80vh, -20% 80vh, -20% 60vh, -40% 60vh, -40% 40vh, -60% 40vh, -60% 20vh, -80% 20vh, -80% 0vh, -100% 0vh);
   }
 }
 @keyframes block-transition-out {
   0% {
-    clip-path: polygon(-600% 0vh, -600% 20vh, calc(-600% + 60%) 20vh, calc(-600% + 60%) 40vh, calc(-600% + 2 * 60%) 40vh, calc(-600% + 2 * 60%) 60vh, calc(-600% + 3 * 60%) 60vh, calc(-600% + 3 * 60%) 80vh, calc(-600% + 4 * 60%) 80vh, calc(-600% + 4 * 60%) 100vh, calc(-600% + 5 * 60%) 100vh, 0% 100vh, 0% 80vh, calc(0% - 60%) 80vh, calc(0% - 60%) 60vh, calc(0% - 2 * 60%) 60vh, calc(0% - 2 * 60%) 40vh, calc(0% - 3 * 60%) 40vh, calc(0% - 3 * 60%) 20vh, calc(0% - 4 * 60%) 20vh, calc(0% - 4 * 60%) 0vh, calc(0% - 5 * 60%) 0vh);
-  }
-  50% {
-    clip-path: polygon(150% 0vh, 150% 20vh, calc(150% + 5%) 20vh, calc(150% + 5%) 40vh, calc(150% + 2 * 5%) 40vh, calc(150% + 2 * 5%) 60vh, calc(150% + 3 * 5%) 60vh, calc(150% + 3 * 5%) 80vh, calc(150% + 4 * 5%) 80vh, calc(150% + 4 * 5%) 100vh, calc(150% + 5 * 5%) 100vh, 200% 100vh, 200% 80vh, calc(200% - 5%) 80vh, calc(200% - 5%) 60vh, calc(200% - 2 * 5%) 60vh, calc(200% - 2 * 5%) 40vh, calc(200% - 3 * 5%) 40vh, calc(200% - 3 * 5%) 20vh, calc(200% - 4 * 5%) 20vh, calc(200% - 4 * 5%) 0vh, calc(200% - 5 * 5%) 0vh);
+    clip-path: polygon(-200% 0vh, -200% 20vh, -180% 20vh, -180% 40vh, -160% 40vh, -160% 60vh, -140% 60vh, -140% 80vh, -120% 80vh, -120% 100vh, -100% 100vh, 0% 100vh, 0% 80vh, -20% 80vh, -20% 60vh, -40% 60vh, -40% 40vh, -60% 40vh, -60% 20vh, -80% 20vh, -80% 0vh, -100% 0vh);
   }
   100% {
-    clip-path: polygon(100% 0vh, 100% 20vh, calc(100% + 20%) 20vh, calc(100% + 20%) 40vh, calc(100% + 2 * 20%) 40vh, calc(100% + 2 * 20%) 60vh, calc(100% + 3 * 20%) 60vh, calc(100% + 3 * 20%) 80vh, calc(100% + 4 * 20%) 80vh, calc(100% + 4 * 20%) 100vh, calc(100% + 5 * 20%) 100vh, 300% 100vh, 300% 80vh, calc(300% - 20%) 80vh, calc(300% - 20%) 60vh, calc(300% - 2 * 20%) 60vh, calc(300% - 2 * 20%) 40vh, calc(300% - 3 * 20%) 40vh, calc(300% - 3 * 20%) 20vh, calc(300% - 4 * 20%) 20vh, calc(300% - 4 * 20%) 0vh, calc(300% - 5 * 20%) 0vh);
+    clip-path: polygon(100% 0vh, 100% 20vh, 110% 20vh, 110% 40vh, 120% 40vh, 120% 60vh, 130% 60vh, 130% 80vh, 140% 80vh, 140% 100vh, 150% 100vh, 300% 100vh, 300% 80vh, 290% 80vh, 290% 60vh, 280% 60vh, 280% 40vh, 270% 40vh, 270% 20vh, 260% 20vh, 260% 0vh, 250% 0vh);
   }
 }
 .nav {
@@ -1487,29 +1491,77 @@ p {
 }
 
 .back-btn {
-  position: absolute;
-  content: "";
-  border: 0;
-  display: block;
-  height: 20vh;
-  border-top: 30px solid transparent;
-  border-bottom: 30px solid transparent;
-  border-left: 60px solid #000;
-  position: fixed;
   top: 45vh;
   background-color: transparent;
   z-index: 2;
   transition: opacity 0.2s ease-out, transform 0.2s ease-out;
   opacity: 1;
 }
+@media (max-width: 769px) {
+  .back-btn {
+    position: absolute;
+    content: "";
+    border: 0;
+    display: block;
+    height: 20vh;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 40px solid #000;
+    position: fixed;
+  }
+}
+@media (min-width: 769px) and (max-width: 1280px) {
+  .back-btn {
+    position: absolute;
+    content: "";
+    border: 0;
+    display: block;
+    height: 20vh;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 60px solid #000;
+    position: fixed;
+  }
+}
+@media (min-width: 1280px) {
+  .back-btn {
+    position: absolute;
+    content: "";
+    border: 0;
+    display: block;
+    height: 20vh;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 80px solid #000;
+    position: fixed;
+  }
+}
 .back-btn:hover {
   transform: scale(1.2) translateX(6px);
 }
 .back-btn .icon {
-  width: 36px;
   display: inline-block;
-  margin-left: -72px;
-  margin-top: 8px;
+}
+@media (max-width: 769px) {
+  .back-btn .icon {
+    width: 28px;
+    margin-left: -37px;
+    margin-top: 60px;
+  }
+}
+@media (min-width: 769px) and (max-width: 1280px) {
+  .back-btn .icon {
+    width: 36px;
+    margin-left: -52px;
+    margin-top: 55px;
+  }
+}
+@media (min-width: 1280px) {
+  .back-btn .icon {
+    width: 46px;
+    margin-left: -64px;
+    margin-top: 52px;
+  }
 }
 .back-btn svg {
   fill: #FFF;

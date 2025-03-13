@@ -4,8 +4,9 @@
 
 // Project Details Layout
 
-$trapezoid-width: 60px;
-$trapezoid-width-med: 80px;
+$trapezoid-width: 40px;
+$trapezoid-width-med: 60px;
+$trapezoid-width-wide: 80px;
 
 .project-detail {
     padding-bottom: 80px;
@@ -41,24 +42,51 @@ $trapezoid-width-med: 80px;
     }
 }
 
+// TODO: soooo cluttered, and the whole fixed position override thing is just ughhh.  fix me please!
 .back-btn {
-    @include trapezoid('left', $trapezoid-width, calc($trapezoid-width / 2), 20vh, $black);
-    position: fixed;
     top: 45vh;
     background-color: transparent;
     z-index: 2;
     transition: opacity .2s ease-out, transform .2s ease-out;
     opacity: 1;
 
+    @include only-below($medium-bp) {
+        @include trapezoid('left', $trapezoid-width, calc($trapezoid-width / 2), 20vh, $black);
+        position: fixed;
+    }
+    @include only-between($medium-bp, $wide-bp) {
+        @include trapezoid('left', $trapezoid-width-med, calc($trapezoid-width / 2), 20vh, $black);
+        position: fixed;
+    }
+    @include only-above($wide-bp) {
+        @include trapezoid('left', $trapezoid-width-wide, calc($trapezoid-width / 2), 20vh, $black);
+        position: fixed;
+    }
+
+
     &:hover {
         transform: scale(1.2) translateX(6px);
     }
 
     .icon {
-        width: 36px;
         display: inline-block;
-        margin-left: -72px;
-        margin-top: 8px;
+
+        // TODO: again with the clutter
+        @include only-below($medium-bp) {
+            width: 28px;
+            margin-left: -37px;
+            margin-top: 60px;
+        }
+        @include only-between($medium-bp, $wide-bp) {
+            width: 36px;
+            margin-left: -52px;
+            margin-top: 55px;
+        }
+        @include only-above($wide-bp) {
+            width: 46px;
+            margin-left: -64px;
+            margin-top: 52px;
+        }
     }
 
     svg {

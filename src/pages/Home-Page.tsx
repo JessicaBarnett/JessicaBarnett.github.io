@@ -26,10 +26,9 @@ import ExperienceEntry from "@src/components/ExperienceEntry.tsx";
 // Contact
 import ContactForm, { FormEventT } from "@src/components/ContactForm.tsx";
 import SocialSidebar from "@src/components/SocialSidebar.tsx";
-import { useLocation } from "react-router-dom";
 
 export type HomePageComponentProps = {
-  onNavigateToProject: (project: ProjectT) => void;
+  onNavigateToProject: (e: React.MouseEvent, project: ProjectT) => Promise<void> | void;
 };
 
 function HomePage({onNavigateToProject}: HomePageComponentProps) {
@@ -81,25 +80,9 @@ function HomePage({onNavigateToProject}: HomePageComponentProps) {
     setSelectedFilter(tag);
   };
 
-  const handleMoreInfoClick = (project: ProjectT) => {
-    onNavigateToProject(project)
+  const handleMoreInfoClick = (e: React.MouseEvent, project: ProjectT) => {
+    onNavigateToProject(e, project)
   }
-
-  const location = useLocation();
-useEffect(() => {
-
-
-  const href = e.currentTarget.getAttribute('href') || '';
-  const matchObj = href.match(/#(.*)/);
-  const id = matchObj !== null ? matchObj[1] : '';
-
-  window.scrollTo({
-      top: document.getElementById(id)!.offsetTop - 55,
-      left: 0,
-      behavior: 'smooth'
-  });
-   console.log("url changed")
-}, [location]);
 
   return (
     <>
@@ -112,14 +95,14 @@ useEffect(() => {
           </section>
 
           <section
-            id="about-section"
+            id="about"
             className="trapezoid-right"
             ref={abtRef}
           >
             <AboutSection></AboutSection>
           </section>
 
-          <section id="projects-section" ref={projRef}>
+          <section id="projects" ref={projRef}>
             <div className="h-centered projects">
               <div className="v-spaced grid-at-small">
                 <SectionHeading className="half">Projects</SectionHeading>
@@ -141,7 +124,7 @@ useEffect(() => {
                         project={project}
                         selectedTags={selectedFilter?.tags ?? []}
                         onTagSelect={handleTagSelect}
-                        onMoreInfoClick={() => handleMoreInfoClick(project)}
+                        onMoreInfoClick={handleMoreInfoClick}
                       ></Project>
                     ))}
                   </ul>
@@ -151,7 +134,7 @@ useEffect(() => {
           </section>
 
           <section
-            id="experience-section"
+            id="experience"
             ref={expRef}
             className="trapezoid-hug"
           >
@@ -171,7 +154,7 @@ useEffect(() => {
           </section>
 
           <section
-            id="contact-section"
+            id="contact"
             ref={contRef}
             className="color-bar"
           >

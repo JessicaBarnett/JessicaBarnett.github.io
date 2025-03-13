@@ -2,57 +2,34 @@
 import { PlayIcon } from "@src/icons/PlayIcon.tsx";
 import { PauseIcon } from "@src/icons/PauseIcon.tsx";
 import { StopIcon } from "@src/icons/StopIcon.tsx";
-import { NavLink, useNavigate } from "react-router";
+import { NavLink } from "react-router";
 
-const getTargetId = (currentTarget: EventTarget & HTMLElement): string | null => {
-    const href = currentTarget.getAttribute('href') || '';
-    const matchObj = href.match(/#(.*)/);
-    return matchObj !== null ? matchObj[1] : null;
-}
 
-function Navigation() {
-    const navigate = useNavigate();
+export type NavigationComponentProps = {
+   onNavigation: (e: React.MouseEvent) => void;
+};
 
-    const handleNavClick = (e: React.MouseEvent<HTMLElement>) => {
-        navigate('/');
-        e.preventDefault();
-        const id = getTargetId(e.currentTarget);
-        if (id !== null) {
-            window.scrollTo({
-                top: document.getElementById(id)!.offsetTop - 55,
-                left: 0,
-                behavior: 'smooth'
-            });
-        }
-      };
+function Navigation({ onNavigation }: NavigationComponentProps) {
+    // TODO:  pretty sure this all should be done with a loader or something.  Need to read up.  This will work in the interim
+    const handleNavClick = async (e: React.MouseEvent<HTMLElement>) => {
+        onNavigation(e);
+    };
 
     return (
-        <div className="nav">
+        <div id="nav" className="nav">
             <nav className="nav-links">
-                <NavLink to={`/#projects-section`} onClick={handleNavClick}>
+                <NavLink to={`/#projects`} className="nav-link" onClick={handleNavClick} viewTransition>
                     <PlayIcon></PlayIcon>
                     <span>projects</span>
                 </NavLink>
-                <NavLink to={`/#experience-section`} onClick={handleNavClick}>
+                <NavLink to={`/#experience`} className="nav-link" onClick={handleNavClick} viewTransition>
                     <PauseIcon></PauseIcon>
                     <span>experience</span>
                 </NavLink>
-                <NavLink to={`/#contact-section`} onClick={handleNavClick}>
+                <NavLink to={`/#contact`} className="nav-link" onClick={handleNavClick} viewTransition>
                     <StopIcon></StopIcon>
                     <span>contact</span>
                 </NavLink>
-                {/* <a className="nav-link" href="/#projects-section" onClick={handleNavClick}>
-                    <PlayIcon></PlayIcon>
-                    <span>projects</span>
-                </a>
-                <a className="nav-link" href="/#experience-section" onClick={handleNavClick}>
-                    <PauseIcon></PauseIcon>
-                    <span>experience</span>
-                </a>
-                <a className="nav-link" href="/#contact-section" onClick={handleNavClick}>
-                    <StopIcon></StopIcon>
-                    <span>contact</span>
-                </a> */}
             </nav>
         </div>
 );

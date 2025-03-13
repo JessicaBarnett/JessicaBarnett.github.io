@@ -8,7 +8,7 @@ type ProjectComponentProps = {
   project: ProjectT,
   selectedTags: TagT[],
   onTagSelect: (tag: TagT, e: React.MouseEvent) => void,
-  onMoreInfoClick?: (project: ProjectT) => void
+  onMoreInfoClick?: (e: React.MouseEvent, project: ProjectT) => Promise<void> | void
 };
 
 const Project = ({project, selectedTags, onTagSelect, onMoreInfoClick}: ProjectComponentProps) => {
@@ -18,7 +18,7 @@ const Project = ({project, selectedTags, onTagSelect, onMoreInfoClick}: ProjectC
       <p>
         {project.description}
         { projectHasDetails(project) && onMoreInfoClick &&
-            <NavLink to={`/project/${project.slug}`} onClick={() => onMoreInfoClick(project)}>more info</NavLink>
+            <NavLink to={`/project/${project.slug}`} onClick={(e) => onMoreInfoClick(e, project)} viewTransition>more info</NavLink>
         }
       </p>
 
