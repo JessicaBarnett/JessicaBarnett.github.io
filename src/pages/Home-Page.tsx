@@ -84,20 +84,6 @@ function HomePage({onNavigateToProject, onFilterClick}: HomePageComponentProps) 
     return clickedElement.getBoundingClientRect().top;
   }
 
-  const getPositioningValues = (clickedElement: Element) => {
-    const targetRect = clickedElement.getBoundingClientRect();
-    const page = document.getElementById('home-page') as Element;
-    const pageRect = page.getBoundingClientRect();
-
-    const result = {
-      element: clickedElement,
-      targetRect,
-      pageRect
-    }
-
-    return result;
-  }
-
   const handleMoreInfoClick = (e: React.MouseEvent, project: ProjectT) => {
     onNavigateToProject(e, project)
   }
@@ -105,7 +91,8 @@ function HomePage({onNavigateToProject, onFilterClick}: HomePageComponentProps) 
   const handleTagSelect = async (e: React.MouseEvent, tag: TagT) => {
     const clickedElement = e.currentTarget as Element;
 
-    // TODO: Do I REEEEALLY have to store the filter and offset if I want to wait for the layout event...?  ugh...
+    // TODO: Do I REEEEALLY have to store the filter and offset
+    // if I want to wait for the layout event...?  ugh...
     setClickedFilter(clickedElement);
     setClickedFilterOffset(getFilterYOffset(clickedElement));
 
@@ -119,16 +106,14 @@ function HomePage({onNavigateToProject, onFilterClick}: HomePageComponentProps) 
     const dt = t1 - t2;
     const scrollPos = window.scrollY - dt;
 
-    if (t1 == t2) { console.log(`NO CHANGE`) }
-    console.log(`change in t: ${dt} (t1 + t2)\n`+
-      `T1: ${t1}\n`+
-      `T2: ${t2}`)
-
     window.scrollTo({
       top: scrollPos,
       behavior: 'instant'
     });
-  }, [filteredProjects]) // TODO: I don't want this to re-run when clickedFilter or clickedFilterOffset change, so I should do a linter skip line or something
+  }, [filteredProjects])
+  // TODO: I don't want this to re-run when clickedFilter
+  // or clickedFilterOffset change, so I should do a linter
+  // skip line or something
 
   return (
     <>
