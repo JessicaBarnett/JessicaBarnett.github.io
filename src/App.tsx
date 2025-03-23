@@ -74,13 +74,12 @@ function App() {
   }
 
   const storeCurrentScrollPosition = () => {
-    const boundingClientRect = document.getElementById('home-page')?.getBoundingClientRect();
-    const scrollPos = Math.abs(boundingClientRect?.y ?? 0);
-    console.log('jess: ', scrollPos);
-    setScrollPos(scrollPos); // store scroll position for back action
+    const boundingRect = document.getElementById('home-page')?.getBoundingClientRect();
+    if (!boundingRect) { return; }
+    setScrollPos( Math.abs(boundingRect.y)); // store scroll position for back action
   }
 
-  // *** EVENT HANDLERS *** //
+  // *** NAVIGATION EVENTS *** //
 
   const handleNavigateToMain = async (e: React.MouseEvent) => {
     const linkEl = getLinkElFromNavEvt(e);
@@ -99,7 +98,7 @@ function App() {
     resetTransition();
   }
 
-  const handleNavigateToProject = async (e: React.MouseEvent, project: ProjectT | ProjectDetailsT) => {
+  const handleGoToProject = async (e: React.MouseEvent, project: ProjectT | ProjectDetailsT) => {
     // make sure this project has a details page to go to first
     if (!projectHasDetails(project)) {   return; }
     storeCurrentScrollPosition();
@@ -111,12 +110,12 @@ function App() {
     await resetTransition();
   }
 
-  const handleReturnFromProject = async (e: React.MouseEvent) => {
+  const handleBackFromProject = async (e: React.MouseEvent) => {
     e.preventDefault();
     await startTransitionToMain();
     await navigate('/');
-    console.log('jess: ', scrollPos);
-    window.scrollTo({ top: scrollPos, behavior: 'instant' });
+    await wait(500) // it's a timing issue.  Need to ensure the main page is in place BEFORE scrolling.
+    window.scrollTo({ top: scrollPos, behavior: 'smooth' });
     await resetTransition();
   }
 
@@ -130,11 +129,11 @@ function App() {
               <div className={`block-transition transition-${transitionState}`}></div>
               <Routes>
                 <Route index element={
-                  <HomePage onNavigateToProject={handleNavigateToProject}></HomePage>
+                  <HomePage onNavigateToProject={handleGoToProject}></HomePage>
                 } />
                 <Route path="project">
                   <Route path=":projectSlug" element={
-                    <ProjectPage onNavigateBack={handleReturnFromProject}></ProjectPage>
+                    <ProjectPage onNavigateBack={handleBackFromProject}></ProjectPage>
                   } />
                 </Route>
               </Routes>

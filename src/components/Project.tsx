@@ -7,7 +7,7 @@ import { NavLink } from "react-router";
 type ProjectComponentProps = {
   project: ProjectT,
   selectedTags: TagT[],
-  onTagSelect: (tag: TagT, e: React.MouseEvent) => void,
+  onTagSelect: (e: React.MouseEvent, tag: TagT) => void,
   onMoreInfoClick?: (e: React.MouseEvent, project: ProjectT) => Promise<void> | void
 };
 

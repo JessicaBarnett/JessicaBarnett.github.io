@@ -3,7 +3,7 @@ import { TagT } from "@src/types/data-types.ts";
 type ProjectComponentProps = {
   tag: TagT;
   isSelected?: boolean;
-  onClick?: (tag: TagT, e: React.MouseEvent) => void;
+  onClick?: (e: React.MouseEvent, tag: TagT) => void;
 };
 
 const Tag = ({
@@ -16,7 +16,7 @@ const Tag = ({
       className={`btn-tag filter-projects ${isSelected ? 'selected' : ''}`}
       type="button"
       value={tag.name}
-      onClick={(e) => onClick(tag, e)}
+      onClick={(e) => onClick(e, tag)}
     >
       {tag.displayName ?? tag.name}
     </button>

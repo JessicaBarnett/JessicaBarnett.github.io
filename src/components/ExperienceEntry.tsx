@@ -6,7 +6,7 @@ import { tagSelected } from "@src/utils/util.ts";
 type ExperienceEntryProps = {
     entry: ExperienceEntryT,
     selectedTags: TagT[],
-    onTagSelect: (tag: TagT, e: React.MouseEvent) => void
+    onTagSelect: (e: React.MouseEvent, tag: TagT) => void,
 };
 
 const ExperienceEntry = ({entry, selectedTags, onTagSelect}: ExperienceEntryProps) => {
