@@ -78,6 +78,18 @@
 /**************
     BUTTONS
 ***************/
+@media (prefers-color-scheme: dark) {
+  .btn-tag {
+    color: #bebebe;
+    background-color: #1f1f1f;
+    border-color: #1f1f1f;
+  }
+  .btn-tag:hover, .btn-tag.selected {
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
+  }
+}
 .btn-tag {
   font-size: 1.2rem;
   line-height: 1.8rem;
@@ -94,41 +106,7 @@
   color: #fff;
   background-color: #000;
 }
-@media (prefers-color-scheme: dark) {
-  .btn-tag {
-    color: #bebebe;
-    background-color: #1f1f1f;
-    border-color: #1f1f1f;
-  }
-  .btn-tag:hover, .btn-tag.selected {
-    color: #fff;
-    background-color: #000;
-    border-color: #000;
-  }
-}
 
-.btn-submit {
-  font-size: 1.2rem;
-  line-height: 1.8rem;
-  border-radius: 5px;
-  padding: 2px 4px;
-  margin: 2px;
-  font-weight: 600;
-  transition: color 0.1s ease-in, background-color 0.2s ease-in, border-color 0.2s ease-in;
-  color: #000;
-  background-color: #fff;
-  border: 2px solid #000;
-  font-size: 1.5rem;
-  line-height: 2.1rem;
-  font-family: "Lester Bold";
-  padding: 4px;
-  text-transform: uppercase;
-  width: 100%;
-}
-.btn-submit:hover, .btn-submit.selected {
-  color: #fff;
-  background-color: #000;
-}
 @media (prefers-color-scheme: dark) {
   .btn-submit {
     color: #bebebe;
@@ -140,6 +118,29 @@
     background-color: #000;
     border-color: #000;
   }
+}
+.btn-submit {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  border-radius: 5px;
+  padding: 2px 4px;
+  margin: 2px;
+  font-weight: 600;
+  transition: color 0.1s ease-in, background-color 0.2s ease-in, border-color 0.2s ease-in;
+  color: #000;
+  background-color: #fff;
+  border: 2px solid #000;
+}
+.btn-submit:hover, .btn-submit.selected {
+  color: #fff;
+  background-color: #000;
+}
+.btn-submit {
+  font-size: 1.5rem;
+  line-height: 2.1rem;
+  font-family: "Lester Bold";
+  width: 100%;
+  text-transform: uppercase;
 }
 @media (min-width: 769px) {
   .btn-submit {
@@ -400,9 +401,6 @@ dl {
 }
 
 .block-transition {
-  width: 100%;
-  max-width: 960px;
-  min-width: 360px;
   margin: 0 auto;
   width: 100%;
   height: 100vh;
@@ -412,6 +410,9 @@ dl {
   background: linear-gradient(180deg, #E2006A 0%, #E2006A 20%, #EE6B0F 20%, #EE6B0F 40%, #EBE000 40%, #EBE000 60%, #82A900 60%, #82A900 80%, #0084CE 80%, #0084CE 100%);
   z-index: 6;
   pointer-events: none;
+  width: 100%;
+  max-width: 960px;
+  min-width: 360px;
 }
 @media (min-width: 1280px) {
   .block-transition {
@@ -658,6 +659,8 @@ em {
   padding-top: 53px;
 }
 .background:before {
+  opacity: 20%;
+  z-index: 0;
   content: "";
   display: block;
   pointer-events: none;
@@ -670,8 +673,6 @@ em {
   width: 100%;
   background: url("/assets/images/concrete-wall-tileable.jpg");
   pointer-events: none;
-  opacity: 20%;
-  z-index: 0;
 }
 @media (prefers-color-scheme: dark) {
   .background:before {
@@ -683,9 +684,6 @@ em {
    PAGE
 *********************/
 .page-frame {
-  width: 100%;
-  max-width: 960px;
-  min-width: 360px;
   overflow: hidden;
   position: relative;
   background-color: #fff;
@@ -693,6 +691,9 @@ em {
   margin: 0 auto;
   margin-bottom: 180px;
   z-index: 1;
+  width: 100%;
+  max-width: 960px;
+  min-width: 360px;
 }
 @media (min-width: 1280px) {
   .page-frame {
@@ -1416,32 +1417,6 @@ p {
 }
 .btn-close:hover svg {
   fill: #000;
-}
-
-.drawer {
-  width: 100%;
-  max-width: 960px;
-  min-width: 360px;
-  position: absolute;
-  top: 0;
-  background-color: #FFF;
-  clip-path: rect(0 auto auto auto);
-  transition: clip-path 0.4s ease-in-out;
-  z-index: 1;
-}
-@media (min-width: 1280px) {
-  .drawer {
-    max-width: 1080px;
-  }
-}
-.drawer.closed {
-  transition: clip-path 0.4s 0.1s ease-in-out;
-  clip-path: rect(0 100vw auto 100vw);
-}
-
-.drawer-content {
-  overflow: scroll;
-  width: 100%;
 }
 
 .project-detail {

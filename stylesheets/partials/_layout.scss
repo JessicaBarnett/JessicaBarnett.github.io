@@ -15,10 +15,10 @@
   padding-top: $nav-height + 8px;
 
   &:before {
-    @include paper-texture-overlay();
     opacity: $paper-texture-opacity;
     z-index: 0;
 
+    @include paper-texture-overlay();
     @include dark-mode() {
       opacity: $drk-paper-texture-opacity;
     }
@@ -30,7 +30,6 @@
 *********************/
 
 .page-frame {
-  @include page-width; // defines page min and max widths
   overflow: hidden;
   position: relative; // context for `&:after` overlay, and the canvas
   background-color: $page-bg-color;
@@ -39,6 +38,7 @@
   margin-bottom: 180px;
   z-index: 1;
 
+  @include page-width; // defines page min and max widths
   @include only-above($medium-bp) {
     border-radius: $border-radius-lg;
   }

@@ -6,44 +6,7 @@
     BUTTONS
 ***************/
 
-// @mixin unbtn {
-//     border: 0;
-//     background: transparent;
-// }
-
 @mixin base-btn ($inverted: false) {
-    @include font-size(1.2rem);
-    border-radius: $border-radius-sm;
-    padding: 2px 4px;
-    margin: 2px;
-    font-weight: 600;
-    transition:
-        color $text-transition,
-        background-color $bg-transition,
-        border-color $bg-transition;
-
-    @if ($inverted == true) {
-        color: $drk-text-color;
-        background-color: $drk-page-bg-color;
-        border: 2px solid $drk-border-color;
-        &:hover,
-        &.selected {
-            color: $drk-highlight-text-color;
-            background-color: $drk-highlight-bg-color;
-        }
-    }
-    @else {
-        color: $text-color;
-        background-color: $page-bg-color;
-        border: 2px solid $border-color;
-
-        &:hover,
-        &.selected {
-            color: $highlight-text-color;
-            background-color: $highlight-bg-color;
-        }
-    }
-
     @include dark-mode() {
         color: $drk-text-color-alt;
         background-color: $drk-bg-color;
@@ -56,6 +19,42 @@
             border-color: $drk-highlight-border-color;
         }
     }
+
+    & {
+        font-size: 1.2rem;
+        line-height: calc(1.2rem + 0.6rem);
+        border-radius: $border-radius-sm;
+        padding: 2px 4px;
+        margin: 2px;
+        font-weight: 600;
+        transition:
+            color $text-transition,
+            background-color $bg-transition,
+            border-color $bg-transition;
+
+        @if ($inverted == true) {
+            color: $drk-text-color;
+            background-color: $drk-page-bg-color;
+            border: 2px solid $drk-border-color;
+            &:hover,
+            &.selected {
+                color: $drk-highlight-text-color;
+                background-color: $drk-highlight-bg-color;
+            }
+        }
+        @else {
+            color: $text-color;
+            background-color: $page-bg-color;
+            border: 2px solid $border-color;
+
+            &:hover,
+            &.selected {
+                color: $highlight-text-color;
+                background-color: $highlight-bg-color;
+            }
+        }
+    }
+
 }
 
 .btn-tag {
@@ -64,11 +63,14 @@
 
 .btn-submit {
     @include base-btn;
-    @include font-size(1.5rem);
-    font-family: $accent-font;
-    padding: 4px;
-    text-transform: uppercase;
-    width: 100%;
+
+    & {
+        font-size: 1.5rem;
+        line-height: calc(1.5rem + 0.6rem);
+        font-family: $accent-font;
+        width: 100%;
+        text-transform: uppercase;
+    }
 
     @include only-above($medium-bp) {
         width: auto;
