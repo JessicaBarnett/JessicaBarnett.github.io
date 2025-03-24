@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, RefObject, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from 'react-dom';
 import { MediaT } from "@src/types/data-types";
 import { RewindIcon } from "@src/icons/RewindIcon.tsx";
@@ -8,7 +8,6 @@ import Dialog from "./Dialog";
 export type SliderOptions = {
     mobile?: boolean,
     wide?: boolean,
-    name: string // unique name for this slider
 };
 
 export type SliderComponentProps = {
@@ -34,28 +33,9 @@ function useOffsetState(sliderTrackRef: React.MutableRefObject<HTMLDivElement | 
     return [offset, handleSetOffset];
 }
 
-// function useCurrentImgHeightState(): [number|null, (currentImageRef: RefObject<HTMLImageElement | null>) => void] {
-//     const [currentImgHeight, setCurrentImgHeight] = useState<number|null>(null);
-
-//     const getImageHeight = (selectedImageRef: RefObject<HTMLImageElement | null>) => {
-//         if (!selectedImageRef?.current ||
-//             selectedImageRef.current.offsetWidth === 0
-//         ) { return null; }
-//         const current = selectedImageRef?.current;
-//         return current.naturalHeight * current.offsetWidth / current.naturalWidth;
-//     }
-
-//     const handleSetCurrentImgHeight = (selectedImageRef: RefObject<HTMLImageElement | null>): void => {
-//         setCurrentImgHeight(getImageHeight(selectedImageRef));
-//     }
-
-//     return [currentImgHeight, handleSetCurrentImgHeight];
-// }
-
-
 // Component
 
-const Slider = ({ media, options = { name: 'default' } }: SliderComponentProps) => {
+const Slider = ({ media, options}: SliderComponentProps) => {
      // determines whether the expanded dialog is open
     const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
@@ -119,15 +99,15 @@ const Slider = ({ media, options = { name: 'default' } }: SliderComponentProps) 
     const sliderClasses = [
         'slider',
         isExpanded ? 'slider-expanded' : '',
-        options.mobile ? 'slider-mobile' : '',
-        options.wide ? 'slider-wide' : ''
+        options?.mobile ? 'slider-mobile' : '',
+        options?.wide ? 'slider-wide' : ''
     ].join(' ');
 
     if (media.length < 0) {  return; }
 
     return (
         <>
-            <div className={sliderClasses} id={`slider-${options.name}`}>
+            <div className={sliderClasses} id={`slider-${name}`}>
                 {/* Buttons only get rendered if there's more than 1 image */}
                 {media.length > 1 && (
                     <>

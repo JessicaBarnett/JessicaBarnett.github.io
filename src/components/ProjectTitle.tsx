@@ -1,7 +1,7 @@
-import { ProjectDetailsT } from "@src/types/data-types";
+import { ProjectTitlesT } from "@src/types/data-types";
 
 type ProjectTitleProps = {
-  project: ProjectDetailsT
+  project: ProjectTitlesT
 };
 
 function ProjectTitle({ project }: ProjectTitleProps) {

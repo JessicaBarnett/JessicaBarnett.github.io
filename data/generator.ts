@@ -55,6 +55,7 @@ export const mediasGen = (num = random()): MediaT[] => multiGen(mediaGen, num);
 
 export const projectGen = (idx = random()): ProjectT => {
     return {
+        slug: `zz-00${idx}`,
         id: `zz-00${idx}`,
         listTitle: "Project Title",
         description: "Worked on this, that and the other, and this thing and that thing and stuff and things.",

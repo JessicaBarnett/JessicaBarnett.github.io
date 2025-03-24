@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 
 // types
 import { ProjectT, TagT } from "@src/types/data-types.ts";
@@ -26,14 +26,13 @@ import ExperienceEntry from "@src/components/ExperienceEntry.tsx";
 // Contact
 import ContactForm, { FormEventT } from "@src/components/ContactForm.tsx";
 import SocialSidebar from "@src/components/SocialSidebar.tsx";
-import { wait } from "@src/utils/util";
+
 
 export type HomePageComponentProps = {
-  // onFilterClick: (e: React.MouseEvent) => void;
   onNavigateToProject: (e: React.MouseEvent, project: ProjectT) => Promise<void> | void;
 };
 
-function HomePage({onNavigateToProject, onFilterClick}: HomePageComponentProps) {
+function HomePage({onNavigateToProject}: HomePageComponentProps) {
   const [filters] = useFilters();
   const [projects] = useProjects();
   const [expEntries] = useExperienceEntries();

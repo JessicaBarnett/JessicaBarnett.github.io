@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { projectGen } from '@data/generator.js';
 
 import Project from './Project.tsx';
-import { TagT } from '@src/types/data-types.ts';
 
 const projectData = projectGen(1);
 
@@ -22,6 +21,6 @@ export const Default: Story = {
   args: {
     project: projectData,
     selectedTags: [],
-    onTagSelect: (tag: TagT) => { console.log(`Tag "${tag.displayName}" selected`) },
+    onTagSelect: () => {},
   }
 };

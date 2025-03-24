@@ -32,9 +32,12 @@ export type ProjectT = {
     tags: TagT[],
 };
 
-export type ProjectDetailsT = ProjectT & {
+export type ProjectTitlesT = {
     title: string,
-    subtitle?: string,
+    subtitle?: string
+}
+
+export type ProjectDetailsT = ProjectT & ProjectTitlesT & {
     role: string,
     time: string,
     type: string,
@@ -52,8 +55,9 @@ export const projectHasDetails = (project: ProjectT | ProjectDetailsT ): boolean
       !!(project as ProjectDetailsT).type &&
       (project as ProjectDetailsT).media.length > 0 &&
       (project as ProjectDetailsT).table.length > 0 &&
-      (project as ProjectDetailsT).content.length > 0;
-  }
+      (project as ProjectDetailsT).content.length > 0 &&
+      false; // TODO: remove when project details is finalized
+}
 
 export type FilterT = {
     displayName: string,

@@ -167,13 +167,13 @@ export const drawLine = (
 };
 
 
-export const nextStep = (points: PointT[]) => {}
+// export const nextStep = (points: PointT[]) => {}
 
 export const drawFrame  = (
   ctx: CanvasRenderingContext2D,
   points: PointT[], // we need the length of this path as well
   lineW: number,
-  length: number, // length for this step,
+  // length: number, // length for this step,
   color: string
 ) => {
   // this is all the same

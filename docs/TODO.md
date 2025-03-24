@@ -2,24 +2,18 @@
 # Stream of consciousness
 -----------------------------------------
 
-PAGE NAVIGATION SCROLL POSITIONING
-
-ok, I know the scroll pos bug I've been dealing with is a timing issue.  Scroll is happening before navigation is finished and the element is swapped.  Not sure why, as I AM awaiuting the navigate event, but... adding a timer does fix the issue so, that's the problem.
-
-
-FILTER CLICK SCROLL POSITIONING
-
-thinking the approach will be to have an event on the filter buttons that will... wait until
-
 
 -----------------------------------------
 # Done (recently)
 -----------------------------------------
 
-- fix timing issues in page transitions
+- Fix scroll Positioning when selecting/deselecting filters!!
+
+- fix timing issues in page transitions!!
   - to projects
   - back btn from projects
   - nav bar from projects
+
 
 -----------------------------------------
 # In progress
@@ -28,8 +22,15 @@ thinking the approach will be to have an event on the filter buttons that will..
 - Maintain scroll position after coming back from projects
   - edge case: going to/from project page with a filter applied
 
+- FIX BUILD
 
+-----------------------------------------
+# Before Next Launch!!
+-----------------------------------------
 
+- finish woodcraft content
+- fix build
+- polish last issues with more-projcet-info page
 
 
 -----------------------------------------
@@ -43,12 +44,10 @@ thinking the approach will be to have an event on the filter buttons that will..
 
 ## Small fixes
 - Style "More Info" Link  (lit. just add a class)
-- remove extra color swatches in sb
 
 ## Med Fixes
-- Maintain Scroll Positioning on Filter Click
-- FIX BUILD
 - search params for filters
+- Mobile Audit
 - Dark mode audit
 
 -----------------------------------------
@@ -56,14 +55,14 @@ thinking the approach will be to have an event on the filter buttons that will..
 -----------------------------------------
 
 ## Maybes
-- Use loaders in react route config?
-- color scheme switch
+- Use loaders for transitions in react route config?
+- color scheme switches
 - rewind back-to-top
-- animate lines?
+- animate lines <3
 
-## tasks
+## Tasks
 - aria/A11y Audit
-- Prefers-reduced-motion
+- prefers-reduced-motion
 - Testing
 - Spruce up the Storybook
 - General Cleanup
