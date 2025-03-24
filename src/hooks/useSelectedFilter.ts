@@ -3,7 +3,7 @@
  * Update requires only a string.
  * State required: useFilters
  */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FilterT, TagT } from "@src/types/data-types.ts";
 
 type UseSelectedFilterReturnT = [
@@ -24,11 +24,15 @@ const matchFilterByName = (filters: FilterT[], name: string): FilterT | undefine
   );
 };
 
-export function useSelectedFilter(filters: FilterT[], initial?: FilterT): UseSelectedFilterReturnT {
+export function useSelectedFilter(filters: FilterT[], initial?: FilterT | undefined | null): UseSelectedFilterReturnT {
   const [value, setValue] = useState<FilterT | undefined | null>();
-  if (initial) {
-    setValue(initial);
-  }
+
+  useEffect(() => {
+    if (initial) {
+      console.log('setting initial selected filter')
+      setValue(initial);
+    }
+  }, [initial])
 
   function handleChange(tagName: string): void;
   function handleChange(tag: TagT): void;

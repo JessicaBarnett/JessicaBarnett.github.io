@@ -1,7 +1,7 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 // types
-import { ProjectT, TagT } from "@src/types/data-types.ts";
+import { FilterT, ProjectT, TagT } from "@src/types/data-types.ts";
 
 // Hooks
 import { useFilters } from "@src/hooks/static/useFilters.ts";
@@ -29,14 +29,15 @@ import SocialSidebar from "@src/components/SocialSidebar.tsx";
 
 
 export type HomePageComponentProps = {
-  onNavigateToProject: (e: React.MouseEvent, project: ProjectT) => Promise<void> | void;
+  onNavigateToProject: (e: React.MouseEvent, project: ProjectT, filter: FilterT | null | undefined ) => Promise<void> | void;
+  initialFilter?: FilterT | null | undefined
 };
 
-function HomePage({onNavigateToProject}: HomePageComponentProps) {
+function HomePage({onNavigateToProject, initialFilter}: HomePageComponentProps) {
   const [filters] = useFilters();
   const [projects] = useProjects();
   const [expEntries] = useExperienceEntries();
-  const [selectedFilter, setSelectedFilter] = useSelectedFilter(filters);
+  const [selectedFilter, setSelectedFilter] = useSelectedFilter(filters, initialFilter);
   const [filteredProjects] = useFilteredProjects(
     projects,
     filters,
@@ -84,7 +85,7 @@ function HomePage({onNavigateToProject}: HomePageComponentProps) {
   }
 
   const handleMoreInfoClick = (e: React.MouseEvent, project: ProjectT) => {
-    onNavigateToProject(e, project)
+    onNavigateToProject(e, project, selectedFilter)
   }
 
   const handleTagSelect = async (e: React.MouseEvent, tag: TagT) => {
@@ -96,7 +97,7 @@ function HomePage({onNavigateToProject}: HomePageComponentProps) {
     setClickedFilterOffset(getFilterYOffset(clickedElement));
 
     setSelectedFilter(tag);
-};
+  };
 
   useLayoutEffect(() => {
     if (!clickedFilter) { return; }

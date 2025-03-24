@@ -13,6 +13,8 @@
   - to projects
   - back btn from projects
   - nav bar from projects
+- Mobile Tweaks
+- fixes to get the build out (3/24)
 
 
 -----------------------------------------
@@ -20,18 +22,14 @@
 -----------------------------------------
 
 - Maintain scroll position after coming back from projects
-  - edge case: going to/from project page with a filter applied
-
-- FIX BUILD
+- Maintain filters during navigation
 
 -----------------------------------------
 # Before Next Launch!!
 -----------------------------------------
 
 - finish woodcraft content
-- fix build
 - polish last issues with more-projcet-info page
-
 
 -----------------------------------------
 # ToDos

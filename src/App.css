@@ -794,7 +794,7 @@ CONTENT
 
 .experience {
   max-width: 80%;
-  margin: 0 42px 0 auto;
+  margin: 0 20px 0 4.5rem;
 }
 .experience .title-2 {
   margin-left: -25px;
@@ -1466,7 +1466,7 @@ p {
 }
 
 .back-btn {
-  top: 45vh;
+  top: 50vh;
   background-color: transparent;
   z-index: 2;
   transition: opacity 0.2s ease-out, transform 0.2s ease-out;
@@ -1496,6 +1496,7 @@ p {
     border-bottom: 20px solid transparent;
     border-left: 60px solid #000;
     position: fixed;
+    top: 64vh;
   }
 }
 @media (min-width: 1280px) {
@@ -1509,6 +1510,7 @@ p {
     border-bottom: 20px solid transparent;
     border-left: 80px solid #000;
     position: fixed;
+    top: 64vh;
   }
 }
 .back-btn:hover {
@@ -1516,30 +1518,30 @@ p {
 }
 .back-btn .icon {
   display: inline-block;
+  height: 100%;
 }
 @media (max-width: 769px) {
   .back-btn .icon {
     width: 28px;
     margin-left: -37px;
-    margin-top: 60px;
   }
 }
 @media (min-width: 769px) and (max-width: 1280px) {
   .back-btn .icon {
     width: 36px;
     margin-left: -52px;
-    margin-top: 55px;
   }
 }
 @media (min-width: 1280px) {
   .back-btn .icon {
     width: 46px;
     margin-left: -64px;
-    margin-top: 52px;
   }
 }
 .back-btn svg {
   fill: #FFF;
+  height: 100%;
+  vertical-align: middle;
 }
 .back-btn.hidden {
   opacity: 0;

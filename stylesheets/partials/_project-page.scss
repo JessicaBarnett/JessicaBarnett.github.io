@@ -42,9 +42,9 @@ $trapezoid-width-wide: 80px;
     }
 }
 
-// TODO: soooo cluttered, and the whole fixed position override thing is just ughhh.  fix me please!
+// TODO: soooo cluttered, and the whole fixed position override thing is just ughhh.
 .back-btn {
-    top: 45vh;
+    top: 50vh;
     background-color: transparent;
     z-index: 2;
     transition: opacity .2s ease-out, transform .2s ease-out;
@@ -57,10 +57,12 @@ $trapezoid-width-wide: 80px;
     @include only-between($medium-bp, $wide-bp) {
         @include trapezoid('left', $trapezoid-width-med, calc($trapezoid-width / 2), 20vh, $black);
         position: fixed;
+        top: 64vh;
     }
     @include only-above($wide-bp) {
         @include trapezoid('left', $trapezoid-width-wide, calc($trapezoid-width / 2), 20vh, $black);
         position: fixed;
+        top: 64vh;
     }
 
 
@@ -70,27 +72,31 @@ $trapezoid-width-wide: 80px;
 
     .icon {
         display: inline-block;
+        height: 100%;
+
 
         // TODO: again with the clutter
         @include only-below($medium-bp) {
             width: 28px;
             margin-left: -37px;
-            margin-top: 60px;
+            // margin-top: 60px;
         }
         @include only-between($medium-bp, $wide-bp) {
             width: 36px;
             margin-left: -52px;
-            margin-top: 55px;
+            // margin-top: 55px;
         }
         @include only-above($wide-bp) {
             width: 46px;
             margin-left: -64px;
-            margin-top: 52px;
+            // margin-top: 52px;
         }
     }
 
     svg {
         fill: $white;
+        height: 100%;
+        vertical-align: middle;
     }
 
     &.hidden {

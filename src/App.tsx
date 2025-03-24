@@ -1,19 +1,20 @@
 import "./App.css";
-import { useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 
 // Nav
 import HomePage from "@src/pages/Home-Page";
 import Navigation from "@src/components/Navigation.tsx";
 import ProjectPage from "./pages/Project-Page";
-import { ProjectDetailsT, ProjectT, projectHasDetails } from "@src/types/data-types";
+import { FilterT, ProjectDetailsT, ProjectT, projectHasDetails } from "@src/types/data-types";
 import { Route, Routes, useNavigate } from "react-router";
 import { wait } from "./utils/util";
 
 function App() {
   const [scrollPos, setScrollPos] = useState<number>(0);
+  const [storedFilter, setStoredFilter] = useState<FilterT|undefined|null>();
   const navigate = useNavigate();
   const fixedNavRef = useRef<HTMLDivElement | null>(null);
-  const [transitionState, setTransitionState] = useState<'in'|'out'|'idle'>('idle')
+  const [transitionState, setTransitionState] = useState<'in'|'out'|'idle'>('idle');
 
   // *** TRANSITIONS *** //
 
@@ -28,7 +29,7 @@ function App() {
   }
 
   const resetTransition = async () => {
-    await wait(400);
+    await wait(300);
     setTransitionState('idle');
   }
 
@@ -73,12 +74,6 @@ function App() {
     }
   }
 
-  const storeCurrentScrollPosition = () => {
-    const boundingRect = document.getElementById('home-page')?.getBoundingClientRect();
-    if (!boundingRect) { return; }
-    setScrollPos( Math.abs(boundingRect.y)); // store scroll position for back action
-  }
-
   // *** NAVIGATION EVENTS *** //
 
   const handleNavigateToMain = async (e: React.MouseEvent) => {
@@ -98,10 +93,15 @@ function App() {
     resetTransition();
   }
 
-  const handleGoToProject = async (e: React.MouseEvent, project: ProjectT | ProjectDetailsT) => {
+  const handleGoToProject = async (e: React.MouseEvent, project: ProjectT | ProjectDetailsT, filter: FilterT | null | undefined) => {
     // make sure this project has a details page to go to first
     if (!projectHasDetails(project)) {   return; }
-    storeCurrentScrollPosition();
+
+    if (filter) {
+      setStoredFilter(filter);
+    }
+
+    setScrollPos( window.scrollY); // store scroll position for back action
 
     e.preventDefault()
 
@@ -114,8 +114,8 @@ function App() {
     e.preventDefault();
     await startTransitionToMain();
     await navigate('/');
-    await wait(500) // it's a timing issue.  Need to ensure the main page is in place BEFORE scrolling.
-    window.scrollTo({ top: scrollPos, behavior: 'smooth' });
+    await wait(10); // TODO: hack city.  need to do this in a layout effect, but since I have to do things WHILE the transition is happening
+    window.scrollTo({ top: scrollPos, behavior: 'instant' });
     await resetTransition();
   }
 
@@ -129,7 +129,7 @@ function App() {
               <div className={`block-transition transition-${transitionState}`}></div>
               <Routes>
                 <Route index element={
-                  <HomePage onNavigateToProject={handleGoToProject}></HomePage>
+                  <HomePage onNavigateToProject={handleGoToProject} initialFilter={storedFilter}></HomePage>
                 } />
                 <Route path="project">
                   <Route path=":projectSlug" element={
