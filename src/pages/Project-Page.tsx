@@ -89,7 +89,7 @@ function ProjectPage({onNavigateBack}: ProjectPageProps) {
                             wide: true,
                             slideClass: showSlideAtSmall
                         }}
-                        media={project?.media}
+                        media={project?.media ?? []}
                     ></Slider>
                 </div>
 

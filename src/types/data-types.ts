@@ -1,11 +1,9 @@
-export type ViewportT = "mobile" | "wide";
-
 export type MediaT = {
   id: string;
   name?: string;
   url: string;
   alt: string;
-  viewport: ViewportT;
+  width: number; // generally 560, 1280, or 1920
 };
 
 export type TableRowT = {
@@ -38,18 +36,20 @@ export type ProjectT = {
   list: ProjectListT;
   detail?: ProjectDetailT;
   tags: TagT[];
-  media: MediaT[];
+  media?: MediaT[];
 };
 
 // Meant for Runtime Checks
+// TODO: this seems... awful?   hmm...
 export const projectHasDetails = (project: ProjectT): boolean => {
-  return (
+  return !!(
     !!project &&
     !!project.detail &&
     !!project.detail.title &&
     !!project.detail.time &&
     !!project.detail.role &&
     !!project.detail.type &&
+    project.media &&
     project.media.length > 0 &&
     project.detail.table.length > 0 &&
     project.detail.content.length > 0

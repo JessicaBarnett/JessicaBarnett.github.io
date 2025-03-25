@@ -639,28 +639,35 @@
           "name": "home page",
           "url": "/assets/projects/woodcraft-hp-med-2018.png",
           "alt": "Image of the woodcraft website",
-          "viewport": "mobile"
+          "width": 1280
         },
         {
           "id": "woodcraft-img-02",
           "name": "mobile",
           "url": "/assets/projects/woodcraft-hp-small-2018.png",
           "alt": "Image of the woodcraft website",
-          "viewport": "mobile"
+          "width": 560
         },
         {
           "id": "woodcraft-img-03",
           "name": "blog",
           "url": "/assets/projects/woodcraft-blog-wide-2018.png",
           "alt": "Image of the woodcraft website",
-          "viewport": "wide"
+          "width": 1920
         },
         {
           "id": "woodcraft-img-04",
           "name": "find a store",
           "url": "/assets/projects/woodcraft-findstore-wide-2018.png",
           "alt": "Image of the woodcraft website",
-          "viewport": "wide"
+          "width": 1920
+        },
+        {
+          "id": "woodcraft-img-05",
+          "name": "plp",
+          "url": "/assets/projects/woodcraft-plp-wide-2018.png",
+          "alt": "Image of the woodcraft website",
+          "width": 1920
         }
       ]
     },

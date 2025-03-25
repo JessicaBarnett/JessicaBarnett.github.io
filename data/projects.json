@@ -52,7 +52,10 @@
                 "name": "home page",
                 "url": "/assets/projects/woodcraft-hp-med-2018.png",
                 "alt": "Image of the woodcraft website",
-                "viewport": "mobile"
+                "dimensions": {
+                  "w": 1422,
+                  "h": 8192
+                }
               },
               {
                 "id": "woodcraft-img-02",
