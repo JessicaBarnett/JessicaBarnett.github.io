@@ -680,6 +680,11 @@ em {
     opacity: 10%;
   }
 }
+@media (min-width: 769px) {
+  .background {
+    margin-top: 8px;
+  }
+}
 
 /********************
    PAGE

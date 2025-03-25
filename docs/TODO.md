@@ -37,9 +37,10 @@ Then a real release!!
 
 
 WIP
-- put mobile images in regular slider on mobile viewports to save space ***
-- content gen script
-- content writing + image gathering
+- (high priority) put mobile images in regular slider on mobile viewports to save space ***
+- (high priority) storybook link is boken (deployment fix needed!!)
+- (mid priority) content gen script
+- (mid priority) content writing + image gathering
 
 BUGS
 - Fix weird button seam task would be a nice to have too (use clip-path)

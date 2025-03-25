@@ -23,6 +23,10 @@
       opacity: $drk-paper-texture-opacity;
     }
   }
+
+  @include only-above($medium-bp) {
+    margin-top: 8px;
+  }
 }
 
 /********************
