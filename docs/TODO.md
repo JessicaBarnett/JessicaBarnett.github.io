@@ -20,6 +20,7 @@
 - add a key to the table rows on project page
 - Reorg type for projects AGAIN >_<
 - add html sanitizer and render html content
+- storybook link is boken (since I have a docs folder, renaming storybook-static to docs wasn't working.  renaming it to storybook instead, and changing links. )
 
 -----------------------------------------
 # In progress
@@ -38,7 +39,6 @@ Then a real release!!
 
 WIP
 - (high priority) put mobile images in regular slider on mobile viewports to save space ***
-- (high priority) storybook link is boken (deployment fix needed!!)
 - (mid priority) content gen script
 - (mid priority) content writing + image gathering
 
