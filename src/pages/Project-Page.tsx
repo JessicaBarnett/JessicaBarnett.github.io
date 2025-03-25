@@ -5,12 +5,12 @@ import Slider from "@src/components/Slider.tsx";
 import Table from "@src/components/Table";
 import ProjectTitle from "@src/components/ProjectTitle";
 import { useProjectPageLines } from "@src/hooks/useProjectPageLines";
-import { ProjectDetailsT, projectHasDetails, ProjectT } from "@src/types/data-types";
+import { projectHasDetails, ProjectT } from "@src/types/data-types";
 import { RewindIcon } from "@src/icons/RewindIcon";
 
 
-const findDetailedProjectBySlug = (projects: (ProjectDetailsT | ProjectT)[], slug: string = ''): ProjectDetailsT => {
-    const match = projects.find(project => project.slug === slug && projectHasDetails(project)) as ProjectDetailsT;
+const findDetailedProjectBySlug = (projects: (ProjectT)[], slug: string = ''): ProjectT => {
+    const match = projects.find(project => project.slug === slug && projectHasDetails(project)) as ProjectT;
     return match;
 }
 
@@ -44,14 +44,13 @@ function ProjectPage({onNavigateBack}: ProjectPageProps) {
             contentRef,
         }
     );
-
     useLayoutEffect(() => {
         // do once on page load/navigation
         const navHeight = document.getElementById('nav')?.clientHeight ?? 0;
         window.scrollTo({ top: -(navHeight), behavior: 'instant' });
     }, [])
 
-    return project && (
+    return project && project.detail && (
         <div ref={pageRef} className='page'>
             <canvas id="canvas" ref={canvasRef} height="100%" width="100%"></canvas>
 
@@ -61,7 +60,7 @@ function ProjectPage({onNavigateBack}: ProjectPageProps) {
 
             <section ref={ttlRef} className="triangle-right">
                 <div className="h-centered v-spaced">
-                    <ProjectTitle project={project} />
+                    <ProjectTitle title={project.detail.title} subtitle={project.detail.subtitle} />
                 </div>
             </section>
 
@@ -69,11 +68,11 @@ function ProjectPage({onNavigateBack}: ProjectPageProps) {
                 <div className="h-centered v-spaced">
                     <dl>
                         <dt>Role: </dt>
-                        <dd>{project.role}</dd>
+                        <dd>{project.detail.role}</dd>
                         <dt>Time: </dt>
-                        <dd>{project.time}</dd>
+                        <dd>{project.detail.time}</dd>
                         <dt>Type: </dt>
-                        <dd>{project.type}</dd>
+                        <dd>{project.detail.type}</dd>
                     </dl>
                 </div>
 
@@ -81,21 +80,22 @@ function ProjectPage({onNavigateBack}: ProjectPageProps) {
                     <Slider
                         name="wide-images"
                         options={{ wide: true }}
-                        media={project?.media?.filter((p) => p.viewport === "wide") ?? []}
+                        media={project?.media?.filter((m) => m.viewport === "wide") ?? []}
                     ></Slider>
                 </div>
 
                 <div className="h-centered v-spaced" ref={contentRef}>
-                    {project.content.map((content, idx) => {
+                    {/* TODO: Refactor this, since I now have HTML to use instead */}
+                    {/* {project.detail.content.map((content, idx) => {
                         return (
                             <>
                                 {idx === 0 && (
-                                    <div className="left">
-                                        <Table data={project.table}></Table>
+                                    <div key={content.heading} className="left">
+                                        <Table data={project.detail.table}></Table>
                                     </div>
                                 )}
                                 {idx === 1 && (
-                                    <div className="right">
+                                    <div key={content.heading} className="right">
                                         <Slider
                                             name="mobile-images"
                                             options={{ mobile: true }}
@@ -103,11 +103,11 @@ function ProjectPage({onNavigateBack}: ProjectPageProps) {
                                         ></Slider>
                                     </div>
                                 )}
-                                <h4 className="clear">{content.heading}</h4>
-                                {content.paragraphs.map((paragraph) => (<p>{paragraph}</p>))}
+                                <h4 key={content.heading} className="clear">{content.heading}</h4>
+                                {content.paragraphs.map((paragraph) => (<p key={`${content.heading}-${paragraph.slice(0, 10).replace(/\W/g, '')}`}>{paragraph}</p>))}
                             </>
                         )
-                    })}
+                    })} */}
                 </div>
             </section>
         </div>

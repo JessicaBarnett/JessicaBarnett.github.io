@@ -9,7 +9,7 @@ function Table({ data }: TableComponentProps) {
         <table className="stack-table">
             <tbody>
                 {data.map((row) => (
-                    <tr>
+                    <tr key={row.heading}>
                         <th>{row.heading}</th>
                         <td>{row.value}</td>
                     </tr>

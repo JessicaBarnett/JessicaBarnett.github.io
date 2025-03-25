@@ -1,81 +1,85 @@
 export type ViewportT = "mobile" | "wide";
 
 export type MediaT = {
-    id: string,
-    name?: string,
-    url: string,
-    alt: string,
-    viewport: ViewportT
-}
+  id: string;
+  name?: string;
+  url: string;
+  alt: string;
+  viewport: ViewportT;
+};
 
 export type ContentT = {
-    heading: string,
-    paragraphs: string[]
-}
+  id: string;
+  heading: string;
+  paragraphs: string[];
+};
 
 export type TableRowT = {
-    heading: string,
-    value: string
-}
+  heading: string;
+  value: string;
+};
 
 export type TagT = {
-    displayName?: string,
-    name: string
+  displayName?: string;
+  name: string;
 };
 
+export type ProjectListT = {
+  title: string;
+  description: string;
+};
+export type ProjectDetailT = {
+  title: string;
+  subtitle: string;
+  role: string;
+  time: string;
+  type: string;
+  table: TableRowT[];
+  content: ContentT[];
+};
 export type ProjectT = {
-    id: string,
-    slug: string,
-    listTitle: string,
-    description: string,
-    company: string,
-    tags: TagT[],
+  id: string;
+  slug: string;
+  company: string;
+  list: ProjectListT;
+  detail?: ProjectDetailT;
+  tags: TagT[];
+  media: MediaT[];
 };
-
-export type ProjectTitlesT = {
-    title: string,
-    subtitle?: string
-}
-
-export type ProjectDetailsT = ProjectT & ProjectTitlesT & {
-    role: string,
-    time: string,
-    type: string,
-    media: MediaT[],
-    table: TableRowT[]
-    content: ContentT[]
-}
 
 // Meant for Runtime Checks
-export const projectHasDetails = (project: ProjectT | ProjectDetailsT ): boolean => {
-    return project &&
-      !!(project as ProjectDetailsT).title &&
-      !!(project as ProjectDetailsT).time &&
-      !!(project as ProjectDetailsT).role &&
-      !!(project as ProjectDetailsT).type &&
-      (project as ProjectDetailsT).media.length > 0 &&
-      (project as ProjectDetailsT).table.length > 0 &&
-      (project as ProjectDetailsT).content.length > 0; // &&
-    //   false; // TODO: remove when project details is finalized
-}
+export const projectHasDetails = (project: ProjectT): boolean => {
+  return (
+    !!project &&
+    !!project.detail &&
+    !!project.detail.title &&
+    !!project.detail.time &&
+    !!project.detail.role &&
+    !!project.detail.type &&
+    project.media.length > 0 &&
+    project.detail.table.length > 0 &&
+    project.detail.content.length > 0
+  ); // &&
+  //   return false;
+};
 
 export type FilterT = {
-    displayName: string,
-    name: string,
-    tags: TagT[]
+  displayName: string;
+  name: string;
+  tags: TagT[];
 };
 
 export type ExperienceEntryT = {
-    id: string,
-    title: string,
-    company: string,
-    start: string,
-    end: string,
-    tags: TagT[]
+  id: string;
+  title: string;
+  company: string;
+  start: string;
+  end: string;
+  tags: TagT[];
 };
 
 export type DataT = {
-    filters: FilterT[],
-    projects: ProjectT[],
-    experience: ExperienceEntryT[]
-}
+  filters: FilterT[];
+  projects: ProjectT[];
+  experience: ExperienceEntryT[];
+};

@@ -16,9 +16,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    project: {
-      title: 'Project Title',
-      subtitle: 'and also a subtitle yay',
-    }
+    title: 'Project Title',
+    subtitle: 'and also a subtitle yay',
   }
 };

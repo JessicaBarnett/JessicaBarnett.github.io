@@ -15,21 +15,27 @@
   - nav bar from projects
 - Mobile Tweaks
 - fixes to get the build out (3/24)
-
+- Maintain scroll position after coming back from projects
+- Maintain filters during navigation
+- Style "More Info" Link  (lit. just add a class)
+- add a key to the table rows on project page
 
 -----------------------------------------
 # In progress
 -----------------------------------------
 
-- Maintain scroll position after coming back from projects
-- Maintain filters during navigation
+- on filter select change, scroll jumps.  Should not.  fix me!
 
------------------------------------------
-# Before Next Launch!!
------------------------------------------
+- Reorg type for projects AGAIN >_<
+- add html sanitizer and render html content
 
-- finish woodcraft content
-- polish last issues with more-projcet-info page
+- work on content-json-generator script (big effort, but needs to be done before I start adding content for real)
+- remove projects from data.json and use projects.json in useProjects hook
+
+
+
+- Fix weird button seam
+- write content
 
 -----------------------------------------
 # ToDos
@@ -41,9 +47,9 @@
 - Write content for other projects!!
 
 ## Small fixes
-- Style "More Info" Link  (lit. just add a class)
 
 ## Med Fixes
+- use clip mask instead of pseudos for vhs tabs
 - search params for filters
 - Mobile Audit
 - Dark mode audit

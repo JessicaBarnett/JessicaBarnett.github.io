@@ -14,11 +14,11 @@ type ProjectComponentProps = {
 const Project = ({project, selectedTags, onTagSelect, onMoreInfoClick}: ProjectComponentProps) => {
   return (
     <li className="v-spaced">
-      <h5 className="title-3">{project.listTitle}</h5>
+      <h5 className="title-3">{project.list.title}</h5>
       <p>
-        {project.description}
+        {project.list.description}
         { projectHasDetails(project) && onMoreInfoClick &&
-            <NavLink to={`/project/${project.slug}`} onClick={(e) => onMoreInfoClick(e, project)} viewTransition>more info</NavLink>
+            <NavLink className="link" to={`/project/${project.slug}`} onClick={(e) => onMoreInfoClick(e, project)} viewTransition>more info</NavLink>
         }
       </p>
 
