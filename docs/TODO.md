@@ -8,7 +8,6 @@
 -----------------------------------------
 
 - Fix scroll Positioning when selecting/deselecting filters!!
-
 - fix timing issues in page transitions!!
   - to projects
   - back btn from projects

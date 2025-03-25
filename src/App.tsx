@@ -1,5 +1,5 @@
 import "./App.css";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 // Nav
 import HomePage from "@src/pages/Home-Page";
