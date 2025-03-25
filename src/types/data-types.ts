@@ -8,12 +8,6 @@ export type MediaT = {
   viewport: ViewportT;
 };
 
-export type ContentT = {
-  id: string;
-  heading: string;
-  paragraphs: string[];
-};
-
 export type TableRowT = {
   heading: string;
   value: string;
@@ -35,7 +29,7 @@ export type ProjectDetailT = {
   time: string;
   type: string;
   table: TableRowT[];
-  content: ContentT[];
+  content: string; // html generated from markdown
 };
 export type ProjectT = {
   id: string;

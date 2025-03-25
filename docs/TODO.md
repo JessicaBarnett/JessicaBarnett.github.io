@@ -19,15 +19,15 @@
 - Maintain filters during navigation
 - Style "More Info" Link  (lit. just add a class)
 - add a key to the table rows on project page
+- Reorg type for projects AGAIN >_<
+- add html sanitizer and render html content
 
 -----------------------------------------
 # In progress
 -----------------------------------------
 
 - on filter select change, scroll jumps.  Should not.  fix me!
-
-- Reorg type for projects AGAIN >_<
-- add html sanitizer and render html content
+- put mobile images in regular slider on mobile viewports to save space ***
 
 - work on content-json-generator script (big effort, but needs to be done before I start adding content for real)
 - remove projects from data.json and use projects.json in useProjects hook

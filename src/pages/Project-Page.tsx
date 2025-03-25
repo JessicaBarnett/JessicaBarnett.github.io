@@ -1,3 +1,4 @@
+import DOMPurify from 'dompurify';
 import { useLayoutEffect, useRef, useState } from "react";
 import { NavLink, useParams } from "react-router";
 import { useProjects } from "@src/hooks/static/useProjects.ts";
@@ -7,7 +8,6 @@ import ProjectTitle from "@src/components/ProjectTitle";
 import { useProjectPageLines } from "@src/hooks/useProjectPageLines";
 import { projectHasDetails, ProjectT } from "@src/types/data-types";
 import { RewindIcon } from "@src/icons/RewindIcon";
-
 
 const findDetailedProjectBySlug = (projects: (ProjectT)[], slug: string = ''): ProjectT => {
     const match = projects.find(project => project.slug === slug && projectHasDetails(project)) as ProjectT;
@@ -85,29 +85,19 @@ function ProjectPage({onNavigateBack}: ProjectPageProps) {
                 </div>
 
                 <div className="h-centered v-spaced" ref={contentRef}>
-                    {/* TODO: Refactor this, since I now have HTML to use instead */}
-                    {/* {project.detail.content.map((content, idx) => {
-                        return (
-                            <>
-                                {idx === 0 && (
-                                    <div key={content.heading} className="left">
-                                        <Table data={project.detail.table}></Table>
-                                    </div>
-                                )}
-                                {idx === 1 && (
-                                    <div key={content.heading} className="right">
-                                        <Slider
-                                            name="mobile-images"
-                                            options={{ mobile: true }}
-                                            media={project?.media?.filter((p) => p.viewport === "mobile") ?? []}
-                                        ></Slider>
-                                    </div>
-                                )}
-                                <h4 key={content.heading} className="clear">{content.heading}</h4>
-                                {content.paragraphs.map((paragraph) => (<p key={`${content.heading}-${paragraph.slice(0, 10).replace(/\W/g, '')}`}>{paragraph}</p>))}
-                            </>
-                        )
-                    })} */}
+                    <div className="left">
+                        <Table data={project.detail.table}></Table>
+                    </div>
+                    <div className="right">
+                        <Slider
+                            name="mobile-images"
+                            options={{ mobile: true }}
+                            media={project?.media?.filter((p) => p.viewport === "mobile") ?? []}
+                        ></Slider>
+                    </div>
+                    <div dangerouslySetInnerHTML={{
+                        __html: DOMPurify.sanitize(project.detail.content),
+                    }}></div>
                 </div>
             </section>
         </div>
