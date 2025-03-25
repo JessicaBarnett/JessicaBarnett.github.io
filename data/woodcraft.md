@@ -23,22 +23,26 @@
     - Javascript: JQuery, JQueryUi, LoDash, SlickSlider, Vue
     - Database: MongoDb
 - media:
-    - tablet home page:
+    - tablet home:
         - url: /assets/projects/woodcraft-hp-med-2018.png
         - alt: Image of the woodcraft home page on a mid-sized screen
-        - viewport: mobile
-    - mobile home page:
+        - width: 1280
+    - mobile home:
         - url: /assets/projects/woodcraft-hp-small-2018.png
         - alt: Image of the woodcraft website
-        - viewport: mobile
-    - desktop blog page:
+        - width: 560
+    - desktop blog:
         - url: /assets/projects/woodcraft-blog-wide-2018.png
         - alt: Image of the woodcraft website
-        - viewport: wide
+        - width: 1920
     - desktop find-a-store page:
         - url: /assets/projects/woodcraft-findstore-wide-2018.png
         - alt: Image of the woodcraft website
-        - viewport: wide
+        - width: 1920
+    - desktop product list
+        - url: /assets/projects/woodcraft-plp-wide-2018.png
+        - alt: Image of the woodcraft website
+        - width: 1920
 - content:
 
 #### Making Wood Work

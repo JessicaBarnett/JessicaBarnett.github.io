@@ -15,7 +15,7 @@ const findDetailedProjectBySlug = (projects: (ProjectT)[], slug: string = ''): P
 }
 
 const showSlideAtSmall = (media: MediaT): string | void => {
-    if (media.viewport === 'mobile') {
+    if (media.width <= 560 ) {
         return 'visible-at-small'
     }
 }
@@ -104,7 +104,7 @@ function ProjectPage({onNavigateBack}: ProjectPageProps) {
                                 tall: true,
                                 sliderClass: 'hidden-at-small'
                             }}
-                            media={project?.media?.filter((p) => p.viewport === 'mobile') ?? []}
+                            media={project?.media?.filter((p) => p.width <= 1280) ?? []}
                         ></Slider>
                     </div>
                     <div dangerouslySetInnerHTML={{
