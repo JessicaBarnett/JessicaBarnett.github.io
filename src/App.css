@@ -1170,7 +1170,19 @@ p {
   }
 }
 
-.slider-mobile {
+@media (max-width: 560px) {
+  .hidden-at-small {
+    display: none;
+  }
+}
+
+@media (min-width: 560px) {
+  .visible-at-small {
+    display: none;
+  }
+}
+
+.slider-tall {
   aspect-ratio: 1/2;
 }
 

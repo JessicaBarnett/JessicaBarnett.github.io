@@ -6,8 +6,10 @@ import { FastForwardIcon } from "@src/icons/FastForwardIcon.tsx";
 import Dialog from "./Dialog";
 
 export type SliderOptions = {
-    mobile?: boolean,
+    tall?: boolean,
     wide?: boolean,
+    sliderClass?: string,
+    slideClass?: string | ((media: MediaT) => string | void)
 };
 
 export type SliderComponentProps = {
@@ -47,7 +49,6 @@ const Slider = ({ media, options}: SliderComponentProps) => {
     const [selectedSlide, setSelectedSlide] = useState<MediaT>(media[0]);
     const [selectedSlideIdx, setSelectedSlideIdx] = useState<number>(0);
     const [selectedSlideHeight, setSelectedSlideHeight] = useState<number | null>(null);
-
 
     const [offset, setOffset] = useOffsetState(sliderTrackRef); // determines which slide is shown (a translate-x px value)
 
@@ -99,8 +100,9 @@ const Slider = ({ media, options}: SliderComponentProps) => {
     const sliderClasses = [
         'slider',
         isExpanded ? 'slider-expanded' : '',
-        options?.mobile ? 'slider-mobile' : '',
-        options?.wide ? 'slider-wide' : ''
+        options?.tall ? 'slider-tall' : '',
+        options?.wide ? 'slider-wide' : '',
+        options?.sliderClass
     ].join(' ');
 
     if (media.length < 0) {  return; }
@@ -145,7 +147,9 @@ const Slider = ({ media, options}: SliderComponentProps) => {
                         {media.map((slide: MediaT) => (
                             <img
                                 key={`${slide.id}-img`}
-                                className='slider-image'
+                                className={`slider-image ${
+                                    options?.slideClass && options?.slideClass instanceof Function ? options?.slideClass(slide) : options?.slideClass
+                                }`}
                                 src={slide.url}
                                 alt={slide.alt}
                                 style={{

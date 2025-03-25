@@ -26,16 +26,26 @@
 # In progress
 -----------------------------------------
 
-- on filter select change, scroll jumps.  Should not.  fix me!
+NOTE FOR TOMORROW:
+Working on *showing the mobile slides in the main slider on mobile only*
+I'm thinking doing this by filtering slides out would be better, since it'll hide all the ui buttons for that slide as well (which just adding a class to the image does not).  That's probably what I'll do first thing tomorrow.
+
+Also need to look at the mechanism controlling heights... it's stretching images weirdly and it cannot stand
+
+Content Gen Script will be the next big task.
+Then writing content and getting images
+Then a real release!!
+
+
+WIP
 - put mobile images in regular slider on mobile viewports to save space ***
+- content gen script
+- content writing + image gathering
 
-- work on content-json-generator script (big effort, but needs to be done before I start adding content for real)
-- remove projects from data.json and use projects.json in useProjects hook
+BUGS
+- Fix weird button seam task would be a nice to have too (use clip-path)
+- on filter select change, scroll jumps.  Should not.  fix me!
 
-
-
-- Fix weird button seam
-- write content
 
 -----------------------------------------
 # ToDos

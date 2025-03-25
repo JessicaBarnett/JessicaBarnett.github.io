@@ -5,7 +5,7 @@ import { useLayoutEffect, useRef, useState } from "react";
 import HomePage from "@src/pages/Home-Page";
 import Navigation from "@src/components/Navigation.tsx";
 import ProjectPage from "./pages/Project-Page";
-import { FilterT, ProjectDetailsT, ProjectT, projectHasDetails } from "@src/types/data-types";
+import { FilterT, ProjectT, projectHasDetails } from "@src/types/data-types";
 import { Route, Routes, useNavigate } from "react-router";
 import { wait } from "./utils/util";
 
@@ -93,7 +93,7 @@ function App() {
     resetTransition();
   }
 
-  const handleGoToProject = async (e: React.MouseEvent, project: ProjectT | ProjectDetailsT, filter: FilterT | null | undefined) => {
+  const handleGoToProject = async (e: React.MouseEvent, project: ProjectT, filter: FilterT | null | undefined) => {
     // make sure this project has a details page to go to first
     if (!projectHasDetails(project)) {   return; }
 

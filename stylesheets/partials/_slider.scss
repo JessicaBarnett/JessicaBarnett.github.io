@@ -38,7 +38,19 @@ $slider-dot-btn-diameter: .8rem;
     }
 }
 
-.slider-mobile {
+.hidden-at-small {
+    @include only-below($small-bp) {
+        display: none;
+    }
+}
+
+.visible-at-small {
+    @include only-above($small-bp) {
+        display: none;
+    }
+}
+
+.slider-tall {
     aspect-ratio: 1/2;
 }
 

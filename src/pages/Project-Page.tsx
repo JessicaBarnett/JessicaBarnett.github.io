@@ -6,12 +6,18 @@ import Slider from "@src/components/Slider.tsx";
 import Table from "@src/components/Table";
 import ProjectTitle from "@src/components/ProjectTitle";
 import { useProjectPageLines } from "@src/hooks/useProjectPageLines";
-import { projectHasDetails, ProjectT } from "@src/types/data-types";
+import { MediaT, projectHasDetails, ProjectT } from "@src/types/data-types";
 import { RewindIcon } from "@src/icons/RewindIcon";
 
 const findDetailedProjectBySlug = (projects: (ProjectT)[], slug: string = ''): ProjectT => {
     const match = projects.find(project => project.slug === slug && projectHasDetails(project)) as ProjectT;
     return match;
+}
+
+const showSlideAtSmall = (media: MediaT): string | void => {
+    if (media.viewport === 'mobile') {
+        return 'visible-at-small'
+    }
 }
 
 type ProjectPageProps = {
@@ -79,8 +85,11 @@ function ProjectPage({onNavigateBack}: ProjectPageProps) {
                 <div className="h-centered v-spaced" ref={bannerRef}>
                     <Slider
                         name="wide-images"
-                        options={{ wide: true }}
-                        media={project?.media?.filter((m) => m.viewport === "wide") ?? []}
+                        options={{
+                            wide: true,
+                            slideClass: showSlideAtSmall
+                        }}
+                        media={project?.media}
                     ></Slider>
                 </div>
 
@@ -91,8 +100,11 @@ function ProjectPage({onNavigateBack}: ProjectPageProps) {
                     <div className="right">
                         <Slider
                             name="mobile-images"
-                            options={{ mobile: true }}
-                            media={project?.media?.filter((p) => p.viewport === "mobile") ?? []}
+                            options={{
+                                tall: true,
+                                sliderClass: 'hidden-at-small'
+                            }}
+                            media={project?.media?.filter((p) => p.viewport === 'mobile') ?? []}
                         ></Slider>
                     </div>
                     <div dangerouslySetInnerHTML={{
