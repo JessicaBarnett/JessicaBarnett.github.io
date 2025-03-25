@@ -210,7 +210,7 @@ function HomePage({onNavigateToProject, initialFilter}: HomePageComponentProps) 
                   source code
                 </a>{" "}
                 and{" "}
-                <a className="link" href="/docs/index" target="_blank">
+                <a className="link" href="/storybook/index" target="_blank">
                   storybook!
                 </a>
               </p>
