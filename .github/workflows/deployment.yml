@@ -39,7 +39,7 @@ jobs:
       - name: Build
         run: npm run build
       - run: npm run build-storybook
-      - run: mv ./storybook-static ./dist/docs
+      - run: mv ./storybook-static ./dist/storybook
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
