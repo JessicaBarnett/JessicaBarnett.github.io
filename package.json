@@ -11,9 +11,9 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "cssVars": "node ./scripts/shareCssVars.cjs",
+    "genCssVars": "node ./scripts/genCssVars.cjs",
     "genIcons": "node ./scripts/genIconComponents.cjs",
-    "genMarkdown": "node ./scripts/genMarkdown.cjs"
+    "genProjects": "node ./scripts/genProjects.cjs"
   },
   "dependencies": {
     "dompurify": "^3.2.4",

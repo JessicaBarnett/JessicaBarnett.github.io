@@ -32,3 +32,4 @@ dist-ssr
 *storybook.log
 storybook-static/*
 src/stories/ref*
+.notes/*
