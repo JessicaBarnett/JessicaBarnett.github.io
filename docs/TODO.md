@@ -2,6 +2,18 @@
 # Stream of consciousness
 -----------------------------------------
 
+so, this slide height thing...
+
+the goal is to make it so there isn't any excess space at the bottom of the slide.  So every time a slide is selected, the height of the images (not the image containers... why did I do that?) changes to match the selected slide's height.
+
+it's... weird...
+
+ok, so revisiting it maybe.  I need this thing to...
+1) display extremely tall and short images
+2) hide/show individual images (and controls) without breaking the rest of it
+  - use breakpoints in js to change what items get passed in?
+  - render a separate slider just for below small bps (def easiest, but could have perf issues?)
+
 
 -----------------------------------------
 # Done (recently)

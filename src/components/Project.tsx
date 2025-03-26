@@ -18,7 +18,7 @@ const Project = ({project, selectedTags, onTagSelect, onMoreInfoClick}: ProjectC
       <p>
         {project.list.description}
         { projectHasDetails(project) && onMoreInfoClick &&
-            <NavLink className="link" to={`/project/${project.slug}`} onClick={(e) => onMoreInfoClick(e, project)} viewTransition>more info</NavLink>
+            <NavLink className="more-info-link" to={`/project/${project.slug}`} onClick={(e) => onMoreInfoClick(e, project)} viewTransition>more info</NavLink>
         }
       </p>
 

@@ -52,8 +52,7 @@ export const projectHasDetails = (project: ProjectT): boolean => {
     project.media &&
     project.media.length > 0 &&
     project.detail.table.length > 0 &&
-    project.detail.content.length > 0 &&
-    false
+    project.detail.content.length > 0 // && false
   );
 };
 

@@ -6,18 +6,12 @@ import Slider from "@src/components/Slider.tsx";
 import Table from "@src/components/Table";
 import ProjectTitle from "@src/components/ProjectTitle";
 import { useProjectPageLines } from "@src/hooks/useProjectPageLines";
-import { MediaT, projectHasDetails, ProjectT } from "@src/types/data-types";
+import { projectHasDetails, ProjectT } from "@src/types/data-types";
 import { RewindIcon } from "@src/icons/RewindIcon";
 
 const findDetailedProjectBySlug = (projects: (ProjectT)[], slug: string = ''): ProjectT => {
     const match = projects.find(project => project.slug === slug && projectHasDetails(project)) as ProjectT;
     return match;
-}
-
-const showSlideAtSmall = (media: MediaT): string | void => {
-    if (media.width <= 560 ) {
-        return 'visible-at-small'
-    }
 }
 
 type ProjectPageProps = {
@@ -83,11 +77,22 @@ function ProjectPage({onNavigateBack}: ProjectPageProps) {
                 </div>
 
                 <div className="h-centered v-spaced" ref={bannerRef}>
+                    {/* TODO: there are potentially perf issues with having multiple sliders.
+                        Would perhaps be better to have one slider with hide-able slides? */}
                     <Slider
                         name="wide-images"
                         options={{
                             wide: true,
-                            slideClass: showSlideAtSmall
+                            sliderClass: 'hidden-at-small'
+                        }}
+                        media={project?.media?.filter((p) => p.width > 1280) ?? []}
+                    ></Slider>
+
+                    <Slider
+                        name="all-images"
+                        options={{
+                            wide: true,
+                            sliderClass: 'visible-at-small'
                         }}
                         media={project?.media ?? []}
                     ></Slider>

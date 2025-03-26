@@ -9,7 +9,6 @@ export type SliderOptions = {
     tall?: boolean,
     wide?: boolean,
     sliderClass?: string,
-    slideClass?: string | ((media: MediaT) => string | void)
 };
 
 export type SliderComponentProps = {
@@ -18,18 +17,26 @@ export type SliderComponentProps = {
     name: string;
 };
 
+function useSlideWidthState(sliderName: string): [number, () => void] {
+    const [slideWidth, setSlideWidth] = useState(0);
+
+    const handleSetSlideWidth = (): void => {
+        const sliderContentEl = document.querySelector(`#slider-${sliderName} .slider-contents`);
+        if (sliderContentEl) {
+            setSlideWidth(sliderContentEl.clientWidth);
+        }
+    }
+
+    return [slideWidth, handleSetSlideWidth];
+}
+
 // Private Hooks
-function useOffsetState(sliderTrackRef: React.MutableRefObject<HTMLDivElement | null>): [number, (idx: number) => void] {
+function useOffsetState(slideWidth: number): [number, (idx: number) => void] {
     const [offset, setOffset] = useState(0);
-    const getSlideWidth = (): number =>
-        sliderTrackRef &&
-            sliderTrackRef.current &&
-            sliderTrackRef.current.children.length
-            ? sliderTrackRef.current.children[0].clientWidth
-            : 0;
 
     const handleSetOffset = (idx: number): void => {
-        setOffset(-1 * (idx * getSlideWidth()));
+        if (window['jb_debug'] === true) { debugger }
+        setOffset(-1 * (idx * slideWidth));
     }
 
     return [offset, handleSetOffset];
@@ -37,7 +44,7 @@ function useOffsetState(sliderTrackRef: React.MutableRefObject<HTMLDivElement | 
 
 // Component
 
-const Slider = ({ media, options}: SliderComponentProps) => {
+const Slider = ({ media, options, name}: SliderComponentProps) => {
      // determines whether the expanded dialog is open
     const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
@@ -49,8 +56,8 @@ const Slider = ({ media, options}: SliderComponentProps) => {
     const [selectedSlide, setSelectedSlide] = useState<MediaT>(media[0]);
     const [selectedSlideIdx, setSelectedSlideIdx] = useState<number>(0);
     const [selectedSlideHeight, setSelectedSlideHeight] = useState<number | null>(null);
-
-    const [offset, setOffset] = useOffsetState(sliderTrackRef); // determines which slide is shown (a translate-x px value)
+    const [slideWidth, setSlideWidth] = useSlideWidthState(name);
+    const [offset, setOffset] = useOffsetState(slideWidth); // determines which slide is shown (a translate-x px value)
 
     const calculateImageHeight = (imageEl: HTMLImageElement) => {
         if (sliderContentsRef && sliderContentsRef.current) {
@@ -91,11 +98,12 @@ const Slider = ({ media, options}: SliderComponentProps) => {
     useLayoutEffect(() => {
         requestAnimationFrame(() => {
             scrollToTop();
+            setSlideWidth();
             setOffset(selectedSlideIdx);
             const img = sliderTrackRef.current?.children[selectedSlideIdx] as HTMLImageElement;
             setSelectedSlideHeight(calculateImageHeight(img));
         })
-    }, [selectedSlideIdx, setOffset])
+    }, [selectedSlideIdx, setOffset, setSlideWidth])
 
     const sliderClasses = [
         'slider',
@@ -147,13 +155,11 @@ const Slider = ({ media, options}: SliderComponentProps) => {
                         {media.map((slide: MediaT) => (
                             <img
                                 key={`${slide.id}-img`}
-                                className={`slider-image ${
-                                    options?.slideClass && options?.slideClass instanceof Function ? options?.slideClass(slide) : options?.slideClass
-                                }`}
                                 src={slide.url}
                                 alt={slide.alt}
                                 style={{
-                                    height: selectedSlideHeight ? `${selectedSlideHeight}px` : 'auto'
+                                    height: selectedSlideHeight ? `${selectedSlideHeight}px` : 'auto',
+                                    width: slideWidth ? `${slideWidth}px` : 'auto',
                                 }}
                             ></img>
                         ))}

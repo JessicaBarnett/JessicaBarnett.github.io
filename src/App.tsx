@@ -7,7 +7,7 @@ import Navigation from "@src/components/Navigation.tsx";
 import ProjectPage from "./pages/Project-Page";
 import { FilterT, ProjectT, projectHasDetails } from "@src/types/data-types";
 import { Route, Routes, useNavigate } from "react-router";
-import { wait } from "./utils/util";
+import { wait, scrollToId } from "./utils/util";
 
 function App() {
   const [scrollPos, setScrollPos] = useState<number>(0);
@@ -52,29 +52,9 @@ function App() {
     return matchObj !== null ? matchObj[1] : null;
   }
 
-  const scrollToId = (id: string) => {
-    let scrollToElement = id ? document.getElementById(id) : null;
-    if (scrollToElement !== null) {
-        window.scrollTo({
-            top: scrollToElement.offsetTop - 55,
-            left: 0,
-            behavior: 'smooth'
-        });
-    } else {
-        setTimeout(() => {
-            scrollToElement = document.getElementById(id);
-            if (scrollToElement !== null) {
-                window.scrollTo({
-                    top: scrollToElement.offsetTop - 55,
-                    left: 0,
-                    behavior: 'smooth'
-                });
-            }
-        }, 50)
-    }
-  }
-
   // *** NAVIGATION EVENTS *** //
+
+  // TODO: Navigation utils file?  I really shouldnt have to prop drill a "scroll to id" function
 
   const handleNavigateToMain = async (e: React.MouseEvent) => {
     const linkEl = getLinkElFromNavEvt(e);
@@ -89,7 +69,7 @@ function App() {
     }
 
     navigate('/');
-    scrollToId(navLinkId);
+    scrollToId(e, navLinkId);
     resetTransition();
   }
 
