@@ -31,30 +31,19 @@ there's some resize issues.  I think the useOffset hook is calculating the width
 - storybook link is boken (since I have a docs folder, renaming storybook-static to docs wasn't working.  renaming it to storybook instead, and changing links. )
 - links in about section were not smooth scrolling (moved the scrollToId fn to a reusable util file to avoid prop drilling and fix this)
 - project page: added a mobile-only slider, and made the existing sliders med+ only
+- slider: half-fix for weird height-fixing issues.  I'm just not doing the height fixing on the mobile-only slider (the one having the issues because the images are so drastically different in height)
+- on filter select change (not via tag clicks), scroll should not change!! right now it does!
 
 -----------------------------------------
 # In progress
 -----------------------------------------
-
-NOTE FOR TOMORROW:
-Working on *showing the mobile slides in the main slider on mobile only*
-I'm thinking doing this by filtering slides out would be better, since it'll hide all the ui buttons for that slide as well (which just adding a class to the image does not).  That's probably what I'll do first thing tomorrow.
-
-Also need to look at the mechanism controlling heights... it's stretching images weirdly and it cannot stand
-
-Content Gen Script will be the next big task.
-Then writing content and getting images
-Then a real release!!
-
-
 WIP
-- (high priority) fix weird height issue with slider?
-- (mid priority) content gen script
-- (mid priority) content writing + image gathering
+- content gen script
+- content writing + image gathering
 
 BUGS
 - Fix weird button seam task would be a nice to have too (use clip-path)
-- on filter select change (not via tag clicks), scroll should not change!! right now it does!
+
 
 
 -----------------------------------------

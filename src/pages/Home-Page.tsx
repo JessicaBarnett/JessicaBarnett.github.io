@@ -105,6 +105,9 @@ function HomePage({onNavigateToProject, initialFilter}: HomePageComponentProps) 
     const t2 = getFilterYOffset(clickedFilter);
     const dt = t1 - t2;
     const scrollPos = window.scrollY - dt;
+    // reset needed so that events on other elements (like the select box)
+    // don't trigger all this inadvertently.
+    setClickedFilter(null);
 
     window.scrollTo({
       top: scrollPos,
