@@ -8,11 +8,7 @@ the goal is to make it so there isn't any excess space at the bottom of the slid
 
 it's... weird...
 
-ok, so revisiting it maybe.  I need this thing to...
-1) display extremely tall and short images
-2) hide/show individual images (and controls) without breaking the rest of it
-  - use breakpoints in js to change what items get passed in?
-  - render a separate slider just for below small bps (def easiest, but could have perf issues?)
+there's some resize issues.  I think the useOffset hook is calculating the width (which defines the offsets) based on a skewed height?  maybe I need to take the natural height not the defined height?
 
 
 -----------------------------------------
@@ -33,6 +29,8 @@ ok, so revisiting it maybe.  I need this thing to...
 - Reorg type for projects AGAIN >_<
 - add html sanitizer and render html content
 - storybook link is boken (since I have a docs folder, renaming storybook-static to docs wasn't working.  renaming it to storybook instead, and changing links. )
+- links in about section were not smooth scrolling (moved the scrollToId fn to a reusable util file to avoid prop drilling and fix this)
+- project page: added a mobile-only slider, and made the existing sliders med+ only
 
 -----------------------------------------
 # In progress
@@ -50,13 +48,13 @@ Then a real release!!
 
 
 WIP
-- (high priority) put mobile images in regular slider on mobile viewports to save space ***
+- (high priority) fix weird height issue with slider?
 - (mid priority) content gen script
 - (mid priority) content writing + image gathering
 
 BUGS
 - Fix weird button seam task would be a nice to have too (use clip-path)
-- on filter select change, scroll jumps.  Should not.  fix me!
+- on filter select change (not via tag clicks), scroll should not change!! right now it does!
 
 
 -----------------------------------------

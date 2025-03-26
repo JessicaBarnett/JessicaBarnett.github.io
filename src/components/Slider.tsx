@@ -9,6 +9,7 @@ export type SliderOptions = {
     tall?: boolean,
     wide?: boolean,
     sliderClass?: string,
+    fixHeights?: boolean,
 };
 
 export type SliderComponentProps = {
@@ -35,7 +36,6 @@ function useOffsetState(slideWidth: number): [number, (idx: number) => void] {
     const [offset, setOffset] = useState(0);
 
     const handleSetOffset = (idx: number): void => {
-        if (window['jb_debug'] === true) { debugger }
         setOffset(-1 * (idx * slideWidth));
     }
 
@@ -158,8 +158,7 @@ const Slider = ({ media, options, name}: SliderComponentProps) => {
                                 src={slide.url}
                                 alt={slide.alt}
                                 style={{
-                                    height: selectedSlideHeight ? `${selectedSlideHeight}px` : 'auto',
-                                    width: slideWidth ? `${slideWidth}px` : 'auto',
+                                    height: options?.fixHeights && selectedSlideHeight ? `${selectedSlideHeight}px` : 'auto',
                                 }}
                             ></img>
                         ))}

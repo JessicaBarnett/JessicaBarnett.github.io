@@ -82,6 +82,7 @@ function ProjectPage({onNavigateBack}: ProjectPageProps) {
                     <Slider
                         name="wide-images"
                         options={{
+                            fixHeights: true,
                             wide: true,
                             sliderClass: 'hidden-at-small'
                         }}
@@ -106,6 +107,7 @@ function ProjectPage({onNavigateBack}: ProjectPageProps) {
                         <Slider
                             name="mobile-images"
                             options={{
+                                fixHeights: true,
                                 tall: true,
                                 sliderClass: 'hidden-at-small'
                             }}
