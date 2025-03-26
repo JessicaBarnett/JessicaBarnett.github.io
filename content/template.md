@@ -12,24 +12,24 @@
     - time:
     - type:
 - tags:
-    - Display (actual)
+    - Display (value)
 - table:
     - Heading: value
 - media:
     - image title
         - url: /assets/projects/filename.png
         - alt:
-        - viewport:
+        - width: 1920 | 1280 | 560
 - content:
 
-## Something Catchy
+#### Something Catchy
 
 your text here
 
-## Challenge
+#### Challenge
 
 more text here
 
-## Results
+#### Results
 
 final text here

@@ -1,3 +1,7 @@
+/*
+    This file is a dummy-data generator for testing and storybook
+ */
+
 import { ProjectT, TagT, ExperienceEntryT, FilterT, MediaT } from '../src/types/data-types.ts';
 
 // random positive integer between max and min

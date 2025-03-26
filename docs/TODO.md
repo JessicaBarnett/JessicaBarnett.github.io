@@ -1,18 +1,6 @@
------------------------------------------
-# Stream of consciousness
------------------------------------------
-
-so, this slide height thing...
-
-the goal is to make it so there isn't any excess space at the bottom of the slide.  So every time a slide is selected, the height of the images (not the image containers... why did I do that?) changes to match the selected slide's height.
-
-it's... weird...
-
-there's some resize issues.  I think the useOffset hook is calculating the width (which defines the offsets) based on a skewed height?  maybe I need to take the natural height not the defined height?
-
 
 -----------------------------------------
-# Done (recently)
+# Done
 -----------------------------------------
 
 - Fix scroll Positioning when selecting/deselecting filters!!
@@ -42,42 +30,33 @@ WIP
 - content writing + image gathering
 
 BUGS
-- Fix weird button seam task would be a nice to have too (use clip-path)
-
-
+- Fix weird button seam task would be a nice to have too (use clip-path instead of pseudos)
 
 -----------------------------------------
-# ToDos
+## TODO
 -----------------------------------------
 
-## Content
-- write actual content for woodcraft
-- get more pictures from the wayback machine
-- Write content for other projects!!
-
-## Small fixes
-
-## Med Fixes
-- use clip mask instead of pseudos for vhs tabs
-- search params for filters
-- Mobile Audit
-- Dark mode audit
-
------------------------------------------
-## Backlog
------------------------------------------
-
-## Maybes
-- Use loaders for transitions in react route config?
+## Features
 - color scheme switches
 - rewind back-to-top
-- animate lines <3
+- animate lines
 
 ## Tasks
 - aria/A11y Audit
 - prefers-reduced-motion
-- Testing
-- Spruce up the Storybook
-- General Cleanup
-- mobile audit
-- browser testing
+- Unit Testing
+- browser testing **
+- Storybook
+  - fix any glaring issues
+  - dev documentation for hooks, etc
+  - update anything that's changed
+- General Cleanup (id tasks and make a list.  Theres a lot)
+  - js: Use loaders for transitions in react route config
+  - js: do something about the ad-hoc timers in the page transition flow.
+  - js: use util fn files MUCH more prolifically.  ex: a navUtils file or smth
+  - js: prefer document.getwhatever over useRef.  It's just... way less complicated.
+  - css: use css variables more prolifically
+  - css: structure things so theming is easier
+  - address todos
+  - address linter inconsistencies
+

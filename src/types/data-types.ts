@@ -27,7 +27,7 @@ export type ProjectDetailT = {
   time: string;
   type: string;
   table: TableRowT[];
-  content: string; // html generated from markdown
+  content: string;
 };
 export type ProjectT = {
   id: string;

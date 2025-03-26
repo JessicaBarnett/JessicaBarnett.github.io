@@ -18,10 +18,6 @@
   @include only-above($medium-bp) {
     @include font-size($body-font-med);
   }
-
-  // @include only-above($extra-wide-bp) {
-  //   @include font-size($body-font-lg);
-  // }
 }
 
 /**************
