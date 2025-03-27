@@ -1,4 +1,5 @@
 var fsp = require('fs/promises');
+const { marked } = require('marked');
 const path = require('path');
 const ymlToJson = require('js-yaml').load;
 
@@ -20,7 +21,7 @@ async function run() {
         if (newProject.detail) {
             newProject.detail = {
                 ...newProject.detail,
-                content: markdown,
+                content: marked(markdown),
             }
         }
 
