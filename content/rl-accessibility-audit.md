@@ -14,6 +14,7 @@ tags:
   - displayName: Jasmine
     name: jasmine
   - displayName: HTML/JSX
+    name: jsx
 ```
 
 #### Heading 1

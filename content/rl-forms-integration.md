@@ -18,7 +18,7 @@ tags:
   - displayName: CSS/Scss
     name: scss
   - displayName: HTML/JSX
-    name: html
+    name: jsx
   - displayName: Jest
     name: jest
 ```

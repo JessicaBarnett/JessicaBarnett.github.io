@@ -18,6 +18,7 @@ tags:
   - displayName: Jest
     name: jest
   - displayName: HTML/JSX
+    name: jsx
 ```
 
 #### Heading 1

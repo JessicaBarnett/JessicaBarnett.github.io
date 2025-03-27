@@ -25,7 +25,8 @@
                     "name": "jasmine"
                 },
                 {
-                    "displayName": "HTML/JSX"
+                    "displayName": "HTML/JSX",
+                    "name": "jsx"
                 }
             ]
         },
@@ -62,7 +63,8 @@
                     "name": "jest"
                 },
                 {
-                    "displayName": "HTML/JSX"
+                    "displayName": "HTML/JSX",
+                    "name": "jsx"
                 }
             ]
         },
@@ -100,7 +102,7 @@
                 },
                 {
                     "displayName": "HTML/JSX",
-                    "name": "html"
+                    "name": "jsx"
                 },
                 {
                     "displayName": "Jest",
