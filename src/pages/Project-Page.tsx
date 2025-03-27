@@ -64,7 +64,7 @@ function ProjectPage({onNavigateBack}: ProjectPageProps) {
                 </div>
             </section>
 
-            <section ref={infoRef}>
+            <section ref={infoRef}>g
                 <div className="h-centered v-spaced">
                     <dl>
                         <dt>Role: </dt>

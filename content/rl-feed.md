@@ -17,6 +17,7 @@ tags:
     name: scss
   - displayName: Jest
     name: jest
+  - displayName: HTML/JSX
 ```
 
 #### Heading 1

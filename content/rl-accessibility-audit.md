@@ -13,6 +13,7 @@ tags:
     name: scss
   - displayName: Jasmine
     name: jasmine
+  - displayName: HTML/JSX
 ```
 
 #### Heading 1

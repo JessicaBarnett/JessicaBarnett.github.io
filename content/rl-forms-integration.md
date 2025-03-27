@@ -17,7 +17,7 @@ tags:
     name: pgsql
   - displayName: CSS/Scss
     name: scss
-  - displayName: HTML
+  - displayName: HTML/JSX
     name: html
   - displayName: Jest
     name: jest
