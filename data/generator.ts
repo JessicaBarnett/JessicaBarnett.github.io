@@ -47,7 +47,6 @@ export const tagsGen = (num = random()): TagT[] => multiGen(tagGen, num);
 
 export const mediaGen = (idx = random()): MediaT => {
     return {
-        id: `media-${idx}`,
         name: `image #${idx}`,
         url: imageUrl(idx),
         alt: `image #${idx}`,
@@ -60,7 +59,6 @@ export const mediasGen = (num = random()): MediaT[] => multiGen(mediaGen, num);
 export const projectGen = (idx = random()): ProjectT => {
     return {
         slug: `zz-00${idx}`,
-        id: `zz-00${idx}`,
         company: "Company Name",
         list: {
             title: "Project Title",

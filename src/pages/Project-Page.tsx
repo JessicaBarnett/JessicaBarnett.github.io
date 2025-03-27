@@ -60,7 +60,7 @@ function ProjectPage({onNavigateBack}: ProjectPageProps) {
 
             <section ref={ttlRef} className="triangle-right">
                 <div className="h-centered v-spaced">
-                    <ProjectTitle title={project.detail.title} subtitle={project.detail.subtitle} />
+                    <ProjectTitle title={project.detail.title} subtitle={project.detail.subtitle ?? undefined} />
                 </div>
             </section>
 

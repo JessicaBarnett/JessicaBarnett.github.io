@@ -132,7 +132,7 @@ const Slider = ({ media, options, name}: SliderComponentProps) => {
                         <div className="slider-dot-btns">
                             {media.map((slide, idx) => (
                                 <button
-                                    key={`${slide.id}-dot-btn`}
+                                    key={`${name}-${slide.name}-dot-btn`}
                                     className={`slider-dot-btn ${idx === selectedSlideIdx ? 'selected' : ''}`}
                                     onClick={() => handleGoToBtnClick(idx)}
                                 ></button>
@@ -154,7 +154,7 @@ const Slider = ({ media, options, name}: SliderComponentProps) => {
                     >
                         {media.map((slide: MediaT) => (
                             <img
-                                key={`${slide.id}-img`}
+                                key={`${name}-${slide.name}-img`}
                                 src={slide.url}
                                 alt={slide.alt}
                                 style={{
