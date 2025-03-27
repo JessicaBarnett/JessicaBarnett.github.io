@@ -1,63 +1,23 @@
 ```yml
-slug: woodcraft
-company: Weblinc Ecommerce
+slug: relay-site
+company: Relay Network
 list:
-  title: Woodcraft & Japan Woodworker
-  description: Contributed half of the front-end code for Woodcraft's initial build and then took over front-end leadership of new feature work on the project. Led the development of a reskin of the same app to showcase their more upscale tool brand, Japan Woodworker.
-detail:
-  title: Woodcraft
-  subtitle: "& Japan Woodworker"
-  role: Front End Support Engineer / Front End Lead
-  time: 2016-2018
-  type: New E-Commerce Build
+  title: Relay Company Website v2.0
+  description: Worked with a small 3 person team to completely overhaul Relay's old company site.  We gave it a fresh and beautiful new design, new branding, and made it far easier for marketing to develop content for it going forward.
 tags:
   - displayName: Javascript
     name: javascript
-  - displayName: JQuery
-    name: jquery
+  - displayName: Craft CMS
+    name: craft
   - displayName: CSS/Scss
     name: scss
-  - displayName: HTML/haml
-    name: haml
-  - displayName: Ruby/Rails
-    name: rails
-table:
-  - heading: Framework
-    value: Ruby on Rails
-  - heading: Server Language
-    value: Ruby
-  - heading: Templates
-    value: Haml
-  - heading: CSS Preprocessor
-    value: Scss
-  - heading: Javascript
-    value: JQuery, JQueryUi, LoDash, SlickSlider, Vue
-  - heading: Database
-    value: MongoDb
-media:
-  - name: tablet home
-    url: /assets/projects/woodcraft-hp-med-2018.png
-    alt: Image of the woodcraft home page on a mid-sized screen
-    width: 1280
-  - name: mobile home
-    url: /assets/projects/woodcraft-hp-small-2018.png
-    alt: Image of the woodcraft website
-    width: 560
-  - name: desktop blog
-    url: /assets/projects/woodcraft-blog-wide-2018.png
-    alt: Image of the woodcraft website
-    width: 1920
-  - name: desktop find-a-store page
-    url: /assets/projects/woodcraft-findstore-wide-2018.png
-    alt: Image of the woodcraft website
-    width: 1920
-  - name: desktop product list
-    url: /assets/projects/woodcraft-plp-wide-2018.png
-    alt: Image of the woodcraft website
-    width: 1920
+  - displayName: HTML/twig
+    name: twig
+  - displayName: AWS codepipeline
+    name: aws-codepipeline
 ```
 
-#### Making Wood Work
+#### Apollo-Inspired rebrand of the Relay Company Website
 
 Lorem ipsum dolor sit amet consectetur adipiscing elit. Curabitur porta congue tincidunt. Pellentesque suscipit sem in felis porttitor, sed luctus magna malesuada. Sed bibendum facilisis tristique. Donec id tristique arcu, eget bibendum erat. Vestibulum aliquet quam sed finibus bibendum. Sed cursus felis vel eros semper dapibus. Maecenas vitae nisi id ipsum eleifend fringilla.
 

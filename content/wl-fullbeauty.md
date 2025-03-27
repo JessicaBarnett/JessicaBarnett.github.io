@@ -1,15 +1,9 @@
 ```yml
-slug: the_bouqs
+slug: full-beauty
 company: Weblinc Ecommerce
 list:
-  title: The Bouqs
-  description: A fresh flower retailer with a fresh take on their business.  The Bouqs had a heavy focus on optimizing UI performance and producing an experience almost as beautiful as their products.
-# detail:
-#   title: The Bouqs
-#   subtitle:
-#   role: Front End Support Engineer / Front End Lead
-#   time: 2016-2018
-#   type: New E-Commerce Build
+  title: Full Beauty
+  description: This company's flagship brand encompased a huge catalog of products and a large number of smaller brands making this build quite complex.
 tags:
   - displayName: Javascript
     name: javascript
@@ -21,23 +15,9 @@ tags:
     name: haml
   - displayName: Ruby/Rails
     name: rails
-# table:
-#   - heading: Framework
-#     value: Ruby on Rails
-#   - heading: Server Language
-#     value: Ruby
-#   - heading: Templates
-#     value: Haml
-#   - heading: CSS Preprocessor
-#     value: Scss
-#   - heading: Javascript
-#     value: JQuery, JQueryUi, LoDash, SlickSlider
-#   - heading: Database
-#     value: MongoDb
-# media:
 ```
 
-#### The Freshest Flowers right to your door
+#### Fashion for All
 
 Lorem ipsum dolor sit amet consectetur adipiscing elit. Curabitur porta congue tincidunt. Pellentesque suscipit sem in felis porttitor, sed luctus magna malesuada. Sed bibendum facilisis tristique. Donec id tristique arcu, eget bibendum erat. Vestibulum aliquet quam sed finibus bibendum. Sed cursus felis vel eros semper dapibus. Maecenas vitae nisi id ipsum eleifend fringilla.
 

@@ -1,5 +1,4 @@
 export type MediaT = {
-  id: string;
   name?: string;
   url: string;
   alt: string;
@@ -22,7 +21,7 @@ export type ProjectListT = {
 };
 export type ProjectDetailT = {
   title: string;
-  subtitle: string;
+  subtitle?: string | null;
   role: string;
   time: string;
   type: string;
@@ -30,7 +29,6 @@ export type ProjectDetailT = {
   content: string;
 };
 export type ProjectT = {
-  id: string;
   slug: string;
   company: string;
   list: ProjectListT;
@@ -51,8 +49,9 @@ export const projectHasDetails = (project: ProjectT): boolean => {
     !!project.detail.type &&
     project.media &&
     project.media.length > 0 &&
+    project.detail.table &&
     project.detail.table.length > 0 &&
-    project.detail.content.length > 0 // && false
+    project.detail.content // && false
   );
 };
 
@@ -73,6 +72,6 @@ export type ExperienceEntryT = {
 
 export type DataT = {
   filters: FilterT[];
-  projects: ProjectT[];
   experience: ExperienceEntryT[];
 };
+

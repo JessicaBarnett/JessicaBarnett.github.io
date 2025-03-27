@@ -10,12 +10,12 @@ detail:
   role:
   time:
   type:
+  table:
+    - heading:
+      value:
 tags:
   - displayName:
     name:
-table:
-  - heading:
-    value:
 media:
   - name:
     url: /assets/projects/FILENAME.png

@@ -24,7 +24,7 @@ const Project = ({project, selectedTags, onTagSelect, onMoreInfoClick}: ProjectC
 
       {project.tags.map((tag: TagT) => (
         <Tag
-          key={`${project.id}-${tag.name}`}
+          key={`${project.slug}-${tag.name}`}
           tag={tag}
           isSelected={tagSelected(tag, selectedTags)}
           onClick={onTagSelect}

@@ -1,0 +1,851 @@
+{
+  "filters": [
+    {
+      "displayName": "Front-End Javascript",
+      "name": "javascript",
+      "tags": [
+        {
+          "name": "javascript"
+        },
+        {
+          "name": "typescript"
+        },
+        {
+          "name": "lodash"
+        },
+        {
+          "name": "jquery"
+        },
+        {
+          "name": "react"
+        },
+        {
+          "name": "angular"
+        }
+      ]
+    },
+    {
+      "displayName": "Typescript",
+      "name": "typescript",
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "displayName": "React/JSX",
+      "name": "react",
+      "tags": [
+        {
+          "name": "react"
+        }
+      ]
+    },
+    {
+      "displayName": "Angular",
+      "name": "angular",
+      "tags": [
+        {
+          "name": "angular"
+        }
+      ]
+    },
+    {
+      "displayName": "Node",
+      "name": "node",
+      "tags": [
+        {
+          "name": "node"
+        }
+      ]
+    },
+    {
+      "displayName": "Testing",
+      "name": "testing",
+      "tags": [
+        {
+          "name": "jest"
+        },
+        {
+          "name": "jasmine"
+        },
+        {
+          "name": "karma"
+        },
+        {
+          "name": "locust"
+        },
+        {
+          "name": "load-testing"
+        }
+      ]
+    },
+    {
+      "displayName": "AWS",
+      "name": "aws",
+      "tags": [
+        {
+          "name": "aws-ec2"
+        },
+        {
+          "name": "aws-ecs"
+        },
+        {
+          "name": "aws-cognito"
+        },
+        {
+          "name": "aws-lambda"
+        },
+        {
+          "name": "aws-codepipeline"
+        }
+      ]
+    },
+    {
+      "displayName": "Tools",
+      "name": "tools",
+      "tags": [
+        {
+          "name": "bash/zsh"
+        }
+      ]
+    },
+    {
+      "displayName": "JQuery",
+      "name": "jquery",
+      "tags": [
+        {
+          "name": "jquery"
+        }
+      ]
+    },
+    {
+      "displayName": "Databases",
+      "name": "databases",
+      "tags": [
+        {
+          "name": "pgsql"
+        },
+        {
+          "name": "redis"
+        },
+        {
+          "name": "mongodb"
+        }
+      ]
+    },
+    {
+      "displayName": "Integrations",
+      "name": "integrations",
+      "tags": [
+        {
+          "name": "twilio"
+        },
+        {
+          "name": "jotform"
+        }
+      ]
+    },
+    {
+      "displayName": "CMS",
+      "name": "cms",
+      "tags": [
+        {
+          "name": "craft"
+        },
+        {
+          "name": "wordpress"
+        }
+      ]
+    },
+    {
+      "displayName": "HTML",
+      "name": "html",
+      "tags": [
+        {
+          "name": "html"
+        },
+        {
+          "name": "haml"
+        },
+        {
+          "name": "twig"
+        }
+      ]
+    },
+    {
+      "displayName": "Ruby/Rails",
+      "name": "rails",
+      "tags": [
+        {
+          "name": "rails"
+        }
+      ]
+    },
+    {
+      "displayName": "CSS",
+      "name": "css",
+      "tags": [
+        {
+          "name": "css"
+        },
+        {
+          "name": "scss"
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "rl-009",
+      "slug": "service-load-testing",
+      "company": "Relay Network",
+      "list": {
+        "title": "Service Load-Testing",
+        "description": "Performed large-scale Load tests on our SSO Api and our Form APIs, automating up to 500k user sessions across 3 small servers."
+      },
+      "tags": [
+        {
+          "displayName": "Locust",
+          "name": "locust"
+        },
+        {
+          "displayName": "AWS ECS",
+          "name": "aws-ecs"
+        },
+        {
+          "displayName": "Bash/Zsh",
+          "name": "bash/zsh"
+        }
+      ]
+    },
+    {
+      "id": "rl-008",
+      "slug": "forms-integration",
+      "company": "Relay Network",
+      "list": {
+        "title": "\"Power Ups\" Forms Integration API",
+        "description": "Worked with team to build a feature enabling businesses to configure forms to send to their customers' phones, along with monitoring and data management/reporting tools."
+      },
+      "tags": [
+        {
+          "displayName": "Javascript",
+          "name": "javascript"
+        },
+        {
+          "displayName": "React",
+          "name": "react"
+        },
+        {
+          "displayName": "Node",
+          "name": "node"
+        },
+        {
+          "displayName": "AWS ECS",
+          "name": "aws-ecs"
+        },
+        {
+          "displayName": "Postgres/SQL",
+          "name": "pgsql"
+        },
+        {
+          "displayName": "CSS/Scss",
+          "name": "scss"
+        },
+        {
+          "displayName": "HTML",
+          "name": "html"
+        },
+        {
+          "displayName": "Jest",
+          "name": "jest"
+        }
+      ]
+    },
+    {
+      "id": "rl-007",
+      "slug": "two-way-chat",
+      "company": "Relay Network",
+      "list": {
+        "title": "Two Way Chat v2.0",
+        "description": "Collaboratively took the two-way chat pilot from tiny and fragile to hardened and reliable. Migrated all backend code from clojure to node, migrated data to a small self-contained postgres instance, and added customer-facing chat ui to the newly rebuilt feed app."
+      },
+      "tags": [
+        {
+          "displayName": "Typescript",
+          "name": "typescript"
+        },
+        {
+          "displayName": "React",
+          "name": "react"
+        },
+        {
+          "displayName": "Node",
+          "name": "node"
+        },
+        {
+          "displayName": "AWS ECS",
+          "name": "aws-ecs"
+        },
+        {
+          "displayName": "Postgres/SQL",
+          "name": "pgsql"
+        },
+        {
+          "displayName": "Twilio",
+          "name": "twilio"
+        },
+        {
+          "displayName": "Jest",
+          "name": "jest"
+        }
+      ]
+    },
+    {
+      "id": "rl-006",
+      "slug": "relay-feed",
+      "company": "Relay Network",
+      "list": {
+        "title": "Relay Feed v3.0",
+        "description": "Collaborated with team to completely rebuild Relay's customer-facing app, with a completely new stack and design."
+      },
+      "tags": [
+        {
+          "displayName": "Typescript",
+          "name": "typescript"
+        },
+        {
+          "displayName": "React",
+          "name": "react"
+        },
+        {
+          "displayName": "Node",
+          "name": "node"
+        },
+        {
+          "displayName": "Jest",
+          "name": "jest"
+        }
+      ]
+    },
+    {
+      "id": "rl-005",
+      "slug": "sso-api",
+      "company": "Relay Network",
+      "list": {
+        "title": "CXBuilder SSO Api",
+        "description": "Developed a feature to allow business clients to log into Relay's product via sso, and was responsible for client communications about sso setup for a full year."
+      },
+      "tags": [
+        {
+          "displayName": "Typescript",
+          "name": "typescript"
+        },
+        {
+          "displayName": "Angular",
+          "name": "angular"
+        },
+        {
+          "displayName": "Node",
+          "name": "node"
+        },
+        {
+          "displayName": "AWS ECS",
+          "name": "aws-ecs"
+        },
+        {
+          "displayName": "AWS Cognito",
+          "name": "aws-cognito"
+        },
+        {
+          "displayName": "Jasmine",
+          "name": "jasmine"
+        }
+      ]
+    },
+    {
+      "id": "rl-004",
+      "slug": "jobs-dashboard",
+      "company": "Relay Network",
+      "list": {
+        "title": "Jobs Dashboard",
+        "description": "A dashboard displaying the status of backend processes and allowing clients to download reports and create new jobs all in one place.  Feature empowered clients to manage their own jobs, which saved CSMs a great deal of time."
+      },
+      "tags": [
+        {
+          "displayName": "Typescript",
+          "name": "typescript"
+        },
+        {
+          "displayName": "Angular",
+          "name": "angular"
+        },
+        {
+          "displayName": "CSS/Scss",
+          "name": "scss"
+        },
+        {
+          "displayName": "Jasmine",
+          "name": "jasmine"
+        }
+      ]
+    },
+    {
+      "id": "rl-003",
+      "slug": "two-way-chat-pilot",
+      "company": "Relay Network",
+      "list": {
+        "title": "Two Way Chat Pilot",
+        "description": "Worked with team to build a complex chat feature in 2 months. Contributed roughly 50% of the Angular code, collaborated closely with product reps, and clojure engineers on both API and Visual design."
+      },
+      "tags": [
+        {
+          "displayName": "Typescript",
+          "name": "typescript"
+        },
+        {
+          "displayName": "Angular",
+          "name": "angular"
+        },
+        {
+          "displayName": "Twilio",
+          "name": "twilio"
+        },
+        {
+          "displayName": "Jasmine",
+          "name": "jasmine"
+        }
+      ]
+    },
+    {
+      "id": "rl-002",
+      "slug": "pdf-previews",
+      "company": "Relay Network",
+      "list": {
+        "title": "PDF Preview Feature",
+        "description": "A preview feature that reorganized a complex tree of messages into a printable, sharable PDF file.  Enabled our clients to more easily share thier work with stakeholders within their companies which saved our CS team significant time."
+      },
+      "tags": [
+        {
+          "displayName": "Typescript",
+          "name": "typescript"
+        },
+        {
+          "displayName": "Angular",
+          "name": "angular"
+        },
+        {
+          "displayName": "CSS/Scss",
+          "name": "scss"
+        },
+        {
+          "displayName": "Jasmine",
+          "name": "jasmine"
+        },
+        {
+          "displayName": "AWS Lambda",
+          "name": "aws-lambda"
+        }
+      ]
+    },
+    {
+      "id": "rl-001",
+      "slug": "accessibility-audit",
+      "company": "Relay Network",
+      "list": {
+        "title": "Relay Feed Accessibility Audit",
+        "description": "Ran an accessibility audit on our customer-facing Feed application.  Identified and implemented a number of fixes including adding alt text to uploaded images, revamping the mobile navigation, and using aria tags much more liberally."
+      },
+      "tags": [
+        {
+          "displayName": "Typescript",
+          "name": "typescript"
+        },
+        {
+          "displayName": "Angular",
+          "name": "angular"
+        },
+        {
+          "displayName": "CSS/Scss",
+          "name": "scss"
+        },
+        {
+          "displayName": "Jasmine",
+          "name": "jasmine"
+        }
+      ]
+    },
+    {
+      "id": "rl-000",
+      "slug": "relay-company-website",
+      "company": "Relay Network",
+      "list": {
+        "title": "Relay Company Website v2.0",
+        "description": "Worked with a small 3 person team to completely overhaul Relay's old company site.  We gave it a fresh and beautiful new design, new branding, and made it far easier for marketing to develop content for it going forward."
+      },
+      "tags": [
+        {
+          "displayName": "Javascript",
+          "name": "javascript"
+        },
+        {
+          "displayName": "Craft CMS",
+          "name": "craft"
+        },
+        {
+          "displayName": "CSS/Scss",
+          "name": "scss"
+        },
+        {
+          "displayName": "HTML/twig",
+          "name": "twig"
+        },
+        {
+          "displayName": "AWS codepipeline",
+          "name": "aws-codepipeline"
+        }
+      ]
+    },
+    {
+      "id": "wl-p-004",
+      "slug": "the-bouqs",
+      "company": "Weblinc Ecommerce",
+      "list": {
+        "title": "The Bouqs",
+        "description": "A fresh flower retailer with a fresh take on their business.  The Bouqs had a heavy focus on optimizing UI performance and producing an experience almost as beautiful as their products."
+      },
+      "tags": [
+        {
+          "displayName": "Javascript",
+          "name": "javascript"
+        },
+        {
+          "displayName": "JQuery",
+          "name": "jquery"
+        },
+        {
+          "displayName": "CSS/Scss",
+          "name": "scss"
+        },
+        {
+          "displayName": "HTML/haml",
+          "name": "haml"
+        },
+        {
+          "displayName": "Ruby/Rails",
+          "name": "rails"
+        }
+      ]
+    },
+    {
+      "id": "wl-p-003",
+      "slug": "full-beauty",
+      "company": "Weblinc Ecommerce",
+      "list": {
+        "title": "Full Beauty",
+        "description": "This company's flagship brand encompased a huge catalog of products and a large number of smaller brands making this build quite complex."
+      },
+      "tags": [
+        {
+          "displayName": "Javascript",
+          "name": "javascript"
+        },
+        {
+          "displayName": "JQuery",
+          "name": "jquery"
+        },
+        {
+          "displayName": "CSS/Scss",
+          "name": "scss"
+        },
+        {
+          "displayName": "HTML/haml",
+          "name": "haml"
+        },
+        {
+          "displayName": "Ruby/Rails",
+          "name": "rails"
+        }
+      ]
+    },
+    {
+      "id": "weblinc-woodcraft",
+      "slug": "woodcraft",
+      "company": "Weblinc Ecommerce",
+      "list": {
+        "title": "Woodcraft & Japan Woodworker",
+        "description": "Contributed half of the front-end code for Woodcraft's initial build and then took over front-end leadership of new feature work on the project. Led the development of a reskin of the same app to showcase their more upscale tool brand, Japan Woodworker."
+      },
+      "detail": {
+        "title": "Woodcraft",
+        "subtitle": " & Japan Woodworker",
+        "role": "Front End Support Engineer / Front End Lead",
+        "time": "2016-2018",
+        "type": "New E-Commerce Build",
+        "table": [
+          {
+            "heading": "framework",
+            "value": "Ruby on Rails"
+          },
+          {
+            "heading": "Server Language",
+            "value": "Ruby"
+          },
+          {
+            "heading": "Templates",
+            "value": "Haml"
+          },
+          {
+            "heading": "CSS Preprocessor",
+            "value": "Scss"
+          },
+          {
+            "heading": "Javascript",
+            "value": "JQuery, JQueryUi, LoDash, SlickSlider"
+          },
+          {
+            "heading": "Database",
+            "value": "MongoDb"
+          }
+        ],
+        "content": "<h2>Making Wood Work</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur porta congue tincidunt. Pellentesque suscipit sem in felis porttitor, sed luctus magna malesuada. Sed bibendum facilisis tristique. Donec id tristique arcu, eget bibendum erat. Vestibulum aliquet quam sed finibus bibendum. Sed cursus felis vel eros semper dapibus. Maecenas vitae nisi id ipsum eleifend fringilla.</p><h2>Challenge</h2><p>Etiam ut rutrum risus. Quisque pellentesque massa eu arcu vestibulum, at pharetra nulla porta. Fusce consectetur enim mauris, sit amet porttitor nisi malesuada at. Mauris auctor scelerisque elit a gravida. Nullam ac pretium est. Phasellus dictum est lacinia scelerisque pulvinar. Fusce bibendum imperdiet sollicitudin. Curabitur et lacus malesuada, ullamcorper orci at, tempor purus.</p><h2>Results</h2><p>Nulla et ullamcorper leo. In nec orci sit amet eros ornare dictum id at neque. Proin condimentum velit leo, a scelerisque massa imperdiet vitae. Nullam rutrum tristique efficitur. Suspendisse bibendum nisl arcu, id vulputate lacus mollis quis. Donec non lectus nulla. Mauris egestas condimentum nibh et ullamcorper. Fusce laoreet, felis in luctus pretium, est metus facilisis turpis, imperdiet tempor ante arcu nec turpis. Nulla efficitur vehicula ligula.</p><p>Nam eleifend convallis neque, a egestas odio pulvinar quis. Vestibulum tincidunt tristique tortor sit amet ullamcorper. Etiam lacus purus, volutpat at magna at, scelerisque vestibulum augue. Morbi egestas congue neque, vitae hendrerit ipsum laoreet at. Sed accumsan, tellus id sagittis suscipit, lacus mauris cursus mauris, et fermentum sem erat eget quam. Sed ac dui auctor lacus rhoncus auctor.</p>"
+      },
+      "tags": [
+        {
+          "displayName": "Javascript",
+          "name": "javascript"
+        },
+        {
+          "displayName": "JQuery",
+          "name": "jquery"
+        },
+        {
+          "displayName": "CSS/Scss",
+          "name": "scss"
+        },
+        {
+          "displayName": "HTML/haml",
+          "name": "haml"
+        },
+        {
+          "displayName": "Ruby/Rails",
+          "name": "rails"
+        }
+      ],
+      "media": [
+        {
+          "id": "woodcraft-img-01",
+          "name": "home page",
+          "url": "/assets/projects/woodcraft-hp-med-2018.png",
+          "alt": "Image of the woodcraft website",
+          "width": 1280
+        },
+        {
+          "id": "woodcraft-img-02",
+          "name": "mobile",
+          "url": "/assets/projects/woodcraft-hp-small-2018.png",
+          "alt": "Image of the woodcraft website",
+          "width": 560
+        },
+        {
+          "id": "woodcraft-img-03",
+          "name": "blog",
+          "url": "/assets/projects/woodcraft-blog-wide-2018.png",
+          "alt": "Image of the woodcraft website",
+          "width": 1920
+        },
+        {
+          "id": "woodcraft-img-04",
+          "name": "find a store",
+          "url": "/assets/projects/woodcraft-findstore-wide-2018.png",
+          "alt": "Image of the woodcraft website",
+          "width": 1920
+        },
+        {
+          "id": "woodcraft-img-05",
+          "name": "plp",
+          "url": "/assets/projects/woodcraft-plp-wide-2018.png",
+          "alt": "Image of the woodcraft website",
+          "width": 1920
+        }
+      ]
+    },
+    {
+      "id": "wl-p-001",
+      "slug": "rachel-roy",
+      "company": "Weblinc Ecommerce",
+      "list": {
+        "title": "Rachel Roy",
+        "description": "Led new feature development on an existing fashion website."
+      },
+      "tags": [
+        {
+          "displayName": "Javascript",
+          "name": "javascript"
+        },
+        {
+          "displayName": "JQuery",
+          "name": "jquery"
+        },
+        {
+          "displayName": "CSS/Scss",
+          "name": "scss"
+        },
+        {
+          "displayName": "HTML/haml",
+          "name": "haml"
+        },
+        {
+          "displayName": "Ruby/Rails",
+          "name": "rails"
+        }
+      ]
+    },
+    {
+      "id": "wl-p-000",
+      "slug": "mint-julep",
+      "company": "Weblinc Ecommerce",
+      "list": {
+        "title": "Mint Julep",
+        "description": "Built features for a fun and lively fashion brand based in the Southern United States."
+      },
+      "tags": [
+        {
+          "displayName": "Javascript",
+          "name": "javascript"
+        },
+        {
+          "displayName": "JQuery",
+          "name": "jquery"
+        },
+        {
+          "displayName": "CSS/Scss",
+          "name": "scss"
+        },
+        {
+          "displayName": "HTML/haml",
+          "name": "haml"
+        },
+        {
+          "displayName": "Ruby/Rails",
+          "name": "rails"
+        }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "id": "rl-e-00",
+      "title": "Fullstack Software Engineer",
+      "company": "Relay Network",
+      "start": "2020",
+      "end": "2023",
+      "tags": [
+        {
+          "name": "typescript",
+          "displayName": "Typescript"
+        },
+        {
+          "name": "react",
+          "displayName": "React"
+        },
+        {
+          "name": "angular",
+          "displayName": "Angular"
+        },
+        {
+          "name": "node",
+          "displayName": "Node"
+        },
+        {
+          "name": "aws",
+          "displayName": "AWS"
+        }
+      ]
+    },
+    {
+      "id": "rl-e-01",
+      "title": "Front End Software Engineer",
+      "company": "Relay Network",
+      "start": "2018",
+      "end": "2020",
+      "tags": [
+        {
+          "name": "typescript",
+          "displayName": "Typescript"
+        },
+        {
+          "name": "angular",
+          "displayName": "Angular"
+        },
+        {
+          "name": "css",
+          "displayName": "CSS/Scss"
+        },
+        {
+          "name": "cms",
+          "displayName": "Craft CMS"
+        }
+      ]
+    },
+    {
+      "id": "wl-e-00",
+      "title": "Lead Front End Developer",
+      "company": "Weblinc Ecommerce",
+      "start": "2016",
+      "end": "2018",
+      "tags": [
+        {
+          "name": "javascript",
+          "displayName": "Javascript"
+        },
+        {
+          "name": "jquery",
+          "displayName": "JQuery"
+        },
+        {
+          "name": "rails",
+          "displayName": "Ruby/Rails"
+        },
+        {
+          "name": "html",
+          "displayName": "HTML/haml"
+        },
+        {
+          "name": "css",
+          "displayName": "CSS/Scss"
+        }
+      ]
+    },
+    {
+      "id": "wl-e-01",
+      "title": "Front End Developer",
+      "company": "Weblinc Ecommerce",
+      "start": "2014",
+      "end": "2016",
+      "tags": [
+        {
+          "name": "javascript",
+          "displayName": "Javascript"
+        },
+        {
+          "name": "jquery",
+          "displayName": "JQuery"
+        },
+        {
+          "name": "rails",
+          "displayName": "Ruby/Rails"
+        },
+        {
+          "name": "html",
+          "displayName": "HTML/haml"
+        },
+        {
+          "name": "css",
+          "displayName": "CSS/Scss"
+        }
+      ]
+    }
+  ]
+}

@@ -2,11 +2,11 @@ var fsp = require('fs/promises');
 const path = require('path');
 const ymlToJson = require('js-yaml').load;
 
-const writePath = './data/projects-test.json';
+const writePath = './data/projects.json';
 const sourcePath = './content/'
 
 async function run() {
-    const projectsData = [];
+    const projectsData = {projects: []};
     const filenames = (await fsp.readdir(sourcePath)).filter((filename) => filename !== 'template.md');
 
     for (let i = 0; i < filenames.length; i++ ) {
@@ -16,13 +16,18 @@ async function run() {
 
         const [_, yml, markdown] = /```yml([\S\s]*)```([\S\s]*)$/.exec(rawFileContents);
 
-        projectsData.push({
-            ...ymlToJson(yml),
-            content: markdown // conversion to html + html purification is happening in browser
-        });
+        const newProject = ymlToJson(yml);
+        if (newProject.detail) {
+            newProject.detail = {
+                ...newProject.detail,
+                content: markdown,
+            }
+        }
+
+        projectsData.projects.push(newProject);
     }
 
-    console.log(`Writing data to ${writePath} using ${filenames.length} files: ${filenames.join(', ')}`)
+    console.log(`Writing data to ${writePath} using ${filenames.length} files: \n${filenames.join('\n')}`)
     await fsp.writeFile(writePath, JSON.stringify(projectsData, null, 4));
   }
 

@@ -5,10 +5,10 @@
 
 import { useState } from 'react';
 import { ProjectT } from "@src/types/data-types.ts";
-import { useData } from '@src/hooks/static/useData.ts';
+import * as json from '@data/projects.json' assert { type: 'json' };
 
 export function useProjects() {
-  const data = useData();
+  const data: { projects: ProjectT[] } = json;
   const [value] = useState<ProjectT[]>(data.projects);
   return [value];
 }

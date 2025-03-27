@@ -1,43 +1,23 @@
 ```yml
-slug: the_bouqs
-company: Weblinc Ecommerce
+slug: pdf-preview
+company: Relay Network
 list:
-  title: The Bouqs
-  description: A fresh flower retailer with a fresh take on their business.  The Bouqs had a heavy focus on optimizing UI performance and producing an experience almost as beautiful as their products.
-# detail:
-#   title: The Bouqs
-#   subtitle:
-#   role: Front End Support Engineer / Front End Lead
-#   time: 2016-2018
-#   type: New E-Commerce Build
+  title: PDF Preview Feature
+  description: A preview feature that reorganized a complex tree of messages into a printable, sharable PDF file.  Enabled our clients to more easily share thier work with stakeholders within their companies which saved our CS team significant time.
 tags:
-  - displayName: Javascript
-    name: javascript
-  - displayName: JQuery
-    name: jquery
-  - displayName: CSS/Scss
-    name: scss
-  - displayName: HTML/haml
-    name: haml
-  - displayName: Ruby/Rails
-    name: rails
-# table:
-#   - heading: Framework
-#     value: Ruby on Rails
-#   - heading: Server Language
-#     value: Ruby
-#   - heading: Templates
-#     value: Haml
-#   - heading: CSS Preprocessor
-#     value: Scss
-#   - heading: Javascript
-#     value: JQuery, JQueryUi, LoDash, SlickSlider
-#   - heading: Database
-#     value: MongoDb
-# media:
+    - displayName: "Typescript"
+      name: "typescript"
+    - displayName: "Angular"
+      name: "angular"
+    - displayName: "CSS/Scss"
+      name: "scss"
+    - displayName: "Jasmine"
+      name: "jasmine"
+    - displayName: "AWS Lambda"
+      name: "aws-lambda"
 ```
 
-#### The Freshest Flowers right to your door
+#### Heading
 
 Lorem ipsum dolor sit amet consectetur adipiscing elit. Curabitur porta congue tincidunt. Pellentesque suscipit sem in felis porttitor, sed luctus magna malesuada. Sed bibendum facilisis tristique. Donec id tristique arcu, eget bibendum erat. Vestibulum aliquet quam sed finibus bibendum. Sed cursus felis vel eros semper dapibus. Maecenas vitae nisi id ipsum eleifend fringilla.
 

@@ -1,14 +1,9 @@
 ```yml
-slug: full_beauty
+slug: rachel-roy
 company: Weblinc Ecommerce
 list:
-  title: Full Beauty
-  description:
-# detail:
-#   title: Full Beauty
-#   role: Front End Support Engineer
-#   time: 2016-2018
-#   type: New E-Commerce Build
+  title: Rachel Roy
+  description: Led new feature development on an existing fashion website.
 tags:
   - displayName: Javascript
     name: javascript
@@ -20,23 +15,9 @@ tags:
     name: haml
   - displayName: Ruby/Rails
     name: rails
-# table:
-#   - heading: Framework
-#     value: Ruby on Rails
-#   - heading: Server Language
-#     value: Ruby
-#   - heading: Templates
-#     value: Haml
-#   - heading: CSS Preprocessor
-#     value: Scss
-#   - heading: Javascript
-#     value: JQuery, JQueryUi, LoDash, SlickSlider
-#   - heading: Database
-#     value: MongoDb
-# media:
 ```
 
-#### Fashion for All
+#### The Freshest Flowers right to your door
 
 Lorem ipsum dolor sit amet consectetur adipiscing elit. Curabitur porta congue tincidunt. Pellentesque suscipit sem in felis porttitor, sed luctus magna malesuada. Sed bibendum facilisis tristique. Donec id tristique arcu, eget bibendum erat. Vestibulum aliquet quam sed finibus bibendum. Sed cursus felis vel eros semper dapibus. Maecenas vitae nisi id ipsum eleifend fringilla.
 

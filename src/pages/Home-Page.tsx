@@ -154,7 +154,7 @@ function HomePage({onNavigateToProject, initialFilter}: HomePageComponentProps) 
                   <ul>
                     {filteredProjects[companyName].map((project) => (
                       <Project
-                        key={project.id}
+                        key={project.slug}
                         project={project}
                         selectedTags={selectedFilter?.tags ?? []}
                         onTagSelect={handleTagSelect}
