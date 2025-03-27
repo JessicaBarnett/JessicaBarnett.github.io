@@ -12,7 +12,6 @@ async function run() {
 
     for (let i = 0; i < filenames.length; i++ ) {
         const fullFilePath = path.join(sourcePath, filenames[i]);
-        const projectName = filenames[i].replace(/\.md/, '');
         const rawFileContents = await fsp.readFile(fullFilePath, "utf8");
 
         const [_, yml, markdown] = /```yml([\S\s]*)```([\S\s]*)$/.exec(rawFileContents);
