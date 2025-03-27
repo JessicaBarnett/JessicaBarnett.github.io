@@ -20,7 +20,7 @@ detail:
     - heading: CSS Preprocessor
       value: Scss
     - heading: Javascript
-      value: JQuery, JQueryUi, LoDash, SlickSlider, Vue
+      value: JQuery, JQueryUi, LoDash, SlickSlider
     - heading: Database
       value: MongoDb
 tags:
@@ -59,14 +59,16 @@ media:
 
 #### Making Wood Work
 
-Lorem ipsum dolor sit amet consectetur adipiscing elit. Curabitur porta congue tincidunt. Pellentesque suscipit sem in felis porttitor, sed luctus magna malesuada. Sed bibendum facilisis tristique. Donec id tristique arcu, eget bibendum erat. Vestibulum aliquet quam sed finibus bibendum. Sed cursus felis vel eros semper dapibus. Maecenas vitae nisi id ipsum eleifend fringilla.
+Woodcraft is a 95 year old woodworking supply brand - a mid-sized retailer with more than 150 stores in the US and worldwide.  Additionally, they're a large provider of woodworking education through their bi-monthly periodical, Woodcraft Magazine, their enormous library of free online articles, and the abundance of classes and demonstrations offered by local stores.  They came to us looking to modernize their e-commerce platform, and to remodel their retail website with an fresh, elegant, and professional design that duly honors the artistry and craftsmanship of their clientele.
 
-#### Challenge
+#### Learning the Trade
 
-Etiam ut rutrum risus. Quisque pellentesque massa eu arcu vestibulum, at pharetra nulla porta. Fusce consectetur enim mauris, sit amet porttitor nisi malesuada at. Mauris auctor scelerisque elit a gravida. Nullam ac pretium est. Phasellus dictum est lacinia scelerisque pulvinar. Fusce bibendum imperdiet sollicitudin. Curabitur et lacus malesuada, ullamcorper orci at, tempor purus.
+Because of Woodcraft's unique dual-focus on retail and education, we found that in addition to the usual tasks of building a low-friction, performant online shopping experience, we also needed to find ways to showcase their vast collection of articles, preferably in close proximity to related products.  After all, it's a lot easier to be confident and excited about a new project if you have a reliable how to guide, and readily-available links to all the tools and materials you need, all in one central place.  To achieve this end, we created numerous ways for merchandisers and marketers to display products, promotional banners, and articles almost anywhere.
 
-#### Results
+#### Japan Woodworker
 
-Nulla et ullamcorper leo. In nec orci sit amet eros ornare dictum id at neque. Proin condimentum velit leo, a scelerisque massa imperdiet vitae. Nullam rutrum tristique efficitur. Suspendisse bibendum nisl arcu, id vulputate lacus mollis quis. Donec non lectus nulla. Mauris egestas condimentum nibh et ullamcorper. Fusce laoreet, felis in luctus pretium, est metus facilisis turpis, imperdiet tempor ante arcu nec turpis. Nulla efficitur vehicula ligula.
+Immediately after Woodcraft's main storefront launched, I took over front-end leadership of the project, and the team and I were very quickly presented with a  new challenge.  Woodcraft has a second brand - a high-end tool brand called Japan Woodworker, which they wanted to showcase with its own domain, its own design, and a subset of products.  So, we spun off a second site, a re-skinned/themed version of the first.
 
-Nam eleifend convallis neque, a egestas odio pulvinar quis. Vestibulum tincidunt tristique tortor sit amet ullamcorper. Etiam lacus purus, volutpat at magna at, scelerisque vestibulum augue. Morbi egestas congue neque, vitae hendrerit ipsum laoreet at. Sed accumsan, tellus id sagittis suscipit, lacus mauris cursus mauris, et fermentum sem erat eget quam. Sed ac dui auctor lacus rhoncus auctor.
+At the time, multi-site theming was an untested concept on Weblinc's Rails platform, so there was a lot of learning to be done. But because we had had the foresight to build the first site with an eye towards variablizing as much of the front-end as possible, and because we had such great communication with our designer and clients, we were able to release the re-skin within 6 weeks of the first site's release.
+
+This was a huge milestone for Weblinc as a company, as it prooved that, once a client had undergone the time consuming and expensive process of having a new store built, we can then offer a large number of reskins for different brands with a very fast turnover.  This gave our product a competitive advantage when it came to companies with a large number of smaller brands under their umbrella.
