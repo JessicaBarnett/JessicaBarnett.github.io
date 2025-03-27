@@ -21,12 +21,12 @@
 - project page: added a mobile-only slider, and made the existing sliders med+ only
 - slider: half-fix for weird height-fixing issues.  I'm just not doing the height fixing on the mobile-only slider (the one having the issues because the images are so drastically different in height)
 - on filter select change (not via tag clicks), scroll should not change!! right now it does!
+- content gen script
 
 -----------------------------------------
 # In progress
 -----------------------------------------
 WIP
-- content gen script
 - content writing + image gathering
 
 BUGS

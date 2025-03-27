@@ -1,26 +1,27 @@
-- id:
-- prefix:
-- slug:
-- list:
-    - title:
-    - description:
-- detail:
-    - title:
-    - subtitle:
-    - company:
-    - role:
-    - time:
-    - type:
-- tags:
-    - Display (value)
-- table:
-    - Heading: value
-- media:
-    - image title
-        - url: /assets/projects/filename.png
-        - alt:
-        - width: 1920 | 1280 | 560
-- content:
+```yml
+slug:
+company:
+list:
+  title:
+  description:
+detail:
+  title:
+  subtitle:
+  role:
+  time:
+  type:
+tags:
+  - displayName:
+    name:
+table:
+  - heading:
+    value:
+media:
+  - name:
+    url: /assets/projects/FILENAME.png
+    alt:
+    width: 560 | 1280 | 1920
+```
 
 #### Something Catchy
 

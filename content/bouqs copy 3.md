@@ -1,15 +1,15 @@
 ```yml
-slug: woodcraft
+slug: the_bouqs
 company: Weblinc Ecommerce
 list:
-  title: Woodcraft & Japan Woodworker
-  description: Contributed half of the front-end code for Woodcraft's initial build and then took over front-end leadership of new feature work on the project. Led the development of a reskin of the same app to showcase their more upscale tool brand, Japan Woodworker.
-detail:
-  title: Woodcraft
-  subtitle: "& Japan Woodworker"
-  role: Front End Support Engineer / Front End Lead
-  time: 2016-2018
-  type: New E-Commerce Build
+  title: The Bouqs
+  description: A fresh flower retailer with a fresh take on their business.  The Bouqs had a heavy focus on optimizing UI performance and producing an experience almost as beautiful as their products.
+# detail:
+#   title: The Bouqs
+#   subtitle:
+#   role: Front End Support Engineer / Front End Lead
+#   time: 2016-2018
+#   type: New E-Commerce Build
 tags:
   - displayName: Javascript
     name: javascript
@@ -21,43 +21,23 @@ tags:
     name: haml
   - displayName: Ruby/Rails
     name: rails
-table:
-  - heading: Framework
-    value: Ruby on Rails
-  - heading: Server Language
-    value: Ruby
-  - heading: Templates
-    value: Haml
-  - heading: CSS Preprocessor
-    value: Scss
-  - heading: Javascript
-    value: JQuery, JQueryUi, LoDash, SlickSlider, Vue
-  - heading: Database
-    value: MongoDb
-media:
-  - name: tablet home
-    url: /assets/projects/woodcraft-hp-med-2018.png
-    alt: Image of the woodcraft home page on a mid-sized screen
-    width: 1280
-  - name: mobile home
-    url: /assets/projects/woodcraft-hp-small-2018.png
-    alt: Image of the woodcraft website
-    width: 560
-  - name: desktop blog
-    url: /assets/projects/woodcraft-blog-wide-2018.png
-    alt: Image of the woodcraft website
-    width: 1920
-  - name: desktop find-a-store page
-    url: /assets/projects/woodcraft-findstore-wide-2018.png
-    alt: Image of the woodcraft website
-    width: 1920
-  - name: desktop product list
-    url: /assets/projects/woodcraft-plp-wide-2018.png
-    alt: Image of the woodcraft website
-    width: 1920
+# table:
+#   - heading: Framework
+#     value: Ruby on Rails
+#   - heading: Server Language
+#     value: Ruby
+#   - heading: Templates
+#     value: Haml
+#   - heading: CSS Preprocessor
+#     value: Scss
+#   - heading: Javascript
+#     value: JQuery, JQueryUi, LoDash, SlickSlider
+#   - heading: Database
+#     value: MongoDb
+# media:
 ```
 
-#### Making Wood Work
+#### The Freshest Flowers right to your door
 
 Lorem ipsum dolor sit amet consectetur adipiscing elit. Curabitur porta congue tincidunt. Pellentesque suscipit sem in felis porttitor, sed luctus magna malesuada. Sed bibendum facilisis tristique. Donec id tristique arcu, eget bibendum erat. Vestibulum aliquet quam sed finibus bibendum. Sed cursus felis vel eros semper dapibus. Maecenas vitae nisi id ipsum eleifend fringilla.
 
