@@ -5,11 +5,11 @@ list:
   title: Service Load-Testing
   description: Performed large-scale Load tests on our SSO Api and our Form APIs, automating up to 500k user sessions across 3 small servers.
 tags:
-  - displayName: Locust,
+  - displayName: Locust
     name: locust
-  - displayName: AWS ECS,
+  - displayName: AWS ECS
     name: aws-ecs
-  - displayName: Bash/Zsh,
+  - displayName: Bash/Zsh
     name: bash/zsh
 ```
 

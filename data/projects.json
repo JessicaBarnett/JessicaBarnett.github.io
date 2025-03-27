@@ -137,15 +137,15 @@
             },
             "tags": [
                 {
-                    "displayName": "Locust,",
+                    "displayName": "Locust",
                     "name": "locust"
                 },
                 {
-                    "displayName": "AWS ECS,",
+                    "displayName": "AWS ECS",
                     "name": "aws-ecs"
                 },
                 {
-                    "displayName": "Bash/Zsh,",
+                    "displayName": "Bash/Zsh",
                     "name": "bash/zsh"
                 }
             ]
