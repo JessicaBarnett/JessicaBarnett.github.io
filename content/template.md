@@ -1,12 +1,21 @@
+NOTE:
+- copy/rename this file in the `content/*` directory to add a new project
+- fill in all fields in the yml
+  - `details` & `media` are only required if you want a more-info page
+  - see `/src/types/data-types.ts > ProjectT` for type definition + optional fields
+  - delete this note block
+- when finished, remember `npm run ProjectGen`, which will turn this file into a json object in `data/projects.json`
+
+
 ```yml
 slug:
 company:
 list:
   title:
   description:
-detail:
+detail: (optional)
   title:
-  subtitle:
+  subtitle: (optional)
   role:
   time:
   type:

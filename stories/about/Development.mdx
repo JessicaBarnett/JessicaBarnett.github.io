@@ -1,0 +1,104 @@
+import { Meta, Unstyled } from "@storybook/blocks";
+import * as sharedVars from '../../data/css-variables.json';
+import "../../src/App.css";
+import "../storybook.css";
+
+<Meta title="about/Development" />
+
+# Development
+
+## Tech Stack
+
+<table>
+    <tr>
+        <th>SPA Framework</th>
+        <td>React</td>
+        <td class='sb-align-left'>Chosen for its lightness, ease-of-use, and ubiquity.  It's honestly probably overkill for a one page portfolio.</td>
+    </tr>
+    <tr>
+        <th>JS Flavor</th>
+        <td>Typescript</td>
+        <td class='sb-align-left'>The self-documentation and bug-prevention provided typescript makes the extra overhead worth it in my opinion.</td>
+    </tr>
+    <tr>
+        <th>CSS Flavor</th>
+        <td>Sass (dart-sass)</td>
+        <td class='sb-align-left'>CSS can do a lot on its own, but Sass still has a lot of features that I like having, like mixins, functions, nesting and partials.  Also I find the variables a lot less clunky than CSS's syntax.</td>
+    </tr>
+    <tr>
+        <th>Bundler / Build Tool</th>
+        <td>Vite</td>
+        <td class='sb-align-left'>I honestly just used this to try it.  It purports to be a lot faster than Webpack, which would certainly be a plus.</td>
+    </tr>
+    <tr>
+        <th>Deployment</th>
+        <td>Github actions</td>
+        <td class='sb-align-left'>Seems to be the easiest when it comes to github pages deployment, and it's extremely full featured.  Looks like there's a lot you can do with it.</td>
+    </tr>
+    <tr>
+        <th>Documentation</th>
+        <td>Storybook</td>
+        <td class='sb-align-left'>The gold-standard for creating amazing style-guides.</td>
+    </tr>
+</table>
+
+## Dependencies
+
+<table>
+    <tr>
+        <th>Build Dependencies</th>
+        <td>[DomPurify](https://www.npmjs.com/package/dompurify)</td>
+        <td class='sb-align-left'>Used to sanitize html content before injecting it into the DOM.  Specifically used for Projects html content.</td>
+    </tr>
+    <tr>
+        <th>GenProjects Script</th>
+        <td>[Marked](https://www.npmjs.com/package/marked)</td>
+        <td class='sb-align-left'>Used to convert Markdown to html</td>
+    </tr>
+    <tr>
+        <th></th>
+        <td>[js-yaml](https://www.npmjs.com/package/js-yaml)</td>
+        <td class='sb-align-left'>Used to convert Yaml to Json</td>
+    </tr>
+</table>
+
+
+## Scripts
+
+npm scripts are defined in [package.json](https://github.com/JessicaBarnett/JessicaBarnett.github.io/blob/main/package.json)
+
+<table>
+    <tr>
+        <th>name</th>
+        <th>reference</th>
+        <th>what it's for</th>
+        <th>where and how</th>
+    </tr>
+    <tr>
+        <td>Gen Projects</td>
+        <td>[Projects](/docs/content-projects--docs)</td>
+        <td className="sb-align-left">Enables easy content editing in markdown/yml instead of json.  Script converts all markdown files in `/content/*` into a json file in `/data/projects.json`.</td>
+        <td className="sb-align-left">
+            `npm run genProjects`<br/>
+            [`/scripts/genProjects.cjs`](https://github.com/JessicaBarnett/JessicaBarnett.github.io/blob/main/scripts/genProjects.cjs)
+        </td>
+    </tr>
+    <tr>
+        <td>Gen Icon Components</td>
+        <td>[Icons](/docs/icons-svg-icons--docs)</td>
+        <td className="sb-align-left">Enables easy addition and use of new svg icons.  This script creates React components for all svg files in `/public/assets/icons/` and creates a component & story file for each (in `/src/icons/`) and a json manifest for use in docs (in `stories/manifests`)</td>
+        <td className="sb-align-left">
+            `npm run genIcons`<br/>
+            [`/scripts/genIconComponents.cjs`](https://github.com/JessicaBarnett/JessicaBarnett.github.io/blob/main/scripts/genIconComponents.cjs)
+        </td>
+    </tr>
+    <tr>
+        <td>Copy Css Vars</td>
+        <td>[Colors](/docs/globals-colors--docs)</td>
+        <td className="sb-align-left">Allows the use of some CSS Variables in javascript code. Currently gets breakpoints, colors, and the rainbow-stripe widths.  These are mostly used by js Canvas code to generate the Rainbow design Element, and also for docs.  Grabs specific files from `/stylesheets/variables/*`, grabs all css variables from each, and pops them into a json file at `data/css-variables.json`.  Also creates a type file at `./src/types/css-variables-types.ts` </td>
+        <td className="sb-align-left">
+            `npm run copyCSSVars`<br/>
+            [`/scripts/copyCSSVars.cjs`](https://github.com/JessicaBarnett/JessicaBarnett.github.io/blob/main/scripts/copyCSSVars.cjs)
+        </td>
+    </tr>
+</table>

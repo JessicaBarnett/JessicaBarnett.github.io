@@ -1,0 +1,27 @@
+import { Meta } from "@storybook/blocks";
+import "../../src/App.css";
+import "../storybook.css";
+
+<Meta title="content/Projects"/>
+
+## Projects
+
+I find json files incredibly cumbersome to edit, so I made a little system that allows me to write copy + metadata for projects using yaml and markdown, and then run a script to convert it into Json.
+
+### How to Add new Project
+
+The process for editing the content for Projects is as follows:
+
+#### 1. Create a new markdown file in `/content/`
+
+Copy the contents of the [`/content/template.md`](https://github.com/JessicaBarnett/JessicaBarnett.github.io/blob/main/content/template.md) file (shown below) into your new file.
+<iframe className="sb-iframe" src="../content/template.md" />
+
+#### 2. Fill in the Yaml and Markdown
+
+You can either fil it out for the list view only (omitting the optional fields) or for the full project details page.  plenty of examples in [`/content/*.md`](https://github.com/JessicaBarnett/JessicaBarnett.github.io/blob/main/content/)
+
+#### 3. Run the `genProjects` script
+
+When you're done editing, run `npm run genProjects` from project root.  It will convert the yaml and markdown into a json object matching the `ProjectT` type (see [`./src/types/data-types`](https://github.com/JessicaBarnett/JessicaBarnett.github.io/blob/main/src/types/data-types.ts)), and put all the jsonified data in [`/data/projects.json`](https://github.com/JessicaBarnett/JessicaBarnett.github.io/blob/main/src/types/data-types.ts)(see below)
+<iframe className="sb-iframe" src="../data/projects.json"/>

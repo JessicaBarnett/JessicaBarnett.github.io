@@ -53,7 +53,7 @@ const preview: Preview = {
     },
     options: {
       storySort: {
-        order: ['about', ['Design', 'Development', 'Data'], 'globals', 'typography', 'icons', 'components', ['Navigation', 'TitleSection', 'AboutSection', 'SectionHeading', 'Tag', 'FilterSelect', 'Project', 'ProjectList', 'ExperienceEntry', 'ExperienceList', 'SocialSidebar', 'ContactForm', '*' ], '*'],
+        order: ['about', ['Design', 'Development', 'Data'], 'globals', 'typography', 'icons', 'content', 'components', ['Navigation', 'TitleSection', 'AboutSection', 'SectionHeading', 'Tag', 'FilterSelect', 'Project', 'ProjectList', 'ExperienceEntry', 'ExperienceList', 'SocialSidebar', 'ContactForm', '*' ], '*'],
         method: 'alphabetical',
       },
     },
