@@ -9,7 +9,7 @@ import "../storybook.css";
 
 ## Available Colors
 
-<p>These colors are all defined in `stylesheets/variables/_colors.scss`</p>
+<p>These colors are all defined in [`stylesheets/variables/_colors.scss`](https://github.com/JessicaBarnett/JessicaBarnett.github.io/blob/main/stylesheets/variables/_colors.scss)</p>
 
 <Unstyled>
   <div class="sb-example-block">
@@ -26,17 +26,17 @@ import "../storybook.css";
 
 ## Colors in JS
 
-<p>These colors are also available in a JSON file at `src/css-variables.json`.  There are corresponding Type definitione at `src/types/css-variable-types.ts`.</p>
+<p>These colors are also available in a JSON file at [`src/css-variables.json`](https://github.com/JessicaBarnett/JessicaBarnett.github.io/blob/main/data/css-variables.json).  There are corresponding Type definitione at [`src/types/css-variables-types.ts`](https://github.com/JessicaBarnett/JessicaBarnett.github.io/blob/main/src/types/css-variables-types.ts).</p>
 <p>This is mostly necessary for the BGLines.ts file, which uses these colors as the css does to draw background lines on a canvas.  (and also makes the documentation block in this file a lot easier to make, but that's not super important.)</p>
 
 <h2>Adding Colors</h2>
 
 <p>To add a new color to both the JS and documentation:</p>
 
-<ol>
-  <li>Add the color variable as-per-usual to `stylesheets/variables/_colors.scss`</li>
-  <li>run the `copyCssVars` npm script.</li>
-  <li>verify the color appears in `src/css-variables.json`, and in the type file at `src/types/css-variables-types.ts`</li>
+<ol className='sb-ordered'>
+  <li>Add the color variable as-per-usual to [`stylesheets/variables/_colors.scss`](https://github.com/JessicaBarnett/JessicaBarnett.github.io/blob/main/stylesheets/variables/_colors.scss)</li>
+  <li>run npm script: `npm run copyCssVars`</li>
+  <li>verify the color appears in [`src/css-variables.json`](https://github.com/JessicaBarnett/JessicaBarnett.github.io/blob/main/data/css-variables.json), and in the type file at [`src/types/css-variables-types.ts`](https://github.com/JessicaBarnett/JessicaBarnett.github.io/blob/main/src/types/css-variables-types.ts)</li>
 </ol>
 
-<p>The copyCssVars script is a node script is located in `scripts/`.</p>../../data/css-variables.json
+<p>The copyCssVars script is a node script is located at [`scripts/copyCSSVars.cjs`](https://github.com/JessicaBarnett/JessicaBarnett.github.io/blob/main/scripts/copyCSSVars.cjs). </p>

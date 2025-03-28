@@ -171,3 +171,7 @@
 .sb-unordered :is(ol, ul, li) {
     list-style: initial;
 }
+
+.sb-ordered :is(ol, ul, li) {
+    list-style: decimal;
+}

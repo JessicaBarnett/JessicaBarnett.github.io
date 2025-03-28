@@ -24,17 +24,17 @@ import IconsManifest from '../manifests/IconsManifest.mdx';
 
 <p>In order to add a new svg icon, do the following: </p>
 
-<ol>
-  <li>Add a `.svg` file to the `public/assets/icons` directory.</li>
-  <li>run the `genIcons` npm script.</li>
-  <li>verify the new Icon component and story in `src/icons`</li>
+<ol className="sb-ordered">
+  <li>Add a `.svg` file to the [`public/assets/icons`](https://github.com/JessicaBarnett/JessicaBarnett.github.io/tree/main/public/assets/icons) directory.</li>
+  <li>run npm script `npm run genIcons`</li>
+  <li>verify the new Icon component and story in [`src/icons`](https://github.com/JessicaBarnett/JessicaBarnett.github.io/tree/main/src/icons)</li>
   <li>Verify new Icon appears here in the docs</li>
 </ol>
 
-<p>The genIcons script is a node script is located in `scripts/`.  It will grab all `.svg` files in `public/assets/icons`, and then pop that html into a component as JSX in `src/icons`.  It will also create a story file for the new component, and create a manifest to use in this documentation.</p>
+<p>The genIcons script is a node script is located at [`scripts/genIconsComponents.cjs`](https://github.com/JessicaBarnett/JessicaBarnett.github.io/blob/main/scripts/genIconComponents.cjs).  It will grab all `.svg` files in [`public/assets/icons`](https://github.com/JessicaBarnett/JessicaBarnett.github.io/tree/main/public/assets/icons), and then pop that html into a component as JSX in [`src/icons`](https://github.com/JessicaBarnett/JessicaBarnett.github.io/tree/main/src/icons).  It will also create a story file for the new component, and create a manifest to use in this documentation.</p>
 
 ## SVG Icon File Guidelines
-  <ul>
+  <ul className="sb-unordered">
     <li>filename should be kebab-case. The script will convert it to CamelCase when naming the component. (ex: `super-cool-cat.svg` will result in component `SuperCoolCatIcon.tsx`)</li>
     <li>use `viewBox="0 0 280 280"` to keep the new icon in line with the others</li>
     <li>The xml-to-jsx conversion is very rudimentary.  Check the `genIconComponents` `xmlToJsx` function to add additional replacements.</li>
