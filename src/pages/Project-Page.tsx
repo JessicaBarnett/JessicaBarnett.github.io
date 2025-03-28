@@ -82,11 +82,11 @@ function ProjectPage({onNavigateBack}: ProjectPageProps) {
                     <Slider
                         name="wide-images"
                         options={{
-                            fixHeights: true,
+                            // fixHeights: true,
                             wide: true,
                             sliderClass: 'hidden-at-small'
                         }}
-                        media={project?.media?.filter((p) => p.width > 1280) ?? []}
+                        media={project?.media?.filter((p) => p.width >= 1280) ?? []}
                     ></Slider>
 
                     <Slider
@@ -107,11 +107,11 @@ function ProjectPage({onNavigateBack}: ProjectPageProps) {
                         <Slider
                             name="mobile-images"
                             options={{
-                                fixHeights: true,
+                                // fixHeights: true,
                                 tall: true,
                                 sliderClass: 'hidden-at-small'
                             }}
-                            media={project?.media?.filter((p) => p.width <= 1280) ?? []}
+                            media={project?.media?.filter((p) => p.width < 1280) ?? []}
                         ></Slider>
                     </div>
                     <div dangerouslySetInnerHTML={{

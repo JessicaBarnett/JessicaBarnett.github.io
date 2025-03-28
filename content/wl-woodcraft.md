@@ -35,26 +35,38 @@ tags:
   - displayName: Ruby/Rails
     name: rails
 media:
-  - name: tablet home
+  - name: Woodcraft home (tablet)
     url: /assets/projects/woodcraft-hp-med-2018.png
     alt: Image of the woodcraft home page on a mid-sized screen
-    width: 1280
-  - name: mobile home
+    width: 760
+  - name: Woodcraft home (mobile)
     url: /assets/projects/woodcraft-hp-small-2018.png
     alt: Image of the woodcraft website
     width: 560
-  - name: desktop blog
+  - name: Woodcraft blog (desktop)
     url: /assets/projects/woodcraft-blog-wide-2018.png
     alt: Image of the woodcraft website
     width: 1920
-  - name: desktop find-a-store page
+  - name: Woodcraft find-a-store (desktop)
     url: /assets/projects/woodcraft-findstore-wide-2018.png
     alt: Image of the woodcraft website
     width: 1920
-  - name: desktop product list
+  - name: Woodcraft product List (desktop)
     url: /assets/projects/woodcraft-plp-wide-2018.png
     alt: Image of the woodcraft website
     width: 1920
+  - name: Japan Woodworker home (tablet)
+    url: /assets/projects/jw-760-hp-2018.png
+    alt: Image of the woodcraft home page on a mid-sized screen
+    width: 760
+  - name: Japan Woodworker home (mobile)
+    url: /assets/projects/jw-360-hp-2018.png
+    alt: Image of the woodcraft website
+    width: 360
+  - name: Japan Woodworker home (desktop)
+    url: /assets/projects/jw-1280-hp-2018.png
+    alt: Image of the woodcraft home page on a mid-sized screen
+    width: 1280
 ```
 
 #### Making Wood Work

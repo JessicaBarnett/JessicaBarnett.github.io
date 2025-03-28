@@ -157,9 +157,9 @@ const Slider = ({ media, options, name}: SliderComponentProps) => {
                                 key={`${name}-${slide.name}-img`}
                                 src={slide.url}
                                 alt={slide.alt}
-                                style={{
-                                    height: options?.fixHeights && selectedSlideHeight ? `${selectedSlideHeight}px` : 'auto',
-                                }}
+                                // style={{
+                                //     height: options?.fixHeights && selectedSlideHeight ? `${selectedSlideHeight}px` : 'auto',
+                                // }}
                             ></img>
                         ))}
                     </div>
