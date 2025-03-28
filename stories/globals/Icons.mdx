@@ -1,14 +1,14 @@
 import { createElement } from 'react';
 import { Meta, Unstyled } from "@storybook/blocks";
-import "../src/App.css";
-import "./storybook.css";
-import IconsManifest from './manifests/IconsManifest.mdx';
+import "../../src/App.css";
+import "../storybook.css";
+import IconsManifest from '../manifests/IconsManifest.mdx';
 
-<Meta title="icons/SVG Icons" />
+<Meta title="globals/Icons" />
 
-<h1>Icons</h1>
+# Icons
 
-<h2>Available Icons</h2>
+## Available Icons
 
 <p>these icons are all added as svg markup in a react component.  Therefore they are styleable via `fill`, border, and other svg properties.  </p>
 
@@ -20,7 +20,7 @@ import IconsManifest from './manifests/IconsManifest.mdx';
   </div>
 </Unstyled>
 
-<h2>Adding Icons</h2>
+## Adding Icons
 
 <p>In order to add a new svg icon, do the following: </p>
 
@@ -33,7 +33,7 @@ import IconsManifest from './manifests/IconsManifest.mdx';
 
 <p>The genIcons script is a node script is located in `scripts/`.  It will grab all `.svg` files in `public/assets/icons`, and then pop that html into a component as JSX in `src/icons`.  It will also create a story file for the new component, and create a manifest to use in this documentation.</p>
 
-<h2>SVG Icon File Guidelines</h2>
+## SVG Icon File Guidelines
   <ul>
     <li>filename should be kebab-case. The script will convert it to CamelCase when naming the component. (ex: `super-cool-cat.svg` will result in component `SuperCoolCatIcon.tsx`)</li>
     <li>use `viewBox="0 0 280 280"` to keep the new icon in line with the others</li>

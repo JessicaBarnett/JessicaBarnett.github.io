@@ -1,5 +1,5 @@
 import DOMPurify from 'dompurify';
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { NavLink, useParams } from "react-router";
 import { useProjects } from "@src/hooks/static/useProjects.ts";
 import Slider from "@src/components/Slider.tsx";
@@ -14,6 +14,24 @@ const findDetailedProjectBySlug = (projects: (ProjectT)[], slug: string = ''): P
     return match;
 }
 
+// Splits html content into 2 parts at a specific string.
+// 2 parts will be rendered before and after the slider.
+// if string split delimiter isn't found, just returns 1 chunk
+const splitContent = (htmlText: string) => {
+    const splitStr = '<SLIDER>';
+    const splitIdx = htmlText.search(splitStr);
+    if (splitIdx > 0) {
+        console.log(htmlText.substring(0, splitIdx), '  --- ', htmlText.substring(splitIdx + splitStr.length))
+        return [
+            htmlText.substring(0, splitIdx),
+            htmlText.substring(splitIdx + splitStr.length, htmlText.length)
+        ]
+    } else {
+        return [htmlText];
+    }
+}
+
+
 type ProjectPageProps = {
     onNavigateBack: (e: React.MouseEvent) => Promise<void>
 }
@@ -22,6 +40,8 @@ function ProjectPage({onNavigateBack}: ProjectPageProps) {
     const [ projects ] = useProjects();
     const { projectSlug } = useParams();
     const [ project ] = useState(findDetailedProjectBySlug(projects, projectSlug))
+    const [ contentArr, setContentArr ] = useState<string[]>([]);
+
 
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
     const pageRef = useRef<HTMLDivElement | null>(null);
@@ -44,11 +64,18 @@ function ProjectPage({onNavigateBack}: ProjectPageProps) {
             contentRef,
         }
     );
+
     useLayoutEffect(() => {
         // do once on page load/navigation
         const navHeight = document.getElementById('nav')?.clientHeight ?? 0;
         window.scrollTo({ top: -(navHeight), behavior: 'instant' });
     }, [])
+
+    useEffect(() => {
+        if (project.detail && project.detail.content) {
+            setContentArr(splitContent(project.detail.content));
+        }
+    }, [project])
 
     return project && project.detail && (
         <div ref={pageRef} className='page'>
@@ -103,6 +130,9 @@ function ProjectPage({onNavigateBack}: ProjectPageProps) {
                     <div className="left">
                         <Table data={project.detail.table}></Table>
                     </div>
+                    <div dangerouslySetInnerHTML={{
+                        __html: DOMPurify.sanitize(contentArr[0]),
+                    }}></div>
                     <div className="right">
                         <Slider
                             name="mobile-images"
@@ -115,7 +145,7 @@ function ProjectPage({onNavigateBack}: ProjectPageProps) {
                         ></Slider>
                     </div>
                     <div dangerouslySetInnerHTML={{
-                        __html: DOMPurify.sanitize(project.detail.content),
+                        __html: DOMPurify.sanitize(contentArr[1]),
                     }}></div>
                 </div>
             </section>

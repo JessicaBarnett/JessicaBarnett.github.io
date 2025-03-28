@@ -73,6 +73,8 @@ media:
 
 Woodcraft is a 95 year old woodworking supply brand - a mid-sized retailer with more than 150 stores in the US and worldwide.  Additionally, they're a large provider of woodworking education through their bi-monthly periodical, Woodcraft Magazine, their enormous library of free online articles, and the abundance of classes and demonstrations offered by local stores.  They came to us looking to modernize their e-commerce platform, and to remodel their retail website with a fresh, elegant, and professional design that duly honors the artistry and craftsmanship of their clientele.
 
+<SLIDER>
+
 #### Learning the Trade
 
 Because of Woodcraft's unique dual-focus on retail and education, we found that in addition to the usual tasks of building a low-friction and performant online shopping experience, we also needed to showcase their vast collection of articles, preferably in close proximity to related products.  After all, it's a lot easier to be confident and excited about a new project if you have a reliable how to guide, and readily-available links to all the tools and materials you need, all in one central place.  To achieve this end, we created numerous ways for merchandisers and marketers to display products, promotional banners, and articles almost anywhere.

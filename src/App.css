@@ -390,7 +390,7 @@ td, th {
 @media (min-width: 769px) {
   td, th {
     padding: 4px;
-    height: 3rem;
+    height: 2.25rem;
   }
 }
 

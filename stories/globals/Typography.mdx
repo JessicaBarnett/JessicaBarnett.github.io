@@ -1,0 +1,87 @@
+import { Meta, Unstyled } from '@storybook/addon-docs/blocks';
+import "../../src/App.css";
+import "../storybook.css";
+
+<Meta title="globals/Typography" />
+
+# Typography
+
+## Fonts
+
+<p>There are 2 fonts available for use.  The primary font is called Inter, and is used for basically everything.  <a href="https://fonts.google.com/specimen/Inter" target="_blank">It came from google Fonts.</a>  I ended up with it sort-of by accident.  I did the first-pass design on an Ipad and used the apple default font (San Francisco), since it actually matched the VHS look pretty well.  But that font is proprietary, so I picked Inter instead, since it's the most similar free font I could find.</p>
+
+<Unstyled>
+  <div class="sb-example-block sb-inter">
+    <h1>This is Inter!</h1>
+    <h2>It's the primary font on this project</h2>
+    <p>It's used for everything, honestly.</p>
+  </div>
+</Unstyled>
+
+<p>The 2nd font is just for fun.  This design is based on a 90s blank vhs cover, and the <a href="https://fontsinuse.com/uses/3650/vhs-logo" target="_blank">historical font that was used for the "VHS" logo</a> is this one, `Lester Bold`.  It's a "very peculiar 1970s kind of typeface" created by one Leo Weisz for VGC. It was also used on the cover of Charlie's Angels in 1976.</p>
+
+<Unstyled>
+  <div class="sb-example-block sb-lester">
+    <h1>This is Lester Bold! (the VHS logo font)</h1>
+    <h2>It's a fun, thematically appropriate font</h2>
+    <p>I actually haven't really figured out what I want to do with it yet.</p>
+  </div>
+</Unstyled>
+
+## Headings
+
+<p>In most projects I've worked on in the past, there have been 2 sets of heading styles.  A "primary" and a "secondary", or similar.</p>
+<p>This has always caused a dilemma for me.  Heading tags need to be used in a semantic and accessible way that follows the flow of the document, but this often conflicts with the visual treatment that's being asked for.</p>
+<p>So, in this case, I chose to decouple my visual styles from the heading tags completely, so that any `<h*>` tag can be used by any of the visual-treatment classes available.  I've also chosen to divide my headings into 3 groups, with title, subtitle, and supertitle styles, to avoid confusing myself by using h1-6.</p>
+
+### title-1 and subtitle-1
+<Unstyled>
+  <div class="sb-example-block">
+    <h2 class="title-1">The Quick Brown Fox</h2>
+    <h3 class="subtitle-1">Jumped Over the Lazy Dog</h3>
+  </div>
+</Unstyled>
+
+### title-2 and subtitle-2
+<Unstyled>
+  <div class="sb-example-block">
+    <h2 class="title-2">The Quick Brown Fox</h2>
+    <h3 class="subtitle-2">Jumped Over the Lazy Dog</h3>
+  </div>
+</Unstyled>
+
+### title-3, subtitle-3, and supertitle-3
+<Unstyled>
+  <div class="sb-example-block">
+    <div class="supertitle-3">Once more with feeling...</div>
+    <h2 class="title-3">The Quick Brown Fox</h2>
+    <h3 class="subtitle-3">Jumped Over the Lazy Dog</h3>
+  </div>
+</Unstyled>
+
+
+### Baseline Headings
+<Unstyled>
+  <div class="sb-example-block">
+    <h1>The Quick Brown Fox Jumped Over the Lazy Dog</h1>
+    <h2>The Quick Brown Fox Jumped Over the Lazy Dog</h2>
+    <h3>The Quick Brown Fox Jumped Over the Lazy Dog</h3>
+    <h4>The Quick Brown Fox Jumped Over the Lazy Dog</h4>
+    <h5>The Quick Brown Fox Jumped Over the Lazy Dog</h5>
+    <h6>The Quick Brown Fox Jumped Over the Lazy Dog</h6>
+  </div>
+</Unstyled>
+
+
+## Paragraphs
+
+<p>Not much to say here, but this is what paragraphs look like!</p>
+
+<Unstyled>
+  <div class="sb-example-block">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam est ex, euismod a sodales a, lobortis sed nisi. Aliquam commodo pharetra turpis nec rhoncus. Duis consequat nisl sit amet enim molestie tempus.</p>
+    <p>Sed ligula urna, pellentesque vitae metus maximus, auctor fringilla turpis. Mauris purus velit, venenatis quis laoreet eu, pharetra ut lorem. Fusce vestibulum pulvinar porta.</p>
+    <p>Ut faucibus rutrum sem, ac eleifend eros vulputate sed. Nunc ultricies ligula vitae ligula dictum, eget dignissim elit interdum. Aenean vel libero sapien. Sed nulla diam, consectetur vitae felis vitae, varius molestie est. Maecenas felis erat, viverra ac elementum vitae, molestie aliquet nisl.</p>
+    <p>Curabitur maximus quis lacus in consectetur.</p>
+  </div>
+</Unstyled>

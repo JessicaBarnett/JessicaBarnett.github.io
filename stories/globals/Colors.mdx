@@ -1,13 +1,13 @@
 import { Meta, Unstyled } from "@storybook/blocks";
-import * as sharedVars from '../data/css-variables.json';
-import "../src/App.css";
-import "./storybook.css";
+import * as sharedVars from '../../data/css-variables.json';
+import "../../src/App.css";
+import "../storybook.css";
 
 <Meta title="globals/Colors" />
 
-<h1>Colors</h1>
+# Colors
 
-<h2>Available Colors</h2>
+## Available Colors
 
 <p>These colors are all defined in `stylesheets/variables/_colors.scss`</p>
 
@@ -24,7 +24,7 @@ import "./storybook.css";
   </div>
 </Unstyled>
 
-<h2>Colors in JS</h2>
+## Colors in JS
 
 <p>These colors are also available in a JSON file at `src/css-variables.json`.  There are corresponding Type definitione at `src/types/css-variable-types.ts`.</p>
 <p>This is mostly necessary for the BGLines.ts file, which uses these colors as the css does to draw background lines on a canvas.  (and also makes the documentation block in this file a lot easier to make, but that's not super important.)</p>
@@ -39,4 +39,4 @@ import "./storybook.css";
   <li>verify the color appears in `src/css-variables.json`, and in the type file at `src/types/css-variables-types.ts`</li>
 </ol>
 
-<p>The copyCssVars script is a node script is located in `scripts/`.</p>
+<p>The copyCssVars script is a node script is located in `scripts/`.</p>../../data/css-variables.json

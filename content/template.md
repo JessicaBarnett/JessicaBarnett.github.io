@@ -3,6 +3,7 @@ NOTE:
 - fill in all fields in the yml
   - `details` & `media` are only required if you want a more-info page
   - see `/src/types/data-types.ts > ProjectT` for type definition + optional fields
+  - put `<SLIDER>` somewhere in the markdown area to indicate where the mobile slider should be situated.
   - delete this note block
 - when finished, remember `npm run ProjectGen`, which will turn this file into a json object in `data/projects.json`
 
@@ -29,12 +30,14 @@ media:
   - name:
     url: /assets/projects/FILENAME.png
     alt:
-    width: 560 | 1280 | 1920
+    width: 360 | 560 | 760 | 1280 | 1920
 ```
 
 #### Something Catchy
 
 your text here
+
+<SLIDER>
 
 #### Challenge
 
