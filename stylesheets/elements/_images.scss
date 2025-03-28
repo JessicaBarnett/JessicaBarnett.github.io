@@ -5,5 +5,6 @@ img {
 .img-expanded {
     display: block;
     margin: 0 auto;
+    position: relative; // so it can be z-indexed above the bg texture
     // max-width: inherit; //NOTE: can't decide if I want this to be a "zoom" or just a full-width display...
 }

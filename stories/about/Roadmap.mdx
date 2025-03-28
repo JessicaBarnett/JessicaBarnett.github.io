@@ -1,0 +1,180 @@
+import { Meta, Unstyled } from "@storybook/blocks";
+import * as sharedVars from '../../data/css-variables.json';
+import "../../src/App.css";
+import "../storybook.css";
+
+<Meta title="about/Roadmap" />
+
+# Roadmap
+
+## Short term bugfix list
+<div className='sb-unordered'>
+    - currently getting a 404 when I refresh or directly navigate to the projects/woodcraft page, specifically on gh pages, not locally
+    - docs: fix error on navigation component page
+    - docs: Add links to filepaths in the docs
+</div>
+
+## High Priority
+
+<div className="sb-data-list">
+    <dl>
+        <dt>Task</dt>
+        <dd>Write Content for Project Detail Pages</dd>
+        <dt>Type</dt>
+        <dd>Content</dd>
+        <dt>Status</dt>
+        <dd>in progress</dd>
+        <dt>Priority</dt>
+        <dd>high</dd>
+        <dt>Details</dt>
+        <dd>
+            I'm planning to do the projects that have been public-facing first.
+           <div className='sb-unordered'>
+            - The Bouqs
+            - Relay Company site
+            - Relay feed
+            </div>
+            Each project requires the collection of screenshots (using the wayback machine for older projects) and writing copy.
+        </dd>
+    </dl>
+
+    <dl>
+        <dt>Task</dt>
+        <dd>Storybook Bug Fixes!</dd>
+        <dt>Type</dt>
+        <dd>Bugfixes/Documentation</dd>
+        <dt>Status</dt>
+        <dd>in progress</dd>
+        <dt>Priority</dt>
+        <dd>high</dd>
+        <dt>Details</dt>
+        <dd>
+            I've been doing a lot of development lately, and things have changed!  So I need to spend some time going through the docs and making sure all guides are up to date, and nothing is broken.
+        </dd>
+    </dl>
+
+    <dl>
+        <dt>Task</dt>
+        <dd>Accessibility Auditing</dd>
+        <dt>Type</dt>
+        <dd>Testing</dd>
+        <dt>Status</dt>
+        <dd>Planned</dd>
+        <dt>Priority</dt>
+        <dd>high</dd>
+        <dt>Details</dt>
+        <dd>
+            I always do my best to follow best practices when it comes to accessibility, but I really do need to go in with a fine-tooth comb and make sure there's no issues.
+        </dd>
+    </dl>
+
+## Mid Priority
+
+    <dl>
+        <dt>Task</dt>
+        <dd>Unit + Visual Testing</dd>
+        <dt>Type</dt>
+        <dd>Testing</dd>
+        <dt>Status</dt>
+        <dd>Planned</dd>
+        <dt>Priority</dt>
+        <dd>mid</dd>
+        <dt>Details</dt>
+        <dd>
+            I know storybook has some nice visual testing tools that I can leverage.  And I also know there's a lot of js in this project that could use tests.  This must be rectified.
+        </dd>
+    </dl>
+
+    <dl>
+        <dt>Task</dt>
+        <dd>Use Clip Masks instead of Pseudo els for VHS elements</dd>
+        <dt>Type</dt>
+        <dd>Improvement</dd>
+        <dt>Status</dt>
+        <dd>Planned</dd>
+        <dt>Priority</dt>
+        <dd>mid</dd>
+        <dt>Details</dt>
+        <dd>
+            The little trapezoid and triangle elements on the main page are currently made with pseudo elements that have a bg that matches the page bg.  But since both bgs are textured, they don't really blend that well.  If I made these shapes by applying layers of clip masks to the page instead, then the shapes wouldn't have a background - they would be transparent and the normal bg would show through.  I think this would be much cleaner visually.
+        </dd>
+    </dl>
+
+    <dl>
+        <dt>Task</dt>
+        <dd>Dark Mode</dd>
+        <dt>Type</dt>
+        <dd>Feature</dd>
+        <dt>Status</dt>
+        <dd>Planned</dd>
+        <dt>Priority</dt>
+        <dd>mid</dd>
+        <dt>Details</dt>
+        <dd>
+            I have some dark mode styles in there already but have lost track of them.  I'm going to have to go through and audit everything to make sure it looks nice.
+        </dd>
+    </dl>
+        <dl>
+        <dt>Task</dt>
+        <dd>Implement Sass for storybook</dd>
+        <dt>Type</dt>
+        <dd>Documentation</dd>
+        <dt>Status</dt>
+        <dd>Planned</dd>
+        <dt>Priority</dt>
+        <dd>mid</dd>
+        <dt>Details</dt>
+        <dd>
+            I swear I spend as much time making the storybook look good as I do the rest of the website, and the custom css I've written for it is getting a little unweildy.  It might be time to organize it better and use sass, like I am with the main project.  There's really no reason not to.
+        </dd>
+    </dl>
+
+### Low Priority
+
+    <dl>
+        <dt>Task</dt>
+        <dd>Animate rainbows!!</dd>
+        <dt>Type</dt>
+        <dd>Feature</dd>
+        <dt>Status</dt>
+        <dd>Planned</dd>
+        <dt>Priority</dt>
+        <dd>low</dd>
+        <dt>Details</dt>
+        <dd>
+            this is something I've been wanting to do since the beginning.  I wrote the canvas code in a specific way with a mind towards animating the lines "drawing themselves" as you scroll down the page.  It'll take some time, but I think the result will really make an impression!
+        </dd>
+    </dl>
+
+    <dl>
+        <dt>Task</dt>
+        <dd>"Rewind" back to top button</dd>
+        <dt>Type</dt>
+        <dd>Feature</dd>
+        <dt>Status</dt>
+        <dd>Planned</dd>
+        <dt>Priority</dt>
+        <dd>low</dd>
+        <dt>Details</dt>
+        <dd>
+            Since this is a vhs themed site, it's only fitting that the back to top button has the rewind symbol on it!  And at present there is no link that will take you back to the top, so this is technically something I ought to have anyway.
+        </dd>
+    </dl>
+
+    <dl>
+        <dt>Task</dt>
+        <dd>Color Theming</dd>
+        <dt>Type</dt>
+        <dd>Feature</dd>
+        <dt>Status</dt>
+        <dd>Planned</dd>
+        <dt>Priority</dt>
+        <dd>low</dd>
+        <dt>Details</dt>
+        <dd>
+            This is a very experimental idea.  I've seen sites that have a color theme switch, where you can choose from a bunch of themes, and the whole page will change.  I just think it would be fun to write, as it would give me a chance to really see how far I can push css vars!
+        </dd>
+    </dl>
+
+</div>
+

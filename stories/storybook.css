@@ -157,3 +157,17 @@
     background-color: #F7FAFC;
     margin-bottom: 24px;
 }
+
+.sb-data-list dt {
+    margin-top: 0 !important;
+}
+
+.sb-data-list dl {
+    padding: 16px;
+    box-shadow: rgba(0, 0, 0, 0.10) 0 1px 3px 0;
+    border: 1px solid hsla(203, 50%, 30%, 0.15);
+}
+
+.sb-unordered :is(ol, ul, li) {
+    list-style: initial;
+}
