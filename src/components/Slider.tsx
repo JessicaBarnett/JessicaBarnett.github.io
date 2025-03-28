@@ -55,17 +55,17 @@ const Slider = ({ media, options, name}: SliderComponentProps) => {
     const sliderTrackRef = useRef<HTMLDivElement | null>(null);
     const [selectedSlide, setSelectedSlide] = useState<MediaT>(media[0]);
     const [selectedSlideIdx, setSelectedSlideIdx] = useState<number>(0);
-    const [selectedSlideHeight, setSelectedSlideHeight] = useState<number | null>(null);
+    // const [selectedSlideHeight, setSelectedSlideHeight] = useState<number | null>(null);
     const [slideWidth, setSlideWidth] = useSlideWidthState(name);
     const [offset, setOffset] = useOffsetState(slideWidth); // determines which slide is shown (a translate-x px value)
 
-    const calculateImageHeight = (imageEl: HTMLImageElement) => {
-        if (sliderContentsRef && sliderContentsRef.current) {
-            return imageEl.naturalHeight * sliderContentsRef.current.offsetWidth / imageEl.naturalWidth;
-        } else {
-            return null;
-        }
-    };
+    // const calculateImageHeight = (imageEl: HTMLImageElement) => {
+    //     if (sliderContentsRef && sliderContentsRef.current) {
+    //         return imageEl.naturalHeight * sliderContentsRef.current.offsetWidth / imageEl.naturalWidth;
+    //     } else {
+    //         return null;
+    //     }
+    // };
 
     const scrollToTop = () => {
         sliderContentsRef?.current?.scrollTo({ top: 0, behavior: "smooth" })
@@ -100,8 +100,8 @@ const Slider = ({ media, options, name}: SliderComponentProps) => {
             scrollToTop();
             setSlideWidth();
             setOffset(selectedSlideIdx);
-            const img = sliderTrackRef.current?.children[selectedSlideIdx] as HTMLImageElement;
-            setSelectedSlideHeight(calculateImageHeight(img));
+            // const img = sliderTrackRef.current?.children[selectedSlideIdx] as HTMLImageElement;
+            // setSelectedSlideHeight(calculateImageHeight(img));
         })
     }, [selectedSlideIdx, setOffset, setSlideWidth])
 
