@@ -24,6 +24,9 @@
 - content gen script
 - bg of dialog should match bg of main page
 - add a roadmap page to storybook
+- docs: Add links to filepaths in the docs
+- docs: fix error on navigation component page
+
 
 -----------------------------------------
 # In progress
@@ -33,13 +36,15 @@ WIP
 
 BUGS
 - Fix weird button seam task would be a nice to have too (use clip-path instead of pseudos)
-- refreshing on more info pages leads to a 404.  must fix
+- refreshing on more info pages leads to a 404.  ONLY ON DEPLOYED VERSION.  must fix
+- slider improvements @mobile when there's a lot of images.
 
 -----------------------------------------
 ## TODO
 -----------------------------------------
 
 ## Features
+- Slider mobile swipe
 - color scheme switches
 - rewind back-to-top
 - animate lines

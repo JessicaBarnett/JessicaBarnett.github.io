@@ -46,6 +46,7 @@ label {
 input {
     @include form-field();
     margin-bottom: 8px;
+    font-size: $body-font-sm;
 
     @include dark-mode() {
         color: $drk-text-color;
@@ -56,6 +57,7 @@ input {
 
 textarea {
     @include form-field();
+    font-size: $body-font-sm;
     font-family: $primary-font;
     min-height: 250px;
     margin-bottom: 8px;
