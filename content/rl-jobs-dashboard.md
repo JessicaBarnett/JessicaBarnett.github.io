@@ -11,6 +11,8 @@ tags:
     name: angular
   - displayName: CSS/Scss
     name: scss
+  - displayName: Design
+    name: design
   - displayName: Jasmine
     name: jasmine
 ```

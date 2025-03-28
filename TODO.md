@@ -22,6 +22,8 @@
 - slider: half-fix for weird height-fixing issues.  I'm just not doing the height fixing on the mobile-only slider (the one having the issues because the images are so drastically different in height)
 - on filter select change (not via tag clicks), scroll should not change!! right now it does!
 - content gen script
+- bg of dialog should match bg of main page
+- add a roadmap page to storybook
 
 -----------------------------------------
 # In progress
@@ -31,6 +33,7 @@ WIP
 
 BUGS
 - Fix weird button seam task would be a nice to have too (use clip-path instead of pseudos)
+- refreshing on more info pages leads to a 404.  must fix
 
 -----------------------------------------
 ## TODO

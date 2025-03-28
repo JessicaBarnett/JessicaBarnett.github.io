@@ -16,7 +16,7 @@ const meta = {
             This is content that's covered up by the dialog!
           </p>
         </div>
-        <Story></Story>
+        <Story />
       </div>
     )
   ]

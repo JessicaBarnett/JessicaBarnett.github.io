@@ -71,7 +71,7 @@ media:
 
 #### Making Wood Work
 
-Woodcraft is a 95 year old woodworking supply brand - a mid-sized retailer with more than 150 stores in the US and worldwide.  Additionally, they're a large provider of woodworking education through their bi-monthly periodical, Woodcraft Magazine, their enormous library of free online articles, and the abundance of classes and demonstrations offered by local stores.  They came to us looking to modernize their e-commerce platform, and to remodel their retail website with a fresh, elegant, and professional design that duly honors the artistry and craftsmanship of their clientele.
+Woodcraft is a venerable woodworking supply brand - a mid-sized retailer with more than 150 stores in the US and worldwide.  Additionally, they're a large provider of woodworking education through their bi-monthly periodical, Woodcraft Magazine, their enormous library of free online articles, and the abundance of classes and demonstrations offered by local stores.  They came to us looking to modernize their e-commerce platform, and to remodel their retail website with a fresh, elegant, and professional design that duly honors the artistry and craftsmanship of their clientele.
 
 <SLIDER>
 

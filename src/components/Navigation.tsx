@@ -9,7 +9,8 @@ export type NavigationComponentProps = {
    onNavigation: (e: React.MouseEvent) => void;
 };
 
-function Navigation({ onNavigation }: NavigationComponentProps) {
+
+const Navigation = ({ onNavigation }: NavigationComponentProps) => {
     // TODO:  pretty sure this all should be done with a loader or something.  Need to read up.  This will work in the interim
     const handleNavClick = async (e: React.MouseEvent<HTMLElement>) => {
         onNavigation(e);
@@ -32,7 +33,7 @@ function Navigation({ onNavigation }: NavigationComponentProps) {
                 </NavLink>
             </nav>
         </div>
-);
+    );
 }
 
 export default Navigation;

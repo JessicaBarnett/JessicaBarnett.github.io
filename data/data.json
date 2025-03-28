@@ -197,6 +197,15 @@
           "name": "scss"
         }
       ]
+    },
+    {
+      "displayName": "Design",
+      "name": "design",
+      "tags": [
+        {
+          "name": "design"
+        }
+      ]
     }
   ],
   "experience": [
