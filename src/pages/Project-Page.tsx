@@ -21,7 +21,6 @@ const splitContent = (htmlText: string) => {
     const splitStr = '<SLIDER>';
     const splitIdx = htmlText.search(splitStr);
     if (splitIdx > 0) {
-        console.log(htmlText.substring(0, splitIdx), '  --- ', htmlText.substring(splitIdx + splitStr.length))
         return [
             htmlText.substring(0, splitIdx),
             htmlText.substring(splitIdx + splitStr.length, htmlText.length)

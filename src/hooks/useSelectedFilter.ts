@@ -29,7 +29,6 @@ export function useSelectedFilter(filters: FilterT[], initial?: FilterT | undefi
 
   useEffect(() => {
     if (initial) {
-      console.log('setting initial selected filter')
       setValue(initial);
     }
   }, [initial])

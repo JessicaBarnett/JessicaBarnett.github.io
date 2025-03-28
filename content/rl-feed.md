@@ -25,6 +25,8 @@ tags:
 
 Lorem ipsum dolor sit amet consectetur adipiscing elit. Curabitur porta congue tincidunt. Pellentesque suscipit sem in felis porttitor, sed luctus magna malesuada. Sed bibendum facilisis tristique. Donec id tristique arcu, eget bibendum erat. Vestibulum aliquet quam sed finibus bibendum. Sed cursus felis vel eros semper dapibus. Maecenas vitae nisi id ipsum eleifend fringilla.
 
+<SLIDER>
+
 #### Challenge
 
 Etiam ut rutrum risus. Quisque pellentesque massa eu arcu vestibulum, at pharetra nulla porta. Fusce consectetur enim mauris, sit amet porttitor nisi malesuada at. Mauris auctor scelerisque elit a gravida. Nullam ac pretium est. Phasellus dictum est lacinia scelerisque pulvinar. Fusce bibendum imperdiet sollicitudin. Curabitur et lacus malesuada, ullamcorper orci at, tempor purus.

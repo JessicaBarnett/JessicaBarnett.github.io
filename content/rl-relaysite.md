@@ -17,9 +17,11 @@ tags:
     name: aws-codepipeline
 ```
 
-#### Apollo-Inspired rebrand of the Relay Company Website
+#### Apollo-Inspired reimagining of the Relay Brand
 
 Lorem ipsum dolor sit amet consectetur adipiscing elit. Curabitur porta congue tincidunt. Pellentesque suscipit sem in felis porttitor, sed luctus magna malesuada. Sed bibendum facilisis tristique. Donec id tristique arcu, eget bibendum erat. Vestibulum aliquet quam sed finibus bibendum. Sed cursus felis vel eros semper dapibus. Maecenas vitae nisi id ipsum eleifend fringilla.
+
+<SLIDER>
 
 #### Challenge
 
