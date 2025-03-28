@@ -125,7 +125,7 @@ async function run() {
   await deleteOldFiles(componentsPath);
   await createNewFiles(svgFilesPath, componentsPath);
   await createManifest(componentsPath, manifestPath);
-  await createStories(storiesPath, componentsPath);
+  // await createStories(storiesPath, componentsPath);
 }
 
 run();

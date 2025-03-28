@@ -54,7 +54,7 @@ BUGS
   - js: Use loaders for transitions in react route config
   - js: do something about the ad-hoc timers in the page transition flow.
   - js: use util fn files MUCH more prolifically.  ex: a navUtils file or smth
-  - js: prefer document.getwhatever over useRef.  It's just... way less complicated.
+  - js: prefer document.querySelector over useRef.  It's just... way less complicated.
   - css: use css variables more prolifically
   - css: structure things so theming is easier
   - address todos
