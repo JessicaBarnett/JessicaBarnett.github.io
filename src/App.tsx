@@ -6,8 +6,10 @@ import HomePage from "@src/pages/Home-Page";
 import Navigation from "@src/components/Navigation.tsx";
 import ProjectPage from "./pages/Project-Page";
 import { FilterT, ProjectT, projectHasDetails } from "@src/types/data-types";
-import { Route, Routes, useNavigate } from "react-router";
-import { wait, scrollToId } from "./utils/util";
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
+import { wait } from "./utils/util";
+import { scrollToId, getIdFromClickEvt } from "./utils/nav-utils";
+
 
 function App() {
   const [scrollPos, setScrollPos] = useState<number>(0);
@@ -15,6 +17,7 @@ function App() {
   const navigate = useNavigate();
   const fixedNavRef = useRef<HTMLDivElement | null>(null);
   const [transitionState, setTransitionState] = useState<'in'|'out'|'idle'>('idle');
+  const location = useLocation();
 
   // *** TRANSITIONS *** //
 
@@ -33,44 +36,25 @@ function App() {
     setTransitionState('idle');
   }
 
-  // ***  NAVIGATION UTILS *** //
+  const handleNavLinkCLick = async (e: React.MouseEvent) => {
+    const id = getIdFromClickEvt(e);
 
-  const getLinkElFromNavEvt = (e: React.MouseEvent): HTMLAnchorElement | null => {
-      const target = e.target as HTMLSpanElement;
-    if (target instanceof HTMLAnchorElement && target.tagName === "A") {
-      return target; // if clickEvt happens on an a tag, target will be the link
-    } else if (target.parentElement instanceof HTMLAnchorElement && target.parentElement.tagName === "A") {
-      return target.parentElement; // if clickEvt happens on a navLink element, the target's parent will be the link
-    } else {
-      return null;
+    // if we're on the home page and this is an anchor link
+    if (location.pathname === '/' && id) {
+      console.log(`hp anchor link: ${id}`)
+      scrollToId(id);
+      return;
     }
-  }
 
-  const getNavLinkId = (anchorEl: EventTarget & HTMLElement): string | null => {
-    const href = anchorEl.getAttribute('href') || '';
-    const matchObj = href.match(/#(.*)/);
-    return matchObj !== null ? matchObj[1] : null;
-  }
-
-  // *** NAVIGATION EVENTS *** //
-
-  // TODO: Navigation utils file?  I really shouldnt have to prop drill a "scroll to id" function
-
-  const handleNavigateToMain = async (e: React.MouseEvent) => {
-    const linkEl = getLinkElFromNavEvt(e);
-    const navLinkId = linkEl ? getNavLinkId(linkEl) : null;
-    if (!navLinkId) {  return; }
-
-    e.preventDefault();
-
-    // only transition if you aren't already on the main page
-    if (window.location.pathname !== "/") {
+    // if we're on the project page and this is an anchor link
+    if (location.pathname !== '/' && id) {
+      console.log(`pp anchor link: ${id}`)
+      e.preventDefault();
       await startTransitionToMain();
+      navigate(`/#${id}`);
+      scrollToId(id);
+      return;
     }
-
-    navigate('/');
-    scrollToId(e, navLinkId);
-    resetTransition();
   }
 
   const handleGoToProject = async (e: React.MouseEvent, project: ProjectT, filter: FilterT | null | undefined) => {
@@ -102,20 +86,20 @@ function App() {
   return (
     <>
         <div ref={fixedNavRef}>
-          <Navigation onNavigation={handleNavigateToMain}/>
+          <Navigation onNavigation={handleNavLinkCLick}/>
         </div>
         <div className="background" id="main">
           <div className="page-frame" id="page-frame">
               <div className={`block-transition transition-${transitionState}`}></div>
               <Routes>
-                <Route index element={
-                  <HomePage onNavigateToProject={handleGoToProject} initialFilter={storedFilter}></HomePage>
-                } />
-                <Route path="project">
-                  <Route path=":projectSlug" element={
-                    <ProjectPage onNavigateBack={handleBackFromProject}></ProjectPage>
-                  } />
-                </Route>
+                <Route
+                  path='/'
+                  element={<HomePage onNavigateToProject={handleGoToProject} initialFilter={storedFilter}></HomePage>}
+                />
+                <Route
+                    path="/project/:projectSlug"
+                    element={<ProjectPage onNavigateBack={handleBackFromProject}></ProjectPage>}
+                />
               </Routes>
           </div>
         </div>

@@ -2,7 +2,7 @@ import { ProjectT, TagT, projectHasDetails } from "@src/types/data-types.ts";
 import Tag from "@src/components/Tag.tsx";
 import { tagSelected } from "@src/utils/util.ts";
 import React from "react";
-import { NavLink } from "react-router";
+import { Link } from "react-router-dom";
 
 type ProjectComponentProps = {
   project: ProjectT,
@@ -18,7 +18,7 @@ const Project = ({project, selectedTags, onTagSelect, onMoreInfoClick}: ProjectC
       <p>
         {project.list.description}
         { projectHasDetails(project) && onMoreInfoClick &&
-            <NavLink className="more-info-link" to={`/project/${project.slug}`} onClick={(e) => onMoreInfoClick(e, project)} viewTransition>more info</NavLink>
+            <Link className="more-info-link" to={`project/${project.slug}`} onClick={(e) => onMoreInfoClick(e, project)} viewTransition>more info</Link>
         }
       </p>
 

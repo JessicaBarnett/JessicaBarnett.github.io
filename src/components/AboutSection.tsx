@@ -1,4 +1,4 @@
-import { scrollToId } from "@src/utils/util";
+import { scrollToId } from "@src/utils/nav-utils";
 
 function AboutSection() {
   return (
@@ -17,7 +17,7 @@ function AboutSection() {
                     </p>
                 </div>
                 <p className="deco-font-4 emphasized-p">
-                    Want to work with me?  Great!  Drop me a line using the <a className="link" href="#contact" onClick={(e) => scrollToId(e, 'contact')}>contact form</a>;  Otherwise, Feel free to peruse my <a className="link" href="#projects" onClick={(e) => scrollToId(e, 'projects')}>projects</a> and <a className="link" href="#experience" onClick={(e) => scrollToId(e, 'experience')}>experience</a> below.
+                    Want to work with me?  Great!  Drop me a line using the <a className="link" href="#contact" onClick={(e) => scrollToId('contact')}>contact form</a>;  Otherwise, Feel free to peruse my <a className="link" href="#projects" onClick={(e) => scrollToId('projects')}>projects</a> and <a className="link" href="#experience" onClick={(e) => scrollToId('experience')}>experience</a> below.
                 </p>
             </div>
 

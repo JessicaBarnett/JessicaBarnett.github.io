@@ -31,6 +31,13 @@
 -----------------------------------------
 # In progress
 -----------------------------------------
+
+I QUIT IN THE MIDDLE OF SWITCHING TO HASHROUTER
+Need to do it to be able to link directly to /projects/*
+currently the navigation to project pages is noooot working...
+Needs more elbow grease
+
+
 WIP
 - content writing + image gathering
 

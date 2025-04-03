@@ -29,26 +29,3 @@ export const wait = (time: number) => {
       setTimeout(resolve, time);
     });
 }
-
-export const scrollToId = (e: React.MouseEvent, id: string) => {
-    e.preventDefault();
-    let scrollToElement = id ? document.getElementById(id) : null;
-    if (scrollToElement !== null) {
-        window.scrollTo({
-            top: scrollToElement.offsetTop - 55,
-            left: 0,
-            behavior: 'smooth'
-        });
-    } else {
-        setTimeout(() => {
-            scrollToElement = document.getElementById(id);
-            if (scrollToElement !== null) {
-                window.scrollTo({
-                    top: scrollToElement.offsetTop - 55,
-                    left: 0,
-                    behavior: 'smooth'
-                });
-            }
-        }, 50)
-    }
-  }

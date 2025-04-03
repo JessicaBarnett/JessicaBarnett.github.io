@@ -15,7 +15,7 @@ detail:
       value: Ruby on Rails
     - heading: Server Language
       value: Ruby
-    - heading: Templates
+    - heading: HTML Templates
       value: Haml
     - heading: CSS Preprocessor
       value: Scss
@@ -36,36 +36,36 @@ tags:
     name: rails
 media:
   - name: Woodcraft home (tablet)
-    url: /assets/projects/woodcraft-hp-med-2018.png
-    alt: Image of the woodcraft home page on a mid-sized screen
+    url: /assets/projects/woodcraft/woodcraft-hp-med-2018.png
+    alt: Woodcraft home page at a tablet sized width of 760px, displaying the following; in the header, there is a side-navigation button, the woodcraft logo, and a cart icon with 0 product, as well as a find-a-store button. In the main content area there is a banner ad for JET woodworking machine products, a row with a carousel of products, 3 more full-width banner ads, a carousel of popular product categories, and a crousel of popular brands.  In the footer, there are links to woodcraft's articles and blogs, links and phone numbers for shipping and returns, customer care, and to talk to an expert, an email sign up form offering 10% off, a gift cart ad, and a collection of footer links under the categories customer care, about us, policies, and resources.  At the very bottom there are links to woodcraft's twitter, instagram, pinterest, twitter, and facebook accounts, and a copyright message @2018 by woodcraft supply LLC
     width: 760
   - name: Woodcraft home (mobile)
-    url: /assets/projects/woodcraft-hp-small-2018.png
-    alt: Image of the woodcraft website
+    url: /assets/projects/woodcraft/woodcraft-hp-small-2018.png
+    alt: Woodcraft home page at a mobile phone sized width of 320px, displaying the following; in the header, there is a side-navigation button, the woodcraft logo, and a cart icon with 0 product, as well as a find-a-store button. In the main content area there is a banner ad for JET woodworking machine products, a row with a carousel of products, 3 more full-width banner ads, a carousel of popular product categories, and a crousel of popular brands.  In the footer, there are links to woodcraft's articles and blogs, links and phone numbers for shipping and returns, customer care, and to talk to an expert, an email sign up form offering 10% off, a gift cart ad, and a collection of footer links under the categories customer care, about us, policies, and resources.  At the very bottom there are links to woodcraft's twitter, instagram, pinterest, twitter, and facebook accounts, and a copyright message @2018 by woodcraft supply LLC
     width: 560
   - name: Woodcraft blog (desktop)
-    url: /assets/projects/woodcraft-blog-wide-2018.png
-    alt: Image of the woodcraft website
+    url: /assets/projects/woodcraft/woodcraft-blog-wide-2018.png
+    alt: Woodcraft Blog entry at a desktop sized width of 1920px, displaying the following; in the header, there are navigation links, a search bar, the woodcraft logo, an account icon and a cart icon with 0 products, as well as a find-a-store button.  In the main content area there is a blog entry on the right, entitled "Woodcraft adds second black dog salvage topcoat to its finishing line", published by author sharon on july 18, 2018, and tagged "woodworking adventures" and "Press Releases".  To the left of the article is a list of links for blog categories, with the number of articles in that caregory listed next to each. This list can be used to narrow down the number of articles listed. Above the article, there are links to the article's parent categories (articles and home) and a link to share the article.  Below the article is a space for comments, and a button to add a comment, but there are no comments on this article at present.  In the footer, there are links to woodcraft's articles and blogs, links and phone numbers for shipping and returns, customer care, and to talk to an expert, an email sign up form offering 10% off, a gift cart ad, and a collection of footer links under the categories customer care, about us, policies, and resources.  At the very bottom there are links to woodcraft's twitter, instagram, pinterest, twitter, and facebook accounts, and a copyright message @2018 by woodcraft supply LLC
     width: 1920
   - name: Woodcraft find-a-store (desktop)
-    url: /assets/projects/woodcraft-findstore-wide-2018.png
-    alt: Image of the woodcraft website
+    url: /assets/projects/woodcraft/woodcraft-findstore-wide-2018.png
+    alt: Woodcraft Blog entry at a desktop sized width of 1920px, displaying the following; in the header, there are navigation links, a search bar, the woodcraft logo, an account icon and a cart icon with 0 products, as well as a find-a-store button. In the main content area there is a banner add about becoming a franchisee of woodcraft, then a side-by-side map and list of the 3 closest woodcraft locations , then a list of links to all woodcraft US locations, about 60 of them, grouped by state.  In the footer, there are links to woodcraft's articles and blogs, links and phone numbers for shipping and returns, customer care, and to talk to an expert, an email sign up form offering 10% off, a gift cart ad, and a collection of footer links under the categories customer care, about us, policies, and resources.  At the very bottom there are links to woodcraft's twitter, instagram, pinterest, twitter, and facebook accounts, and a copyright message @2018 by woodcraft supply LLC
     width: 1920
-  - name: Woodcraft product List (desktop)
-    url: /assets/projects/woodcraft-plp-wide-2018.png
-    alt: Image of the woodcraft website
+  - name: Woodcraft Product List (desktop)
+    url: /assets/projects/woodcraft/woodcraft-plp-wide-2018.png
+    alt: Woodcraft Blog entry at a desktop sized width of 1920px, displaying the following; in the header, there are navigation links, a search bar, the woodcraft logo, an account icon and a cart icon with 0 products, as well as a find-a-store button.  In the main content area, there is a list of products in the "Hardware" category, displayed 4 per row.  Above the list, there is a category title, "hardware", a carousel with featured products in this category, a sort-by dropdown, and a compare-items feature with no items currently selected.  To the left of the product list is a list of product filters (with the number of products under each filter to the right) that can be used to narrow down the list of products by brand, type, diameter, finish, or price. In the footer, there are links to woodcraft's articles and blogs, links and phone numbers for shipping and returns, customer care, and to talk to an expert, an email sign up form offering 10% off, a gift cart ad, and a collection of footer links under the categories customer care, about us, policies, and resources.  At the very bottom there are links to woodcraft's twitter, instagram, pinterest, twitter, and facebook accounts, and a copyright message @2018 by woodcraft supply LLC
     width: 1920
   - name: Japan Woodworker home (tablet)
-    url: /assets/projects/jw-760-hp-2018.png
-    alt: Image of the woodcraft home page on a mid-sized screen
+    url: /assets/projects/woodcraft/jw-760-hp-2018.png
+    alt: Image of the Japan Woodworker Home page at a tablet width (760px)
     width: 760
   - name: Japan Woodworker home (mobile)
-    url: /assets/projects/jw-360-hp-2018.png
-    alt: Image of the woodcraft website
+    url: /assets/projects/woodcraft/jw-360-hp-2018.png
+    alt: Image of the Japan Woodworker Home page at a mobile phone width (360px)
     width: 360
   - name: Japan Woodworker home (desktop)
-    url: /assets/projects/jw-1280-hp-2018.png
-    alt: Image of the woodcraft home page on a mid-sized screen
+    url: /assets/projects/woodcraft/jw-1280-hp-2018.png
+    alt: Image of the Japan Woodworker Home page at a desktop width (1280px)
     width: 1280
 ```
 
