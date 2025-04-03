@@ -19,7 +19,7 @@ detail:
   title: Relay Website v2.0
   subtitle: "A collaboration to reimagine the relay brand"
   role: Front End Lead Engineer
-  time: 2019
+  time: "2019"
   type: New CMS Site Build
   table:
     - heading: CMS
@@ -49,15 +49,15 @@ media:
     url: /assets/projects/relay-site/relay-site-hp-360.png
     alt: Relay Company Website Home Page at a mobile phone sized width of 360px, displaying the following
     width: 360
-  - name: "Why Relay?" page (desktop)
+  - name: "\"Why Relay?\" page (desktop)"
     url: /assets/projects/relay-site/relay-site-why-relay-1280.png
     alt: Relay Company Website Home Page at a desktop sized width of 1280px, displaying the following
     width: 1280
-  - name: "Why Relay?" page (tablet)
+  - name: "\"Why Relay?\" page (tablet)"
     url: /assets/projects/relay-site/relay-site-why-relay-760.png
     alt: Relay Company Website Home Page at a tablet sized width of 760px, displaying the following
     width: 760
-  - name: "Why Relay?" page (mobile)
+  - name: "\"Why Relay?\" page (mobile)"
     url: /assets/projects/relay-site/relay-site-why-relay-360.png
     alt: Relay Company Website Home Page at a mobile phone sized width of 360px, displaying the following
     width: 360
