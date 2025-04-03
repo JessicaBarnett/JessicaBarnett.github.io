@@ -17,7 +17,7 @@ function AboutSection() {
                     </p>
                 </div>
                 <p className="deco-font-4 emphasized-p">
-                    Want to work with me?  Great!  Drop me a line using the <a className="link" href="#contact" onClick={() => scrollToId('contact')}>contact form</a>;  Otherwise, Feel free to peruse my <a className="link" href="#projects" onClick={() => scrollToId('projects')}>projects</a> and <a className="link" href="#experience" onClick={() => scrollToId('experience')}>experience</a> below.
+                    Want to work with me?  Great!  Drop me a line using the <a className="link" href="#contact" onClick={(e) => scrollToId('contact', e)}>contact form</a>;  Otherwise, Feel free to peruse my <a className="link" href="#projects" onClick={(e) => scrollToId('projects', e)}>projects</a> and <a className="link" href="#experience" onClick={(e) => scrollToId('experience', e)}>experience</a> below.
                 </p>
             </div>
 

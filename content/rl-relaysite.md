@@ -39,27 +39,27 @@ detail:
 media:
   - name: home (desktop)
     url: /assets/projects/relay-site/relay-site-hp-1280.png
-    alt: Relay Company Website Home Page at a desktop sized width of 1280px, displaying the following
+    alt: Relay Company Website Home Page at a desktop sized width of 1280px
     width: 1280
   - name: home (tablet)
     url: /assets/projects/relay-site/relay-site-hp-760.png
-    alt: Relay Company Website Home Page at a tablet sized width of 760px, displaying the following
+    alt: Relay Company Website Home Page at a tablet sized width of 760px
     width: 760
   - name: home (mobile)
     url: /assets/projects/relay-site/relay-site-hp-360.png
-    alt: Relay Company Website Home Page at a mobile phone sized width of 360px, displaying the following
+    alt: Relay Company Website Home Page at a mobile phone sized width of 360px
     width: 360
   - name: "\"Why Relay?\" page (desktop)"
     url: /assets/projects/relay-site/relay-site-why-relay-1280.png
-    alt: Relay Company Website Home Page at a desktop sized width of 1280px, displaying the following
+    alt: Relay Company Website "Why Relay?" page at a desktop sized width of 1280px
     width: 1280
   - name: "\"Why Relay?\" page (tablet)"
     url: /assets/projects/relay-site/relay-site-why-relay-760.png
-    alt: Relay Company Website Home Page at a tablet sized width of 760px, displaying the following
+    alt: Relay Company Website "Why Relay?" page at a tablet sized width of 760px
     width: 760
   - name: "\"Why Relay?\" page (mobile)"
     url: /assets/projects/relay-site/relay-site-why-relay-360.png
-    alt: Relay Company Website Home Page at a mobile phone sized width of 360px, displaying the following
+    alt: Relay Company Website "Why Relay?" page at a mobile phone sized width of 360px
     width: 360
 ```
 

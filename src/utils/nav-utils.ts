@@ -21,7 +21,11 @@ export const getIdFromClickEvt = (e: React.MouseEvent): string | null => {
 }
 
 
-export const scrollToId = (id: string) => {
+export const scrollToId = (id: string, e?: React.MouseEvent) => {
+    if (e) {
+        e.preventDefault();
+    }
+
     let scrollToElement = id ? document.getElementById(id) : null;
 
     if (scrollToElement !== null) {

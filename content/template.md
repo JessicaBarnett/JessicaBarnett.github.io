@@ -18,7 +18,7 @@ detail: (optional)
   title:
   subtitle: (optional)
   role:
-  time:
+  time: make sure this is quoted!  Needs to be a string not a number
   type:
   table:
     - heading:
