@@ -22,8 +22,6 @@
 }
 
 .nav-links {
-  display: flex;
-  justify-content: space-around;
   max-width: $page-med-width;
   margin: 8px auto;
 
@@ -44,9 +42,8 @@
 
 .nav-link {
   @include font-size(1.2rem);
+  display: inline-block;
   white-space: nowrap;
-  padding: 4px 8px;
-  margin: 0 4px;
   border: none;
   border-radius: $border-radius-lg;;
   text-decoration: none;

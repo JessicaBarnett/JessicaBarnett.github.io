@@ -483,8 +483,6 @@ dl {
 }
 
 .nav-links {
-  display: flex;
-  justify-content: space-around;
   max-width: 960px;
   margin: 8px auto;
 }
@@ -503,9 +501,8 @@ dl {
 .nav-link {
   font-size: 1.2rem;
   line-height: 1.8rem;
+  display: inline-block;
   white-space: nowrap;
-  padding: 4px 8px;
-  margin: 0 4px;
   border: none;
   border-radius: 10px;
   text-decoration: none;
