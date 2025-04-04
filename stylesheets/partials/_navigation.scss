@@ -22,11 +22,9 @@
 }
 
 .nav-links {
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 10px;
-  align-items: center;
-  display: grid;
-  max-width: $page-max-width;
+  display: flex;
+  justify-content: space-around;
+  max-width: $page-med-width;
   margin: 8px auto;
 
   span {
@@ -48,6 +46,7 @@
   @include font-size(1.2rem);
   white-space: nowrap;
   padding: 4px 8px;
+  margin: 0 4px;
   border: none;
   border-radius: $border-radius-lg;;
   text-decoration: none;
@@ -56,6 +55,9 @@
   background-color: $black;
   text-transform: lowercase;
   text-align: center;
+  width: 25%;
+  opacity: 1;
+  transition: width .2s ease-in, opacity .2s ease-in, transform .1s ease-in;
 
   &:hover {
     color: $black;
@@ -64,5 +66,16 @@
 
   &:hover svg {
     fill: $black;
+  }
+}
+
+.nav-link-hidden {
+  opacity: 0;
+  transform: scaleX(0);
+  width: 0;
+  transition: width .2s ease-in, opacity .2s ease-in, transform .1s ease-in .1s;
+
+  ~ .nav-link {
+    width: 33%;
   }
 }

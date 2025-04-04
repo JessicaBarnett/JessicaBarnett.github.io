@@ -30,7 +30,6 @@
   top: 0;
   clip-path: stepped-polygon(100%, 200%);
   background: $rainbow-gradient-horiz;
-  // background: pink;
   z-index: 6; // above nav
   pointer-events: none;
   @include page-width;

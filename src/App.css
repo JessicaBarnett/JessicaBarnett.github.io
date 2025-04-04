@@ -483,11 +483,9 @@ dl {
 }
 
 .nav-links {
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 10px;
-  align-items: center;
-  display: grid;
-  max-width: 1080px;
+  display: flex;
+  justify-content: space-around;
+  max-width: 960px;
   margin: 8px auto;
 }
 .nav-links span {
@@ -507,6 +505,7 @@ dl {
   line-height: 1.8rem;
   white-space: nowrap;
   padding: 4px 8px;
+  margin: 0 4px;
   border: none;
   border-radius: 10px;
   text-decoration: none;
@@ -515,6 +514,9 @@ dl {
   background-color: #000;
   text-transform: lowercase;
   text-align: center;
+  width: 25%;
+  opacity: 1;
+  transition: width 0.2s ease-in, opacity 0.2s ease-in, transform 0.1s ease-in;
 }
 .nav-link:hover {
   color: #000;
@@ -522,6 +524,16 @@ dl {
 }
 .nav-link:hover svg {
   fill: #000;
+}
+
+.nav-link-hidden {
+  opacity: 0;
+  transform: scaleX(0);
+  width: 0;
+  transition: width 0.2s ease-in, opacity 0.2s ease-in, transform 0.1s ease-in 0.1s;
+}
+.nav-link-hidden ~ .nav-link {
+  width: 33%;
 }
 
 .filter-projects-group {

@@ -17,7 +17,7 @@ tags:
     name: aws-codepipeline
 detail:
   title: Relay Website v2.0
-  subtitle: "A collaboration to reimagine the relay brand"
+  subtitle: "Reimagining the Relay brand"
   role: Front End Lead Engineer
   time: "2019"
   type: New CMS Site Build
@@ -78,3 +78,5 @@ Etiam ut rutrum risus. Quisque pellentesque massa eu arcu vestibulum, at pharetr
 Nulla et ullamcorper leo. In nec orci sit amet eros ornare dictum id at neque. Proin condimentum velit leo, a scelerisque massa imperdiet vitae. Nullam rutrum tristique efficitur. Suspendisse bibendum nisl arcu, id vulputate lacus mollis quis. Donec non lectus nulla. Mauris egestas condimentum nibh et ullamcorper. Fusce laoreet, felis in luctus pretium, est metus facilisis turpis, imperdiet tempor ante arcu nec turpis. Nulla efficitur vehicula ligula.
 
 Nam eleifend convallis neque, a egestas odio pulvinar quis. Vestibulum tincidunt tristique tortor sit amet ullamcorper. Etiam lacus purus, volutpat at magna at, scelerisque vestibulum augue. Morbi egestas congue neque, vitae hendrerit ipsum laoreet at. Sed accumsan, tellus id sagittis suscipit, lacus mauris cursus mauris, et fermentum sem erat eget quam. Sed ac dui auctor lacus rhoncus auctor.
+
+

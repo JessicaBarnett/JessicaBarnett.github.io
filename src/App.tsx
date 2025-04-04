@@ -41,14 +41,14 @@ function App() {
 
     // if we're on the home page and this is an anchor link
     if (location.pathname === '/' && id) {
-      console.log(`hp anchor link: ${id}`)
+      // console.log(`hp anchor link: ${id}`)
       scrollToId(id);
       return;
     }
 
     // if we're on the project page and this is an anchor link
     if (location.pathname !== '/' && id) {
-      console.log(`pp anchor link: ${id}`)
+      // console.log(`pp anchor link: ${id}`)
       e.preventDefault();
       await startTransitionToMain();
       navigate(`/#${id}`);
