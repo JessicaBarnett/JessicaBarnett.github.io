@@ -132,10 +132,6 @@ $slider-dot-diameter: .6rem;
     transition: transfrom $bg-transition;
     transform: scale(1);
 
-    // &:hover {
-    //     transform: scale(1.5);
-    // }
-
     &.selected {
         transform: scale(1.8);
     }
