@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 
 // types
 import { FilterT, ProjectT, TagT } from "@src/types/data-types.ts";
