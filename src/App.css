@@ -1276,7 +1276,7 @@ p {
   cursor: default;
 }
 
-.slider-dot-btns {
+.slider-dots {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -1286,21 +1286,18 @@ p {
   left: 0;
 }
 
-.slider-dot-btn {
+.slider-dot {
   background-color: white;
   border: 0;
-  width: 0.8rem;
-  height: 0.8rem;
+  width: 0.6rem;
+  height: 0.6rem;
   border-radius: 50%;
-  margin: 0 10px;
+  margin: 0 6px;
   transition: transfrom 0.2s ease-in;
   transform: scale(1);
 }
-.slider-dot-btn:hover {
-  transform: scale(1.5);
-}
-.slider-dot-btn.selected {
-  transform: scale(1.5);
+.slider-dot.selected {
+  transform: scale(1.8);
 }
 
 .btn-expand {

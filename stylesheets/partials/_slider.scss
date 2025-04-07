@@ -3,7 +3,7 @@
 @use "../elements/buttons" as *;
 @use "./trapezoids" as *;
 
-$slider-dot-btn-diameter: .8rem;
+$slider-dot-diameter: .6rem;
 
 // Slider
 .slider {
@@ -112,7 +112,7 @@ $slider-dot-btn-diameter: .8rem;
     cursor: default;
 }
 
-.slider-dot-btns {
+.slider-dots {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -122,22 +122,22 @@ $slider-dot-btn-diameter: .8rem;
     left: 0;
 }
 
-.slider-dot-btn {
+.slider-dot {
     background-color: white;
     border: 0;
-    width: $slider-dot-btn-diameter;
-    height: $slider-dot-btn-diameter;
+    width: $slider-dot-diameter;
+    height: $slider-dot-diameter;
     border-radius: 50%;
-    margin: 0 10px;
+    margin: 0 6px;
     transition: transfrom $bg-transition;
     transform: scale(1);
 
-    &:hover {
-        transform: scale(1.5);
-    }
+    // &:hover {
+    //     transform: scale(1.5);
+    // }
 
     &.selected {
-        transform: scale(1.5);
+        transform: scale(1.8);
     }
 
 }

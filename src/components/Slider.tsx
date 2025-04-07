@@ -129,13 +129,13 @@ const Slider = ({ media, options, name}: SliderComponentProps) => {
                             <FastForwardIcon></FastForwardIcon>
                         </button>
 
-                        <div className="slider-dot-btns">
+                        <div className="slider-dots">
                             {media.map((slide, idx) => (
-                                <button
+                                <div
                                     key={`${name}-${slide.name}-dot-btn`}
-                                    className={`slider-dot-btn ${idx === selectedSlideIdx ? 'selected' : ''}`}
+                                    className={`slider-dot ${idx === selectedSlideIdx ? 'selected' : ''}`}
                                     onClick={() => handleGoToBtnClick(idx)}
-                                ></button>
+                                ></div>
                             ))}
                         </div>
                     </>
