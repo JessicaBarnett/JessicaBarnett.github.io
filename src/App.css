@@ -523,6 +523,14 @@ dl {
   fill: #000;
 }
 
+.nav-link-home {
+  width: 20%;
+}
+
+.nav-link-exp {
+  width: 30%;
+}
+
 .nav-link-hidden {
   opacity: 0;
   transform: scaleX(0);
@@ -672,7 +680,7 @@ em {
   height: 100%;
   width: 100%;
   padding-bottom: 16px;
-  padding-top: 53px;
+  padding-top: 16px;
 }
 .background:before {
   opacity: 20%;
@@ -698,6 +706,7 @@ em {
 @media (min-width: 769px) {
   .background {
     margin-top: 8px;
+    padding-top: 53px;
   }
 }
 
@@ -758,6 +767,11 @@ em {
 ***************/
 section {
   padding: 4rem 0;
+}
+@media (max-width: 360px) {
+  section.project-title-section {
+    padding: 3rem 0 3rem;
+  }
 }
 
 .section-heading {
@@ -1699,8 +1713,10 @@ section {
   display: table-cell;
 }
 
-.outdent-1 {
-  margin-left: -1rem;
+@media (min-width: 769px) {
+  .outdent-1 {
+    margin-left: -1rem;
+  }
 }
 
 .indent-1 {
@@ -1717,6 +1733,15 @@ section {
 
 .indent-4 {
   margin-left: 4rem;
+}
+
+.indent-4-above-med {
+  margin-left: 2rem;
+}
+@media (min-width: 769px) {
+  .indent-4-above-med {
+    margin-left: 4rem;
+  }
 }
 
 *:focus-visible {

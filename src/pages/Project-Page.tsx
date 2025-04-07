@@ -84,8 +84,8 @@ function ProjectPage({onNavigateBack}: ProjectPageProps) {
                 <RewindIcon></RewindIcon>
             </NavLink>
 
-            <section ref={ttlRef} className="triangle-right">
-                <div className="h-centered v-spaced">
+            <section ref={ttlRef} className="project-title-section triangle-right">
+                <div className="h-centered">
                     <ProjectTitle title={project.detail.title} subtitle={project.detail.subtitle ?? undefined} />
                 </div>
             </section>

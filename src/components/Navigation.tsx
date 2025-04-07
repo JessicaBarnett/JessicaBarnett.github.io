@@ -26,7 +26,7 @@ const Navigation = ({ onNavigation }: NavigationComponentProps) => {
     return (
         <div id="nav" className="nav">
             <nav className="nav-links">
-                <Link to={`/#home`} className={`nav-link ${hideHomeLink() ? 'nav-link-hidden' : ''}`} onClick={handleNavClick} viewTransition>
+                <Link to={`/#home`} className={`nav-link nav-link-home ${hideHomeLink() ? 'nav-link-hidden' : ''}`} onClick={handleNavClick} viewTransition>
                     <RewindIcon></RewindIcon>
                     <span>home</span>
                 </Link>
@@ -34,7 +34,7 @@ const Navigation = ({ onNavigation }: NavigationComponentProps) => {
                     <PlayIcon></PlayIcon>
                     <span>projects</span>
                 </Link>
-                <Link to={`/#experience`} className="nav-link" onClick={handleNavClick} viewTransition>
+                <Link to={`/#experience`} className="nav-link nav-link-exp" onClick={handleNavClick} viewTransition>
                     <PauseIcon></PauseIcon>
                     <span>experience</span>
                 </Link>
