@@ -3,7 +3,6 @@ const path = require('path');
 
 const componentsPath = './src/icons';
 const svgFilesPath = './public/assets/icons';
-// const storiesPath = './src/icons';
 const manifestPath = './stories/manifests';
 
 // should consider a real xml parser

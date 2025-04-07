@@ -1,5 +1,5 @@
 import "./App.css";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // Nav
 import HomePage from "@src/pages/Home-Page";
@@ -13,6 +13,7 @@ import { scrollToId, getIdFromClickEvt } from "./utils/nav-utils";
 
 function App() {
   const [scrollPos, setScrollPos] = useState<number>(0);
+  // so that selected filters will persist after a roundtrip to the project page
   const [storedFilter, setStoredFilter] = useState<FilterT|undefined|null>();
   const navigate = useNavigate();
   const fixedNavRef = useRef<HTMLDivElement | null>(null);
@@ -41,14 +42,12 @@ function App() {
 
     // if we're on the home page and this is an anchor link
     if (location.pathname === '/' && id) {
-      // console.log(`hp anchor link: ${id}`)
       scrollToId(id);
       return;
     }
 
     // if we're on the project page and this is an anchor link
     if (location.pathname !== '/' && id) {
-      // console.log(`pp anchor link: ${id}`)
       e.preventDefault();
       await startTransitionToMain();
       navigate(`/#${id}`);
@@ -81,6 +80,7 @@ function App() {
     await wait(10); // TODO: hack city.  need to do this in a layout effect, but since I have to do things WHILE the transition is happening
     window.scrollTo({ top: scrollPos, behavior: 'instant' });
     await resetTransition();
+    setStoredFilter(null); // reset stored filter so that an old filter doesn't persist
   }
 
   return (

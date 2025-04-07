@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 // types
 import { FilterT, ProjectT, TagT } from "@src/types/data-types.ts";
@@ -43,9 +43,16 @@ function HomePage({onNavigateToProject, initialFilter}: HomePageComponentProps) 
     filters,
     selectedFilter
   );
+
+  // these 2 state vars are for maintaining scroll position after
+  // clicking on a tag, even as the list changes
   const [clickedFilterOffset, setClickedFilterOffset] = useState(0);
   const [clickedFilter, setClickedFilter] = useState<Element | null>();
 
+  // For the Contact Form
+  const [formState, setFormState] = useState("pending"); // pending, error, submitted
+
+  // All of this is for the Canvas Background Lines
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const pageRef = useRef<HTMLDivElement | null>(null);
   const ttlRef = useRef<HTMLElement | null>(null);
@@ -54,8 +61,6 @@ function HomePage({onNavigateToProject, initialFilter}: HomePageComponentProps) 
   const expRef = useRef<HTMLElement | null>(null);
   const contRef = useRef<HTMLElement | null>(null);
   const ftrRef = useRef<HTMLElement | null>(null);
-
-  const [formState, setFormState] = useState("pending"); // pending, error, submitted
 
   useHomePageLines(
     canvasRef,
@@ -85,7 +90,7 @@ function HomePage({onNavigateToProject, initialFilter}: HomePageComponentProps) 
   }
 
   const handleMoreInfoClick = (e: React.MouseEvent, project: ProjectT) => {
-    onNavigateToProject(e, project, selectedFilter)
+    onNavigateToProject(e, project, selectedFilter);
   }
 
   const handleTagSelect = async (e: React.MouseEvent, tag: TagT) => {
@@ -99,6 +104,7 @@ function HomePage({onNavigateToProject, initialFilter}: HomePageComponentProps) 
     setSelectedFilter(tag);
   };
 
+  // this effect is for maintaining scroll position on tag click,
   useLayoutEffect(() => {
     if (!clickedFilter) { return; }
     const t1 = clickedFilterOffset;
@@ -107,6 +113,7 @@ function HomePage({onNavigateToProject, initialFilter}: HomePageComponentProps) 
     const scrollPos = window.scrollY - dt;
     // reset needed so that events on other elements (like the select box)
     // don't trigger all this inadvertently.
+
     setClickedFilter(null);
 
     window.scrollTo({

@@ -19,8 +19,8 @@ detail:
   title: Relay Website v2.0
   subtitle: "Reimagining the Relay brand"
   role: Front End Lead Engineer
-  time: "2019"
-  type: New CMS Site Build
+  time: "2020-2021"
+  type: New company website build with a backing CMS
   table:
     - heading: CMS
       value: Craft CMS
@@ -80,3 +80,13 @@ Nulla et ullamcorper leo. In nec orci sit amet eros ornare dictum id at neque. P
 Nam eleifend convallis neque, a egestas odio pulvinar quis. Vestibulum tincidunt tristique tortor sit amet ullamcorper. Etiam lacus purus, volutpat at magna at, scelerisque vestibulum augue. Morbi egestas congue neque, vitae hendrerit ipsum laoreet at. Sed accumsan, tellus id sagittis suscipit, lacus mauris cursus mauris, et fermentum sem erat eget quam. Sed ac dui auctor lacus rhoncus auctor.
 
 
+
+
+on the eve of the anniversary of the Apollo 11 mission, 
+
+
+
+
+- configuring and making content blocks that can be reused and adapted 
+- worked with 2 others - a talented designer and a tenacious devops engineer
+- The design Steph came up with was a beautiful apollo-
