@@ -63,30 +63,33 @@ media:
     width: 360
 ```
 
-#### Apollo-Inspired reimagining of the Relay Brand
+#### An Inspiring New Concept for Relay's Future
 
-Lorem ipsum dolor sit amet consectetur adipiscing elit. Curabitur porta congue tincidunt. Pellentesque suscipit sem in felis porttitor, sed luctus magna malesuada. Sed bibendum facilisis tristique. Donec id tristique arcu, eget bibendum erat. Vestibulum aliquet quam sed finibus bibendum. Sed cursus felis vel eros semper dapibus. Maecenas vitae nisi id ipsum eleifend fringilla.
+On the eve of the anniversary of the Apollo 11 mission, my immensely talented colleague presented an inspirational new Apollo-inspired vision for the Relay Brand.  It was an optimistic concept, envisioning a future of revolutionary progress in communication and technology, while simultaneously looking back on the giants of our past as a steady source of gratitude, guidance, and encouragement.
+
+His inspiring new idea quickly gained traction within the organization, and discussions of a reimagined company website began in short order.  I was approached with the opportunity to join the small, multi-departmental team which was assembling for this purpose, and was only too happy to join.  The team consisted of myself (front-end extraordinaire and cms wrangler), a tenacious and driven engineer from the DevOps team (AWS and CraftCms trailblazer), and our ambitious designer (the progenitor and committed shephard of the entire undertaking from beginning to end) from Marketing.
+
+This collaboration proved incredibly fruitful, as the three of us were each independently committed, congenial, communicative, and emminently capable.  The project was finished within a quarter, and the effort stood for some time as a prime example of what a few dedicated individuals can accomplish when given the leeway to imagine, experiment, and build something they're truly passionate about.
 
 <SLIDER>
 
-#### Challenge
+#### Bringing Concept to Reality
 
-Etiam ut rutrum risus. Quisque pellentesque massa eu arcu vestibulum, at pharetra nulla porta. Fusce consectetur enim mauris, sit amet porttitor nisi malesuada at. Mauris auctor scelerisque elit a gravida. Nullam ac pretium est. Phasellus dictum est lacinia scelerisque pulvinar. Fusce bibendum imperdiet sollicitudin. Curabitur et lacus malesuada, ullamcorper orci at, tempor purus.
+When our project began, Relay's company site hadn't been touched in some time.  It was an inadequately documented and partially abandonned rails-based project, which was difficult to update content-wise, and was even more difficult to get running for development locally.  Ultimately our trio decided to start fresh with a brand new CMS (craftCMS), new database (postgres), new development process (docker), and a new build pipeline (aws), all of which made future releases and future development far easier than it had ever been before.
 
-#### Results
+Craft 3 was a reallly new product at the time, so we were among earliest adopters.  This presented a fair number of challenges, but their fantastic support helped a lot, and the overall ease of use of the end product made the effort worth it.
 
-Nulla et ullamcorper leo. In nec orci sit amet eros ornare dictum id at neque. Proin condimentum velit leo, a scelerisque massa imperdiet vitae. Nullam rutrum tristique efficitur. Suspendisse bibendum nisl arcu, id vulputate lacus mollis quis. Donec non lectus nulla. Mauris egestas condimentum nibh et ullamcorper. Fusce laoreet, felis in luctus pretium, est metus facilisis turpis, imperdiet tempor ante arcu nec turpis. Nulla efficitur vehicula ligula.
+The first hurdles we had to contend with were mostly related to getting cradft, postgres, docker and AWS to all play nicely together.  Credit to the heroic efforts of our Devops colleague, who truly pulled out all the stops to get the project through these initial roadblocks.
 
-Nam eleifend convallis neque, a egestas odio pulvinar quis. Vestibulum tincidunt tristique tortor sit amet ullamcorper. Etiam lacus purus, volutpat at magna at, scelerisque vestibulum augue. Morbi egestas congue neque, vitae hendrerit ipsum laoreet at. Sed accumsan, tellus id sagittis suscipit, lacus mauris cursus mauris, et fermentum sem erat eget quam. Sed ac dui auctor lacus rhoncus auctor.
+After that, the issues became largely ones of unfamiliarity, as I'd never worked with craft, and our designer, who had worked with craft, was new to writing code for the web.  The two of us had complementary strengths however, and we took every opportunity to share knowledge as we went.
 
+I introduced Sass and Twig to the project, to speed up development for both of us, and after some planning and aligning on things like git workflow, figma, project structure, and our the general plan of action, we got to work designing and building the layouts, content blocks, forms, and js features that would eventually be pieced together to create the finished product.
 
+#### And on to the future!
 
+The result of this collaboration was overwhelmingly positive, and offered a little something for everyone.
 
-on the eve of the anniversary of the Apollo 11 mission, 
+Content editors were happy with the new set of  heavily-customized tools they now had, which offered all the flexibility they would need to build robust and eye-catching content far into the future, without having to involve the engineering department.  Engineering was happy that the project was well documented, so any future work wouldn't be tripped up before even getting the project running.  Our sales team was happy with the new tools we had included to help them source leads, based on site traffic and the interest form and handy product demo that was now directly and publicly available.  Marketing was happy with the fresh new visual language and style guide they now had at their disposal.  And the C-Suite and shareholders were happy with the new brand, and all of the excitement and positive energy that the new site was generating.
 
+I'm quite proud to say that our tiny little project was able to provide so much good in the end.
 
-
-
-- configuring and making content blocks that can be reused and adapted 
-- worked with 2 others - a talented designer and a tenacious devops engineer
-- The design Steph came up with was a beautiful apollo-
