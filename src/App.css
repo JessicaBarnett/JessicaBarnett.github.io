@@ -1577,7 +1577,12 @@ p {
   }
 }
 .back-btn:hover {
-  transform: scale(1.2) translateX(6px);
+  transform: scale(1.2) translateX(3px);
+}
+@media (min-width: 769px) {
+  .back-btn:hover {
+    transform: scale(1.2) translateX(5px);
+  }
 }
 .back-btn .icon {
   display: inline-block;
@@ -1586,7 +1591,7 @@ p {
 @media (max-width: 769px) {
   .back-btn .icon {
     width: 28px;
-    margin-left: -37px;
+    margin-left: -35px;
   }
 }
 @media (min-width: 769px) and (max-width: 1280px) {

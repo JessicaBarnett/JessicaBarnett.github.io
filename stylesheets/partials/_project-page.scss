@@ -67,18 +67,21 @@ $trapezoid-width-wide: 80px;
 
 
     &:hover {
-        transform: scale(1.2) translateX(6px);
+        transform: scale(1.2) translateX(3px);
+
+        @include only-above($medium-bp) {
+            transform: scale(1.2) translateX(5px);
+        }
     }
 
     .icon {
         display: inline-block;
         height: 100%;
 
-
         // TODO: again with the clutter
         @include only-below($medium-bp) {
             width: 28px;
-            margin-left: -37px;
+            margin-left: -35px;
             // margin-top: 60px;
         }
         @include only-between($medium-bp, $wide-bp) {
