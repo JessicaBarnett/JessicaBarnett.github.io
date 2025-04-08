@@ -215,6 +215,52 @@ import "../storybook.css";
 
     <dl>
         <dt>Task</dt>
+        <dd>Visual Bug Fixes</dd>
+        <dt>Type</dt>
+        <dd>Bugfixes</dd>
+        <dt>Status</dt>
+        <dd>Complete!</dd>
+        <dt>Priority</dt>
+        <dd>low</dd>
+        <dt>Details</dt>
+        <dd>
+            <div className='sb-unordered'>
+            - back button on project page doesnt quite line up on hover.  theres an annoying gap
+            - titles on project page have an excessive amount of space on the bottom
+            - project page datalist has excessive space to the left of the values column
+            - home page title text overflows the rainbow on a bunch of breakpoints
+            - slider dots dont need to be buttons, and should have less space between so I can fit more slides
+            - there's a weird black blink that appears on the home page button on transition
+            </div>
+        </dd>
+    </dl>
+
+    <dl>
+        <dt>Task</dt>
+        <dd>Tags not clearing properly </dd>
+        <dt>Type</dt>
+        <dd>Bugfix</dd>
+        <dt>Status</dt>
+        <dd>Complete!</dd>
+        <dt>Priority</dt>
+        <dd>high</dd>
+        <dt>Details</dt>
+        <dd>
+        to reproduce:
+            <div className='sb-unordered'>
+                1. select craftCMS tag (via select or tag)
+                2. open the Relay Company Site Project Page
+                3. hit the back or home button
+                4. deselect craftCMS tag
+                5. repeat
+                6. result: the craftCMS tag is still selected even though it's been deselected
+            </div>
+        </dd>
+    </dl>
+
+
+    <dl>
+        <dt>Task</dt>
         <dd>Add Home Link to nav bar on Project page</dd>
         <dt>Type</dt>
         <dd>Feature</dd>
