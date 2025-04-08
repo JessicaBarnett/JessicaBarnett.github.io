@@ -138,9 +138,7 @@ section {
 }
 
 .outdent-1 {
-  @include only-above($medium-bp) {
-    margin-left: -1rem;
-  }
+  margin-left: -1rem;
 }
 
 .indent-1 {

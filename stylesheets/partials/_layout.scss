@@ -98,6 +98,10 @@ CONTENT
   padding: 0 calc(var(--content-gap) + var(--rainbow-w));
 }
 
+.h-centered-title {
+  padding: 0 calc(var(--content-gap) + var(--rainbow-w) + 20px) 0 calc(var(--content-gap) + var(--rainbow-w));
+}
+
 .about {
   padding: 5rem var(--content-gap);
 }
