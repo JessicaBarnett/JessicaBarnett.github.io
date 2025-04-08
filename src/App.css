@@ -407,6 +407,10 @@ dl {
   justify-items: start;
 }
 
+dd {
+  margin-left: 8px;
+}
+
 .block-transition {
   margin: 0 auto;
   width: 100%;
